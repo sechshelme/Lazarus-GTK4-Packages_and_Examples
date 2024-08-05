@@ -3,7 +3,7 @@ unit GTK4;
 interface
 
 uses
-  ctypes, Cairo, glib2, gdk2pixbuf, pango, common_GTK, GDK4, GSK4;
+  ctypes, Cairo, glib2, gdk2pixbuf, pango, GDK4, GSK4;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

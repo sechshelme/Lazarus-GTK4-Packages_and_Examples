@@ -5,454 +5,13 @@ program project1;
 uses
   Math,
   glib2,
-  common_GTK,
 
-  // ---- GDK
-
-  gdkenums,                   // io.
-  gdkenumtypes,               // io.
-  gdktypes,
-  gdkrectangle,               // io.
-  gdkrgba,                    // io.
-  gdkcairo,                   // io. -> gdkrgba
-  gdkkeysyms,                 // Gross und Kleinschreibung !
-
-  gdkdrawcontext,             // io.
-  gdkkeys,                    // io.
-  gdkpango,                   // io.
-  gdkvulkancontext,           // io.
-  gdkmonitor,                 // io.
-  gdktoplevellayout,          // io. -> gdkmonitor
-  gdktoplevelsize,            // io.
-  gdkpopuplayout,             // io.
-  gdkpopup,                   // io. -> gdkpopuplayout
-  gdkglcontext,               // io.
-  gdkdisplaymanager,          // io.
-  gdkdmabufformats,           // io.
-  gdkdmabuftexture,           // io.
-  gdkdragsurface,             // io.
-  gdkdragsurfacesize,         // io.
-  gdkframetimings,            // io.
-  gdkapplaunchcontext,        // io.
-  gdkframeclock,              // io. -> gdkframetimings
-  gdkcairocontext,            // unaufindbare external funktion
-  gdktexture,                 // io.
-  gdkcursor,                  // io. -> gdktexture
-  gdkpixbuf,                  // io. -> gdktexture
-  gdktexturedownloader,       // io. -> gdktexture
-  gdkmemorytexture,           // io. -> gdktexture
-  gdkdmabuftexturebuilder,    // io. -> gdktexture
-  gdkgltexturebuilder,        // io. -> gdktexture, gdkglcontext
-  gdkgltexture,               // io. -> gdktexture, gdkglcontext
-  gdksurface,                 // io. -> gdkcursor, gdkglcontext, gdkframeclock, gdkvulkancontext, gdkcairocontext
-  gdkcontentformats,          // io.
-  gdkcontentserializer,       // io. -> gdkcontentformats
-  gdkcontentdeserializer,     // io. -> gdkcontentserializer
-  gdkclipboard,               // io. -> gdktexture, gdkcontentformats
-  gdkcontentprovider,         // io. -> gdkclipboard, gdkcontentformats
-  gdkcontentproviderimpl,     // io.
-  gdkdrag,                    // io. -> gdksurface, gdkcontentformats
-  gdkdrop,                    // io. -> gdkdrag,  gdkcontentformats
-  gdkseat,                    // io.
-  gdkdevicetool,
-  gdkdevice,                  // io. -> gdkseat, gdkdevicetool
-  gdkevents,                  // io. -> gdkdevice, gdkdrop, gdkenums, gdkseat, gdkdevicetool
-  gdkdisplay,                 // io. -> gdkclipboard,  gdkseat, gdkglcontext, gdkmonitor
-  gdktoplevel,                // io. -> gdkevents, gdktoplevellayout
-  gdksnapshot,                // io.
-  gdkpaintable,               // io. -> gdksnapshot
-  gdkdevicepad,               // io.
-
-  // ==== GDK X11
-
-  gdkx11applaunchcontext,     // io.
-  gdkx11device,               // io.
-  gdkx11device_xi2,           // io.
-  gdkx11devicemanager_xi2,    // io.
-  gdkx11devicemanager,        // io.
-  gdkx11screen,               // io.
-  gdkx11display,              // io. -> GdkX11Screen
-  gdkx11surface,              // io. -> gdkx11display
-  gdkx11dnd,                  // io.
-  gdkx11glcontext,            // io.
-  gdkx11monitor,              // io.
-  gdkx11selection,            // io.
-  gdkx11utils,                // io.
-  gdkx11property,             // io.
-
-  // ==== GDK broadway
-
-  //gdkbroadwaycursor,
-  //gdkbroadwaydisplay,
-  //gdkbroadwaymonitor,
-  //gdkbroadwaysurface,
-
-  // ====  GDK Wayland
-
-  gdkwaylanddevice,           // io.
-  gdkwaylanddisplay,          // io.
-  gdkwaylandglcontext,        // io.
-  gdkwaylandmonitor,          // io.
-  gdkwaylandpopup,            // io.
-  gdkwaylandseat,             // io.
-  gdkwaylandsurface,          // io.
-  gdkwaylandtoplevel,         // io.
-
-
-
-  // --- GSK
-
-  gsktypes,                   // io.
-  gskenums,                   // io.
-  gskenumtypes,               // io.
-  gsktransform,               // io.
-  gskroundedrect,             // Macro nicht aufgelöst
-  gskstroke,                  // io.
-  gskpathpoint,               // io.
-  gskpath,                    // io. -> gskpathpoint, gskstroke
-  gskpathbuilder,             // io. -> gskpathpoint, gskroundedrect
-  gskpathmeasure,             // io. -> gskpathpoint
-  gskglshader,                // io.
-  gskrendernode,              // io. -> gsktransform, gskroundedrect, gskpath, gskstroke, gskglshader
-  gskrenderer,                // io. -> gskrendernode
-  gskcairorenderer,           // io.
-
-  // ==== GDK broadway
-  gskbroadwayrenderer,        // io.
-
-  // ==== GDK gl
-  gskglrenderer,              // io.
-
-  // ==== GDK gpu
-  gskvulkanrenderer,          // io.
-
-  // ---- GTK
-
-  gtkenums,                   // io.
-  gtktypes,                   // io.
-  gtknative,                  // io.
-  gtkwidget,                  //   Macro nicht aufgelöst
-  gtkwindow,                  // io.
-  gtkapplication,             // io.
-  gtkwindowgroup,             // io.
-  gtkmain,                    // io.
-  gtkdebug,                   //   Macro nicht aufgelöst
-  gtksizerequest,             // io.
-  gtkgraphicsoffload,         // io.
-
-  gtkadjustment,              // io.
-  gtkborder,                  // io.
-  gtkcolorutils,              // io.
-  gtkbitset,                  // io.
-  gtkselectionmodel,          // io. -> gtkbitset
-  gtkstack,                   // io. -> gtkselectionmodel
-  gtkaccelgroup,              // io.
-  gtkexpression,              // io.
-  gtkfilter,                  // io.
-  gtkfilefilter,              // io.
-  gtkfilterlistmodel,         // io. -> gtkfilter
-  gtkcustomfilter,            // io. -> gtkfilter
-  gtkmultifilter,             // io. -> gtkfilter
-  gtkboolfilter,              // io. -> gtkfilter, gtkexpression;
-  gtkstringfilter,            // io. -> gtkfilter, gtkexpression
-  gtkbuilder,                 // io.
-  gtkbookmarklist,            // io.
-  gtkactionable,              // io.
-  gtkstyleprovider,           // io.
-  gtkbuilderscope,            // io. -> gtkbuilder;
-  gtkbuildable,               // io. -> gtkbuilder;
-  gtkroot,                    // io.
-  gtkaspectframe,             // io.
-  gtkrecentmanager,           // io.
-  gtkmediastream,             // io.
-  gtkmediacontrols,           // io. -> gtkmediastream
-  gtkmediafile,               // io. -> gtkmediastream
-  gtkvideo,                   // io. -> gtkmediastream, gtkgraphicsoffload
-  gtkimcontext,               // io.
-  gtkimmodule,                // io.
-  gtkinscription,             // io.
-  gtkimcontextsimple,         // io. -> gtkimcontext
-  gtkimmulticontext,          // io. -> gtkimcontext
-  gtkbuilderlistitemfactory,  // io.
-  gtksorter,                  // io.
-  gtkcustomsorter,            // io. -> gtksorter
-  gtkmultisorter,             // io. -> gtksorter
-  gtknumericsorter,           // io. -> gtksorter, gtkexpression
-  gtkicontheme,               // io.
-  gtkcssprovider,             // io.
-  gtkdirectorylist,           // io.
-  gtkeventcontroller,         // io.
-  gtkeventcontrollerfocus,    // io.
-  gtkeventcontrollerlegacy,   // io.
-  gtkeventcontrollermotion,   // io.
-  gtkeventcontrollerscroll,   // io.
-  gtkeventcontrollerkey,      // io. -> gtkimcontext
-  gtklistitemfactory,         // io.
-  gtkscrollinfo,              // io.
-  gtkatcontext,               // io.
-  gtksnapshot,                // io.
-  gtktypebuiltins,            // io.
-  gtkfilelauncher,            // io.
-  gtkflattenlistmodel,        // io.
-  gtkglarea,                  // io.
-  gtklistbase,                // io.
-  gtklistheader,              // io.
-  gtklistitem,                // io.
-  gtkmountoperation,          // io.
-  gtkmultiselection,          // io.
-  gtknoselection,             // io.
-  gtkorientable,              // io.
-  gtkpadcontroller,           // io.
-  gtksectionmodel,            // io.
-  gtkselectionfiltermodel,    // io. -> gtkselectionmodel
-  gtksettings,                // io.
-  gtksignallistitemfactory,   // io. -> gtklistitemfactory
-  gtksingleselection,         // io.
-  gtksortlistmodel,           // io.
-  gtkslicelistmodel,          // io. -> gtksorter
-  gtksymbolicpaintable,       // io.
-  gtktestutils,               // io.
-  gtktreelistrowsorter,       // io. -> gtksorter
-  gtkversion,                 // Unaufgelöstes Makro
-  gtkatspisocket,             // io.
-
-
-  gtkaccessiblerange,         // io.
-  gtkaccessibletext,          // io.
-  gtkaccessible,              // io.
-  gtkeditable,                // io. -> gtkaccessible
-
-
-  gtklayoutchild,             // io.
-  gtklayoutmanager,           // io. -> gtklayoutchild;
-  gtkbinlayout,               // io. -> gtklayoutmanager;
-  gtkboxlayout,               // io. -> gtklayoutmanager;
-  gtkcenterlayout,            // io. -> gtklayoutmanager
-  gtkcustomlayout,            // io. -> gtklayoutmanager
-  gtkgridlayout,              // io. -> gtklayoutmanager, gtklayoutchild
-  gtkfixedlayout,             // io. -> gtklayoutmanager, gtklayoutchild
-  gtkoverlaylayout,           // io. -> gtklayoutmanager, gtklayoutchild
-
-
-  gtkstringlist,              // io
-  gtkstringsorter,            // io. -> gtksorter, gtkexpression
-
-  gtkcolumnviewrow,           // io.
-  gtkcolumnviewsorter,        // io. -> gtksorter, gtkcolumnview
-  gtkcolumnview,              // io. -> gtkselectionmodel, gtksorter, gtkscrollinfo
-  gtkcolumnviewcolumn,        // io. -> gtkcolumnview, gtklistitemfactory, gtksorter
-  gtkcolumnviewcell,          // io.
-
-  gtkconstraint,              // io.
-  gtkconstraintguide,         // io.
-  gtkconstraintlayout,        // io. -> gtkconstraint, gtklayoutmanager, gtklayoutchild, gtkconstraintguide;
-
-  gtkshortcutsshortcut,       // io.
-  gtkshortcuttrigger,         // io.
-  gtkshortcutaction,          // io.
-  gtkshortcutlabel,           // io.
-  gtkshortcut,                // io. -> gtkshortcuttrigger, gtkshortcutaction;  ( TGtkShortcut ausgelagert )
-  gtkshortcutcontroller,      // io. -> gtkshortcut;
-  gtkshortcutmanager,         // io.
-  gtkshortcutsgroup,          // io. -> gtkshortcutsshortcut;
-  gtkshortcutssection,        // io. -> gtkshortcutsgroup;
-  gtkshortcutswindow,         // io. -> gtkshortcutssection;
-  gtkapplicationwindow,       // io. -> gtkshortcutswindow
-
-
-  gtkdragicon,                // io.
-  gtkdragsource,              // io.
-
-  gtktooltip,                 // io.
-  gtkbox,                     // io.
-  gtkcenterbox,               // io.
-  gtkgrid,                    // io.
-  gtkactionbar,               // io.
-  gtknotebook,                // io.
-  gtkexpander,                // io.
-  gtkfixed,                   // io.
-  gtkframe,                   // io.
-  gtkpaned,                   // io.
-  gtksizegroup,               // io.
-  gtktreelistmodel,           // io.
-  gtktreeexpander,            // io. -> gtktreelistmodel
-
-
-  gtkbutton,                  // io.
-  gtklinkbutton,              // io.
-  gtktogglebutton,            // io. -> gtkbutton
-  gtklabel,                   // io. -> pango
-  gtkcalendar,                // io.
-  gtkwindowcontrols,          // io.
-  gtkimage,                   // io.
-  gtkspinner,                 // io.
-  gtkcheckbutton,             // io.
-  gtkeditablelabel,           // io.
-  gtkdrawingarea,             // io.
-  gtklevelbar,                // io.
-  gtkoverlay,                 // io.
-  gtkpicture,                 // io.
-  gtkprogressbar,             // io.
-  gtkrevealer,                // io.
-  gtksearchbar,               // io. -> gtkeditable
-  gtksearchentry,             // io.
-  gtkseparator,               // io.
-  gtkswitch,                  // io.
-  gtkurilauncher,             // io.
-  gtkwidgetpaintable,         // io.
-
-
-
-  gtkscrollbar,               // io. -> gtkadjustment;
-  gtkrange,                   // io. -> gtkadjustment, gtkborder;
-  gtkscale,                   // io. -> pango, gtkrange, gtkadjustment;
-  gtkscalebutton,             // io. -> gtkadjustment;
-  gtkflowbox,                 // io. -> gtkadjustment;
-  gtkscrolledwindow,          // io. -> gtkadjustment
-  gtkspinbutton,              // io. -> gtkadjustment
-  gtklistbox,                 // io. -> gtkadjustment;
-  gtkscrollable,              // io. -> gtkborder, gtkadjustment
-  gtklistview,                // io. -> gtkselectionmodel, gtklistitemfactory, gtkscrollinfo
-  gtkgridview,                // io. -> gtkselectionmodel, gtklistitemfactory, gtkscrollinfo
-  gtkwindowhandle,            // io.
-  gtkheaderbar,               // io.
-  gtkmaplistmodel,            // io.
-  gtkstacksidebar,            // io. -> gtkstack
-  gtkstackswitcher,           // io. -> gtkstack
-  gtkviewport,                // io. -> gtkscrollinfo, gtkadjustment
-
-
-
-
-  gtkpopover,                 // io.
-  gtkpopovermenu,             // io.
-  gtkpopovermenubar,          // io.
-  gtkmenubutton,              // io. -> gtkpopover
-  gtkemojichooser,            // io.
-
-
-  gtktexttag,                 // io.
-  gtktexttagtable,            // io. -> gtktexttag;
-  gtktextchild,               // io.
-  gtktextiter,                // io. -> pango, gtktexttag, gtktextchild;
-  gtktextmark,                // io. -> gtktextiter;
-  gtktextbuffer,              // io. -> gtktexttag, gtktextiter, gtktextchild, gtktextmark;
-  gtktextview,                // io. -> pango, gtktextiter, gtktextmark, gtktextchild;
-
-
-
-  gtktreemodel,               // io.
-  gtkcelleditable,
-  gtkcellrenderer,            // io. -> gtkcelleditable;
-  gtkcellarea,                // gtkcellrenderer, gtktreemodel, gtkcelleditable;  ( Makro )
-  gtkentrycompletion,         // io. -> gtktreemodel, gtkcellarea;
-  gtkentrybuffer,             // io.
-  gtktext,                    // io. -> gtkentrybuffer
-  gtkentry,                   // io. -> pango, gtkentrybuffer, gtkentrycompletion, gtkimage;
-  gtkstylecontext,            // io. -> gtkborder, gtkstyleprovider;
-  gtkpasswordentry,           // io.
-  gtkpasswordentrybuffer,     // io. -> gtkentrybuffer
-
-
-  gtkdroptarget,              // io.
-  gtkdroptargetasync,         // io.
-  gtkdropcontrollermotion,    // io. -> gtkeventcontroller
-  gtkdropdown,                // io. -> gtkexpression, gtkstringfilter
-
-  gtkgesture,                 // io.
-  gtkgesturesingle,           // io.
-  gtkgestureclick,            // io. -> gtkgesture
-  gtkgesturedrag,             // io. -> gtkgesture
-  gtkgesturelongpress,        // io. -> gtkgesture
-  gtkgesturepan,              // io. -> gtkgesture
-  gtkgesturerotate,           // io. -> gtkgesture
-  gtkgesturestylus,           // io. -> gtkgesture
-  gtkgestureswipe,            // io. -> gtkgesture
-  gtkgesturezoom,             // io. -> gtkgesture
-
-  gtkdialogerror,             // io.
-  gtkaboutdialog,             // io.
-  gtkfiledialog,              // io. -> gtkfilter, gtkfilefilter,
-  gtkfontdialog,              // io. -> gtkfilter,
-  gtkfontdialogbutton,        // io. -> gtkfontdialog
-  gtkcolordialog,             // io.
-  gtkcolordialogbutton,       // io. -> gtkcolordialog
-  gtkalertdialog,             // io.
-  gtknativedialog,            // io.
-
-  gtkpapersize,               // io.
-  gtkpagesetup,               // io. -> gtkpapersize
-  gtkprintsettings,           // io. -> gtkpapersize
-  gtkprintcontext,            // io. -> gtkpagesetup
-  gtkprintoperationpreview,   // io. -> gtkprintcontext, gtkpagesetup
-  gtkprintoperation,          // io. -> gtkprintcontext, gtkpagesetup, gtkprintoperationpreview, gtkprintsettings;
-  gtkprintdialog,             // io. -> gtkprintsettings, gtkpagesetup
-
-  gtktreeviewcolumn,          // io. -> gtkcellrenderer, gtktreemodel, gtkcellarea
-  gtktreeview,                // io. -> gtkeditable, gtkcellrenderer, gtktreemodel, gtktreeviewcolumn
-  gtkcombobox,                // io. -> gtktreemodel, gtktreeview
-  gtkcomboboxtext,            // io.
-  gtkdialog,                  // io.
-  gtkappchooserdialog,        // io. -> gtkdialog
-  gtkappchooser,              // io.
-  gtkappchooserbutton,        // io.
-  gtkappchooserwidget,        // io.
-  gtkassistant,               // io.
-
-  gtkcolorbutton,             // io.
-  gtkcolorchooser,            // io.
-  gtkcolorchooserdialog,      // io.
-  gtkcolorchooserwidget,      // io.
-  gtkcellrendereraccel,       // io. -> gtkcellrenderer
-  gtkcellrenderercombo,       // io. -> gtkcellrenderer
-  gtkcellrendererpixbuf,      // io. -> gtkcellrenderer
-  gtkcellrendererprogress,    // io. -> gtkcellrenderer
-  gtkcellrendererspin,        // io. -> gtkcellrenderer
-  gtkcellrendererspinner,     // io. -> gtkcellrenderer
-  gtkcellrenderertoggle,      // io. -> gtkcellrenderer
-  gtkcellrenderertext,        // io. -> gtkcellrenderer
-  gtkcellareabox,             // io. -> gtkcellrenderer, gtkcellarea
-  gtkcellareacontext,         // io. -> gtkcellarea
-  gtkcelllayout,              // io. -> gtkbuilder, gtkbuildable, gtktreemodel, gtkcellrenderer, gtkcellarea
-  gtkcellview,                // io. -> gtktreemodel, gtkcellarea
-  gtkfilechooser,             // io. -> gtkfilefilter
-  gtkfilechooserwidget,       // io. -> gtkfilechooser
-  gtkfilechooserdialog,       // io. -> gtkfilechooser
-  gtkfilechoosernative,       // io. -> gtknativedialog, gtkfilechooser
-  gtkfontbutton,              // io.
-  gtkfontchooser,             // io.
-  gtkfontchooserdialog,       // io.
-  gtkfontchooserwidget,       // io.
-
-  gtkinfobar,                 // io.
-  gtklockbutton,              // io.
-  gtkrender,                  // io.
-  gtkshow,                    // io.
-  gtkstatusbar,               // io.
-  gtktreednd,                 // io. -> gtktreemodel
-  gtktreemodelfilter,         // io. -> gtktreemodel
-  gtktreemodelsort,           // io. -> gtktreemodel
-  gtktreeselection,           // io. -> gtktreemodel, gtktreeview
-  gtktreesortable,            // io. -> gtktreemodel
-  gtktreestore,               // io. -> gtktreemodel
-  gtkliststore,               // io. -> gtktreemodel
-  gtkiconview,                // io. -> gtktreemodel, gtkcellarea, gtkcellrenderer
-  gtkmessagedialog,           // io. -> gtkdialog
-  gtkvolumebutton,            // io. -> gtkscalebutton
-
-  gtktestatcontext,           // -> gtkaccessible    // komplexe Macros
-
-  gtkpagesetupunixdialog,     // io. -> gtkpagesetup, gtkprintsettings
-  gtkprinter,                 // io. -> gtkpagesetup, gtkpapersize
-  gtkprintunixdialog,         // io, -> gtkpagesetup, gtkprintsettings, gtkprinter
-  gtkprintjob,                // io. -> gtkprinter, gtkprintsettings, gtkpagesetup, gtkprintoperation
-
-  // ==== GTK css
-  gtkcssenums,                // io.
-  gtkcssenumtypes,            // io.
-  gtkcsserror,                // io.
-  gtkcsslocation,             // io.
-  gtkcsssection,              // io. -> gtkcsslocation
+  GDK4,
+  GSK4,
+  GTK4,
+  GTK4_unix_print,
+//  GDK4_broadway,
+//  GSK4_broadway,
 
 
 
@@ -475,14 +34,7 @@ const
   cmFileDlg = 1002;
 
   function CreateButton(Caption: Pgchar): PGtkWidget;
-  var
-    border: PGtkBorder;
   begin
-    border := gtk_border_new;
-
-    gtk_border_free(border);
-    WriteLn(border^.left, 'x', border^.top, 'x', border^.right, 'x', border^.bottom);
-
     Result := gtk_button_new_with_label(Caption);
     gtk_widget_set_margin_start(Result, 5);
     gtk_widget_set_margin_top(Result, 5);
@@ -754,7 +306,7 @@ const
 
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;
   var
-    window, box, notebook: PGTKWidget;
+    window, box, notebook, psu: PGTKWidget;
     Winclass: PGtkWindowClass;
     lm: PGtkLayoutManager;
     LMclass: PGtkLayoutManagerClass;
@@ -765,6 +317,10 @@ const
 
     gtk_window_set_default_size(GTK_WINDOW(window), 320, 200);
     gtk_window_set_title(GTK_WINDOW(window), 'Hello GTK-4');
+
+
+// psu:=   gtk_page_setup_unix_dialog_new('unix-print', nil);
+
 
     box := Create_Button_Box;
     gtk_window_set_child(GTK_WINDOW(window), box);
@@ -805,7 +361,12 @@ const
   procedure main;
   var
     app: PGtkApplication;
+    sur: PGdkSurface;
   begin
+ sur:=    gdk_surface_new_toplevel(nil);
+
+
+
     app := gtk_application_new('org.gtk.example', 0);
 
     g_signal_connect(app, 'activate', G_CALLBACK(@activate), nil);
