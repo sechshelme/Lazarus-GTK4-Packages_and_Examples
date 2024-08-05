@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="/home/tux/fpcupdeluxe_trunk/fpc/bin/x86_64-linux/fpc.sh" Date="1722175766"/>
+  <Params Value="-Twin64 -MObjFPC -Scghi -O1 -gw2 -godwarfsets -gl -l -vewnhibq -Fi/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/Example/Erster_Versuch_with_GDK_inc/lib/x86_64-win64 -Fu/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/Example/Erster_Versuch_with_GDK_inc/ -Fu/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/package -Fu/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/Package_Tools/pas_units/GTK/deprecated -Fu/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/Package_Tools/pas_units -FU/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/Example/Erster_Versuch_with_GDK_inc/lib/x86_64-win64/ -FE/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/Example/Erster_Versuch_with_GDK_inc/ -o/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/Example/Erster_Versuch_with_GDK_inc/project1.exe project1.lpr"/>
+  <Complete Value="False"/>
+</CONFIG>
