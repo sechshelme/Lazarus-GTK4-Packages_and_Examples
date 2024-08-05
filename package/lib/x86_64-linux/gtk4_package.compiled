@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Lazarus Version="3.99"/>
-  <Compiler Value="/home/tux/fpcupdeluxe_trunk/fpc/bin/x86_64-linux/fpc.sh" Date="1722175766"/>
-  <Params Value="-MObjFPC -Scghi -Cg -O1 -g -gl -l -vewnhibq -Fu/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK4/package/ -Fu/home/tux/fpcupdeluxe_trunk/lazarus/packager/units/x86_64-linux -FU/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK4/package/lib/x86_64-linux/ gtk4_package.pas"/>
-</CONFIG>
