@@ -6,7 +6,7 @@
     <CompilerOptions>
       <Version Value="11"/>
       <SearchPaths>
-        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)/"/>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
     </CompilerOptions>
     <Files>
@@ -33,6 +33,10 @@
       <Item>
         <Filename Value="gtk4_unix_print.pas"/>
         <UnitName Value="GTK4_unix_print"/>
+      </Item>
+      <Item>
+        <Filename Value="gapplication.pas"/>
+        <UnitName Value="gapplication"/>
       </Item>
     </Files>
     <RequiredPkgs>

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   15:41                        //
+//   Erzeugt am: 05-08-2024   17:02                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -118,6 +118,8 @@ type
   // === glib2
 const
   G_PRIORITY_HIGH_IDLE = 100;         // /usr/include/glib-2.0/glib/gmain.h
+
+  G_APPLICATION_DEFAULT_FLAGS=0; // gioenums.h
 
 type
   Tgconstpointer = gconstpointer;

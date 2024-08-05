@@ -807,7 +807,7 @@ const
   var
     app: PGtkApplication;
   begin
-    app := gtk_application_new('org.gtk.example', 0);
+    app := gtk_application_new('org.gtk.example', G_APPLICATION_DEFAULT_FLAGS);
 
     g_signal_connect(app, 'activate', G_CALLBACK(@activate), nil);
     g_application_run(app, 0, nil);

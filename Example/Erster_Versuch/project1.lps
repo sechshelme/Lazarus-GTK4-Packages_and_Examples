@@ -7,16 +7,11 @@
       <Unit>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="3" Y="9"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="339"/>
+        <CursorPos X="51" Y="370"/>
         <UsageCount Value="121"/>
         <Loaded Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="../../Package_Tools/pas_units/common_gtk.pas"/>
-        <UnitName Value="common_GTK"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos Y="7"/>
-        <UsageCount Value="34"/>
       </Unit>
       <Unit>
         <Filename Value="scrollbox.pas"/>
@@ -46,11 +41,17 @@
         <Filename Value="drawarena.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="DrawArena"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="10" Y="8"/>
+        <CursorPos X="38" Y="8"/>
         <UsageCount Value="60"/>
         <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../Package_Tools/pas_units/common_gtk.pas"/>
+        <UnitName Value="common_GTK"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="7"/>
+        <UsageCount Value="34"/>
       </Unit>
       <Unit>
         <Filename Value="../../package/common_gtk.pas"/>
@@ -4514,10 +4515,6 @@
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="project1.lpr"/>
-        <Caret Line="433" Column="15" TopLine="406"/>
-      </Position>
-      <Position>
-        <Filename Value="project1.lpr"/>
         <Caret Line="389" Column="20" TopLine="373"/>
       </Position>
       <Position>
@@ -4631,6 +4628,10 @@
       <Position>
         <Filename Value="project1.lpr"/>
         <Caret Line="9" Column="3"/>
+      </Position>
+      <Position>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="370" Column="78" TopLine="338"/>
       </Position>
     </JumpHistory>
     <RunParams>

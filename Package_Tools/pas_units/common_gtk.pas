@@ -3,7 +3,7 @@ unit common_GTK;
 interface
 
 uses
-  ctypes, Cairo, glib2, pango;
+  ctypes, Cairo, glib2, pango, gapplication;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -119,6 +119,8 @@ type
   // === glib2
 const
   G_PRIORITY_HIGH_IDLE = 100;         // /usr/include/glib-2.0/glib/gmain.h
+
+  G_APPLICATION_DEFAULT_FLAGS=0; // gioenums.h
 
 type
   Tgconstpointer = gconstpointer;

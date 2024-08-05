@@ -9,7 +9,7 @@ interface
 
 uses
   GDK4, GDK4_broadway, GSK4, GSK4_broadway, GTK4, GTK4_unix_print, 
-  LazarusPackageIntf;
+  gapplication, LazarusPackageIntf;
 
 implementation
 
