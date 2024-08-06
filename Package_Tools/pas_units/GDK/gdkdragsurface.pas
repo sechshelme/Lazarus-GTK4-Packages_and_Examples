@@ -20,8 +20,8 @@ type
   end;
   PGdkDragSurfaceInterface = ^TGdkDragSurfaceInterface;
 
-function gdk_drag_surface_get_type: TGType; cdecl; external gtklib;
-function gdk_drag_surface_present(drag_surface: PGdkDragSurface; Width: longint; Height: longint): Tgboolean; cdecl; external gtklib;
+function gdk_drag_surface_get_type: TGType; cdecl; external libgtk4;
+function gdk_drag_surface_present(drag_surface: PGdkDragSurface; Width: longint; Height: longint): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 17:10:32 ===
 

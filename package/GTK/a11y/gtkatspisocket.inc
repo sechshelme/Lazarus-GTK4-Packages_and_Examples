@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,10 +20,10 @@ type
   end;
   PGtkAtSpiSocketClass = ^TGtkAtSpiSocketClass;
 
-function gtk_at_spi_socket_get_type: TGType; cdecl; external gtklib;
-function gtk_at_spi_socket_new(bus_name: PChar; object_path: PChar; error: PPGError): PGtkAccessible; cdecl; external gtklib;
-function gtk_at_spi_socket_get_bus_name(self: PGtkAtSpiSocket): PChar; cdecl; external gtklib;
-function gtk_at_spi_socket_get_object_path(self: PGtkAtSpiSocket): PChar; cdecl; external gtklib;
+function gtk_at_spi_socket_get_type: TGType; cdecl; external libgtk4;
+function gtk_at_spi_socket_new(bus_name: PChar; object_path: PChar; error: PPGError): PGtkAccessible; cdecl; external libgtk4;
+function gtk_at_spi_socket_get_bus_name(self: PGtkAtSpiSocket): PChar; cdecl; external libgtk4;
+function gtk_at_spi_socket_get_object_path(self: PGtkAtSpiSocket): PChar; cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 19:15:08 ===
 

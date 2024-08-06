@@ -16,8 +16,8 @@ type
   end;
   PGdkWaylandMonitor = ^TGdkWaylandMonitor;
 
-function gdk_wayland_monitor_get_type: TGType; cdecl; external gtklib;
-function gdk_wayland_monitor_get_wl_output(monitor: PGdkMonitor): Pwl_output; cdecl; external gtklib;
+function gdk_wayland_monitor_get_type: TGType; cdecl; external libgtk4;
+function gdk_wayland_monitor_get_wl_output(monitor: PGdkMonitor): Pwl_output; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 19:19:31 ===
 

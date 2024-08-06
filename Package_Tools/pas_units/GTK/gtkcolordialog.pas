@@ -20,20 +20,20 @@ type
   end;
   PGtkColorDialogClass = ^TGtkColorDialogClass;
 
-function gtk_color_dialog_new: PGtkColorDialog; cdecl; external gtklib;
-function gtk_color_dialog_get_title(self: PGtkColorDialog): PChar; cdecl; external gtklib;
-procedure gtk_color_dialog_set_title(self: PGtkColorDialog; title: PChar); cdecl; external gtklib;
-function gtk_color_dialog_get_modal(self: PGtkColorDialog): Tgboolean; cdecl; external gtklib;
-procedure gtk_color_dialog_set_modal(self: PGtkColorDialog; modal: Tgboolean); cdecl; external gtklib;
-function gtk_color_dialog_get_with_alpha(self: PGtkColorDialog): Tgboolean; cdecl; external gtklib;
-procedure gtk_color_dialog_set_with_alpha(self: PGtkColorDialog; with_alpha: Tgboolean); cdecl; external gtklib;
+function gtk_color_dialog_new: PGtkColorDialog; cdecl; external libgtk4;
+function gtk_color_dialog_get_title(self: PGtkColorDialog): PChar; cdecl; external libgtk4;
+procedure gtk_color_dialog_set_title(self: PGtkColorDialog; title: PChar); cdecl; external libgtk4;
+function gtk_color_dialog_get_modal(self: PGtkColorDialog): Tgboolean; cdecl; external libgtk4;
+procedure gtk_color_dialog_set_modal(self: PGtkColorDialog; modal: Tgboolean); cdecl; external libgtk4;
+function gtk_color_dialog_get_with_alpha(self: PGtkColorDialog): Tgboolean; cdecl; external libgtk4;
+procedure gtk_color_dialog_set_with_alpha(self: PGtkColorDialog; with_alpha: Tgboolean); cdecl; external libgtk4;
 procedure gtk_color_dialog_choose_rgba(self: PGtkColorDialog; parent: PGtkWindow; initial_color: PGdkRGBA; cancellable: PGCancellable; callback: TGAsyncReadyCallback;
-  user_data: Tgpointer); cdecl; external gtklib;
-function gtk_color_dialog_choose_rgba_finish(self: PGtkColorDialog; Result: PGAsyncResult; error: PPGError): PGdkRGBA; cdecl; external gtklib;
+  user_data: Tgpointer); cdecl; external libgtk4;
+function gtk_color_dialog_choose_rgba_finish(self: PGtkColorDialog; Result: PGAsyncResult; error: PPGError): PGdkRGBA; cdecl; external libgtk4;
 
 // === Konventiert am: 14-7-24 16:12:16 ===
 
-function gtk_color_dialog_get_type: TGType; cdecl; external gtklib;
+function gtk_color_dialog_get_type: TGType; cdecl; external libgtk4;
 
 function GTK_TYPE_COLOR_DIALOG: TGType;
 function GTK_COLOR_DIALOG(obj: Pointer): PGtkColorDialog;

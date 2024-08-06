@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,16 +20,16 @@ type
   end;
   PGtkBoxLayoutClass = ^TGtkBoxLayoutClass;
 
-function gtk_box_layout_get_type: TGType; cdecl; external gtklib;
-function gtk_box_layout_new(orientation:TGtkOrientation):PGtkLayoutManager;cdecl;external gtklib;
-procedure gtk_box_layout_set_homogeneous(box_layout:PGtkBoxLayout; homogeneous:Tgboolean);cdecl;external gtklib;
-function gtk_box_layout_get_homogeneous(box_layout:PGtkBoxLayout):Tgboolean;cdecl;external gtklib;
-procedure gtk_box_layout_set_spacing(box_layout:PGtkBoxLayout; spacing:Tguint);cdecl;external gtklib;
-function gtk_box_layout_get_spacing(box_layout:PGtkBoxLayout):Tguint;cdecl;external gtklib;
-procedure gtk_box_layout_set_baseline_position(box_layout:PGtkBoxLayout; position:TGtkBaselinePosition);cdecl;external gtklib;
-function gtk_box_layout_get_baseline_position(box_layout:PGtkBoxLayout):TGtkBaselinePosition;cdecl;external gtklib;
-procedure gtk_box_layout_set_baseline_child(box_layout:PGtkBoxLayout; child:longint);cdecl;external gtklib;
-function gtk_box_layout_get_baseline_child(box_layout:PGtkBoxLayout):longint;cdecl;external gtklib;
+function gtk_box_layout_get_type: TGType; cdecl; external libgtk4;
+function gtk_box_layout_new(orientation:TGtkOrientation):PGtkLayoutManager;cdecl;external libgtk4;
+procedure gtk_box_layout_set_homogeneous(box_layout:PGtkBoxLayout; homogeneous:Tgboolean);cdecl;external libgtk4;
+function gtk_box_layout_get_homogeneous(box_layout:PGtkBoxLayout):Tgboolean;cdecl;external libgtk4;
+procedure gtk_box_layout_set_spacing(box_layout:PGtkBoxLayout; spacing:Tguint);cdecl;external libgtk4;
+function gtk_box_layout_get_spacing(box_layout:PGtkBoxLayout):Tguint;cdecl;external libgtk4;
+procedure gtk_box_layout_set_baseline_position(box_layout:PGtkBoxLayout; position:TGtkBaselinePosition);cdecl;external libgtk4;
+function gtk_box_layout_get_baseline_position(box_layout:PGtkBoxLayout):TGtkBaselinePosition;cdecl;external libgtk4;
+procedure gtk_box_layout_set_baseline_child(box_layout:PGtkBoxLayout; child:longint);cdecl;external libgtk4;
+function gtk_box_layout_get_baseline_child(box_layout:PGtkBoxLayout):longint;cdecl;external libgtk4;
 
 // === Konventiert am: 21-7-24 15:29:30 ===
 

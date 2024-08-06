@@ -11,8 +11,8 @@ uses
 
 
 
-function gtk_css_parser_error_quark: TGQuark; cdecl; external gtklib;
-function gtk_css_parser_warning_quark: TGQuark; cdecl; external gtklib;
+function gtk_css_parser_error_quark: TGQuark; cdecl; external libgtk4;
+function gtk_css_parser_warning_quark: TGQuark; cdecl; external libgtk4;
 
 function GTK_CSS_PARSER_WARNING: TGQuark;
 function GTK_CSS_PARSER_ERROR: TGQuark;

@@ -35,7 +35,7 @@ type
   PGtkShortcutsShortcutClass = ^TGtkShortcutsShortcutClass;
 
 
-function gtk_shortcuts_shortcut_get_type: TGType; cdecl; external gtklib;
+function gtk_shortcuts_shortcut_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 16-7-24 19:14:33 ===
 

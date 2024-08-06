@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,15 +20,15 @@ type
   end;
   PGtkFilterListModelClass = ^TGtkFilterListModelClass;
 
-function gtk_filter_list_model_get_type: TGType; cdecl; external gtklib;
-function gtk_filter_list_model_new(model: PGListModel; filter: PGtkFilter): PGtkFilterListModel; cdecl; external gtklib;
-procedure gtk_filter_list_model_set_filter(self: PGtkFilterListModel; filter: PGtkFilter); cdecl; external gtklib;
-function gtk_filter_list_model_get_filter(self: PGtkFilterListModel): PGtkFilter; cdecl; external gtklib;
-procedure gtk_filter_list_model_set_model(self: PGtkFilterListModel; model: PGListModel); cdecl; external gtklib;
-function gtk_filter_list_model_get_model(self: PGtkFilterListModel): PGListModel; cdecl; external gtklib;
-procedure gtk_filter_list_model_set_incremental(self: PGtkFilterListModel; incremental: Tgboolean); cdecl; external gtklib;
-function gtk_filter_list_model_get_incremental(self: PGtkFilterListModel): Tgboolean; cdecl; external gtklib;
-function gtk_filter_list_model_get_pending(self: PGtkFilterListModel): Tguint; cdecl; external gtklib;
+function gtk_filter_list_model_get_type: TGType; cdecl; external libgtk4;
+function gtk_filter_list_model_new(model: PGListModel; filter: PGtkFilter): PGtkFilterListModel; cdecl; external libgtk4;
+procedure gtk_filter_list_model_set_filter(self: PGtkFilterListModel; filter: PGtkFilter); cdecl; external libgtk4;
+function gtk_filter_list_model_get_filter(self: PGtkFilterListModel): PGtkFilter; cdecl; external libgtk4;
+procedure gtk_filter_list_model_set_model(self: PGtkFilterListModel; model: PGListModel); cdecl; external libgtk4;
+function gtk_filter_list_model_get_model(self: PGtkFilterListModel): PGListModel; cdecl; external libgtk4;
+procedure gtk_filter_list_model_set_incremental(self: PGtkFilterListModel; incremental: Tgboolean); cdecl; external libgtk4;
+function gtk_filter_list_model_get_incremental(self: PGtkFilterListModel): Tgboolean; cdecl; external libgtk4;
+function gtk_filter_list_model_get_pending(self: PGtkFilterListModel): Tguint; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:15:09 ===
 

@@ -15,10 +15,10 @@ type
   end;
   PGdkX11GLContext = ^TGdkX11GLContext;
 
-function gdk_x11_gl_context_get_type: TGType; cdecl; external gtklib;
-function gdk_x11_display_get_glx_version(display: PGdkDisplay; major: Plongint; minor: Plongint): Tgboolean; cdecl; external gtklib;
-function gdk_x11_display_get_egl_version(display: PGdkDisplay; major: Plongint; minor: Plongint): Tgboolean; cdecl; external gtklib;
-function gdk_x11_display_get_egl_display(display: PGdkDisplay): Tgpointer; cdecl; external gtklib;
+function gdk_x11_gl_context_get_type: TGType; cdecl; external libgtk4;
+function gdk_x11_display_get_glx_version(display: PGdkDisplay; major: Plongint; minor: Plongint): Tgboolean; cdecl; external libgtk4;
+function gdk_x11_display_get_egl_version(display: PGdkDisplay; major: Plongint; minor: Plongint): Tgboolean; cdecl; external libgtk4;
+function gdk_x11_display_get_egl_display(display: PGdkDisplay): Tgpointer; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 17:42:38 ===
 

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,12 +20,12 @@ type
   end;
   PGtkDragIconClass = ^TGtkDragIconClass;
 
-function gtk_drag_icon_get_type: TGType; cdecl; external gtklib;
-function gtk_drag_icon_get_for_drag(drag: PGdkDrag): PGtkWidget; cdecl; external gtklib;
-procedure gtk_drag_icon_set_child(self: PGtkDragIcon; child: PGtkWidget); cdecl; external gtklib;
-function gtk_drag_icon_get_child(self: PGtkDragIcon): PGtkWidget; cdecl; external gtklib;
-procedure gtk_drag_icon_set_from_paintable(drag: PGdkDrag; paintable: PGdkPaintable; hot_x: longint; hot_y: longint); cdecl; external gtklib;
-function gtk_drag_icon_create_widget_for_value(Value: PGValue): PGtkWidget; cdecl; external gtklib;
+function gtk_drag_icon_get_type: TGType; cdecl; external libgtk4;
+function gtk_drag_icon_get_for_drag(drag: PGdkDrag): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_drag_icon_set_child(self: PGtkDragIcon; child: PGtkWidget); cdecl; external libgtk4;
+function gtk_drag_icon_get_child(self: PGtkDragIcon): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_drag_icon_set_from_paintable(drag: PGdkDrag; paintable: PGdkPaintable; hot_x: longint; hot_y: longint); cdecl; external libgtk4;
+function gtk_drag_icon_create_widget_for_value(Value: PGValue): PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 25-7-24 18:07:54 ===
 

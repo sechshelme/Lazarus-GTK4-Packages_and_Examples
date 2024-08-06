@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -29,10 +29,10 @@ type
   end;
   PGtkIMMulticontextClass = ^TGtkIMMulticontextClass;
 
-function gtk_im_multicontext_get_type: TGType; cdecl; external gtklib;
-function gtk_im_multicontext_new: PGtkIMContext; cdecl; external gtklib;
-function gtk_im_multicontext_get_context_id(context: PGtkIMMulticontext): PChar; cdecl; external gtklib;
-procedure gtk_im_multicontext_set_context_id(context: PGtkIMMulticontext; context_id: PChar); cdecl; external gtklib;
+function gtk_im_multicontext_get_type: TGType; cdecl; external libgtk4;
+function gtk_im_multicontext_new: PGtkIMContext; cdecl; external libgtk4;
+function gtk_im_multicontext_get_context_id(context: PGtkIMMulticontext): PChar; cdecl; external libgtk4;
+procedure gtk_im_multicontext_set_context_id(context: PGtkIMMulticontext; context_id: PChar); cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 19:38:42 ===
 

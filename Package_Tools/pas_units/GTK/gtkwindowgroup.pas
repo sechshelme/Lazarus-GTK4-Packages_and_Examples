@@ -33,11 +33,11 @@ type
 
 
 
-function gtk_window_group_get_type: TGType; cdecl; external gtklib;
-function gtk_window_group_new: PGtkWindowGroup; cdecl; external gtklib;
-procedure gtk_window_group_add_window(window_group: PGtkWindowGroup; window: PGtkWindow); cdecl; external gtklib;
-procedure gtk_window_group_remove_window(window_group: PGtkWindowGroup; window: PGtkWindow); cdecl; external gtklib;
-function gtk_window_group_list_windows(window_group: PGtkWindowGroup): PGList; cdecl; external gtklib;
+function gtk_window_group_get_type: TGType; cdecl; external libgtk4;
+function gtk_window_group_new: PGtkWindowGroup; cdecl; external libgtk4;
+procedure gtk_window_group_add_window(window_group: PGtkWindowGroup; window: PGtkWindow); cdecl; external libgtk4;
+procedure gtk_window_group_remove_window(window_group: PGtkWindowGroup; window: PGtkWindow); cdecl; external libgtk4;
+function gtk_window_group_list_windows(window_group: PGtkWindowGroup): PGList; cdecl; external libgtk4;
 
 // === Konventiert am: 19-7-24 17:30:55 ===
 

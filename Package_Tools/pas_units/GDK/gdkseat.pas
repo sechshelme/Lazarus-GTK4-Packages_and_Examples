@@ -32,13 +32,13 @@ type
   end;
 
 
-function gdk_seat_get_type: TGType; cdecl; external gtklib;
-function gdk_seat_get_display(seat: PGdkSeat): PGdkDisplay; cdecl; external gtklib;
-function gdk_seat_get_capabilities(seat: PGdkSeat): TGdkSeatCapabilities; cdecl; external gtklib;
-function gdk_seat_get_devices(seat: PGdkSeat; capabilities: TGdkSeatCapabilities): PGList; cdecl; external gtklib;
-function gdk_seat_get_tools(seat: PGdkSeat): PGList; cdecl; external gtklib;
-function gdk_seat_get_pointer(seat: PGdkSeat): PGdkDevice; cdecl; external gtklib;
-function gdk_seat_get_keyboard(seat: PGdkSeat): PGdkDevice; cdecl; external gtklib;
+function gdk_seat_get_type: TGType; cdecl; external libgtk4;
+function gdk_seat_get_display(seat: PGdkSeat): PGdkDisplay; cdecl; external libgtk4;
+function gdk_seat_get_capabilities(seat: PGdkSeat): TGdkSeatCapabilities; cdecl; external libgtk4;
+function gdk_seat_get_devices(seat: PGdkSeat; capabilities: TGdkSeatCapabilities): PGList; cdecl; external libgtk4;
+function gdk_seat_get_tools(seat: PGdkSeat): PGList; cdecl; external libgtk4;
+function gdk_seat_get_pointer(seat: PGdkSeat): PGdkDevice; cdecl; external libgtk4;
+function gdk_seat_get_keyboard(seat: PGdkSeat): PGdkDevice; cdecl; external libgtk4;
 
 // === Konventiert am: 30-7-24 17:45:50 ===
 

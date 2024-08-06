@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -25,20 +25,20 @@ type
   end;
   PGdkMonitor = ^TGdkMonitor;
 
-function gdk_monitor_get_type: TGType; cdecl; external gtklib;
-function gdk_monitor_get_display(monitor: PGdkMonitor): PGdkDisplay; cdecl; external gtklib;
-procedure gdk_monitor_get_geometry(monitor: PGdkMonitor; geometry: PGdkRectangle); cdecl; external gtklib;
-function gdk_monitor_get_width_mm(monitor: PGdkMonitor): longint; cdecl; external gtklib;
-function gdk_monitor_get_height_mm(monitor: PGdkMonitor): longint; cdecl; external gtklib;
-function gdk_monitor_get_manufacturer(monitor: PGdkMonitor): PChar; cdecl; external gtklib;
-function gdk_monitor_get_model(monitor: PGdkMonitor): PChar; cdecl; external gtklib;
-function gdk_monitor_get_connector(monitor: PGdkMonitor): PChar; cdecl; external gtklib;
-function gdk_monitor_get_scale_factor(monitor: PGdkMonitor): longint; cdecl; external gtklib;
-function gdk_monitor_get_scale(monitor: PGdkMonitor): Tdouble; cdecl; external gtklib;
-function gdk_monitor_get_refresh_rate(monitor: PGdkMonitor): longint; cdecl; external gtklib;
-function gdk_monitor_get_subpixel_layout(monitor: PGdkMonitor): TGdkSubpixelLayout; cdecl; external gtklib;
-function gdk_monitor_is_valid(monitor: PGdkMonitor): Tgboolean; cdecl; external gtklib;
-function gdk_monitor_get_description(monitor: PGdkMonitor): PChar; cdecl; external gtklib;
+function gdk_monitor_get_type: TGType; cdecl; external libgtk4;
+function gdk_monitor_get_display(monitor: PGdkMonitor): PGdkDisplay; cdecl; external libgtk4;
+procedure gdk_monitor_get_geometry(monitor: PGdkMonitor; geometry: PGdkRectangle); cdecl; external libgtk4;
+function gdk_monitor_get_width_mm(monitor: PGdkMonitor): longint; cdecl; external libgtk4;
+function gdk_monitor_get_height_mm(monitor: PGdkMonitor): longint; cdecl; external libgtk4;
+function gdk_monitor_get_manufacturer(monitor: PGdkMonitor): PChar; cdecl; external libgtk4;
+function gdk_monitor_get_model(monitor: PGdkMonitor): PChar; cdecl; external libgtk4;
+function gdk_monitor_get_connector(monitor: PGdkMonitor): PChar; cdecl; external libgtk4;
+function gdk_monitor_get_scale_factor(monitor: PGdkMonitor): longint; cdecl; external libgtk4;
+function gdk_monitor_get_scale(monitor: PGdkMonitor): Tdouble; cdecl; external libgtk4;
+function gdk_monitor_get_refresh_rate(monitor: PGdkMonitor): longint; cdecl; external libgtk4;
+function gdk_monitor_get_subpixel_layout(monitor: PGdkMonitor): TGdkSubpixelLayout; cdecl; external libgtk4;
+function gdk_monitor_is_valid(monitor: PGdkMonitor): Tgboolean; cdecl; external libgtk4;
+function gdk_monitor_get_description(monitor: PGdkMonitor): PChar; cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 14:38:31 ===
 

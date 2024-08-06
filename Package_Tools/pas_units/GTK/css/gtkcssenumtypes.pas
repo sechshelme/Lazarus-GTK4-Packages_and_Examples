@@ -10,8 +10,8 @@ uses
   {$ENDIF}
 
 
-function gtk_css_parser_error_get_type: TGType; cdecl; external gtklib;
-function gtk_css_parser_warning_get_type: TGType; cdecl; external gtklib;
+function gtk_css_parser_error_get_type: TGType; cdecl; external libgtk4;
+function gtk_css_parser_warning_get_type: TGType; cdecl; external libgtk4;
 
 
 // === Konventiert am: 2-8-24 19:05:19 ===

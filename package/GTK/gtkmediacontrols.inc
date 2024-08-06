@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,10 +20,10 @@ type
   end;
   PGtkMediaControlsClass = ^TGtkMediaControlsClass;
 
-function gtk_media_controls_get_type: TGType; cdecl; external gtklib;
-function gtk_media_controls_new(stream: PGtkMediaStream): PGtkWidget; cdecl; external gtklib;
-function gtk_media_controls_get_media_stream(Controls: PGtkMediaControls): PGtkMediaStream; cdecl; external gtklib;
-procedure gtk_media_controls_set_media_stream(Controls: PGtkMediaControls; stream: PGtkMediaStream); cdecl; external gtklib;
+function gtk_media_controls_get_type: TGType; cdecl; external libgtk4;
+function gtk_media_controls_new(stream: PGtkMediaStream): PGtkWidget; cdecl; external libgtk4;
+function gtk_media_controls_get_media_stream(Controls: PGtkMediaControls): PGtkMediaStream; cdecl; external libgtk4;
+procedure gtk_media_controls_set_media_stream(Controls: PGtkMediaControls; stream: PGtkMediaStream); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 13:37:03 ===
 

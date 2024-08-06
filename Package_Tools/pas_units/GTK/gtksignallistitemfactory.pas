@@ -19,8 +19,8 @@ type
   end;
   PGtkSignalListItemFactoryClass = ^TGtkSignalListItemFactoryClass;
 
-function gtk_signal_list_item_factory_get_type: TGType; cdecl; external gtklib;
-function gtk_signal_list_item_factory_new: PGtkListItemFactory; cdecl; external gtklib;
+function gtk_signal_list_item_factory_get_type: TGType; cdecl; external libgtk4;
+function gtk_signal_list_item_factory_new: PGtkListItemFactory; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:49:01 ===
 

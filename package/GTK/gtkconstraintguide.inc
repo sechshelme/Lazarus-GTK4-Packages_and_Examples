@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,18 +20,18 @@ type
   end;
   PGtkConstraintGuideClass = ^TGtkConstraintGuideClass;
 
-function gtk_constraint_guide_get_type: TGType; cdecl; external gtklib;
-function gtk_constraint_guide_new: PGtkConstraintGuide; cdecl; external gtklib;
-procedure gtk_constraint_guide_set_min_size(guide: PGtkConstraintGuide; Width: longint; Height: longint); cdecl; external gtklib;
-procedure gtk_constraint_guide_get_min_size(guide: PGtkConstraintGuide; Width: Plongint; Height: Plongint); cdecl; external gtklib;
-procedure gtk_constraint_guide_set_nat_size(guide: PGtkConstraintGuide; Width: longint; Height: longint); cdecl; external gtklib;
-procedure gtk_constraint_guide_get_nat_size(guide: PGtkConstraintGuide; Width: Plongint; Height: Plongint); cdecl; external gtklib;
-procedure gtk_constraint_guide_set_max_size(guide: PGtkConstraintGuide; Width: longint; Height: longint); cdecl; external gtklib;
-procedure gtk_constraint_guide_get_max_size(guide: PGtkConstraintGuide; Width: Plongint; Height: Plongint); cdecl; external gtklib;
-function gtk_constraint_guide_get_strength(guide: PGtkConstraintGuide): TGtkConstraintStrength; cdecl; external gtklib;
-procedure gtk_constraint_guide_set_strength(guide: PGtkConstraintGuide; strength: TGtkConstraintStrength); cdecl; external gtklib;
-procedure gtk_constraint_guide_set_name(guide: PGtkConstraintGuide; Name: PChar); cdecl; external gtklib;
-function gtk_constraint_guide_get_name(guide: PGtkConstraintGuide): PChar; cdecl; external gtklib;
+function gtk_constraint_guide_get_type: TGType; cdecl; external libgtk4;
+function gtk_constraint_guide_new: PGtkConstraintGuide; cdecl; external libgtk4;
+procedure gtk_constraint_guide_set_min_size(guide: PGtkConstraintGuide; Width: longint; Height: longint); cdecl; external libgtk4;
+procedure gtk_constraint_guide_get_min_size(guide: PGtkConstraintGuide; Width: Plongint; Height: Plongint); cdecl; external libgtk4;
+procedure gtk_constraint_guide_set_nat_size(guide: PGtkConstraintGuide; Width: longint; Height: longint); cdecl; external libgtk4;
+procedure gtk_constraint_guide_get_nat_size(guide: PGtkConstraintGuide; Width: Plongint; Height: Plongint); cdecl; external libgtk4;
+procedure gtk_constraint_guide_set_max_size(guide: PGtkConstraintGuide; Width: longint; Height: longint); cdecl; external libgtk4;
+procedure gtk_constraint_guide_get_max_size(guide: PGtkConstraintGuide; Width: Plongint; Height: Plongint); cdecl; external libgtk4;
+function gtk_constraint_guide_get_strength(guide: PGtkConstraintGuide): TGtkConstraintStrength; cdecl; external libgtk4;
+procedure gtk_constraint_guide_set_strength(guide: PGtkConstraintGuide; strength: TGtkConstraintStrength); cdecl; external libgtk4;
+procedure gtk_constraint_guide_set_name(guide: PGtkConstraintGuide; Name: PChar); cdecl; external libgtk4;
+function gtk_constraint_guide_get_name(guide: PGtkConstraintGuide): PChar; cdecl; external libgtk4;
 
 // === Konventiert am: 24-7-24 19:18:42 ===
 

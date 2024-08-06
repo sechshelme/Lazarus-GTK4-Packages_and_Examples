@@ -18,13 +18,13 @@ type
   end;
   PGtkDropTargetAsyncClass = ^TGtkDropTargetAsyncClass;
 
-function gtk_drop_target_async_get_type: TGType; cdecl; external gtklib;
-function gtk_drop_target_async_new(formats: PGdkContentFormats; actions: TGdkDragAction): PGtkDropTargetAsync; cdecl; external gtklib;
-procedure gtk_drop_target_async_set_formats(self: PGtkDropTargetAsync; formats: PGdkContentFormats); cdecl; external gtklib;
-function gtk_drop_target_async_get_formats(self: PGtkDropTargetAsync): PGdkContentFormats; cdecl; external gtklib;
-procedure gtk_drop_target_async_set_actions(self: PGtkDropTargetAsync; actions: TGdkDragAction); cdecl; external gtklib;
-function gtk_drop_target_async_get_actions(self: PGtkDropTargetAsync): TGdkDragAction; cdecl; external gtklib;
-procedure gtk_drop_target_async_reject_drop(self: PGtkDropTargetAsync; drop: PGdkDrop); cdecl; external gtklib;
+function gtk_drop_target_async_get_type: TGType; cdecl; external libgtk4;
+function gtk_drop_target_async_new(formats: PGdkContentFormats; actions: TGdkDragAction): PGtkDropTargetAsync; cdecl; external libgtk4;
+procedure gtk_drop_target_async_set_formats(self: PGtkDropTargetAsync; formats: PGdkContentFormats); cdecl; external libgtk4;
+function gtk_drop_target_async_get_formats(self: PGtkDropTargetAsync): PGdkContentFormats; cdecl; external libgtk4;
+procedure gtk_drop_target_async_set_actions(self: PGtkDropTargetAsync; actions: TGdkDragAction); cdecl; external libgtk4;
+function gtk_drop_target_async_get_actions(self: PGtkDropTargetAsync): TGdkDragAction; cdecl; external libgtk4;
+procedure gtk_drop_target_async_reject_drop(self: PGtkDropTargetAsync; drop: PGdkDrop); cdecl; external libgtk4;
 
 // === Konventiert am: 25-7-24 18:17:53 ===
 

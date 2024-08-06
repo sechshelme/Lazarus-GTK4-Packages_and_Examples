@@ -18,8 +18,8 @@ type
   end;
   PGtkGestureClickClass = ^TGtkGestureClickClass;
 
-function gtk_gesture_click_get_type: TGType; cdecl; external gtklib;
-function gtk_gesture_click_new: PGtkGesture; cdecl; external gtklib;
+function gtk_gesture_click_get_type: TGType; cdecl; external libgtk4;
+function gtk_gesture_click_new: PGtkGesture; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:37:05 ===
 

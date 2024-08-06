@@ -10,14 +10,14 @@ uses
 {$ENDIF}
 
 
-function gtk_tooltip_get_type:TGType;cdecl;external gtklib;
-procedure gtk_tooltip_set_markup(tooltip:PGtkTooltip; markup:Pchar);cdecl;external gtklib;
-procedure gtk_tooltip_set_text(tooltip:PGtkTooltip; text:Pchar);cdecl;external gtklib;
-procedure gtk_tooltip_set_icon(tooltip:PGtkTooltip; paintable:PGdkPaintable);cdecl;external gtklib;
-procedure gtk_tooltip_set_icon_from_icon_name(tooltip:PGtkTooltip; icon_name:Pchar);cdecl;external gtklib;
-procedure gtk_tooltip_set_icon_from_gicon(tooltip:PGtkTooltip; gicon:PGIcon);cdecl;external gtklib;
-procedure gtk_tooltip_set_custom(tooltip:PGtkTooltip; custom_widget:PGtkWidget);cdecl;external gtklib;
-procedure gtk_tooltip_set_tip_area(tooltip:PGtkTooltip; rect:PGdkRectangle);cdecl;external gtklib;
+function gtk_tooltip_get_type:TGType;cdecl;external libgtk4;
+procedure gtk_tooltip_set_markup(tooltip:PGtkTooltip; markup:Pchar);cdecl;external libgtk4;
+procedure gtk_tooltip_set_text(tooltip:PGtkTooltip; text:Pchar);cdecl;external libgtk4;
+procedure gtk_tooltip_set_icon(tooltip:PGtkTooltip; paintable:PGdkPaintable);cdecl;external libgtk4;
+procedure gtk_tooltip_set_icon_from_icon_name(tooltip:PGtkTooltip; icon_name:Pchar);cdecl;external libgtk4;
+procedure gtk_tooltip_set_icon_from_gicon(tooltip:PGtkTooltip; gicon:PGIcon);cdecl;external libgtk4;
+procedure gtk_tooltip_set_custom(tooltip:PGtkTooltip; custom_widget:PGtkWidget);cdecl;external libgtk4;
+procedure gtk_tooltip_set_tip_area(tooltip:PGtkTooltip; rect:PGdkRectangle);cdecl;external libgtk4;
 
 // === Konventiert am: 21-7-24 17:14:27 ===
 

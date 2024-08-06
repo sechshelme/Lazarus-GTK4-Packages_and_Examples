@@ -18,10 +18,10 @@ type
   end;
   PGtkEventControllerFocusClass = ^TGtkEventControllerFocusClass;
 
-function gtk_event_controller_focus_get_type: TGType; cdecl; external gtklib;
-function gtk_event_controller_focus_new: PGtkEventController; cdecl; external gtklib;
-function gtk_event_controller_focus_contains_focus(self: PGtkEventControllerFocus): Tgboolean; cdecl; external gtklib;
-function gtk_event_controller_focus_is_focus(self: PGtkEventControllerFocus): Tgboolean; cdecl; external gtklib;
+function gtk_event_controller_focus_get_type: TGType; cdecl; external libgtk4;
+function gtk_event_controller_focus_new: PGtkEventController; cdecl; external libgtk4;
+function gtk_event_controller_focus_contains_focus(self: PGtkEventControllerFocus): Tgboolean; cdecl; external libgtk4;
+function gtk_event_controller_focus_is_focus(self: PGtkEventControllerFocus): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 25-7-24 19:20:42 ===
 

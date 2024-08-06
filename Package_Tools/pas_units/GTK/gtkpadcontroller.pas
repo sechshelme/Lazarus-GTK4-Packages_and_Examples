@@ -37,11 +37,11 @@ type
   PGtkPadControllerClass = ^TGtkPadControllerClass;
 
 
-function gtk_pad_controller_get_type: TGType; cdecl; external gtklib;
-function gtk_pad_controller_new(group: PGActionGroup; pad: PGdkDevice): PGtkPadController; cdecl; external gtklib;
-procedure gtk_pad_controller_set_action_entries(controller: PGtkPadController; entries: PGtkPadActionEntry; n_entries: longint); cdecl; external gtklib;
+function gtk_pad_controller_get_type: TGType; cdecl; external libgtk4;
+function gtk_pad_controller_new(group: PGActionGroup; pad: PGdkDevice): PGtkPadController; cdecl; external libgtk4;
+procedure gtk_pad_controller_set_action_entries(controller: PGtkPadController; entries: PGtkPadActionEntry; n_entries: longint); cdecl; external libgtk4;
 procedure gtk_pad_controller_set_action(controller: PGtkPadController; _type: TGtkPadActionType; index: longint; mode: longint; _label: PChar;
-  action_name: PChar); cdecl; external gtklib;
+  action_name: PChar); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:13:56 ===
 

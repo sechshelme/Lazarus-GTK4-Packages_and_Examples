@@ -14,13 +14,13 @@ type
   end;
   PGdkDrawContext = ^TGdkDrawContext;
 
-function gdk_draw_context_get_type: TGType; cdecl; external gtklib;
-function gdk_draw_context_get_display(context: PGdkDrawContext): PGdkDisplay; cdecl; external gtklib;
-function gdk_draw_context_get_surface(context: PGdkDrawContext): PGdkSurface; cdecl; external gtklib;
-procedure gdk_draw_context_begin_frame(context: PGdkDrawContext; region: Pcairo_region_t); cdecl; external gtklib;
-procedure gdk_draw_context_end_frame(context: PGdkDrawContext); cdecl; external gtklib;
-function gdk_draw_context_is_in_frame(context: PGdkDrawContext): Tgboolean; cdecl; external gtklib;
-function gdk_draw_context_get_frame_region(context: PGdkDrawContext): Pcairo_region_t; cdecl; external gtklib;
+function gdk_draw_context_get_type: TGType; cdecl; external libgtk4;
+function gdk_draw_context_get_display(context: PGdkDrawContext): PGdkDisplay; cdecl; external libgtk4;
+function gdk_draw_context_get_surface(context: PGdkDrawContext): PGdkSurface; cdecl; external libgtk4;
+procedure gdk_draw_context_begin_frame(context: PGdkDrawContext; region: Pcairo_region_t); cdecl; external libgtk4;
+procedure gdk_draw_context_end_frame(context: PGdkDrawContext); cdecl; external libgtk4;
+function gdk_draw_context_is_in_frame(context: PGdkDrawContext): Tgboolean; cdecl; external libgtk4;
+function gdk_draw_context_get_frame_region(context: PGdkDrawContext): Pcairo_region_t; cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 17:23:10 ===
 

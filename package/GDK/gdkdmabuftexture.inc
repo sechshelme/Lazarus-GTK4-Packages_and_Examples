@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -13,8 +13,8 @@ type
   end;
   PGdkDmabufTexture = ^TGdkDmabufTexture;
 
-function gdk_dmabuf_texture_get_type: TGType; cdecl; external gtklib;
-function gdk_dmabuf_error_quark: TGQuark; cdecl; external gtklib;
+function gdk_dmabuf_texture_get_type: TGType; cdecl; external libgtk4;
+function gdk_dmabuf_error_quark: TGQuark; cdecl; external libgtk4;
 
 function GDK_DMABUF_ERROR: TGQuark;
 

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -18,7 +18,7 @@ type
   end;
   PGtkListItemFactoryClass = ^TGtkListItemFactoryClass;
 
-function gtk_list_item_factory_get_type: TGType; cdecl; external gtklib;
+function gtk_list_item_factory_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 26-7-24 20:23:54 ===
 

@@ -164,7 +164,7 @@ begin
     Result.Add('');
   end;
 
-  Result.Add('function ' + sa[5] + '_get_type: TGType; cdecl; external gtklib;');
+  Result.Add('function ' + sa[5] + '_get_type: TGType; cdecl; external libgtk4;');
   Result.Add('');
 end;
 

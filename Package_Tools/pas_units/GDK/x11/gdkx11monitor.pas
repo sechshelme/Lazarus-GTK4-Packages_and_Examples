@@ -14,9 +14,9 @@ type
   end;
   PGdkX11Monitor = ^TGdkX11Monitor;
 
-function gdk_x11_monitor_get_type: TGType; cdecl; external gtklib;
-function gdk_x11_monitor_get_output(monitor: PGdkMonitor): TXID; cdecl; external gtklib;
-procedure gdk_x11_monitor_get_workarea(monitor: PGdkMonitor; workarea: PGdkRectangle); cdecl; external gtklib;
+function gdk_x11_monitor_get_type: TGType; cdecl; external libgtk4;
+function gdk_x11_monitor_get_output(monitor: PGdkMonitor): TXID; cdecl; external libgtk4;
+procedure gdk_x11_monitor_get_workarea(monitor: PGdkMonitor; workarea: PGdkRectangle); cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 17:42:43 ===
 

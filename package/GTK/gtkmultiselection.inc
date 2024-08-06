@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,10 +20,10 @@ type
   end;
   PGtkMultiSelectionClass = ^TGtkMultiSelectionClass;
 
-function gtk_multi_selection_get_type: TGType; cdecl; external gtklib;
-function gtk_multi_selection_new(model: PGListModel): PGtkMultiSelection; cdecl; external gtklib;
-function gtk_multi_selection_get_model(self: PGtkMultiSelection): PGListModel; cdecl; external gtklib;
-procedure gtk_multi_selection_set_model(self: PGtkMultiSelection; model: PGListModel); cdecl; external gtklib;
+function gtk_multi_selection_get_type: TGType; cdecl; external libgtk4;
+function gtk_multi_selection_new(model: PGListModel): PGtkMultiSelection; cdecl; external libgtk4;
+function gtk_multi_selection_get_model(self: PGtkMultiSelection): PGListModel; cdecl; external libgtk4;
+procedure gtk_multi_selection_set_model(self: PGtkMultiSelection; model: PGListModel); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 13:38:10 ===
 

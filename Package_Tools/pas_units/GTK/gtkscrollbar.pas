@@ -15,10 +15,10 @@ type
   PGtkScrollbar = ^TGtkScrollbar;
 
 
-function gtk_scrollbar_get_type: TGType; cdecl; external gtklib;
-function gtk_scrollbar_new(orientation: TGtkOrientation; adjustment: PGtkAdjustment): PGtkWidget; cdecl; external gtklib;
-procedure gtk_scrollbar_set_adjustment(self: PGtkScrollbar; adjustment: PGtkAdjustment); cdecl; external gtklib;
-function gtk_scrollbar_get_adjustment(self: PGtkScrollbar): PGtkAdjustment; cdecl; external gtklib;
+function gtk_scrollbar_get_type: TGType; cdecl; external libgtk4;
+function gtk_scrollbar_new(orientation: TGtkOrientation; adjustment: PGtkAdjustment): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_scrollbar_set_adjustment(self: PGtkScrollbar; adjustment: PGtkAdjustment); cdecl; external libgtk4;
+function gtk_scrollbar_get_adjustment(self: PGtkScrollbar): PGtkAdjustment; cdecl; external libgtk4;
 
 // === Konventiert am: 12-7-24 19:54:45 ===
 

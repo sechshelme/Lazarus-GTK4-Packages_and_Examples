@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -26,12 +26,12 @@ type
   end;
 
 
-function gtk_color_chooser_get_type: TGType; cdecl; external gtklib;
-procedure gtk_color_chooser_get_rgba(chooser: PGtkColorChooser; color: PGdkRGBA); cdecl; external gtklib;
-procedure gtk_color_chooser_set_rgba(chooser: PGtkColorChooser; color: PGdkRGBA); cdecl; external gtklib;
-function gtk_color_chooser_get_use_alpha(chooser: PGtkColorChooser): Tgboolean; cdecl; external gtklib;
-procedure gtk_color_chooser_set_use_alpha(chooser: PGtkColorChooser; use_alpha: Tgboolean); cdecl; external gtklib;
-procedure gtk_color_chooser_add_palette(chooser: PGtkColorChooser; orientation: TGtkOrientation; colors_per_line: longint; n_colors: longint; colors: PGdkRGBA); cdecl; external gtklib;
+function gtk_color_chooser_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_color_chooser_get_rgba(chooser: PGtkColorChooser; color: PGdkRGBA); cdecl; external libgtk4;
+procedure gtk_color_chooser_set_rgba(chooser: PGtkColorChooser; color: PGdkRGBA); cdecl; external libgtk4;
+function gtk_color_chooser_get_use_alpha(chooser: PGtkColorChooser): Tgboolean; cdecl; external libgtk4;
+procedure gtk_color_chooser_set_use_alpha(chooser: PGtkColorChooser; use_alpha: Tgboolean); cdecl; external libgtk4;
+procedure gtk_color_chooser_add_palette(chooser: PGtkColorChooser; orientation: TGtkOrientation; colors_per_line: longint; n_colors: longint; colors: PGdkRGBA); cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 19:34:04 ===
 

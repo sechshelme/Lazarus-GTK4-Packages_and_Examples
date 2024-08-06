@@ -21,9 +21,9 @@ type
   end;
   PGtkSectionModelInterface = ^TGtkSectionModelInterface;
 
-function gtk_section_model_get_type: TGType; cdecl; external gtklib;
-procedure gtk_section_model_get_section(self: PGtkSectionModel; position: Tguint; out_start: Pguint; out_end: Pguint); cdecl; external gtklib;
-procedure gtk_section_model_sections_changed(self: PGtkSectionModel; position: Tguint; n_items: Tguint); cdecl; external gtklib;
+function gtk_section_model_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_section_model_get_section(self: PGtkSectionModel; position: Tguint; out_start: Pguint; out_end: Pguint); cdecl; external libgtk4;
+procedure gtk_section_model_sections_changed(self: PGtkSectionModel; position: Tguint; n_items: Tguint); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:44:41 ===
 

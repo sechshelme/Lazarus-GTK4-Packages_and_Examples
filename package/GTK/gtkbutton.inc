@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -23,23 +23,23 @@ type
   PGtkButtonClass = ^TGtkButtonClass;
 
 
-function gtk_button_get_type: TGType; cdecl; external gtklib;
-function gtk_button_new: PGtkWidget; cdecl; external gtklib;
-function gtk_button_new_with_label(_label: PChar): PGtkWidget; cdecl; external gtklib;
-function gtk_button_new_from_icon_name(icon_name: PChar): PGtkWidget; cdecl; external gtklib;
-function gtk_button_new_with_mnemonic(_label: PChar): PGtkWidget; cdecl; external gtklib;
-procedure gtk_button_set_has_frame(button: PGtkButton; has_frame: Tgboolean); cdecl; external gtklib;
-function gtk_button_get_has_frame(button: PGtkButton): Tgboolean; cdecl; external gtklib;
-procedure gtk_button_set_label(button: PGtkButton; _label: PChar); cdecl; external gtklib;
-function gtk_button_get_label(button: PGtkButton): PChar; cdecl; external gtklib;
-procedure gtk_button_set_use_underline(button: PGtkButton; use_underline: Tgboolean); cdecl; external gtklib;
-function gtk_button_get_use_underline(button: PGtkButton): Tgboolean; cdecl; external gtklib;
-procedure gtk_button_set_icon_name(button: PGtkButton; icon_name: PChar); cdecl; external gtklib;
-function gtk_button_get_icon_name(button: PGtkButton): PChar; cdecl; external gtklib;
-procedure gtk_button_set_child(button: PGtkButton; child: PGtkWidget); cdecl; external gtklib;
-function gtk_button_get_child(button: PGtkButton): PGtkWidget; cdecl; external gtklib;
-procedure gtk_button_set_can_shrink(button: PGtkButton; can_shrink: Tgboolean); cdecl; external gtklib;
-function gtk_button_get_can_shrink(button: PGtkButton): Tgboolean; cdecl; external gtklib;
+function gtk_button_get_type: TGType; cdecl; external libgtk4;
+function gtk_button_new: PGtkWidget; cdecl; external libgtk4;
+function gtk_button_new_with_label(_label: PChar): PGtkWidget; cdecl; external libgtk4;
+function gtk_button_new_from_icon_name(icon_name: PChar): PGtkWidget; cdecl; external libgtk4;
+function gtk_button_new_with_mnemonic(_label: PChar): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_button_set_has_frame(button: PGtkButton; has_frame: Tgboolean); cdecl; external libgtk4;
+function gtk_button_get_has_frame(button: PGtkButton): Tgboolean; cdecl; external libgtk4;
+procedure gtk_button_set_label(button: PGtkButton; _label: PChar); cdecl; external libgtk4;
+function gtk_button_get_label(button: PGtkButton): PChar; cdecl; external libgtk4;
+procedure gtk_button_set_use_underline(button: PGtkButton; use_underline: Tgboolean); cdecl; external libgtk4;
+function gtk_button_get_use_underline(button: PGtkButton): Tgboolean; cdecl; external libgtk4;
+procedure gtk_button_set_icon_name(button: PGtkButton; icon_name: PChar); cdecl; external libgtk4;
+function gtk_button_get_icon_name(button: PGtkButton): PChar; cdecl; external libgtk4;
+procedure gtk_button_set_child(button: PGtkButton; child: PGtkWidget); cdecl; external libgtk4;
+function gtk_button_get_child(button: PGtkButton): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_button_set_can_shrink(button: PGtkButton; can_shrink: Tgboolean); cdecl; external libgtk4;
+function gtk_button_get_can_shrink(button: PGtkButton): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 14-7-24 13:21:50 ===
 

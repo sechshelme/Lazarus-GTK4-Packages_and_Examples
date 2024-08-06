@@ -17,7 +17,7 @@ type
   end;
   PGdkBroadwaySurfaceClass = ^TGdkBroadwaySurfaceClass;
 
-function gdk_broadway_surface_get_type: TGType; cdecl; external gtklib;
+function gdk_broadway_surface_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 18:13:40 ===
 

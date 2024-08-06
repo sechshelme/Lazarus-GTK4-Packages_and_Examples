@@ -14,8 +14,8 @@ type
   end;
   PGdkDmabufTexture = ^TGdkDmabufTexture;
 
-function gdk_dmabuf_texture_get_type: TGType; cdecl; external gtklib;
-function gdk_dmabuf_error_quark: TGQuark; cdecl; external gtklib;
+function gdk_dmabuf_texture_get_type: TGType; cdecl; external libgtk4;
+function gdk_dmabuf_error_quark: TGQuark; cdecl; external libgtk4;
 
 function GDK_DMABUF_ERROR: TGQuark;
 

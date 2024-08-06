@@ -19,7 +19,7 @@ const
   GTK_DIALOG_ERROR_CANCELLED = 1;
   GTK_DIALOG_ERROR_DISMISSED = 2;
 
-function gtk_dialog_error_quark: TGQuark; cdecl; external gtklib;
+function gtk_dialog_error_quark: TGQuark; cdecl; external libgtk4;
 
 // === Konventiert am: 24-7-24 19:50:29 ===
 

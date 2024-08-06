@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -23,13 +23,13 @@ type
 
   TGtkDrawingAreaDrawFunc = procedure(drawing_area: PGtkDrawingArea; cr: Pcairo_t; Width: longint; Height: longint; user_data: Tgpointer); cdecl;
 
-function gtk_drawing_area_get_type: TGType; cdecl; external gtklib;
-function gtk_drawing_area_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_drawing_area_set_content_width(self: PGtkDrawingArea; Width: longint); cdecl; external gtklib;
-function gtk_drawing_area_get_content_width(self: PGtkDrawingArea): longint; cdecl; external gtklib;
-procedure gtk_drawing_area_set_content_height(self: PGtkDrawingArea; Height: longint); cdecl; external gtklib;
-function gtk_drawing_area_get_content_height(self: PGtkDrawingArea): longint; cdecl; external gtklib;
-procedure gtk_drawing_area_set_draw_func(self: PGtkDrawingArea; draw_func: TGtkDrawingAreaDrawFunc; user_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external gtklib;
+function gtk_drawing_area_get_type: TGType; cdecl; external libgtk4;
+function gtk_drawing_area_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_drawing_area_set_content_width(self: PGtkDrawingArea; Width: longint); cdecl; external libgtk4;
+function gtk_drawing_area_get_content_width(self: PGtkDrawingArea): longint; cdecl; external libgtk4;
+procedure gtk_drawing_area_set_content_height(self: PGtkDrawingArea; Height: longint); cdecl; external libgtk4;
+function gtk_drawing_area_get_content_height(self: PGtkDrawingArea): longint; cdecl; external libgtk4;
+procedure gtk_drawing_area_set_draw_func(self: PGtkDrawingArea; draw_func: TGtkDrawingAreaDrawFunc; user_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external libgtk4;
 
 // === Konventiert am: 25-7-24 17:33:00 ===
 

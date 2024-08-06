@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -25,35 +25,35 @@ type
     padding: array[0..6] of Tgpointer;
   end;
 
-function gtk_combo_box_get_type: TGType; cdecl; external gtklib;
-function gtk_combo_box_new: PGtkWidget; cdecl; external gtklib;
-function gtk_combo_box_new_with_entry: PGtkWidget; cdecl; external gtklib;
-function gtk_combo_box_new_with_model(model: PGtkTreeModel): PGtkWidget; cdecl; external gtklib;
-function gtk_combo_box_new_with_model_and_entry(model: PGtkTreeModel): PGtkWidget; cdecl; external gtklib;
-function gtk_combo_box_get_active(combo_box: PGtkComboBox): longint; cdecl; external gtklib;
-procedure gtk_combo_box_set_active(combo_box: PGtkComboBox; index_: longint); cdecl; external gtklib;
-function gtk_combo_box_get_active_iter(combo_box: PGtkComboBox; iter: PGtkTreeIter): Tgboolean; cdecl; external gtklib;
-procedure gtk_combo_box_set_active_iter(combo_box: PGtkComboBox; iter: PGtkTreeIter); cdecl; external gtklib;
-procedure gtk_combo_box_set_model(combo_box: PGtkComboBox; model: PGtkTreeModel); cdecl; external gtklib;
-function gtk_combo_box_get_model(combo_box: PGtkComboBox): PGtkTreeModel; cdecl; external gtklib;
-function gtk_combo_box_get_row_separator_func(combo_box: PGtkComboBox): TGtkTreeViewRowSeparatorFunc; cdecl; external gtklib;
-procedure gtk_combo_box_set_row_separator_func(combo_box: PGtkComboBox; func: TGtkTreeViewRowSeparatorFunc; Data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external gtklib;
-procedure gtk_combo_box_set_button_sensitivity(combo_box: PGtkComboBox; sensitivity: TGtkSensitivityType); cdecl; external gtklib;
-function gtk_combo_box_get_button_sensitivity(combo_box: PGtkComboBox): TGtkSensitivityType; cdecl; external gtklib;
-function gtk_combo_box_get_has_entry(combo_box: PGtkComboBox): Tgboolean; cdecl; external gtklib;
-procedure gtk_combo_box_set_entry_text_column(combo_box: PGtkComboBox; text_column: longint); cdecl; external gtklib;
-function gtk_combo_box_get_entry_text_column(combo_box: PGtkComboBox): longint; cdecl; external gtklib;
-procedure gtk_combo_box_set_popup_fixed_width(combo_box: PGtkComboBox; fixed: Tgboolean); cdecl; external gtklib;
-function gtk_combo_box_get_popup_fixed_width(combo_box: PGtkComboBox): Tgboolean; cdecl; external gtklib;
-procedure gtk_combo_box_popup(combo_box: PGtkComboBox); cdecl; external gtklib;
-procedure gtk_combo_box_popup_for_device(combo_box: PGtkComboBox; device: PGdkDevice); cdecl; external gtklib;
-procedure gtk_combo_box_popdown(combo_box: PGtkComboBox); cdecl; external gtklib;
-function gtk_combo_box_get_id_column(combo_box: PGtkComboBox): longint; cdecl; external gtklib;
-procedure gtk_combo_box_set_id_column(combo_box: PGtkComboBox; id_column: longint); cdecl; external gtklib;
-function gtk_combo_box_get_active_id(combo_box: PGtkComboBox): PChar; cdecl; external gtklib;
-function gtk_combo_box_set_active_id(combo_box: PGtkComboBox; active_id: PChar): Tgboolean; cdecl; external gtklib;
-procedure gtk_combo_box_set_child(combo_box: PGtkComboBox; child: PGtkWidget); cdecl; external gtklib;
-function gtk_combo_box_get_child(combo_box: PGtkComboBox): PGtkWidget; cdecl; external gtklib;
+function gtk_combo_box_get_type: TGType; cdecl; external libgtk4;
+function gtk_combo_box_new: PGtkWidget; cdecl; external libgtk4;
+function gtk_combo_box_new_with_entry: PGtkWidget; cdecl; external libgtk4;
+function gtk_combo_box_new_with_model(model: PGtkTreeModel): PGtkWidget; cdecl; external libgtk4;
+function gtk_combo_box_new_with_model_and_entry(model: PGtkTreeModel): PGtkWidget; cdecl; external libgtk4;
+function gtk_combo_box_get_active(combo_box: PGtkComboBox): longint; cdecl; external libgtk4;
+procedure gtk_combo_box_set_active(combo_box: PGtkComboBox; index_: longint); cdecl; external libgtk4;
+function gtk_combo_box_get_active_iter(combo_box: PGtkComboBox; iter: PGtkTreeIter): Tgboolean; cdecl; external libgtk4;
+procedure gtk_combo_box_set_active_iter(combo_box: PGtkComboBox; iter: PGtkTreeIter); cdecl; external libgtk4;
+procedure gtk_combo_box_set_model(combo_box: PGtkComboBox; model: PGtkTreeModel); cdecl; external libgtk4;
+function gtk_combo_box_get_model(combo_box: PGtkComboBox): PGtkTreeModel; cdecl; external libgtk4;
+function gtk_combo_box_get_row_separator_func(combo_box: PGtkComboBox): TGtkTreeViewRowSeparatorFunc; cdecl; external libgtk4;
+procedure gtk_combo_box_set_row_separator_func(combo_box: PGtkComboBox; func: TGtkTreeViewRowSeparatorFunc; Data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external libgtk4;
+procedure gtk_combo_box_set_button_sensitivity(combo_box: PGtkComboBox; sensitivity: TGtkSensitivityType); cdecl; external libgtk4;
+function gtk_combo_box_get_button_sensitivity(combo_box: PGtkComboBox): TGtkSensitivityType; cdecl; external libgtk4;
+function gtk_combo_box_get_has_entry(combo_box: PGtkComboBox): Tgboolean; cdecl; external libgtk4;
+procedure gtk_combo_box_set_entry_text_column(combo_box: PGtkComboBox; text_column: longint); cdecl; external libgtk4;
+function gtk_combo_box_get_entry_text_column(combo_box: PGtkComboBox): longint; cdecl; external libgtk4;
+procedure gtk_combo_box_set_popup_fixed_width(combo_box: PGtkComboBox; fixed: Tgboolean); cdecl; external libgtk4;
+function gtk_combo_box_get_popup_fixed_width(combo_box: PGtkComboBox): Tgboolean; cdecl; external libgtk4;
+procedure gtk_combo_box_popup(combo_box: PGtkComboBox); cdecl; external libgtk4;
+procedure gtk_combo_box_popup_for_device(combo_box: PGtkComboBox; device: PGdkDevice); cdecl; external libgtk4;
+procedure gtk_combo_box_popdown(combo_box: PGtkComboBox); cdecl; external libgtk4;
+function gtk_combo_box_get_id_column(combo_box: PGtkComboBox): longint; cdecl; external libgtk4;
+procedure gtk_combo_box_set_id_column(combo_box: PGtkComboBox; id_column: longint); cdecl; external libgtk4;
+function gtk_combo_box_get_active_id(combo_box: PGtkComboBox): PChar; cdecl; external libgtk4;
+function gtk_combo_box_set_active_id(combo_box: PGtkComboBox; active_id: PChar): Tgboolean; cdecl; external libgtk4;
+procedure gtk_combo_box_set_child(combo_box: PGtkComboBox; child: PGtkWidget); cdecl; external libgtk4;
+function gtk_combo_box_get_child(combo_box: PGtkComboBox): PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 15:11:57 ===
 

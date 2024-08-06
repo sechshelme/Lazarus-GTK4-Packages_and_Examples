@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,9 +20,9 @@ type
   end;
   PGtkStringObjectClass = ^TGtkStringObjectClass;
 
-function gtk_string_object_get_type: TGType; cdecl; external gtklib;
-function gtk_string_object_new(_string: PChar): PGtkStringObject; cdecl; external gtklib;
-function gtk_string_object_get_string(self: PGtkStringObject): PChar; cdecl; external gtklib;
+function gtk_string_object_get_type: TGType; cdecl; external libgtk4;
+function gtk_string_object_new(_string: PChar): PGtkStringObject; cdecl; external libgtk4;
+function gtk_string_object_get_string(self: PGtkStringObject): PChar; cdecl; external libgtk4;
 
 {G_DECLARE_FINAL_TYPE (GtkStringList, gtk_string_list, GTK, STRING_LIST, GObject) }
 type
@@ -35,13 +35,13 @@ type
   end;
   PGtkStringListClass = ^TGtkStringListClass;
 
-function gtk_string_list_get_type: TGType; cdecl; external gtklib;
-function gtk_string_list_new(strings: PPchar): PGtkStringList; cdecl; external gtklib;
-procedure gtk_string_list_append(self: PGtkStringList; _string: PChar); cdecl; external gtklib;
-procedure gtk_string_list_take(self: PGtkStringList; _string: PChar); cdecl; external gtklib;
-procedure gtk_string_list_remove(self: PGtkStringList; position: Tguint); cdecl; external gtklib;
-procedure gtk_string_list_splice(self: PGtkStringList; position: Tguint; n_removals: Tguint; additions: PPchar); cdecl; external gtklib;
-function gtk_string_list_get_string(self: PGtkStringList; position: Tguint): PChar; cdecl; external gtklib;
+function gtk_string_list_get_type: TGType; cdecl; external libgtk4;
+function gtk_string_list_new(strings: PPchar): PGtkStringList; cdecl; external libgtk4;
+procedure gtk_string_list_append(self: PGtkStringList; _string: PChar); cdecl; external libgtk4;
+procedure gtk_string_list_take(self: PGtkStringList; _string: PChar); cdecl; external libgtk4;
+procedure gtk_string_list_remove(self: PGtkStringList; position: Tguint); cdecl; external libgtk4;
+procedure gtk_string_list_splice(self: PGtkStringList; position: Tguint; n_removals: Tguint; additions: PPchar); cdecl; external libgtk4;
+function gtk_string_list_get_string(self: PGtkStringList; position: Tguint): PChar; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 17:43:36 ===
 

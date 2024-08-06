@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -38,18 +38,18 @@ type
   PGtkEntryBufferClass = ^TGtkEntryBufferClass;
 
 
-function gtk_entry_buffer_get_type: TGType; cdecl; external gtklib;
-function gtk_entry_buffer_new(initial_chars: PChar; n_initial_chars: longint): PGtkEntryBuffer; cdecl; external gtklib;
-function gtk_entry_buffer_get_bytes(buffer: PGtkEntryBuffer): Tgsize; cdecl; external gtklib;
-function gtk_entry_buffer_get_length(buffer: PGtkEntryBuffer): Tguint; cdecl; external gtklib;
-function gtk_entry_buffer_get_text(buffer: PGtkEntryBuffer): PChar; cdecl; external gtklib;
-procedure gtk_entry_buffer_set_text(buffer: PGtkEntryBuffer; chars: PChar; n_chars: longint); cdecl; external gtklib;
-procedure gtk_entry_buffer_set_max_length(buffer: PGtkEntryBuffer; max_length: longint); cdecl; external gtklib;
-function gtk_entry_buffer_get_max_length(buffer: PGtkEntryBuffer): longint; cdecl; external gtklib;
-function gtk_entry_buffer_insert_text(buffer: PGtkEntryBuffer; position: Tguint; chars: PChar; n_chars: longint): Tguint; cdecl; external gtklib;
-function gtk_entry_buffer_delete_text(buffer: PGtkEntryBuffer; position: Tguint; n_chars: longint): Tguint; cdecl; external gtklib;
-procedure gtk_entry_buffer_emit_inserted_text(buffer: PGtkEntryBuffer; position: Tguint; chars: PChar; n_chars: Tguint); cdecl; external gtklib;
-procedure gtk_entry_buffer_emit_deleted_text(buffer: PGtkEntryBuffer; position: Tguint; n_chars: Tguint); cdecl; external gtklib;
+function gtk_entry_buffer_get_type: TGType; cdecl; external libgtk4;
+function gtk_entry_buffer_new(initial_chars: PChar; n_initial_chars: longint): PGtkEntryBuffer; cdecl; external libgtk4;
+function gtk_entry_buffer_get_bytes(buffer: PGtkEntryBuffer): Tgsize; cdecl; external libgtk4;
+function gtk_entry_buffer_get_length(buffer: PGtkEntryBuffer): Tguint; cdecl; external libgtk4;
+function gtk_entry_buffer_get_text(buffer: PGtkEntryBuffer): PChar; cdecl; external libgtk4;
+procedure gtk_entry_buffer_set_text(buffer: PGtkEntryBuffer; chars: PChar; n_chars: longint); cdecl; external libgtk4;
+procedure gtk_entry_buffer_set_max_length(buffer: PGtkEntryBuffer; max_length: longint); cdecl; external libgtk4;
+function gtk_entry_buffer_get_max_length(buffer: PGtkEntryBuffer): longint; cdecl; external libgtk4;
+function gtk_entry_buffer_insert_text(buffer: PGtkEntryBuffer; position: Tguint; chars: PChar; n_chars: longint): Tguint; cdecl; external libgtk4;
+function gtk_entry_buffer_delete_text(buffer: PGtkEntryBuffer; position: Tguint; n_chars: longint): Tguint; cdecl; external libgtk4;
+procedure gtk_entry_buffer_emit_inserted_text(buffer: PGtkEntryBuffer; position: Tguint; chars: PChar; n_chars: Tguint); cdecl; external libgtk4;
+procedure gtk_entry_buffer_emit_deleted_text(buffer: PGtkEntryBuffer; position: Tguint; n_chars: Tguint); cdecl; external libgtk4;
 
 // === Konventiert am: 21-7-24 15:36:09 ===
 

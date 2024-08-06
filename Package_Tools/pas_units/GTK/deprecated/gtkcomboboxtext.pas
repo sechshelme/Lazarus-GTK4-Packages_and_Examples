@@ -14,18 +14,18 @@ type
   end;
   PGtkComboBoxText = ^TGtkComboBoxText;
 
-function gtk_combo_box_text_get_type: TGType; cdecl; external gtklib;
-function gtk_combo_box_text_new: PGtkWidget; cdecl; external gtklib;
-function gtk_combo_box_text_new_with_entry: PGtkWidget; cdecl; external gtklib;
-procedure gtk_combo_box_text_append_text(combo_box: PGtkComboBoxText; Text: PChar); cdecl; external gtklib;
-procedure gtk_combo_box_text_insert_text(combo_box: PGtkComboBoxText; position: longint; Text: PChar); cdecl; external gtklib;
-procedure gtk_combo_box_text_prepend_text(combo_box: PGtkComboBoxText; Text: PChar); cdecl; external gtklib;
-procedure gtk_combo_box_text_remove(combo_box: PGtkComboBoxText; position: longint); cdecl; external gtklib;
-procedure gtk_combo_box_text_remove_all(combo_box: PGtkComboBoxText); cdecl; external gtklib;
-function gtk_combo_box_text_get_active_text(combo_box: PGtkComboBoxText): PChar; cdecl; external gtklib;
-procedure gtk_combo_box_text_insert(combo_box: PGtkComboBoxText; position: longint; id: PChar; Text: PChar); cdecl; external gtklib;
-procedure gtk_combo_box_text_append(combo_box: PGtkComboBoxText; id: PChar; Text: PChar); cdecl; external gtklib;
-procedure gtk_combo_box_text_prepend(combo_box: PGtkComboBoxText; id: PChar; Text: PChar); cdecl; external gtklib;
+function gtk_combo_box_text_get_type: TGType; cdecl; external libgtk4;
+function gtk_combo_box_text_new: PGtkWidget; cdecl; external libgtk4;
+function gtk_combo_box_text_new_with_entry: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_combo_box_text_append_text(combo_box: PGtkComboBoxText; Text: PChar); cdecl; external libgtk4;
+procedure gtk_combo_box_text_insert_text(combo_box: PGtkComboBoxText; position: longint; Text: PChar); cdecl; external libgtk4;
+procedure gtk_combo_box_text_prepend_text(combo_box: PGtkComboBoxText; Text: PChar); cdecl; external libgtk4;
+procedure gtk_combo_box_text_remove(combo_box: PGtkComboBoxText; position: longint); cdecl; external libgtk4;
+procedure gtk_combo_box_text_remove_all(combo_box: PGtkComboBoxText); cdecl; external libgtk4;
+function gtk_combo_box_text_get_active_text(combo_box: PGtkComboBoxText): PChar; cdecl; external libgtk4;
+procedure gtk_combo_box_text_insert(combo_box: PGtkComboBoxText; position: longint; id: PChar; Text: PChar); cdecl; external libgtk4;
+procedure gtk_combo_box_text_append(combo_box: PGtkComboBoxText; id: PChar; Text: PChar); cdecl; external libgtk4;
+procedure gtk_combo_box_text_prepend(combo_box: PGtkComboBoxText; id: PChar; Text: PChar); cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 15:12:09 ===
 

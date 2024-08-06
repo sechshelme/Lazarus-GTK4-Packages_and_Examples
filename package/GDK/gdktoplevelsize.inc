@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -13,11 +13,11 @@ type
   end;
   PGdkToplevelSize = ^TGdkToplevelSize;
 
-function gdk_toplevel_size_get_type: TGType; cdecl; external gtklib;
-procedure gdk_toplevel_size_get_bounds(size: PGdkToplevelSize; bounds_width: Plongint; bounds_height: Plongint); cdecl; external gtklib;
-procedure gdk_toplevel_size_set_size(size: PGdkToplevelSize; Width: longint; Height: longint); cdecl; external gtklib;
-procedure gdk_toplevel_size_set_min_size(size: PGdkToplevelSize; min_width: longint; min_height: longint); cdecl; external gtklib;
-procedure gdk_toplevel_size_set_shadow_width(size: PGdkToplevelSize; left: longint; right: longint; top: longint; bottom: longint); cdecl; external gtklib;
+function gdk_toplevel_size_get_type: TGType; cdecl; external libgtk4;
+procedure gdk_toplevel_size_get_bounds(size: PGdkToplevelSize; bounds_width: Plongint; bounds_height: Plongint); cdecl; external libgtk4;
+procedure gdk_toplevel_size_set_size(size: PGdkToplevelSize; Width: longint; Height: longint); cdecl; external libgtk4;
+procedure gdk_toplevel_size_set_min_size(size: PGdkToplevelSize; min_width: longint; min_height: longint); cdecl; external libgtk4;
+procedure gdk_toplevel_size_set_shadow_width(size: PGdkToplevelSize; left: longint; right: longint; top: longint; bottom: longint); cdecl; external libgtk4;
 
 // === Konventiert am: 30-7-24 19:36:10 ===
 

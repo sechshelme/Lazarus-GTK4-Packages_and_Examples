@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,33 +20,33 @@ type
   end;
   PGtkGridClass = ^TGtkGridClass;
 
-function gtk_grid_get_type: TGType; cdecl; external gtklib;
-function gtk_grid_new: PGtkWidget; cdecl; external gtklib;
+function gtk_grid_get_type: TGType; cdecl; external libgtk4;
+function gtk_grid_new: PGtkWidget; cdecl; external libgtk4;
 procedure gtk_grid_attach(grid: PGtkGrid; child: PGtkWidget; column: longint; row: longint; Width: longint;
-  Height: longint); cdecl; external gtklib;
+  Height: longint); cdecl; external libgtk4;
 procedure gtk_grid_attach_next_to(grid: PGtkGrid; child: PGtkWidget; sibling: PGtkWidget; side: TGtkPositionType; Width: longint;
-  Height: longint); cdecl; external gtklib;
-function gtk_grid_get_child_at(grid: PGtkGrid; column: longint; row: longint): PGtkWidget; cdecl; external gtklib;
-procedure gtk_grid_remove(grid: PGtkGrid; child: PGtkWidget); cdecl; external gtklib;
-procedure gtk_grid_insert_row(grid: PGtkGrid; position: longint); cdecl; external gtklib;
-procedure gtk_grid_insert_column(grid: PGtkGrid; position: longint); cdecl; external gtklib;
-procedure gtk_grid_remove_row(grid: PGtkGrid; position: longint); cdecl; external gtklib;
-procedure gtk_grid_remove_column(grid: PGtkGrid; position: longint); cdecl; external gtklib;
-procedure gtk_grid_insert_next_to(grid: PGtkGrid; sibling: PGtkWidget; side: TGtkPositionType); cdecl; external gtklib;
-procedure gtk_grid_set_row_homogeneous(grid: PGtkGrid; homogeneous: Tgboolean); cdecl; external gtklib;
-function gtk_grid_get_row_homogeneous(grid: PGtkGrid): Tgboolean; cdecl; external gtklib;
-procedure gtk_grid_set_row_spacing(grid: PGtkGrid; spacing: Tguint); cdecl; external gtklib;
-function gtk_grid_get_row_spacing(grid: PGtkGrid): Tguint; cdecl; external gtklib;
-procedure gtk_grid_set_column_homogeneous(grid: PGtkGrid; homogeneous: Tgboolean); cdecl; external gtklib;
-function gtk_grid_get_column_homogeneous(grid: PGtkGrid): Tgboolean; cdecl; external gtklib;
-procedure gtk_grid_set_column_spacing(grid: PGtkGrid; spacing: Tguint); cdecl; external gtklib;
-function gtk_grid_get_column_spacing(grid: PGtkGrid): Tguint; cdecl; external gtklib;
-procedure gtk_grid_set_row_baseline_position(grid: PGtkGrid; row: longint; pos: TGtkBaselinePosition); cdecl; external gtklib;
-function gtk_grid_get_row_baseline_position(grid: PGtkGrid; row: longint): TGtkBaselinePosition; cdecl; external gtklib;
-procedure gtk_grid_set_baseline_row(grid: PGtkGrid; row: longint); cdecl; external gtklib;
-function gtk_grid_get_baseline_row(grid: PGtkGrid): longint; cdecl; external gtklib;
+  Height: longint); cdecl; external libgtk4;
+function gtk_grid_get_child_at(grid: PGtkGrid; column: longint; row: longint): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_grid_remove(grid: PGtkGrid; child: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_grid_insert_row(grid: PGtkGrid; position: longint); cdecl; external libgtk4;
+procedure gtk_grid_insert_column(grid: PGtkGrid; position: longint); cdecl; external libgtk4;
+procedure gtk_grid_remove_row(grid: PGtkGrid; position: longint); cdecl; external libgtk4;
+procedure gtk_grid_remove_column(grid: PGtkGrid; position: longint); cdecl; external libgtk4;
+procedure gtk_grid_insert_next_to(grid: PGtkGrid; sibling: PGtkWidget; side: TGtkPositionType); cdecl; external libgtk4;
+procedure gtk_grid_set_row_homogeneous(grid: PGtkGrid; homogeneous: Tgboolean); cdecl; external libgtk4;
+function gtk_grid_get_row_homogeneous(grid: PGtkGrid): Tgboolean; cdecl; external libgtk4;
+procedure gtk_grid_set_row_spacing(grid: PGtkGrid; spacing: Tguint); cdecl; external libgtk4;
+function gtk_grid_get_row_spacing(grid: PGtkGrid): Tguint; cdecl; external libgtk4;
+procedure gtk_grid_set_column_homogeneous(grid: PGtkGrid; homogeneous: Tgboolean); cdecl; external libgtk4;
+function gtk_grid_get_column_homogeneous(grid: PGtkGrid): Tgboolean; cdecl; external libgtk4;
+procedure gtk_grid_set_column_spacing(grid: PGtkGrid; spacing: Tguint); cdecl; external libgtk4;
+function gtk_grid_get_column_spacing(grid: PGtkGrid): Tguint; cdecl; external libgtk4;
+procedure gtk_grid_set_row_baseline_position(grid: PGtkGrid; row: longint; pos: TGtkBaselinePosition); cdecl; external libgtk4;
+function gtk_grid_get_row_baseline_position(grid: PGtkGrid; row: longint): TGtkBaselinePosition; cdecl; external libgtk4;
+procedure gtk_grid_set_baseline_row(grid: PGtkGrid; row: longint); cdecl; external libgtk4;
+function gtk_grid_get_baseline_row(grid: PGtkGrid): longint; cdecl; external libgtk4;
 procedure gtk_grid_query_child(grid: PGtkGrid; child: PGtkWidget; column: Plongint; row: Plongint; Width: Plongint;
-  Height: Plongint); cdecl; external gtklib;
+  Height: Plongint); cdecl; external libgtk4;
 
 // === Konventiert am: 19-7-24 16:53:48 ===
 

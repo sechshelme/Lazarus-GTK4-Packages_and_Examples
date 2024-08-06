@@ -14,8 +14,8 @@ type
   end;
   PGtkFileChooserWidget = ^TGtkFileChooserWidget;
 
-function gtk_file_chooser_widget_get_type: TGType; cdecl; external gtklib;
-function gtk_file_chooser_widget_new(action: TGtkFileChooserAction): PGtkWidget; cdecl; external gtklib;
+function gtk_file_chooser_widget_get_type: TGType; cdecl; external libgtk4;
+function gtk_file_chooser_widget_new(action: TGtkFileChooserAction): PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 19:42:52 ===
 

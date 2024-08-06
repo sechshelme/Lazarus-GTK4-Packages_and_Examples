@@ -36,24 +36,24 @@ type
   PGdkTimeCoord = ^TGdkTimeCoord;
   PPGdkTimeCoord = ^PGdkTimeCoord;
 
-function gdk_device_get_type: TGType; cdecl; external gtklib;
-function gdk_device_get_name(device: PGdkDevice): PChar; cdecl; external gtklib;
-function gdk_device_get_vendor_id(device: PGdkDevice): PChar; cdecl; external gtklib;
-function gdk_device_get_product_id(device: PGdkDevice): PChar; cdecl; external gtklib;
-function gdk_device_get_display(device: PGdkDevice): PGdkDisplay; cdecl; external gtklib;
-function gdk_device_get_seat(device: PGdkDevice): PGdkSeat; cdecl; external gtklib;
-function gdk_device_get_device_tool(device: PGdkDevice): PGdkDeviceTool; cdecl; external gtklib;
-function gdk_device_get_source(device: PGdkDevice): TGdkInputSource; cdecl; external gtklib;
-function gdk_device_get_has_cursor(device: PGdkDevice): Tgboolean; cdecl; external gtklib;
-function gdk_device_get_num_touches(device: PGdkDevice): Tguint; cdecl; external gtklib;
-function gdk_device_get_modifier_state(device: PGdkDevice): TGdkModifierType; cdecl; external gtklib;
-function gdk_device_get_direction(device: PGdkDevice): TPangoDirection; cdecl; external gtklib;
-function gdk_device_has_bidi_layouts(device: PGdkDevice): Tgboolean; cdecl; external gtklib;
-function gdk_device_get_caps_lock_state(device: PGdkDevice): Tgboolean; cdecl; external gtklib;
-function gdk_device_get_num_lock_state(device: PGdkDevice): Tgboolean; cdecl; external gtklib;
-function gdk_device_get_scroll_lock_state(device: PGdkDevice): Tgboolean; cdecl; external gtklib;
-function gdk_device_get_surface_at_position(device: PGdkDevice; win_x: Pdouble; win_y: Pdouble): PGdkSurface; cdecl; external gtklib;
-function gdk_device_get_timestamp(device: PGdkDevice): Tguint32; cdecl; external gtklib;
+function gdk_device_get_type: TGType; cdecl; external libgtk4;
+function gdk_device_get_name(device: PGdkDevice): PChar; cdecl; external libgtk4;
+function gdk_device_get_vendor_id(device: PGdkDevice): PChar; cdecl; external libgtk4;
+function gdk_device_get_product_id(device: PGdkDevice): PChar; cdecl; external libgtk4;
+function gdk_device_get_display(device: PGdkDevice): PGdkDisplay; cdecl; external libgtk4;
+function gdk_device_get_seat(device: PGdkDevice): PGdkSeat; cdecl; external libgtk4;
+function gdk_device_get_device_tool(device: PGdkDevice): PGdkDeviceTool; cdecl; external libgtk4;
+function gdk_device_get_source(device: PGdkDevice): TGdkInputSource; cdecl; external libgtk4;
+function gdk_device_get_has_cursor(device: PGdkDevice): Tgboolean; cdecl; external libgtk4;
+function gdk_device_get_num_touches(device: PGdkDevice): Tguint; cdecl; external libgtk4;
+function gdk_device_get_modifier_state(device: PGdkDevice): TGdkModifierType; cdecl; external libgtk4;
+function gdk_device_get_direction(device: PGdkDevice): TPangoDirection; cdecl; external libgtk4;
+function gdk_device_has_bidi_layouts(device: PGdkDevice): Tgboolean; cdecl; external libgtk4;
+function gdk_device_get_caps_lock_state(device: PGdkDevice): Tgboolean; cdecl; external libgtk4;
+function gdk_device_get_num_lock_state(device: PGdkDevice): Tgboolean; cdecl; external libgtk4;
+function gdk_device_get_scroll_lock_state(device: PGdkDevice): Tgboolean; cdecl; external libgtk4;
+function gdk_device_get_surface_at_position(device: PGdkDevice; win_x: Pdouble; win_y: Pdouble): PGdkSurface; cdecl; external libgtk4;
+function gdk_device_get_timestamp(device: PGdkDevice): Tguint32; cdecl; external libgtk4;
 
 // === Konventiert am: 31-7-24 19:15:07 ===
 

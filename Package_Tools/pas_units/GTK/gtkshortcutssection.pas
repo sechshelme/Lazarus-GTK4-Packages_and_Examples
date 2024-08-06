@@ -20,8 +20,8 @@ type
   end;
   PGtkShortcutsSectionClass = ^TGtkShortcutsSectionClass;
 
-function gtk_shortcuts_section_get_type: TGType; cdecl; external gtklib;
-procedure gtk_shortcuts_section_add_group(self: PGtkShortcutsSection; group: PGtkShortcutsGroup); cdecl; external gtklib;
+function gtk_shortcuts_section_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_shortcuts_section_add_group(self: PGtkShortcutsSection; group: PGtkShortcutsGroup); cdecl; external libgtk4;
 
 // === Konventiert am: 21-7-24 13:27:07 ===
 

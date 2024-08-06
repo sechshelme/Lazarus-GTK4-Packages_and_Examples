@@ -21,12 +21,12 @@ type
   end;
   PGtkUriLauncherClass = ^TGtkUriLauncherClass;
 
-function gtk_uri_launcher_get_type: TGType; cdecl; external gtklib;
-function gtk_uri_launcher_new(uri: PChar): PGtkUriLauncher; cdecl; external gtklib;
-function gtk_uri_launcher_get_uri(self: PGtkUriLauncher): PChar; cdecl; external gtklib;
-procedure gtk_uri_launcher_set_uri(self: PGtkUriLauncher; uri: PChar); cdecl; external gtklib;
-procedure gtk_uri_launcher_launch(self: PGtkUriLauncher; parent: PGtkWindow; cancellable: PGCancellable; callback: TGAsyncReadyCallback; user_data: Tgpointer); cdecl; external gtklib;
-function gtk_uri_launcher_launch_finish(self: PGtkUriLauncher; Result: PGAsyncResult; error: PPGError): Tgboolean; cdecl; external gtklib;
+function gtk_uri_launcher_get_type: TGType; cdecl; external libgtk4;
+function gtk_uri_launcher_new(uri: PChar): PGtkUriLauncher; cdecl; external libgtk4;
+function gtk_uri_launcher_get_uri(self: PGtkUriLauncher): PChar; cdecl; external libgtk4;
+procedure gtk_uri_launcher_set_uri(self: PGtkUriLauncher; uri: PChar); cdecl; external libgtk4;
+procedure gtk_uri_launcher_launch(self: PGtkUriLauncher; parent: PGtkWindow; cancellable: PGCancellable; callback: TGAsyncReadyCallback; user_data: Tgpointer); cdecl; external libgtk4;
+function gtk_uri_launcher_launch_finish(self: PGtkUriLauncher; Result: PGAsyncResult; error: PPGError): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 17:06:49 ===
 

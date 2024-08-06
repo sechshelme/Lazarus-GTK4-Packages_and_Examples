@@ -21,14 +21,14 @@ type
   end;
   PGtkBookmarkListClass = ^TGtkBookmarkListClass;
 
-function gtk_bookmark_list_get_type: TGType; cdecl; external gtklib;
-function gtk_bookmark_list_new(filename:Pchar; attributes:Pchar):PGtkBookmarkList;cdecl;external gtklib;
-function gtk_bookmark_list_get_filename(self:PGtkBookmarkList):Pchar;cdecl;external gtklib;
-procedure gtk_bookmark_list_set_attributes(self:PGtkBookmarkList; attributes:Pchar);cdecl;external gtklib;
-function gtk_bookmark_list_get_attributes(self:PGtkBookmarkList):Pchar;cdecl;external gtklib;
-procedure gtk_bookmark_list_set_io_priority(self:PGtkBookmarkList; io_priority:longint);cdecl;external gtklib;
-function gtk_bookmark_list_get_io_priority(self:PGtkBookmarkList):longint;cdecl;external gtklib;
-function gtk_bookmark_list_is_loading(self:PGtkBookmarkList):Tgboolean;cdecl;external gtklib;
+function gtk_bookmark_list_get_type: TGType; cdecl; external libgtk4;
+function gtk_bookmark_list_new(filename:Pchar; attributes:Pchar):PGtkBookmarkList;cdecl;external libgtk4;
+function gtk_bookmark_list_get_filename(self:PGtkBookmarkList):Pchar;cdecl;external libgtk4;
+procedure gtk_bookmark_list_set_attributes(self:PGtkBookmarkList; attributes:Pchar);cdecl;external libgtk4;
+function gtk_bookmark_list_get_attributes(self:PGtkBookmarkList):Pchar;cdecl;external libgtk4;
+procedure gtk_bookmark_list_set_io_priority(self:PGtkBookmarkList; io_priority:longint);cdecl;external libgtk4;
+function gtk_bookmark_list_get_io_priority(self:PGtkBookmarkList):longint;cdecl;external libgtk4;
+function gtk_bookmark_list_is_loading(self:PGtkBookmarkList):Tgboolean;cdecl;external libgtk4;
 
 // === Konventiert am: 17-7-24 19:24:27 ===
 

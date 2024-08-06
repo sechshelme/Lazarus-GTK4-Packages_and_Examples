@@ -18,12 +18,12 @@ type
   end;
   PGtkShortcutLabelClass = ^TGtkShortcutLabelClass;
 
-function gtk_shortcut_label_get_type: TGType; cdecl; external gtklib;
-function gtk_shortcut_label_new(accelerator: PChar): PGtkWidget; cdecl; external gtklib;
-function gtk_shortcut_label_get_accelerator(self: PGtkShortcutLabel): PChar; cdecl; external gtklib;
-procedure gtk_shortcut_label_set_accelerator(self: PGtkShortcutLabel; accelerator: PChar); cdecl; external gtklib;
-function gtk_shortcut_label_get_disabled_text(self: PGtkShortcutLabel): PChar; cdecl; external gtklib;
-procedure gtk_shortcut_label_set_disabled_text(self: PGtkShortcutLabel; disabled_text: PChar); cdecl; external gtklib;
+function gtk_shortcut_label_get_type: TGType; cdecl; external libgtk4;
+function gtk_shortcut_label_new(accelerator: PChar): PGtkWidget; cdecl; external libgtk4;
+function gtk_shortcut_label_get_accelerator(self: PGtkShortcutLabel): PChar; cdecl; external libgtk4;
+procedure gtk_shortcut_label_set_accelerator(self: PGtkShortcutLabel; accelerator: PChar); cdecl; external libgtk4;
+function gtk_shortcut_label_get_disabled_text(self: PGtkShortcutLabel): PChar; cdecl; external libgtk4;
+procedure gtk_shortcut_label_set_disabled_text(self: PGtkShortcutLabel; disabled_text: PChar); cdecl; external libgtk4;
 
 // === Konventiert am: 21-7-24 13:26:11 ===
 

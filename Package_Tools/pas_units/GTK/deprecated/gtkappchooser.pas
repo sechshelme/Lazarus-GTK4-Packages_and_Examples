@@ -14,10 +14,10 @@ type
   end;
   PGtkAppChooser = ^TGtkAppChooser;
 
-function gtk_app_chooser_get_type: TGType; cdecl; external gtklib;
-function gtk_app_chooser_get_app_info(self: PGtkAppChooser): PGAppInfo; cdecl; external gtklib;
-function gtk_app_chooser_get_content_type(self: PGtkAppChooser): PChar; cdecl; external gtklib;
-procedure gtk_app_chooser_refresh(self: PGtkAppChooser); cdecl; external gtklib;
+function gtk_app_chooser_get_type: TGType; cdecl; external libgtk4;
+function gtk_app_chooser_get_app_info(self: PGtkAppChooser): PGAppInfo; cdecl; external libgtk4;
+function gtk_app_chooser_get_content_type(self: PGtkAppChooser): PChar; cdecl; external libgtk4;
+procedure gtk_app_chooser_refresh(self: PGtkAppChooser); cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 14:55:34 ===
 

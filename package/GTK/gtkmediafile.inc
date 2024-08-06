@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -31,19 +31,19 @@ type
   end;
 
 
-function gtk_media_file_get_type: TGType; cdecl; external gtklib;
-function gtk_media_file_new: PGtkMediaStream; cdecl; external gtklib;
-function gtk_media_file_new_for_filename(filename: PChar): PGtkMediaStream; cdecl; external gtklib;
-function gtk_media_file_new_for_resource(resource_path: PChar): PGtkMediaStream; cdecl; external gtklib;
-function gtk_media_file_new_for_file(file_: PGFile): PGtkMediaStream; cdecl; external gtklib;
-function gtk_media_file_new_for_input_stream(stream: PGInputStream): PGtkMediaStream; cdecl; external gtklib;
-procedure gtk_media_file_clear(self: PGtkMediaFile); cdecl; external gtklib;
-procedure gtk_media_file_set_filename(self: PGtkMediaFile; filename: PChar); cdecl; external gtklib;
-procedure gtk_media_file_set_resource(self: PGtkMediaFile; resource_path: PChar); cdecl; external gtklib;
-procedure gtk_media_file_set_file(self: PGtkMediaFile; file_: PGFile); cdecl; external gtklib;
-function gtk_media_file_get_file(self: PGtkMediaFile): PGFile; cdecl; external gtklib;
-procedure gtk_media_file_set_input_stream(self: PGtkMediaFile; stream: PGInputStream); cdecl; external gtklib;
-function gtk_media_file_get_input_stream(self: PGtkMediaFile): PGInputStream; cdecl; external gtklib;
+function gtk_media_file_get_type: TGType; cdecl; external libgtk4;
+function gtk_media_file_new: PGtkMediaStream; cdecl; external libgtk4;
+function gtk_media_file_new_for_filename(filename: PChar): PGtkMediaStream; cdecl; external libgtk4;
+function gtk_media_file_new_for_resource(resource_path: PChar): PGtkMediaStream; cdecl; external libgtk4;
+function gtk_media_file_new_for_file(file_: PGFile): PGtkMediaStream; cdecl; external libgtk4;
+function gtk_media_file_new_for_input_stream(stream: PGInputStream): PGtkMediaStream; cdecl; external libgtk4;
+procedure gtk_media_file_clear(self: PGtkMediaFile); cdecl; external libgtk4;
+procedure gtk_media_file_set_filename(self: PGtkMediaFile; filename: PChar); cdecl; external libgtk4;
+procedure gtk_media_file_set_resource(self: PGtkMediaFile; resource_path: PChar); cdecl; external libgtk4;
+procedure gtk_media_file_set_file(self: PGtkMediaFile; file_: PGFile); cdecl; external libgtk4;
+function gtk_media_file_get_file(self: PGtkMediaFile): PGFile; cdecl; external libgtk4;
+procedure gtk_media_file_set_input_stream(self: PGtkMediaFile; stream: PGInputStream); cdecl; external libgtk4;
+function gtk_media_file_get_input_stream(self: PGtkMediaFile): PGInputStream; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 13:37:10 ===
 

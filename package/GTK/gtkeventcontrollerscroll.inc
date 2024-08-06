@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -30,11 +30,11 @@ const
   GTK_EVENT_CONTROLLER_SCROLL_BOTH_AXES = GTK_EVENT_CONTROLLER_SCROLL_VERTICAL or GTK_EVENT_CONTROLLER_SCROLL_HORIZONTAL;
 
 
-function gtk_event_controller_scroll_get_type: TGType; cdecl; external gtklib;
-function gtk_event_controller_scroll_new(flags: TGtkEventControllerScrollFlags): PGtkEventController; cdecl; external gtklib;
-procedure gtk_event_controller_scroll_set_flags(scroll: PGtkEventControllerScroll; flags: TGtkEventControllerScrollFlags); cdecl; external gtklib;
-function gtk_event_controller_scroll_get_flags(scroll: PGtkEventControllerScroll): TGtkEventControllerScrollFlags; cdecl; external gtklib;
-function gtk_event_controller_scroll_get_unit(scroll: PGtkEventControllerScroll): TGdkScrollUnit; cdecl; external gtklib;
+function gtk_event_controller_scroll_get_type: TGType; cdecl; external libgtk4;
+function gtk_event_controller_scroll_new(flags: TGtkEventControllerScrollFlags): PGtkEventController; cdecl; external libgtk4;
+procedure gtk_event_controller_scroll_set_flags(scroll: PGtkEventControllerScroll; flags: TGtkEventControllerScrollFlags); cdecl; external libgtk4;
+function gtk_event_controller_scroll_get_flags(scroll: PGtkEventControllerScroll): TGtkEventControllerScrollFlags; cdecl; external libgtk4;
+function gtk_event_controller_scroll_get_unit(scroll: PGtkEventControllerScroll): TGdkScrollUnit; cdecl; external libgtk4;
 
 // === Konventiert am: 25-7-24 19:23:07 ===
 

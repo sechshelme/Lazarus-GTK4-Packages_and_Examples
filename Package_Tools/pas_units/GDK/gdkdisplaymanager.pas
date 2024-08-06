@@ -14,13 +14,13 @@ type
   end;
   PGdkDisplayManager = ^TGdkDisplayManager;
 
-function gdk_display_manager_get_type: TGType; cdecl; external gtklib;
-function gdk_display_manager_get: PGdkDisplayManager; cdecl; external gtklib;
-function gdk_display_manager_get_default_display(manager: PGdkDisplayManager): PGdkDisplay; cdecl; external gtklib;
-procedure gdk_display_manager_set_default_display(manager: PGdkDisplayManager; display: PGdkDisplay); cdecl; external gtklib;
-function gdk_display_manager_list_displays(manager: PGdkDisplayManager): PGSList; cdecl; external gtklib;
-function gdk_display_manager_open_display(manager: PGdkDisplayManager; Name: PChar): PGdkDisplay; cdecl; external gtklib;
-procedure gdk_set_allowed_backends(backends: PChar); cdecl; external gtklib;
+function gdk_display_manager_get_type: TGType; cdecl; external libgtk4;
+function gdk_display_manager_get: PGdkDisplayManager; cdecl; external libgtk4;
+function gdk_display_manager_get_default_display(manager: PGdkDisplayManager): PGdkDisplay; cdecl; external libgtk4;
+procedure gdk_display_manager_set_default_display(manager: PGdkDisplayManager; display: PGdkDisplay); cdecl; external libgtk4;
+function gdk_display_manager_list_displays(manager: PGdkDisplayManager): PGSList; cdecl; external libgtk4;
+function gdk_display_manager_open_display(manager: PGdkDisplayManager; Name: PChar): PGdkDisplay; cdecl; external libgtk4;
+procedure gdk_set_allowed_backends(backends: PChar); cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 17:09:54 ===
 

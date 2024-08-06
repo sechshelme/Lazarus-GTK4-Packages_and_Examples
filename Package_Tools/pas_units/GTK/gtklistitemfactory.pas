@@ -19,7 +19,7 @@ type
   end;
   PGtkListItemFactoryClass = ^TGtkListItemFactoryClass;
 
-function gtk_list_item_factory_get_type: TGType; cdecl; external gtklib;
+function gtk_list_item_factory_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 26-7-24 20:23:54 ===
 

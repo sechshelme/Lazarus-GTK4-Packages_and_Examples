@@ -17,14 +17,14 @@ type
   end;
   PGdkWaylandDisplayClass = ^TGdkWaylandDisplayClass;
 
-function gdk_wayland_display_get_type: TGType; cdecl; external gtklib;
-function gdk_wayland_display_get_wl_display(display: PGdkDisplay): Pwl_display; cdecl; external gtklib;
-function gdk_wayland_display_get_wl_compositor(display: PGdkDisplay): Pwl_compositor; cdecl; external gtklib;
-procedure gdk_wayland_display_set_cursor_theme(display: PGdkDisplay; Name: PChar; size: longint); cdecl; external gtklib;
-function gdk_wayland_display_get_startup_notification_id(display: PGdkDisplay): PChar; cdecl; external gtklib;
-procedure gdk_wayland_display_set_startup_notification_id(display: PGdkDisplay; startup_id: PChar); cdecl; external gtklib;
-function gdk_wayland_display_query_registry(display: PGdkDisplay; global: PChar): Tgboolean; cdecl; external gtklib;
-function gdk_wayland_display_get_egl_display(display: PGdkDisplay): Tgpointer; cdecl; external gtklib;
+function gdk_wayland_display_get_type: TGType; cdecl; external libgtk4;
+function gdk_wayland_display_get_wl_display(display: PGdkDisplay): Pwl_display; cdecl; external libgtk4;
+function gdk_wayland_display_get_wl_compositor(display: PGdkDisplay): Pwl_compositor; cdecl; external libgtk4;
+procedure gdk_wayland_display_set_cursor_theme(display: PGdkDisplay; Name: PChar; size: longint); cdecl; external libgtk4;
+function gdk_wayland_display_get_startup_notification_id(display: PGdkDisplay): PChar; cdecl; external libgtk4;
+procedure gdk_wayland_display_set_startup_notification_id(display: PGdkDisplay; startup_id: PChar); cdecl; external libgtk4;
+function gdk_wayland_display_query_registry(display: PGdkDisplay; global: PChar): Tgboolean; cdecl; external libgtk4;
+function gdk_wayland_display_get_egl_display(display: PGdkDisplay): Tgpointer; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 19:19:18 ===
 

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -27,17 +27,17 @@ type
   PGtkCellAreaContextClass = ^TGtkCellAreaContextClass;
 
 
-function gtk_cell_area_context_get_type: TGType; cdecl; external gtklib;
-function gtk_cell_area_context_get_area(context: PGtkCellAreaContext): PGtkCellArea; cdecl; external gtklib;
-procedure gtk_cell_area_context_allocate(context: PGtkCellAreaContext; Width: longint; Height: longint); cdecl; external gtklib;
-procedure gtk_cell_area_context_reset(context: PGtkCellAreaContext); cdecl; external gtklib;
-procedure gtk_cell_area_context_get_preferred_width(context: PGtkCellAreaContext; minimum_width: Plongint; natural_width: Plongint); cdecl; external gtklib;
-procedure gtk_cell_area_context_get_preferred_height(context: PGtkCellAreaContext; minimum_height: Plongint; natural_height: Plongint); cdecl; external gtklib;
-procedure gtk_cell_area_context_get_preferred_height_for_width(context: PGtkCellAreaContext; Width: longint; minimum_height: Plongint; natural_height: Plongint); cdecl; external gtklib;
-procedure gtk_cell_area_context_get_preferred_width_for_height(context: PGtkCellAreaContext; Height: longint; minimum_width: Plongint; natural_width: Plongint); cdecl; external gtklib;
-procedure gtk_cell_area_context_get_allocation(context: PGtkCellAreaContext; Width: Plongint; Height: Plongint); cdecl; external gtklib;
-procedure gtk_cell_area_context_push_preferred_width(context: PGtkCellAreaContext; minimum_width: longint; natural_width: longint); cdecl; external gtklib;
-procedure gtk_cell_area_context_push_preferred_height(context: PGtkCellAreaContext; minimum_height: longint; natural_height: longint); cdecl; external gtklib;
+function gtk_cell_area_context_get_type: TGType; cdecl; external libgtk4;
+function gtk_cell_area_context_get_area(context: PGtkCellAreaContext): PGtkCellArea; cdecl; external libgtk4;
+procedure gtk_cell_area_context_allocate(context: PGtkCellAreaContext; Width: longint; Height: longint); cdecl; external libgtk4;
+procedure gtk_cell_area_context_reset(context: PGtkCellAreaContext); cdecl; external libgtk4;
+procedure gtk_cell_area_context_get_preferred_width(context: PGtkCellAreaContext; minimum_width: Plongint; natural_width: Plongint); cdecl; external libgtk4;
+procedure gtk_cell_area_context_get_preferred_height(context: PGtkCellAreaContext; minimum_height: Plongint; natural_height: Plongint); cdecl; external libgtk4;
+procedure gtk_cell_area_context_get_preferred_height_for_width(context: PGtkCellAreaContext; Width: longint; minimum_height: Plongint; natural_height: Plongint); cdecl; external libgtk4;
+procedure gtk_cell_area_context_get_preferred_width_for_height(context: PGtkCellAreaContext; Height: longint; minimum_width: Plongint; natural_width: Plongint); cdecl; external libgtk4;
+procedure gtk_cell_area_context_get_allocation(context: PGtkCellAreaContext; Width: Plongint; Height: Plongint); cdecl; external libgtk4;
+procedure gtk_cell_area_context_push_preferred_width(context: PGtkCellAreaContext; minimum_width: longint; natural_width: longint); cdecl; external libgtk4;
+procedure gtk_cell_area_context_push_preferred_height(context: PGtkCellAreaContext; minimum_height: longint; natural_height: longint); cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 16:59:32 ===
 

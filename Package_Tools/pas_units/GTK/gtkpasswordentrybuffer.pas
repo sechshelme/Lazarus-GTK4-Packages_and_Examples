@@ -21,8 +21,8 @@ type
   end;
   PGtkPasswordEntryBufferClass = ^TGtkPasswordEntryBufferClass;
 
-function gtk_password_entry_buffer_get_type: TGType; cdecl; external gtklib;
-function gtk_password_entry_buffer_new: PGtkEntryBuffer; cdecl; external gtklib;
+function gtk_password_entry_buffer_get_type: TGType; cdecl; external libgtk4;
+function gtk_password_entry_buffer_new: PGtkEntryBuffer; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:14:16 ===
 

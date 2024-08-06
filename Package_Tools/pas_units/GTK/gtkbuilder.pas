@@ -39,36 +39,36 @@ const
   GTK_BUILDER_ERROR_INVALID_FUNCTION = 14;
 
 
-function gtk_builder_error_quark: TGQuark; cdecl; external gtklib;
-function gtk_builder_get_type: TGType; cdecl; external gtklib;
-function gtk_builder_new: PGtkBuilder; cdecl; external gtklib;
-function gtk_builder_add_from_file(builder: PGtkBuilder; filename: PChar; error: PPGError): Tgboolean; cdecl; external gtklib;
-function gtk_builder_add_from_resource(builder: PGtkBuilder; resource_path: PChar; error: PPGError): Tgboolean; cdecl; external gtklib;
-function gtk_builder_add_from_string(builder: PGtkBuilder; buffer: PChar; length: Tgssize; error: PPGError): Tgboolean; cdecl; external gtklib;
-function gtk_builder_add_objects_from_file(builder: PGtkBuilder; filename: PChar; object_ids: PPchar; error: PPGError): Tgboolean; cdecl; external gtklib;
-function gtk_builder_add_objects_from_resource(builder: PGtkBuilder; resource_path: PChar; object_ids: PPchar; error: PPGError): Tgboolean; cdecl; external gtklib;
-function gtk_builder_add_objects_from_string(builder: PGtkBuilder; buffer: PChar; length: Tgssize; object_ids: PPchar; error: PPGError): Tgboolean; cdecl; external gtklib;
-function gtk_builder_get_object(builder: PGtkBuilder; Name: PChar): PGObject; cdecl; external gtklib;
-function gtk_builder_get_objects(builder: PGtkBuilder): PGSList; cdecl; external gtklib;
-procedure gtk_builder_expose_object(builder: PGtkBuilder; Name: PChar; obj: PGObject); cdecl; external gtklib;
-function gtk_builder_get_current_object(builder: PGtkBuilder): PGObject; cdecl; external gtklib;
-procedure gtk_builder_set_current_object(builder: PGtkBuilder; current_object: PGObject); cdecl; external gtklib;
-procedure gtk_builder_set_translation_domain(builder: PGtkBuilder; domain: PChar); cdecl; external gtklib;
-function gtk_builder_get_translation_domain(builder: PGtkBuilder): PChar; cdecl; external gtklib;
-function gtk_builder_get_scope(builder: PGtkBuilder): PGtkBuilderScope; cdecl; external gtklib;
-procedure gtk_builder_set_scope(builder: PGtkBuilder; scope: PGtkBuilderScope); cdecl; external gtklib;
-function gtk_builder_get_type_from_name(builder: PGtkBuilder; type_name: PChar): TGType; cdecl; external gtklib;
-function gtk_builder_value_from_string(builder: PGtkBuilder; pspec: PGParamSpec; _string: PChar; Value: PGValue; error: PPGError): Tgboolean; cdecl; external gtklib;
-function gtk_builder_value_from_string_type(builder: PGtkBuilder; _type: TGType; _string: PChar; Value: PGValue; error: PPGError): Tgboolean; cdecl; external gtklib;
-function gtk_builder_new_from_file(filename: PChar): PGtkBuilder; cdecl; external gtklib;
-function gtk_builder_new_from_resource(resource_path: PChar): PGtkBuilder; cdecl; external gtklib;
-function gtk_builder_new_from_string(_string: PChar; length: Tgssize): PGtkBuilder; cdecl; external gtklib;
-function gtk_builder_create_closure(builder: PGtkBuilder; function_name: PChar; flags: TGtkBuilderClosureFlags; obj: PGObject; error: PPGError): PGClosure; cdecl; external gtklib;
+function gtk_builder_error_quark: TGQuark; cdecl; external libgtk4;
+function gtk_builder_get_type: TGType; cdecl; external libgtk4;
+function gtk_builder_new: PGtkBuilder; cdecl; external libgtk4;
+function gtk_builder_add_from_file(builder: PGtkBuilder; filename: PChar; error: PPGError): Tgboolean; cdecl; external libgtk4;
+function gtk_builder_add_from_resource(builder: PGtkBuilder; resource_path: PChar; error: PPGError): Tgboolean; cdecl; external libgtk4;
+function gtk_builder_add_from_string(builder: PGtkBuilder; buffer: PChar; length: Tgssize; error: PPGError): Tgboolean; cdecl; external libgtk4;
+function gtk_builder_add_objects_from_file(builder: PGtkBuilder; filename: PChar; object_ids: PPchar; error: PPGError): Tgboolean; cdecl; external libgtk4;
+function gtk_builder_add_objects_from_resource(builder: PGtkBuilder; resource_path: PChar; object_ids: PPchar; error: PPGError): Tgboolean; cdecl; external libgtk4;
+function gtk_builder_add_objects_from_string(builder: PGtkBuilder; buffer: PChar; length: Tgssize; object_ids: PPchar; error: PPGError): Tgboolean; cdecl; external libgtk4;
+function gtk_builder_get_object(builder: PGtkBuilder; Name: PChar): PGObject; cdecl; external libgtk4;
+function gtk_builder_get_objects(builder: PGtkBuilder): PGSList; cdecl; external libgtk4;
+procedure gtk_builder_expose_object(builder: PGtkBuilder; Name: PChar; obj: PGObject); cdecl; external libgtk4;
+function gtk_builder_get_current_object(builder: PGtkBuilder): PGObject; cdecl; external libgtk4;
+procedure gtk_builder_set_current_object(builder: PGtkBuilder; current_object: PGObject); cdecl; external libgtk4;
+procedure gtk_builder_set_translation_domain(builder: PGtkBuilder; domain: PChar); cdecl; external libgtk4;
+function gtk_builder_get_translation_domain(builder: PGtkBuilder): PChar; cdecl; external libgtk4;
+function gtk_builder_get_scope(builder: PGtkBuilder): PGtkBuilderScope; cdecl; external libgtk4;
+procedure gtk_builder_set_scope(builder: PGtkBuilder; scope: PGtkBuilderScope); cdecl; external libgtk4;
+function gtk_builder_get_type_from_name(builder: PGtkBuilder; type_name: PChar): TGType; cdecl; external libgtk4;
+function gtk_builder_value_from_string(builder: PGtkBuilder; pspec: PGParamSpec; _string: PChar; Value: PGValue; error: PPGError): Tgboolean; cdecl; external libgtk4;
+function gtk_builder_value_from_string_type(builder: PGtkBuilder; _type: TGType; _string: PChar; Value: PGValue; error: PPGError): Tgboolean; cdecl; external libgtk4;
+function gtk_builder_new_from_file(filename: PChar): PGtkBuilder; cdecl; external libgtk4;
+function gtk_builder_new_from_resource(resource_path: PChar): PGtkBuilder; cdecl; external libgtk4;
+function gtk_builder_new_from_string(_string: PChar; length: Tgssize): PGtkBuilder; cdecl; external libgtk4;
+function gtk_builder_create_closure(builder: PGtkBuilder; function_name: PChar; flags: TGtkBuilderClosureFlags; obj: PGObject; error: PPGError): PGClosure; cdecl; external libgtk4;
 
 function GTK_BUILDER_ERROR: TGQuark;
 procedure GTK_BUILDER_WARN_INVALID_CHILD_TYPE(obj: Pointer; type_: PChar);
 
-function gtk_builder_extend_with_template(builder: PGtkBuilder; obj: PGObject; template_type: TGType; buffer: PChar; length: Tgssize; error: PPGError): Tgboolean; cdecl; external gtklib;
+function gtk_builder_extend_with_template(builder: PGtkBuilder; obj: PGObject; template_type: TGType; buffer: PChar; length: Tgssize; error: PPGError): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 17-7-24 16:47:52 ===
 

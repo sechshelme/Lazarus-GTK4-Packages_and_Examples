@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -24,27 +24,27 @@ type
   PGtkGLAreaClass = ^TGtkGLAreaClass;
 
 
-function gtk_gl_area_get_type: TGType; cdecl; external gtklib;
-function gtk_gl_area_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_gl_area_set_allowed_apis(area: PGtkGLArea; apis: TGdkGLAPI); cdecl; external gtklib;
-function gtk_gl_area_get_allowed_apis(area: PGtkGLArea): TGdkGLAPI; cdecl; external gtklib;
-function gtk_gl_area_get_api(area: PGtkGLArea): TGdkGLAPI; cdecl; external gtklib;
-procedure gtk_gl_area_set_use_es(area: PGtkGLArea; use_es: Tgboolean); cdecl; external gtklib;
-function gtk_gl_area_get_use_es(area: PGtkGLArea): Tgboolean; cdecl; external gtklib;
-procedure gtk_gl_area_set_required_version(area: PGtkGLArea; major: longint; minor: longint); cdecl; external gtklib;
-procedure gtk_gl_area_get_required_version(area: PGtkGLArea; major: Plongint; minor: Plongint); cdecl; external gtklib;
-function gtk_gl_area_get_has_depth_buffer(area: PGtkGLArea): Tgboolean; cdecl; external gtklib;
-procedure gtk_gl_area_set_has_depth_buffer(area: PGtkGLArea; has_depth_buffer: Tgboolean); cdecl; external gtklib;
-function gtk_gl_area_get_has_stencil_buffer(area: PGtkGLArea): Tgboolean; cdecl; external gtklib;
-procedure gtk_gl_area_set_has_stencil_buffer(area: PGtkGLArea; has_stencil_buffer: Tgboolean); cdecl; external gtklib;
-function gtk_gl_area_get_auto_render(area: PGtkGLArea): Tgboolean; cdecl; external gtklib;
-procedure gtk_gl_area_set_auto_render(area: PGtkGLArea; auto_render: Tgboolean); cdecl; external gtklib;
-procedure gtk_gl_area_queue_render(area: PGtkGLArea); cdecl; external gtklib;
-function gtk_gl_area_get_context(area: PGtkGLArea): PGdkGLContext; cdecl; external gtklib;
-procedure gtk_gl_area_make_current(area: PGtkGLArea); cdecl; external gtklib;
-procedure gtk_gl_area_attach_buffers(area: PGtkGLArea); cdecl; external gtklib;
-procedure gtk_gl_area_set_error(area: PGtkGLArea; error: PGError); cdecl; external gtklib;
-function gtk_gl_area_get_error(area: PGtkGLArea): PGError; cdecl; external gtklib;
+function gtk_gl_area_get_type: TGType; cdecl; external libgtk4;
+function gtk_gl_area_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_gl_area_set_allowed_apis(area: PGtkGLArea; apis: TGdkGLAPI); cdecl; external libgtk4;
+function gtk_gl_area_get_allowed_apis(area: PGtkGLArea): TGdkGLAPI; cdecl; external libgtk4;
+function gtk_gl_area_get_api(area: PGtkGLArea): TGdkGLAPI; cdecl; external libgtk4;
+procedure gtk_gl_area_set_use_es(area: PGtkGLArea; use_es: Tgboolean); cdecl; external libgtk4;
+function gtk_gl_area_get_use_es(area: PGtkGLArea): Tgboolean; cdecl; external libgtk4;
+procedure gtk_gl_area_set_required_version(area: PGtkGLArea; major: longint; minor: longint); cdecl; external libgtk4;
+procedure gtk_gl_area_get_required_version(area: PGtkGLArea; major: Plongint; minor: Plongint); cdecl; external libgtk4;
+function gtk_gl_area_get_has_depth_buffer(area: PGtkGLArea): Tgboolean; cdecl; external libgtk4;
+procedure gtk_gl_area_set_has_depth_buffer(area: PGtkGLArea; has_depth_buffer: Tgboolean); cdecl; external libgtk4;
+function gtk_gl_area_get_has_stencil_buffer(area: PGtkGLArea): Tgboolean; cdecl; external libgtk4;
+procedure gtk_gl_area_set_has_stencil_buffer(area: PGtkGLArea; has_stencil_buffer: Tgboolean); cdecl; external libgtk4;
+function gtk_gl_area_get_auto_render(area: PGtkGLArea): Tgboolean; cdecl; external libgtk4;
+procedure gtk_gl_area_set_auto_render(area: PGtkGLArea; auto_render: Tgboolean); cdecl; external libgtk4;
+procedure gtk_gl_area_queue_render(area: PGtkGLArea); cdecl; external libgtk4;
+function gtk_gl_area_get_context(area: PGtkGLArea): PGdkGLContext; cdecl; external libgtk4;
+procedure gtk_gl_area_make_current(area: PGtkGLArea); cdecl; external libgtk4;
+procedure gtk_gl_area_attach_buffers(area: PGtkGLArea); cdecl; external libgtk4;
+procedure gtk_gl_area_set_error(area: PGtkGLArea; error: PGError); cdecl; external libgtk4;
+function gtk_gl_area_get_error(area: PGtkGLArea): PGError; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 19:03:11 ===
 

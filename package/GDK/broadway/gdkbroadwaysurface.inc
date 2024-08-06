@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -16,7 +16,7 @@ type
   end;
   PGdkBroadwaySurfaceClass = ^TGdkBroadwaySurfaceClass;
 
-function gdk_broadway_surface_get_type: TGType; cdecl; external gtklib;
+function gdk_broadway_surface_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 18:13:40 ===
 

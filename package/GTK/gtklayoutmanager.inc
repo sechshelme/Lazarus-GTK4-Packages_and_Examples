@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -34,14 +34,14 @@ type
   //  PGtkLayoutManager = ^TGtkLayoutManager;
 
 
-function gtk_layout_manager_get_type: TGType; cdecl; external gtklib;
+function gtk_layout_manager_get_type: TGType; cdecl; external libgtk4;
 procedure gtk_layout_manager_measure(manager: PGtkLayoutManager; widget: PGtkWidget; orientation: TGtkOrientation; for_size: longint; minimum: Plongint;
-  natural: Plongint; minimum_baseline: Plongint; natural_baseline: Plongint); cdecl; external gtklib;
-procedure gtk_layout_manager_allocate(manager: PGtkLayoutManager; widget: PGtkWidget; Width: longint; Height: longint; baseline: longint); cdecl; external gtklib;
-function gtk_layout_manager_get_request_mode(manager: PGtkLayoutManager): TGtkSizeRequestMode; cdecl; external gtklib;
-function gtk_layout_manager_get_widget(manager: PGtkLayoutManager): PGtkWidget; cdecl; external gtklib;
-procedure gtk_layout_manager_layout_changed(manager: PGtkLayoutManager); cdecl; external gtklib;
-function gtk_layout_manager_get_layout_child(manager: PGtkLayoutManager; child: PGtkWidget): PGtkLayoutChild; cdecl; external gtklib;
+  natural: Plongint; minimum_baseline: Plongint; natural_baseline: Plongint); cdecl; external libgtk4;
+procedure gtk_layout_manager_allocate(manager: PGtkLayoutManager; widget: PGtkWidget; Width: longint; Height: longint; baseline: longint); cdecl; external libgtk4;
+function gtk_layout_manager_get_request_mode(manager: PGtkLayoutManager): TGtkSizeRequestMode; cdecl; external libgtk4;
+function gtk_layout_manager_get_widget(manager: PGtkLayoutManager): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_layout_manager_layout_changed(manager: PGtkLayoutManager); cdecl; external libgtk4;
+function gtk_layout_manager_get_layout_child(manager: PGtkLayoutManager; child: PGtkWidget): PGtkLayoutChild; cdecl; external libgtk4;
 
 // === Konventiert am: 17-7-24 13:39:39 ===
 

@@ -17,7 +17,7 @@ type
   end;
   PGdkBroadwayCursorClass = ^TGdkBroadwayCursorClass;
 
-function gdk_broadway_cursor_get_type: TGType; cdecl; external gtklib;
+function gdk_broadway_cursor_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 18:13:18 ===
 

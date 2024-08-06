@@ -21,13 +21,13 @@ type
   end;
   PGtkNativeInterface = ^TGtkNativeInterface;
 
-function gtk_native_get_type: TGType; cdecl; external gtklib;
-procedure gtk_native_realize(self: PGtkNative); cdecl; external gtklib;
-procedure gtk_native_unrealize(self: PGtkNative); cdecl; external gtklib;
-function gtk_native_get_for_surface(surface: PGdkSurface): PGtkNative; cdecl; external gtklib;
-function gtk_native_get_surface(self: PGtkNative): PGdkSurface; cdecl; external gtklib;
-function gtk_native_get_renderer(self: PGtkNative): PGskRenderer; cdecl; external gtklib;
-procedure gtk_native_get_surface_transform(self: PGtkNative; x: Pdouble; y: Pdouble); cdecl; external gtklib;
+function gtk_native_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_native_realize(self: PGtkNative); cdecl; external libgtk4;
+procedure gtk_native_unrealize(self: PGtkNative); cdecl; external libgtk4;
+function gtk_native_get_for_surface(surface: PGdkSurface): PGtkNative; cdecl; external libgtk4;
+function gtk_native_get_surface(self: PGtkNative): PGdkSurface; cdecl; external libgtk4;
+function gtk_native_get_renderer(self: PGtkNative): PGskRenderer; cdecl; external libgtk4;
+procedure gtk_native_get_surface_transform(self: PGtkNative; x: Pdouble; y: Pdouble); cdecl; external libgtk4;
 
 // === Konventiert am: 18-7-24 19:43:30 ===
 

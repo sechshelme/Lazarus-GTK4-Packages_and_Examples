@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -34,8 +34,8 @@ type
 
 { #define GTK_DEBUG_CHECK(type) G_UNLIKELY (gtk_get_debug_flags () & GTK_DEBUG_##type) }
 
-function gtk_get_debug_flags:TGtkDebugFlags;cdecl;external gtklib;
-procedure gtk_set_debug_flags(flags:TGtkDebugFlags);cdecl;external gtklib;
+function gtk_get_debug_flags:TGtkDebugFlags;cdecl;external libgtk4;
+procedure gtk_set_debug_flags(flags:TGtkDebugFlags);cdecl;external libgtk4;
 
 {$ENDIF read_interface}
 

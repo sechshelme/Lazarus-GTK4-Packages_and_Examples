@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -17,19 +17,19 @@ type
   end;
   PGtkDropTargetClass = ^TGtkDropTargetClass;
 
-function gtk_drop_target_get_type: TGType; cdecl; external gtklib;
-function gtk_drop_target_new(_type: TGType; actions: TGdkDragAction): PGtkDropTarget; cdecl; external gtklib;
-procedure gtk_drop_target_set_gtypes(self: PGtkDropTarget; types: PGType; n_types: Tgsize); cdecl; external gtklib;
-function gtk_drop_target_get_gtypes(self: PGtkDropTarget; n_types: Pgsize): PGType; cdecl; external gtklib;
-function gtk_drop_target_get_formats(self: PGtkDropTarget): PGdkContentFormats; cdecl; external gtklib;
-procedure gtk_drop_target_set_actions(self: PGtkDropTarget; actions: TGdkDragAction); cdecl; external gtklib;
-function gtk_drop_target_get_actions(self: PGtkDropTarget): TGdkDragAction; cdecl; external gtklib;
-procedure gtk_drop_target_set_preload(self: PGtkDropTarget; preload: Tgboolean); cdecl; external gtklib;
-function gtk_drop_target_get_preload(self: PGtkDropTarget): Tgboolean; cdecl; external gtklib;
-function gtk_drop_target_get_drop(self: PGtkDropTarget): PGdkDrop; cdecl; external gtklib;
-function gtk_drop_target_get_current_drop(self: PGtkDropTarget): PGdkDrop; cdecl; external gtklib;
-function gtk_drop_target_get_value(self: PGtkDropTarget): PGValue; cdecl; external gtklib;
-procedure gtk_drop_target_reject(self: PGtkDropTarget); cdecl; external gtklib;
+function gtk_drop_target_get_type: TGType; cdecl; external libgtk4;
+function gtk_drop_target_new(_type: TGType; actions: TGdkDragAction): PGtkDropTarget; cdecl; external libgtk4;
+procedure gtk_drop_target_set_gtypes(self: PGtkDropTarget; types: PGType; n_types: Tgsize); cdecl; external libgtk4;
+function gtk_drop_target_get_gtypes(self: PGtkDropTarget; n_types: Pgsize): PGType; cdecl; external libgtk4;
+function gtk_drop_target_get_formats(self: PGtkDropTarget): PGdkContentFormats; cdecl; external libgtk4;
+procedure gtk_drop_target_set_actions(self: PGtkDropTarget; actions: TGdkDragAction); cdecl; external libgtk4;
+function gtk_drop_target_get_actions(self: PGtkDropTarget): TGdkDragAction; cdecl; external libgtk4;
+procedure gtk_drop_target_set_preload(self: PGtkDropTarget; preload: Tgboolean); cdecl; external libgtk4;
+function gtk_drop_target_get_preload(self: PGtkDropTarget): Tgboolean; cdecl; external libgtk4;
+function gtk_drop_target_get_drop(self: PGtkDropTarget): PGdkDrop; cdecl; external libgtk4;
+function gtk_drop_target_get_current_drop(self: PGtkDropTarget): PGdkDrop; cdecl; external libgtk4;
+function gtk_drop_target_get_value(self: PGtkDropTarget): PGValue; cdecl; external libgtk4;
+procedure gtk_drop_target_reject(self: PGtkDropTarget); cdecl; external libgtk4;
 
 // === Konventiert am: 25-7-24 18:17:16 ===
 

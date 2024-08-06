@@ -18,7 +18,7 @@ type
   end;
   PGtkListBaseClass = ^TGtkListBaseClass;
 
-function gtk_list_base_get_type: TGType; cdecl; external gtklib;
+function gtk_list_base_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 19:13:01 ===
 

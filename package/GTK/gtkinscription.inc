@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -29,29 +29,29 @@ type
   end;
   PGtkInscriptionClass = ^TGtkInscriptionClass;
 
-function gtk_inscription_get_type: TGType; cdecl; external gtklib;
-function gtk_inscription_new(Text: PChar): PGtkWidget; cdecl; external gtklib;
-function gtk_inscription_get_text(self: PGtkInscription): PChar; cdecl; external gtklib;
-procedure gtk_inscription_set_text(self: PGtkInscription; Text: PChar); cdecl; external gtklib;
-function gtk_inscription_get_attributes(self: PGtkInscription): PPangoAttrList; cdecl; external gtklib;
-procedure gtk_inscription_set_attributes(self: PGtkInscription; attrs: PPangoAttrList); cdecl; external gtklib;
-procedure gtk_inscription_set_markup(self: PGtkInscription; markup: PChar); cdecl; external gtklib;
-function gtk_inscription_get_text_overflow(self: PGtkInscription): TGtkInscriptionOverflow; cdecl; external gtklib;
-procedure gtk_inscription_set_text_overflow(self: PGtkInscription; overflow: TGtkInscriptionOverflow); cdecl; external gtklib;
-function gtk_inscription_get_wrap_mode(self: PGtkInscription): TPangoWrapMode; cdecl; external gtklib;
-procedure gtk_inscription_set_wrap_mode(self: PGtkInscription; wrap_mode: TPangoWrapMode); cdecl; external gtklib;
-function gtk_inscription_get_min_chars(self: PGtkInscription): Tguint; cdecl; external gtklib;
-procedure gtk_inscription_set_min_chars(self: PGtkInscription; min_chars: Tguint); cdecl; external gtklib;
-function gtk_inscription_get_nat_chars(self: PGtkInscription): Tguint; cdecl; external gtklib;
-procedure gtk_inscription_set_nat_chars(self: PGtkInscription; nat_chars: Tguint); cdecl; external gtklib;
-function gtk_inscription_get_min_lines(self: PGtkInscription): Tguint; cdecl; external gtklib;
-procedure gtk_inscription_set_min_lines(self: PGtkInscription; min_lines: Tguint); cdecl; external gtklib;
-function gtk_inscription_get_nat_lines(self: PGtkInscription): Tguint; cdecl; external gtklib;
-procedure gtk_inscription_set_nat_lines(self: PGtkInscription; nat_lines: Tguint); cdecl; external gtklib;
-function gtk_inscription_get_xalign(self: PGtkInscription): single; cdecl; external gtklib;
-procedure gtk_inscription_set_xalign(self: PGtkInscription; xalign: single); cdecl; external gtklib;
-function gtk_inscription_get_yalign(self: PGtkInscription): single; cdecl; external gtklib;
-procedure gtk_inscription_set_yalign(self: PGtkInscription; yalign: single); cdecl; external gtklib;
+function gtk_inscription_get_type: TGType; cdecl; external libgtk4;
+function gtk_inscription_new(Text: PChar): PGtkWidget; cdecl; external libgtk4;
+function gtk_inscription_get_text(self: PGtkInscription): PChar; cdecl; external libgtk4;
+procedure gtk_inscription_set_text(self: PGtkInscription; Text: PChar); cdecl; external libgtk4;
+function gtk_inscription_get_attributes(self: PGtkInscription): PPangoAttrList; cdecl; external libgtk4;
+procedure gtk_inscription_set_attributes(self: PGtkInscription; attrs: PPangoAttrList); cdecl; external libgtk4;
+procedure gtk_inscription_set_markup(self: PGtkInscription; markup: PChar); cdecl; external libgtk4;
+function gtk_inscription_get_text_overflow(self: PGtkInscription): TGtkInscriptionOverflow; cdecl; external libgtk4;
+procedure gtk_inscription_set_text_overflow(self: PGtkInscription; overflow: TGtkInscriptionOverflow); cdecl; external libgtk4;
+function gtk_inscription_get_wrap_mode(self: PGtkInscription): TPangoWrapMode; cdecl; external libgtk4;
+procedure gtk_inscription_set_wrap_mode(self: PGtkInscription; wrap_mode: TPangoWrapMode); cdecl; external libgtk4;
+function gtk_inscription_get_min_chars(self: PGtkInscription): Tguint; cdecl; external libgtk4;
+procedure gtk_inscription_set_min_chars(self: PGtkInscription; min_chars: Tguint); cdecl; external libgtk4;
+function gtk_inscription_get_nat_chars(self: PGtkInscription): Tguint; cdecl; external libgtk4;
+procedure gtk_inscription_set_nat_chars(self: PGtkInscription; nat_chars: Tguint); cdecl; external libgtk4;
+function gtk_inscription_get_min_lines(self: PGtkInscription): Tguint; cdecl; external libgtk4;
+procedure gtk_inscription_set_min_lines(self: PGtkInscription; min_lines: Tguint); cdecl; external libgtk4;
+function gtk_inscription_get_nat_lines(self: PGtkInscription): Tguint; cdecl; external libgtk4;
+procedure gtk_inscription_set_nat_lines(self: PGtkInscription; nat_lines: Tguint); cdecl; external libgtk4;
+function gtk_inscription_get_xalign(self: PGtkInscription): single; cdecl; external libgtk4;
+procedure gtk_inscription_set_xalign(self: PGtkInscription; xalign: single); cdecl; external libgtk4;
+function gtk_inscription_get_yalign(self: PGtkInscription): single; cdecl; external libgtk4;
+procedure gtk_inscription_set_yalign(self: PGtkInscription; yalign: single); cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 19:38:48 ===
 

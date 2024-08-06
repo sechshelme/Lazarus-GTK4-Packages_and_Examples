@@ -22,13 +22,13 @@ type
   PGtkApplicationWindowClass = ^TGtkApplicationWindowClass;
 
 
-function gtk_application_window_get_type: TGType; cdecl; external gtklib;
-function gtk_application_window_new(application: PGtkApplication): PGtkWidget; cdecl; external gtklib;
-procedure gtk_application_window_set_show_menubar(window: PGtkApplicationWindow; show_menubar: Tgboolean); cdecl; external gtklib;
-function gtk_application_window_get_show_menubar(window: PGtkApplicationWindow): Tgboolean; cdecl; external gtklib;
-function gtk_application_window_get_id(window: PGtkApplicationWindow): Tguint; cdecl; external gtklib;
-procedure gtk_application_window_set_help_overlay(window: PGtkApplicationWindow; help_overlay: PGtkShortcutsWindow); cdecl; external gtklib;
-function gtk_application_window_get_help_overlay(window: PGtkApplicationWindow): PGtkShortcutsWindow; cdecl; external gtklib;
+function gtk_application_window_get_type: TGType; cdecl; external libgtk4;
+function gtk_application_window_new(application: PGtkApplication): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_application_window_set_show_menubar(window: PGtkApplicationWindow; show_menubar: Tgboolean); cdecl; external libgtk4;
+function gtk_application_window_get_show_menubar(window: PGtkApplicationWindow): Tgboolean; cdecl; external libgtk4;
+function gtk_application_window_get_id(window: PGtkApplicationWindow): Tguint; cdecl; external libgtk4;
+procedure gtk_application_window_set_help_overlay(window: PGtkApplicationWindow; help_overlay: PGtkShortcutsWindow); cdecl; external libgtk4;
+function gtk_application_window_get_help_overlay(window: PGtkApplicationWindow): PGtkShortcutsWindow; cdecl; external libgtk4;
 
 // === Konventiert am: 11-7-24 22:33:20 ===
 

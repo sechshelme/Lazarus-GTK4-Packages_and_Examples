@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -15,13 +15,13 @@ type
   PGtkSizeGroup = ^TGtkSizeGroup;
 
 
-function gtk_size_group_get_type: TGType; cdecl; external gtklib;
-function gtk_size_group_new(mode: TGtkSizeGroupMode): PGtkSizeGroup; cdecl; external gtklib;
-procedure gtk_size_group_set_mode(size_group: PGtkSizeGroup; mode: TGtkSizeGroupMode); cdecl; external gtklib;
-function gtk_size_group_get_mode(size_group: PGtkSizeGroup): TGtkSizeGroupMode; cdecl; external gtklib;
-procedure gtk_size_group_add_widget(size_group: PGtkSizeGroup; widget: PGtkWidget); cdecl; external gtklib;
-procedure gtk_size_group_remove_widget(size_group: PGtkSizeGroup; widget: PGtkWidget); cdecl; external gtklib;
-function gtk_size_group_get_widgets(size_group: PGtkSizeGroup): PGSList; cdecl; external gtklib;
+function gtk_size_group_get_type: TGType; cdecl; external libgtk4;
+function gtk_size_group_new(mode: TGtkSizeGroupMode): PGtkSizeGroup; cdecl; external libgtk4;
+procedure gtk_size_group_set_mode(size_group: PGtkSizeGroup; mode: TGtkSizeGroupMode); cdecl; external libgtk4;
+function gtk_size_group_get_mode(size_group: PGtkSizeGroup): TGtkSizeGroupMode; cdecl; external libgtk4;
+procedure gtk_size_group_add_widget(size_group: PGtkSizeGroup; widget: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_size_group_remove_widget(size_group: PGtkSizeGroup; widget: PGtkWidget); cdecl; external libgtk4;
+function gtk_size_group_get_widgets(size_group: PGtkSizeGroup): PGSList; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:57:57 ===
 

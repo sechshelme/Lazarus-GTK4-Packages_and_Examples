@@ -14,8 +14,8 @@ type
   end;
   PGdkVulkanContext = ^TGdkVulkanContext;
 
-function gdk_vulkan_error_quark: TGQuark; cdecl; external gtklib;
-function gdk_vulkan_context_get_type: TGType; cdecl; external gtklib;
+function gdk_vulkan_error_quark: TGQuark; cdecl; external libgtk4;
+function gdk_vulkan_context_get_type: TGType; cdecl; external libgtk4;
 
 function GDK_VULKAN_ERROR: TGQuark;
 

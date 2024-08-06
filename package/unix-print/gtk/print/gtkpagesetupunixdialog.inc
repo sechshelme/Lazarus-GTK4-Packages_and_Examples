@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -13,12 +13,12 @@ type
   end;
   PGtkPageSetupUnixDialog = ^TGtkPageSetupUnixDialog;
 
-function gtk_page_setup_unix_dialog_get_type: TGType; cdecl; external gtklib;
-function gtk_page_setup_unix_dialog_new(title: PChar; parent: PGtkWindow): PGtkWidget; cdecl; external gtklib;
-procedure gtk_page_setup_unix_dialog_set_page_setup(dialog: PGtkPageSetupUnixDialog; page_setup: PGtkPageSetup); cdecl; external gtklib;
-function gtk_page_setup_unix_dialog_get_page_setup(dialog: PGtkPageSetupUnixDialog): PGtkPageSetup; cdecl; external gtklib;
-procedure gtk_page_setup_unix_dialog_set_print_settings(dialog: PGtkPageSetupUnixDialog; print_settings: PGtkPrintSettings); cdecl; external gtklib;
-function gtk_page_setup_unix_dialog_get_print_settings(dialog: PGtkPageSetupUnixDialog): PGtkPrintSettings; cdecl; external gtklib;
+function gtk_page_setup_unix_dialog_get_type: TGType; cdecl; external libgtk4;
+function gtk_page_setup_unix_dialog_new(title: PChar; parent: PGtkWindow): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_page_setup_unix_dialog_set_page_setup(dialog: PGtkPageSetupUnixDialog; page_setup: PGtkPageSetup); cdecl; external libgtk4;
+function gtk_page_setup_unix_dialog_get_page_setup(dialog: PGtkPageSetupUnixDialog): PGtkPageSetup; cdecl; external libgtk4;
+procedure gtk_page_setup_unix_dialog_set_print_settings(dialog: PGtkPageSetupUnixDialog; print_settings: PGtkPrintSettings); cdecl; external libgtk4;
+function gtk_page_setup_unix_dialog_get_print_settings(dialog: PGtkPageSetupUnixDialog): PGtkPrintSettings; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 13:39:46 ===
 

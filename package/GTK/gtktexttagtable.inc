@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -11,13 +11,13 @@
 type
   TGtkTextTagTableForeach = procedure(tag: PGtkTextTag; Data: Tgpointer); cdecl;
 
-function gtk_text_tag_table_get_type: TGType; cdecl; external gtklib;
-function gtk_text_tag_table_new: PGtkTextTagTable; cdecl; external gtklib;
-function gtk_text_tag_table_add(table: PGtkTextTagTable; tag: PGtkTextTag): Tgboolean; cdecl; external gtklib;
-procedure gtk_text_tag_table_remove(table: PGtkTextTagTable; tag: PGtkTextTag); cdecl; external gtklib;
-function gtk_text_tag_table_lookup(table: PGtkTextTagTable; Name: PChar): PGtkTextTag; cdecl; external gtklib;
-procedure gtk_text_tag_table_foreach(table: PGtkTextTagTable; func: TGtkTextTagTableForeach; Data: Tgpointer); cdecl; external gtklib;
-function gtk_text_tag_table_get_size(table: PGtkTextTagTable): longint; cdecl; external gtklib;
+function gtk_text_tag_table_get_type: TGType; cdecl; external libgtk4;
+function gtk_text_tag_table_new: PGtkTextTagTable; cdecl; external libgtk4;
+function gtk_text_tag_table_add(table: PGtkTextTagTable; tag: PGtkTextTag): Tgboolean; cdecl; external libgtk4;
+procedure gtk_text_tag_table_remove(table: PGtkTextTagTable; tag: PGtkTextTag); cdecl; external libgtk4;
+function gtk_text_tag_table_lookup(table: PGtkTextTagTable; Name: PChar): PGtkTextTag; cdecl; external libgtk4;
+procedure gtk_text_tag_table_foreach(table: PGtkTextTagTable; func: TGtkTextTagTableForeach; Data: Tgpointer); cdecl; external libgtk4;
+function gtk_text_tag_table_get_size(table: PGtkTextTagTable): longint; cdecl; external libgtk4;
 
 // === Konventiert am: 19-7-24 19:56:13 ===
 

@@ -21,10 +21,10 @@ type
   end;
   PGtkSelectionFilterModelClass = ^TGtkSelectionFilterModelClass;
 
-function gtk_selection_filter_model_get_type: TGType; cdecl; external gtklib;
-function gtk_selection_filter_model_new(model: PGtkSelectionModel): PGtkSelectionFilterModel; cdecl; external gtklib;
-procedure gtk_selection_filter_model_set_model(self: PGtkSelectionFilterModel; model: PGtkSelectionModel); cdecl; external gtklib;
-function gtk_selection_filter_model_get_model(self: PGtkSelectionFilterModel): PGtkSelectionModel; cdecl; external gtklib;
+function gtk_selection_filter_model_get_type: TGType; cdecl; external libgtk4;
+function gtk_selection_filter_model_new(model: PGtkSelectionModel): PGtkSelectionFilterModel; cdecl; external libgtk4;
+procedure gtk_selection_filter_model_set_model(self: PGtkSelectionFilterModel; model: PGtkSelectionModel); cdecl; external libgtk4;
+function gtk_selection_filter_model_get_model(self: PGtkSelectionFilterModel): PGtkSelectionModel; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:44:34 ===
 

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -14,19 +14,19 @@ type
   end;
   PGtkAppChooserButton = ^TGtkAppChooserButton;
 
-function gtk_app_chooser_button_get_type: TGType; cdecl; external gtklib;
-function gtk_app_chooser_button_new(content_type: PChar): PGtkWidget; cdecl; external gtklib;
-procedure gtk_app_chooser_button_append_separator(self: PGtkAppChooserButton); cdecl; external gtklib;
-procedure gtk_app_chooser_button_append_custom_item(self: PGtkAppChooserButton; Name: PChar; _label: PChar; icon: PGIcon); cdecl; external gtklib;
-procedure gtk_app_chooser_button_set_active_custom_item(self: PGtkAppChooserButton; Name: PChar); cdecl; external gtklib;
-procedure gtk_app_chooser_button_set_show_dialog_item(self: PGtkAppChooserButton; setting: Tgboolean); cdecl; external gtklib;
-function gtk_app_chooser_button_get_show_dialog_item(self: PGtkAppChooserButton): Tgboolean; cdecl; external gtklib;
-procedure gtk_app_chooser_button_set_heading(self: PGtkAppChooserButton; heading: PChar); cdecl; external gtklib;
-function gtk_app_chooser_button_get_heading(self: PGtkAppChooserButton): PChar; cdecl; external gtklib;
-procedure gtk_app_chooser_button_set_show_default_item(self: PGtkAppChooserButton; setting: Tgboolean); cdecl; external gtklib;
-function gtk_app_chooser_button_get_show_default_item(self: PGtkAppChooserButton): Tgboolean; cdecl; external gtklib;
-function gtk_app_chooser_button_get_modal(self: PGtkAppChooserButton): Tgboolean; cdecl; external gtklib;
-procedure gtk_app_chooser_button_set_modal(self: PGtkAppChooserButton; modal: Tgboolean); cdecl; external gtklib;
+function gtk_app_chooser_button_get_type: TGType; cdecl; external libgtk4;
+function gtk_app_chooser_button_new(content_type: PChar): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_app_chooser_button_append_separator(self: PGtkAppChooserButton); cdecl; external libgtk4;
+procedure gtk_app_chooser_button_append_custom_item(self: PGtkAppChooserButton; Name: PChar; _label: PChar; icon: PGIcon); cdecl; external libgtk4;
+procedure gtk_app_chooser_button_set_active_custom_item(self: PGtkAppChooserButton; Name: PChar); cdecl; external libgtk4;
+procedure gtk_app_chooser_button_set_show_dialog_item(self: PGtkAppChooserButton; setting: Tgboolean); cdecl; external libgtk4;
+function gtk_app_chooser_button_get_show_dialog_item(self: PGtkAppChooserButton): Tgboolean; cdecl; external libgtk4;
+procedure gtk_app_chooser_button_set_heading(self: PGtkAppChooserButton; heading: PChar); cdecl; external libgtk4;
+function gtk_app_chooser_button_get_heading(self: PGtkAppChooserButton): PChar; cdecl; external libgtk4;
+procedure gtk_app_chooser_button_set_show_default_item(self: PGtkAppChooserButton; setting: Tgboolean); cdecl; external libgtk4;
+function gtk_app_chooser_button_get_show_default_item(self: PGtkAppChooserButton): Tgboolean; cdecl; external libgtk4;
+function gtk_app_chooser_button_get_modal(self: PGtkAppChooserButton): Tgboolean; cdecl; external libgtk4;
+procedure gtk_app_chooser_button_set_modal(self: PGtkAppChooserButton; modal: Tgboolean); cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 14:55:41 ===
 

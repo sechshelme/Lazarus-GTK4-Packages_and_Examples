@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -30,18 +30,18 @@ type
   end;
   PGtkSelectionModelInterface = ^TGtkSelectionModelInterface;
 
-function gtk_selection_model_get_type: TGType; cdecl; external gtklib;
-function gtk_selection_model_is_selected(model: PGtkSelectionModel; position: Tguint): Tgboolean; cdecl; external gtklib;
-function gtk_selection_model_get_selection(model: PGtkSelectionModel): PGtkBitset; cdecl; external gtklib;
-function gtk_selection_model_get_selection_in_range(model: PGtkSelectionModel; position: Tguint; n_items: Tguint): PGtkBitset; cdecl; external gtklib;
-function gtk_selection_model_select_item(model: PGtkSelectionModel; position: Tguint; unselect_rest: Tgboolean): Tgboolean; cdecl; external gtklib;
-function gtk_selection_model_unselect_item(model: PGtkSelectionModel; position: Tguint): Tgboolean; cdecl; external gtklib;
-function gtk_selection_model_select_range(model: PGtkSelectionModel; position: Tguint; n_items: Tguint; unselect_rest: Tgboolean): Tgboolean; cdecl; external gtklib;
-function gtk_selection_model_unselect_range(model: PGtkSelectionModel; position: Tguint; n_items: Tguint): Tgboolean; cdecl; external gtklib;
-function gtk_selection_model_select_all(model: PGtkSelectionModel): Tgboolean; cdecl; external gtklib;
-function gtk_selection_model_unselect_all(model: PGtkSelectionModel): Tgboolean; cdecl; external gtklib;
-function gtk_selection_model_set_selection(model: PGtkSelectionModel; selected: PGtkBitset; mask: PGtkBitset): Tgboolean; cdecl; external gtklib;
-procedure gtk_selection_model_selection_changed(model: PGtkSelectionModel; position: Tguint; n_items: Tguint); cdecl; external gtklib;
+function gtk_selection_model_get_type: TGType; cdecl; external libgtk4;
+function gtk_selection_model_is_selected(model: PGtkSelectionModel; position: Tguint): Tgboolean; cdecl; external libgtk4;
+function gtk_selection_model_get_selection(model: PGtkSelectionModel): PGtkBitset; cdecl; external libgtk4;
+function gtk_selection_model_get_selection_in_range(model: PGtkSelectionModel; position: Tguint; n_items: Tguint): PGtkBitset; cdecl; external libgtk4;
+function gtk_selection_model_select_item(model: PGtkSelectionModel; position: Tguint; unselect_rest: Tgboolean): Tgboolean; cdecl; external libgtk4;
+function gtk_selection_model_unselect_item(model: PGtkSelectionModel; position: Tguint): Tgboolean; cdecl; external libgtk4;
+function gtk_selection_model_select_range(model: PGtkSelectionModel; position: Tguint; n_items: Tguint; unselect_rest: Tgboolean): Tgboolean; cdecl; external libgtk4;
+function gtk_selection_model_unselect_range(model: PGtkSelectionModel; position: Tguint; n_items: Tguint): Tgboolean; cdecl; external libgtk4;
+function gtk_selection_model_select_all(model: PGtkSelectionModel): Tgboolean; cdecl; external libgtk4;
+function gtk_selection_model_unselect_all(model: PGtkSelectionModel): Tgboolean; cdecl; external libgtk4;
+function gtk_selection_model_set_selection(model: PGtkSelectionModel; selected: PGtkBitset; mask: PGtkBitset): Tgboolean; cdecl; external libgtk4;
+procedure gtk_selection_model_selection_changed(model: PGtkSelectionModel; position: Tguint; n_items: Tguint); cdecl; external libgtk4;
 
 // === Konventiert am: 22-7-24 19:49:03 ===
 

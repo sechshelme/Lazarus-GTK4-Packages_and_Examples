@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -18,20 +18,20 @@ type
   end;
   PGtkEventControllerClass = ^TGtkEventControllerClass;
 
-function gtk_event_controller_get_type: TGType; cdecl; external gtklib;
-function gtk_event_controller_get_widget(controller: PGtkEventController): PGtkWidget; cdecl; external gtklib;
-procedure gtk_event_controller_reset(controller: PGtkEventController); cdecl; external gtklib;
-function gtk_event_controller_get_propagation_phase(controller: PGtkEventController): TGtkPropagationPhase; cdecl; external gtklib;
-procedure gtk_event_controller_set_propagation_phase(controller: PGtkEventController; phase: TGtkPropagationPhase); cdecl; external gtklib;
-function gtk_event_controller_get_propagation_limit(controller: PGtkEventController): TGtkPropagationLimit; cdecl; external gtklib;
-procedure gtk_event_controller_set_propagation_limit(controller: PGtkEventController; limit: TGtkPropagationLimit); cdecl; external gtklib;
-function gtk_event_controller_get_name(controller: PGtkEventController): PChar; cdecl; external gtklib;
-procedure gtk_event_controller_set_name(controller: PGtkEventController; Name: PChar); cdecl; external gtklib;
-procedure gtk_event_controller_set_static_name(controller: PGtkEventController; Name: PChar); cdecl; external gtklib;
-function gtk_event_controller_get_current_event(controller: PGtkEventController): PGdkEvent; cdecl; external gtklib;
-function gtk_event_controller_get_current_event_time(controller: PGtkEventController): Tguint32; cdecl; external gtklib;
-function gtk_event_controller_get_current_event_device(controller: PGtkEventController): PGdkDevice; cdecl; external gtklib;
-function gtk_event_controller_get_current_event_state(controller: PGtkEventController): TGdkModifierType; cdecl; external gtklib;
+function gtk_event_controller_get_type: TGType; cdecl; external libgtk4;
+function gtk_event_controller_get_widget(controller: PGtkEventController): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_event_controller_reset(controller: PGtkEventController); cdecl; external libgtk4;
+function gtk_event_controller_get_propagation_phase(controller: PGtkEventController): TGtkPropagationPhase; cdecl; external libgtk4;
+procedure gtk_event_controller_set_propagation_phase(controller: PGtkEventController; phase: TGtkPropagationPhase); cdecl; external libgtk4;
+function gtk_event_controller_get_propagation_limit(controller: PGtkEventController): TGtkPropagationLimit; cdecl; external libgtk4;
+procedure gtk_event_controller_set_propagation_limit(controller: PGtkEventController; limit: TGtkPropagationLimit); cdecl; external libgtk4;
+function gtk_event_controller_get_name(controller: PGtkEventController): PChar; cdecl; external libgtk4;
+procedure gtk_event_controller_set_name(controller: PGtkEventController; Name: PChar); cdecl; external libgtk4;
+procedure gtk_event_controller_set_static_name(controller: PGtkEventController; Name: PChar); cdecl; external libgtk4;
+function gtk_event_controller_get_current_event(controller: PGtkEventController): PGdkEvent; cdecl; external libgtk4;
+function gtk_event_controller_get_current_event_time(controller: PGtkEventController): Tguint32; cdecl; external libgtk4;
+function gtk_event_controller_get_current_event_device(controller: PGtkEventController): PGdkDevice; cdecl; external libgtk4;
+function gtk_event_controller_get_current_event_state(controller: PGtkEventController): TGdkModifierType; cdecl; external libgtk4;
 
 // === Konventiert am: 25-7-24 18:32:14 ===
 

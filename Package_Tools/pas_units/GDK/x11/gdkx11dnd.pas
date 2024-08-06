@@ -17,7 +17,7 @@ type
   end;
   PGdkX11DragClass = ^TGdkX11DragClass;
 
-function gdk_x11_drag_get_type: TGType; cdecl; external gtklib;
+function gdk_x11_drag_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 17:42:29 ===
 

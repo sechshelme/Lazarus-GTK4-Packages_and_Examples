@@ -28,11 +28,11 @@ type
   end;
   PGdkDeviceTool = ^TGdkDeviceTool;
 
-function gdk_device_tool_get_type: TGType; cdecl; external gtklib;
-function gdk_device_tool_get_serial(tool: PGdkDeviceTool): Tguint64; cdecl; external gtklib;
-function gdk_device_tool_get_hardware_id(tool: PGdkDeviceTool): Tguint64; cdecl; external gtklib;
-function gdk_device_tool_get_tool_type(tool: PGdkDeviceTool): TGdkDeviceToolType; cdecl; external gtklib;
-function gdk_device_tool_get_axes(tool: PGdkDeviceTool): TGdkAxisFlags; cdecl; external gtklib;
+function gdk_device_tool_get_type: TGType; cdecl; external libgtk4;
+function gdk_device_tool_get_serial(tool: PGdkDeviceTool): Tguint64; cdecl; external libgtk4;
+function gdk_device_tool_get_hardware_id(tool: PGdkDeviceTool): Tguint64; cdecl; external libgtk4;
+function gdk_device_tool_get_tool_type(tool: PGdkDeviceTool): TGdkDeviceToolType; cdecl; external libgtk4;
+function gdk_device_tool_get_axes(tool: PGdkDeviceTool): TGdkAxisFlags; cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 14:38:17 ===
 

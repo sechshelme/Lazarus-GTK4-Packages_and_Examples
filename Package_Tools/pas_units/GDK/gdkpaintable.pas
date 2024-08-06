@@ -34,18 +34,18 @@ type
   end;
   PGdkPaintableInterface = ^TGdkPaintableInterface;
 
-function gdk_paintable_get_type: TGType; cdecl; external gtklib;
-procedure gdk_paintable_snapshot(paintable: PGdkPaintable; snapshot: PGdkSnapshot; Width: Tdouble; Height: Tdouble); cdecl; external gtklib;
-function gdk_paintable_get_current_image(paintable: PGdkPaintable): PGdkPaintable; cdecl; external gtklib;
-function gdk_paintable_get_flags(paintable: PGdkPaintable): TGdkPaintableFlags; cdecl; external gtklib;
-function gdk_paintable_get_intrinsic_width(paintable: PGdkPaintable): longint; cdecl; external gtklib;
-function gdk_paintable_get_intrinsic_height(paintable: PGdkPaintable): longint; cdecl; external gtklib;
-function gdk_paintable_get_intrinsic_aspect_ratio(paintable: PGdkPaintable): Tdouble; cdecl; external gtklib;
+function gdk_paintable_get_type: TGType; cdecl; external libgtk4;
+procedure gdk_paintable_snapshot(paintable: PGdkPaintable; snapshot: PGdkSnapshot; Width: Tdouble; Height: Tdouble); cdecl; external libgtk4;
+function gdk_paintable_get_current_image(paintable: PGdkPaintable): PGdkPaintable; cdecl; external libgtk4;
+function gdk_paintable_get_flags(paintable: PGdkPaintable): TGdkPaintableFlags; cdecl; external libgtk4;
+function gdk_paintable_get_intrinsic_width(paintable: PGdkPaintable): longint; cdecl; external libgtk4;
+function gdk_paintable_get_intrinsic_height(paintable: PGdkPaintable): longint; cdecl; external libgtk4;
+function gdk_paintable_get_intrinsic_aspect_ratio(paintable: PGdkPaintable): Tdouble; cdecl; external libgtk4;
 procedure gdk_paintable_compute_concrete_size(paintable: PGdkPaintable; specified_width: Tdouble; specified_height: Tdouble; default_width: Tdouble; default_height: Tdouble;
-  concrete_width: Pdouble; concrete_height: Pdouble); cdecl; external gtklib;
-procedure gdk_paintable_invalidate_contents(paintable: PGdkPaintable); cdecl; external gtklib;
-procedure gdk_paintable_invalidate_size(paintable: PGdkPaintable); cdecl; external gtklib;
-function gdk_paintable_new_empty(intrinsic_width: longint; intrinsic_height: longint): PGdkPaintable; cdecl; external gtklib;
+  concrete_width: Pdouble; concrete_height: Pdouble); cdecl; external libgtk4;
+procedure gdk_paintable_invalidate_contents(paintable: PGdkPaintable); cdecl; external libgtk4;
+procedure gdk_paintable_invalidate_size(paintable: PGdkPaintable); cdecl; external libgtk4;
+function gdk_paintable_new_empty(intrinsic_width: longint; intrinsic_height: longint): PGdkPaintable; cdecl; external libgtk4;
 
 // === Konventiert am: 31-7-24 16:23:07 ===
 

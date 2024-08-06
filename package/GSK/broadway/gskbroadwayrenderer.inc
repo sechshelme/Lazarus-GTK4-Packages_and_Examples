@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -17,8 +17,8 @@ type
   end;
   PGskBroadwayRendererClass = ^TGskBroadwayRendererClass;
 
-function gsk_broadway_renderer_get_type: TGType; cdecl; external gtklib;
-function gsk_broadway_renderer_new: PGskRenderer; cdecl; external gtklib;
+function gsk_broadway_renderer_get_type: TGType; cdecl; external libgtk4;
+function gsk_broadway_renderer_new: PGskRenderer; cdecl; external libgtk4;
 
 // === Konventiert am: 4-8-24 13:10:33 ===
 

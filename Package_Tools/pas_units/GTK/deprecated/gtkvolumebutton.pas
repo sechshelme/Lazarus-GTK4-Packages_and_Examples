@@ -16,8 +16,8 @@ type
   PGtkVolumeButton = ^TGtkVolumeButton;
 
 
-function gtk_volume_button_get_type: TGType; cdecl; external gtklib;
-function gtk_volume_button_new: PGtkWidget; cdecl; external gtklib;
+function gtk_volume_button_get_type: TGType; cdecl; external libgtk4;
+function gtk_volume_button_new: PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 30-7-24 16:18:11 ===
 

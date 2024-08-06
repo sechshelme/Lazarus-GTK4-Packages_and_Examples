@@ -34,14 +34,14 @@ type
   PGdkContentProviderClass = ^TGdkContentProviderClass;
 
 
-function gdk_content_provider_get_type: TGType; cdecl; external gtklib;
-function gdk_content_provider_ref_formats(provider: PGdkContentProvider): PGdkContentFormats; cdecl; external gtklib;
-function gdk_content_provider_ref_storable_formats(provider: PGdkContentProvider): PGdkContentFormats; cdecl; external gtklib;
-procedure gdk_content_provider_content_changed(provider: PGdkContentProvider); cdecl; external gtklib;
+function gdk_content_provider_get_type: TGType; cdecl; external libgtk4;
+function gdk_content_provider_ref_formats(provider: PGdkContentProvider): PGdkContentFormats; cdecl; external libgtk4;
+function gdk_content_provider_ref_storable_formats(provider: PGdkContentProvider): PGdkContentFormats; cdecl; external libgtk4;
+procedure gdk_content_provider_content_changed(provider: PGdkContentProvider); cdecl; external libgtk4;
 procedure gdk_content_provider_write_mime_type_async(provider: PGdkContentProvider; mime_type: PChar; stream: PGOutputStream; io_priority: longint; cancellable: PGCancellable;
-  callback: TGAsyncReadyCallback; user_data: Tgpointer); cdecl; external gtklib;
-function gdk_content_provider_write_mime_type_finish(provider: PGdkContentProvider; Result: PGAsyncResult; error: PPGError): Tgboolean; cdecl; external gtklib;
-function gdk_content_provider_get_value(provider: PGdkContentProvider; Value: PGValue; error: PPGError): Tgboolean; cdecl; external gtklib;
+  callback: TGAsyncReadyCallback; user_data: Tgpointer); cdecl; external libgtk4;
+function gdk_content_provider_write_mime_type_finish(provider: PGdkContentProvider; Result: PGAsyncResult; error: PPGError): Tgboolean; cdecl; external libgtk4;
+function gdk_content_provider_get_value(provider: PGdkContentProvider; Value: PGValue; error: PPGError): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 30-7-24 19:10:57 ===
 

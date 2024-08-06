@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -14,15 +14,15 @@
   //  end;
   //  PGskPathMeasure = ^TGskPathMeasure;
 
-function gsk_path_measure_get_type: TGType; cdecl; external gtklib;
-function gsk_path_measure_new(path: PGskPath): PGskPathMeasure; cdecl; external gtklib;
-function gsk_path_measure_new_with_tolerance(path: PGskPath; tolerance: single): PGskPathMeasure; cdecl; external gtklib;
-function gsk_path_measure_ref(self: PGskPathMeasure): PGskPathMeasure; cdecl; external gtklib;
-procedure gsk_path_measure_unref(self: PGskPathMeasure); cdecl; external gtklib;
-function gsk_path_measure_get_path(self: PGskPathMeasure): PGskPath; cdecl; external gtklib;
-function gsk_path_measure_get_tolerance(self: PGskPathMeasure): single; cdecl; external gtklib;
-function gsk_path_measure_get_length(self: PGskPathMeasure): single; cdecl; external gtklib;
-function gsk_path_measure_get_point(self: PGskPathMeasure; distance: single; Result: PGskPathPoint): Tgboolean; cdecl; external gtklib;
+function gsk_path_measure_get_type: TGType; cdecl; external libgtk4;
+function gsk_path_measure_new(path: PGskPath): PGskPathMeasure; cdecl; external libgtk4;
+function gsk_path_measure_new_with_tolerance(path: PGskPath; tolerance: single): PGskPathMeasure; cdecl; external libgtk4;
+function gsk_path_measure_ref(self: PGskPathMeasure): PGskPathMeasure; cdecl; external libgtk4;
+procedure gsk_path_measure_unref(self: PGskPathMeasure); cdecl; external libgtk4;
+function gsk_path_measure_get_path(self: PGskPathMeasure): PGskPath; cdecl; external libgtk4;
+function gsk_path_measure_get_tolerance(self: PGskPathMeasure): single; cdecl; external libgtk4;
+function gsk_path_measure_get_length(self: PGskPathMeasure): single; cdecl; external libgtk4;
+function gsk_path_measure_get_point(self: PGskPathMeasure; distance: single; Result: PGskPathPoint): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 15:18:42 ===
 

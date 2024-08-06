@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -33,23 +33,23 @@ type
   end;
   PGtkConstraintLayoutChildClass = ^TGtkConstraintLayoutChildClass;
 
-function gtk_constraint_layout_child_get_type: TGType; cdecl; external gtklib;
-function gtk_constraint_layout_get_type: TGType; cdecl; external gtklib;
-function gtk_constraint_vfl_parser_error_quark: TGQuark; cdecl; external gtklib;
-function gtk_constraint_layout_new: PGtkLayoutManager; cdecl; external gtklib;
-procedure gtk_constraint_layout_add_constraint(layout: PGtkConstraintLayout; constraint: PGtkConstraint); cdecl; external gtklib;
-procedure gtk_constraint_layout_remove_constraint(layout: PGtkConstraintLayout; constraint: PGtkConstraint); cdecl; external gtklib;
-procedure gtk_constraint_layout_add_guide(layout: PGtkConstraintLayout; guide: PGtkConstraintGuide); cdecl; external gtklib;
-procedure gtk_constraint_layout_remove_guide(layout: PGtkConstraintLayout; guide: PGtkConstraintGuide); cdecl; external gtklib;
-procedure gtk_constraint_layout_remove_all_constraints(layout: PGtkConstraintLayout); cdecl; external gtklib;
+function gtk_constraint_layout_child_get_type: TGType; cdecl; external libgtk4;
+function gtk_constraint_layout_get_type: TGType; cdecl; external libgtk4;
+function gtk_constraint_vfl_parser_error_quark: TGQuark; cdecl; external libgtk4;
+function gtk_constraint_layout_new: PGtkLayoutManager; cdecl; external libgtk4;
+procedure gtk_constraint_layout_add_constraint(layout: PGtkConstraintLayout; constraint: PGtkConstraint); cdecl; external libgtk4;
+procedure gtk_constraint_layout_remove_constraint(layout: PGtkConstraintLayout; constraint: PGtkConstraint); cdecl; external libgtk4;
+procedure gtk_constraint_layout_add_guide(layout: PGtkConstraintLayout; guide: PGtkConstraintGuide); cdecl; external libgtk4;
+procedure gtk_constraint_layout_remove_guide(layout: PGtkConstraintLayout; guide: PGtkConstraintGuide); cdecl; external libgtk4;
+procedure gtk_constraint_layout_remove_all_constraints(layout: PGtkConstraintLayout); cdecl; external libgtk4;
 function gtk_constraint_layout_add_constraints_from_description(layout: PGtkConstraintLayout; Lines: PPchar; n_lines: Tgsize; hspacing: longint; vspacing: longint;
-  error: PPGError; first_view: PChar; args: array of const): PGList; cdecl; external gtklib;
+  error: PPGError; first_view: PChar; args: array of const): PGList; cdecl; external libgtk4;
 function gtk_constraint_layout_add_constraints_from_description(layout: PGtkConstraintLayout; Lines: PPchar; n_lines: Tgsize; hspacing: longint; vspacing: longint;
-  error: PPGError; first_view: PChar): PGList; cdecl; external gtklib;
+  error: PPGError; first_view: PChar): PGList; cdecl; external libgtk4;
 function gtk_constraint_layout_add_constraints_from_descriptionv(layout: PGtkConstraintLayout; Lines: PPchar; n_lines: Tgsize; hspacing: longint; vspacing: longint;
-  views: PGHashTable; error: PPGError): PGList; cdecl; external gtklib;
-function gtk_constraint_layout_observe_constraints(layout: PGtkConstraintLayout): PGListModel; cdecl; external gtklib;
-function gtk_constraint_layout_observe_guides(layout: PGtkConstraintLayout): PGListModel; cdecl; external gtklib;
+  views: PGHashTable; error: PPGError): PGList; cdecl; external libgtk4;
+function gtk_constraint_layout_observe_constraints(layout: PGtkConstraintLayout): PGListModel; cdecl; external libgtk4;
+function gtk_constraint_layout_observe_guides(layout: PGtkConstraintLayout): PGListModel; cdecl; external libgtk4;
 
 // === Konventiert am: 24-7-24 19:19:28 ===
 

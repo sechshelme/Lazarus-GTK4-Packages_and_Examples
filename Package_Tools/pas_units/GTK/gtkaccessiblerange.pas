@@ -23,7 +23,7 @@ type
 
   // === Konventiert am: 14-7-24 16:45:26 ===
 
-function gtk_accessible_range_get_type: TGType; cdecl; external gtklib;
+function gtk_accessible_range_get_type: TGType; cdecl; external libgtk4;
 
 function GTK_TYPE_ACCESSIBLE_RANGE: TGType;
 function GTK_ACCESSIBLE_RANGE(obj: Pointer): PGtkAccessibleRange;

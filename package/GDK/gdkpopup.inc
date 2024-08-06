@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -19,14 +19,14 @@ type
   end;
   PGdkPopupInterface = ^TGdkPopupInterface;
 
-function gdk_popup_get_type: TGType; cdecl; external gtklib;
-function gdk_popup_present(popup: PGdkPopup; Width: longint; Height: longint; layout: PGdkPopupLayout): Tgboolean; cdecl; external gtklib;
-function gdk_popup_get_surface_anchor(popup: PGdkPopup): TGdkGravity; cdecl; external gtklib;
-function gdk_popup_get_rect_anchor(popup: PGdkPopup): TGdkGravity; cdecl; external gtklib;
-function gdk_popup_get_parent(popup: PGdkPopup): PGdkSurface; cdecl; external gtklib;
-function gdk_popup_get_position_x(popup: PGdkPopup): longint; cdecl; external gtklib;
-function gdk_popup_get_position_y(popup: PGdkPopup): longint; cdecl; external gtklib;
-function gdk_popup_get_autohide(popup: PGdkPopup): Tgboolean; cdecl; external gtklib;
+function gdk_popup_get_type: TGType; cdecl; external libgtk4;
+function gdk_popup_present(popup: PGdkPopup; Width: longint; Height: longint; layout: PGdkPopupLayout): Tgboolean; cdecl; external libgtk4;
+function gdk_popup_get_surface_anchor(popup: PGdkPopup): TGdkGravity; cdecl; external libgtk4;
+function gdk_popup_get_rect_anchor(popup: PGdkPopup): TGdkGravity; cdecl; external libgtk4;
+function gdk_popup_get_parent(popup: PGdkPopup): PGdkSurface; cdecl; external libgtk4;
+function gdk_popup_get_position_x(popup: PGdkPopup): longint; cdecl; external libgtk4;
+function gdk_popup_get_position_y(popup: PGdkPopup): longint; cdecl; external libgtk4;
+function gdk_popup_get_autohide(popup: PGdkPopup): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 17:23:35 ===
 

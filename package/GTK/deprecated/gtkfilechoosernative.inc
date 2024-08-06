@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,12 +20,12 @@ type
   end;
   PGtkFileChooserNativeClass = ^TGtkFileChooserNativeClass;
 
-function gtk_file_chooser_native_get_type: TGType; cdecl; external gtklib;
-function gtk_file_chooser_native_new(title: PChar; parent: PGtkWindow; action: TGtkFileChooserAction; accept_label: PChar; cancel_label: PChar): PGtkFileChooserNative; cdecl; external gtklib;
-function gtk_file_chooser_native_get_accept_label(self: PGtkFileChooserNative): PChar; cdecl; external gtklib;
-procedure gtk_file_chooser_native_set_accept_label(self: PGtkFileChooserNative; accept_label: PChar); cdecl; external gtklib;
-function gtk_file_chooser_native_get_cancel_label(self: PGtkFileChooserNative): PChar; cdecl; external gtklib;
-procedure gtk_file_chooser_native_set_cancel_label(self: PGtkFileChooserNative; cancel_label: PChar); cdecl; external gtklib;
+function gtk_file_chooser_native_get_type: TGType; cdecl; external libgtk4;
+function gtk_file_chooser_native_new(title: PChar; parent: PGtkWindow; action: TGtkFileChooserAction; accept_label: PChar; cancel_label: PChar): PGtkFileChooserNative; cdecl; external libgtk4;
+function gtk_file_chooser_native_get_accept_label(self: PGtkFileChooserNative): PChar; cdecl; external libgtk4;
+procedure gtk_file_chooser_native_set_accept_label(self: PGtkFileChooserNative; accept_label: PChar); cdecl; external libgtk4;
+function gtk_file_chooser_native_get_cancel_label(self: PGtkFileChooserNative): PChar; cdecl; external libgtk4;
+procedure gtk_file_chooser_native_set_cancel_label(self: PGtkFileChooserNative; cancel_label: PChar); cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 19:42:40 ===
 

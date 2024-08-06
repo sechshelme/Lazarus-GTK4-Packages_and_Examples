@@ -18,7 +18,7 @@ type
   PGtkRequestedSize = ^TGtkRequestedSize;
 
 
-function gtk_distribute_natural_allocation(extra_space: longint; n_requested_sizes: Tguint; sizes: PGtkRequestedSize): longint; cdecl; external gtklib;
+function gtk_distribute_natural_allocation(extra_space: longint; n_requested_sizes: Tguint; sizes: PGtkRequestedSize): longint; cdecl; external libgtk4;
 
 implementation
 

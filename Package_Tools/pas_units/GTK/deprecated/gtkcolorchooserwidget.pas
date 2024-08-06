@@ -14,8 +14,8 @@ type
   end;
   PGtkColorChooserWidget = ^TGtkColorChooserWidget;
 
-function gtk_color_chooser_widget_get_type: TGType; cdecl; external gtklib;
-function gtk_color_chooser_widget_new: PGtkWidget; cdecl; external gtklib;
+function gtk_color_chooser_widget_get_type: TGType; cdecl; external libgtk4;
+function gtk_color_chooser_widget_new: PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 19:34:21 ===
 

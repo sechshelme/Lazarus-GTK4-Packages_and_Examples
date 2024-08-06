@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -23,21 +23,21 @@ type
     end;
 
 
-function gtk_check_button_get_type:TGType;cdecl;external gtklib;
-function gtk_check_button_new:PGtkWidget;cdecl;external gtklib;
-function gtk_check_button_new_with_label(_label:Pchar):PGtkWidget;cdecl;external gtklib;
-function gtk_check_button_new_with_mnemonic(_label:Pchar):PGtkWidget;cdecl;external gtklib;
-procedure gtk_check_button_set_inconsistent(check_button:PGtkCheckButton; inconsistent:Tgboolean);cdecl;external gtklib;
-function gtk_check_button_get_inconsistent(check_button:PGtkCheckButton):Tgboolean;cdecl;external gtklib;
-function gtk_check_button_get_active(self:PGtkCheckButton):Tgboolean;cdecl;external gtklib;
-procedure gtk_check_button_set_active(self:PGtkCheckButton; setting:Tgboolean);cdecl;external gtklib;
-function gtk_check_button_get_label(self:PGtkCheckButton):Pchar;cdecl;external gtklib;
-procedure gtk_check_button_set_label(self:PGtkCheckButton; _label:Pchar);cdecl;external gtklib;
-procedure gtk_check_button_set_group(self:PGtkCheckButton; group:PGtkCheckButton);cdecl;external gtklib;
-function gtk_check_button_get_use_underline(self:PGtkCheckButton):Tgboolean;cdecl;external gtklib;
-procedure gtk_check_button_set_use_underline(self:PGtkCheckButton; setting:Tgboolean);cdecl;external gtklib;
-function gtk_check_button_get_child(button:PGtkCheckButton):PGtkWidget;cdecl;external gtklib;
-procedure gtk_check_button_set_child(button:PGtkCheckButton; child:PGtkWidget);cdecl;external gtklib;
+function gtk_check_button_get_type:TGType;cdecl;external libgtk4;
+function gtk_check_button_new:PGtkWidget;cdecl;external libgtk4;
+function gtk_check_button_new_with_label(_label:Pchar):PGtkWidget;cdecl;external libgtk4;
+function gtk_check_button_new_with_mnemonic(_label:Pchar):PGtkWidget;cdecl;external libgtk4;
+procedure gtk_check_button_set_inconsistent(check_button:PGtkCheckButton; inconsistent:Tgboolean);cdecl;external libgtk4;
+function gtk_check_button_get_inconsistent(check_button:PGtkCheckButton):Tgboolean;cdecl;external libgtk4;
+function gtk_check_button_get_active(self:PGtkCheckButton):Tgboolean;cdecl;external libgtk4;
+procedure gtk_check_button_set_active(self:PGtkCheckButton; setting:Tgboolean);cdecl;external libgtk4;
+function gtk_check_button_get_label(self:PGtkCheckButton):Pchar;cdecl;external libgtk4;
+procedure gtk_check_button_set_label(self:PGtkCheckButton; _label:Pchar);cdecl;external libgtk4;
+procedure gtk_check_button_set_group(self:PGtkCheckButton; group:PGtkCheckButton);cdecl;external libgtk4;
+function gtk_check_button_get_use_underline(self:PGtkCheckButton):Tgboolean;cdecl;external libgtk4;
+procedure gtk_check_button_set_use_underline(self:PGtkCheckButton; setting:Tgboolean);cdecl;external libgtk4;
+function gtk_check_button_get_child(button:PGtkCheckButton):PGtkWidget;cdecl;external libgtk4;
+procedure gtk_check_button_set_child(button:PGtkCheckButton; child:PGtkWidget);cdecl;external libgtk4;
 
 // === Konventiert am: 23-7-24 19:19:38 ===
 

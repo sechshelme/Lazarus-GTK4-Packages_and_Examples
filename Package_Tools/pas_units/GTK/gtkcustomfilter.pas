@@ -23,9 +23,9 @@ type
   end;
   PGtkCustomFilterClass = ^TGtkCustomFilterClass;
 
-function gtk_custom_filter_get_type: TGType; cdecl; external gtklib;
-function gtk_custom_filter_new(match_func: TGtkCustomFilterFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify): PGtkCustomFilter; cdecl; external gtklib;
-procedure gtk_custom_filter_set_filter_func(self: PGtkCustomFilter; match_func: TGtkCustomFilterFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify); cdecl; external gtklib;
+function gtk_custom_filter_get_type: TGType; cdecl; external libgtk4;
+function gtk_custom_filter_new(match_func: TGtkCustomFilterFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify): PGtkCustomFilter; cdecl; external libgtk4;
+procedure gtk_custom_filter_set_filter_func(self: PGtkCustomFilter; match_func: TGtkCustomFilterFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify); cdecl; external libgtk4;
 
 // === Konventiert am: 24-7-24 19:36:20 ===
 

@@ -30,10 +30,10 @@ type
   PGtkIMContextSimpleClass = ^TGtkIMContextSimpleClass;
 
 
-function gtk_im_context_simple_get_type: TGType; cdecl; external gtklib;
-function gtk_im_context_simple_new: PGtkIMContext; cdecl; external gtklib;
-procedure gtk_im_context_simple_add_table(context_simple: PGtkIMContextSimple; Data: Pguint16; max_seq_len: longint; n_seqs: longint); cdecl; external gtklib;
-procedure gtk_im_context_simple_add_compose_file(context_simple: PGtkIMContextSimple; compose_file: PChar); cdecl; external gtklib;
+function gtk_im_context_simple_get_type: TGType; cdecl; external libgtk4;
+function gtk_im_context_simple_new: PGtkIMContext; cdecl; external libgtk4;
+procedure gtk_im_context_simple_add_table(context_simple: PGtkIMContextSimple; Data: Pguint16; max_seq_len: longint; n_seqs: longint); cdecl; external libgtk4;
+procedure gtk_im_context_simple_add_compose_file(context_simple: PGtkIMContextSimple; compose_file: PChar); cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 19:38:12 ===
 

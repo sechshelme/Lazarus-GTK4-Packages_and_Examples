@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -43,23 +43,23 @@ type
   PGtkIMContextClass = ^TGtkIMContextClass;
 
 
-function gtk_im_context_get_type: TGType; cdecl; external gtklib;
-procedure gtk_im_context_set_client_widget(context: PGtkIMContext; widget: PGtkWidget); cdecl; external gtklib;
-procedure gtk_im_context_get_preedit_string(context: PGtkIMContext; str: PPchar; attrs: PPPangoAttrList; cursor_pos: Plongint); cdecl; external gtklib;
-function gtk_im_context_filter_keypress(context: PGtkIMContext; event: PGdkEvent): Tgboolean; cdecl; external gtklib;
+function gtk_im_context_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_im_context_set_client_widget(context: PGtkIMContext; widget: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_im_context_get_preedit_string(context: PGtkIMContext; str: PPchar; attrs: PPPangoAttrList; cursor_pos: Plongint); cdecl; external libgtk4;
+function gtk_im_context_filter_keypress(context: PGtkIMContext; event: PGdkEvent): Tgboolean; cdecl; external libgtk4;
 function gtk_im_context_filter_key(context: PGtkIMContext; press: Tgboolean; surface: PGdkSurface; device: PGdkDevice; time: Tguint32;
-  keycode: Tguint; state: TGdkModifierType; group: longint): Tgboolean; cdecl; external gtklib;
-procedure gtk_im_context_focus_in(context: PGtkIMContext); cdecl; external gtklib;
-procedure gtk_im_context_focus_out(context: PGtkIMContext); cdecl; external gtklib;
-procedure gtk_im_context_reset(context: PGtkIMContext); cdecl; external gtklib;
-procedure gtk_im_context_set_cursor_location(context: PGtkIMContext; area: PGdkRectangle); cdecl; external gtklib;
-procedure gtk_im_context_set_use_preedit(context: PGtkIMContext; use_preedit: Tgboolean); cdecl; external gtklib;
-procedure gtk_im_context_set_surrounding(context: PGtkIMContext; Text: PChar; len: longint; cursor_index: longint); cdecl; external gtklib;
-function gtk_im_context_get_surrounding(context: PGtkIMContext; Text: PPchar; cursor_index: Plongint): Tgboolean; cdecl; external gtklib;
-procedure gtk_im_context_set_surrounding_with_selection(context: PGtkIMContext; Text: PChar; len: longint; cursor_index: longint; anchor_index: longint); cdecl; external gtklib;
-function gtk_im_context_get_surrounding_with_selection(context: PGtkIMContext; Text: PPchar; cursor_index: Plongint; anchor_index: Plongint): Tgboolean; cdecl; external gtklib;
-function gtk_im_context_delete_surrounding(context: PGtkIMContext; offset: longint; n_chars: longint): Tgboolean; cdecl; external gtklib;
-function gtk_im_context_activate_osk(context: PGtkIMContext; event: PGdkEvent): Tgboolean; cdecl; external gtklib;
+  keycode: Tguint; state: TGdkModifierType; group: longint): Tgboolean; cdecl; external libgtk4;
+procedure gtk_im_context_focus_in(context: PGtkIMContext); cdecl; external libgtk4;
+procedure gtk_im_context_focus_out(context: PGtkIMContext); cdecl; external libgtk4;
+procedure gtk_im_context_reset(context: PGtkIMContext); cdecl; external libgtk4;
+procedure gtk_im_context_set_cursor_location(context: PGtkIMContext; area: PGdkRectangle); cdecl; external libgtk4;
+procedure gtk_im_context_set_use_preedit(context: PGtkIMContext; use_preedit: Tgboolean); cdecl; external libgtk4;
+procedure gtk_im_context_set_surrounding(context: PGtkIMContext; Text: PChar; len: longint; cursor_index: longint); cdecl; external libgtk4;
+function gtk_im_context_get_surrounding(context: PGtkIMContext; Text: PPchar; cursor_index: Plongint): Tgboolean; cdecl; external libgtk4;
+procedure gtk_im_context_set_surrounding_with_selection(context: PGtkIMContext; Text: PChar; len: longint; cursor_index: longint; anchor_index: longint); cdecl; external libgtk4;
+function gtk_im_context_get_surrounding_with_selection(context: PGtkIMContext; Text: PPchar; cursor_index: Plongint; anchor_index: Plongint): Tgboolean; cdecl; external libgtk4;
+function gtk_im_context_delete_surrounding(context: PGtkIMContext; offset: longint; n_chars: longint): Tgboolean; cdecl; external libgtk4;
+function gtk_im_context_activate_osk(context: PGtkIMContext; event: PGdkEvent): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 23-7-24 16:41:55 ===
 

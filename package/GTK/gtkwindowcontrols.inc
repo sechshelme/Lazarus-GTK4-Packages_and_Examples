@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,16 +20,16 @@ type
   end;
   PGtkWindowControlsClass = ^TGtkWindowControlsClass;
 
-function gtk_window_controls_new(side: TGtkPackType): PGtkWidget; cdecl; external gtklib;
-function gtk_window_controls_get_side(self: PGtkWindowControls): TGtkPackType; cdecl; external gtklib;
-procedure gtk_window_controls_set_side(self: PGtkWindowControls; side: TGtkPackType); cdecl; external gtklib;
-function gtk_window_controls_get_decoration_layout(self: PGtkWindowControls): PChar; cdecl; external gtklib;
-procedure gtk_window_controls_set_decoration_layout(self: PGtkWindowControls; layout: PChar); cdecl; external gtklib;
-function gtk_window_controls_get_empty(self: PGtkWindowControls): Tgboolean; cdecl; external gtklib;
+function gtk_window_controls_new(side: TGtkPackType): PGtkWidget; cdecl; external libgtk4;
+function gtk_window_controls_get_side(self: PGtkWindowControls): TGtkPackType; cdecl; external libgtk4;
+procedure gtk_window_controls_set_side(self: PGtkWindowControls; side: TGtkPackType); cdecl; external libgtk4;
+function gtk_window_controls_get_decoration_layout(self: PGtkWindowControls): PChar; cdecl; external libgtk4;
+procedure gtk_window_controls_set_decoration_layout(self: PGtkWindowControls; layout: PChar); cdecl; external libgtk4;
+function gtk_window_controls_get_empty(self: PGtkWindowControls): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 14-7-24 16:12:24 ===
 
-function gtk_window_controls_get_type: TGType; cdecl; external gtklib;
+function gtk_window_controls_get_type: TGType; cdecl; external libgtk4;
 
 function GTK_TYPE_WINDOW_CONTROLS: TGType;
 function GTK_WINDOW_CONTROLS(obj: Pointer): PGtkWindowControls;

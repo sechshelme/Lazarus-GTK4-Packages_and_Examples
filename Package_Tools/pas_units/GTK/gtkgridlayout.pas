@@ -22,7 +22,7 @@ type
   end;
   PGtkGridLayoutClass = ^TGtkGridLayoutClass;
 
-function gtk_grid_layout_get_type: TGType; cdecl; external gtklib;
+function gtk_grid_layout_get_type: TGType; cdecl; external libgtk4;
 function gtk_grid_layout_new: PGtkLayoutManager; cdecl; external;
 procedure gtk_grid_layout_set_row_homogeneous(grid: PGtkGridLayout; homogeneous: Tgboolean); cdecl; external;
 function gtk_grid_layout_get_row_homogeneous(grid: PGtkGridLayout): Tgboolean; cdecl; external;
@@ -49,7 +49,7 @@ type
   end;
   PGtkGridLayoutChildClass = ^TGtkGridLayoutChildClass;
 
-function gtk_grid_layout_child_get_type: TGType; cdecl; external gtklib;
+function gtk_grid_layout_child_get_type: TGType; cdecl; external libgtk4;
 procedure gtk_grid_layout_child_set_row(child: PGtkGridLayoutChild; row: longint); cdecl; external;
 function gtk_grid_layout_child_get_row(child: PGtkGridLayoutChild): longint; cdecl; external;
 procedure gtk_grid_layout_child_set_column(child: PGtkGridLayoutChild; column: longint); cdecl; external;

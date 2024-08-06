@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -13,13 +13,13 @@ type
   end;
   PGtkCellAreaBox = ^TGtkCellAreaBox;
 
-function gtk_cell_area_box_get_type: TGType; cdecl; external gtklib;
-function gtk_cell_area_box_new: PGtkCellArea; cdecl; external gtklib;
-procedure gtk_cell_area_box_pack_start(box: PGtkCellAreaBox; renderer: PGtkCellRenderer; expand: Tgboolean; align: Tgboolean; fixed: Tgboolean); cdecl; external gtklib;
-procedure gtk_cell_area_box_pack_end(box: PGtkCellAreaBox; renderer: PGtkCellRenderer; expand: Tgboolean; align: Tgboolean; fixed: Tgboolean); cdecl; external gtklib;
-function gtk_cell_area_box_get_spacing(box: PGtkCellAreaBox): longint; cdecl; external gtklib;
-procedure gtk_cell_area_box_set_spacing(box: PGtkCellAreaBox; spacing: longint); cdecl; external gtklib;
-function _gtk_cell_area_box_group_visible(box: PGtkCellAreaBox; group_idx: longint): Tgboolean; cdecl; external gtklib;
+function gtk_cell_area_box_get_type: TGType; cdecl; external libgtk4;
+function gtk_cell_area_box_new: PGtkCellArea; cdecl; external libgtk4;
+procedure gtk_cell_area_box_pack_start(box: PGtkCellAreaBox; renderer: PGtkCellRenderer; expand: Tgboolean; align: Tgboolean; fixed: Tgboolean); cdecl; external libgtk4;
+procedure gtk_cell_area_box_pack_end(box: PGtkCellAreaBox; renderer: PGtkCellRenderer; expand: Tgboolean; align: Tgboolean; fixed: Tgboolean); cdecl; external libgtk4;
+function gtk_cell_area_box_get_spacing(box: PGtkCellAreaBox): longint; cdecl; external libgtk4;
+procedure gtk_cell_area_box_set_spacing(box: PGtkCellAreaBox; spacing: longint); cdecl; external libgtk4;
+function _gtk_cell_area_box_group_visible(box: PGtkCellAreaBox; group_idx: longint): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 16:59:22 ===
 

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -14,20 +14,20 @@ type
   end;
   PGtkCellView = ^TGtkCellView;
 
-function gtk_cell_view_get_type: TGType; cdecl; external gtklib;
-function gtk_cell_view_new: PGtkWidget; cdecl; external gtklib;
-function gtk_cell_view_new_with_context(area: PGtkCellArea; context: PGtkCellAreaContext): PGtkWidget; cdecl; external gtklib;
-function gtk_cell_view_new_with_text(Text: PChar): PGtkWidget; cdecl; external gtklib;
-function gtk_cell_view_new_with_markup(markup: PChar): PGtkWidget; cdecl; external gtklib;
-function gtk_cell_view_new_with_texture(texture: PGdkTexture): PGtkWidget; cdecl; external gtklib;
-procedure gtk_cell_view_set_model(cell_view: PGtkCellView; model: PGtkTreeModel); cdecl; external gtklib;
-function gtk_cell_view_get_model(cell_view: PGtkCellView): PGtkTreeModel; cdecl; external gtklib;
-procedure gtk_cell_view_set_displayed_row(cell_view: PGtkCellView; path: PGtkTreePath); cdecl; external gtklib;
-function gtk_cell_view_get_displayed_row(cell_view: PGtkCellView): PGtkTreePath; cdecl; external gtklib;
-function gtk_cell_view_get_draw_sensitive(cell_view: PGtkCellView): Tgboolean; cdecl; external gtklib;
-procedure gtk_cell_view_set_draw_sensitive(cell_view: PGtkCellView; draw_sensitive: Tgboolean); cdecl; external gtklib;
-function gtk_cell_view_get_fit_model(cell_view: PGtkCellView): Tgboolean; cdecl; external gtklib;
-procedure gtk_cell_view_set_fit_model(cell_view: PGtkCellView; fit_model: Tgboolean); cdecl; external gtklib;
+function gtk_cell_view_get_type: TGType; cdecl; external libgtk4;
+function gtk_cell_view_new: PGtkWidget; cdecl; external libgtk4;
+function gtk_cell_view_new_with_context(area: PGtkCellArea; context: PGtkCellAreaContext): PGtkWidget; cdecl; external libgtk4;
+function gtk_cell_view_new_with_text(Text: PChar): PGtkWidget; cdecl; external libgtk4;
+function gtk_cell_view_new_with_markup(markup: PChar): PGtkWidget; cdecl; external libgtk4;
+function gtk_cell_view_new_with_texture(texture: PGdkTexture): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_cell_view_set_model(cell_view: PGtkCellView; model: PGtkTreeModel); cdecl; external libgtk4;
+function gtk_cell_view_get_model(cell_view: PGtkCellView): PGtkTreeModel; cdecl; external libgtk4;
+procedure gtk_cell_view_set_displayed_row(cell_view: PGtkCellView; path: PGtkTreePath); cdecl; external libgtk4;
+function gtk_cell_view_get_displayed_row(cell_view: PGtkCellView): PGtkTreePath; cdecl; external libgtk4;
+function gtk_cell_view_get_draw_sensitive(cell_view: PGtkCellView): Tgboolean; cdecl; external libgtk4;
+procedure gtk_cell_view_set_draw_sensitive(cell_view: PGtkCellView; draw_sensitive: Tgboolean); cdecl; external libgtk4;
+function gtk_cell_view_get_fit_model(cell_view: PGtkCellView): Tgboolean; cdecl; external libgtk4;
+procedure gtk_cell_view_set_fit_model(cell_view: PGtkCellView; fit_model: Tgboolean); cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 17:01:29 ===
 

@@ -18,8 +18,8 @@ type
   end;
   PGskVulkanRendererClass = ^TGskVulkanRendererClass;
 
-function gsk_vulkan_renderer_get_type: TGType; cdecl; external gtklib;
-function gsk_vulkan_renderer_new: PGskRenderer; cdecl; external gtklib;
+function gsk_vulkan_renderer_get_type: TGType; cdecl; external libgtk4;
+function gsk_vulkan_renderer_new: PGskRenderer; cdecl; external libgtk4;
 
 // === Konventiert am: 4-8-24 13:20:47 ===
 

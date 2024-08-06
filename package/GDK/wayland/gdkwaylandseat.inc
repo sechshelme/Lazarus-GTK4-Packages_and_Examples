@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -12,8 +12,8 @@ type
   PGdkWaylandSeat = ^TGdkWaylandSeat;
   TGdkWaylandSeat = TGdkSeat;
 
-function gdk_wayland_seat_get_type:TGType;cdecl;external gtklib;
-function gdk_wayland_seat_get_wl_seat(seat:PGdkSeat):Pwl_seat;cdecl;external gtklib;
+function gdk_wayland_seat_get_type:TGType;cdecl;external libgtk4;
+function gdk_wayland_seat_get_wl_seat(seat:PGdkSeat):Pwl_seat;cdecl;external libgtk4;
 
 // === Konventiert am: 3-8-24 19:19:41 ===
 

@@ -2,14 +2,14 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
 {$IFDEF read_interface}
 
 
-function gtk_tree_row_data_get_type: TGType; cdecl; external gtklib;
+function gtk_tree_row_data_get_type: TGType; cdecl; external libgtk4;
 
 type
   TGtkTreeDragSource = record
@@ -25,10 +25,10 @@ type
   PGtkTreeDragSourceIface = ^TGtkTreeDragSourceIface;
 
 
-function gtk_tree_drag_source_get_type: TGType; cdecl; external gtklib;
-function gtk_tree_drag_source_row_draggable(drag_source: PGtkTreeDragSource; path: PGtkTreePath): Tgboolean; cdecl; external gtklib;
-function gtk_tree_drag_source_drag_data_delete(drag_source: PGtkTreeDragSource; path: PGtkTreePath): Tgboolean; cdecl; external gtklib;
-function gtk_tree_drag_source_drag_data_get(drag_source: PGtkTreeDragSource; path: PGtkTreePath): PGdkContentProvider; cdecl; external gtklib;
+function gtk_tree_drag_source_get_type: TGType; cdecl; external libgtk4;
+function gtk_tree_drag_source_row_draggable(drag_source: PGtkTreeDragSource; path: PGtkTreePath): Tgboolean; cdecl; external libgtk4;
+function gtk_tree_drag_source_drag_data_delete(drag_source: PGtkTreeDragSource; path: PGtkTreePath): Tgboolean; cdecl; external libgtk4;
+function gtk_tree_drag_source_drag_data_get(drag_source: PGtkTreeDragSource; path: PGtkTreePath): PGdkContentProvider; cdecl; external libgtk4;
 
 type
   TGtkTreeDragDest = record
@@ -43,11 +43,11 @@ type
   PGtkTreeDragDestIface = ^TGtkTreeDragDestIface;
 
 
-function gtk_tree_drag_dest_get_type: TGType; cdecl; external gtklib;
-function gtk_tree_drag_dest_drag_data_received(drag_dest: PGtkTreeDragDest; dest: PGtkTreePath; Value: PGValue): Tgboolean; cdecl; external gtklib;
-function gtk_tree_drag_dest_row_drop_possible(drag_dest: PGtkTreeDragDest; dest_path: PGtkTreePath; Value: PGValue): Tgboolean; cdecl; external gtklib;
-function gtk_tree_create_row_drag_content(tree_model: PGtkTreeModel; path: PGtkTreePath): PGdkContentProvider; cdecl; external gtklib;
-function gtk_tree_get_row_drag_data(Value: PGValue; tree_model: PPGtkTreeModel; path: PPGtkTreePath): Tgboolean; cdecl; external gtklib;
+function gtk_tree_drag_dest_get_type: TGType; cdecl; external libgtk4;
+function gtk_tree_drag_dest_drag_data_received(drag_dest: PGtkTreeDragDest; dest: PGtkTreePath; Value: PGValue): Tgboolean; cdecl; external libgtk4;
+function gtk_tree_drag_dest_row_drop_possible(drag_dest: PGtkTreeDragDest; dest_path: PGtkTreePath; Value: PGValue): Tgboolean; cdecl; external libgtk4;
+function gtk_tree_create_row_drag_content(tree_model: PGtkTreeModel; path: PGtkTreePath): PGdkContentProvider; cdecl; external libgtk4;
+function gtk_tree_get_row_drag_data(Value: PGValue; tree_model: PPGtkTreeModel; path: PPGtkTreePath): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 30-7-24 15:21:16 ===
 

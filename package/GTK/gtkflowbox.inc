@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -28,62 +28,62 @@ type
   PGtkFlowBoxCreateWidgetFunc = ^TGtkFlowBoxCreateWidgetFunc;
   TGtkFlowBoxCreateWidgetFunc = function(item: Tgpointer; user_data: Tgpointer): PGtkWidget; cdecl;
 
-function gtk_flow_box_child_get_type: TGType; cdecl; external gtklib;
-function gtk_flow_box_child_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_flow_box_child_set_child(self: PGtkFlowBoxChild; child: PGtkWidget); cdecl; external gtklib;
-function gtk_flow_box_child_get_child(self: PGtkFlowBoxChild): PGtkWidget; cdecl; external gtklib;
-function gtk_flow_box_child_get_index(child: PGtkFlowBoxChild): longint; cdecl; external gtklib;
-function gtk_flow_box_child_is_selected(child: PGtkFlowBoxChild): Tgboolean; cdecl; external gtklib;
-procedure gtk_flow_box_child_changed(child: PGtkFlowBoxChild); cdecl; external gtklib;
+function gtk_flow_box_child_get_type: TGType; cdecl; external libgtk4;
+function gtk_flow_box_child_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_flow_box_child_set_child(self: PGtkFlowBoxChild; child: PGtkWidget); cdecl; external libgtk4;
+function gtk_flow_box_child_get_child(self: PGtkFlowBoxChild): PGtkWidget; cdecl; external libgtk4;
+function gtk_flow_box_child_get_index(child: PGtkFlowBoxChild): longint; cdecl; external libgtk4;
+function gtk_flow_box_child_is_selected(child: PGtkFlowBoxChild): Tgboolean; cdecl; external libgtk4;
+procedure gtk_flow_box_child_changed(child: PGtkFlowBoxChild); cdecl; external libgtk4;
 
-function gtk_flow_box_get_type: TGType; cdecl; external gtklib;
-function gtk_flow_box_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_flow_box_bind_model(box: PGtkFlowBox; model: PGListModel; create_widget_func: TGtkFlowBoxCreateWidgetFunc; user_data: Tgpointer; user_data_free_func: TGDestroyNotify); cdecl; external gtklib;
-procedure gtk_flow_box_set_homogeneous(box: PGtkFlowBox; homogeneous: Tgboolean); cdecl; external gtklib;
-function gtk_flow_box_get_homogeneous(box: PGtkFlowBox): Tgboolean; cdecl; external gtklib;
-procedure gtk_flow_box_set_row_spacing(box: PGtkFlowBox; spacing: Tguint); cdecl; external gtklib;
-function gtk_flow_box_get_row_spacing(box: PGtkFlowBox): Tguint; cdecl; external gtklib;
-procedure gtk_flow_box_set_column_spacing(box: PGtkFlowBox; spacing: Tguint); cdecl; external gtklib;
-function gtk_flow_box_get_column_spacing(box: PGtkFlowBox): Tguint; cdecl; external gtklib;
-procedure gtk_flow_box_set_min_children_per_line(box: PGtkFlowBox; n_children: Tguint); cdecl; external gtklib;
-function gtk_flow_box_get_min_children_per_line(box: PGtkFlowBox): Tguint; cdecl; external gtklib;
-procedure gtk_flow_box_set_max_children_per_line(box: PGtkFlowBox; n_children: Tguint); cdecl; external gtklib;
-function gtk_flow_box_get_max_children_per_line(box: PGtkFlowBox): Tguint; cdecl; external gtklib;
-procedure gtk_flow_box_set_activate_on_single_click(box: PGtkFlowBox; single: Tgboolean); cdecl; external gtklib;
-function gtk_flow_box_get_activate_on_single_click(box: PGtkFlowBox): Tgboolean; cdecl; external gtklib;
-procedure gtk_flow_box_prepend(self: PGtkFlowBox; child: PGtkWidget); cdecl; external gtklib;
-procedure gtk_flow_box_append(self: PGtkFlowBox; child: PGtkWidget); cdecl; external gtklib;
-procedure gtk_flow_box_insert(box: PGtkFlowBox; widget: PGtkWidget; position: longint); cdecl; external gtklib;
-procedure gtk_flow_box_remove(box: PGtkFlowBox; widget: PGtkWidget); cdecl; external gtklib;
-procedure gtk_flow_box_remove_all(box: PGtkFlowBox); cdecl; external gtklib;
-function gtk_flow_box_get_child_at_index(box: PGtkFlowBox; idx: longint): PGtkFlowBoxChild; cdecl; external gtklib;
-function gtk_flow_box_get_child_at_pos(box: PGtkFlowBox; x: longint; y: longint): PGtkFlowBoxChild; cdecl; external gtklib;
+function gtk_flow_box_get_type: TGType; cdecl; external libgtk4;
+function gtk_flow_box_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_flow_box_bind_model(box: PGtkFlowBox; model: PGListModel; create_widget_func: TGtkFlowBoxCreateWidgetFunc; user_data: Tgpointer; user_data_free_func: TGDestroyNotify); cdecl; external libgtk4;
+procedure gtk_flow_box_set_homogeneous(box: PGtkFlowBox; homogeneous: Tgboolean); cdecl; external libgtk4;
+function gtk_flow_box_get_homogeneous(box: PGtkFlowBox): Tgboolean; cdecl; external libgtk4;
+procedure gtk_flow_box_set_row_spacing(box: PGtkFlowBox; spacing: Tguint); cdecl; external libgtk4;
+function gtk_flow_box_get_row_spacing(box: PGtkFlowBox): Tguint; cdecl; external libgtk4;
+procedure gtk_flow_box_set_column_spacing(box: PGtkFlowBox; spacing: Tguint); cdecl; external libgtk4;
+function gtk_flow_box_get_column_spacing(box: PGtkFlowBox): Tguint; cdecl; external libgtk4;
+procedure gtk_flow_box_set_min_children_per_line(box: PGtkFlowBox; n_children: Tguint); cdecl; external libgtk4;
+function gtk_flow_box_get_min_children_per_line(box: PGtkFlowBox): Tguint; cdecl; external libgtk4;
+procedure gtk_flow_box_set_max_children_per_line(box: PGtkFlowBox; n_children: Tguint); cdecl; external libgtk4;
+function gtk_flow_box_get_max_children_per_line(box: PGtkFlowBox): Tguint; cdecl; external libgtk4;
+procedure gtk_flow_box_set_activate_on_single_click(box: PGtkFlowBox; single: Tgboolean); cdecl; external libgtk4;
+function gtk_flow_box_get_activate_on_single_click(box: PGtkFlowBox): Tgboolean; cdecl; external libgtk4;
+procedure gtk_flow_box_prepend(self: PGtkFlowBox; child: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_flow_box_append(self: PGtkFlowBox; child: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_flow_box_insert(box: PGtkFlowBox; widget: PGtkWidget; position: longint); cdecl; external libgtk4;
+procedure gtk_flow_box_remove(box: PGtkFlowBox; widget: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_flow_box_remove_all(box: PGtkFlowBox); cdecl; external libgtk4;
+function gtk_flow_box_get_child_at_index(box: PGtkFlowBox; idx: longint): PGtkFlowBoxChild; cdecl; external libgtk4;
+function gtk_flow_box_get_child_at_pos(box: PGtkFlowBox; x: longint; y: longint): PGtkFlowBoxChild; cdecl; external libgtk4;
 
 type
   TGtkFlowBoxForeachFunc = procedure(box: PGtkFlowBox; child: PGtkFlowBoxChild; user_data: Tgpointer); cdecl;
 
-procedure gtk_flow_box_selected_foreach(box: PGtkFlowBox; func: TGtkFlowBoxForeachFunc; Data: Tgpointer); cdecl; external gtklib;
-function gtk_flow_box_get_selected_children(box: PGtkFlowBox): PGList; cdecl; external gtklib;
-procedure gtk_flow_box_select_child(box: PGtkFlowBox; child: PGtkFlowBoxChild); cdecl; external gtklib;
-procedure gtk_flow_box_unselect_child(box: PGtkFlowBox; child: PGtkFlowBoxChild); cdecl; external gtklib;
-procedure gtk_flow_box_select_all(box: PGtkFlowBox); cdecl; external gtklib;
-procedure gtk_flow_box_unselect_all(box: PGtkFlowBox); cdecl; external gtklib;
-procedure gtk_flow_box_set_selection_mode(box: PGtkFlowBox; mode: TGtkSelectionMode); cdecl; external gtklib;
-function gtk_flow_box_get_selection_mode(box: PGtkFlowBox): TGtkSelectionMode; cdecl; external gtklib;
-procedure gtk_flow_box_set_hadjustment(box: PGtkFlowBox; adjustment: PGtkAdjustment); cdecl; external gtklib;
-procedure gtk_flow_box_set_vadjustment(box: PGtkFlowBox; adjustment: PGtkAdjustment); cdecl; external gtklib;
+procedure gtk_flow_box_selected_foreach(box: PGtkFlowBox; func: TGtkFlowBoxForeachFunc; Data: Tgpointer); cdecl; external libgtk4;
+function gtk_flow_box_get_selected_children(box: PGtkFlowBox): PGList; cdecl; external libgtk4;
+procedure gtk_flow_box_select_child(box: PGtkFlowBox; child: PGtkFlowBoxChild); cdecl; external libgtk4;
+procedure gtk_flow_box_unselect_child(box: PGtkFlowBox; child: PGtkFlowBoxChild); cdecl; external libgtk4;
+procedure gtk_flow_box_select_all(box: PGtkFlowBox); cdecl; external libgtk4;
+procedure gtk_flow_box_unselect_all(box: PGtkFlowBox); cdecl; external libgtk4;
+procedure gtk_flow_box_set_selection_mode(box: PGtkFlowBox; mode: TGtkSelectionMode); cdecl; external libgtk4;
+function gtk_flow_box_get_selection_mode(box: PGtkFlowBox): TGtkSelectionMode; cdecl; external libgtk4;
+procedure gtk_flow_box_set_hadjustment(box: PGtkFlowBox; adjustment: PGtkAdjustment); cdecl; external libgtk4;
+procedure gtk_flow_box_set_vadjustment(box: PGtkFlowBox; adjustment: PGtkAdjustment); cdecl; external libgtk4;
 
 type
   TGtkFlowBoxFilterFunc = function(child: PGtkFlowBoxChild; user_data: Tgpointer): Tgboolean; cdecl;
 
-procedure gtk_flow_box_set_filter_func(box: PGtkFlowBox; filter_func: TGtkFlowBoxFilterFunc; user_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external gtklib;
-procedure gtk_flow_box_invalidate_filter(box: PGtkFlowBox); cdecl; external gtklib;
+procedure gtk_flow_box_set_filter_func(box: PGtkFlowBox; filter_func: TGtkFlowBoxFilterFunc; user_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external libgtk4;
+procedure gtk_flow_box_invalidate_filter(box: PGtkFlowBox); cdecl; external libgtk4;
 
 type
   TGtkFlowBoxSortFunc = function(child1: PGtkFlowBoxChild; child2: PGtkFlowBoxChild; user_data: Tgpointer): longint; cdecl;
 
-procedure gtk_flow_box_set_sort_func(box: PGtkFlowBox; sort_func: TGtkFlowBoxSortFunc; user_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external gtklib;
-procedure gtk_flow_box_invalidate_sort(box: PGtkFlowBox); cdecl; external gtklib;
+procedure gtk_flow_box_set_sort_func(box: PGtkFlowBox; sort_func: TGtkFlowBoxSortFunc; user_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external libgtk4;
+procedure gtk_flow_box_invalidate_sort(box: PGtkFlowBox); cdecl; external libgtk4;
 
 // === Konventiert am: 21-7-24 19:12:44 ===
 

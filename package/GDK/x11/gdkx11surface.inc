@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -16,22 +16,22 @@ type
   end;
   PGdkX11SurfaceClass = ^TGdkX11SurfaceClass;
 
-function gdk_x11_surface_get_type: TGType; cdecl; external gtklib;
-function gdk_x11_surface_get_xid(surface: PGdkSurface): TWindow; cdecl; external gtklib;
-procedure gdk_x11_surface_set_user_time(surface: PGdkSurface; timestamp: Tguint32); cdecl; external gtklib;
-procedure gdk_x11_surface_set_utf8_property(surface: PGdkSurface; Name: PChar; Value: PChar); cdecl; external gtklib;
-procedure gdk_x11_surface_set_theme_variant(surface: PGdkSurface; variant: PChar); cdecl; external gtklib;
-procedure gdk_x11_surface_move_to_current_desktop(surface: PGdkSurface); cdecl; external gtklib;
-function gdk_x11_surface_get_desktop(surface: PGdkSurface): Tguint32; cdecl; external gtklib;
-procedure gdk_x11_surface_move_to_desktop(surface: PGdkSurface; desktop: Tguint32); cdecl; external gtklib;
-procedure gdk_x11_surface_set_frame_sync_enabled(surface: PGdkSurface; frame_sync_enabled: Tgboolean); cdecl; external gtklib;
-function gdk_x11_get_server_time(surface: PGdkSurface): Tguint32; cdecl; external gtklib;
-function gdk_x11_surface_lookup_for_display(display: PGdkDisplay; window: TWindow): PGdkSurface; cdecl; external gtklib;
-procedure gdk_x11_surface_set_skip_taskbar_hint(surface: PGdkSurface; skips_taskbar: Tgboolean); cdecl; external gtklib;
-procedure gdk_x11_surface_set_skip_pager_hint(surface: PGdkSurface; skips_pager: Tgboolean); cdecl; external gtklib;
-procedure gdk_x11_surface_set_urgency_hint(surface: PGdkSurface; urgent: Tgboolean); cdecl; external gtklib;
-procedure gdk_x11_surface_set_group(surface: PGdkSurface; leader: PGdkSurface); cdecl; external gtklib;
-function gdk_x11_surface_get_group(surface: PGdkSurface): PGdkSurface; cdecl; external gtklib;
+function gdk_x11_surface_get_type: TGType; cdecl; external libgtk4;
+function gdk_x11_surface_get_xid(surface: PGdkSurface): TWindow; cdecl; external libgtk4;
+procedure gdk_x11_surface_set_user_time(surface: PGdkSurface; timestamp: Tguint32); cdecl; external libgtk4;
+procedure gdk_x11_surface_set_utf8_property(surface: PGdkSurface; Name: PChar; Value: PChar); cdecl; external libgtk4;
+procedure gdk_x11_surface_set_theme_variant(surface: PGdkSurface; variant: PChar); cdecl; external libgtk4;
+procedure gdk_x11_surface_move_to_current_desktop(surface: PGdkSurface); cdecl; external libgtk4;
+function gdk_x11_surface_get_desktop(surface: PGdkSurface): Tguint32; cdecl; external libgtk4;
+procedure gdk_x11_surface_move_to_desktop(surface: PGdkSurface; desktop: Tguint32); cdecl; external libgtk4;
+procedure gdk_x11_surface_set_frame_sync_enabled(surface: PGdkSurface; frame_sync_enabled: Tgboolean); cdecl; external libgtk4;
+function gdk_x11_get_server_time(surface: PGdkSurface): Tguint32; cdecl; external libgtk4;
+function gdk_x11_surface_lookup_for_display(display: PGdkDisplay; window: TWindow): PGdkSurface; cdecl; external libgtk4;
+procedure gdk_x11_surface_set_skip_taskbar_hint(surface: PGdkSurface; skips_taskbar: Tgboolean); cdecl; external libgtk4;
+procedure gdk_x11_surface_set_skip_pager_hint(surface: PGdkSurface; skips_pager: Tgboolean); cdecl; external libgtk4;
+procedure gdk_x11_surface_set_urgency_hint(surface: PGdkSurface; urgent: Tgboolean); cdecl; external libgtk4;
+procedure gdk_x11_surface_set_group(surface: PGdkSurface; leader: PGdkSurface); cdecl; external libgtk4;
+function gdk_x11_surface_get_group(surface: PGdkSurface): PGdkSurface; cdecl; external libgtk4;
 
 function GDK_SURFACE_XDISPLAY(win: PGdkSurface): PDisplay;
 function GDK_SURFACE_XID(win: PGdkSurface): TWindow;

@@ -31,19 +31,19 @@ type
   end;
   PGtkTreeModelFilterClass = ^TGtkTreeModelFilterClass;
 
-function gtk_tree_model_filter_get_type: TGType; cdecl; external gtklib;
-function gtk_tree_model_filter_new(child_model: PGtkTreeModel; root: PGtkTreePath): PGtkTreeModel; cdecl; external gtklib;
-procedure gtk_tree_model_filter_set_visible_func(filter: PGtkTreeModelFilter; func: TGtkTreeModelFilterVisibleFunc; Data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external gtklib;
+function gtk_tree_model_filter_get_type: TGType; cdecl; external libgtk4;
+function gtk_tree_model_filter_new(child_model: PGtkTreeModel; root: PGtkTreePath): PGtkTreeModel; cdecl; external libgtk4;
+procedure gtk_tree_model_filter_set_visible_func(filter: PGtkTreeModelFilter; func: TGtkTreeModelFilterVisibleFunc; Data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external libgtk4;
 procedure gtk_tree_model_filter_set_modify_func(filter: PGtkTreeModelFilter; n_columns: longint; types: PGType; func: TGtkTreeModelFilterModifyFunc; Data: Tgpointer;
-  Destroy: TGDestroyNotify); cdecl; external gtklib;
-procedure gtk_tree_model_filter_set_visible_column(filter: PGtkTreeModelFilter; column: longint); cdecl; external gtklib;
-function gtk_tree_model_filter_get_model(filter: PGtkTreeModelFilter): PGtkTreeModel; cdecl; external gtklib;
-function gtk_tree_model_filter_convert_child_iter_to_iter(filter: PGtkTreeModelFilter; filter_iter: PGtkTreeIter; child_iter: PGtkTreeIter): Tgboolean; cdecl; external gtklib;
-procedure gtk_tree_model_filter_convert_iter_to_child_iter(filter: PGtkTreeModelFilter; child_iter: PGtkTreeIter; filter_iter: PGtkTreeIter); cdecl; external gtklib;
-function gtk_tree_model_filter_convert_child_path_to_path(filter: PGtkTreeModelFilter; child_path: PGtkTreePath): PGtkTreePath; cdecl; external gtklib;
-function gtk_tree_model_filter_convert_path_to_child_path(filter: PGtkTreeModelFilter; filter_path: PGtkTreePath): PGtkTreePath; cdecl; external gtklib;
-procedure gtk_tree_model_filter_refilter(filter: PGtkTreeModelFilter); cdecl; external gtklib;
-procedure gtk_tree_model_filter_clear_cache(filter: PGtkTreeModelFilter); cdecl; external gtklib;
+  Destroy: TGDestroyNotify); cdecl; external libgtk4;
+procedure gtk_tree_model_filter_set_visible_column(filter: PGtkTreeModelFilter; column: longint); cdecl; external libgtk4;
+function gtk_tree_model_filter_get_model(filter: PGtkTreeModelFilter): PGtkTreeModel; cdecl; external libgtk4;
+function gtk_tree_model_filter_convert_child_iter_to_iter(filter: PGtkTreeModelFilter; filter_iter: PGtkTreeIter; child_iter: PGtkTreeIter): Tgboolean; cdecl; external libgtk4;
+procedure gtk_tree_model_filter_convert_iter_to_child_iter(filter: PGtkTreeModelFilter; child_iter: PGtkTreeIter; filter_iter: PGtkTreeIter); cdecl; external libgtk4;
+function gtk_tree_model_filter_convert_child_path_to_path(filter: PGtkTreeModelFilter; child_path: PGtkTreePath): PGtkTreePath; cdecl; external libgtk4;
+function gtk_tree_model_filter_convert_path_to_child_path(filter: PGtkTreeModelFilter; filter_path: PGtkTreePath): PGtkTreePath; cdecl; external libgtk4;
+procedure gtk_tree_model_filter_refilter(filter: PGtkTreeModelFilter); cdecl; external libgtk4;
+procedure gtk_tree_model_filter_clear_cache(filter: PGtkTreeModelFilter); cdecl; external libgtk4;
 
 // === Konventiert am: 30-7-24 15:23:52 ===
 

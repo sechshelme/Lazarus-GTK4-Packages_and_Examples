@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -21,21 +21,21 @@ type
   PGtkBoxClass = ^TGtkBoxClass;
 
 
-function gtk_box_get_type: TGType; cdecl; external gtklib;
-function gtk_box_new(orientation: TGtkOrientation; spacing: longint): PGtkWidget; cdecl; external gtklib;
-procedure gtk_box_set_homogeneous(box: PGtkBox; homogeneous: Tgboolean); cdecl; external gtklib;
-function gtk_box_get_homogeneous(box: PGtkBox): Tgboolean; cdecl; external gtklib;
-procedure gtk_box_set_spacing(box: PGtkBox; spacing: longint); cdecl; external gtklib;
-function gtk_box_get_spacing(box: PGtkBox): longint; cdecl; external gtklib;
-procedure gtk_box_set_baseline_position(box: PGtkBox; position: TGtkBaselinePosition); cdecl; external gtklib;
-function gtk_box_get_baseline_position(box: PGtkBox): TGtkBaselinePosition; cdecl; external gtklib;
-procedure gtk_box_set_baseline_child(box: PGtkBox; child: longint); cdecl; external gtklib;
-function gtk_box_get_baseline_child(box: PGtkBox): longint; cdecl; external gtklib;
-procedure gtk_box_append(box: PGtkBox; child: PGtkWidget); cdecl; external gtklib;
-procedure gtk_box_prepend(box: PGtkBox; child: PGtkWidget); cdecl; external gtklib;
-procedure gtk_box_remove(box: PGtkBox; child: PGtkWidget); cdecl; external gtklib;
-procedure gtk_box_insert_child_after(box: PGtkBox; child: PGtkWidget; sibling: PGtkWidget); cdecl; external gtklib;
-procedure gtk_box_reorder_child_after(box: PGtkBox; child: PGtkWidget; sibling: PGtkWidget); cdecl; external gtklib;
+function gtk_box_get_type: TGType; cdecl; external libgtk4;
+function gtk_box_new(orientation: TGtkOrientation; spacing: longint): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_box_set_homogeneous(box: PGtkBox; homogeneous: Tgboolean); cdecl; external libgtk4;
+function gtk_box_get_homogeneous(box: PGtkBox): Tgboolean; cdecl; external libgtk4;
+procedure gtk_box_set_spacing(box: PGtkBox; spacing: longint); cdecl; external libgtk4;
+function gtk_box_get_spacing(box: PGtkBox): longint; cdecl; external libgtk4;
+procedure gtk_box_set_baseline_position(box: PGtkBox; position: TGtkBaselinePosition); cdecl; external libgtk4;
+function gtk_box_get_baseline_position(box: PGtkBox): TGtkBaselinePosition; cdecl; external libgtk4;
+procedure gtk_box_set_baseline_child(box: PGtkBox; child: longint); cdecl; external libgtk4;
+function gtk_box_get_baseline_child(box: PGtkBox): longint; cdecl; external libgtk4;
+procedure gtk_box_append(box: PGtkBox; child: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_box_prepend(box: PGtkBox; child: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_box_remove(box: PGtkBox; child: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_box_insert_child_after(box: PGtkBox; child: PGtkWidget; sibling: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_box_reorder_child_after(box: PGtkBox; child: PGtkWidget; sibling: PGtkWidget); cdecl; external libgtk4;
 
 // === Konventiert am: 11-7-24 22:33:47 ===
 

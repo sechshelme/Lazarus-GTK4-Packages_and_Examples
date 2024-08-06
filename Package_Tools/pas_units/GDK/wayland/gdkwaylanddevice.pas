@@ -17,12 +17,12 @@ type
   end;
   PGdkWaylandDeviceClass = ^TGdkWaylandDeviceClass;
 
-function gdk_wayland_device_get_type: TGType; cdecl; external gtklib;
-function gdk_wayland_device_get_wl_seat(device: PGdkDevice): Pwl_seat; cdecl; external gtklib;
-function gdk_wayland_device_get_wl_pointer(device: PGdkDevice): Pwl_pointer; cdecl; external gtklib;
-function gdk_wayland_device_get_wl_keyboard(device: PGdkDevice): Pwl_keyboard; cdecl; external gtklib;
-function gdk_wayland_device_get_xkb_keymap(device: PGdkDevice): Pxkb_keymap; cdecl; external gtklib;
-function gdk_wayland_device_get_node_path(device: PGdkDevice): PChar; cdecl; external gtklib;
+function gdk_wayland_device_get_type: TGType; cdecl; external libgtk4;
+function gdk_wayland_device_get_wl_seat(device: PGdkDevice): Pwl_seat; cdecl; external libgtk4;
+function gdk_wayland_device_get_wl_pointer(device: PGdkDevice): Pwl_pointer; cdecl; external libgtk4;
+function gdk_wayland_device_get_wl_keyboard(device: PGdkDevice): Pwl_keyboard; cdecl; external libgtk4;
+function gdk_wayland_device_get_xkb_keymap(device: PGdkDevice): Pxkb_keymap; cdecl; external libgtk4;
+function gdk_wayland_device_get_node_path(device: PGdkDevice): PChar; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 19:19:13 ===
 

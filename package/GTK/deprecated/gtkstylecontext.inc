@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -26,25 +26,25 @@ type
   PGtkStyleContextClass = ^TGtkStyleContextClass;
 
 
-function gtk_style_context_get_type: TGType; cdecl; external gtklib;
-procedure gtk_style_context_add_provider(context: PGtkStyleContext; provider: PGtkStyleProvider; priority: Tguint); cdecl; external gtklib;
-procedure gtk_style_context_remove_provider(context: PGtkStyleContext; provider: PGtkStyleProvider); cdecl; external gtklib;
-procedure gtk_style_context_save(context: PGtkStyleContext); cdecl; external gtklib;
-procedure gtk_style_context_restore(context: PGtkStyleContext); cdecl; external gtklib;
-procedure gtk_style_context_set_state(context: PGtkStyleContext; flags: TGtkStateFlags); cdecl; external gtklib;
-function gtk_style_context_get_state(context: PGtkStyleContext): TGtkStateFlags; cdecl; external gtklib;
-procedure gtk_style_context_set_scale(context: PGtkStyleContext; scale: longint); cdecl; external gtklib;
-function gtk_style_context_get_scale(context: PGtkStyleContext): longint; cdecl; external gtklib;
-procedure gtk_style_context_add_class(context: PGtkStyleContext; class_name: PChar); cdecl; external gtklib;
-procedure gtk_style_context_remove_class(context: PGtkStyleContext; class_name: PChar); cdecl; external gtklib;
-function gtk_style_context_has_class(context: PGtkStyleContext; class_name: PChar): Tgboolean; cdecl; external gtklib;
-procedure gtk_style_context_set_display(context: PGtkStyleContext; display: PGdkDisplay); cdecl; external gtklib;
-function gtk_style_context_get_display(context: PGtkStyleContext): PGdkDisplay; cdecl; external gtklib;
-function gtk_style_context_lookup_color(context: PGtkStyleContext; color_name: PChar; color: PGdkRGBA): Tgboolean; cdecl; external gtklib;
-procedure gtk_style_context_get_color(context: PGtkStyleContext; color: PGdkRGBA); cdecl; external gtklib;
-procedure gtk_style_context_get_border(context: PGtkStyleContext; border: PGtkBorder); cdecl; external gtklib;
-procedure gtk_style_context_get_padding(context: PGtkStyleContext; padding: PGtkBorder); cdecl; external gtklib;
-procedure gtk_style_context_get_margin(context: PGtkStyleContext; margin: PGtkBorder); cdecl; external gtklib;
+function gtk_style_context_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_style_context_add_provider(context: PGtkStyleContext; provider: PGtkStyleProvider; priority: Tguint); cdecl; external libgtk4;
+procedure gtk_style_context_remove_provider(context: PGtkStyleContext; provider: PGtkStyleProvider); cdecl; external libgtk4;
+procedure gtk_style_context_save(context: PGtkStyleContext); cdecl; external libgtk4;
+procedure gtk_style_context_restore(context: PGtkStyleContext); cdecl; external libgtk4;
+procedure gtk_style_context_set_state(context: PGtkStyleContext; flags: TGtkStateFlags); cdecl; external libgtk4;
+function gtk_style_context_get_state(context: PGtkStyleContext): TGtkStateFlags; cdecl; external libgtk4;
+procedure gtk_style_context_set_scale(context: PGtkStyleContext; scale: longint); cdecl; external libgtk4;
+function gtk_style_context_get_scale(context: PGtkStyleContext): longint; cdecl; external libgtk4;
+procedure gtk_style_context_add_class(context: PGtkStyleContext; class_name: PChar); cdecl; external libgtk4;
+procedure gtk_style_context_remove_class(context: PGtkStyleContext; class_name: PChar); cdecl; external libgtk4;
+function gtk_style_context_has_class(context: PGtkStyleContext; class_name: PChar): Tgboolean; cdecl; external libgtk4;
+procedure gtk_style_context_set_display(context: PGtkStyleContext; display: PGdkDisplay); cdecl; external libgtk4;
+function gtk_style_context_get_display(context: PGtkStyleContext): PGdkDisplay; cdecl; external libgtk4;
+function gtk_style_context_lookup_color(context: PGtkStyleContext; color_name: PChar; color: PGdkRGBA): Tgboolean; cdecl; external libgtk4;
+procedure gtk_style_context_get_color(context: PGtkStyleContext; color: PGdkRGBA); cdecl; external libgtk4;
+procedure gtk_style_context_get_border(context: PGtkStyleContext; border: PGtkBorder); cdecl; external libgtk4;
+procedure gtk_style_context_get_padding(context: PGtkStyleContext; padding: PGtkBorder); cdecl; external libgtk4;
+procedure gtk_style_context_get_margin(context: PGtkStyleContext; margin: PGtkBorder); cdecl; external libgtk4;
 
 type
   PGtkStyleContextPrintFlags = ^TGtkStyleContextPrintFlags;
@@ -57,7 +57,7 @@ const
   GTK_STYLE_CONTEXT_PRINT_SHOW_CHANGE = 1 shl 2;
 
 
-function gtk_style_context_to_string(context: PGtkStyleContext; flags: TGtkStyleContextPrintFlags): PChar; cdecl; external gtklib;
+function gtk_style_context_to_string(context: PGtkStyleContext; flags: TGtkStyleContextPrintFlags): PChar; cdecl; external libgtk4;
 
 // === Konventiert am: 17-7-24 16:27:37 ===
 

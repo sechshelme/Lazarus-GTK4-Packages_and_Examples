@@ -18,8 +18,8 @@ type
   end;
   PGtkEmojiChooserClass = ^TGtkEmojiChooserClass;
 
-function gtk_emoji_chooser_get_type: TGType; cdecl; external gtklib;
-function gtk_emoji_chooser_new: PGtkWidget; cdecl; external gtklib;
+function gtk_emoji_chooser_get_type: TGType; cdecl; external libgtk4;
+function gtk_emoji_chooser_new: PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 25-7-24 18:00:59 ===
 

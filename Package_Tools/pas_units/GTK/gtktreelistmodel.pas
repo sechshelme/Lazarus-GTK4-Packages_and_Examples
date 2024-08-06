@@ -35,25 +35,25 @@ type
   PGtkTreeListModelCreateModelFunc = ^TGtkTreeListModelCreateModelFunc;
   TGtkTreeListModelCreateModelFunc = function(item: Tgpointer; user_data: Tgpointer): PGListModel; cdecl;
 
-function gtk_tree_list_model_get_type: TGType; cdecl; external gtklib;
-function gtk_tree_list_model_new(root: PGListModel; passthrough: Tgboolean; autoexpand: Tgboolean; create_func: TGtkTreeListModelCreateModelFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify): PGtkTreeListModel; cdecl; external gtklib;
-function gtk_tree_list_model_get_model(self: PGtkTreeListModel): PGListModel; cdecl; external gtklib;
-function gtk_tree_list_model_get_passthrough(self: PGtkTreeListModel): Tgboolean; cdecl; external gtklib;
-procedure gtk_tree_list_model_set_autoexpand(self: PGtkTreeListModel; autoexpand: Tgboolean); cdecl; external gtklib;
-function gtk_tree_list_model_get_autoexpand(self: PGtkTreeListModel): Tgboolean; cdecl; external gtklib;
-function gtk_tree_list_model_get_child_row(self: PGtkTreeListModel; position: Tguint): PGtkTreeListRow; cdecl; external gtklib;
-function gtk_tree_list_model_get_row(self: PGtkTreeListModel; position: Tguint): PGtkTreeListRow; cdecl; external gtklib;
+function gtk_tree_list_model_get_type: TGType; cdecl; external libgtk4;
+function gtk_tree_list_model_new(root: PGListModel; passthrough: Tgboolean; autoexpand: Tgboolean; create_func: TGtkTreeListModelCreateModelFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify): PGtkTreeListModel; cdecl; external libgtk4;
+function gtk_tree_list_model_get_model(self: PGtkTreeListModel): PGListModel; cdecl; external libgtk4;
+function gtk_tree_list_model_get_passthrough(self: PGtkTreeListModel): Tgboolean; cdecl; external libgtk4;
+procedure gtk_tree_list_model_set_autoexpand(self: PGtkTreeListModel; autoexpand: Tgboolean); cdecl; external libgtk4;
+function gtk_tree_list_model_get_autoexpand(self: PGtkTreeListModel): Tgboolean; cdecl; external libgtk4;
+function gtk_tree_list_model_get_child_row(self: PGtkTreeListModel; position: Tguint): PGtkTreeListRow; cdecl; external libgtk4;
+function gtk_tree_list_model_get_row(self: PGtkTreeListModel; position: Tguint): PGtkTreeListRow; cdecl; external libgtk4;
 
-function gtk_tree_list_row_get_type: TGType; cdecl; external gtklib;
-function gtk_tree_list_row_get_item(self: PGtkTreeListRow): Tgpointer; cdecl; external gtklib;
-procedure gtk_tree_list_row_set_expanded(self: PGtkTreeListRow; expanded: Tgboolean); cdecl; external gtklib;
-function gtk_tree_list_row_get_expanded(self: PGtkTreeListRow): Tgboolean; cdecl; external gtklib;
-function gtk_tree_list_row_is_expandable(self: PGtkTreeListRow): Tgboolean; cdecl; external gtklib;
-function gtk_tree_list_row_get_position(self: PGtkTreeListRow): Tguint; cdecl; external gtklib;
-function gtk_tree_list_row_get_depth(self: PGtkTreeListRow): Tguint; cdecl; external gtklib;
-function gtk_tree_list_row_get_children(self: PGtkTreeListRow): PGListModel; cdecl; external gtklib;
-function gtk_tree_list_row_get_parent(self: PGtkTreeListRow): PGtkTreeListRow; cdecl; external gtklib;
-function gtk_tree_list_row_get_child_row(self: PGtkTreeListRow; position: Tguint): PGtkTreeListRow; cdecl; external gtklib;
+function gtk_tree_list_row_get_type: TGType; cdecl; external libgtk4;
+function gtk_tree_list_row_get_item(self: PGtkTreeListRow): Tgpointer; cdecl; external libgtk4;
+procedure gtk_tree_list_row_set_expanded(self: PGtkTreeListRow; expanded: Tgboolean); cdecl; external libgtk4;
+function gtk_tree_list_row_get_expanded(self: PGtkTreeListRow): Tgboolean; cdecl; external libgtk4;
+function gtk_tree_list_row_is_expandable(self: PGtkTreeListRow): Tgboolean; cdecl; external libgtk4;
+function gtk_tree_list_row_get_position(self: PGtkTreeListRow): Tguint; cdecl; external libgtk4;
+function gtk_tree_list_row_get_depth(self: PGtkTreeListRow): Tguint; cdecl; external libgtk4;
+function gtk_tree_list_row_get_children(self: PGtkTreeListRow): PGListModel; cdecl; external libgtk4;
+function gtk_tree_list_row_get_parent(self: PGtkTreeListRow): PGtkTreeListRow; cdecl; external libgtk4;
+function gtk_tree_list_row_get_child_row(self: PGtkTreeListRow; position: Tguint): PGtkTreeListRow; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 16:51:14 ===
 

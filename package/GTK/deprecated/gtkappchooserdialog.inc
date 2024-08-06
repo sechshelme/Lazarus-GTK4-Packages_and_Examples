@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -13,12 +13,12 @@ type
   end;
   PGtkAppChooserDialog = ^TGtkAppChooserDialog;
 
-function gtk_app_chooser_dialog_get_type: TGType; cdecl; external gtklib;
-function gtk_app_chooser_dialog_new(parent: PGtkWindow; flags: TGtkDialogFlags; file_: PGFile): PGtkWidget; cdecl; external gtklib;
-function gtk_app_chooser_dialog_new_for_content_type(parent: PGtkWindow; flags: TGtkDialogFlags; content_type: PChar): PGtkWidget; cdecl; external gtklib;
-function gtk_app_chooser_dialog_get_widget(self: PGtkAppChooserDialog): PGtkWidget; cdecl; external gtklib;
-procedure gtk_app_chooser_dialog_set_heading(self: PGtkAppChooserDialog; heading: PChar); cdecl; external gtklib;
-function gtk_app_chooser_dialog_get_heading(self: PGtkAppChooserDialog): PChar; cdecl; external gtklib;
+function gtk_app_chooser_dialog_get_type: TGType; cdecl; external libgtk4;
+function gtk_app_chooser_dialog_new(parent: PGtkWindow; flags: TGtkDialogFlags; file_: PGFile): PGtkWidget; cdecl; external libgtk4;
+function gtk_app_chooser_dialog_new_for_content_type(parent: PGtkWindow; flags: TGtkDialogFlags; content_type: PChar): PGtkWidget; cdecl; external libgtk4;
+function gtk_app_chooser_dialog_get_widget(self: PGtkAppChooserDialog): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_app_chooser_dialog_set_heading(self: PGtkAppChooserDialog; heading: PChar); cdecl; external libgtk4;
+function gtk_app_chooser_dialog_get_heading(self: PGtkAppChooserDialog): PChar; cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 14:55:48 ===
 

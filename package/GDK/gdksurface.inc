@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -18,34 +18,34 @@ type
   end;
   PGdkSurfaceClass = ^TGdkSurfaceClass;
 
-function gdk_surface_get_type: TGType; cdecl; external gtklib;
-function gdk_surface_new_toplevel(display: PGdkDisplay): PGdkSurface; cdecl; external gtklib;
-function gdk_surface_new_popup(parent: PGdkSurface; autohide: Tgboolean): PGdkSurface; cdecl; external gtklib;
-procedure gdk_surface_destroy(surface: PGdkSurface); cdecl; external gtklib;
-function gdk_surface_is_destroyed(surface: PGdkSurface): Tgboolean; cdecl; external gtklib;
-function gdk_surface_get_display(surface: PGdkSurface): PGdkDisplay; cdecl; external gtklib;
-procedure gdk_surface_hide(surface: PGdkSurface); cdecl; external gtklib;
-procedure gdk_surface_set_input_region(surface: PGdkSurface; region: Pcairo_region_t); cdecl; external gtklib;
-function gdk_surface_get_mapped(surface: PGdkSurface): Tgboolean; cdecl; external gtklib;
-procedure gdk_surface_set_cursor(surface: PGdkSurface; cursor: PGdkCursor); cdecl; external gtklib;
-function gdk_surface_get_cursor(surface: PGdkSurface): PGdkCursor; cdecl; external gtklib;
-procedure gdk_surface_set_device_cursor(surface: PGdkSurface; device: PGdkDevice; cursor: PGdkCursor); cdecl; external gtklib;
-function gdk_surface_get_device_cursor(surface: PGdkSurface; device: PGdkDevice): PGdkCursor; cdecl; external gtklib;
-function gdk_surface_get_width(surface: PGdkSurface): longint; cdecl; external gtklib;
-function gdk_surface_get_height(surface: PGdkSurface): longint; cdecl; external gtklib;
-function gdk_surface_translate_coordinates(from: PGdkSurface; to_: PGdkSurface; x: Pdouble; y: Pdouble): Tgboolean; cdecl; external gtklib;
-function gdk_surface_get_scale_factor(surface: PGdkSurface): longint; cdecl; external gtklib;
-function gdk_surface_get_scale(surface: PGdkSurface): Tdouble; cdecl; external gtklib;
-function gdk_surface_get_device_position(surface: PGdkSurface; device: PGdkDevice; x: Pdouble; y: Pdouble; mask: PGdkModifierType): Tgboolean; cdecl; external gtklib;
-function gdk_surface_create_similar_surface(surface: PGdkSurface; content: Tcairo_content_t; Width: longint; Height: longint): Pcairo_surface_t; cdecl; external gtklib;
-procedure gdk_surface_beep(surface: PGdkSurface); cdecl; external gtklib;
-procedure gdk_surface_queue_render(surface: PGdkSurface); cdecl; external gtklib;
-procedure gdk_surface_request_layout(surface: PGdkSurface); cdecl; external gtklib;
-function gdk_surface_get_frame_clock(surface: PGdkSurface): PGdkFrameClock; cdecl; external gtklib;
-procedure gdk_surface_set_opaque_region(surface: PGdkSurface; region: Pcairo_region_t); cdecl; external gtklib;
-function gdk_surface_create_cairo_context(surface: PGdkSurface): PGdkCairoContext; cdecl; external gtklib;
-function gdk_surface_create_gl_context(surface: PGdkSurface; error: PPGError): PGdkGLContext; cdecl; external gtklib;
-function gdk_surface_create_vulkan_context(surface: PGdkSurface; error: PPGError): PGdkVulkanContext; cdecl; external gtklib;
+function gdk_surface_get_type: TGType; cdecl; external libgtk4;
+function gdk_surface_new_toplevel(display: PGdkDisplay): PGdkSurface; cdecl; external libgtk4;
+function gdk_surface_new_popup(parent: PGdkSurface; autohide: Tgboolean): PGdkSurface; cdecl; external libgtk4;
+procedure gdk_surface_destroy(surface: PGdkSurface); cdecl; external libgtk4;
+function gdk_surface_is_destroyed(surface: PGdkSurface): Tgboolean; cdecl; external libgtk4;
+function gdk_surface_get_display(surface: PGdkSurface): PGdkDisplay; cdecl; external libgtk4;
+procedure gdk_surface_hide(surface: PGdkSurface); cdecl; external libgtk4;
+procedure gdk_surface_set_input_region(surface: PGdkSurface; region: Pcairo_region_t); cdecl; external libgtk4;
+function gdk_surface_get_mapped(surface: PGdkSurface): Tgboolean; cdecl; external libgtk4;
+procedure gdk_surface_set_cursor(surface: PGdkSurface; cursor: PGdkCursor); cdecl; external libgtk4;
+function gdk_surface_get_cursor(surface: PGdkSurface): PGdkCursor; cdecl; external libgtk4;
+procedure gdk_surface_set_device_cursor(surface: PGdkSurface; device: PGdkDevice; cursor: PGdkCursor); cdecl; external libgtk4;
+function gdk_surface_get_device_cursor(surface: PGdkSurface; device: PGdkDevice): PGdkCursor; cdecl; external libgtk4;
+function gdk_surface_get_width(surface: PGdkSurface): longint; cdecl; external libgtk4;
+function gdk_surface_get_height(surface: PGdkSurface): longint; cdecl; external libgtk4;
+function gdk_surface_translate_coordinates(from: PGdkSurface; to_: PGdkSurface; x: Pdouble; y: Pdouble): Tgboolean; cdecl; external libgtk4;
+function gdk_surface_get_scale_factor(surface: PGdkSurface): longint; cdecl; external libgtk4;
+function gdk_surface_get_scale(surface: PGdkSurface): Tdouble; cdecl; external libgtk4;
+function gdk_surface_get_device_position(surface: PGdkSurface; device: PGdkDevice; x: Pdouble; y: Pdouble; mask: PGdkModifierType): Tgboolean; cdecl; external libgtk4;
+function gdk_surface_create_similar_surface(surface: PGdkSurface; content: Tcairo_content_t; Width: longint; Height: longint): Pcairo_surface_t; cdecl; external libgtk4;
+procedure gdk_surface_beep(surface: PGdkSurface); cdecl; external libgtk4;
+procedure gdk_surface_queue_render(surface: PGdkSurface); cdecl; external libgtk4;
+procedure gdk_surface_request_layout(surface: PGdkSurface); cdecl; external libgtk4;
+function gdk_surface_get_frame_clock(surface: PGdkSurface): PGdkFrameClock; cdecl; external libgtk4;
+procedure gdk_surface_set_opaque_region(surface: PGdkSurface; region: Pcairo_region_t); cdecl; external libgtk4;
+function gdk_surface_create_cairo_context(surface: PGdkSurface): PGdkCairoContext; cdecl; external libgtk4;
+function gdk_surface_create_gl_context(surface: PGdkSurface; error: PPGError): PGdkGLContext; cdecl; external libgtk4;
+function gdk_surface_create_vulkan_context(surface: PGdkSurface; error: PPGError): PGdkVulkanContext; cdecl; external libgtk4;
 {G_DEFINE_AUTOPTR_CLEANUP_FUNC (GdkSurface, g_object_unref) }
 
 // === Konventiert am: 31-7-24 16:36:33 ===

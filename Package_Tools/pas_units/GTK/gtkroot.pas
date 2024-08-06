@@ -21,10 +21,10 @@ type
   end;
   PGtkRootInterface = ^TGtkRootInterface;
 
-function gtk_root_get_type: TGType; cdecl; external gtklib;
-function gtk_root_get_display(self: PGtkRoot): PGdkDisplay; cdecl; external gtklib;
-procedure gtk_root_set_focus(self: PGtkRoot; focus: PGtkWidget); cdecl; external gtklib;
-function gtk_root_get_focus(self: PGtkRoot): PGtkWidget; cdecl; external gtklib;
+function gtk_root_get_type: TGType; cdecl; external libgtk4;
+function gtk_root_get_display(self: PGtkRoot): PGdkDisplay; cdecl; external libgtk4;
+procedure gtk_root_set_focus(self: PGtkRoot; focus: PGtkWidget); cdecl; external libgtk4;
+function gtk_root_get_focus(self: PGtkRoot): PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 17-7-24 15:57:17 ===
 

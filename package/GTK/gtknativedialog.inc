@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -29,17 +29,17 @@ type
   PGtkNativeDialogClass = ^TGtkNativeDialogClass;
 
 
-function gtk_native_dialog_get_type: TGType; cdecl; external gtklib;
-procedure gtk_native_dialog_show(self: PGtkNativeDialog); cdecl; external gtklib;
-procedure gtk_native_dialog_hide(self: PGtkNativeDialog); cdecl; external gtklib;
-procedure gtk_native_dialog_destroy(self: PGtkNativeDialog); cdecl; external gtklib;
-function gtk_native_dialog_get_visible(self: PGtkNativeDialog): Tgboolean; cdecl; external gtklib;
-procedure gtk_native_dialog_set_modal(self: PGtkNativeDialog; modal: Tgboolean); cdecl; external gtklib;
-function gtk_native_dialog_get_modal(self: PGtkNativeDialog): Tgboolean; cdecl; external gtklib;
-procedure gtk_native_dialog_set_title(self: PGtkNativeDialog; title: PChar); cdecl; external gtklib;
-function gtk_native_dialog_get_title(self: PGtkNativeDialog): PChar; cdecl; external gtklib;
-procedure gtk_native_dialog_set_transient_for(self: PGtkNativeDialog; parent: PGtkWindow); cdecl; external gtklib;
-function gtk_native_dialog_get_transient_for(self: PGtkNativeDialog): PGtkWindow; cdecl; external gtklib;
+function gtk_native_dialog_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_native_dialog_show(self: PGtkNativeDialog); cdecl; external libgtk4;
+procedure gtk_native_dialog_hide(self: PGtkNativeDialog); cdecl; external libgtk4;
+procedure gtk_native_dialog_destroy(self: PGtkNativeDialog); cdecl; external libgtk4;
+function gtk_native_dialog_get_visible(self: PGtkNativeDialog): Tgboolean; cdecl; external libgtk4;
+procedure gtk_native_dialog_set_modal(self: PGtkNativeDialog; modal: Tgboolean); cdecl; external libgtk4;
+function gtk_native_dialog_get_modal(self: PGtkNativeDialog): Tgboolean; cdecl; external libgtk4;
+procedure gtk_native_dialog_set_title(self: PGtkNativeDialog; title: PChar); cdecl; external libgtk4;
+function gtk_native_dialog_get_title(self: PGtkNativeDialog): PChar; cdecl; external libgtk4;
+procedure gtk_native_dialog_set_transient_for(self: PGtkNativeDialog; parent: PGtkWindow); cdecl; external libgtk4;
+function gtk_native_dialog_get_transient_for(self: PGtkNativeDialog): PGtkWindow; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:01:25 ===
 

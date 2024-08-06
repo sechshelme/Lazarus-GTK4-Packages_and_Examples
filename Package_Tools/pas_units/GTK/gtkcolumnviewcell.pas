@@ -19,7 +19,7 @@ type
   end;
   PGtkColumnViewCellClass = ^TGtkColumnViewCellClass;
 
-function gtk_column_view_cell_get_type: TGType; cdecl; external gtklib;
+function gtk_column_view_cell_get_type: TGType; cdecl; external libgtk4;
 function gtk_column_view_cell_get_item(self: PGtkColumnViewCell): Tgpointer; cdecl; external;
 function gtk_column_view_cell_get_position(self: PGtkColumnViewCell): Tguint; cdecl; external;
 function gtk_column_view_cell_get_selected(self: PGtkColumnViewCell): Tgboolean; cdecl; external;

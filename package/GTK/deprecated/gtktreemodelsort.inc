@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -25,16 +25,16 @@ type
   end;
   PGtkTreeModelSortClass = ^TGtkTreeModelSortClass;
 
-function gtk_tree_model_sort_get_type: TGType; cdecl; external gtklib;
-function gtk_tree_model_sort_new_with_model(child_model: PGtkTreeModel): PGtkTreeModel; cdecl; external gtklib;
-function gtk_tree_model_sort_get_model(tree_model: PGtkTreeModelSort): PGtkTreeModel; cdecl; external gtklib;
-function gtk_tree_model_sort_convert_child_path_to_path(tree_model_sort: PGtkTreeModelSort; child_path: PGtkTreePath): PGtkTreePath; cdecl; external gtklib;
-function gtk_tree_model_sort_convert_child_iter_to_iter(tree_model_sort: PGtkTreeModelSort; sort_iter: PGtkTreeIter; child_iter: PGtkTreeIter): Tgboolean; cdecl; external gtklib;
-function gtk_tree_model_sort_convert_path_to_child_path(tree_model_sort: PGtkTreeModelSort; sorted_path: PGtkTreePath): PGtkTreePath; cdecl; external gtklib;
-procedure gtk_tree_model_sort_convert_iter_to_child_iter(tree_model_sort: PGtkTreeModelSort; child_iter: PGtkTreeIter; sorted_iter: PGtkTreeIter); cdecl; external gtklib;
-procedure gtk_tree_model_sort_reset_default_sort_func(tree_model_sort: PGtkTreeModelSort); cdecl; external gtklib;
-procedure gtk_tree_model_sort_clear_cache(tree_model_sort: PGtkTreeModelSort); cdecl; external gtklib;
-function gtk_tree_model_sort_iter_is_valid(tree_model_sort: PGtkTreeModelSort; iter: PGtkTreeIter): Tgboolean; cdecl; external gtklib;
+function gtk_tree_model_sort_get_type: TGType; cdecl; external libgtk4;
+function gtk_tree_model_sort_new_with_model(child_model: PGtkTreeModel): PGtkTreeModel; cdecl; external libgtk4;
+function gtk_tree_model_sort_get_model(tree_model: PGtkTreeModelSort): PGtkTreeModel; cdecl; external libgtk4;
+function gtk_tree_model_sort_convert_child_path_to_path(tree_model_sort: PGtkTreeModelSort; child_path: PGtkTreePath): PGtkTreePath; cdecl; external libgtk4;
+function gtk_tree_model_sort_convert_child_iter_to_iter(tree_model_sort: PGtkTreeModelSort; sort_iter: PGtkTreeIter; child_iter: PGtkTreeIter): Tgboolean; cdecl; external libgtk4;
+function gtk_tree_model_sort_convert_path_to_child_path(tree_model_sort: PGtkTreeModelSort; sorted_path: PGtkTreePath): PGtkTreePath; cdecl; external libgtk4;
+procedure gtk_tree_model_sort_convert_iter_to_child_iter(tree_model_sort: PGtkTreeModelSort; child_iter: PGtkTreeIter; sorted_iter: PGtkTreeIter); cdecl; external libgtk4;
+procedure gtk_tree_model_sort_reset_default_sort_func(tree_model_sort: PGtkTreeModelSort); cdecl; external libgtk4;
+procedure gtk_tree_model_sort_clear_cache(tree_model_sort: PGtkTreeModelSort); cdecl; external libgtk4;
+function gtk_tree_model_sort_iter_is_valid(tree_model_sort: PGtkTreeModelSort; iter: PGtkTreeIter): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 30-7-24 15:23:59 ===
 

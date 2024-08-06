@@ -18,8 +18,8 @@ type
   end;
   PGskCairoRendererClass = ^TGskCairoRendererClass;
 
-function gsk_cairo_renderer_get_type: TGType; cdecl; external gtklib;
-function gsk_cairo_renderer_new: PGskRenderer; cdecl; external gtklib;
+function gsk_cairo_renderer_get_type: TGType; cdecl; external libgtk4;
+function gsk_cairo_renderer_new: PGskRenderer; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 14:02:11 ===
 

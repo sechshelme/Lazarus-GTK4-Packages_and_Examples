@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -14,8 +14,8 @@ type
   PGtkCellRendererProgress = ^TGtkCellRendererProgress;
 
 
-function gtk_cell_renderer_progress_get_type: TGType; cdecl; external gtklib;
-function gtk_cell_renderer_progress_new: PGtkCellRenderer; cdecl; external gtklib;
+function gtk_cell_renderer_progress_get_type: TGType; cdecl; external libgtk4;
+function gtk_cell_renderer_progress_new: PGtkCellRenderer; cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 17:00:46 ===
 

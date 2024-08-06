@@ -7,9 +7,8 @@
       <Unit>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="731"/>
-        <CursorPos X="85" Y="38"/>
+        <TopLine Value="707"/>
+        <CursorPos X="114" Y="745"/>
         <UsageCount Value="117"/>
         <Loaded Value="True"/>
       </Unit>
@@ -48,9 +47,9 @@
       <Unit>
         <Filename Value="../../Package_Tools/pas_units/common_gtk.pas"/>
         <UnitName Value="common_GTK"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="245"/>
-        <CursorPos Y="265"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="17" Y="22"/>
         <UsageCount Value="30"/>
         <Loaded Value="True"/>
       </Unit>
@@ -3007,7 +3006,7 @@
       </Unit>
       <Unit>
         <Filename Value="../../Package_Tools/pas_units/GTK/gtkwidget.pas"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <CursorPos X="61" Y="6"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
@@ -3721,7 +3720,7 @@
       </Unit>
       <Unit>
         <Filename Value="../../Package_Tools/pas_units/GDK/x11/gdkx11devicemanager.pas"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <CursorPos Y="12"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
@@ -3922,7 +3921,7 @@
       </Unit>
       <Unit>
         <Filename Value="../../Package_Tools/pas_units/GTK/gtktypes.pas"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="7"/>
         <TopLine Value="82"/>
         <CursorPos X="46" Y="105"/>
         <UsageCount Value="10"/>
@@ -4216,14 +4215,14 @@
       </Unit>
       <Unit>
         <Filename Value="../../package/GDK/x11/gdkx11devicemanager_xi2.inc"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <CursorPos X="29" Y="12"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="../../package/GDK/x11/gdkx11screen.inc"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <CursorPos X="61" Y="21"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
@@ -4241,8 +4240,15 @@
         <CursorPos X="75" Y="90"/>
         <UsageCount Value="10"/>
       </Unit>
+      <Unit>
+        <Filename Value="../../package/GDK/gdkenumtypes.inc"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="61" Y="12"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="5">
+    <JumpHistory HistoryIndex="10">
       <Position>
         <Filename Value="../../package/GDK/x11/gdkx11devicemanager_xi2.inc"/>
         <Caret Line="12" Column="29"/>
@@ -4266,6 +4272,26 @@
       <Position>
         <Filename Value="../../Package_Tools/pas_units/common_gtk.pas"/>
         <Caret Line="265" TopLine="245"/>
+      </Position>
+      <Position>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="745" Column="114" TopLine="707"/>
+      </Position>
+      <Position>
+        <Filename Value="../../Package_Tools/pas_units/common_gtk.pas"/>
+        <Caret Line="20" Column="10"/>
+      </Position>
+      <Position>
+        <Filename Value="../../Package_Tools/pas_units/common_gtk.pas"/>
+        <Caret Line="24"/>
+      </Position>
+      <Position>
+        <Filename Value="../../Package_Tools/pas_units/common_gtk.pas"/>
+        <Caret Line="15" Column="10"/>
+      </Position>
+      <Position>
+        <Filename Value="../../Package_Tools/pas_units/common_gtk.pas"/>
+        <Caret Line="16" Column="16"/>
       </Position>
     </JumpHistory>
     <RunParams>

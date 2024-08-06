@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -10,20 +10,16 @@
 
 const
   {$IFDEF Linux}
-  gtklib = 'libgtk-4';
-  libgio = 'libgio-2.0';
-  gobjectlib = 'libgobject-2.0';
+  libgtk4 = 'libgtk-4';
+  libgio2 = 'libgio-2.0';
+  libgobject2_0 = 'libgobject-2.0';
   {$ENDIF}
 
   {$IFDEF Windows}
-  gtklib = 'libgtk-4.dll';
-  libgio = 'libgio-2.0.dll';
-  gobjectlib = 'libgobject-2.0.dll';
+  libgtk4 = 'libgtk-4.dll';
+  libgio2 = 'libgio-2.0.dll';
+  glibgobject2_0 = 'libgobject-2.0.dll';
   {$ENDIF}
-  //const
-  //  gtklib = 'libgtk-4.so';
-  //  libgio = 'libgio-2.0.so.0';
-  //  gobjectlib = 'libgobject-2.0.so';
 
 type
   // === Exotisches
@@ -253,14 +249,14 @@ type
   // ======================================
 
 
-//function g_type_check_instance_cast(wid: PGTypeInstance; iface_type: TGType): PGTypeInstance; cdecl; external gtklib;
-function g_type_check_instance_is_a(instance: PGTypeInstance; iface_type: GType): gboolean; cdecl; external gobjectlib;
+//function g_type_check_instance_cast(wid: PGTypeInstance; iface_type: TGType): PGTypeInstance; cdecl; external libgtk4;
+function g_type_check_instance_is_a(instance: PGTypeInstance; iface_type: GType): gboolean; cdecl; external libgobject2_0;
 
-//function g_type_check_class_cast(g_class: PGTypeClass; is_a_type: TGType): PGTypeClass; cdecl; external gtklib;
-function g_type_check_class_is_a(instance: PGTypeClass; is_a_type: GType): gboolean; cdecl; external gobjectlib;
+//function g_type_check_class_cast(g_class: PGTypeClass; is_a_type: TGType): PGTypeClass; cdecl; external libgtk4;
+function g_type_check_class_is_a(instance: PGTypeClass; is_a_type: GType): gboolean; cdecl; external libgobject2_0;
 
 // ------ libgio
-function g_application_run(application: Pointer; argc: longint; argv: PPchar): longint; cdecl; external libgio;
+function g_application_run(application: Pointer; argc: longint; argv: PPchar): longint; cdecl; external libgio2;
 
 // ------ glib
 //function g_signal_connect(instance: gpointer; detailed_signal: Pgchar; c_handler: TGCallback; Data: gpointer): gulong;

@@ -21,8 +21,8 @@ type
   end;
   PGtkFixedLayoutClass = ^TGtkFixedLayoutClass;
 
-function gtk_fixed_layout_get_type: TGType; cdecl; external gtklib;
-function gtk_fixed_layout_new: PGtkLayoutManager; cdecl; external gtklib;
+function gtk_fixed_layout_get_type: TGType; cdecl; external libgtk4;
+function gtk_fixed_layout_new: PGtkLayoutManager; cdecl; external libgtk4;
 
 
 {G_DECLARE_FINAL_TYPE (GtkFixedLayoutChild, gtk_fixed_layout_child, GTK, FIXED_LAYOUT_CHILD, GtkLayoutChild) }
@@ -36,9 +36,9 @@ type
   end;
   PGtkFixedLayoutChildClass = ^TGtkFixedLayoutChildClass;
 
-function gtk_fixed_layout_child_get_type: TGType; cdecl; external gtklib;
-procedure gtk_fixed_layout_child_set_transform(child: PGtkFixedLayoutChild; transform: PGskTransform); cdecl; external gtklib;
-function gtk_fixed_layout_child_get_transform(child: PGtkFixedLayoutChild): PGskTransform; cdecl; external gtklib;
+function gtk_fixed_layout_child_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_fixed_layout_child_set_transform(child: PGtkFixedLayoutChild; transform: PGskTransform); cdecl; external libgtk4;
+function gtk_fixed_layout_child_get_transform(child: PGtkFixedLayoutChild): PGskTransform; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:21:19 ===
 

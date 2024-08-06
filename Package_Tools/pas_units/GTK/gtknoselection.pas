@@ -21,10 +21,10 @@ type
   end;
   PGtkNoSelectionClass = ^TGtkNoSelectionClass;
 
-function gtk_no_selection_get_type: TGType; cdecl; external gtklib;
-function gtk_no_selection_new(model: PGListModel): PGtkNoSelection; cdecl; external gtklib;
-function gtk_no_selection_get_model(self: PGtkNoSelection): PGListModel; cdecl; external gtklib;
-procedure gtk_no_selection_set_model(self: PGtkNoSelection; model: PGListModel); cdecl; external gtklib;
+function gtk_no_selection_get_type: TGType; cdecl; external libgtk4;
+function gtk_no_selection_new(model: PGListModel): PGtkNoSelection; cdecl; external libgtk4;
+function gtk_no_selection_get_model(self: PGtkNoSelection): PGListModel; cdecl; external libgtk4;
+procedure gtk_no_selection_set_model(self: PGtkNoSelection; model: PGListModel); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:01:30 ===
 

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,18 +20,18 @@ type
   end;
   PGtkDirectoryListClass = ^TGtkDirectoryListClass;
 
-function gtk_directory_list_get_type: TGType; cdecl; external gtklib;
-function gtk_directory_list_new(attributes: PChar; _file: PGFile): PGtkDirectoryList; cdecl; external gtklib;
-procedure gtk_directory_list_set_file(self: PGtkDirectoryList; _file: PGFile); cdecl; external gtklib;
-function gtk_directory_list_get_file(self: PGtkDirectoryList): PGFile; cdecl; external gtklib;
-procedure gtk_directory_list_set_attributes(self: PGtkDirectoryList; attributes: PChar); cdecl; external gtklib;
-function gtk_directory_list_get_attributes(self: PGtkDirectoryList): PChar; cdecl; external gtklib;
-procedure gtk_directory_list_set_io_priority(self: PGtkDirectoryList; io_priority: longint); cdecl; external gtklib;
-function gtk_directory_list_get_io_priority(self: PGtkDirectoryList): longint; cdecl; external gtklib;
-function gtk_directory_list_is_loading(self: PGtkDirectoryList): Tgboolean; cdecl; external gtklib;
-function gtk_directory_list_get_error(self: PGtkDirectoryList): PGError; cdecl; external gtklib;
-procedure gtk_directory_list_set_monitored(self: PGtkDirectoryList; monitored: Tgboolean); cdecl; external gtklib;
-function gtk_directory_list_get_monitored(self: PGtkDirectoryList): Tgboolean; cdecl; external gtklib;
+function gtk_directory_list_get_type: TGType; cdecl; external libgtk4;
+function gtk_directory_list_new(attributes: PChar; _file: PGFile): PGtkDirectoryList; cdecl; external libgtk4;
+procedure gtk_directory_list_set_file(self: PGtkDirectoryList; _file: PGFile); cdecl; external libgtk4;
+function gtk_directory_list_get_file(self: PGtkDirectoryList): PGFile; cdecl; external libgtk4;
+procedure gtk_directory_list_set_attributes(self: PGtkDirectoryList; attributes: PChar); cdecl; external libgtk4;
+function gtk_directory_list_get_attributes(self: PGtkDirectoryList): PChar; cdecl; external libgtk4;
+procedure gtk_directory_list_set_io_priority(self: PGtkDirectoryList; io_priority: longint); cdecl; external libgtk4;
+function gtk_directory_list_get_io_priority(self: PGtkDirectoryList): longint; cdecl; external libgtk4;
+function gtk_directory_list_is_loading(self: PGtkDirectoryList): Tgboolean; cdecl; external libgtk4;
+function gtk_directory_list_get_error(self: PGtkDirectoryList): PGError; cdecl; external libgtk4;
+procedure gtk_directory_list_set_monitored(self: PGtkDirectoryList; monitored: Tgboolean); cdecl; external libgtk4;
+function gtk_directory_list_get_monitored(self: PGtkDirectoryList): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 24-7-24 19:52:49 ===
 

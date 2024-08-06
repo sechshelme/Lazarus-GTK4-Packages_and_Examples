@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -33,39 +33,39 @@ const
   GTK_POLICY_EXTERNAL = 3;
 
 
-function gtk_scrolled_window_get_type: TGType; cdecl; external gtklib;
-function gtk_scrolled_window_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_scrolled_window_set_hadjustment(scrolled_window: PGtkScrolledWindow; hadjustment: PGtkAdjustment); cdecl; external gtklib;
-procedure gtk_scrolled_window_set_vadjustment(scrolled_window: PGtkScrolledWindow; vadjustment: PGtkAdjustment); cdecl; external gtklib;
-function gtk_scrolled_window_get_hadjustment(scrolled_window: PGtkScrolledWindow): PGtkAdjustment; cdecl; external gtklib;
-function gtk_scrolled_window_get_vadjustment(scrolled_window: PGtkScrolledWindow): PGtkAdjustment; cdecl; external gtklib;
-function gtk_scrolled_window_get_hscrollbar(scrolled_window: PGtkScrolledWindow): PGtkWidget; cdecl; external gtklib;
-function gtk_scrolled_window_get_vscrollbar(scrolled_window: PGtkScrolledWindow): PGtkWidget; cdecl; external gtklib;
-procedure gtk_scrolled_window_set_policy(scrolled_window: PGtkScrolledWindow; hscrollbar_policy: TGtkPolicyType; vscrollbar_policy: TGtkPolicyType); cdecl; external gtklib;
-procedure gtk_scrolled_window_get_policy(scrolled_window: PGtkScrolledWindow; hscrollbar_policy: PGtkPolicyType; vscrollbar_policy: PGtkPolicyType); cdecl; external gtklib;
-procedure gtk_scrolled_window_set_placement(scrolled_window: PGtkScrolledWindow; window_placement: TGtkCornerType); cdecl; external gtklib;
-procedure gtk_scrolled_window_unset_placement(scrolled_window: PGtkScrolledWindow); cdecl; external gtklib;
-function gtk_scrolled_window_get_placement(scrolled_window: PGtkScrolledWindow): TGtkCornerType; cdecl; external gtklib;
-procedure gtk_scrolled_window_set_has_frame(scrolled_window: PGtkScrolledWindow; has_frame: Tgboolean); cdecl; external gtklib;
-function gtk_scrolled_window_get_has_frame(scrolled_window: PGtkScrolledWindow): Tgboolean; cdecl; external gtklib;
-function gtk_scrolled_window_get_min_content_width(scrolled_window: PGtkScrolledWindow): longint; cdecl; external gtklib;
-procedure gtk_scrolled_window_set_min_content_width(scrolled_window: PGtkScrolledWindow; Width: longint); cdecl; external gtklib;
-function gtk_scrolled_window_get_min_content_height(scrolled_window: PGtkScrolledWindow): longint; cdecl; external gtklib;
-procedure gtk_scrolled_window_set_min_content_height(scrolled_window: PGtkScrolledWindow; Height: longint); cdecl; external gtklib;
-procedure gtk_scrolled_window_set_kinetic_scrolling(scrolled_window: PGtkScrolledWindow; kinetic_scrolling: Tgboolean); cdecl; external gtklib;
-function gtk_scrolled_window_get_kinetic_scrolling(scrolled_window: PGtkScrolledWindow): Tgboolean; cdecl; external gtklib;
-procedure gtk_scrolled_window_set_overlay_scrolling(scrolled_window: PGtkScrolledWindow; overlay_scrolling: Tgboolean); cdecl; external gtklib;
-function gtk_scrolled_window_get_overlay_scrolling(scrolled_window: PGtkScrolledWindow): Tgboolean; cdecl; external gtklib;
-procedure gtk_scrolled_window_set_max_content_width(scrolled_window: PGtkScrolledWindow; Width: longint); cdecl; external gtklib;
-function gtk_scrolled_window_get_max_content_width(scrolled_window: PGtkScrolledWindow): longint; cdecl; external gtklib;
-procedure gtk_scrolled_window_set_max_content_height(scrolled_window: PGtkScrolledWindow; Height: longint); cdecl; external gtklib;
-function gtk_scrolled_window_get_max_content_height(scrolled_window: PGtkScrolledWindow): longint; cdecl; external gtklib;
-procedure gtk_scrolled_window_set_propagate_natural_width(scrolled_window: PGtkScrolledWindow; propagate: Tgboolean); cdecl; external gtklib;
-function gtk_scrolled_window_get_propagate_natural_width(scrolled_window: PGtkScrolledWindow): Tgboolean; cdecl; external gtklib;
-procedure gtk_scrolled_window_set_propagate_natural_height(scrolled_window: PGtkScrolledWindow; propagate: Tgboolean); cdecl; external gtklib;
-function gtk_scrolled_window_get_propagate_natural_height(scrolled_window: PGtkScrolledWindow): Tgboolean; cdecl; external gtklib;
-procedure gtk_scrolled_window_set_child(scrolled_window: PGtkScrolledWindow; child: PGtkWidget); cdecl; external gtklib;
-function gtk_scrolled_window_get_child(scrolled_window: PGtkScrolledWindow): PGtkWidget; cdecl; external gtklib;
+function gtk_scrolled_window_get_type: TGType; cdecl; external libgtk4;
+function gtk_scrolled_window_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_hadjustment(scrolled_window: PGtkScrolledWindow; hadjustment: PGtkAdjustment); cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_vadjustment(scrolled_window: PGtkScrolledWindow; vadjustment: PGtkAdjustment); cdecl; external libgtk4;
+function gtk_scrolled_window_get_hadjustment(scrolled_window: PGtkScrolledWindow): PGtkAdjustment; cdecl; external libgtk4;
+function gtk_scrolled_window_get_vadjustment(scrolled_window: PGtkScrolledWindow): PGtkAdjustment; cdecl; external libgtk4;
+function gtk_scrolled_window_get_hscrollbar(scrolled_window: PGtkScrolledWindow): PGtkWidget; cdecl; external libgtk4;
+function gtk_scrolled_window_get_vscrollbar(scrolled_window: PGtkScrolledWindow): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_policy(scrolled_window: PGtkScrolledWindow; hscrollbar_policy: TGtkPolicyType; vscrollbar_policy: TGtkPolicyType); cdecl; external libgtk4;
+procedure gtk_scrolled_window_get_policy(scrolled_window: PGtkScrolledWindow; hscrollbar_policy: PGtkPolicyType; vscrollbar_policy: PGtkPolicyType); cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_placement(scrolled_window: PGtkScrolledWindow; window_placement: TGtkCornerType); cdecl; external libgtk4;
+procedure gtk_scrolled_window_unset_placement(scrolled_window: PGtkScrolledWindow); cdecl; external libgtk4;
+function gtk_scrolled_window_get_placement(scrolled_window: PGtkScrolledWindow): TGtkCornerType; cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_has_frame(scrolled_window: PGtkScrolledWindow; has_frame: Tgboolean); cdecl; external libgtk4;
+function gtk_scrolled_window_get_has_frame(scrolled_window: PGtkScrolledWindow): Tgboolean; cdecl; external libgtk4;
+function gtk_scrolled_window_get_min_content_width(scrolled_window: PGtkScrolledWindow): longint; cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_min_content_width(scrolled_window: PGtkScrolledWindow; Width: longint); cdecl; external libgtk4;
+function gtk_scrolled_window_get_min_content_height(scrolled_window: PGtkScrolledWindow): longint; cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_min_content_height(scrolled_window: PGtkScrolledWindow; Height: longint); cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_kinetic_scrolling(scrolled_window: PGtkScrolledWindow; kinetic_scrolling: Tgboolean); cdecl; external libgtk4;
+function gtk_scrolled_window_get_kinetic_scrolling(scrolled_window: PGtkScrolledWindow): Tgboolean; cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_overlay_scrolling(scrolled_window: PGtkScrolledWindow; overlay_scrolling: Tgboolean); cdecl; external libgtk4;
+function gtk_scrolled_window_get_overlay_scrolling(scrolled_window: PGtkScrolledWindow): Tgboolean; cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_max_content_width(scrolled_window: PGtkScrolledWindow; Width: longint); cdecl; external libgtk4;
+function gtk_scrolled_window_get_max_content_width(scrolled_window: PGtkScrolledWindow): longint; cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_max_content_height(scrolled_window: PGtkScrolledWindow; Height: longint); cdecl; external libgtk4;
+function gtk_scrolled_window_get_max_content_height(scrolled_window: PGtkScrolledWindow): longint; cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_propagate_natural_width(scrolled_window: PGtkScrolledWindow; propagate: Tgboolean); cdecl; external libgtk4;
+function gtk_scrolled_window_get_propagate_natural_width(scrolled_window: PGtkScrolledWindow): Tgboolean; cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_propagate_natural_height(scrolled_window: PGtkScrolledWindow; propagate: Tgboolean); cdecl; external libgtk4;
+function gtk_scrolled_window_get_propagate_natural_height(scrolled_window: PGtkScrolledWindow): Tgboolean; cdecl; external libgtk4;
+procedure gtk_scrolled_window_set_child(scrolled_window: PGtkScrolledWindow; child: PGtkWidget); cdecl; external libgtk4;
+function gtk_scrolled_window_get_child(scrolled_window: PGtkScrolledWindow): PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 23-7-24 13:58:14 ===
 

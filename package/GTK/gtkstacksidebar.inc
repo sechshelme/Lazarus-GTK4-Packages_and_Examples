@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -15,10 +15,10 @@ type
   end;
   PGtkStackSidebar = ^TGtkStackSidebar;
 
-function gtk_stack_sidebar_get_type: TGType; cdecl; external gtklib;
-function gtk_stack_sidebar_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_stack_sidebar_set_stack(self: PGtkStackSidebar; stack: PGtkStack); cdecl; external gtklib;
-function gtk_stack_sidebar_get_stack(self: PGtkStackSidebar): PGtkStack; cdecl; external gtklib;
+function gtk_stack_sidebar_get_type: TGType; cdecl; external libgtk4;
+function gtk_stack_sidebar_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_stack_sidebar_set_stack(self: PGtkStackSidebar; stack: PGtkStack); cdecl; external libgtk4;
+function gtk_stack_sidebar_get_stack(self: PGtkStackSidebar): PGtkStack; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 16:33:34 ===
 

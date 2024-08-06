@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -24,14 +24,14 @@ type
   PGtkActionableInterface = ^TGtkActionableInterface;
 
 
-function gtk_actionable_get_type: TGType; cdecl; external gtklib;
-function gtk_actionable_get_action_name(actionable: PGtkActionable): PChar; cdecl; external gtklib;
-procedure gtk_actionable_set_action_name(actionable: PGtkActionable; action_name: PChar); cdecl; external gtklib;
-function gtk_actionable_get_action_target_value(actionable: PGtkActionable): PGVariant; cdecl; external gtklib;
-procedure gtk_actionable_set_action_target_value(actionable: PGtkActionable; target_value: PGVariant); cdecl; external gtklib;
-procedure gtk_actionable_set_action_target(actionable: PGtkActionable; format_string: PChar; args: array of const); cdecl; external gtklib;
-procedure gtk_actionable_set_action_target(actionable: PGtkActionable; format_string: PChar); cdecl; external gtklib;
-procedure gtk_actionable_set_detailed_action_name(actionable: PGtkActionable; detailed_action_name: PChar); cdecl; external gtklib;
+function gtk_actionable_get_type: TGType; cdecl; external libgtk4;
+function gtk_actionable_get_action_name(actionable: PGtkActionable): PChar; cdecl; external libgtk4;
+procedure gtk_actionable_set_action_name(actionable: PGtkActionable; action_name: PChar); cdecl; external libgtk4;
+function gtk_actionable_get_action_target_value(actionable: PGtkActionable): PGVariant; cdecl; external libgtk4;
+procedure gtk_actionable_set_action_target_value(actionable: PGtkActionable; target_value: PGVariant); cdecl; external libgtk4;
+procedure gtk_actionable_set_action_target(actionable: PGtkActionable; format_string: PChar; args: array of const); cdecl; external libgtk4;
+procedure gtk_actionable_set_action_target(actionable: PGtkActionable; format_string: PChar); cdecl; external libgtk4;
+procedure gtk_actionable_set_detailed_action_name(actionable: PGtkActionable; detailed_action_name: PChar); cdecl; external libgtk4;
 
 
 // === Konventiert am: 11-7-24 22:32:43 ===

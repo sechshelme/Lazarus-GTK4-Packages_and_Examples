@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -64,18 +64,18 @@ G_STMT_START  \
  G_STMT_END
  }
 
-function gtk_test_accessible_has_role(accessible: PGtkAccessible; role: TGtkAccessibleRole): Tgboolean; cdecl; external gtklib;
-function gtk_test_accessible_has_property(accessible: PGtkAccessible; _property: TGtkAccessibleProperty): Tgboolean; cdecl; external gtklib;
-function gtk_test_accessible_has_relation(accessible: PGtkAccessible; relation: TGtkAccessibleRelation): Tgboolean; cdecl; external gtklib;
-function gtk_test_accessible_has_state(accessible: PGtkAccessible; state: TGtkAccessibleState): Tgboolean; cdecl; external gtklib;
-function gtk_test_accessible_check_property(accessible: PGtkAccessible; _property: TGtkAccessibleProperty; args: array of const): PChar; cdecl; external gtklib;
-function gtk_test_accessible_check_property(accessible: PGtkAccessible; _property: TGtkAccessibleProperty): PChar; cdecl; external gtklib;
-function gtk_test_accessible_check_relation(accessible: PGtkAccessible; relation: TGtkAccessibleRelation; args: array of const): PChar; cdecl; external gtklib;
-function gtk_test_accessible_check_relation(accessible: PGtkAccessible; relation: TGtkAccessibleRelation): PChar; cdecl; external gtklib;
-function gtk_test_accessible_check_state(accessible: PGtkAccessible; state: TGtkAccessibleState; args: array of const): PChar; cdecl; external gtklib;
-function gtk_test_accessible_check_state(accessible: PGtkAccessible; state: TGtkAccessibleState): PChar; cdecl; external gtklib;
+function gtk_test_accessible_has_role(accessible: PGtkAccessible; role: TGtkAccessibleRole): Tgboolean; cdecl; external libgtk4;
+function gtk_test_accessible_has_property(accessible: PGtkAccessible; _property: TGtkAccessibleProperty): Tgboolean; cdecl; external libgtk4;
+function gtk_test_accessible_has_relation(accessible: PGtkAccessible; relation: TGtkAccessibleRelation): Tgboolean; cdecl; external libgtk4;
+function gtk_test_accessible_has_state(accessible: PGtkAccessible; state: TGtkAccessibleState): Tgboolean; cdecl; external libgtk4;
+function gtk_test_accessible_check_property(accessible: PGtkAccessible; _property: TGtkAccessibleProperty; args: array of const): PChar; cdecl; external libgtk4;
+function gtk_test_accessible_check_property(accessible: PGtkAccessible; _property: TGtkAccessibleProperty): PChar; cdecl; external libgtk4;
+function gtk_test_accessible_check_relation(accessible: PGtkAccessible; relation: TGtkAccessibleRelation; args: array of const): PChar; cdecl; external libgtk4;
+function gtk_test_accessible_check_relation(accessible: PGtkAccessible; relation: TGtkAccessibleRelation): PChar; cdecl; external libgtk4;
+function gtk_test_accessible_check_state(accessible: PGtkAccessible; state: TGtkAccessibleState; args: array of const): PChar; cdecl; external libgtk4;
+function gtk_test_accessible_check_state(accessible: PGtkAccessible; state: TGtkAccessibleState): PChar; cdecl; external libgtk4;
 procedure gtk_test_accessible_assertion_message_role(domain: PChar; _file: PChar; line: longint; func: PChar; expr: PChar;
-  accessible: PGtkAccessible; expected_role: TGtkAccessibleRole; actual_role: TGtkAccessibleRole); cdecl; external gtklib;
+  accessible: PGtkAccessible; expected_role: TGtkAccessibleRole; actual_role: TGtkAccessibleRole); cdecl; external libgtk4;
 
 {$ENDIF read_interface}
 

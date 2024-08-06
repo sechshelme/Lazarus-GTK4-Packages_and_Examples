@@ -2,112 +2,112 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
 {$IFDEF read_interface}
 
 
-function gdk_input_source_get_type: TGType; cdecl; external gtklib;
+function gdk_input_source_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_INPUT_SOURCE: TGType;
 
-function gdk_device_pad_feature_get_type: TGType; cdecl; external gtklib;
+function gdk_device_pad_feature_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_DEVICE_PAD_FEATURE: TGType;
 
-function gdk_device_tool_type_get_type: TGType; cdecl; external gtklib;
+function gdk_device_tool_type_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_DEVICE_TOOL_TYPE: TGType;
 
-function gdk_drag_cancel_reason_get_type: TGType; cdecl; external gtklib;
+function gdk_drag_cancel_reason_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_DRAG_CANCEL_REASON: TGType;
 
-function gdk_gl_api_get_type: TGType; cdecl; external gtklib;
+function gdk_gl_api_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_GL_API: TGType;
 
-function gdk_gravity_get_type: TGType; cdecl; external gtklib;
+function gdk_gravity_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_GRAVITY: TGType;
 
-function gdk_modifier_type_get_type: TGType; cdecl; external gtklib;
+function gdk_modifier_type_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_MODIFIER_TYPE: TGType;
 
-function gdk_dmabuf_error_get_type: TGType; cdecl; external gtklib;
+function gdk_dmabuf_error_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_DMABUF_ERROR: TGType;
 
-function gdk_gl_error_get_type: TGType; cdecl; external gtklib;
+function gdk_gl_error_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_GL_ERROR: TGType;
 
-function gdk_vulkan_error_get_type: TGType; cdecl; external gtklib;
+function gdk_vulkan_error_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_VULKAN_ERROR: TGType;
 
-function gdk_axis_use_get_type: TGType; cdecl; external gtklib;
+function gdk_axis_use_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_AXIS_USE: TGType;
 
-function gdk_axis_flags_get_type: TGType; cdecl; external gtklib;
+function gdk_axis_flags_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_AXIS_FLAGS: TGType;
 
-function gdk_drag_action_get_type: TGType; cdecl; external gtklib;
+function gdk_drag_action_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_DRAG_ACTION: TGType;
 
-function gdk_memory_format_get_type: TGType; cdecl; external gtklib;
+function gdk_memory_format_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_MEMORY_FORMAT: TGType;
 
 { enumerations from "gdkevents.h"  }
-function gdk_event_type_get_type: TGType; cdecl; external gtklib;
+function gdk_event_type_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_EVENT_TYPE: TGType;
 
-function gdk_touchpad_gesture_phase_get_type: TGType; cdecl; external gtklib;
+function gdk_touchpad_gesture_phase_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_TOUCHPAD_GESTURE_PHASE: TGType;
 
-function gdk_scroll_direction_get_type: TGType; cdecl; external gtklib;
+function gdk_scroll_direction_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_SCROLL_DIRECTION: TGType;
 
-function gdk_scroll_unit_get_type: TGType; cdecl; external gtklib;
+function gdk_scroll_unit_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_SCROLL_UNIT: TGType;
 
-function gdk_notify_type_get_type: TGType; cdecl; external gtklib;
+function gdk_notify_type_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_NOTIFY_TYPE: TGType;
 
-function gdk_crossing_mode_get_type: TGType; cdecl; external gtklib;
+function gdk_crossing_mode_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_CROSSING_MODE: TGType;
 
-function gdk_key_match_get_type: TGType; cdecl; external gtklib;
+function gdk_key_match_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_KEY_MATCH: TGType;
 
 { enumerations from "gdkframeclock.h"  }
-function gdk_frame_clock_phase_get_type: TGType; cdecl; external gtklib;
+function gdk_frame_clock_phase_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_FRAME_CLOCK_PHASE: TGType;
 
 { enumerations from "gdkmonitor.h"  }
-function gdk_subpixel_layout_get_type: TGType; cdecl; external gtklib;
+function gdk_subpixel_layout_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_SUBPIXEL_LAYOUT: TGType;
 
 { enumerations from "gdkpaintable.h"  }
-function gdk_paintable_flags_get_type: TGType; cdecl; external gtklib;
+function gdk_paintable_flags_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_PAINTABLE_FLAGS: TGType;
 
 { enumerations from "gdkpopuplayout.h"  }
-function gdk_anchor_hints_get_type: TGType; cdecl; external gtklib;
+function gdk_anchor_hints_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_ANCHOR_HINTS: TGType;
 
 { enumerations from "gdkseat.h"  }
-function gdk_seat_capabilities_get_type: TGType; cdecl; external gtklib;
+function gdk_seat_capabilities_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_SEAT_CAPABILITIES: TGType;
 
 { enumerations from "gdktexture.h"  }
-function gdk_texture_error_get_type: TGType; cdecl; external gtklib;
+function gdk_texture_error_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_TEXTURE_ERROR: TGType;
 
 { enumerations from "gdktoplevel.h"  }
-function gdk_surface_edge_get_type: TGType; cdecl; external gtklib;
+function gdk_surface_edge_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_SURFACE_EDGE: TGType;
 
-function gdk_fullscreen_mode_get_type: TGType; cdecl; external gtklib;
+function gdk_fullscreen_mode_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_FULLSCREEN_MODE: TGType;
 
-function gdk_toplevel_state_get_type: TGType; cdecl; external gtklib;
+function gdk_toplevel_state_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_TOPLEVEL_STATE: TGType;
 
-function gdk_titlebar_gesture_get_type: TGType; cdecl; external gtklib;
+function gdk_titlebar_gesture_get_type: TGType; cdecl; external libgtk4;
 function GDK_TYPE_TITLEBAR_GESTURE: TGType;
 
 { Generated data ends here  }

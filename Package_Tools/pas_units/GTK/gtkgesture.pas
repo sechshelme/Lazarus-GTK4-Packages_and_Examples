@@ -18,24 +18,24 @@ type
   end;
   PGtkGestureClass = ^TGtkGestureClass;
 
-function gtk_gesture_get_type: TGType; cdecl; external gtklib;
-function gtk_gesture_get_device(gesture: PGtkGesture): PGdkDevice; cdecl; external gtklib;
-function gtk_gesture_set_state(gesture: PGtkGesture; state: TGtkEventSequenceState): Tgboolean; cdecl; external gtklib;
-function gtk_gesture_get_sequence_state(gesture: PGtkGesture; sequence: PGdkEventSequence): TGtkEventSequenceState; cdecl; external gtklib;
-function gtk_gesture_set_sequence_state(gesture: PGtkGesture; sequence: PGdkEventSequence; state: TGtkEventSequenceState): Tgboolean; cdecl; external gtklib;
-function gtk_gesture_get_sequences(gesture: PGtkGesture): PGList; cdecl; external gtklib;
-function gtk_gesture_get_last_updated_sequence(gesture: PGtkGesture): PGdkEventSequence; cdecl; external gtklib;
-function gtk_gesture_handles_sequence(gesture: PGtkGesture; sequence: PGdkEventSequence): Tgboolean; cdecl; external gtklib;
-function gtk_gesture_get_last_event(gesture: PGtkGesture; sequence: PGdkEventSequence): PGdkEvent; cdecl; external gtklib;
-function gtk_gesture_get_point(gesture: PGtkGesture; sequence: PGdkEventSequence; x: Pdouble; y: Pdouble): Tgboolean; cdecl; external gtklib;
-function gtk_gesture_get_bounding_box(gesture: PGtkGesture; rect: PGdkRectangle): Tgboolean; cdecl; external gtklib;
-function gtk_gesture_get_bounding_box_center(gesture: PGtkGesture; x: Pdouble; y: Pdouble): Tgboolean; cdecl; external gtklib;
-function gtk_gesture_is_active(gesture: PGtkGesture): Tgboolean; cdecl; external gtklib;
-function gtk_gesture_is_recognized(gesture: PGtkGesture): Tgboolean; cdecl; external gtklib;
-procedure gtk_gesture_group(group_gesture: PGtkGesture; gesture: PGtkGesture); cdecl; external gtklib;
-procedure gtk_gesture_ungroup(gesture: PGtkGesture); cdecl; external gtklib;
-function gtk_gesture_get_group(gesture: PGtkGesture): PGList; cdecl; external gtklib;
-function gtk_gesture_is_grouped_with(gesture: PGtkGesture; other: PGtkGesture): Tgboolean; cdecl; external gtklib;
+function gtk_gesture_get_type: TGType; cdecl; external libgtk4;
+function gtk_gesture_get_device(gesture: PGtkGesture): PGdkDevice; cdecl; external libgtk4;
+function gtk_gesture_set_state(gesture: PGtkGesture; state: TGtkEventSequenceState): Tgboolean; cdecl; external libgtk4;
+function gtk_gesture_get_sequence_state(gesture: PGtkGesture; sequence: PGdkEventSequence): TGtkEventSequenceState; cdecl; external libgtk4;
+function gtk_gesture_set_sequence_state(gesture: PGtkGesture; sequence: PGdkEventSequence; state: TGtkEventSequenceState): Tgboolean; cdecl; external libgtk4;
+function gtk_gesture_get_sequences(gesture: PGtkGesture): PGList; cdecl; external libgtk4;
+function gtk_gesture_get_last_updated_sequence(gesture: PGtkGesture): PGdkEventSequence; cdecl; external libgtk4;
+function gtk_gesture_handles_sequence(gesture: PGtkGesture; sequence: PGdkEventSequence): Tgboolean; cdecl; external libgtk4;
+function gtk_gesture_get_last_event(gesture: PGtkGesture; sequence: PGdkEventSequence): PGdkEvent; cdecl; external libgtk4;
+function gtk_gesture_get_point(gesture: PGtkGesture; sequence: PGdkEventSequence; x: Pdouble; y: Pdouble): Tgboolean; cdecl; external libgtk4;
+function gtk_gesture_get_bounding_box(gesture: PGtkGesture; rect: PGdkRectangle): Tgboolean; cdecl; external libgtk4;
+function gtk_gesture_get_bounding_box_center(gesture: PGtkGesture; x: Pdouble; y: Pdouble): Tgboolean; cdecl; external libgtk4;
+function gtk_gesture_is_active(gesture: PGtkGesture): Tgboolean; cdecl; external libgtk4;
+function gtk_gesture_is_recognized(gesture: PGtkGesture): Tgboolean; cdecl; external libgtk4;
+procedure gtk_gesture_group(group_gesture: PGtkGesture; gesture: PGtkGesture); cdecl; external libgtk4;
+procedure gtk_gesture_ungroup(gesture: PGtkGesture); cdecl; external libgtk4;
+function gtk_gesture_get_group(gesture: PGtkGesture): PGList; cdecl; external libgtk4;
+function gtk_gesture_is_grouped_with(gesture: PGtkGesture; other: PGtkGesture): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:48:38 ===
 

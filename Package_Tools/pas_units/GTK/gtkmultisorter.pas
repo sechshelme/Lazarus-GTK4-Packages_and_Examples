@@ -21,10 +21,10 @@ type
   end;
   PGtkMultiSorterClass = ^TGtkMultiSorterClass;
 
-function gtk_multi_sorter_get_type: TGType; cdecl; external gtklib;
-function gtk_multi_sorter_new: PGtkMultiSorter; cdecl; external gtklib;
-procedure gtk_multi_sorter_append(self: PGtkMultiSorter; sorter: PGtkSorter); cdecl; external gtklib;
-procedure gtk_multi_sorter_remove(self: PGtkMultiSorter; position: Tguint); cdecl; external gtklib;
+function gtk_multi_sorter_get_type: TGType; cdecl; external libgtk4;
+function gtk_multi_sorter_new: PGtkMultiSorter; cdecl; external libgtk4;
+procedure gtk_multi_sorter_append(self: PGtkMultiSorter; sorter: PGtkSorter); cdecl; external libgtk4;
+procedure gtk_multi_sorter_remove(self: PGtkMultiSorter; position: Tguint); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 13:38:16 ===
 

@@ -26,12 +26,12 @@ const
 
  }
 
-function gtk_get_major_version: Tguint; cdecl; external gtklib;
-function gtk_get_minor_version: Tguint; cdecl; external gtklib;
-function gtk_get_micro_version: Tguint; cdecl; external gtklib;
-function gtk_get_binary_age: Tguint; cdecl; external gtklib;
-function gtk_get_interface_age: Tguint; cdecl; external gtklib;
-function gtk_check_version(required_major: Tguint; required_minor: Tguint; required_micro: Tguint): PChar; cdecl; external gtklib;
+function gtk_get_major_version: Tguint; cdecl; external libgtk4;
+function gtk_get_minor_version: Tguint; cdecl; external libgtk4;
+function gtk_get_micro_version: Tguint; cdecl; external libgtk4;
+function gtk_get_binary_age: Tguint; cdecl; external libgtk4;
+function gtk_get_interface_age: Tguint; cdecl; external libgtk4;
+function gtk_check_version(required_major: Tguint; required_minor: Tguint; required_micro: Tguint): PChar; cdecl; external libgtk4;
 
 implementation
 

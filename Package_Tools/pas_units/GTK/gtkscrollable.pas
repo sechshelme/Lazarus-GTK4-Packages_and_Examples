@@ -22,16 +22,16 @@ type
     get_border: function(scrollable: PGtkScrollable; border: PGtkBorder): Tgboolean; cdecl;
   end;
 
-function gtk_scrollable_get_type: TGType; cdecl; external gtklib;
-function gtk_scrollable_get_hadjustment(scrollable: PGtkScrollable): PGtkAdjustment; cdecl; external gtklib;
-procedure gtk_scrollable_set_hadjustment(scrollable: PGtkScrollable; hadjustment: PGtkAdjustment); cdecl; external gtklib;
-function gtk_scrollable_get_vadjustment(scrollable: PGtkScrollable): PGtkAdjustment; cdecl; external gtklib;
-procedure gtk_scrollable_set_vadjustment(scrollable: PGtkScrollable; vadjustment: PGtkAdjustment); cdecl; external gtklib;
-function gtk_scrollable_get_hscroll_policy(scrollable: PGtkScrollable): TGtkScrollablePolicy; cdecl; external gtklib;
-procedure gtk_scrollable_set_hscroll_policy(scrollable: PGtkScrollable; policy: TGtkScrollablePolicy); cdecl; external gtklib;
-function gtk_scrollable_get_vscroll_policy(scrollable: PGtkScrollable): TGtkScrollablePolicy; cdecl; external gtklib;
-procedure gtk_scrollable_set_vscroll_policy(scrollable: PGtkScrollable; policy: TGtkScrollablePolicy); cdecl; external gtklib;
-function gtk_scrollable_get_border(scrollable: PGtkScrollable; border: PGtkBorder): Tgboolean; cdecl; external gtklib;
+function gtk_scrollable_get_type: TGType; cdecl; external libgtk4;
+function gtk_scrollable_get_hadjustment(scrollable: PGtkScrollable): PGtkAdjustment; cdecl; external libgtk4;
+procedure gtk_scrollable_set_hadjustment(scrollable: PGtkScrollable; hadjustment: PGtkAdjustment); cdecl; external libgtk4;
+function gtk_scrollable_get_vadjustment(scrollable: PGtkScrollable): PGtkAdjustment; cdecl; external libgtk4;
+procedure gtk_scrollable_set_vadjustment(scrollable: PGtkScrollable; vadjustment: PGtkAdjustment); cdecl; external libgtk4;
+function gtk_scrollable_get_hscroll_policy(scrollable: PGtkScrollable): TGtkScrollablePolicy; cdecl; external libgtk4;
+procedure gtk_scrollable_set_hscroll_policy(scrollable: PGtkScrollable; policy: TGtkScrollablePolicy); cdecl; external libgtk4;
+function gtk_scrollable_get_vscroll_policy(scrollable: PGtkScrollable): TGtkScrollablePolicy; cdecl; external libgtk4;
+procedure gtk_scrollable_set_vscroll_policy(scrollable: PGtkScrollable; policy: TGtkScrollablePolicy); cdecl; external libgtk4;
+function gtk_scrollable_get_border(scrollable: PGtkScrollable; border: PGtkBorder): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:27:13 ===
 

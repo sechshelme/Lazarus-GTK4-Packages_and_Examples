@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -39,37 +39,37 @@ type
   end;
   PGtkAccessibleInterface = ^TGtkAccessibleInterface;
 
-function gtk_accessible_get_type: TGType; cdecl; external gtklib;
-function gtk_accessible_get_at_context(self: PGtkAccessible): PGtkATContext; cdecl; external gtklib;
-function gtk_accessible_get_platform_state(self: PGtkAccessible; state: TGtkAccessiblePlatformState): Tgboolean; cdecl; external gtklib;
-function gtk_accessible_get_accessible_parent(self: PGtkAccessible): PGtkAccessible; cdecl; external gtklib;
-procedure gtk_accessible_set_accessible_parent(self: PGtkAccessible; parent: PGtkAccessible; next_sibling: PGtkAccessible); cdecl; external gtklib;
-function gtk_accessible_get_first_accessible_child(self: PGtkAccessible): PGtkAccessible; cdecl; external gtklib;
-function gtk_accessible_get_next_accessible_sibling(self: PGtkAccessible): PGtkAccessible; cdecl; external gtklib;
-procedure gtk_accessible_update_next_accessible_sibling(self: PGtkAccessible; new_sibling: PGtkAccessible); cdecl; external gtklib;
-function gtk_accessible_get_bounds(self: PGtkAccessible; x: Plongint; y: Plongint; Width: Plongint; Height: Plongint): Tgboolean; cdecl; external gtklib;
-function gtk_accessible_get_accessible_role(self: PGtkAccessible): TGtkAccessibleRole; cdecl; external gtklib;
-procedure gtk_accessible_update_state(self: PGtkAccessible; first_state: TGtkAccessibleState; args: array of const); cdecl; external gtklib;
-procedure gtk_accessible_update_state(self: PGtkAccessible; first_state: TGtkAccessibleState); cdecl; external gtklib;
-procedure gtk_accessible_update_property(self: PGtkAccessible; first_property: TGtkAccessibleProperty; args: array of const); cdecl; external gtklib;
-procedure gtk_accessible_update_property(self: PGtkAccessible; first_property: TGtkAccessibleProperty); cdecl; external gtklib;
-procedure gtk_accessible_update_relation(self: PGtkAccessible; first_relation: TGtkAccessibleRelation; args: array of const); cdecl; external gtklib;
-procedure gtk_accessible_update_relation(self: PGtkAccessible; first_relation: TGtkAccessibleRelation); cdecl; external gtklib;
-procedure gtk_accessible_update_state_value(self: PGtkAccessible; n_states: longint; states: PGtkAccessibleState; values: PGValue); cdecl; external gtklib;
-procedure gtk_accessible_update_property_value(self: PGtkAccessible; n_properties: longint; properties: PGtkAccessibleProperty; values: PGValue); cdecl; external gtklib;
-procedure gtk_accessible_update_relation_value(self: PGtkAccessible; n_relations: longint; relations: PGtkAccessibleRelation; values: PGValue); cdecl; external gtklib;
-procedure gtk_accessible_reset_state(self: PGtkAccessible; state: TGtkAccessibleState); cdecl; external gtklib;
-procedure gtk_accessible_reset_property(self: PGtkAccessible; _property: TGtkAccessibleProperty); cdecl; external gtklib;
-procedure gtk_accessible_reset_relation(self: PGtkAccessible; relation: TGtkAccessibleRelation); cdecl; external gtklib;
-procedure gtk_accessible_state_init_value(state: TGtkAccessibleState; Value: PGValue); cdecl; external gtklib;
-procedure gtk_accessible_property_init_value(_property: TGtkAccessibleProperty; Value: PGValue); cdecl; external gtklib;
-procedure gtk_accessible_relation_init_value(relation: TGtkAccessibleRelation; Value: PGValue); cdecl; external gtklib;
+function gtk_accessible_get_type: TGType; cdecl; external libgtk4;
+function gtk_accessible_get_at_context(self: PGtkAccessible): PGtkATContext; cdecl; external libgtk4;
+function gtk_accessible_get_platform_state(self: PGtkAccessible; state: TGtkAccessiblePlatformState): Tgboolean; cdecl; external libgtk4;
+function gtk_accessible_get_accessible_parent(self: PGtkAccessible): PGtkAccessible; cdecl; external libgtk4;
+procedure gtk_accessible_set_accessible_parent(self: PGtkAccessible; parent: PGtkAccessible; next_sibling: PGtkAccessible); cdecl; external libgtk4;
+function gtk_accessible_get_first_accessible_child(self: PGtkAccessible): PGtkAccessible; cdecl; external libgtk4;
+function gtk_accessible_get_next_accessible_sibling(self: PGtkAccessible): PGtkAccessible; cdecl; external libgtk4;
+procedure gtk_accessible_update_next_accessible_sibling(self: PGtkAccessible; new_sibling: PGtkAccessible); cdecl; external libgtk4;
+function gtk_accessible_get_bounds(self: PGtkAccessible; x: Plongint; y: Plongint; Width: Plongint; Height: Plongint): Tgboolean; cdecl; external libgtk4;
+function gtk_accessible_get_accessible_role(self: PGtkAccessible): TGtkAccessibleRole; cdecl; external libgtk4;
+procedure gtk_accessible_update_state(self: PGtkAccessible; first_state: TGtkAccessibleState; args: array of const); cdecl; external libgtk4;
+procedure gtk_accessible_update_state(self: PGtkAccessible; first_state: TGtkAccessibleState); cdecl; external libgtk4;
+procedure gtk_accessible_update_property(self: PGtkAccessible; first_property: TGtkAccessibleProperty; args: array of const); cdecl; external libgtk4;
+procedure gtk_accessible_update_property(self: PGtkAccessible; first_property: TGtkAccessibleProperty); cdecl; external libgtk4;
+procedure gtk_accessible_update_relation(self: PGtkAccessible; first_relation: TGtkAccessibleRelation; args: array of const); cdecl; external libgtk4;
+procedure gtk_accessible_update_relation(self: PGtkAccessible; first_relation: TGtkAccessibleRelation); cdecl; external libgtk4;
+procedure gtk_accessible_update_state_value(self: PGtkAccessible; n_states: longint; states: PGtkAccessibleState; values: PGValue); cdecl; external libgtk4;
+procedure gtk_accessible_update_property_value(self: PGtkAccessible; n_properties: longint; properties: PGtkAccessibleProperty; values: PGValue); cdecl; external libgtk4;
+procedure gtk_accessible_update_relation_value(self: PGtkAccessible; n_relations: longint; relations: PGtkAccessibleRelation; values: PGValue); cdecl; external libgtk4;
+procedure gtk_accessible_reset_state(self: PGtkAccessible; state: TGtkAccessibleState); cdecl; external libgtk4;
+procedure gtk_accessible_reset_property(self: PGtkAccessible; _property: TGtkAccessibleProperty); cdecl; external libgtk4;
+procedure gtk_accessible_reset_relation(self: PGtkAccessible; relation: TGtkAccessibleRelation); cdecl; external libgtk4;
+procedure gtk_accessible_state_init_value(state: TGtkAccessibleState; Value: PGValue); cdecl; external libgtk4;
+procedure gtk_accessible_property_init_value(_property: TGtkAccessibleProperty; Value: PGValue); cdecl; external libgtk4;
+procedure gtk_accessible_relation_init_value(relation: TGtkAccessibleRelation; Value: PGValue); cdecl; external libgtk4;
 
-function gtk_accessible_list_get_type: TGType; cdecl; external gtklib;
-function gtk_accessible_list_get_objects(accessible_list: PGtkAccessibleList): PGList; cdecl; external gtklib;
-function gtk_accessible_list_new_from_list(list: PGList): PGtkAccessibleList; cdecl; external gtklib;
-function gtk_accessible_list_new_from_array(accessibles: PPGtkAccessible; n_accessibles: Tgsize): PGtkAccessibleList; cdecl; external gtklib;
-procedure gtk_accessible_announce(self: PGtkAccessible; message: PChar; priority: TGtkAccessibleAnnouncementPriority); cdecl; external gtklib;
+function gtk_accessible_list_get_type: TGType; cdecl; external libgtk4;
+function gtk_accessible_list_get_objects(accessible_list: PGtkAccessibleList): PGList; cdecl; external libgtk4;
+function gtk_accessible_list_new_from_list(list: PGList): PGtkAccessibleList; cdecl; external libgtk4;
+function gtk_accessible_list_new_from_array(accessibles: PPGtkAccessible; n_accessibles: Tgsize): PGtkAccessibleList; cdecl; external libgtk4;
+procedure gtk_accessible_announce(self: PGtkAccessible; message: PChar; priority: TGtkAccessibleAnnouncementPriority); cdecl; external libgtk4;
 
 function GTK_ACCESSIBLE_LIST: TGType;
 

@@ -18,24 +18,24 @@ const
   GTK_PRIORITY_RESIZE = G_PRIORITY_HIGH_IDLE + 10;
 
 {$ifdef linux}
-procedure gtk_init; cdecl; external gtklib;
-function gtk_init_check: Tgboolean; cdecl; external gtklib;
+procedure gtk_init; cdecl; external libgtk4;
+function gtk_init_check: Tgboolean; cdecl; external libgtk4;
 {$endif}
 
-function gtk_is_initialized: Tgboolean; cdecl; external gtklib;
+function gtk_is_initialized: Tgboolean; cdecl; external libgtk4;
 
 //{$ifdef G_OS_WIN32}
 {$ifdef windows}
-procedure gtk_init_abi_check(num_checks: longint; sizeof_GtkWindow: Tsize_t; sizeof_GtkBox: Tsize_t); cdecl; external gtklib;
-function gtk_init_check_abi_check(num_checks: longint; sizeof_GtkWindow: Tsize_t; sizeof_GtkBox: Tsize_t): Tgboolean; cdecl; external gtklib;
+procedure gtk_init_abi_check(num_checks: longint; sizeof_GtkWindow: Tsize_t; sizeof_GtkBox: Tsize_t); cdecl; external libgtk4;
+function gtk_init_check_abi_check(num_checks: longint; sizeof_GtkWindow: Tsize_t; sizeof_GtkBox: Tsize_t): Tgboolean; cdecl; external libgtk4;
 
 procedure gtk_init;
 function gtk_init_check: Tgboolean;
 {$endif}
 
-procedure gtk_disable_setlocale; cdecl; external gtklib;
-function gtk_get_default_language: PPangoLanguage; cdecl; external gtklib;
-function gtk_get_locale_direction: TGtkTextDirection; cdecl; external gtklib;
+procedure gtk_disable_setlocale; cdecl; external libgtk4;
+function gtk_get_default_language: PPangoLanguage; cdecl; external libgtk4;
+function gtk_get_locale_direction: TGtkTextDirection; cdecl; external libgtk4;
 
 implementation
 

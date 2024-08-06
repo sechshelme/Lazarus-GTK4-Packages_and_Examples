@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -18,16 +18,16 @@ type
   end;
   PGtkDragSourceClass = ^TGtkDragSourceClass;
 
-function gtk_drag_source_get_type: TGType; cdecl; external gtklib;
-function gtk_drag_source_new: PGtkDragSource; cdecl; external gtklib;
-procedure gtk_drag_source_set_content(Source: PGtkDragSource; content: PGdkContentProvider); cdecl; external gtklib;
-function gtk_drag_source_get_content(Source: PGtkDragSource): PGdkContentProvider; cdecl; external gtklib;
-procedure gtk_drag_source_set_actions(Source: PGtkDragSource; actions: TGdkDragAction); cdecl; external gtklib;
-function gtk_drag_source_get_actions(Source: PGtkDragSource): TGdkDragAction; cdecl; external gtklib;
-procedure gtk_drag_source_set_icon(Source: PGtkDragSource; paintable: PGdkPaintable; hot_x: longint; hot_y: longint); cdecl; external gtklib;
-procedure gtk_drag_source_drag_cancel(Source: PGtkDragSource); cdecl; external gtklib;
-function gtk_drag_source_get_drag(Source: PGtkDragSource): PGdkDrag; cdecl; external gtklib;
-function gtk_drag_check_threshold(widget: PGtkWidget; start_x: longint; start_y: longint; current_x: longint; current_y: longint): Tgboolean; cdecl; external gtklib;
+function gtk_drag_source_get_type: TGType; cdecl; external libgtk4;
+function gtk_drag_source_new: PGtkDragSource; cdecl; external libgtk4;
+procedure gtk_drag_source_set_content(Source: PGtkDragSource; content: PGdkContentProvider); cdecl; external libgtk4;
+function gtk_drag_source_get_content(Source: PGtkDragSource): PGdkContentProvider; cdecl; external libgtk4;
+procedure gtk_drag_source_set_actions(Source: PGtkDragSource; actions: TGdkDragAction); cdecl; external libgtk4;
+function gtk_drag_source_get_actions(Source: PGtkDragSource): TGdkDragAction; cdecl; external libgtk4;
+procedure gtk_drag_source_set_icon(Source: PGtkDragSource; paintable: PGdkPaintable; hot_x: longint; hot_y: longint); cdecl; external libgtk4;
+procedure gtk_drag_source_drag_cancel(Source: PGtkDragSource); cdecl; external libgtk4;
+function gtk_drag_source_get_drag(Source: PGtkDragSource): PGdkDrag; cdecl; external libgtk4;
+function gtk_drag_check_threshold(widget: PGtkWidget; start_x: longint; start_y: longint; current_x: longint; current_y: longint): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 25-7-24 18:08:37 ===
 

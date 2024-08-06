@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -13,12 +13,12 @@ type
   end;
   PGtkSpinner = ^TGtkSpinner;
 
-function gtk_spinner_get_type: TGType; cdecl; external gtklib;
-function gtk_spinner_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_spinner_start(spinner: PGtkSpinner); cdecl; external gtklib;
-procedure gtk_spinner_stop(spinner: PGtkSpinner); cdecl; external gtklib;
-procedure gtk_spinner_set_spinning(spinner: PGtkSpinner; spinning: Tgboolean); cdecl; external gtklib;
-function gtk_spinner_get_spinning(spinner: PGtkSpinner): Tgboolean; cdecl; external gtklib;
+function gtk_spinner_get_type: TGType; cdecl; external libgtk4;
+function gtk_spinner_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_spinner_start(spinner: PGtkSpinner); cdecl; external libgtk4;
+procedure gtk_spinner_stop(spinner: PGtkSpinner); cdecl; external libgtk4;
+procedure gtk_spinner_set_spinning(spinner: PGtkSpinner; spinning: Tgboolean); cdecl; external libgtk4;
+function gtk_spinner_get_spinning(spinner: PGtkSpinner): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 23-7-24 13:37:49 ===
 

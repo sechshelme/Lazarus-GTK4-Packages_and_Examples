@@ -14,10 +14,10 @@ type
   end;
   PGtkLockButton = ^TGtkLockButton;
 
-function gtk_lock_button_get_type: TGType; cdecl; external gtklib;
-function gtk_lock_button_new(permission: PGPermission): PGtkWidget; cdecl; external gtklib;
-function gtk_lock_button_get_permission(button: PGtkLockButton): PGPermission; cdecl; external gtklib;
-procedure gtk_lock_button_set_permission(button: PGtkLockButton; permission: PGPermission); cdecl; external gtklib;
+function gtk_lock_button_get_type: TGType; cdecl; external libgtk4;
+function gtk_lock_button_new(permission: PGPermission): PGtkWidget; cdecl; external libgtk4;
+function gtk_lock_button_get_permission(button: PGtkLockButton): PGPermission; cdecl; external libgtk4;
+procedure gtk_lock_button_set_permission(button: PGtkLockButton; permission: PGPermission); cdecl; external libgtk4;
 
 // === Konventiert am: 30-7-24 16:04:22 ===
 

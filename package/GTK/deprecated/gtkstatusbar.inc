@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -14,13 +14,13 @@ type
   end;
   PGtkStatusbar = ^TGtkStatusbar;
 
-function gtk_statusbar_get_type: TGType; cdecl; external gtklib;
-function gtk_statusbar_new: PGtkWidget; cdecl; external gtklib;
-function gtk_statusbar_get_context_id(statusbar: PGtkStatusbar; context_description: PChar): Tguint; cdecl; external gtklib;
-function gtk_statusbar_push(statusbar: PGtkStatusbar; context_id: Tguint; Text: PChar): Tguint; cdecl; external gtklib;
-procedure gtk_statusbar_pop(statusbar: PGtkStatusbar; context_id: Tguint); cdecl; external gtklib;
-procedure gtk_statusbar_remove(statusbar: PGtkStatusbar; context_id: Tguint; message_id: Tguint); cdecl; external gtklib;
-procedure gtk_statusbar_remove_all(statusbar: PGtkStatusbar; context_id: Tguint); cdecl; external gtklib;
+function gtk_statusbar_get_type: TGType; cdecl; external libgtk4;
+function gtk_statusbar_new: PGtkWidget; cdecl; external libgtk4;
+function gtk_statusbar_get_context_id(statusbar: PGtkStatusbar; context_description: PChar): Tguint; cdecl; external libgtk4;
+function gtk_statusbar_push(statusbar: PGtkStatusbar; context_id: Tguint; Text: PChar): Tguint; cdecl; external libgtk4;
+procedure gtk_statusbar_pop(statusbar: PGtkStatusbar; context_id: Tguint); cdecl; external libgtk4;
+procedure gtk_statusbar_remove(statusbar: PGtkStatusbar; context_id: Tguint; message_id: Tguint); cdecl; external libgtk4;
+procedure gtk_statusbar_remove_all(statusbar: PGtkStatusbar; context_id: Tguint); cdecl; external libgtk4;
 
 // === Konventiert am: 30-7-24 16:18:03 ===
 

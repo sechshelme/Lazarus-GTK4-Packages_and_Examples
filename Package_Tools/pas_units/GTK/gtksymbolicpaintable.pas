@@ -20,8 +20,8 @@ type
   end;
   PGtkSymbolicPaintableInterface = ^TGtkSymbolicPaintableInterface;
 
-function gtk_symbolic_paintable_get_type: TGType; cdecl; external gtklib;
-procedure gtk_symbolic_paintable_snapshot_symbolic(paintable: PGtkSymbolicPaintable; snapshot: PGdkSnapshot; Width: Tdouble; Height: Tdouble; colors: PGdkRGBA; n_colors: Tgsize); cdecl; external gtklib;
+function gtk_symbolic_paintable_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_symbolic_paintable_snapshot_symbolic(paintable: PGtkSymbolicPaintable; snapshot: PGdkSnapshot; Width: Tdouble; Height: Tdouble; colors: PGdkRGBA; n_colors: Tgsize); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 16:40:59 ===
 

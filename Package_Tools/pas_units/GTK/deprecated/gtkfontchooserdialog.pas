@@ -14,8 +14,8 @@ type
   end;
   PGtkFontChooserDialog = ^TGtkFontChooserDialog;
 
-function gtk_font_chooser_dialog_get_type: TGType; cdecl; external gtklib;
-function gtk_font_chooser_dialog_new(title: PChar; parent: PGtkWindow): PGtkWidget; cdecl; external gtklib;
+function gtk_font_chooser_dialog_get_type: TGType; cdecl; external libgtk4;
+function gtk_font_chooser_dialog_new(title: PChar; parent: PGtkWindow): PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 19:53:13 ===
 

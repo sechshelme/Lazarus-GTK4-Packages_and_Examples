@@ -45,13 +45,13 @@ type
   PGtkBuildableIface = ^TGtkBuildableIface;
 
 
-function gtk_buildable_get_type: TGType; cdecl; external gtklib;
-function gtk_buildable_get_buildable_id(buildable: PGtkBuildable): PChar; cdecl; external gtklib;
-procedure gtk_buildable_parse_context_push(context: PGtkBuildableParseContext; parser: PGtkBuildableParser; user_data: Tgpointer); cdecl; external gtklib;
-function gtk_buildable_parse_context_pop(context: PGtkBuildableParseContext): Tgpointer; cdecl; external gtklib;
-function gtk_buildable_parse_context_get_element(context: PGtkBuildableParseContext): PChar; cdecl; external gtklib;
-function gtk_buildable_parse_context_get_element_stack(context: PGtkBuildableParseContext): PGPtrArray; cdecl; external gtklib;
-procedure gtk_buildable_parse_context_get_position(context: PGtkBuildableParseContext; line_number: Plongint; char_number: Plongint); cdecl; external gtklib;
+function gtk_buildable_get_type: TGType; cdecl; external libgtk4;
+function gtk_buildable_get_buildable_id(buildable: PGtkBuildable): PChar; cdecl; external libgtk4;
+procedure gtk_buildable_parse_context_push(context: PGtkBuildableParseContext; parser: PGtkBuildableParser; user_data: Tgpointer); cdecl; external libgtk4;
+function gtk_buildable_parse_context_pop(context: PGtkBuildableParseContext): Tgpointer; cdecl; external libgtk4;
+function gtk_buildable_parse_context_get_element(context: PGtkBuildableParseContext): PChar; cdecl; external libgtk4;
+function gtk_buildable_parse_context_get_element_stack(context: PGtkBuildableParseContext): PGPtrArray; cdecl; external libgtk4;
+procedure gtk_buildable_parse_context_get_position(context: PGtkBuildableParseContext; line_number: Plongint; char_number: Plongint); cdecl; external libgtk4;
 
 
 // === Konventiert am: 18-7-24 19:10:13 ===

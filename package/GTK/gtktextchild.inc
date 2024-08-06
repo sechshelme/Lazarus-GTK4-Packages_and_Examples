@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -25,11 +25,11 @@ type
   PGtkTextChildAnchorClass = ^TGtkTextChildAnchorClass;
 
 
-function gtk_text_child_anchor_get_type: TGType; cdecl; external gtklib;
-function gtk_text_child_anchor_new: PGtkTextChildAnchor; cdecl; external gtklib;
-function gtk_text_child_anchor_new_with_replacement(character: PChar): PGtkTextChildAnchor; cdecl; external gtklib;
-function gtk_text_child_anchor_get_widgets(anchor: PGtkTextChildAnchor; out_len: Pguint): PPGtkWidget; cdecl; external gtklib;
-function gtk_text_child_anchor_get_deleted(anchor: PGtkTextChildAnchor): Tgboolean; cdecl; external gtklib;
+function gtk_text_child_anchor_get_type: TGType; cdecl; external libgtk4;
+function gtk_text_child_anchor_new: PGtkTextChildAnchor; cdecl; external libgtk4;
+function gtk_text_child_anchor_new_with_replacement(character: PChar): PGtkTextChildAnchor; cdecl; external libgtk4;
+function gtk_text_child_anchor_get_widgets(anchor: PGtkTextChildAnchor; out_len: Pguint): PPGtkWidget; cdecl; external libgtk4;
+function gtk_text_child_anchor_get_deleted(anchor: PGtkTextChildAnchor): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 19-7-24 19:48:49 ===
 

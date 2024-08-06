@@ -30,13 +30,13 @@ type
   PGtkMountOperationClass = ^TGtkMountOperationClass;
 
 
-function gtk_mount_operation_get_type: TGType; cdecl; external gtklib;
-function gtk_mount_operation_new(parent: PGtkWindow): PGMountOperation; cdecl; external gtklib;
-function gtk_mount_operation_is_showing(op: PGtkMountOperation): Tgboolean; cdecl; external gtklib;
-procedure gtk_mount_operation_set_parent(op: PGtkMountOperation; parent: PGtkWindow); cdecl; external gtklib;
-function gtk_mount_operation_get_parent(op: PGtkMountOperation): PGtkWindow; cdecl; external gtklib;
-procedure gtk_mount_operation_set_display(op: PGtkMountOperation; display: PGdkDisplay); cdecl; external gtklib;
-function gtk_mount_operation_get_display(op: PGtkMountOperation): PGdkDisplay; cdecl; external gtklib;
+function gtk_mount_operation_get_type: TGType; cdecl; external libgtk4;
+function gtk_mount_operation_new(parent: PGtkWindow): PGMountOperation; cdecl; external libgtk4;
+function gtk_mount_operation_is_showing(op: PGtkMountOperation): Tgboolean; cdecl; external libgtk4;
+procedure gtk_mount_operation_set_parent(op: PGtkMountOperation; parent: PGtkWindow); cdecl; external libgtk4;
+function gtk_mount_operation_get_parent(op: PGtkMountOperation): PGtkWindow; cdecl; external libgtk4;
+procedure gtk_mount_operation_set_display(op: PGtkMountOperation; display: PGdkDisplay); cdecl; external libgtk4;
+function gtk_mount_operation_get_display(op: PGtkMountOperation): PGdkDisplay; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 13:37:24 ===
 

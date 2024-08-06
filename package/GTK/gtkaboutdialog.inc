@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -39,44 +39,44 @@ type
   PGtkAboutDialog = ^TGtkAboutDialog;
 
 
-function gtk_about_dialog_get_type: TGType; cdecl; external gtklib;
-function gtk_about_dialog_new: PGtkWidget; cdecl; external gtklib;
-//procedure gtk_show_about_dialog(parent: PGtkWindow; first_property_name: PChar; args: array of const); cdecl; external gtklib;
-//procedure gtk_show_about_dialog(parent: PGtkWindow; first_property_name: PChar); cdecl; external gtklib;
-procedure gtk_show_about_dialog(parent: PGtkWindow; first_property_name: PChar);varargs cdecl; external gtklib;
-function gtk_about_dialog_get_program_name(about: PGtkAboutDialog): PChar; cdecl; external gtklib;
-procedure gtk_about_dialog_set_program_name(about: PGtkAboutDialog; Name: PChar); cdecl; external gtklib;
-function gtk_about_dialog_get_version(about: PGtkAboutDialog): PChar; cdecl; external gtklib;
-procedure gtk_about_dialog_set_version(about: PGtkAboutDialog; version: PChar); cdecl; external gtklib;
-function gtk_about_dialog_get_copyright(about: PGtkAboutDialog): PChar; cdecl; external gtklib;
-procedure gtk_about_dialog_set_copyright(about: PGtkAboutDialog; copyright: PChar); cdecl; external gtklib;
-function gtk_about_dialog_get_comments(about: PGtkAboutDialog): PChar; cdecl; external gtklib;
-procedure gtk_about_dialog_set_comments(about: PGtkAboutDialog; comments: PChar); cdecl; external gtklib;
-function gtk_about_dialog_get_license(about: PGtkAboutDialog): PChar; cdecl; external gtklib;
-procedure gtk_about_dialog_set_license(about: PGtkAboutDialog; license: PChar); cdecl; external gtklib;
-procedure gtk_about_dialog_set_license_type(about: PGtkAboutDialog; license_type: TGtkLicense); cdecl; external gtklib;
-function gtk_about_dialog_get_license_type(about: PGtkAboutDialog): TGtkLicense; cdecl; external gtklib;
-function gtk_about_dialog_get_wrap_license(about: PGtkAboutDialog): Tgboolean; cdecl; external gtklib;
-procedure gtk_about_dialog_set_wrap_license(about: PGtkAboutDialog; wrap_license: Tgboolean); cdecl; external gtklib;
-function gtk_about_dialog_get_system_information(about: PGtkAboutDialog): PChar; cdecl; external gtklib;
-procedure gtk_about_dialog_set_system_information(about: PGtkAboutDialog; system_information: PChar); cdecl; external gtklib;
-function gtk_about_dialog_get_website(about: PGtkAboutDialog): PChar; cdecl; external gtklib;
-procedure gtk_about_dialog_set_website(about: PGtkAboutDialog; website: PChar); cdecl; external gtklib;
-function gtk_about_dialog_get_website_label(about: PGtkAboutDialog): PChar; cdecl; external gtklib;
-procedure gtk_about_dialog_set_website_label(about: PGtkAboutDialog; website_label: PChar); cdecl; external gtklib;
-function gtk_about_dialog_get_authors(about: PGtkAboutDialog): PPchar; cdecl; external gtklib;
-procedure gtk_about_dialog_set_authors(about: PGtkAboutDialog; authors: PPchar); cdecl; external gtklib;
-function gtk_about_dialog_get_documenters(about: PGtkAboutDialog): PPchar; cdecl; external gtklib;
-procedure gtk_about_dialog_set_documenters(about: PGtkAboutDialog; documenters: PPchar); cdecl; external gtklib;
-function gtk_about_dialog_get_artists(about: PGtkAboutDialog): PPchar; cdecl; external gtklib;
-procedure gtk_about_dialog_set_artists(about: PGtkAboutDialog; artists: PPchar); cdecl; external gtklib;
-function gtk_about_dialog_get_translator_credits(about: PGtkAboutDialog): PChar; cdecl; external gtklib;
-procedure gtk_about_dialog_set_translator_credits(about: PGtkAboutDialog; translator_credits: PChar); cdecl; external gtklib;
-function gtk_about_dialog_get_logo(about: PGtkAboutDialog): PGdkPaintable; cdecl; external gtklib;
-procedure gtk_about_dialog_set_logo(about: PGtkAboutDialog; logo: PGdkPaintable); cdecl; external gtklib;
-function gtk_about_dialog_get_logo_icon_name(about: PGtkAboutDialog): PChar; cdecl; external gtklib;
-procedure gtk_about_dialog_set_logo_icon_name(about: PGtkAboutDialog; icon_name: PChar); cdecl; external gtklib;
-procedure gtk_about_dialog_add_credit_section(about: PGtkAboutDialog; section_name: PChar; people: PPchar); cdecl; external gtklib;
+function gtk_about_dialog_get_type: TGType; cdecl; external libgtk4;
+function gtk_about_dialog_new: PGtkWidget; cdecl; external libgtk4;
+//procedure gtk_show_about_dialog(parent: PGtkWindow; first_property_name: PChar; args: array of const); cdecl; external libgtk4;
+//procedure gtk_show_about_dialog(parent: PGtkWindow; first_property_name: PChar); cdecl; external libgtk4;
+procedure gtk_show_about_dialog(parent: PGtkWindow; first_property_name: PChar);varargs cdecl; external libgtk4;
+function gtk_about_dialog_get_program_name(about: PGtkAboutDialog): PChar; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_program_name(about: PGtkAboutDialog; Name: PChar); cdecl; external libgtk4;
+function gtk_about_dialog_get_version(about: PGtkAboutDialog): PChar; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_version(about: PGtkAboutDialog; version: PChar); cdecl; external libgtk4;
+function gtk_about_dialog_get_copyright(about: PGtkAboutDialog): PChar; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_copyright(about: PGtkAboutDialog; copyright: PChar); cdecl; external libgtk4;
+function gtk_about_dialog_get_comments(about: PGtkAboutDialog): PChar; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_comments(about: PGtkAboutDialog; comments: PChar); cdecl; external libgtk4;
+function gtk_about_dialog_get_license(about: PGtkAboutDialog): PChar; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_license(about: PGtkAboutDialog; license: PChar); cdecl; external libgtk4;
+procedure gtk_about_dialog_set_license_type(about: PGtkAboutDialog; license_type: TGtkLicense); cdecl; external libgtk4;
+function gtk_about_dialog_get_license_type(about: PGtkAboutDialog): TGtkLicense; cdecl; external libgtk4;
+function gtk_about_dialog_get_wrap_license(about: PGtkAboutDialog): Tgboolean; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_wrap_license(about: PGtkAboutDialog; wrap_license: Tgboolean); cdecl; external libgtk4;
+function gtk_about_dialog_get_system_information(about: PGtkAboutDialog): PChar; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_system_information(about: PGtkAboutDialog; system_information: PChar); cdecl; external libgtk4;
+function gtk_about_dialog_get_website(about: PGtkAboutDialog): PChar; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_website(about: PGtkAboutDialog; website: PChar); cdecl; external libgtk4;
+function gtk_about_dialog_get_website_label(about: PGtkAboutDialog): PChar; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_website_label(about: PGtkAboutDialog; website_label: PChar); cdecl; external libgtk4;
+function gtk_about_dialog_get_authors(about: PGtkAboutDialog): PPchar; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_authors(about: PGtkAboutDialog; authors: PPchar); cdecl; external libgtk4;
+function gtk_about_dialog_get_documenters(about: PGtkAboutDialog): PPchar; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_documenters(about: PGtkAboutDialog; documenters: PPchar); cdecl; external libgtk4;
+function gtk_about_dialog_get_artists(about: PGtkAboutDialog): PPchar; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_artists(about: PGtkAboutDialog; artists: PPchar); cdecl; external libgtk4;
+function gtk_about_dialog_get_translator_credits(about: PGtkAboutDialog): PChar; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_translator_credits(about: PGtkAboutDialog; translator_credits: PChar); cdecl; external libgtk4;
+function gtk_about_dialog_get_logo(about: PGtkAboutDialog): PGdkPaintable; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_logo(about: PGtkAboutDialog; logo: PGdkPaintable); cdecl; external libgtk4;
+function gtk_about_dialog_get_logo_icon_name(about: PGtkAboutDialog): PChar; cdecl; external libgtk4;
+procedure gtk_about_dialog_set_logo_icon_name(about: PGtkAboutDialog; icon_name: PChar); cdecl; external libgtk4;
+procedure gtk_about_dialog_add_credit_section(about: PGtkAboutDialog; section_name: PChar; people: PPchar); cdecl; external libgtk4;
 
 // === Konventiert am: 12-7-24 15:14:28 ===
 

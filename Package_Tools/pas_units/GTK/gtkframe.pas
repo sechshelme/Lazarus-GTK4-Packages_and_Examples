@@ -23,16 +23,16 @@ type
   PGtkFrameClass = ^TGtkFrameClass;
 
 
-function gtk_frame_get_type: TGType; cdecl; external gtklib;
-function gtk_frame_new(_label: PChar): PGtkWidget; cdecl; external gtklib;
-procedure gtk_frame_set_label(frame: PGtkFrame; _label: PChar); cdecl; external gtklib;
-function gtk_frame_get_label(frame: PGtkFrame): PChar; cdecl; external gtklib;
-procedure gtk_frame_set_label_widget(frame: PGtkFrame; label_widget: PGtkWidget); cdecl; external gtklib;
-function gtk_frame_get_label_widget(frame: PGtkFrame): PGtkWidget; cdecl; external gtklib;
-procedure gtk_frame_set_label_align(frame: PGtkFrame; xalign: single); cdecl; external gtklib;
-function gtk_frame_get_label_align(frame: PGtkFrame): single; cdecl; external gtklib;
-procedure gtk_frame_set_child(frame: PGtkFrame; child: PGtkWidget); cdecl; external gtklib;
-function gtk_frame_get_child(frame: PGtkFrame): PGtkWidget; cdecl; external gtklib;
+function gtk_frame_get_type: TGType; cdecl; external libgtk4;
+function gtk_frame_new(_label: PChar): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_frame_set_label(frame: PGtkFrame; _label: PChar); cdecl; external libgtk4;
+function gtk_frame_get_label(frame: PGtkFrame): PChar; cdecl; external libgtk4;
+procedure gtk_frame_set_label_widget(frame: PGtkFrame; label_widget: PGtkWidget); cdecl; external libgtk4;
+function gtk_frame_get_label_widget(frame: PGtkFrame): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_frame_set_label_align(frame: PGtkFrame; xalign: single); cdecl; external libgtk4;
+function gtk_frame_get_label_align(frame: PGtkFrame): single; cdecl; external libgtk4;
+procedure gtk_frame_set_child(frame: PGtkFrame; child: PGtkWidget); cdecl; external libgtk4;
+function gtk_frame_get_child(frame: PGtkFrame): PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:28:23 ===
 

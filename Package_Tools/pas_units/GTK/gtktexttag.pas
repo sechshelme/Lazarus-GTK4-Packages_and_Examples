@@ -32,11 +32,11 @@ type
     end;
 
 
-function gtk_text_tag_get_type:TGType;cdecl;external gtklib;
-function gtk_text_tag_new(name:Pchar):PGtkTextTag;cdecl;external gtklib;
-function gtk_text_tag_get_priority(tag:PGtkTextTag):longint;cdecl;external gtklib;
-procedure gtk_text_tag_set_priority(tag:PGtkTextTag; priority:longint);cdecl;external gtklib;
-procedure gtk_text_tag_changed(tag:PGtkTextTag; size_changed:Tgboolean);cdecl;external gtklib;
+function gtk_text_tag_get_type:TGType;cdecl;external libgtk4;
+function gtk_text_tag_new(name:Pchar):PGtkTextTag;cdecl;external libgtk4;
+function gtk_text_tag_get_priority(tag:PGtkTextTag):longint;cdecl;external libgtk4;
+procedure gtk_text_tag_set_priority(tag:PGtkTextTag; priority:longint);cdecl;external libgtk4;
+procedure gtk_text_tag_changed(tag:PGtkTextTag; size_changed:Tgboolean);cdecl;external libgtk4;
 
 // === Konventiert am: 19-7-24 19:31:09 ===
 

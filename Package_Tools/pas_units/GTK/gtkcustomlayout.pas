@@ -26,8 +26,8 @@ type
   end;
   PGtkCustomLayoutClass = ^TGtkCustomLayoutClass;
 
-function gtk_custom_layout_get_type: TGType; cdecl; external gtklib;
-function gtk_custom_layout_new(request_mode: TGtkCustomRequestModeFunc; measure: TGtkCustomMeasureFunc; allocate: TGtkCustomAllocateFunc): PGtkLayoutManager; cdecl; external gtklib;
+function gtk_custom_layout_get_type: TGType; cdecl; external libgtk4;
+function gtk_custom_layout_new(request_mode: TGtkCustomRequestModeFunc; measure: TGtkCustomMeasureFunc; allocate: TGtkCustomAllocateFunc): PGtkLayoutManager; cdecl; external libgtk4;
 
 // === Konventiert am: 24-7-24 19:37:33 ===
 

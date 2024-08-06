@@ -21,14 +21,14 @@ type
   end;
   PGtkFixedClass = ^TGtkFixedClass;
 
-function gtk_fixed_get_type: TGType; cdecl; external gtklib;
-function gtk_fixed_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_fixed_put(fixed: PGtkFixed; widget: PGtkWidget; x: Tdouble; y: Tdouble); cdecl; external gtklib;
-procedure gtk_fixed_remove(fixed: PGtkFixed; widget: PGtkWidget); cdecl; external gtklib;
-procedure gtk_fixed_move(fixed: PGtkFixed; widget: PGtkWidget; x: Tdouble; y: Tdouble); cdecl; external gtklib;
-procedure gtk_fixed_get_child_position(fixed: PGtkFixed; widget: PGtkWidget; x: Pdouble; y: Pdouble); cdecl; external gtklib;
-procedure gtk_fixed_set_child_transform(fixed: PGtkFixed; widget: PGtkWidget; transform: PGskTransform); cdecl; external gtklib;
-function gtk_fixed_get_child_transform(fixed: PGtkFixed; widget: PGtkWidget): PGskTransform; cdecl; external gtklib;
+function gtk_fixed_get_type: TGType; cdecl; external libgtk4;
+function gtk_fixed_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_fixed_put(fixed: PGtkFixed; widget: PGtkWidget; x: Tdouble; y: Tdouble); cdecl; external libgtk4;
+procedure gtk_fixed_remove(fixed: PGtkFixed; widget: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_fixed_move(fixed: PGtkFixed; widget: PGtkWidget; x: Tdouble; y: Tdouble); cdecl; external libgtk4;
+procedure gtk_fixed_get_child_position(fixed: PGtkFixed; widget: PGtkWidget; x: Pdouble; y: Pdouble); cdecl; external libgtk4;
+procedure gtk_fixed_set_child_transform(fixed: PGtkFixed; widget: PGtkWidget; transform: PGskTransform); cdecl; external libgtk4;
+function gtk_fixed_get_child_transform(fixed: PGtkFixed; widget: PGtkWidget): PGskTransform; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:21:10 ===
 

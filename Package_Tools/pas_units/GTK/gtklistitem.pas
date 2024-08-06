@@ -20,22 +20,22 @@ type
   end;
   PGtkListItemClass = ^TGtkListItemClass;
 
-function gtk_list_item_get_type: TGType; cdecl; external gtklib;
-function gtk_list_item_get_item(self: PGtkListItem): Tgpointer; cdecl; external gtklib;
-function gtk_list_item_get_position(self: PGtkListItem): Tguint; cdecl; external gtklib;
-function gtk_list_item_get_selected(self: PGtkListItem): Tgboolean; cdecl; external gtklib;
-function gtk_list_item_get_selectable(self: PGtkListItem): Tgboolean; cdecl; external gtklib;
-procedure gtk_list_item_set_selectable(self: PGtkListItem; selectable: Tgboolean); cdecl; external gtklib;
-function gtk_list_item_get_activatable(self: PGtkListItem): Tgboolean; cdecl; external gtklib;
-procedure gtk_list_item_set_activatable(self: PGtkListItem; activatable: Tgboolean); cdecl; external gtklib;
-function gtk_list_item_get_focusable(self: PGtkListItem): Tgboolean; cdecl; external gtklib;
-procedure gtk_list_item_set_focusable(self: PGtkListItem; focusable: Tgboolean); cdecl; external gtklib;
-procedure gtk_list_item_set_child(self: PGtkListItem; child: PGtkWidget); cdecl; external gtklib;
-function gtk_list_item_get_child(self: PGtkListItem): PGtkWidget; cdecl; external gtklib;
-procedure gtk_list_item_set_accessible_description(self: PGtkListItem; description: PChar); cdecl; external gtklib;
-function gtk_list_item_get_accessible_description(self: PGtkListItem): PChar; cdecl; external gtklib;
-procedure gtk_list_item_set_accessible_label(self: PGtkListItem; _label: PChar); cdecl; external gtklib;
-function gtk_list_item_get_accessible_label(self: PGtkListItem): PChar; cdecl; external gtklib;
+function gtk_list_item_get_type: TGType; cdecl; external libgtk4;
+function gtk_list_item_get_item(self: PGtkListItem): Tgpointer; cdecl; external libgtk4;
+function gtk_list_item_get_position(self: PGtkListItem): Tguint; cdecl; external libgtk4;
+function gtk_list_item_get_selected(self: PGtkListItem): Tgboolean; cdecl; external libgtk4;
+function gtk_list_item_get_selectable(self: PGtkListItem): Tgboolean; cdecl; external libgtk4;
+procedure gtk_list_item_set_selectable(self: PGtkListItem; selectable: Tgboolean); cdecl; external libgtk4;
+function gtk_list_item_get_activatable(self: PGtkListItem): Tgboolean; cdecl; external libgtk4;
+procedure gtk_list_item_set_activatable(self: PGtkListItem; activatable: Tgboolean); cdecl; external libgtk4;
+function gtk_list_item_get_focusable(self: PGtkListItem): Tgboolean; cdecl; external libgtk4;
+procedure gtk_list_item_set_focusable(self: PGtkListItem; focusable: Tgboolean); cdecl; external libgtk4;
+procedure gtk_list_item_set_child(self: PGtkListItem; child: PGtkWidget); cdecl; external libgtk4;
+function gtk_list_item_get_child(self: PGtkListItem): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_list_item_set_accessible_description(self: PGtkListItem; description: PChar); cdecl; external libgtk4;
+function gtk_list_item_get_accessible_description(self: PGtkListItem): PChar; cdecl; external libgtk4;
+procedure gtk_list_item_set_accessible_label(self: PGtkListItem; _label: PChar); cdecl; external libgtk4;
+function gtk_list_item_get_accessible_label(self: PGtkListItem): PChar; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 19:13:10 ===
 

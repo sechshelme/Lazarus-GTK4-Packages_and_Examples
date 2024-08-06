@@ -14,12 +14,12 @@ type
   end;
   PGdkAppLaunchContext = ^TGdkAppLaunchContext;
 
-function gdk_app_launch_context_get_type: TGType; cdecl; external gtklib;
-function gdk_app_launch_context_get_display(context: PGdkAppLaunchContext): PGdkDisplay; cdecl; external gtklib;
-procedure gdk_app_launch_context_set_desktop(context: PGdkAppLaunchContext; desktop: longint); cdecl; external gtklib;
-procedure gdk_app_launch_context_set_timestamp(context: PGdkAppLaunchContext; timestamp: Tguint32); cdecl; external gtklib;
-procedure gdk_app_launch_context_set_icon(context: PGdkAppLaunchContext; icon: PGIcon); cdecl; external gtklib;
-procedure gdk_app_launch_context_set_icon_name(context: PGdkAppLaunchContext; icon_name: PChar); cdecl; external gtklib;
+function gdk_app_launch_context_get_type: TGType; cdecl; external libgtk4;
+function gdk_app_launch_context_get_display(context: PGdkAppLaunchContext): PGdkDisplay; cdecl; external libgtk4;
+procedure gdk_app_launch_context_set_desktop(context: PGdkAppLaunchContext; desktop: longint); cdecl; external libgtk4;
+procedure gdk_app_launch_context_set_timestamp(context: PGdkAppLaunchContext; timestamp: Tguint32); cdecl; external libgtk4;
+procedure gdk_app_launch_context_set_icon(context: PGdkAppLaunchContext; icon: PGIcon); cdecl; external libgtk4;
+procedure gdk_app_launch_context_set_icon_name(context: PGdkAppLaunchContext; icon_name: PChar); cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 15:51:39 ===
 

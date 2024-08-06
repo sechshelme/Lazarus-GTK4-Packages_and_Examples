@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,9 +20,9 @@ type
   end;
   PGtkCustomSorterClass = ^TGtkCustomSorterClass;
 
-function gtk_custom_sorter_get_type: TGType; cdecl; external gtklib;
-function gtk_custom_sorter_new(sort_func: TGCompareDataFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify): PGtkCustomSorter; cdecl; external gtklib;
-procedure gtk_custom_sorter_set_sort_func(self: PGtkCustomSorter; sort_func: TGCompareDataFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify); cdecl; external gtklib;
+function gtk_custom_sorter_get_type: TGType; cdecl; external libgtk4;
+function gtk_custom_sorter_new(sort_func: TGCompareDataFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify): PGtkCustomSorter; cdecl; external libgtk4;
+procedure gtk_custom_sorter_set_sort_func(self: PGtkCustomSorter; sort_func: TGCompareDataFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify); cdecl; external libgtk4;
 
 // === Konventiert am: 24-7-24 19:36:33 ===
 

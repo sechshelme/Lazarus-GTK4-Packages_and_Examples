@@ -21,10 +21,10 @@ type
   end;
   PGtkWidgetPaintableClass = ^TGtkWidgetPaintableClass;
 
-function gtk_widget_paintable_get_type: TGType; cdecl; external gtklib;
-function gtk_widget_paintable_new(widget: PGtkWidget): PGdkPaintable; cdecl; external gtklib;
-function gtk_widget_paintable_get_widget(self: PGtkWidgetPaintable): PGtkWidget; cdecl; external gtklib;
-procedure gtk_widget_paintable_set_widget(self: PGtkWidgetPaintable; widget: PGtkWidget); cdecl; external gtklib;
+function gtk_widget_paintable_get_type: TGType; cdecl; external libgtk4;
+function gtk_widget_paintable_new(widget: PGtkWidget): PGdkPaintable; cdecl; external libgtk4;
+function gtk_widget_paintable_get_widget(self: PGtkWidgetPaintable): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_widget_paintable_set_widget(self: PGtkWidgetPaintable; widget: PGtkWidget); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 17:07:14 ===
 

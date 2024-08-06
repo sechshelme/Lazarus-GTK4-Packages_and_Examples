@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -51,10 +51,10 @@ type
   end;
   PGtkAccessibleTextInterface = ^TGtkAccessibleTextInterface;
 
-function gtk_accessible_text_get_type: TGType; cdecl; external gtklib;
-procedure gtk_accessible_text_update_caret_position(self: PGtkAccessibleText); cdecl; external gtklib;
-procedure gtk_accessible_text_update_selection_bound(self: PGtkAccessibleText); cdecl; external gtklib;
-procedure gtk_accessible_text_update_contents(self: PGtkAccessibleText; change: TGtkAccessibleTextContentChange; start: dword; end_: dword); cdecl; external gtklib;
+function gtk_accessible_text_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_accessible_text_update_caret_position(self: PGtkAccessibleText); cdecl; external libgtk4;
+procedure gtk_accessible_text_update_selection_bound(self: PGtkAccessibleText); cdecl; external libgtk4;
+procedure gtk_accessible_text_update_contents(self: PGtkAccessibleText; change: TGtkAccessibleTextContentChange; start: dword; end_: dword); cdecl; external libgtk4;
 
 const
   GTK_ACCESSIBLE_ATTRIBUTE_FAMILY = 'family-name';

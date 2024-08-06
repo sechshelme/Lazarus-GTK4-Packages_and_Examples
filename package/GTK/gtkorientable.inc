@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,9 +20,9 @@ type
   PGtkOrientableIface = ^TGtkOrientableIface;
 
 
-function gtk_orientable_get_type: TGType; cdecl; external gtklib;
-procedure gtk_orientable_set_orientation(orientable: PGtkOrientable; orientation: TGtkOrientation); cdecl; external gtklib;
-function gtk_orientable_get_orientation(orientable: PGtkOrientable): TGtkOrientation; cdecl; external gtklib;
+function gtk_orientable_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_orientable_set_orientation(orientable: PGtkOrientable; orientation: TGtkOrientation); cdecl; external libgtk4;
+function gtk_orientable_get_orientation(orientable: PGtkOrientable): TGtkOrientation; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:02:29 ===
 

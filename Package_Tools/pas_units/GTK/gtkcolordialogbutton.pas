@@ -21,12 +21,12 @@ type
   end;
   PGtkColorDialogButtonClass = ^TGtkColorDialogButtonClass;
 
-function gtk_color_dialog_button_get_type: TGType; cdecl; external gtklib;
-function gtk_color_dialog_button_new(dialog: PGtkColorDialog): PGtkWidget; cdecl; external gtklib;
-function gtk_color_dialog_button_get_dialog(self: PGtkColorDialogButton): PGtkColorDialog; cdecl; external gtklib;
-procedure gtk_color_dialog_button_set_dialog(self: PGtkColorDialogButton; dialog: PGtkColorDialog); cdecl; external gtklib;
-function gtk_color_dialog_button_get_rgba(self: PGtkColorDialogButton): PGdkRGBA; cdecl; external gtklib;
-procedure gtk_color_dialog_button_set_rgba(self: PGtkColorDialogButton; color: PGdkRGBA); cdecl; external gtklib;
+function gtk_color_dialog_button_get_type: TGType; cdecl; external libgtk4;
+function gtk_color_dialog_button_new(dialog: PGtkColorDialog): PGtkWidget; cdecl; external libgtk4;
+function gtk_color_dialog_button_get_dialog(self: PGtkColorDialogButton): PGtkColorDialog; cdecl; external libgtk4;
+procedure gtk_color_dialog_button_set_dialog(self: PGtkColorDialogButton; dialog: PGtkColorDialog); cdecl; external libgtk4;
+function gtk_color_dialog_button_get_rgba(self: PGtkColorDialogButton): PGdkRGBA; cdecl; external libgtk4;
+procedure gtk_color_dialog_button_set_rgba(self: PGtkColorDialogButton; color: PGdkRGBA); cdecl; external libgtk4;
 
 // === Konventiert am: 17-7-24 16:19:04 ===
 

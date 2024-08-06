@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -18,18 +18,18 @@ type
   PGtkCenterBoxClass = ^TGtkCenterBoxClass;
 
 
-function gtk_center_box_get_type: TGType; cdecl; external gtklib;
-function gtk_center_box_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_center_box_set_start_widget(self: PGtkCenterBox; child: PGtkWidget); cdecl; external gtklib;
-procedure gtk_center_box_set_center_widget(self: PGtkCenterBox; child: PGtkWidget); cdecl; external gtklib;
-procedure gtk_center_box_set_end_widget(self: PGtkCenterBox; child: PGtkWidget); cdecl; external gtklib;
-function gtk_center_box_get_start_widget(self: PGtkCenterBox): PGtkWidget; cdecl; external gtklib;
-function gtk_center_box_get_center_widget(self: PGtkCenterBox): PGtkWidget; cdecl; external gtklib;
-function gtk_center_box_get_end_widget(self: PGtkCenterBox): PGtkWidget; cdecl; external gtklib;
-procedure gtk_center_box_set_baseline_position(self: PGtkCenterBox; position: TGtkBaselinePosition); cdecl; external gtklib;
-function gtk_center_box_get_baseline_position(self: PGtkCenterBox): TGtkBaselinePosition; cdecl; external gtklib;
-procedure gtk_center_box_set_shrink_center_last(self: PGtkCenterBox; shrink_center_last: Tgboolean); cdecl; external gtklib;
-function gtk_center_box_get_shrink_center_last(self: PGtkCenterBox): Tgboolean; cdecl; external gtklib;
+function gtk_center_box_get_type: TGType; cdecl; external libgtk4;
+function gtk_center_box_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_center_box_set_start_widget(self: PGtkCenterBox; child: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_center_box_set_center_widget(self: PGtkCenterBox; child: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_center_box_set_end_widget(self: PGtkCenterBox; child: PGtkWidget); cdecl; external libgtk4;
+function gtk_center_box_get_start_widget(self: PGtkCenterBox): PGtkWidget; cdecl; external libgtk4;
+function gtk_center_box_get_center_widget(self: PGtkCenterBox): PGtkWidget; cdecl; external libgtk4;
+function gtk_center_box_get_end_widget(self: PGtkCenterBox): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_center_box_set_baseline_position(self: PGtkCenterBox; position: TGtkBaselinePosition); cdecl; external libgtk4;
+function gtk_center_box_get_baseline_position(self: PGtkCenterBox): TGtkBaselinePosition; cdecl; external libgtk4;
+procedure gtk_center_box_set_shrink_center_last(self: PGtkCenterBox; shrink_center_last: Tgboolean); cdecl; external libgtk4;
+function gtk_center_box_get_shrink_center_last(self: PGtkCenterBox): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 15-7-24 19:22:36 ===
 

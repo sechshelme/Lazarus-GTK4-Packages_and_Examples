@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -29,11 +29,11 @@ type
   end;
   PGtkShortcutActionClass = ^TGtkShortcutActionClass;
 
-function gtk_shortcut_action_get_type: TGType; cdecl; external gtklib;
-function gtk_shortcut_action_to_string(self: PGtkShortcutAction): PChar; cdecl; external gtklib;
-function gtk_shortcut_action_parse_string(_string: PChar): PGtkShortcutAction; cdecl; external gtklib;
-procedure gtk_shortcut_action_print(self: PGtkShortcutAction; _string: PGString); cdecl; external gtklib;
-function gtk_shortcut_action_activate(self: PGtkShortcutAction; flags: TGtkShortcutActionFlags; widget: PGtkWidget; args: PGVariant): Tgboolean; cdecl; external gtklib;
+function gtk_shortcut_action_get_type: TGType; cdecl; external libgtk4;
+function gtk_shortcut_action_to_string(self: PGtkShortcutAction): PChar; cdecl; external libgtk4;
+function gtk_shortcut_action_parse_string(_string: PChar): PGtkShortcutAction; cdecl; external libgtk4;
+procedure gtk_shortcut_action_print(self: PGtkShortcutAction; _string: PGString); cdecl; external libgtk4;
+function gtk_shortcut_action_activate(self: PGtkShortcutAction; flags: TGtkShortcutActionFlags; widget: PGtkWidget; args: PGVariant): Tgboolean; cdecl; external libgtk4;
 
 {GDK_DECLARE_INTERNAL_TYPE (GtkNothingAction, gtk_nothing_action, GTK, NOTHING_ACTION, GtkShortcutAction) }
 type
@@ -45,8 +45,8 @@ type
   end;
   PGtkNothingActionClass = ^TGtkNothingActionClass;
 
-function gtk_nothing_action_get_type: TGType; cdecl; external gtklib;
-function gtk_nothing_action_get: PGtkShortcutAction; cdecl; external gtklib;
+function gtk_nothing_action_get_type: TGType; cdecl; external libgtk4;
+function gtk_nothing_action_get: PGtkShortcutAction; cdecl; external libgtk4;
 
 {GDK_DECLARE_INTERNAL_TYPE (GtkCallbackAction, gtk_callback_action, GTK, CALLBACK_ACTION, GtkShortcutAction) }
 type
@@ -58,9 +58,9 @@ type
   end;
   PGtkCallbackActionClass = ^TGtkCallbackActionClass;
 
-function gtk_callback_action_get_type: TGType; cdecl; external gtklib;
+function gtk_callback_action_get_type: TGType; cdecl; external libgtk4;
 
-function gtk_callback_action_new(callback: TGtkShortcutFunc; Data: Tgpointer; Destroy: TGDestroyNotify): PGtkShortcutAction; cdecl; external gtklib;
+function gtk_callback_action_new(callback: TGtkShortcutFunc; Data: Tgpointer; Destroy: TGDestroyNotify): PGtkShortcutAction; cdecl; external libgtk4;
 
 {GDK_DECLARE_INTERNAL_TYPE (GtkMnemonicAction, gtk_mnemonic_action, GTK, MNEMONIC_ACTION, GtkShortcutAction) }
 type
@@ -72,8 +72,8 @@ type
   end;
   PGtkMnemonicActionClass = ^TGtkMnemonicActionClass;
 
-function gtk_mnemonic_action_get_type: TGType; cdecl; external gtklib;
-function gtk_mnemonic_action_get: PGtkShortcutAction; cdecl; external gtklib;
+function gtk_mnemonic_action_get_type: TGType; cdecl; external libgtk4;
+function gtk_mnemonic_action_get: PGtkShortcutAction; cdecl; external libgtk4;
 
 {GDK_DECLARE_INTERNAL_TYPE (GtkActivateAction, gtk_activate_action, GTK, ACTIVATE_ACTION, GtkShortcutAction) }
 type
@@ -85,8 +85,8 @@ type
   end;
   PGtkActivateActionClass = ^TGtkActivateActionClass;
 
-function gtk_activate_action_get_type: TGType; cdecl; external gtklib;
-function gtk_activate_action_get: PGtkShortcutAction; cdecl; external gtklib;
+function gtk_activate_action_get_type: TGType; cdecl; external libgtk4;
+function gtk_activate_action_get: PGtkShortcutAction; cdecl; external libgtk4;
 
 {GDK_DECLARE_INTERNAL_TYPE (GtkSignalAction, gtk_signal_action, GTK, SIGNAL_ACTION, GtkShortcutAction) }
 type
@@ -98,9 +98,9 @@ type
   end;
   PGtkSignalActionClass = ^TGtkSignalActionClass;
 
-function gtk_signal_action_get_type: TGType; cdecl; external gtklib;
-function gtk_signal_action_new(signal_name: PChar): PGtkShortcutAction; cdecl; external gtklib;
-function gtk_signal_action_get_signal_name(self: PGtkSignalAction): PChar; cdecl; external gtklib;
+function gtk_signal_action_get_type: TGType; cdecl; external libgtk4;
+function gtk_signal_action_new(signal_name: PChar): PGtkShortcutAction; cdecl; external libgtk4;
+function gtk_signal_action_get_signal_name(self: PGtkSignalAction): PChar; cdecl; external libgtk4;
 
 {GDK_DECLARE_INTERNAL_TYPE (GtkNamedAction, gtk_named_action, GTK, NAMED_ACTION, GtkShortcutAction) }
 type
@@ -112,9 +112,9 @@ type
   end;
   PGtkNamedActionClass = ^TGtkNamedActionClass;
 
-function gtk_named_action_get_type: TGType; cdecl; external gtklib;
-function gtk_named_action_new(Name: PChar): PGtkShortcutAction; cdecl; external gtklib;
-function gtk_named_action_get_action_name(self: PGtkNamedAction): PChar; cdecl; external gtklib;
+function gtk_named_action_get_type: TGType; cdecl; external libgtk4;
+function gtk_named_action_new(Name: PChar): PGtkShortcutAction; cdecl; external libgtk4;
+function gtk_named_action_get_action_name(self: PGtkNamedAction): PChar; cdecl; external libgtk4;
 
 // === Konventiert am: 17-7-24 15:34:03 ===
 

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -13,17 +13,17 @@ type
   end;
   PGtkFileFilter = ^TGtkFileFilter;
 
-function gtk_file_filter_get_type: TGType; cdecl; external gtklib;
-function gtk_file_filter_new: PGtkFileFilter; cdecl; external gtklib;
-procedure gtk_file_filter_set_name(filter: PGtkFileFilter; Name: PChar); cdecl; external gtklib;
-function gtk_file_filter_get_name(filter: PGtkFileFilter): PChar; cdecl; external gtklib;
-procedure gtk_file_filter_add_mime_type(filter: PGtkFileFilter; mime_type: PChar); cdecl; external gtklib;
-procedure gtk_file_filter_add_pattern(filter: PGtkFileFilter; pattern: PChar); cdecl; external gtklib;
-procedure gtk_file_filter_add_suffix(filter: PGtkFileFilter; suffix: PChar); cdecl; external gtklib;
-procedure gtk_file_filter_add_pixbuf_formats(filter: PGtkFileFilter); cdecl; external gtklib;
-function gtk_file_filter_get_attributes(filter: PGtkFileFilter): PPchar; cdecl; external gtklib;
-function gtk_file_filter_to_gvariant(filter: PGtkFileFilter): PGVariant; cdecl; external gtklib;
-function gtk_file_filter_new_from_gvariant(variant: PGVariant): PGtkFileFilter; cdecl; external gtklib;
+function gtk_file_filter_get_type: TGType; cdecl; external libgtk4;
+function gtk_file_filter_new: PGtkFileFilter; cdecl; external libgtk4;
+procedure gtk_file_filter_set_name(filter: PGtkFileFilter; Name: PChar); cdecl; external libgtk4;
+function gtk_file_filter_get_name(filter: PGtkFileFilter): PChar; cdecl; external libgtk4;
+procedure gtk_file_filter_add_mime_type(filter: PGtkFileFilter; mime_type: PChar); cdecl; external libgtk4;
+procedure gtk_file_filter_add_pattern(filter: PGtkFileFilter; pattern: PChar); cdecl; external libgtk4;
+procedure gtk_file_filter_add_suffix(filter: PGtkFileFilter; suffix: PChar); cdecl; external libgtk4;
+procedure gtk_file_filter_add_pixbuf_formats(filter: PGtkFileFilter); cdecl; external libgtk4;
+function gtk_file_filter_get_attributes(filter: PGtkFileFilter): PPchar; cdecl; external libgtk4;
+function gtk_file_filter_to_gvariant(filter: PGtkFileFilter): PGVariant; cdecl; external libgtk4;
+function gtk_file_filter_new_from_gvariant(variant: PGVariant): PGtkFileFilter; cdecl; external libgtk4;
 
 // === Konventiert am: 23-7-24 16:51:20 ===
 

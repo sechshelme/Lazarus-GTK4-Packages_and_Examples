@@ -24,14 +24,14 @@ type
   PGtkToggleButtonClass = ^TGtkToggleButtonClass;
 
 
-function gtk_toggle_button_get_type: TGType; cdecl; external gtklib;
-function gtk_toggle_button_new: PGtkWidget; cdecl; external gtklib;
-function gtk_toggle_button_new_with_label(_label: PChar): PGtkWidget; cdecl; external gtklib;
-function gtk_toggle_button_new_with_mnemonic(_label: PChar): PGtkWidget; cdecl; external gtklib;
-procedure gtk_toggle_button_set_active(toggle_button: PGtkToggleButton; is_active: Tgboolean); cdecl; external gtklib;
-function gtk_toggle_button_get_active(toggle_button: PGtkToggleButton): Tgboolean; cdecl; external gtklib;
-procedure gtk_toggle_button_toggled(toggle_button: PGtkToggleButton); cdecl; external gtklib;
-procedure gtk_toggle_button_set_group(toggle_button: PGtkToggleButton; group: PGtkToggleButton); cdecl; external gtklib;
+function gtk_toggle_button_get_type: TGType; cdecl; external libgtk4;
+function gtk_toggle_button_new: PGtkWidget; cdecl; external libgtk4;
+function gtk_toggle_button_new_with_label(_label: PChar): PGtkWidget; cdecl; external libgtk4;
+function gtk_toggle_button_new_with_mnemonic(_label: PChar): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_toggle_button_set_active(toggle_button: PGtkToggleButton; is_active: Tgboolean); cdecl; external libgtk4;
+function gtk_toggle_button_get_active(toggle_button: PGtkToggleButton): Tgboolean; cdecl; external libgtk4;
+procedure gtk_toggle_button_toggled(toggle_button: PGtkToggleButton); cdecl; external libgtk4;
+procedure gtk_toggle_button_set_group(toggle_button: PGtkToggleButton; group: PGtkToggleButton); cdecl; external libgtk4;
 
 // === Konventiert am: 21-7-24 19:43:53 ===
 

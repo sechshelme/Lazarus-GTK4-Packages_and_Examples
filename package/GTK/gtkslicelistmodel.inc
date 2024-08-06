@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,14 +20,14 @@ type
   end;
   PGtkSliceListModelClass = ^TGtkSliceListModelClass;
 
-function gtk_slice_list_model_get_type: TGType; cdecl; external gtklib;
-function gtk_slice_list_model_new(model: PGListModel; offset: Tguint; size: Tguint): PGtkSliceListModel; cdecl; external gtklib;
-procedure gtk_slice_list_model_set_model(self: PGtkSliceListModel; model: PGListModel); cdecl; external gtklib;
-function gtk_slice_list_model_get_model(self: PGtkSliceListModel): PGListModel; cdecl; external gtklib;
-procedure gtk_slice_list_model_set_offset(self: PGtkSliceListModel; offset: Tguint); cdecl; external gtklib;
-function gtk_slice_list_model_get_offset(self: PGtkSliceListModel): Tguint; cdecl; external gtklib;
-procedure gtk_slice_list_model_set_size(self: PGtkSliceListModel; size: Tguint); cdecl; external gtklib;
-function gtk_slice_list_model_get_size(self: PGtkSliceListModel): Tguint; cdecl; external gtklib;
+function gtk_slice_list_model_get_type: TGType; cdecl; external libgtk4;
+function gtk_slice_list_model_new(model: PGListModel; offset: Tguint; size: Tguint): PGtkSliceListModel; cdecl; external libgtk4;
+procedure gtk_slice_list_model_set_model(self: PGtkSliceListModel; model: PGListModel); cdecl; external libgtk4;
+function gtk_slice_list_model_get_model(self: PGtkSliceListModel): PGListModel; cdecl; external libgtk4;
+procedure gtk_slice_list_model_set_offset(self: PGtkSliceListModel; offset: Tguint); cdecl; external libgtk4;
+function gtk_slice_list_model_get_offset(self: PGtkSliceListModel): Tguint; cdecl; external libgtk4;
+procedure gtk_slice_list_model_set_size(self: PGtkSliceListModel; size: Tguint); cdecl; external libgtk4;
+function gtk_slice_list_model_get_size(self: PGtkSliceListModel): Tguint; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 16:33:16 ===
 

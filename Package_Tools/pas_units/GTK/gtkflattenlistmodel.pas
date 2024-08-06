@@ -21,11 +21,11 @@ type
   end;
   PGtkFlattenListModelClass = ^TGtkFlattenListModelClass;
 
-function gtk_flatten_list_model_get_type: TGType; cdecl; external gtklib;
-function gtk_flatten_list_model_new(model: PGListModel): PGtkFlattenListModel; cdecl; external gtklib;
-procedure gtk_flatten_list_model_set_model(self: PGtkFlattenListModel; model: PGListModel); cdecl; external gtklib;
-function gtk_flatten_list_model_get_model(self: PGtkFlattenListModel): PGListModel; cdecl; external gtklib;
-function gtk_flatten_list_model_get_model_for_item(self: PGtkFlattenListModel; position: Tguint): PGListModel; cdecl; external gtklib;
+function gtk_flatten_list_model_get_type: TGType; cdecl; external libgtk4;
+function gtk_flatten_list_model_new(model: PGListModel): PGtkFlattenListModel; cdecl; external libgtk4;
+procedure gtk_flatten_list_model_set_model(self: PGtkFlattenListModel; model: PGListModel); cdecl; external libgtk4;
+function gtk_flatten_list_model_get_model(self: PGtkFlattenListModel): PGListModel; cdecl; external libgtk4;
+function gtk_flatten_list_model_get_model_for_item(self: PGtkFlattenListModel; position: Tguint): PGListModel; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:28:29 ===
 

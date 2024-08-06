@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -13,16 +13,16 @@ type
   end;
   PGtkOverlay = ^TGtkOverlay;
 
-function gtk_overlay_get_type: TGType; cdecl; external gtklib;
-function gtk_overlay_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_overlay_add_overlay(overlay: PGtkOverlay; widget: PGtkWidget); cdecl; external gtklib;
-procedure gtk_overlay_remove_overlay(overlay: PGtkOverlay; widget: PGtkWidget); cdecl; external gtklib;
-procedure gtk_overlay_set_child(overlay: PGtkOverlay; child: PGtkWidget); cdecl; external gtklib;
-function gtk_overlay_get_child(overlay: PGtkOverlay): PGtkWidget; cdecl; external gtklib;
-function gtk_overlay_get_measure_overlay(overlay: PGtkOverlay; widget: PGtkWidget): Tgboolean; cdecl; external gtklib;
-procedure gtk_overlay_set_measure_overlay(overlay: PGtkOverlay; widget: PGtkWidget; measure: Tgboolean); cdecl; external gtklib;
-function gtk_overlay_get_clip_overlay(overlay: PGtkOverlay; widget: PGtkWidget): Tgboolean; cdecl; external gtklib;
-procedure gtk_overlay_set_clip_overlay(overlay: PGtkOverlay; widget: PGtkWidget; clip_overlay: Tgboolean); cdecl; external gtklib;
+function gtk_overlay_get_type: TGType; cdecl; external libgtk4;
+function gtk_overlay_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_overlay_add_overlay(overlay: PGtkOverlay; widget: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_overlay_remove_overlay(overlay: PGtkOverlay; widget: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_overlay_set_child(overlay: PGtkOverlay; child: PGtkWidget); cdecl; external libgtk4;
+function gtk_overlay_get_child(overlay: PGtkOverlay): PGtkWidget; cdecl; external libgtk4;
+function gtk_overlay_get_measure_overlay(overlay: PGtkOverlay; widget: PGtkWidget): Tgboolean; cdecl; external libgtk4;
+procedure gtk_overlay_set_measure_overlay(overlay: PGtkOverlay; widget: PGtkWidget; measure: Tgboolean); cdecl; external libgtk4;
+function gtk_overlay_get_clip_overlay(overlay: PGtkOverlay; widget: PGtkWidget): Tgboolean; cdecl; external libgtk4;
+procedure gtk_overlay_set_clip_overlay(overlay: PGtkOverlay; widget: PGtkWidget; clip_overlay: Tgboolean); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:13:25 ===
 

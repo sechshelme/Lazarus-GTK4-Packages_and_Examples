@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -18,10 +18,10 @@ type
   end;
   PGtkEventControllerMotionClass = ^TGtkEventControllerMotionClass;
 
-function gtk_event_controller_motion_get_type: TGType; cdecl; external gtklib;
-function gtk_event_controller_motion_new: PGtkEventController; cdecl; external gtklib;
-function gtk_event_controller_motion_contains_pointer(self: PGtkEventControllerMotion): Tgboolean; cdecl; external gtklib;
-function gtk_event_controller_motion_is_pointer(self: PGtkEventControllerMotion): Tgboolean; cdecl; external gtklib;
+function gtk_event_controller_motion_get_type: TGType; cdecl; external libgtk4;
+function gtk_event_controller_motion_new: PGtkEventController; cdecl; external libgtk4;
+function gtk_event_controller_motion_contains_pointer(self: PGtkEventControllerMotion): Tgboolean; cdecl; external libgtk4;
+function gtk_event_controller_motion_is_pointer(self: PGtkEventControllerMotion): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 25-7-24 19:22:30 ===
 

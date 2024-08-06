@@ -25,9 +25,9 @@ type
     end;
 
 
-function gtk_layout_child_get_type: TGType; cdecl; external gtklib;
-function gtk_layout_child_get_layout_manager(layout_child:PGtkLayoutChild):PGtkLayoutManager;cdecl;external gtklib;
-function gtk_layout_child_get_child_widget(layout_child:PGtkLayoutChild):PGtkWidget;cdecl;external gtklib;
+function gtk_layout_child_get_type: TGType; cdecl; external libgtk4;
+function gtk_layout_child_get_layout_manager(layout_child:PGtkLayoutChild):PGtkLayoutManager;cdecl;external libgtk4;
+function gtk_layout_child_get_child_widget(layout_child:PGtkLayoutChild):PGtkWidget;cdecl;external libgtk4;
 
 // === Konventiert am: 17-7-24 13:43:55 ===
 

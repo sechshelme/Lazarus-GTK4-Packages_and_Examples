@@ -25,13 +25,13 @@ type
   PGtkApplicationClass = ^TGtkApplicationClass;
 
 
-function gtk_application_get_type: TGType; cdecl; external gtklib;
-function gtk_application_new(application_id: PChar; flags: TGApplicationFlags): PGtkApplication; cdecl; external gtklib;
-procedure gtk_application_add_window(application: PGtkApplication; window: PGtkWindow); cdecl; external gtklib;
-procedure gtk_application_remove_window(application: PGtkApplication; window: PGtkWindow); cdecl; external gtklib;
-function gtk_application_get_windows(application: PGtkApplication): PGList; cdecl; external gtklib;
-function gtk_application_get_menubar(application: PGtkApplication): PGMenuModel; cdecl; external gtklib;
-procedure gtk_application_set_menubar(application: PGtkApplication; menubar: PGMenuModel); cdecl; external gtklib;
+function gtk_application_get_type: TGType; cdecl; external libgtk4;
+function gtk_application_new(application_id: PChar; flags: TGApplicationFlags): PGtkApplication; cdecl; external libgtk4;
+procedure gtk_application_add_window(application: PGtkApplication; window: PGtkWindow); cdecl; external libgtk4;
+procedure gtk_application_remove_window(application: PGtkApplication; window: PGtkWindow); cdecl; external libgtk4;
+function gtk_application_get_windows(application: PGtkApplication): PGList; cdecl; external libgtk4;
+function gtk_application_get_menubar(application: PGtkApplication): PGMenuModel; cdecl; external libgtk4;
+procedure gtk_application_set_menubar(application: PGtkApplication; menubar: PGMenuModel); cdecl; external libgtk4;
 
 type
   PGtkApplicationInhibitFlags = ^TGtkApplicationInhibitFlags;
@@ -43,15 +43,15 @@ const
   GTK_APPLICATION_INHIBIT_SUSPEND = 1 shl 2;
   GTK_APPLICATION_INHIBIT_IDLE = 1 shl 3;
 
-function gtk_application_inhibit(application: PGtkApplication; window: PGtkWindow; flags: TGtkApplicationInhibitFlags; reason: PChar): Tguint; cdecl; external gtklib;
-procedure gtk_application_uninhibit(application: PGtkApplication; cookie: Tguint); cdecl; external gtklib;
-function gtk_application_get_window_by_id(application: PGtkApplication; id: Tguint): PGtkWindow; cdecl; external gtklib;
-function gtk_application_get_active_window(application: PGtkApplication): PGtkWindow; cdecl; external gtklib;
-function gtk_application_list_action_descriptions(application: PGtkApplication): PPchar; cdecl; external gtklib;
-function gtk_application_get_accels_for_action(application: PGtkApplication; detailed_action_name: PChar): PPchar; cdecl; external gtklib;
-function gtk_application_get_actions_for_accel(application: PGtkApplication; accel: PChar): PPchar; cdecl; external gtklib;
-procedure gtk_application_set_accels_for_action(application: PGtkApplication; detailed_action_name: PChar; accels: PPchar); cdecl; external gtklib;
-function gtk_application_get_menu_by_id(application: PGtkApplication; id: PChar): PGMenu; cdecl; external gtklib;
+function gtk_application_inhibit(application: PGtkApplication; window: PGtkWindow; flags: TGtkApplicationInhibitFlags; reason: PChar): Tguint; cdecl; external libgtk4;
+procedure gtk_application_uninhibit(application: PGtkApplication; cookie: Tguint); cdecl; external libgtk4;
+function gtk_application_get_window_by_id(application: PGtkApplication; id: Tguint): PGtkWindow; cdecl; external libgtk4;
+function gtk_application_get_active_window(application: PGtkApplication): PGtkWindow; cdecl; external libgtk4;
+function gtk_application_list_action_descriptions(application: PGtkApplication): PPchar; cdecl; external libgtk4;
+function gtk_application_get_accels_for_action(application: PGtkApplication; detailed_action_name: PChar): PPchar; cdecl; external libgtk4;
+function gtk_application_get_actions_for_accel(application: PGtkApplication; accel: PChar): PPchar; cdecl; external libgtk4;
+procedure gtk_application_set_accels_for_action(application: PGtkApplication; detailed_action_name: PChar; accels: PPchar); cdecl; external libgtk4;
+function gtk_application_get_menu_by_id(application: PGtkApplication; id: PChar): PGMenu; cdecl; external libgtk4;
 
 // === Konventiert am: 11-7-24 22:33:02 ===
 

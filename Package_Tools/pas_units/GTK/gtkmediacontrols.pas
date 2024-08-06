@@ -21,10 +21,10 @@ type
   end;
   PGtkMediaControlsClass = ^TGtkMediaControlsClass;
 
-function gtk_media_controls_get_type: TGType; cdecl; external gtklib;
-function gtk_media_controls_new(stream: PGtkMediaStream): PGtkWidget; cdecl; external gtklib;
-function gtk_media_controls_get_media_stream(Controls: PGtkMediaControls): PGtkMediaStream; cdecl; external gtklib;
-procedure gtk_media_controls_set_media_stream(Controls: PGtkMediaControls; stream: PGtkMediaStream); cdecl; external gtklib;
+function gtk_media_controls_get_type: TGType; cdecl; external libgtk4;
+function gtk_media_controls_new(stream: PGtkMediaStream): PGtkWidget; cdecl; external libgtk4;
+function gtk_media_controls_get_media_stream(Controls: PGtkMediaControls): PGtkMediaStream; cdecl; external libgtk4;
+procedure gtk_media_controls_set_media_stream(Controls: PGtkMediaControls; stream: PGtkMediaStream); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 13:37:03 ===
 

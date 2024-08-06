@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -13,14 +13,14 @@ type
   end;
   PGdkCursor = ^TGdkCursor;
 
-function gdk_cursor_get_type: TGType; cdecl; external gtklib;
-function gdk_cursor_new_from_texture(texture: PGdkTexture; hotspot_x: longint; hotspot_y: longint; fallback: PGdkCursor): PGdkCursor; cdecl; external gtklib;
-function gdk_cursor_new_from_name(Name: PChar; fallback: PGdkCursor): PGdkCursor; cdecl; external gtklib;
-function gdk_cursor_get_fallback(cursor: PGdkCursor): PGdkCursor; cdecl; external gtklib;
-function gdk_cursor_get_name(cursor: PGdkCursor): PChar; cdecl; external gtklib;
-function gdk_cursor_get_texture(cursor: PGdkCursor): PGdkTexture; cdecl; external gtklib;
-function gdk_cursor_get_hotspot_x(cursor: PGdkCursor): longint; cdecl; external gtklib;
-function gdk_cursor_get_hotspot_y(cursor: PGdkCursor): longint; cdecl; external gtklib;
+function gdk_cursor_get_type: TGType; cdecl; external libgtk4;
+function gdk_cursor_new_from_texture(texture: PGdkTexture; hotspot_x: longint; hotspot_y: longint; fallback: PGdkCursor): PGdkCursor; cdecl; external libgtk4;
+function gdk_cursor_new_from_name(Name: PChar; fallback: PGdkCursor): PGdkCursor; cdecl; external libgtk4;
+function gdk_cursor_get_fallback(cursor: PGdkCursor): PGdkCursor; cdecl; external libgtk4;
+function gdk_cursor_get_name(cursor: PGdkCursor): PChar; cdecl; external libgtk4;
+function gdk_cursor_get_texture(cursor: PGdkCursor): PGdkTexture; cdecl; external libgtk4;
+function gdk_cursor_get_hotspot_x(cursor: PGdkCursor): longint; cdecl; external libgtk4;
+function gdk_cursor_get_hotspot_y(cursor: PGdkCursor): longint; cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 15:10:26 ===
 

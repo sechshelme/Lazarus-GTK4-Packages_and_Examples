@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -14,7 +14,7 @@ type
   end;
   PGdkSnapshot = ^TGdkSnapshot;
 
-function gdk_snapshot_get_type: TGType; cdecl; external gtklib;
+function gdk_snapshot_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 15:19:57 ===
 

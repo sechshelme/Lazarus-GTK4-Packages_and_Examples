@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -13,24 +13,24 @@ type
   end;
   PGskStroke = ^TGskStroke;
 
-function gsk_stroke_get_type: TGType; cdecl; external gtklib;
-function gsk_stroke_new(line_width: single): PGskStroke; cdecl; external gtklib;
-function gsk_stroke_copy(other: PGskStroke): PGskStroke; cdecl; external gtklib;
-procedure gsk_stroke_free(self: PGskStroke); cdecl; external gtklib;
-function gsk_stroke_equal(stroke1: Tgconstpointer; stroke2: Tgconstpointer): Tgboolean; cdecl; external gtklib;
-procedure gsk_stroke_set_line_width(self: PGskStroke; line_width: single); cdecl; external gtklib;
-function gsk_stroke_get_line_width(self: PGskStroke): single; cdecl; external gtklib;
-procedure gsk_stroke_set_line_cap(self: PGskStroke; line_cap: TGskLineCap); cdecl; external gtklib;
-function gsk_stroke_get_line_cap(self: PGskStroke): TGskLineCap; cdecl; external gtklib;
-procedure gsk_stroke_set_line_join(self: PGskStroke; line_join: TGskLineJoin); cdecl; external gtklib;
-function gsk_stroke_get_line_join(self: PGskStroke): TGskLineJoin; cdecl; external gtklib;
-procedure gsk_stroke_set_miter_limit(self: PGskStroke; limit: single); cdecl; external gtklib;
-function gsk_stroke_get_miter_limit(self: PGskStroke): single; cdecl; external gtklib;
-procedure gsk_stroke_set_dash(self: PGskStroke; dash: Psingle; n_dash: Tgsize); cdecl; external gtklib;
-function gsk_stroke_get_dash(self: PGskStroke; n_dash: Pgsize): Psingle; cdecl; external gtklib;
-procedure gsk_stroke_set_dash_offset(self: PGskStroke; offset: single); cdecl; external gtklib;
-function gsk_stroke_get_dash_offset(self: PGskStroke): single; cdecl; external gtklib;
-procedure gsk_stroke_to_cairo(self: PGskStroke; cr: Pcairo_t); cdecl; external gtklib;
+function gsk_stroke_get_type: TGType; cdecl; external libgtk4;
+function gsk_stroke_new(line_width: single): PGskStroke; cdecl; external libgtk4;
+function gsk_stroke_copy(other: PGskStroke): PGskStroke; cdecl; external libgtk4;
+procedure gsk_stroke_free(self: PGskStroke); cdecl; external libgtk4;
+function gsk_stroke_equal(stroke1: Tgconstpointer; stroke2: Tgconstpointer): Tgboolean; cdecl; external libgtk4;
+procedure gsk_stroke_set_line_width(self: PGskStroke; line_width: single); cdecl; external libgtk4;
+function gsk_stroke_get_line_width(self: PGskStroke): single; cdecl; external libgtk4;
+procedure gsk_stroke_set_line_cap(self: PGskStroke; line_cap: TGskLineCap); cdecl; external libgtk4;
+function gsk_stroke_get_line_cap(self: PGskStroke): TGskLineCap; cdecl; external libgtk4;
+procedure gsk_stroke_set_line_join(self: PGskStroke; line_join: TGskLineJoin); cdecl; external libgtk4;
+function gsk_stroke_get_line_join(self: PGskStroke): TGskLineJoin; cdecl; external libgtk4;
+procedure gsk_stroke_set_miter_limit(self: PGskStroke; limit: single); cdecl; external libgtk4;
+function gsk_stroke_get_miter_limit(self: PGskStroke): single; cdecl; external libgtk4;
+procedure gsk_stroke_set_dash(self: PGskStroke; dash: Psingle; n_dash: Tgsize); cdecl; external libgtk4;
+function gsk_stroke_get_dash(self: PGskStroke; n_dash: Pgsize): Psingle; cdecl; external libgtk4;
+procedure gsk_stroke_set_dash_offset(self: PGskStroke; offset: single); cdecl; external libgtk4;
+function gsk_stroke_get_dash_offset(self: PGskStroke): single; cdecl; external libgtk4;
+procedure gsk_stroke_to_cairo(self: PGskStroke; cr: Pcairo_t); cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 15:58:58 ===
 

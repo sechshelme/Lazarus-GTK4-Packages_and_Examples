@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -18,33 +18,33 @@ type
   end;
   PGtkColumnViewClass = ^TGtkColumnViewClass;
 
-function gtk_column_view_get_type: TGType; cdecl; external gtklib;
-function gtk_column_view_new(model: PGtkSelectionModel): PGtkWidget; cdecl; external gtklib;
-function gtk_column_view_get_columns(self: PGtkColumnView): PGListModel; cdecl; external gtklib;
-procedure gtk_column_view_append_column(self: PGtkColumnView; column: PGtkColumnViewColumn); cdecl; external gtklib;
-procedure gtk_column_view_remove_column(self: PGtkColumnView; column: PGtkColumnViewColumn); cdecl; external gtklib;
-procedure gtk_column_view_insert_column(self: PGtkColumnView; position: Tguint; column: PGtkColumnViewColumn); cdecl; external gtklib;
-function gtk_column_view_get_model(self: PGtkColumnView): PGtkSelectionModel; cdecl; external gtklib;
-procedure gtk_column_view_set_model(self: PGtkColumnView; model: PGtkSelectionModel); cdecl; external gtklib;
-function gtk_column_view_get_show_row_separators(self: PGtkColumnView): Tgboolean; cdecl; external gtklib;
-procedure gtk_column_view_set_show_row_separators(self: PGtkColumnView; show_row_separators: Tgboolean); cdecl; external gtklib;
-function gtk_column_view_get_show_column_separators(self: PGtkColumnView): Tgboolean; cdecl; external gtklib;
-procedure gtk_column_view_set_show_column_separators(self: PGtkColumnView; show_column_separators: Tgboolean); cdecl; external gtklib;
-function gtk_column_view_get_sorter(self: PGtkColumnView): PGtkSorter; cdecl; external gtklib;
-procedure gtk_column_view_sort_by_column(self: PGtkColumnView; column: PGtkColumnViewColumn; direction: TGtkSortType); cdecl; external gtklib;
-procedure gtk_column_view_set_single_click_activate(self: PGtkColumnView; single_click_activate: Tgboolean); cdecl; external gtklib;
-function gtk_column_view_get_single_click_activate(self: PGtkColumnView): Tgboolean; cdecl; external gtklib;
-procedure gtk_column_view_set_reorderable(self: PGtkColumnView; reorderable: Tgboolean); cdecl; external gtklib;
-function gtk_column_view_get_reorderable(self: PGtkColumnView): Tgboolean; cdecl; external gtklib;
-procedure gtk_column_view_set_enable_rubberband(self: PGtkColumnView; enable_rubberband: Tgboolean); cdecl; external gtklib;
-function gtk_column_view_get_enable_rubberband(self: PGtkColumnView): Tgboolean; cdecl; external gtklib;
-procedure gtk_column_view_set_tab_behavior(self: PGtkColumnView; tab_behavior: TGtkListTabBehavior); cdecl; external gtklib;
-function gtk_column_view_get_tab_behavior(self: PGtkColumnView): TGtkListTabBehavior; cdecl; external gtklib;
-procedure gtk_column_view_set_row_factory(self: PGtkColumnView; factory: PGtkListItemFactory); cdecl; external gtklib;
-function gtk_column_view_get_row_factory(self: PGtkColumnView): PGtkListItemFactory; cdecl; external gtklib;
-procedure gtk_column_view_set_header_factory(self: PGtkColumnView; factory: PGtkListItemFactory); cdecl; external gtklib;
-function gtk_column_view_get_header_factory(self: PGtkColumnView): PGtkListItemFactory; cdecl; external gtklib;
-procedure gtk_column_view_scroll_to(self: PGtkColumnView; pos: Tguint; column: PGtkColumnViewColumn; flags: TGtkListScrollFlags; scroll: PGtkScrollInfo); cdecl; external gtklib;
+function gtk_column_view_get_type: TGType; cdecl; external libgtk4;
+function gtk_column_view_new(model: PGtkSelectionModel): PGtkWidget; cdecl; external libgtk4;
+function gtk_column_view_get_columns(self: PGtkColumnView): PGListModel; cdecl; external libgtk4;
+procedure gtk_column_view_append_column(self: PGtkColumnView; column: PGtkColumnViewColumn); cdecl; external libgtk4;
+procedure gtk_column_view_remove_column(self: PGtkColumnView; column: PGtkColumnViewColumn); cdecl; external libgtk4;
+procedure gtk_column_view_insert_column(self: PGtkColumnView; position: Tguint; column: PGtkColumnViewColumn); cdecl; external libgtk4;
+function gtk_column_view_get_model(self: PGtkColumnView): PGtkSelectionModel; cdecl; external libgtk4;
+procedure gtk_column_view_set_model(self: PGtkColumnView; model: PGtkSelectionModel); cdecl; external libgtk4;
+function gtk_column_view_get_show_row_separators(self: PGtkColumnView): Tgboolean; cdecl; external libgtk4;
+procedure gtk_column_view_set_show_row_separators(self: PGtkColumnView; show_row_separators: Tgboolean); cdecl; external libgtk4;
+function gtk_column_view_get_show_column_separators(self: PGtkColumnView): Tgboolean; cdecl; external libgtk4;
+procedure gtk_column_view_set_show_column_separators(self: PGtkColumnView; show_column_separators: Tgboolean); cdecl; external libgtk4;
+function gtk_column_view_get_sorter(self: PGtkColumnView): PGtkSorter; cdecl; external libgtk4;
+procedure gtk_column_view_sort_by_column(self: PGtkColumnView; column: PGtkColumnViewColumn; direction: TGtkSortType); cdecl; external libgtk4;
+procedure gtk_column_view_set_single_click_activate(self: PGtkColumnView; single_click_activate: Tgboolean); cdecl; external libgtk4;
+function gtk_column_view_get_single_click_activate(self: PGtkColumnView): Tgboolean; cdecl; external libgtk4;
+procedure gtk_column_view_set_reorderable(self: PGtkColumnView; reorderable: Tgboolean); cdecl; external libgtk4;
+function gtk_column_view_get_reorderable(self: PGtkColumnView): Tgboolean; cdecl; external libgtk4;
+procedure gtk_column_view_set_enable_rubberband(self: PGtkColumnView; enable_rubberband: Tgboolean); cdecl; external libgtk4;
+function gtk_column_view_get_enable_rubberband(self: PGtkColumnView): Tgboolean; cdecl; external libgtk4;
+procedure gtk_column_view_set_tab_behavior(self: PGtkColumnView; tab_behavior: TGtkListTabBehavior); cdecl; external libgtk4;
+function gtk_column_view_get_tab_behavior(self: PGtkColumnView): TGtkListTabBehavior; cdecl; external libgtk4;
+procedure gtk_column_view_set_row_factory(self: PGtkColumnView; factory: PGtkListItemFactory); cdecl; external libgtk4;
+function gtk_column_view_get_row_factory(self: PGtkColumnView): PGtkListItemFactory; cdecl; external libgtk4;
+procedure gtk_column_view_set_header_factory(self: PGtkColumnView; factory: PGtkListItemFactory); cdecl; external libgtk4;
+function gtk_column_view_get_header_factory(self: PGtkColumnView): PGtkListItemFactory; cdecl; external libgtk4;
+procedure gtk_column_view_scroll_to(self: PGtkColumnView; pos: Tguint; column: PGtkColumnViewColumn; flags: TGtkListScrollFlags; scroll: PGtkScrollInfo); cdecl; external libgtk4;
 
 // === Konventiert am: 23-7-24 19:30:19 ===
 

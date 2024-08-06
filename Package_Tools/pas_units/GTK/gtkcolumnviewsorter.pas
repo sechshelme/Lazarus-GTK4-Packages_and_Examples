@@ -21,11 +21,11 @@ type
   end;
   PGtkColumnViewSorterClass = ^TGtkColumnViewSorterClass;
 
-function gtk_column_view_sorter_get_type: TGType; cdecl; external gtklib;
-function gtk_column_view_sorter_get_primary_sort_column(self:PGtkColumnViewSorter):PGtkColumnViewColumn;cdecl;external gtklib;
-function gtk_column_view_sorter_get_primary_sort_order(self:PGtkColumnViewSorter):TGtkSortType;cdecl;external gtklib;
-function gtk_column_view_sorter_get_n_sort_columns(self:PGtkColumnViewSorter):Tguint;cdecl;external gtklib;
-function gtk_column_view_sorter_get_nth_sort_column(self:PGtkColumnViewSorter; position:Tguint; sort_order:PGtkSortType):PGtkColumnViewColumn;cdecl;external gtklib;
+function gtk_column_view_sorter_get_type: TGType; cdecl; external libgtk4;
+function gtk_column_view_sorter_get_primary_sort_column(self:PGtkColumnViewSorter):PGtkColumnViewColumn;cdecl;external libgtk4;
+function gtk_column_view_sorter_get_primary_sort_order(self:PGtkColumnViewSorter):TGtkSortType;cdecl;external libgtk4;
+function gtk_column_view_sorter_get_n_sort_columns(self:PGtkColumnViewSorter):Tguint;cdecl;external libgtk4;
+function gtk_column_view_sorter_get_nth_sort_column(self:PGtkColumnViewSorter; position:Tguint; sort_order:PGtkSortType):PGtkColumnViewColumn;cdecl;external libgtk4;
 
 // === Konventiert am: 23-7-24 20:10:01 ===
 

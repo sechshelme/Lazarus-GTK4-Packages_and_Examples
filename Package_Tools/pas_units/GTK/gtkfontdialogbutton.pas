@@ -21,10 +21,10 @@ type
   end;
   PGtkFontDialogButtonClass = ^TGtkFontDialogButtonClass;
 
-function gtk_font_dialog_button_get_type: TGType; cdecl; external gtklib;
-function gtk_font_dialog_button_new(dialog: PGtkFontDialog): PGtkWidget; cdecl; external gtklib;
-function gtk_font_dialog_button_get_dialog(self: PGtkFontDialogButton): PGtkFontDialog; cdecl; external gtklib;
-procedure gtk_font_dialog_button_set_dialog(self: PGtkFontDialogButton; dialog: PGtkFontDialog); cdecl; external gtklib;
+function gtk_font_dialog_button_get_type: TGType; cdecl; external libgtk4;
+function gtk_font_dialog_button_new(dialog: PGtkFontDialog): PGtkWidget; cdecl; external libgtk4;
+function gtk_font_dialog_button_get_dialog(self: PGtkFontDialogButton): PGtkFontDialog; cdecl; external libgtk4;
+procedure gtk_font_dialog_button_set_dialog(self: PGtkFontDialogButton; dialog: PGtkFontDialog); cdecl; external libgtk4;
 
 type
   PGtkFontLevel = ^TGtkFontLevel;
@@ -36,18 +36,18 @@ const
   GTK_FONT_LEVEL_FONT = 2;
   GTK_FONT_LEVEL_FEATURES = 3;
 
-function gtk_font_dialog_button_get_level(self: PGtkFontDialogButton): TGtkFontLevel; cdecl; external gtklib;
-procedure gtk_font_dialog_button_set_level(self: PGtkFontDialogButton; level: TGtkFontLevel); cdecl; external gtklib;
-function gtk_font_dialog_button_get_font_desc(self: PGtkFontDialogButton): PPangoFontDescription; cdecl; external gtklib;
-procedure gtk_font_dialog_button_set_font_desc(self: PGtkFontDialogButton; font_desc: PPangoFontDescription); cdecl; external gtklib;
-function gtk_font_dialog_button_get_font_features(self: PGtkFontDialogButton): PChar; cdecl; external gtklib;
-procedure gtk_font_dialog_button_set_font_features(self: PGtkFontDialogButton; font_features: PChar); cdecl; external gtklib;
-function gtk_font_dialog_button_get_language(self: PGtkFontDialogButton): PPangoLanguage; cdecl; external gtklib;
-procedure gtk_font_dialog_button_set_language(self: PGtkFontDialogButton; language: PPangoLanguage); cdecl; external gtklib;
-function gtk_font_dialog_button_get_use_font(self: PGtkFontDialogButton): Tgboolean; cdecl; external gtklib;
-procedure gtk_font_dialog_button_set_use_font(self: PGtkFontDialogButton; use_font: Tgboolean); cdecl; external gtklib;
-function gtk_font_dialog_button_get_use_size(self: PGtkFontDialogButton): Tgboolean; cdecl; external gtklib;
-procedure gtk_font_dialog_button_set_use_size(self: PGtkFontDialogButton; use_size: Tgboolean); cdecl; external gtklib;
+function gtk_font_dialog_button_get_level(self: PGtkFontDialogButton): TGtkFontLevel; cdecl; external libgtk4;
+procedure gtk_font_dialog_button_set_level(self: PGtkFontDialogButton; level: TGtkFontLevel); cdecl; external libgtk4;
+function gtk_font_dialog_button_get_font_desc(self: PGtkFontDialogButton): PPangoFontDescription; cdecl; external libgtk4;
+procedure gtk_font_dialog_button_set_font_desc(self: PGtkFontDialogButton; font_desc: PPangoFontDescription); cdecl; external libgtk4;
+function gtk_font_dialog_button_get_font_features(self: PGtkFontDialogButton): PChar; cdecl; external libgtk4;
+procedure gtk_font_dialog_button_set_font_features(self: PGtkFontDialogButton; font_features: PChar); cdecl; external libgtk4;
+function gtk_font_dialog_button_get_language(self: PGtkFontDialogButton): PPangoLanguage; cdecl; external libgtk4;
+procedure gtk_font_dialog_button_set_language(self: PGtkFontDialogButton; language: PPangoLanguage); cdecl; external libgtk4;
+function gtk_font_dialog_button_get_use_font(self: PGtkFontDialogButton): Tgboolean; cdecl; external libgtk4;
+procedure gtk_font_dialog_button_set_use_font(self: PGtkFontDialogButton; use_font: Tgboolean); cdecl; external libgtk4;
+function gtk_font_dialog_button_get_use_size(self: PGtkFontDialogButton): Tgboolean; cdecl; external libgtk4;
+procedure gtk_font_dialog_button_set_use_size(self: PGtkFontDialogButton; use_size: Tgboolean); cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:31:46 ===
 

@@ -15,13 +15,13 @@ type
   end;
   PGtkColorButton = ^TGtkColorButton;
 
-function gtk_color_button_get_type: TGType; cdecl; external gtklib;
-function gtk_color_button_new: PGtkWidget; cdecl; external gtklib;
-function gtk_color_button_new_with_rgba(rgba: PGdkRGBA): PGtkWidget; cdecl; external gtklib;
-procedure gtk_color_button_set_title(button: PGtkColorButton; title: PChar); cdecl; external gtklib;
-function gtk_color_button_get_title(button: PGtkColorButton): PChar; cdecl; external gtklib;
-function gtk_color_button_get_modal(button: PGtkColorButton): Tgboolean; cdecl; external gtklib;
-procedure gtk_color_button_set_modal(button: PGtkColorButton; modal: Tgboolean); cdecl; external gtklib;
+function gtk_color_button_get_type: TGType; cdecl; external libgtk4;
+function gtk_color_button_new: PGtkWidget; cdecl; external libgtk4;
+function gtk_color_button_new_with_rgba(rgba: PGdkRGBA): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_color_button_set_title(button: PGtkColorButton; title: PChar); cdecl; external libgtk4;
+function gtk_color_button_get_title(button: PGtkColorButton): PChar; cdecl; external libgtk4;
+function gtk_color_button_get_modal(button: PGtkColorButton): Tgboolean; cdecl; external libgtk4;
+procedure gtk_color_button_set_modal(button: PGtkColorButton; modal: Tgboolean); cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 19:33:55 ===
 

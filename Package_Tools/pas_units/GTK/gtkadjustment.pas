@@ -27,25 +27,25 @@ type
   PGtkAdjustmentClass = ^TGtkAdjustmentClass;
 
 
-function gtk_adjustment_get_type: TGType; cdecl; external gtklib;
+function gtk_adjustment_get_type: TGType; cdecl; external libgtk4;
 function gtk_adjustment_new(Value: Tdouble; lower: Tdouble; upper: Tdouble; step_increment: Tdouble; page_increment: Tdouble;
-  page_size: Tdouble): PGtkAdjustment; cdecl; external gtklib;
-procedure gtk_adjustment_clamp_page(adjustment: PGtkAdjustment; lower: Tdouble; upper: Tdouble); cdecl; external gtklib;
-function gtk_adjustment_get_value(adjustment: PGtkAdjustment): Tdouble; cdecl; external gtklib;
-procedure gtk_adjustment_set_value(adjustment: PGtkAdjustment; Value: Tdouble); cdecl; external gtklib;
-function gtk_adjustment_get_lower(adjustment: PGtkAdjustment): Tdouble; cdecl; external gtklib;
-procedure gtk_adjustment_set_lower(adjustment: PGtkAdjustment; lower: Tdouble); cdecl; external gtklib;
-function gtk_adjustment_get_upper(adjustment: PGtkAdjustment): Tdouble; cdecl; external gtklib;
-procedure gtk_adjustment_set_upper(adjustment: PGtkAdjustment; upper: Tdouble); cdecl; external gtklib;
-function gtk_adjustment_get_step_increment(adjustment: PGtkAdjustment): Tdouble; cdecl; external gtklib;
-procedure gtk_adjustment_set_step_increment(adjustment: PGtkAdjustment; step_increment: Tdouble); cdecl; external gtklib;
-function gtk_adjustment_get_page_increment(adjustment: PGtkAdjustment): Tdouble; cdecl; external gtklib;
-procedure gtk_adjustment_set_page_increment(adjustment: PGtkAdjustment; page_increment: Tdouble); cdecl; external gtklib;
-function gtk_adjustment_get_page_size(adjustment: PGtkAdjustment): Tdouble; cdecl; external gtklib;
-procedure gtk_adjustment_set_page_size(adjustment: PGtkAdjustment; page_size: Tdouble); cdecl; external gtklib;
+  page_size: Tdouble): PGtkAdjustment; cdecl; external libgtk4;
+procedure gtk_adjustment_clamp_page(adjustment: PGtkAdjustment; lower: Tdouble; upper: Tdouble); cdecl; external libgtk4;
+function gtk_adjustment_get_value(adjustment: PGtkAdjustment): Tdouble; cdecl; external libgtk4;
+procedure gtk_adjustment_set_value(adjustment: PGtkAdjustment; Value: Tdouble); cdecl; external libgtk4;
+function gtk_adjustment_get_lower(adjustment: PGtkAdjustment): Tdouble; cdecl; external libgtk4;
+procedure gtk_adjustment_set_lower(adjustment: PGtkAdjustment; lower: Tdouble); cdecl; external libgtk4;
+function gtk_adjustment_get_upper(adjustment: PGtkAdjustment): Tdouble; cdecl; external libgtk4;
+procedure gtk_adjustment_set_upper(adjustment: PGtkAdjustment; upper: Tdouble); cdecl; external libgtk4;
+function gtk_adjustment_get_step_increment(adjustment: PGtkAdjustment): Tdouble; cdecl; external libgtk4;
+procedure gtk_adjustment_set_step_increment(adjustment: PGtkAdjustment; step_increment: Tdouble); cdecl; external libgtk4;
+function gtk_adjustment_get_page_increment(adjustment: PGtkAdjustment): Tdouble; cdecl; external libgtk4;
+procedure gtk_adjustment_set_page_increment(adjustment: PGtkAdjustment; page_increment: Tdouble); cdecl; external libgtk4;
+function gtk_adjustment_get_page_size(adjustment: PGtkAdjustment): Tdouble; cdecl; external libgtk4;
+procedure gtk_adjustment_set_page_size(adjustment: PGtkAdjustment; page_size: Tdouble); cdecl; external libgtk4;
 procedure gtk_adjustment_configure(adjustment: PGtkAdjustment; Value: Tdouble; lower: Tdouble; upper: Tdouble; step_increment: Tdouble;
-  page_increment: Tdouble; page_size: Tdouble); cdecl; external gtklib;
-function gtk_adjustment_get_minimum_increment(adjustment: PGtkAdjustment): Tdouble; cdecl; external gtklib;
+  page_increment: Tdouble; page_size: Tdouble); cdecl; external libgtk4;
+function gtk_adjustment_get_minimum_increment(adjustment: PGtkAdjustment): Tdouble; cdecl; external libgtk4;
 
 // === Konventiert am: 12-7-24 19:28:57 ===
 

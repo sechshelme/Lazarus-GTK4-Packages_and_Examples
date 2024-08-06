@@ -29,24 +29,24 @@ type
   end;
   PGdkPopupLayout = ^TGdkPopupLayout;
 
-function gdk_popup_layout_get_type: TGType; cdecl; external gtklib;
-function gdk_popup_layout_new(anchor_rect: PGdkRectangle; rect_anchor: TGdkGravity; surface_anchor: TGdkGravity): PGdkPopupLayout; cdecl; external gtklib;
-function gdk_popup_layout_ref(layout: PGdkPopupLayout): PGdkPopupLayout; cdecl; external gtklib;
-procedure gdk_popup_layout_unref(layout: PGdkPopupLayout); cdecl; external gtklib;
-function gdk_popup_layout_copy(layout: PGdkPopupLayout): PGdkPopupLayout; cdecl; external gtklib;
-function gdk_popup_layout_equal(layout: PGdkPopupLayout; other: PGdkPopupLayout): Tgboolean; cdecl; external gtklib;
-procedure gdk_popup_layout_set_anchor_rect(layout: PGdkPopupLayout; anchor_rect: PGdkRectangle); cdecl; external gtklib;
-function gdk_popup_layout_get_anchor_rect(layout: PGdkPopupLayout): PGdkRectangle; cdecl; external gtklib;
-procedure gdk_popup_layout_set_rect_anchor(layout: PGdkPopupLayout; anchor: TGdkGravity); cdecl; external gtklib;
-function gdk_popup_layout_get_rect_anchor(layout: PGdkPopupLayout): TGdkGravity; cdecl; external gtklib;
-procedure gdk_popup_layout_set_surface_anchor(layout: PGdkPopupLayout; anchor: TGdkGravity); cdecl; external gtklib;
-function gdk_popup_layout_get_surface_anchor(layout: PGdkPopupLayout): TGdkGravity; cdecl; external gtklib;
-procedure gdk_popup_layout_set_anchor_hints(layout: PGdkPopupLayout; anchor_hints: TGdkAnchorHints); cdecl; external gtklib;
-function gdk_popup_layout_get_anchor_hints(layout: PGdkPopupLayout): TGdkAnchorHints; cdecl; external gtklib;
-procedure gdk_popup_layout_set_offset(layout: PGdkPopupLayout; dx: longint; dy: longint); cdecl; external gtklib;
-procedure gdk_popup_layout_get_offset(layout: PGdkPopupLayout; dx: Plongint; dy: Plongint); cdecl; external gtklib;
-procedure gdk_popup_layout_set_shadow_width(layout: PGdkPopupLayout; left: longint; right: longint; top: longint; bottom: longint); cdecl; external gtklib;
-procedure gdk_popup_layout_get_shadow_width(layout: PGdkPopupLayout; left: Plongint; right: Plongint; top: Plongint; bottom: Plongint); cdecl; external gtklib;
+function gdk_popup_layout_get_type: TGType; cdecl; external libgtk4;
+function gdk_popup_layout_new(anchor_rect: PGdkRectangle; rect_anchor: TGdkGravity; surface_anchor: TGdkGravity): PGdkPopupLayout; cdecl; external libgtk4;
+function gdk_popup_layout_ref(layout: PGdkPopupLayout): PGdkPopupLayout; cdecl; external libgtk4;
+procedure gdk_popup_layout_unref(layout: PGdkPopupLayout); cdecl; external libgtk4;
+function gdk_popup_layout_copy(layout: PGdkPopupLayout): PGdkPopupLayout; cdecl; external libgtk4;
+function gdk_popup_layout_equal(layout: PGdkPopupLayout; other: PGdkPopupLayout): Tgboolean; cdecl; external libgtk4;
+procedure gdk_popup_layout_set_anchor_rect(layout: PGdkPopupLayout; anchor_rect: PGdkRectangle); cdecl; external libgtk4;
+function gdk_popup_layout_get_anchor_rect(layout: PGdkPopupLayout): PGdkRectangle; cdecl; external libgtk4;
+procedure gdk_popup_layout_set_rect_anchor(layout: PGdkPopupLayout; anchor: TGdkGravity); cdecl; external libgtk4;
+function gdk_popup_layout_get_rect_anchor(layout: PGdkPopupLayout): TGdkGravity; cdecl; external libgtk4;
+procedure gdk_popup_layout_set_surface_anchor(layout: PGdkPopupLayout; anchor: TGdkGravity); cdecl; external libgtk4;
+function gdk_popup_layout_get_surface_anchor(layout: PGdkPopupLayout): TGdkGravity; cdecl; external libgtk4;
+procedure gdk_popup_layout_set_anchor_hints(layout: PGdkPopupLayout; anchor_hints: TGdkAnchorHints); cdecl; external libgtk4;
+function gdk_popup_layout_get_anchor_hints(layout: PGdkPopupLayout): TGdkAnchorHints; cdecl; external libgtk4;
+procedure gdk_popup_layout_set_offset(layout: PGdkPopupLayout; dx: longint; dy: longint); cdecl; external libgtk4;
+procedure gdk_popup_layout_get_offset(layout: PGdkPopupLayout; dx: Plongint; dy: Plongint); cdecl; external libgtk4;
+procedure gdk_popup_layout_set_shadow_width(layout: PGdkPopupLayout; left: longint; right: longint; top: longint; bottom: longint); cdecl; external libgtk4;
+procedure gdk_popup_layout_get_shadow_width(layout: PGdkPopupLayout; left: Plongint; right: Plongint; top: Plongint; bottom: Plongint); cdecl; external libgtk4;
 
 // === Konventiert am: 31-7-24 16:23:27 ===
 

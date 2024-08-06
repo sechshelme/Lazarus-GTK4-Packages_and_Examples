@@ -7,9 +7,8 @@
       <Unit>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="339"/>
-        <CursorPos X="51" Y="370"/>
+        <CursorPos X="97" Y="354"/>
         <UsageCount Value="121"/>
         <Loaded Value="True"/>
       </Unit>
@@ -4113,7 +4112,7 @@
       <Unit>
         <Filename Value="../../package/GTK4_includes.inc"/>
         <EditorIndex Value="3"/>
-        <CursorPos X="40" Y="290"/>
+        <CursorPos X="18" Y="2"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit>
@@ -4144,7 +4143,7 @@
         <Filename Value="../../package/gtk4.pas"/>
         <UnitName Value="GTK4"/>
         <EditorIndex Value="2"/>
-        <CursorPos Y="22"/>
+        <CursorPos X="20" Y="13"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit>
@@ -4499,6 +4498,7 @@
       </Unit>
       <Unit>
         <Filename Value="../../package/GDK/x11/gdkx11devicemanager.inc"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
         <CursorPos X="56" Y="11"/>
         <UsageCount Value="10"/>

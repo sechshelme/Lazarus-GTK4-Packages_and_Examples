@@ -17,7 +17,7 @@ type
   end;
   PGdkX11AppLaunchContextClass = ^TGdkX11AppLaunchContextClass;
 
-function gdk_x11_app_launch_context_get_type: TGType; cdecl; external gtklib;
+function gdk_x11_app_launch_context_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 17:26:34 ===
 

@@ -14,8 +14,8 @@ type
   end;
   PGtkShortcutsWindow = ^TGtkShortcutsWindow;
 
-function gtk_shortcuts_window_get_type: TGType; cdecl; external gtklib;
-procedure gtk_shortcuts_window_add_section(self: PGtkShortcutsWindow; section: PGtkShortcutsSection); cdecl; external gtklib;
+function gtk_shortcuts_window_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_shortcuts_window_add_section(self: PGtkShortcutsWindow; section: PGtkShortcutsSection); cdecl; external libgtk4;
 
 // === Konventiert am: 21-7-24 13:27:14 ===
 

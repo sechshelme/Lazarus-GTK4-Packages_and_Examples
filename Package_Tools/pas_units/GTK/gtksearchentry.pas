@@ -15,18 +15,18 @@ type
   end;
   PGtkSearchEntry = ^TGtkSearchEntry;
 
-function gtk_search_entry_get_type: TGType; cdecl; external gtklib;
-function gtk_search_entry_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_search_entry_set_key_capture_widget(entry: PGtkSearchEntry; widget: PGtkWidget); cdecl; external gtklib;
-function gtk_search_entry_get_key_capture_widget(entry: PGtkSearchEntry): PGtkWidget; cdecl; external gtklib;
-procedure gtk_search_entry_set_search_delay(entry: PGtkSearchEntry; delay: Tguint); cdecl; external gtklib;
-function gtk_search_entry_get_search_delay(entry: PGtkSearchEntry): Tguint; cdecl; external gtklib;
-procedure gtk_search_entry_set_placeholder_text(entry: PGtkSearchEntry; Text: PChar); cdecl; external gtklib;
-function gtk_search_entry_get_placeholder_text(entry: PGtkSearchEntry): PChar; cdecl; external gtklib;
-procedure gtk_search_entry_set_input_purpose(entry: PGtkSearchEntry; purpose: TGtkInputPurpose); cdecl; external gtklib;
-function gtk_search_entry_get_input_purpose(entry: PGtkSearchEntry): TGtkInputPurpose; cdecl; external gtklib;
-procedure gtk_search_entry_set_input_hints(entry: PGtkSearchEntry; hints: TGtkInputHints); cdecl; external gtklib;
-function gtk_search_entry_get_input_hints(entry: PGtkSearchEntry): TGtkInputHints; cdecl; external gtklib;
+function gtk_search_entry_get_type: TGType; cdecl; external libgtk4;
+function gtk_search_entry_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_search_entry_set_key_capture_widget(entry: PGtkSearchEntry; widget: PGtkWidget); cdecl; external libgtk4;
+function gtk_search_entry_get_key_capture_widget(entry: PGtkSearchEntry): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_search_entry_set_search_delay(entry: PGtkSearchEntry; delay: Tguint); cdecl; external libgtk4;
+function gtk_search_entry_get_search_delay(entry: PGtkSearchEntry): Tguint; cdecl; external libgtk4;
+procedure gtk_search_entry_set_placeholder_text(entry: PGtkSearchEntry; Text: PChar); cdecl; external libgtk4;
+function gtk_search_entry_get_placeholder_text(entry: PGtkSearchEntry): PChar; cdecl; external libgtk4;
+procedure gtk_search_entry_set_input_purpose(entry: PGtkSearchEntry; purpose: TGtkInputPurpose); cdecl; external libgtk4;
+function gtk_search_entry_get_input_purpose(entry: PGtkSearchEntry): TGtkInputPurpose; cdecl; external libgtk4;
+procedure gtk_search_entry_set_input_hints(entry: PGtkSearchEntry; hints: TGtkInputHints); cdecl; external libgtk4;
+function gtk_search_entry_get_input_hints(entry: PGtkSearchEntry): TGtkInputHints; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:27:32 ===
 

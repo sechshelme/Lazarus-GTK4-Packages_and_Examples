@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,19 +20,19 @@ type
   end;
   PGtkTreeExpanderClass = ^TGtkTreeExpanderClass;
 
-function gtk_tree_expander_get_type: TGType; cdecl; external gtklib;
-function gtk_tree_expander_new: PGtkWidget; cdecl; external gtklib;
-function gtk_tree_expander_get_child(self: PGtkTreeExpander): PGtkWidget; cdecl; external gtklib;
-procedure gtk_tree_expander_set_child(self: PGtkTreeExpander; child: PGtkWidget); cdecl; external gtklib;
-function gtk_tree_expander_get_item(self: PGtkTreeExpander): Tgpointer; cdecl; external gtklib;
-function gtk_tree_expander_get_list_row(self: PGtkTreeExpander): PGtkTreeListRow; cdecl; external gtklib;
-procedure gtk_tree_expander_set_list_row(self: PGtkTreeExpander; list_row: PGtkTreeListRow); cdecl; external gtklib;
-function gtk_tree_expander_get_indent_for_depth(self: PGtkTreeExpander): Tgboolean; cdecl; external gtklib;
-procedure gtk_tree_expander_set_indent_for_depth(self: PGtkTreeExpander; indent_for_depth: Tgboolean); cdecl; external gtklib;
-function gtk_tree_expander_get_indent_for_icon(self: PGtkTreeExpander): Tgboolean; cdecl; external gtklib;
-procedure gtk_tree_expander_set_indent_for_icon(self: PGtkTreeExpander; indent_for_icon: Tgboolean); cdecl; external gtklib;
-function gtk_tree_expander_get_hide_expander(self: PGtkTreeExpander): Tgboolean; cdecl; external gtklib;
-procedure gtk_tree_expander_set_hide_expander(self: PGtkTreeExpander; hide_expander: Tgboolean); cdecl; external gtklib;
+function gtk_tree_expander_get_type: TGType; cdecl; external libgtk4;
+function gtk_tree_expander_new: PGtkWidget; cdecl; external libgtk4;
+function gtk_tree_expander_get_child(self: PGtkTreeExpander): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_tree_expander_set_child(self: PGtkTreeExpander; child: PGtkWidget); cdecl; external libgtk4;
+function gtk_tree_expander_get_item(self: PGtkTreeExpander): Tgpointer; cdecl; external libgtk4;
+function gtk_tree_expander_get_list_row(self: PGtkTreeExpander): PGtkTreeListRow; cdecl; external libgtk4;
+procedure gtk_tree_expander_set_list_row(self: PGtkTreeExpander; list_row: PGtkTreeListRow); cdecl; external libgtk4;
+function gtk_tree_expander_get_indent_for_depth(self: PGtkTreeExpander): Tgboolean; cdecl; external libgtk4;
+procedure gtk_tree_expander_set_indent_for_depth(self: PGtkTreeExpander; indent_for_depth: Tgboolean); cdecl; external libgtk4;
+function gtk_tree_expander_get_indent_for_icon(self: PGtkTreeExpander): Tgboolean; cdecl; external libgtk4;
+procedure gtk_tree_expander_set_indent_for_icon(self: PGtkTreeExpander; indent_for_icon: Tgboolean); cdecl; external libgtk4;
+function gtk_tree_expander_get_hide_expander(self: PGtkTreeExpander): Tgboolean; cdecl; external libgtk4;
+procedure gtk_tree_expander_set_hide_expander(self: PGtkTreeExpander; hide_expander: Tgboolean); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 16:51:08 ===
 

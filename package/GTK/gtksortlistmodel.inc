@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,17 +20,17 @@ type
   end;
   PGtkSortListModelClass = ^TGtkSortListModelClass;
 
-function gtk_sort_list_model_get_type: TGType; cdecl; external gtklib;
-function gtk_sort_list_model_new(model: PGListModel; sorter: PGtkSorter): PGtkSortListModel; cdecl; external gtklib;
-procedure gtk_sort_list_model_set_sorter(self: PGtkSortListModel; sorter: PGtkSorter); cdecl; external gtklib;
-function gtk_sort_list_model_get_sorter(self: PGtkSortListModel): PGtkSorter; cdecl; external gtklib;
-procedure gtk_sort_list_model_set_section_sorter(self: PGtkSortListModel; sorter: PGtkSorter); cdecl; external gtklib;
-function gtk_sort_list_model_get_section_sorter(self: PGtkSortListModel): PGtkSorter; cdecl; external gtklib;
-procedure gtk_sort_list_model_set_model(self: PGtkSortListModel; model: PGListModel); cdecl; external gtklib;
-function gtk_sort_list_model_get_model(self: PGtkSortListModel): PGListModel; cdecl; external gtklib;
-procedure gtk_sort_list_model_set_incremental(self: PGtkSortListModel; incremental: Tgboolean); cdecl; external gtklib;
-function gtk_sort_list_model_get_incremental(self: PGtkSortListModel): Tgboolean; cdecl; external gtklib;
-function gtk_sort_list_model_get_pending(self: PGtkSortListModel): Tguint; cdecl; external gtklib;
+function gtk_sort_list_model_get_type: TGType; cdecl; external libgtk4;
+function gtk_sort_list_model_new(model: PGListModel; sorter: PGtkSorter): PGtkSortListModel; cdecl; external libgtk4;
+procedure gtk_sort_list_model_set_sorter(self: PGtkSortListModel; sorter: PGtkSorter); cdecl; external libgtk4;
+function gtk_sort_list_model_get_sorter(self: PGtkSortListModel): PGtkSorter; cdecl; external libgtk4;
+procedure gtk_sort_list_model_set_section_sorter(self: PGtkSortListModel; sorter: PGtkSorter); cdecl; external libgtk4;
+function gtk_sort_list_model_get_section_sorter(self: PGtkSortListModel): PGtkSorter; cdecl; external libgtk4;
+procedure gtk_sort_list_model_set_model(self: PGtkSortListModel; model: PGListModel); cdecl; external libgtk4;
+function gtk_sort_list_model_get_model(self: PGtkSortListModel): PGListModel; cdecl; external libgtk4;
+procedure gtk_sort_list_model_set_incremental(self: PGtkSortListModel; incremental: Tgboolean); cdecl; external libgtk4;
+function gtk_sort_list_model_get_incremental(self: PGtkSortListModel): Tgboolean; cdecl; external libgtk4;
+function gtk_sort_list_model_get_pending(self: PGtkSortListModel): Tguint; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 16:33:24 ===
 

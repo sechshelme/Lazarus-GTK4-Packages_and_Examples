@@ -50,10 +50,10 @@ type
   PGtkSorterClass = ^TGtkSorterClass;
 
 
-function gtk_sorter_get_type: TGType; cdecl; external gtklib;
-function gtk_sorter_compare(self: PGtkSorter; item1: Tgpointer; item2: Tgpointer): TGtkOrdering; cdecl; external gtklib;
-function gtk_sorter_get_order(self: PGtkSorter): TGtkSorterOrder; cdecl; external gtklib;
-procedure gtk_sorter_changed(self: PGtkSorter; change: TGtkSorterChange); cdecl; external gtklib;
+function gtk_sorter_get_type: TGType; cdecl; external libgtk4;
+function gtk_sorter_compare(self: PGtkSorter; item1: Tgpointer; item2: Tgpointer): TGtkOrdering; cdecl; external libgtk4;
+function gtk_sorter_get_order(self: PGtkSorter): TGtkSorterOrder; cdecl; external libgtk4;
+procedure gtk_sorter_changed(self: PGtkSorter; change: TGtkSorterChange); cdecl; external libgtk4;
 
 // === Konventiert am: 23-7-24 19:37:55 ===
 

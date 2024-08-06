@@ -18,12 +18,12 @@ type
   end;
   PGtkBuilderListItemFactoryClass = ^TGtkBuilderListItemFactoryClass;
 
-function gtk_builder_list_item_factory_get_type: TGType; cdecl; external gtklib;
-function gtk_builder_list_item_factory_new_from_bytes(scope: PGtkBuilderScope; bytes: PGBytes): PGtkListItemFactory; cdecl; external gtklib;
-function gtk_builder_list_item_factory_new_from_resource(scope: PGtkBuilderScope; resource_path: PChar): PGtkListItemFactory; cdecl; external gtklib;
-function gtk_builder_list_item_factory_get_bytes(self: PGtkBuilderListItemFactory): PGBytes; cdecl; external gtklib;
-function gtk_builder_list_item_factory_get_resource(self: PGtkBuilderListItemFactory): PChar; cdecl; external gtklib;
-function gtk_builder_list_item_factory_get_scope(self: PGtkBuilderListItemFactory): PGtkBuilderScope; cdecl; external gtklib;
+function gtk_builder_list_item_factory_get_type: TGType; cdecl; external libgtk4;
+function gtk_builder_list_item_factory_new_from_bytes(scope: PGtkBuilderScope; bytes: PGBytes): PGtkListItemFactory; cdecl; external libgtk4;
+function gtk_builder_list_item_factory_new_from_resource(scope: PGtkBuilderScope; resource_path: PChar): PGtkListItemFactory; cdecl; external libgtk4;
+function gtk_builder_list_item_factory_get_bytes(self: PGtkBuilderListItemFactory): PGBytes; cdecl; external libgtk4;
+function gtk_builder_list_item_factory_get_resource(self: PGtkBuilderListItemFactory): PChar; cdecl; external libgtk4;
+function gtk_builder_list_item_factory_get_scope(self: PGtkBuilderListItemFactory): PGtkBuilderScope; cdecl; external libgtk4;
 
 // === Konventiert am: 23-7-24 16:58:53 ===
 

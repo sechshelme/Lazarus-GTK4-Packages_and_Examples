@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,12 +20,12 @@ type
   end;
   PGtkNumericSorterClass = ^TGtkNumericSorterClass;
 
-function gtk_numeric_sorter_get_type: TGType; cdecl; external gtklib;
-function gtk_numeric_sorter_new(expression: PGtkExpression): PGtkNumericSorter; cdecl; external gtklib;
-function gtk_numeric_sorter_get_expression(self: PGtkNumericSorter): PGtkExpression; cdecl; external gtklib;
-procedure gtk_numeric_sorter_set_expression(self: PGtkNumericSorter; expression: PGtkExpression); cdecl; external gtklib;
-function gtk_numeric_sorter_get_sort_order(self: PGtkNumericSorter): TGtkSortType; cdecl; external gtklib;
-procedure gtk_numeric_sorter_set_sort_order(self: PGtkNumericSorter; sort_order: TGtkSortType); cdecl; external gtklib;
+function gtk_numeric_sorter_get_type: TGType; cdecl; external libgtk4;
+function gtk_numeric_sorter_new(expression: PGtkExpression): PGtkNumericSorter; cdecl; external libgtk4;
+function gtk_numeric_sorter_get_expression(self: PGtkNumericSorter): PGtkExpression; cdecl; external libgtk4;
+procedure gtk_numeric_sorter_set_expression(self: PGtkNumericSorter; expression: PGtkExpression); cdecl; external libgtk4;
+function gtk_numeric_sorter_get_sort_order(self: PGtkNumericSorter): TGtkSortType; cdecl; external libgtk4;
+procedure gtk_numeric_sorter_set_sort_order(self: PGtkNumericSorter; sort_order: TGtkSortType); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:01:34 ===
 

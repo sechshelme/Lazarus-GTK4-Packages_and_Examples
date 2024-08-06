@@ -19,15 +19,15 @@ type
   end;
   PGtkGestureSingleClass = ^TGtkGestureSingleClass;
 
-function gtk_gesture_single_get_type: TGType; cdecl; external gtklib;
-function gtk_gesture_single_get_touch_only(gesture: PGtkGestureSingle): Tgboolean; cdecl; external gtklib;
-procedure gtk_gesture_single_set_touch_only(gesture: PGtkGestureSingle; touch_only: Tgboolean); cdecl; external gtklib;
-function gtk_gesture_single_get_exclusive(gesture: PGtkGestureSingle): Tgboolean; cdecl; external gtklib;
-procedure gtk_gesture_single_set_exclusive(gesture: PGtkGestureSingle; exclusive: Tgboolean); cdecl; external gtklib;
-function gtk_gesture_single_get_button(gesture: PGtkGestureSingle): Tguint; cdecl; external gtklib;
-procedure gtk_gesture_single_set_button(gesture: PGtkGestureSingle; button: Tguint); cdecl; external gtklib;
-function gtk_gesture_single_get_current_button(gesture: PGtkGestureSingle): Tguint; cdecl; external gtklib;
-function gtk_gesture_single_get_current_sequence(gesture: PGtkGestureSingle): PGdkEventSequence; cdecl; external gtklib;
+function gtk_gesture_single_get_type: TGType; cdecl; external libgtk4;
+function gtk_gesture_single_get_touch_only(gesture: PGtkGestureSingle): Tgboolean; cdecl; external libgtk4;
+procedure gtk_gesture_single_set_touch_only(gesture: PGtkGestureSingle; touch_only: Tgboolean); cdecl; external libgtk4;
+function gtk_gesture_single_get_exclusive(gesture: PGtkGestureSingle): Tgboolean; cdecl; external libgtk4;
+procedure gtk_gesture_single_set_exclusive(gesture: PGtkGestureSingle; exclusive: Tgboolean); cdecl; external libgtk4;
+function gtk_gesture_single_get_button(gesture: PGtkGestureSingle): Tguint; cdecl; external libgtk4;
+procedure gtk_gesture_single_set_button(gesture: PGtkGestureSingle; button: Tguint); cdecl; external libgtk4;
+function gtk_gesture_single_get_current_button(gesture: PGtkGestureSingle): Tguint; cdecl; external libgtk4;
+function gtk_gesture_single_get_current_sequence(gesture: PGtkGestureSingle): PGdkEventSequence; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:44:34 ===
 

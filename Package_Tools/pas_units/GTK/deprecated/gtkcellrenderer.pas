@@ -68,39 +68,39 @@ type
   PGtkCellRendererClass = ^TGtkCellRendererClass;
 
 
-function gtk_cell_renderer_get_type: TGType; cdecl; external gtklib;
-function gtk_cell_renderer_get_request_mode(cell: PGtkCellRenderer): TGtkSizeRequestMode; cdecl; external gtklib;
-procedure gtk_cell_renderer_get_preferred_width(cell: PGtkCellRenderer; widget: PGtkWidget; minimum_size: Plongint; natural_size: Plongint); cdecl; external gtklib;
-procedure gtk_cell_renderer_get_preferred_height_for_width(cell: PGtkCellRenderer; widget: PGtkWidget; Width: longint; minimum_height: Plongint; natural_height: Plongint); cdecl; external gtklib;
-procedure gtk_cell_renderer_get_preferred_height(cell: PGtkCellRenderer; widget: PGtkWidget; minimum_size: Plongint; natural_size: Plongint); cdecl; external gtklib;
-procedure gtk_cell_renderer_get_preferred_width_for_height(cell: PGtkCellRenderer; widget: PGtkWidget; Height: longint; minimum_width: Plongint; natural_width: Plongint); cdecl; external gtklib;
-procedure gtk_cell_renderer_get_preferred_size(cell: PGtkCellRenderer; widget: PGtkWidget; minimum_size: PGtkRequisition; natural_size: PGtkRequisition); cdecl; external gtklib;
-procedure gtk_cell_renderer_get_aligned_area(cell: PGtkCellRenderer; widget: PGtkWidget; flags: TGtkCellRendererState; cell_area: PGdkRectangle; aligned_area: PGdkRectangle); cdecl; external gtklib;
+function gtk_cell_renderer_get_type: TGType; cdecl; external libgtk4;
+function gtk_cell_renderer_get_request_mode(cell: PGtkCellRenderer): TGtkSizeRequestMode; cdecl; external libgtk4;
+procedure gtk_cell_renderer_get_preferred_width(cell: PGtkCellRenderer; widget: PGtkWidget; minimum_size: Plongint; natural_size: Plongint); cdecl; external libgtk4;
+procedure gtk_cell_renderer_get_preferred_height_for_width(cell: PGtkCellRenderer; widget: PGtkWidget; Width: longint; minimum_height: Plongint; natural_height: Plongint); cdecl; external libgtk4;
+procedure gtk_cell_renderer_get_preferred_height(cell: PGtkCellRenderer; widget: PGtkWidget; minimum_size: Plongint; natural_size: Plongint); cdecl; external libgtk4;
+procedure gtk_cell_renderer_get_preferred_width_for_height(cell: PGtkCellRenderer; widget: PGtkWidget; Height: longint; minimum_width: Plongint; natural_width: Plongint); cdecl; external libgtk4;
+procedure gtk_cell_renderer_get_preferred_size(cell: PGtkCellRenderer; widget: PGtkWidget; minimum_size: PGtkRequisition; natural_size: PGtkRequisition); cdecl; external libgtk4;
+procedure gtk_cell_renderer_get_aligned_area(cell: PGtkCellRenderer; widget: PGtkWidget; flags: TGtkCellRendererState; cell_area: PGdkRectangle; aligned_area: PGdkRectangle); cdecl; external libgtk4;
 procedure gtk_cell_renderer_snapshot(cell: PGtkCellRenderer; snapshot: PGtkSnapshot; widget: PGtkWidget; background_area: PGdkRectangle; cell_area: PGdkRectangle;
-  flags: TGtkCellRendererState); cdecl; external gtklib;
+  flags: TGtkCellRendererState); cdecl; external libgtk4;
 function gtk_cell_renderer_activate(cell: PGtkCellRenderer; event: PGdkEvent; widget: PGtkWidget; path: PChar; background_area: PGdkRectangle;
-  cell_area: PGdkRectangle; flags: TGtkCellRendererState): Tgboolean; cdecl; external gtklib;
+  cell_area: PGdkRectangle; flags: TGtkCellRendererState): Tgboolean; cdecl; external libgtk4;
 function gtk_cell_renderer_start_editing(cell: PGtkCellRenderer; event: PGdkEvent; widget: PGtkWidget; path: PChar; background_area: PGdkRectangle;
-  cell_area: PGdkRectangle; flags: TGtkCellRendererState): PGtkCellEditable; cdecl; external gtklib;
-procedure gtk_cell_renderer_set_fixed_size(cell: PGtkCellRenderer; Width: longint; Height: longint); cdecl; external gtklib;
-procedure gtk_cell_renderer_get_fixed_size(cell: PGtkCellRenderer; Width: Plongint; Height: Plongint); cdecl; external gtklib;
-procedure gtk_cell_renderer_set_alignment(cell: PGtkCellRenderer; xalign: single; yalign: single); cdecl; external gtklib;
-procedure gtk_cell_renderer_get_alignment(cell: PGtkCellRenderer; xalign: Psingle; yalign: Psingle); cdecl; external gtklib;
-procedure gtk_cell_renderer_set_padding(cell: PGtkCellRenderer; xpad: longint; ypad: longint); cdecl; external gtklib;
-procedure gtk_cell_renderer_get_padding(cell: PGtkCellRenderer; xpad: Plongint; ypad: Plongint); cdecl; external gtklib;
-procedure gtk_cell_renderer_set_visible(cell: PGtkCellRenderer; Visible: Tgboolean); cdecl; external gtklib;
-function gtk_cell_renderer_get_visible(cell: PGtkCellRenderer): Tgboolean; cdecl; external gtklib;
-procedure gtk_cell_renderer_set_sensitive(cell: PGtkCellRenderer; sensitive: Tgboolean); cdecl; external gtklib;
-function gtk_cell_renderer_get_sensitive(cell: PGtkCellRenderer): Tgboolean; cdecl; external gtklib;
-function gtk_cell_renderer_is_activatable(cell: PGtkCellRenderer): Tgboolean; cdecl; external gtklib;
-procedure gtk_cell_renderer_set_is_expander(cell: PGtkCellRenderer; is_expander: Tgboolean); cdecl; external gtklib;
-function gtk_cell_renderer_get_is_expander(cell: PGtkCellRenderer): Tgboolean; cdecl; external gtklib;
-procedure gtk_cell_renderer_set_is_expanded(cell: PGtkCellRenderer; is_expanded: Tgboolean); cdecl; external gtklib;
-function gtk_cell_renderer_get_is_expanded(cell: PGtkCellRenderer): Tgboolean; cdecl; external gtklib;
-procedure gtk_cell_renderer_stop_editing(cell: PGtkCellRenderer; canceled: Tgboolean); cdecl; external gtklib;
+  cell_area: PGdkRectangle; flags: TGtkCellRendererState): PGtkCellEditable; cdecl; external libgtk4;
+procedure gtk_cell_renderer_set_fixed_size(cell: PGtkCellRenderer; Width: longint; Height: longint); cdecl; external libgtk4;
+procedure gtk_cell_renderer_get_fixed_size(cell: PGtkCellRenderer; Width: Plongint; Height: Plongint); cdecl; external libgtk4;
+procedure gtk_cell_renderer_set_alignment(cell: PGtkCellRenderer; xalign: single; yalign: single); cdecl; external libgtk4;
+procedure gtk_cell_renderer_get_alignment(cell: PGtkCellRenderer; xalign: Psingle; yalign: Psingle); cdecl; external libgtk4;
+procedure gtk_cell_renderer_set_padding(cell: PGtkCellRenderer; xpad: longint; ypad: longint); cdecl; external libgtk4;
+procedure gtk_cell_renderer_get_padding(cell: PGtkCellRenderer; xpad: Plongint; ypad: Plongint); cdecl; external libgtk4;
+procedure gtk_cell_renderer_set_visible(cell: PGtkCellRenderer; Visible: Tgboolean); cdecl; external libgtk4;
+function gtk_cell_renderer_get_visible(cell: PGtkCellRenderer): Tgboolean; cdecl; external libgtk4;
+procedure gtk_cell_renderer_set_sensitive(cell: PGtkCellRenderer; sensitive: Tgboolean); cdecl; external libgtk4;
+function gtk_cell_renderer_get_sensitive(cell: PGtkCellRenderer): Tgboolean; cdecl; external libgtk4;
+function gtk_cell_renderer_is_activatable(cell: PGtkCellRenderer): Tgboolean; cdecl; external libgtk4;
+procedure gtk_cell_renderer_set_is_expander(cell: PGtkCellRenderer; is_expander: Tgboolean); cdecl; external libgtk4;
+function gtk_cell_renderer_get_is_expander(cell: PGtkCellRenderer): Tgboolean; cdecl; external libgtk4;
+procedure gtk_cell_renderer_set_is_expanded(cell: PGtkCellRenderer; is_expanded: Tgboolean); cdecl; external libgtk4;
+function gtk_cell_renderer_get_is_expanded(cell: PGtkCellRenderer): Tgboolean; cdecl; external libgtk4;
+procedure gtk_cell_renderer_stop_editing(cell: PGtkCellRenderer; canceled: Tgboolean); cdecl; external libgtk4;
 procedure _gtk_cell_renderer_calc_offset(cell: PGtkCellRenderer; cell_area: PGdkRectangle; direction: TGtkTextDirection; Width: longint; Height: longint;
-  x_offset: Plongint; y_offset: Plongint); cdecl; external gtklib;
-function gtk_cell_renderer_get_state(cell: PGtkCellRenderer; widget: PGtkWidget; cell_state: TGtkCellRendererState): TGtkStateFlags; cdecl; external gtklib;
+  x_offset: Plongint; y_offset: Plongint); cdecl; external libgtk4;
+function gtk_cell_renderer_get_state(cell: PGtkCellRenderer; widget: PGtkWidget; cell_state: TGtkCellRendererState): TGtkStateFlags; cdecl; external libgtk4;
 
 // === Konventiert am: 21-7-24 16:34:13 ===
 

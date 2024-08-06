@@ -14,15 +14,15 @@ type
   end;
   PGtkPopoverMenu = ^TGtkPopoverMenu;
 
-function gtk_popover_menu_get_type: TGType; cdecl; external gtklib;
-function gtk_popover_menu_new_from_model(model: PGMenuModel): PGtkWidget; cdecl; external gtklib;
-function gtk_popover_menu_new_from_model_full(model: PGMenuModel; flags: TGtkPopoverMenuFlags): PGtkWidget; cdecl; external gtklib;
-procedure gtk_popover_menu_set_menu_model(popover: PGtkPopoverMenu; model: PGMenuModel); cdecl; external gtklib;
-function gtk_popover_menu_get_menu_model(popover: PGtkPopoverMenu): PGMenuModel; cdecl; external gtklib;
-procedure gtk_popover_menu_set_flags(popover: PGtkPopoverMenu; flags: TGtkPopoverMenuFlags); cdecl; external gtklib;
-function gtk_popover_menu_get_flags(popover: PGtkPopoverMenu): TGtkPopoverMenuFlags; cdecl; external gtklib;
-function gtk_popover_menu_add_child(popover: PGtkPopoverMenu; child: PGtkWidget; id: PChar): Tgboolean; cdecl; external gtklib;
-function gtk_popover_menu_remove_child(popover: PGtkPopoverMenu; child: PGtkWidget): Tgboolean; cdecl; external gtklib;
+function gtk_popover_menu_get_type: TGType; cdecl; external libgtk4;
+function gtk_popover_menu_new_from_model(model: PGMenuModel): PGtkWidget; cdecl; external libgtk4;
+function gtk_popover_menu_new_from_model_full(model: PGMenuModel; flags: TGtkPopoverMenuFlags): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_popover_menu_set_menu_model(popover: PGtkPopoverMenu; model: PGMenuModel); cdecl; external libgtk4;
+function gtk_popover_menu_get_menu_model(popover: PGtkPopoverMenu): PGMenuModel; cdecl; external libgtk4;
+procedure gtk_popover_menu_set_flags(popover: PGtkPopoverMenu; flags: TGtkPopoverMenuFlags); cdecl; external libgtk4;
+function gtk_popover_menu_get_flags(popover: PGtkPopoverMenu): TGtkPopoverMenuFlags; cdecl; external libgtk4;
+function gtk_popover_menu_add_child(popover: PGtkPopoverMenu; child: PGtkWidget; id: PChar): Tgboolean; cdecl; external libgtk4;
+function gtk_popover_menu_remove_child(popover: PGtkPopoverMenu; child: PGtkWidget): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 24-7-24 16:58:05 ===
 

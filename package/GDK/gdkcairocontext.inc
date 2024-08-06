@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -13,8 +13,8 @@ type
   end;
   PGdkCairoContext = ^TGdkCairoContext;
 
-function gdk_cairo_context_get_type: TGType; cdecl; external gtklib;
-function gdk_cairo_context_cairo_create(self: PGdkCairoContext): Pcairo_t; cdecl; external gtklib;
+function gdk_cairo_context_get_type: TGType; cdecl; external libgtk4;
+function gdk_cairo_context_cairo_create(self: PGdkCairoContext): Pcairo_t; cdecl; external libgtk4;
 
 function GDK_CAIRO_ERROR: TGQuark;
 

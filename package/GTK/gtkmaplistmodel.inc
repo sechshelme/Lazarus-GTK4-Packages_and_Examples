@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -23,12 +23,12 @@ type
   end;
   PGtkMapListModelClass = ^TGtkMapListModelClass;
 
-function gtk_map_list_model_get_type: TGType; cdecl; external gtklib;
-function gtk_map_list_model_new(model: PGListModel; map_func: TGtkMapListModelMapFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify): PGtkMapListModel; cdecl; external gtklib;
-procedure gtk_map_list_model_set_map_func(self: PGtkMapListModel; map_func: TGtkMapListModelMapFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify); cdecl; external gtklib;
-procedure gtk_map_list_model_set_model(self: PGtkMapListModel; model: PGListModel); cdecl; external gtklib;
-function gtk_map_list_model_get_model(self: PGtkMapListModel): PGListModel; cdecl; external gtklib;
-function gtk_map_list_model_has_map(self: PGtkMapListModel): Tgboolean; cdecl; external gtklib;
+function gtk_map_list_model_get_type: TGType; cdecl; external libgtk4;
+function gtk_map_list_model_new(model: PGListModel; map_func: TGtkMapListModelMapFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify): PGtkMapListModel; cdecl; external libgtk4;
+procedure gtk_map_list_model_set_map_func(self: PGtkMapListModel; map_func: TGtkMapListModelMapFunc; user_data: Tgpointer; user_destroy: TGDestroyNotify); cdecl; external libgtk4;
+procedure gtk_map_list_model_set_model(self: PGtkMapListModel; model: PGListModel); cdecl; external libgtk4;
+function gtk_map_list_model_get_model(self: PGtkMapListModel): PGListModel; cdecl; external libgtk4;
+function gtk_map_list_model_has_map(self: PGtkMapListModel): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 20:00:22 ===
 

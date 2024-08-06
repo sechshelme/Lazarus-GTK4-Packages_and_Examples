@@ -30,23 +30,23 @@ type
   end;
   PGtkConstraintClass = ^TGtkConstraintClass;
 
-function gtk_constraint_get_type: TGType; cdecl; external gtklib;
+function gtk_constraint_get_type: TGType; cdecl; external libgtk4;
 function gtk_constraint_new(target: Tgpointer; target_attribute: TGtkConstraintAttribute; relation: TGtkConstraintRelation; Source: Tgpointer; source_attribute: TGtkConstraintAttribute;
-  multiplier: Tdouble; constant: Tdouble; strength: longint): PGtkConstraint; cdecl; external gtklib;
-function gtk_constraint_new_constant(target: Tgpointer; target_attribute: TGtkConstraintAttribute; relation: TGtkConstraintRelation; constant: Tdouble; strength: longint): PGtkConstraint; cdecl; external gtklib;
-function gtk_constraint_get_target(constraint: PGtkConstraint): PGtkConstraintTarget; cdecl; external gtklib;
-function gtk_constraint_get_target_attribute(constraint: PGtkConstraint): TGtkConstraintAttribute; cdecl; external gtklib;
-function gtk_constraint_get_source(constraint: PGtkConstraint): PGtkConstraintTarget; cdecl; external gtklib;
-function gtk_constraint_get_source_attribute(constraint: PGtkConstraint): TGtkConstraintAttribute; cdecl; external gtklib;
-function gtk_constraint_get_relation(constraint: PGtkConstraint): TGtkConstraintRelation; cdecl; external gtklib;
-function gtk_constraint_get_multiplier(constraint: PGtkConstraint): Tdouble; cdecl; external gtklib;
-function gtk_constraint_get_constant(constraint: PGtkConstraint): Tdouble; cdecl; external gtklib;
-function gtk_constraint_get_strength(constraint: PGtkConstraint): longint; cdecl; external gtklib;
-function gtk_constraint_is_required(constraint: PGtkConstraint): Tgboolean; cdecl; external gtklib;
-function gtk_constraint_is_attached(constraint: PGtkConstraint): Tgboolean; cdecl; external gtklib;
-function gtk_constraint_is_constant(constraint: PGtkConstraint): Tgboolean; cdecl; external gtklib;
+  multiplier: Tdouble; constant: Tdouble; strength: longint): PGtkConstraint; cdecl; external libgtk4;
+function gtk_constraint_new_constant(target: Tgpointer; target_attribute: TGtkConstraintAttribute; relation: TGtkConstraintRelation; constant: Tdouble; strength: longint): PGtkConstraint; cdecl; external libgtk4;
+function gtk_constraint_get_target(constraint: PGtkConstraint): PGtkConstraintTarget; cdecl; external libgtk4;
+function gtk_constraint_get_target_attribute(constraint: PGtkConstraint): TGtkConstraintAttribute; cdecl; external libgtk4;
+function gtk_constraint_get_source(constraint: PGtkConstraint): PGtkConstraintTarget; cdecl; external libgtk4;
+function gtk_constraint_get_source_attribute(constraint: PGtkConstraint): TGtkConstraintAttribute; cdecl; external libgtk4;
+function gtk_constraint_get_relation(constraint: PGtkConstraint): TGtkConstraintRelation; cdecl; external libgtk4;
+function gtk_constraint_get_multiplier(constraint: PGtkConstraint): Tdouble; cdecl; external libgtk4;
+function gtk_constraint_get_constant(constraint: PGtkConstraint): Tdouble; cdecl; external libgtk4;
+function gtk_constraint_get_strength(constraint: PGtkConstraint): longint; cdecl; external libgtk4;
+function gtk_constraint_is_required(constraint: PGtkConstraint): Tgboolean; cdecl; external libgtk4;
+function gtk_constraint_is_attached(constraint: PGtkConstraint): Tgboolean; cdecl; external libgtk4;
+function gtk_constraint_is_constant(constraint: PGtkConstraint): Tgboolean; cdecl; external libgtk4;
 
-function gtk_constraint_target_get_type: TGType; cdecl; external gtklib;
+function gtk_constraint_target_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 24-7-24 19:18:06 ===
 

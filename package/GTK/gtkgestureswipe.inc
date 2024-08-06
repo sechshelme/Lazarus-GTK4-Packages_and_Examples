@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -17,9 +17,9 @@ type
   end;
   PGtkGestureSwipeClass = ^TGtkGestureSwipeClass;
 
-function gtk_gesture_swipe_get_type: TGType; cdecl; external gtklib;
-function gtk_gesture_swipe_new: PGtkGesture; cdecl; external gtklib;
-function gtk_gesture_swipe_get_velocity(gesture: PGtkGestureSwipe; velocity_x: Pdouble; velocity_y: Pdouble): Tgboolean; cdecl; external gtklib;
+function gtk_gesture_swipe_get_type: TGType; cdecl; external libgtk4;
+function gtk_gesture_swipe_new: PGtkGesture; cdecl; external libgtk4;
+function gtk_gesture_swipe_get_velocity(gesture: PGtkGestureSwipe; velocity_x: Pdouble; velocity_y: Pdouble): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:43:25 ===
 

@@ -18,10 +18,10 @@ type
   end;
   PGtkGestureDragClass = ^TGtkGestureDragClass;
 
-function gtk_gesture_drag_get_type: TGType; cdecl; external gtklib;
-function gtk_gesture_drag_new: PGtkGesture; cdecl; external gtklib;
-function gtk_gesture_drag_get_start_point(gesture: PGtkGestureDrag; x: Pdouble; y: Pdouble): Tgboolean; cdecl; external gtklib;
-function gtk_gesture_drag_get_offset(gesture: PGtkGestureDrag; x: Pdouble; y: Pdouble): Tgboolean; cdecl; external gtklib;
+function gtk_gesture_drag_get_type: TGType; cdecl; external libgtk4;
+function gtk_gesture_drag_new: PGtkGesture; cdecl; external libgtk4;
+function gtk_gesture_drag_get_start_point(gesture: PGtkGestureDrag; x: Pdouble; y: Pdouble): Tgboolean; cdecl; external libgtk4;
+function gtk_gesture_drag_get_offset(gesture: PGtkGestureDrag; x: Pdouble; y: Pdouble): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:44:00 ===
 

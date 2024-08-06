@@ -22,7 +22,7 @@ type
   end;
   PGtkShortcutManagerInterface = ^TGtkShortcutManagerInterface;
 
-function gtk_shortcut_manager_get_type: TGType; cdecl; external gtklib;
+function gtk_shortcut_manager_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 21-7-24 13:26:37 ===
 

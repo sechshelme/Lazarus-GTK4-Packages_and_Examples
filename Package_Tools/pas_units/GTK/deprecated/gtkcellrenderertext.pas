@@ -24,9 +24,9 @@ type
   PGtkCellRendererTextClass = ^TGtkCellRendererTextClass;
 
 
-function gtk_cell_renderer_text_get_type: TGType; cdecl; external gtklib;
-function gtk_cell_renderer_text_new: PGtkCellRenderer; cdecl; external gtklib;
-procedure gtk_cell_renderer_text_set_fixed_height_from_font(renderer: PGtkCellRendererText; number_of_rows: longint); cdecl; external gtklib;
+function gtk_cell_renderer_text_get_type: TGType; cdecl; external libgtk4;
+function gtk_cell_renderer_text_new: PGtkCellRenderer; cdecl; external libgtk4;
+procedure gtk_cell_renderer_text_set_fixed_height_from_font(renderer: PGtkCellRendererText; number_of_rows: longint); cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 17:01:12 ===
 

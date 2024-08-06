@@ -20,8 +20,8 @@ type
   end;
   PGtkBinLayoutClass = ^TGtkBinLayoutClass;
 
-function gtk_bin_layout_get_type: TGType; cdecl; external gtklib;
-function gtk_bin_layout_new: PGtkLayoutManager; cdecl; external gtklib;
+function gtk_bin_layout_get_type: TGType; cdecl; external libgtk4;
+function gtk_bin_layout_new: PGtkLayoutManager; cdecl; external libgtk4;
 
 // === Konventiert am: 17-7-24 19:14:38 ===
 

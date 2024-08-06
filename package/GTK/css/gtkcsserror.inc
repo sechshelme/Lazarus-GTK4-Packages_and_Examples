@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -10,8 +10,8 @@
 
 
 
-function gtk_css_parser_error_quark: TGQuark; cdecl; external gtklib;
-function gtk_css_parser_warning_quark: TGQuark; cdecl; external gtklib;
+function gtk_css_parser_error_quark: TGQuark; cdecl; external libgtk4;
+function gtk_css_parser_warning_quark: TGQuark; cdecl; external libgtk4;
 
 function GTK_CSS_PARSER_WARNING: TGQuark;
 function GTK_CSS_PARSER_ERROR: TGQuark;

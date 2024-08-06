@@ -21,27 +21,27 @@ type
 
 
 
-function gtk_column_view_column_get_type: TGType; cdecl; external gtklib;
-function gtk_column_view_column_new(title: PChar; factory: PGtkListItemFactory): PGtkColumnViewColumn; cdecl; external gtklib;
-function gtk_column_view_column_get_column_view(self: PGtkColumnViewColumn): PGtkColumnView; cdecl; external gtklib;
-procedure gtk_column_view_column_set_factory(self: PGtkColumnViewColumn; factory: PGtkListItemFactory); cdecl; external gtklib;
-function gtk_column_view_column_get_factory(self: PGtkColumnViewColumn): PGtkListItemFactory; cdecl; external gtklib;
-procedure gtk_column_view_column_set_title(self: PGtkColumnViewColumn; title: PChar); cdecl; external gtklib;
-function gtk_column_view_column_get_title(self: PGtkColumnViewColumn): PChar; cdecl; external gtklib;
-procedure gtk_column_view_column_set_sorter(self: PGtkColumnViewColumn; sorter: PGtkSorter); cdecl; external gtklib;
-function gtk_column_view_column_get_sorter(self: PGtkColumnViewColumn): PGtkSorter; cdecl; external gtklib;
-procedure gtk_column_view_column_set_visible(self: PGtkColumnViewColumn; Visible: Tgboolean); cdecl; external gtklib;
-function gtk_column_view_column_get_visible(self: PGtkColumnViewColumn): Tgboolean; cdecl; external gtklib;
-procedure gtk_column_view_column_set_header_menu(self: PGtkColumnViewColumn; menu: PGMenuModel); cdecl; external gtklib;
-function gtk_column_view_column_get_header_menu(self: PGtkColumnViewColumn): PGMenuModel; cdecl; external gtklib;
-procedure gtk_column_view_column_set_fixed_width(self: PGtkColumnViewColumn; fixed_width: longint); cdecl; external gtklib;
-function gtk_column_view_column_get_fixed_width(self: PGtkColumnViewColumn): longint; cdecl; external gtklib;
-procedure gtk_column_view_column_set_resizable(self: PGtkColumnViewColumn; resizable: Tgboolean); cdecl; external gtklib;
-function gtk_column_view_column_get_resizable(self: PGtkColumnViewColumn): Tgboolean; cdecl; external gtklib;
-procedure gtk_column_view_column_set_expand(self: PGtkColumnViewColumn; expand: Tgboolean); cdecl; external gtklib;
-function gtk_column_view_column_get_expand(self: PGtkColumnViewColumn): Tgboolean; cdecl; external gtklib;
-procedure gtk_column_view_column_set_id(self: PGtkColumnViewColumn; id: PChar); cdecl; external gtklib;
-function gtk_column_view_column_get_id(self: PGtkColumnViewColumn): PChar; cdecl; external gtklib;
+function gtk_column_view_column_get_type: TGType; cdecl; external libgtk4;
+function gtk_column_view_column_new(title: PChar; factory: PGtkListItemFactory): PGtkColumnViewColumn; cdecl; external libgtk4;
+function gtk_column_view_column_get_column_view(self: PGtkColumnViewColumn): PGtkColumnView; cdecl; external libgtk4;
+procedure gtk_column_view_column_set_factory(self: PGtkColumnViewColumn; factory: PGtkListItemFactory); cdecl; external libgtk4;
+function gtk_column_view_column_get_factory(self: PGtkColumnViewColumn): PGtkListItemFactory; cdecl; external libgtk4;
+procedure gtk_column_view_column_set_title(self: PGtkColumnViewColumn; title: PChar); cdecl; external libgtk4;
+function gtk_column_view_column_get_title(self: PGtkColumnViewColumn): PChar; cdecl; external libgtk4;
+procedure gtk_column_view_column_set_sorter(self: PGtkColumnViewColumn; sorter: PGtkSorter); cdecl; external libgtk4;
+function gtk_column_view_column_get_sorter(self: PGtkColumnViewColumn): PGtkSorter; cdecl; external libgtk4;
+procedure gtk_column_view_column_set_visible(self: PGtkColumnViewColumn; Visible: Tgboolean); cdecl; external libgtk4;
+function gtk_column_view_column_get_visible(self: PGtkColumnViewColumn): Tgboolean; cdecl; external libgtk4;
+procedure gtk_column_view_column_set_header_menu(self: PGtkColumnViewColumn; menu: PGMenuModel); cdecl; external libgtk4;
+function gtk_column_view_column_get_header_menu(self: PGtkColumnViewColumn): PGMenuModel; cdecl; external libgtk4;
+procedure gtk_column_view_column_set_fixed_width(self: PGtkColumnViewColumn; fixed_width: longint); cdecl; external libgtk4;
+function gtk_column_view_column_get_fixed_width(self: PGtkColumnViewColumn): longint; cdecl; external libgtk4;
+procedure gtk_column_view_column_set_resizable(self: PGtkColumnViewColumn; resizable: Tgboolean); cdecl; external libgtk4;
+function gtk_column_view_column_get_resizable(self: PGtkColumnViewColumn): Tgboolean; cdecl; external libgtk4;
+procedure gtk_column_view_column_set_expand(self: PGtkColumnViewColumn; expand: Tgboolean); cdecl; external libgtk4;
+function gtk_column_view_column_get_expand(self: PGtkColumnViewColumn): Tgboolean; cdecl; external libgtk4;
+procedure gtk_column_view_column_set_id(self: PGtkColumnViewColumn; id: PChar); cdecl; external libgtk4;
+function gtk_column_view_column_get_id(self: PGtkColumnViewColumn): PChar; cdecl; external libgtk4;
 
 // === Konventiert am: 23-7-24 20:02:05 ===
 

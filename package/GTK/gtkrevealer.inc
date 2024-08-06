@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -28,17 +28,17 @@ const
   GTK_REVEALER_TRANSITION_TYPE_SWING_UP = 8;
   GTK_REVEALER_TRANSITION_TYPE_SWING_DOWN = 9;
 
-function gtk_revealer_get_type: TGType; cdecl; external gtklib;
-function gtk_revealer_new: PGtkWidget; cdecl; external gtklib;
-function gtk_revealer_get_reveal_child(revealer: PGtkRevealer): Tgboolean; cdecl; external gtklib;
-procedure gtk_revealer_set_reveal_child(revealer: PGtkRevealer; reveal_child: Tgboolean); cdecl; external gtklib;
-function gtk_revealer_get_child_revealed(revealer: PGtkRevealer): Tgboolean; cdecl; external gtklib;
-function gtk_revealer_get_transition_duration(revealer: PGtkRevealer): Tguint; cdecl; external gtklib;
-procedure gtk_revealer_set_transition_duration(revealer: PGtkRevealer; duration: Tguint); cdecl; external gtklib;
-procedure gtk_revealer_set_transition_type(revealer: PGtkRevealer; transition: TGtkRevealerTransitionType); cdecl; external gtklib;
-function gtk_revealer_get_transition_type(revealer: PGtkRevealer): TGtkRevealerTransitionType; cdecl; external gtklib;
-procedure gtk_revealer_set_child(revealer: PGtkRevealer; child: PGtkWidget); cdecl; external gtklib;
-function gtk_revealer_get_child(revealer: PGtkRevealer): PGtkWidget; cdecl; external gtklib;
+function gtk_revealer_get_type: TGType; cdecl; external libgtk4;
+function gtk_revealer_new: PGtkWidget; cdecl; external libgtk4;
+function gtk_revealer_get_reveal_child(revealer: PGtkRevealer): Tgboolean; cdecl; external libgtk4;
+procedure gtk_revealer_set_reveal_child(revealer: PGtkRevealer; reveal_child: Tgboolean); cdecl; external libgtk4;
+function gtk_revealer_get_child_revealed(revealer: PGtkRevealer): Tgboolean; cdecl; external libgtk4;
+function gtk_revealer_get_transition_duration(revealer: PGtkRevealer): Tguint; cdecl; external libgtk4;
+procedure gtk_revealer_set_transition_duration(revealer: PGtkRevealer; duration: Tguint); cdecl; external libgtk4;
+procedure gtk_revealer_set_transition_type(revealer: PGtkRevealer; transition: TGtkRevealerTransitionType); cdecl; external libgtk4;
+function gtk_revealer_get_transition_type(revealer: PGtkRevealer): TGtkRevealerTransitionType; cdecl; external libgtk4;
+procedure gtk_revealer_set_child(revealer: PGtkRevealer; child: PGtkWidget); cdecl; external libgtk4;
+function gtk_revealer_get_child(revealer: PGtkRevealer): PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:27:04 ===
 

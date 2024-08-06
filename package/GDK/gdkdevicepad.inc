@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -21,11 +21,11 @@ const
   GDK_DEVICE_PAD_FEATURE_RING = 1;
   GDK_DEVICE_PAD_FEATURE_STRIP = 2;
 
-function gdk_device_pad_get_type: TGType; cdecl; external gtklib;
-function gdk_device_pad_get_n_groups(pad: PGdkDevicePad): longint; cdecl; external gtklib;
-function gdk_device_pad_get_group_n_modes(pad: PGdkDevicePad; group_idx: longint): longint; cdecl; external gtklib;
-function gdk_device_pad_get_n_features(pad: PGdkDevicePad; feature: TGdkDevicePadFeature): longint; cdecl; external gtklib;
-function gdk_device_pad_get_feature_group(pad: PGdkDevicePad; feature: TGdkDevicePadFeature; feature_idx: longint): longint; cdecl; external gtklib;
+function gdk_device_pad_get_type: TGType; cdecl; external libgtk4;
+function gdk_device_pad_get_n_groups(pad: PGdkDevicePad): longint; cdecl; external libgtk4;
+function gdk_device_pad_get_group_n_modes(pad: PGdkDevicePad; group_idx: longint): longint; cdecl; external libgtk4;
+function gdk_device_pad_get_n_features(pad: PGdkDevicePad; feature: TGdkDevicePadFeature): longint; cdecl; external libgtk4;
+function gdk_device_pad_get_feature_group(pad: PGdkDevicePad; feature: TGdkDevicePadFeature; feature_idx: longint): longint; cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 15:57:57 ===
 

@@ -21,10 +21,10 @@ type
   end;
   PGtkGraphicsOffloadClass = ^TGtkGraphicsOffloadClass;
 
-function gtk_graphics_offload_get_type: TGType; cdecl; external gtklib;
-function gtk_graphics_offload_new(child: PGtkWidget): PGtkWidget; cdecl; external gtklib;
-procedure gtk_graphics_offload_set_child(self: PGtkGraphicsOffload; child: PGtkWidget); cdecl; external gtklib;
-function gtk_graphics_offload_get_child(self: PGtkGraphicsOffload): PGtkWidget; cdecl; external gtklib;
+function gtk_graphics_offload_get_type: TGType; cdecl; external libgtk4;
+function gtk_graphics_offload_new(child: PGtkWidget): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_graphics_offload_set_child(self: PGtkGraphicsOffload; child: PGtkWidget); cdecl; external libgtk4;
+function gtk_graphics_offload_get_child(self: PGtkGraphicsOffload): PGtkWidget; cdecl; external libgtk4;
 
 type
   PGtkGraphicsOffloadEnabled = ^TGtkGraphicsOffloadEnabled;
@@ -35,8 +35,8 @@ const
   GTK_GRAPHICS_OFFLOAD_DISABLED = 1;
 
 
-procedure gtk_graphics_offload_set_enabled(self: PGtkGraphicsOffload; Enabled: TGtkGraphicsOffloadEnabled); cdecl; external gtklib;
-function gtk_graphics_offload_get_enabled(self: PGtkGraphicsOffload): TGtkGraphicsOffloadEnabled; cdecl; external gtklib;
+procedure gtk_graphics_offload_set_enabled(self: PGtkGraphicsOffload; Enabled: TGtkGraphicsOffloadEnabled); cdecl; external libgtk4;
+function gtk_graphics_offload_get_enabled(self: PGtkGraphicsOffload): TGtkGraphicsOffloadEnabled; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 19:31:40 ===
 

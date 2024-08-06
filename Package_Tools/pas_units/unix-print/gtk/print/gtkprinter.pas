@@ -25,7 +25,7 @@ const
   GTK_PRINT_CAPABILITY_NUMBER_UP = 1 shl 8;
   GTK_PRINT_CAPABILITY_NUMBER_UP_LAYOUT = 1 shl 9;
 
-function gtk_print_capabilities_get_type: TGType; cdecl; external gtklib;
+function gtk_print_capabilities_get_type: TGType; cdecl; external libgtk4;
 
 type
   TGtkPrinter = record
@@ -36,36 +36,36 @@ type
   end;
   PGtkPrintBackend = ^TGtkPrintBackend;
 
-function gtk_printer_get_type: TGType; cdecl; external gtklib;
-function gtk_printer_new(Name: PChar; backend: PGtkPrintBackend; virtual_: Tgboolean): PGtkPrinter; cdecl; external gtklib;
-function gtk_printer_get_backend(printer: PGtkPrinter): PGtkPrintBackend; cdecl; external gtklib;
-function gtk_printer_get_name(printer: PGtkPrinter): PChar; cdecl; external gtklib;
-function gtk_printer_get_state_message(printer: PGtkPrinter): PChar; cdecl; external gtklib;
-function gtk_printer_get_description(printer: PGtkPrinter): PChar; cdecl; external gtklib;
-function gtk_printer_get_location(printer: PGtkPrinter): PChar; cdecl; external gtklib;
-function gtk_printer_get_icon_name(printer: PGtkPrinter): PChar; cdecl; external gtklib;
-function gtk_printer_get_job_count(printer: PGtkPrinter): longint; cdecl; external gtklib;
-function gtk_printer_is_active(printer: PGtkPrinter): Tgboolean; cdecl; external gtklib;
-function gtk_printer_is_paused(printer: PGtkPrinter): Tgboolean; cdecl; external gtklib;
-function gtk_printer_is_accepting_jobs(printer: PGtkPrinter): Tgboolean; cdecl; external gtklib;
-function gtk_printer_is_virtual(printer: PGtkPrinter): Tgboolean; cdecl; external gtklib;
-function gtk_printer_is_default(printer: PGtkPrinter): Tgboolean; cdecl; external gtklib;
-function gtk_printer_accepts_pdf(printer: PGtkPrinter): Tgboolean; cdecl; external gtklib;
-function gtk_printer_accepts_ps(printer: PGtkPrinter): Tgboolean; cdecl; external gtklib;
-function gtk_printer_list_papers(printer: PGtkPrinter): PGList; cdecl; external gtklib;
-function gtk_printer_get_default_page_size(printer: PGtkPrinter): PGtkPageSetup; cdecl; external gtklib;
-function gtk_printer_compare(a: PGtkPrinter; b: PGtkPrinter): longint; cdecl; external gtklib;
-function gtk_printer_has_details(printer: PGtkPrinter): Tgboolean; cdecl; external gtklib;
-procedure gtk_printer_request_details(printer: PGtkPrinter); cdecl; external gtklib;
-function gtk_printer_get_capabilities(printer: PGtkPrinter): TGtkPrintCapabilities; cdecl; external gtklib;
-function gtk_printer_get_hard_margins(printer: PGtkPrinter; top: Pdouble; bottom: Pdouble; left: Pdouble; right: Pdouble): Tgboolean; cdecl; external gtklib;
+function gtk_printer_get_type: TGType; cdecl; external libgtk4;
+function gtk_printer_new(Name: PChar; backend: PGtkPrintBackend; virtual_: Tgboolean): PGtkPrinter; cdecl; external libgtk4;
+function gtk_printer_get_backend(printer: PGtkPrinter): PGtkPrintBackend; cdecl; external libgtk4;
+function gtk_printer_get_name(printer: PGtkPrinter): PChar; cdecl; external libgtk4;
+function gtk_printer_get_state_message(printer: PGtkPrinter): PChar; cdecl; external libgtk4;
+function gtk_printer_get_description(printer: PGtkPrinter): PChar; cdecl; external libgtk4;
+function gtk_printer_get_location(printer: PGtkPrinter): PChar; cdecl; external libgtk4;
+function gtk_printer_get_icon_name(printer: PGtkPrinter): PChar; cdecl; external libgtk4;
+function gtk_printer_get_job_count(printer: PGtkPrinter): longint; cdecl; external libgtk4;
+function gtk_printer_is_active(printer: PGtkPrinter): Tgboolean; cdecl; external libgtk4;
+function gtk_printer_is_paused(printer: PGtkPrinter): Tgboolean; cdecl; external libgtk4;
+function gtk_printer_is_accepting_jobs(printer: PGtkPrinter): Tgboolean; cdecl; external libgtk4;
+function gtk_printer_is_virtual(printer: PGtkPrinter): Tgboolean; cdecl; external libgtk4;
+function gtk_printer_is_default(printer: PGtkPrinter): Tgboolean; cdecl; external libgtk4;
+function gtk_printer_accepts_pdf(printer: PGtkPrinter): Tgboolean; cdecl; external libgtk4;
+function gtk_printer_accepts_ps(printer: PGtkPrinter): Tgboolean; cdecl; external libgtk4;
+function gtk_printer_list_papers(printer: PGtkPrinter): PGList; cdecl; external libgtk4;
+function gtk_printer_get_default_page_size(printer: PGtkPrinter): PGtkPageSetup; cdecl; external libgtk4;
+function gtk_printer_compare(a: PGtkPrinter; b: PGtkPrinter): longint; cdecl; external libgtk4;
+function gtk_printer_has_details(printer: PGtkPrinter): Tgboolean; cdecl; external libgtk4;
+procedure gtk_printer_request_details(printer: PGtkPrinter); cdecl; external libgtk4;
+function gtk_printer_get_capabilities(printer: PGtkPrinter): TGtkPrintCapabilities; cdecl; external libgtk4;
+function gtk_printer_get_hard_margins(printer: PGtkPrinter; top: Pdouble; bottom: Pdouble; left: Pdouble; right: Pdouble): Tgboolean; cdecl; external libgtk4;
 function gtk_printer_get_hard_margins_for_paper_size(printer: PGtkPrinter; paper_size: PGtkPaperSize; top: Pdouble; bottom: Pdouble; left: Pdouble;
-  right: Pdouble): Tgboolean; cdecl; external gtklib;
+  right: Pdouble): Tgboolean; cdecl; external libgtk4;
 
 type
   TGtkPrinterFunc = function(printer: PGtkPrinter; Data: Tgpointer): Tgboolean; cdecl;
 
-procedure gtk_enumerate_printers(func: TGtkPrinterFunc; Data: Tgpointer; Destroy: TGDestroyNotify; wait: Tgboolean); cdecl; external gtklib;
+procedure gtk_enumerate_printers(func: TGtkPrinterFunc; Data: Tgpointer; Destroy: TGDestroyNotify; wait: Tgboolean); cdecl; external libgtk4;
 
 
 

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -73,28 +73,28 @@ type
   end;
   PGdkToplevelInterface = ^TGdkToplevelInterface;
 
-function gdk_toplevel_get_type: TGType; cdecl; external gtklib;
-procedure gdk_toplevel_present(toplevel: PGdkToplevel; layout: PGdkToplevelLayout); cdecl; external gtklib;
-function gdk_toplevel_minimize(toplevel: PGdkToplevel): Tgboolean; cdecl; external gtklib;
-function gdk_toplevel_lower(toplevel: PGdkToplevel): Tgboolean; cdecl; external gtklib;
-procedure gdk_toplevel_focus(toplevel: PGdkToplevel; timestamp: Tguint32); cdecl; external gtklib;
-function gdk_toplevel_get_state(toplevel: PGdkToplevel): TGdkToplevelState; cdecl; external gtklib;
-procedure gdk_toplevel_set_title(toplevel: PGdkToplevel; title: PChar); cdecl; external gtklib;
-procedure gdk_toplevel_set_startup_id(toplevel: PGdkToplevel; startup_id: PChar); cdecl; external gtklib;
-procedure gdk_toplevel_set_transient_for(toplevel: PGdkToplevel; parent: PGdkSurface); cdecl; external gtklib;
-procedure gdk_toplevel_set_modal(toplevel: PGdkToplevel; modal: Tgboolean); cdecl; external gtklib;
-procedure gdk_toplevel_set_icon_list(toplevel: PGdkToplevel; surfaces: PGList); cdecl; external gtklib;
-function gdk_toplevel_show_window_menu(toplevel: PGdkToplevel; event: PGdkEvent): Tgboolean; cdecl; external gtklib;
-procedure gdk_toplevel_set_decorated(toplevel: PGdkToplevel; decorated: Tgboolean); cdecl; external gtklib;
-procedure gdk_toplevel_set_deletable(toplevel: PGdkToplevel; deletable: Tgboolean); cdecl; external gtklib;
-function gdk_toplevel_supports_edge_constraints(toplevel: PGdkToplevel): Tgboolean; cdecl; external gtklib;
-procedure gdk_toplevel_inhibit_system_shortcuts(toplevel: PGdkToplevel; event: PGdkEvent); cdecl; external gtklib;
-procedure gdk_toplevel_restore_system_shortcuts(toplevel: PGdkToplevel); cdecl; external gtklib;
+function gdk_toplevel_get_type: TGType; cdecl; external libgtk4;
+procedure gdk_toplevel_present(toplevel: PGdkToplevel; layout: PGdkToplevelLayout); cdecl; external libgtk4;
+function gdk_toplevel_minimize(toplevel: PGdkToplevel): Tgboolean; cdecl; external libgtk4;
+function gdk_toplevel_lower(toplevel: PGdkToplevel): Tgboolean; cdecl; external libgtk4;
+procedure gdk_toplevel_focus(toplevel: PGdkToplevel; timestamp: Tguint32); cdecl; external libgtk4;
+function gdk_toplevel_get_state(toplevel: PGdkToplevel): TGdkToplevelState; cdecl; external libgtk4;
+procedure gdk_toplevel_set_title(toplevel: PGdkToplevel; title: PChar); cdecl; external libgtk4;
+procedure gdk_toplevel_set_startup_id(toplevel: PGdkToplevel; startup_id: PChar); cdecl; external libgtk4;
+procedure gdk_toplevel_set_transient_for(toplevel: PGdkToplevel; parent: PGdkSurface); cdecl; external libgtk4;
+procedure gdk_toplevel_set_modal(toplevel: PGdkToplevel; modal: Tgboolean); cdecl; external libgtk4;
+procedure gdk_toplevel_set_icon_list(toplevel: PGdkToplevel; surfaces: PGList); cdecl; external libgtk4;
+function gdk_toplevel_show_window_menu(toplevel: PGdkToplevel; event: PGdkEvent): Tgboolean; cdecl; external libgtk4;
+procedure gdk_toplevel_set_decorated(toplevel: PGdkToplevel; decorated: Tgboolean); cdecl; external libgtk4;
+procedure gdk_toplevel_set_deletable(toplevel: PGdkToplevel; deletable: Tgboolean); cdecl; external libgtk4;
+function gdk_toplevel_supports_edge_constraints(toplevel: PGdkToplevel): Tgboolean; cdecl; external libgtk4;
+procedure gdk_toplevel_inhibit_system_shortcuts(toplevel: PGdkToplevel; event: PGdkEvent); cdecl; external libgtk4;
+procedure gdk_toplevel_restore_system_shortcuts(toplevel: PGdkToplevel); cdecl; external libgtk4;
 procedure gdk_toplevel_begin_resize(toplevel: PGdkToplevel; edge: TGdkSurfaceEdge; device: PGdkDevice; button: longint; x: Tdouble;
-  y: Tdouble; timestamp: Tguint32); cdecl; external gtklib;
+  y: Tdouble; timestamp: Tguint32); cdecl; external libgtk4;
 procedure gdk_toplevel_begin_move(toplevel: PGdkToplevel; device: PGdkDevice; button: longint; x: Tdouble; y: Tdouble;
-  timestamp: Tguint32); cdecl; external gtklib;
-function gdk_toplevel_titlebar_gesture(toplevel: PGdkToplevel; gesture: TGdkTitlebarGesture): Tgboolean; cdecl; external gtklib;
+  timestamp: Tguint32); cdecl; external libgtk4;
+function gdk_toplevel_titlebar_gesture(toplevel: PGdkToplevel; gesture: TGdkTitlebarGesture): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 30-7-24 19:33:34 ===
 

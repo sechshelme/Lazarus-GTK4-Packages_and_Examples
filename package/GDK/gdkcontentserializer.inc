@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -15,24 +15,24 @@ type
 
   TGdkContentSerializeFunc = procedure(serializer: PGdkContentSerializer); cdecl;
 
-function gdk_content_serializer_get_type: TGType; cdecl; external gtklib;
-function gdk_content_serializer_get_mime_type(serializer: PGdkContentSerializer): PChar; cdecl; external gtklib;
-function gdk_content_serializer_get_gtype(serializer: PGdkContentSerializer): TGType; cdecl; external gtklib;
-function gdk_content_serializer_get_value(serializer: PGdkContentSerializer): PGValue; cdecl; external gtklib;
-function gdk_content_serializer_get_output_stream(serializer: PGdkContentSerializer): PGOutputStream; cdecl; external gtklib;
-function gdk_content_serializer_get_priority(serializer: PGdkContentSerializer): longint; cdecl; external gtklib;
-function gdk_content_serializer_get_cancellable(serializer: PGdkContentSerializer): PGCancellable; cdecl; external gtklib;
-function gdk_content_serializer_get_user_data(serializer: PGdkContentSerializer): Tgpointer; cdecl; external gtklib;
-procedure gdk_content_serializer_set_task_data(serializer: PGdkContentSerializer; Data: Tgpointer; notify: TGDestroyNotify); cdecl; external gtklib;
-function gdk_content_serializer_get_task_data(serializer: PGdkContentSerializer): Tgpointer; cdecl; external gtklib;
-procedure gdk_content_serializer_return_success(serializer: PGdkContentSerializer); cdecl; external gtklib;
-procedure gdk_content_serializer_return_error(serializer: PGdkContentSerializer; error: PGError); cdecl; external gtklib;
-function gdk_content_formats_union_serialize_gtypes(formats: PGdkContentFormats): PGdkContentFormats; cdecl; external gtklib;
-function gdk_content_formats_union_serialize_mime_types(formats: PGdkContentFormats): PGdkContentFormats; cdecl; external gtklib;
-procedure gdk_content_register_serializer(_type: TGType; mime_type: PChar; serialize: TGdkContentSerializeFunc; Data: Tgpointer; notify: TGDestroyNotify); cdecl; external gtklib;
+function gdk_content_serializer_get_type: TGType; cdecl; external libgtk4;
+function gdk_content_serializer_get_mime_type(serializer: PGdkContentSerializer): PChar; cdecl; external libgtk4;
+function gdk_content_serializer_get_gtype(serializer: PGdkContentSerializer): TGType; cdecl; external libgtk4;
+function gdk_content_serializer_get_value(serializer: PGdkContentSerializer): PGValue; cdecl; external libgtk4;
+function gdk_content_serializer_get_output_stream(serializer: PGdkContentSerializer): PGOutputStream; cdecl; external libgtk4;
+function gdk_content_serializer_get_priority(serializer: PGdkContentSerializer): longint; cdecl; external libgtk4;
+function gdk_content_serializer_get_cancellable(serializer: PGdkContentSerializer): PGCancellable; cdecl; external libgtk4;
+function gdk_content_serializer_get_user_data(serializer: PGdkContentSerializer): Tgpointer; cdecl; external libgtk4;
+procedure gdk_content_serializer_set_task_data(serializer: PGdkContentSerializer; Data: Tgpointer; notify: TGDestroyNotify); cdecl; external libgtk4;
+function gdk_content_serializer_get_task_data(serializer: PGdkContentSerializer): Tgpointer; cdecl; external libgtk4;
+procedure gdk_content_serializer_return_success(serializer: PGdkContentSerializer); cdecl; external libgtk4;
+procedure gdk_content_serializer_return_error(serializer: PGdkContentSerializer; error: PGError); cdecl; external libgtk4;
+function gdk_content_formats_union_serialize_gtypes(formats: PGdkContentFormats): PGdkContentFormats; cdecl; external libgtk4;
+function gdk_content_formats_union_serialize_mime_types(formats: PGdkContentFormats): PGdkContentFormats; cdecl; external libgtk4;
+procedure gdk_content_register_serializer(_type: TGType; mime_type: PChar; serialize: TGdkContentSerializeFunc; Data: Tgpointer; notify: TGDestroyNotify); cdecl; external libgtk4;
 procedure gdk_content_serialize_async(stream: PGOutputStream; mime_type: PChar; Value: PGValue; io_priority: longint; cancellable: PGCancellable;
-  callback: TGAsyncReadyCallback; user_data: Tgpointer); cdecl; external gtklib;
-function gdk_content_serialize_finish(Result: PGAsyncResult; error: PPGError): Tgboolean; cdecl; external gtklib;
+  callback: TGAsyncReadyCallback; user_data: Tgpointer); cdecl; external libgtk4;
+function gdk_content_serialize_finish(Result: PGAsyncResult; error: PPGError): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 31-7-24 17:03:25 ===
 

@@ -18,8 +18,8 @@ type
   end;
   PGtkEventControllerLegacyClass = ^TGtkEventControllerLegacyClass;
 
-function gtk_event_controller_legacy_get_type: TGType; cdecl; external gtklib;
-function gtk_event_controller_legacy_new: PGtkEventController; cdecl; external gtklib;
+function gtk_event_controller_legacy_get_type: TGType; cdecl; external libgtk4;
+function gtk_event_controller_legacy_new: PGtkEventController; cdecl; external libgtk4;
 
 // === Konventiert am: 25-7-24 19:21:58 ===
 

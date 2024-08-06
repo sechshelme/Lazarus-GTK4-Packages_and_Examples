@@ -21,8 +21,8 @@ type
   end;
   PGtkOverlayLayoutClass = ^TGtkOverlayLayoutClass;
 
-function gtk_overlay_layout_get_type: TGType; cdecl; external gtklib;
-function gtk_overlay_layout_new: PGtkLayoutManager; cdecl; external gtklib;
+function gtk_overlay_layout_get_type: TGType; cdecl; external libgtk4;
+function gtk_overlay_layout_new: PGtkLayoutManager; cdecl; external libgtk4;
 
 {G_DECLARE_FINAL_TYPE (GtkOverlayLayoutChild, gtk_overlay_layout_child, GTK, OVERLAY_LAYOUT_CHILD, GtkLayoutChild) }
 type
@@ -35,11 +35,11 @@ type
   end;
   PGtkOverlayLayoutChildClass = ^TGtkOverlayLayoutChildClass;
 
-function gtk_overlay_layout_child_get_type: TGType; cdecl; external gtklib;
-procedure gtk_overlay_layout_child_set_measure(child: PGtkOverlayLayoutChild; measure: Tgboolean); cdecl; external gtklib;
-function gtk_overlay_layout_child_get_measure(child: PGtkOverlayLayoutChild): Tgboolean; cdecl; external gtklib;
-procedure gtk_overlay_layout_child_set_clip_overlay(child: PGtkOverlayLayoutChild; clip_overlay: Tgboolean); cdecl; external gtklib;
-function gtk_overlay_layout_child_get_clip_overlay(child: PGtkOverlayLayoutChild): Tgboolean; cdecl; external gtklib;
+function gtk_overlay_layout_child_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_overlay_layout_child_set_measure(child: PGtkOverlayLayoutChild; measure: Tgboolean); cdecl; external libgtk4;
+function gtk_overlay_layout_child_get_measure(child: PGtkOverlayLayoutChild): Tgboolean; cdecl; external libgtk4;
+procedure gtk_overlay_layout_child_set_clip_overlay(child: PGtkOverlayLayoutChild; clip_overlay: Tgboolean); cdecl; external libgtk4;
+function gtk_overlay_layout_child_get_clip_overlay(child: PGtkOverlayLayoutChild): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:13:46 ===
 

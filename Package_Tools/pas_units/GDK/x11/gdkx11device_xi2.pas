@@ -28,7 +28,7 @@ type
   PGdkX11DeviceXI2Class = ^TGdkX11DeviceXI2Class;
 
 
-function gdk_x11_device_xi2_get_type: TGType; cdecl; external gtklib;
+function gdk_x11_device_xi2_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 17:29:06 ===
 

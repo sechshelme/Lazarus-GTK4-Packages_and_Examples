@@ -18,15 +18,15 @@ type
   end;
   PGtkShortcutControllerClass = ^TGtkShortcutControllerClass;
 
-function gtk_shortcut_controller_get_type: TGType; cdecl; external gtklib;
-function gtk_shortcut_controller_new: PGtkEventController; cdecl; external gtklib;
-function gtk_shortcut_controller_new_for_model(model: PGListModel): PGtkEventController; cdecl; external gtklib;
-procedure gtk_shortcut_controller_set_mnemonics_modifiers(self: PGtkShortcutController; modifiers: TGdkModifierType); cdecl; external gtklib;
-function gtk_shortcut_controller_get_mnemonics_modifiers(self: PGtkShortcutController): TGdkModifierType; cdecl; external gtklib;
-procedure gtk_shortcut_controller_set_scope(self: PGtkShortcutController; scope: TGtkShortcutScope); cdecl; external gtklib;
-function gtk_shortcut_controller_get_scope(self: PGtkShortcutController): TGtkShortcutScope; cdecl; external gtklib;
-procedure gtk_shortcut_controller_add_shortcut(self: PGtkShortcutController; shortcut: PGtkShortcut); cdecl; external gtklib;
-procedure gtk_shortcut_controller_remove_shortcut(self: PGtkShortcutController; shortcut: PGtkShortcut); cdecl; external gtklib;
+function gtk_shortcut_controller_get_type: TGType; cdecl; external libgtk4;
+function gtk_shortcut_controller_new: PGtkEventController; cdecl; external libgtk4;
+function gtk_shortcut_controller_new_for_model(model: PGListModel): PGtkEventController; cdecl; external libgtk4;
+procedure gtk_shortcut_controller_set_mnemonics_modifiers(self: PGtkShortcutController; modifiers: TGdkModifierType); cdecl; external libgtk4;
+function gtk_shortcut_controller_get_mnemonics_modifiers(self: PGtkShortcutController): TGdkModifierType; cdecl; external libgtk4;
+procedure gtk_shortcut_controller_set_scope(self: PGtkShortcutController; scope: TGtkShortcutScope); cdecl; external libgtk4;
+function gtk_shortcut_controller_get_scope(self: PGtkShortcutController): TGtkShortcutScope; cdecl; external libgtk4;
+procedure gtk_shortcut_controller_add_shortcut(self: PGtkShortcutController; shortcut: PGtkShortcut); cdecl; external libgtk4;
+procedure gtk_shortcut_controller_remove_shortcut(self: PGtkShortcutController; shortcut: PGtkShortcut); cdecl; external libgtk4;
 
 // === Konventiert am: 21-7-24 13:37:17 ===
 

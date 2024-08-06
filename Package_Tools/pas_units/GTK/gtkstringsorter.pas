@@ -21,12 +21,12 @@ type
   end;
   PGtkStringSorterClass = ^TGtkStringSorterClass;
 
-function gtk_string_sorter_get_type: TGType; cdecl; external gtklib;
-function gtk_string_sorter_new(expression: PGtkExpression): PGtkStringSorter; cdecl; external gtklib;
-function gtk_string_sorter_get_expression(self: PGtkStringSorter): PGtkExpression; cdecl; external gtklib;
-procedure gtk_string_sorter_set_expression(self: PGtkStringSorter; expression: PGtkExpression); cdecl; external gtklib;
-function gtk_string_sorter_get_ignore_case(self: PGtkStringSorter): Tgboolean; cdecl; external gtklib;
-procedure gtk_string_sorter_set_ignore_case(self: PGtkStringSorter; ignore_case: Tgboolean); cdecl; external gtklib;
+function gtk_string_sorter_get_type: TGType; cdecl; external libgtk4;
+function gtk_string_sorter_new(expression: PGtkExpression): PGtkStringSorter; cdecl; external libgtk4;
+function gtk_string_sorter_get_expression(self: PGtkStringSorter): PGtkExpression; cdecl; external libgtk4;
+procedure gtk_string_sorter_set_expression(self: PGtkStringSorter; expression: PGtkExpression); cdecl; external libgtk4;
+function gtk_string_sorter_get_ignore_case(self: PGtkStringSorter): Tgboolean; cdecl; external libgtk4;
+procedure gtk_string_sorter_set_ignore_case(self: PGtkStringSorter; ignore_case: Tgboolean); cdecl; external libgtk4;
 
 type
   PGtkCollation = ^TGtkCollation;
@@ -37,8 +37,8 @@ const
   GTK_COLLATION_UNICODE = 1;
   GTK_COLLATION_FILENAME = 2;
 
-procedure gtk_string_sorter_set_collation(self: PGtkStringSorter; collation: TGtkCollation); cdecl; external gtklib;
-function gtk_string_sorter_get_collation(self: PGtkStringSorter): TGtkCollation; cdecl; external gtklib;
+procedure gtk_string_sorter_set_collation(self: PGtkStringSorter; collation: TGtkCollation); cdecl; external libgtk4;
+function gtk_string_sorter_get_collation(self: PGtkStringSorter): TGtkCollation; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 17:43:47 ===
 

@@ -14,15 +14,15 @@ type
   end;
   PGtkActionBar = ^TGtkActionBar;
 
-function gtk_action_bar_get_type:TGType;cdecl;external gtklib;
-function gtk_action_bar_new:PGtkWidget;cdecl;external gtklib;
-function gtk_action_bar_get_center_widget(action_bar:PGtkActionBar):PGtkWidget;cdecl;external gtklib;
-procedure gtk_action_bar_set_center_widget(action_bar:PGtkActionBar; center_widget:PGtkWidget);cdecl;external gtklib;
-procedure gtk_action_bar_pack_start(action_bar:PGtkActionBar; child:PGtkWidget);cdecl;external gtklib;
-procedure gtk_action_bar_pack_end(action_bar:PGtkActionBar; child:PGtkWidget);cdecl;external gtklib;
-procedure gtk_action_bar_remove(action_bar:PGtkActionBar; child:PGtkWidget);cdecl;external gtklib;
-procedure gtk_action_bar_set_revealed(action_bar:PGtkActionBar; revealed:Tgboolean);cdecl;external gtklib;
-function gtk_action_bar_get_revealed(action_bar:PGtkActionBar):Tgboolean;cdecl;external gtklib;
+function gtk_action_bar_get_type:TGType;cdecl;external libgtk4;
+function gtk_action_bar_new:PGtkWidget;cdecl;external libgtk4;
+function gtk_action_bar_get_center_widget(action_bar:PGtkActionBar):PGtkWidget;cdecl;external libgtk4;
+procedure gtk_action_bar_set_center_widget(action_bar:PGtkActionBar; center_widget:PGtkWidget);cdecl;external libgtk4;
+procedure gtk_action_bar_pack_start(action_bar:PGtkActionBar; child:PGtkWidget);cdecl;external libgtk4;
+procedure gtk_action_bar_pack_end(action_bar:PGtkActionBar; child:PGtkWidget);cdecl;external libgtk4;
+procedure gtk_action_bar_remove(action_bar:PGtkActionBar; child:PGtkWidget);cdecl;external libgtk4;
+procedure gtk_action_bar_set_revealed(action_bar:PGtkActionBar; revealed:Tgboolean);cdecl;external libgtk4;
+function gtk_action_bar_get_revealed(action_bar:PGtkActionBar):Tgboolean;cdecl;external libgtk4;
 
 // === Konventiert am: 11-7-24 22:37:57 ===
 

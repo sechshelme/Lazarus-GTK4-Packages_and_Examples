@@ -21,10 +21,10 @@ type
   end;
   PGtkTreeListRowSorterClass = ^TGtkTreeListRowSorterClass;
 
-function gtk_tree_list_row_sorter_get_type: TGType; cdecl; external gtklib;
-function gtk_tree_list_row_sorter_new(sorter: PGtkSorter): PGtkTreeListRowSorter; cdecl; external gtklib;
-function gtk_tree_list_row_sorter_get_sorter(self: PGtkTreeListRowSorter): PGtkSorter; cdecl; external gtklib;
-procedure gtk_tree_list_row_sorter_set_sorter(self: PGtkTreeListRowSorter; sorter: PGtkSorter); cdecl; external gtklib;
+function gtk_tree_list_row_sorter_get_type: TGType; cdecl; external libgtk4;
+function gtk_tree_list_row_sorter_new(sorter: PGtkSorter): PGtkTreeListRowSorter; cdecl; external libgtk4;
+function gtk_tree_list_row_sorter_get_sorter(self: PGtkTreeListRowSorter): PGtkSorter; cdecl; external libgtk4;
+procedure gtk_tree_list_row_sorter_set_sorter(self: PGtkTreeListRowSorter; sorter: PGtkSorter); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 16:51:23 ===
 

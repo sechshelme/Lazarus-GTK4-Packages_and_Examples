@@ -19,10 +19,10 @@ type
   PGtkBorder = ^TGtkBorder;
 
 
-function gtk_border_get_type: TGType; cdecl; external gtklib;
-function gtk_border_new: PGtkBorder; cdecl; external gtklib;
-function gtk_border_copy(border_: PGtkBorder): PGtkBorder; cdecl; external gtklib;
-procedure gtk_border_free(border_: PGtkBorder); cdecl; external gtklib;
+function gtk_border_get_type: TGType; cdecl; external libgtk4;
+function gtk_border_new: PGtkBorder; cdecl; external libgtk4;
+function gtk_border_copy(border_: PGtkBorder): PGtkBorder; cdecl; external libgtk4;
+procedure gtk_border_free(border_: PGtkBorder); cdecl; external libgtk4;
 
 // === Konventiert am: 11-7-24 22:33:35 ===
 

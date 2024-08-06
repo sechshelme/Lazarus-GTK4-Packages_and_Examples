@@ -14,13 +14,13 @@ type
   end;
   PGtkLinkButton = ^TGtkLinkButton;
 
-function gtk_link_button_get_type: TGType; cdecl; external gtklib;
-function gtk_link_button_new(uri: PChar): PGtkWidget; cdecl; external gtklib;
-function gtk_link_button_new_with_label(uri: PChar; _label: PChar): PGtkWidget; cdecl; external gtklib;
-function gtk_link_button_get_uri(link_button: PGtkLinkButton): PChar; cdecl; external gtklib;
-procedure gtk_link_button_set_uri(link_button: PGtkLinkButton; uri: PChar); cdecl; external gtklib;
-function gtk_link_button_get_visited(link_button: PGtkLinkButton): Tgboolean; cdecl; external gtklib;
-procedure gtk_link_button_set_visited(link_button: PGtkLinkButton; visited: Tgboolean); cdecl; external gtklib;
+function gtk_link_button_get_type: TGType; cdecl; external libgtk4;
+function gtk_link_button_new(uri: PChar): PGtkWidget; cdecl; external libgtk4;
+function gtk_link_button_new_with_label(uri: PChar; _label: PChar): PGtkWidget; cdecl; external libgtk4;
+function gtk_link_button_get_uri(link_button: PGtkLinkButton): PChar; cdecl; external libgtk4;
+procedure gtk_link_button_set_uri(link_button: PGtkLinkButton; uri: PChar); cdecl; external libgtk4;
+function gtk_link_button_get_visited(link_button: PGtkLinkButton): Tgboolean; cdecl; external libgtk4;
+procedure gtk_link_button_set_visited(link_button: PGtkLinkButton; visited: Tgboolean); cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 19:56:47 ===
 

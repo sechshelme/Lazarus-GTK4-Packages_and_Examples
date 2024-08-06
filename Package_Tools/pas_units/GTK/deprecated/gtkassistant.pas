@@ -32,33 +32,33 @@ const
 type
   TGtkAssistantPageFunc = function(current_page: longint; Data: Tgpointer): longint; cdecl;
 
-function gtk_assistant_page_get_type: TGType; cdecl; external gtklib;
-function gtk_assistant_get_type: TGType; cdecl; external gtklib;
-function gtk_assistant_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_assistant_next_page(assistant: PGtkAssistant); cdecl; external gtklib;
-procedure gtk_assistant_previous_page(assistant: PGtkAssistant); cdecl; external gtklib;
-function gtk_assistant_get_current_page(assistant: PGtkAssistant): longint; cdecl; external gtklib;
-procedure gtk_assistant_set_current_page(assistant: PGtkAssistant; page_num: longint); cdecl; external gtklib;
-function gtk_assistant_get_n_pages(assistant: PGtkAssistant): longint; cdecl; external gtklib;
-function gtk_assistant_get_nth_page(assistant: PGtkAssistant; page_num: longint): PGtkWidget; cdecl; external gtklib;
-function gtk_assistant_prepend_page(assistant: PGtkAssistant; page: PGtkWidget): longint; cdecl; external gtklib;
-function gtk_assistant_append_page(assistant: PGtkAssistant; page: PGtkWidget): longint; cdecl; external gtklib;
-function gtk_assistant_insert_page(assistant: PGtkAssistant; page: PGtkWidget; position: longint): longint; cdecl; external gtklib;
-procedure gtk_assistant_remove_page(assistant: PGtkAssistant; page_num: longint); cdecl; external gtklib;
-procedure gtk_assistant_set_forward_page_func(assistant: PGtkAssistant; page_func: TGtkAssistantPageFunc; Data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external gtklib;
-procedure gtk_assistant_set_page_type(assistant: PGtkAssistant; page: PGtkWidget; _type: TGtkAssistantPageType); cdecl; external gtklib;
-function gtk_assistant_get_page_type(assistant: PGtkAssistant; page: PGtkWidget): TGtkAssistantPageType; cdecl; external gtklib;
-procedure gtk_assistant_set_page_title(assistant: PGtkAssistant; page: PGtkWidget; title: PChar); cdecl; external gtklib;
-function gtk_assistant_get_page_title(assistant: PGtkAssistant; page: PGtkWidget): PChar; cdecl; external gtklib;
-procedure gtk_assistant_set_page_complete(assistant: PGtkAssistant; page: PGtkWidget; complete: Tgboolean); cdecl; external gtklib;
-function gtk_assistant_get_page_complete(assistant: PGtkAssistant; page: PGtkWidget): Tgboolean; cdecl; external gtklib;
-procedure gtk_assistant_add_action_widget(assistant: PGtkAssistant; child: PGtkWidget); cdecl; external gtklib;
-procedure gtk_assistant_remove_action_widget(assistant: PGtkAssistant; child: PGtkWidget); cdecl; external gtklib;
-procedure gtk_assistant_update_buttons_state(assistant: PGtkAssistant); cdecl; external gtklib;
-procedure gtk_assistant_commit(assistant: PGtkAssistant); cdecl; external gtklib;
-function gtk_assistant_get_page(assistant: PGtkAssistant; child: PGtkWidget): PGtkAssistantPage; cdecl; external gtklib;
-function gtk_assistant_page_get_child(page: PGtkAssistantPage): PGtkWidget; cdecl; external gtklib;
-function gtk_assistant_get_pages(assistant: PGtkAssistant): PGListModel; cdecl; external gtklib;
+function gtk_assistant_page_get_type: TGType; cdecl; external libgtk4;
+function gtk_assistant_get_type: TGType; cdecl; external libgtk4;
+function gtk_assistant_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_assistant_next_page(assistant: PGtkAssistant); cdecl; external libgtk4;
+procedure gtk_assistant_previous_page(assistant: PGtkAssistant); cdecl; external libgtk4;
+function gtk_assistant_get_current_page(assistant: PGtkAssistant): longint; cdecl; external libgtk4;
+procedure gtk_assistant_set_current_page(assistant: PGtkAssistant; page_num: longint); cdecl; external libgtk4;
+function gtk_assistant_get_n_pages(assistant: PGtkAssistant): longint; cdecl; external libgtk4;
+function gtk_assistant_get_nth_page(assistant: PGtkAssistant; page_num: longint): PGtkWidget; cdecl; external libgtk4;
+function gtk_assistant_prepend_page(assistant: PGtkAssistant; page: PGtkWidget): longint; cdecl; external libgtk4;
+function gtk_assistant_append_page(assistant: PGtkAssistant; page: PGtkWidget): longint; cdecl; external libgtk4;
+function gtk_assistant_insert_page(assistant: PGtkAssistant; page: PGtkWidget; position: longint): longint; cdecl; external libgtk4;
+procedure gtk_assistant_remove_page(assistant: PGtkAssistant; page_num: longint); cdecl; external libgtk4;
+procedure gtk_assistant_set_forward_page_func(assistant: PGtkAssistant; page_func: TGtkAssistantPageFunc; Data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external libgtk4;
+procedure gtk_assistant_set_page_type(assistant: PGtkAssistant; page: PGtkWidget; _type: TGtkAssistantPageType); cdecl; external libgtk4;
+function gtk_assistant_get_page_type(assistant: PGtkAssistant; page: PGtkWidget): TGtkAssistantPageType; cdecl; external libgtk4;
+procedure gtk_assistant_set_page_title(assistant: PGtkAssistant; page: PGtkWidget; title: PChar); cdecl; external libgtk4;
+function gtk_assistant_get_page_title(assistant: PGtkAssistant; page: PGtkWidget): PChar; cdecl; external libgtk4;
+procedure gtk_assistant_set_page_complete(assistant: PGtkAssistant; page: PGtkWidget; complete: Tgboolean); cdecl; external libgtk4;
+function gtk_assistant_get_page_complete(assistant: PGtkAssistant; page: PGtkWidget): Tgboolean; cdecl; external libgtk4;
+procedure gtk_assistant_add_action_widget(assistant: PGtkAssistant; child: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_assistant_remove_action_widget(assistant: PGtkAssistant; child: PGtkWidget); cdecl; external libgtk4;
+procedure gtk_assistant_update_buttons_state(assistant: PGtkAssistant); cdecl; external libgtk4;
+procedure gtk_assistant_commit(assistant: PGtkAssistant); cdecl; external libgtk4;
+function gtk_assistant_get_page(assistant: PGtkAssistant; child: PGtkWidget): PGtkAssistantPage; cdecl; external libgtk4;
+function gtk_assistant_page_get_child(page: PGtkAssistantPage): PGtkWidget; cdecl; external libgtk4;
+function gtk_assistant_get_pages(assistant: PGtkAssistant): PGListModel; cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 15:12:49 ===
 

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,17 +20,17 @@ type
   end;
   PGtkSingleSelectionClass = ^TGtkSingleSelectionClass;
 
-function gtk_single_selection_get_type: TGType; cdecl; external gtklib;
-function gtk_single_selection_new(model: PGListModel): PGtkSingleSelection; cdecl; external gtklib;
-function gtk_single_selection_get_model(self: PGtkSingleSelection): PGListModel; cdecl; external gtklib;
-procedure gtk_single_selection_set_model(self: PGtkSingleSelection; model: PGListModel); cdecl; external gtklib;
-function gtk_single_selection_get_selected(self: PGtkSingleSelection): Tguint; cdecl; external gtklib;
-procedure gtk_single_selection_set_selected(self: PGtkSingleSelection; position: Tguint); cdecl; external gtklib;
-function gtk_single_selection_get_selected_item(self: PGtkSingleSelection): Tgpointer; cdecl; external gtklib;
-function gtk_single_selection_get_autoselect(self: PGtkSingleSelection): Tgboolean; cdecl; external gtklib;
-procedure gtk_single_selection_set_autoselect(self: PGtkSingleSelection; autoselect: Tgboolean); cdecl; external gtklib;
-function gtk_single_selection_get_can_unselect(self: PGtkSingleSelection): Tgboolean; cdecl; external gtklib;
-procedure gtk_single_selection_set_can_unselect(self: PGtkSingleSelection; can_unselect: Tgboolean); cdecl; external gtklib;
+function gtk_single_selection_get_type: TGType; cdecl; external libgtk4;
+function gtk_single_selection_new(model: PGListModel): PGtkSingleSelection; cdecl; external libgtk4;
+function gtk_single_selection_get_model(self: PGtkSingleSelection): PGListModel; cdecl; external libgtk4;
+procedure gtk_single_selection_set_model(self: PGtkSingleSelection; model: PGListModel); cdecl; external libgtk4;
+function gtk_single_selection_get_selected(self: PGtkSingleSelection): Tguint; cdecl; external libgtk4;
+procedure gtk_single_selection_set_selected(self: PGtkSingleSelection; position: Tguint); cdecl; external libgtk4;
+function gtk_single_selection_get_selected_item(self: PGtkSingleSelection): Tgpointer; cdecl; external libgtk4;
+function gtk_single_selection_get_autoselect(self: PGtkSingleSelection): Tgboolean; cdecl; external libgtk4;
+procedure gtk_single_selection_set_autoselect(self: PGtkSingleSelection; autoselect: Tgboolean); cdecl; external libgtk4;
+function gtk_single_selection_get_can_unselect(self: PGtkSingleSelection): Tgboolean; cdecl; external libgtk4;
+procedure gtk_single_selection_set_can_unselect(self: PGtkSingleSelection; can_unselect: Tgboolean); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:49:09 ===
 

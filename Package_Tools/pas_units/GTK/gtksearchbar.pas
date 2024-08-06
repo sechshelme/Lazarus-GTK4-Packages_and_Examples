@@ -15,17 +15,17 @@ type
   end;
   PGtkSearchBar = ^TGtkSearchBar;
 
-function gtk_search_bar_get_type: TGType; cdecl; external gtklib;
-function gtk_search_bar_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_search_bar_connect_entry(bar: PGtkSearchBar; entry: PGtkEditable); cdecl; external gtklib;
-function gtk_search_bar_get_search_mode(bar: PGtkSearchBar): Tgboolean; cdecl; external gtklib;
-procedure gtk_search_bar_set_search_mode(bar: PGtkSearchBar; search_mode: Tgboolean); cdecl; external gtklib;
-function gtk_search_bar_get_show_close_button(bar: PGtkSearchBar): Tgboolean; cdecl; external gtklib;
-procedure gtk_search_bar_set_show_close_button(bar: PGtkSearchBar; Visible: Tgboolean); cdecl; external gtklib;
-procedure gtk_search_bar_set_key_capture_widget(bar: PGtkSearchBar; widget: PGtkWidget); cdecl; external gtklib;
-function gtk_search_bar_get_key_capture_widget(bar: PGtkSearchBar): PGtkWidget; cdecl; external gtklib;
-procedure gtk_search_bar_set_child(bar: PGtkSearchBar; child: PGtkWidget); cdecl; external gtklib;
-function gtk_search_bar_get_child(bar: PGtkSearchBar): PGtkWidget; cdecl; external gtklib;
+function gtk_search_bar_get_type: TGType; cdecl; external libgtk4;
+function gtk_search_bar_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_search_bar_connect_entry(bar: PGtkSearchBar; entry: PGtkEditable); cdecl; external libgtk4;
+function gtk_search_bar_get_search_mode(bar: PGtkSearchBar): Tgboolean; cdecl; external libgtk4;
+procedure gtk_search_bar_set_search_mode(bar: PGtkSearchBar; search_mode: Tgboolean); cdecl; external libgtk4;
+function gtk_search_bar_get_show_close_button(bar: PGtkSearchBar): Tgboolean; cdecl; external libgtk4;
+procedure gtk_search_bar_set_show_close_button(bar: PGtkSearchBar; Visible: Tgboolean); cdecl; external libgtk4;
+procedure gtk_search_bar_set_key_capture_widget(bar: PGtkSearchBar; widget: PGtkWidget); cdecl; external libgtk4;
+function gtk_search_bar_get_key_capture_widget(bar: PGtkSearchBar): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_search_bar_set_child(bar: PGtkSearchBar; child: PGtkWidget); cdecl; external libgtk4;
+function gtk_search_bar_get_child(bar: PGtkSearchBar): PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:27:23 ===
 

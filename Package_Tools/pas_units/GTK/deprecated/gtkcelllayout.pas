@@ -31,22 +31,22 @@ type
   PGtkCellLayoutIface = ^TGtkCellLayoutIface;
 
 
-function gtk_cell_layout_get_type: TGType; cdecl; external gtklib;
-procedure gtk_cell_layout_pack_start(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; expand: Tgboolean); cdecl; external gtklib;
-procedure gtk_cell_layout_pack_end(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; expand: Tgboolean); cdecl; external gtklib;
-function gtk_cell_layout_get_cells(cell_layout: PGtkCellLayout): PGList; cdecl; external gtklib;
-procedure gtk_cell_layout_clear(cell_layout: PGtkCellLayout); cdecl; external gtklib;
-procedure gtk_cell_layout_set_attributes(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; args: array of const); cdecl; external gtklib;
-procedure gtk_cell_layout_set_attributes(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer); cdecl; external gtklib;
-procedure gtk_cell_layout_add_attribute(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; attribute: PChar; column: longint); cdecl; external gtklib;
-procedure gtk_cell_layout_set_cell_data_func(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; func: TGtkCellLayoutDataFunc; func_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external gtklib;
-procedure gtk_cell_layout_clear_attributes(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer); cdecl; external gtklib;
-procedure gtk_cell_layout_reorder(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; position: longint); cdecl; external gtklib;
-function gtk_cell_layout_get_area(cell_layout: PGtkCellLayout): PGtkCellArea; cdecl; external gtklib;
+function gtk_cell_layout_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_cell_layout_pack_start(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; expand: Tgboolean); cdecl; external libgtk4;
+procedure gtk_cell_layout_pack_end(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; expand: Tgboolean); cdecl; external libgtk4;
+function gtk_cell_layout_get_cells(cell_layout: PGtkCellLayout): PGList; cdecl; external libgtk4;
+procedure gtk_cell_layout_clear(cell_layout: PGtkCellLayout); cdecl; external libgtk4;
+procedure gtk_cell_layout_set_attributes(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; args: array of const); cdecl; external libgtk4;
+procedure gtk_cell_layout_set_attributes(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer); cdecl; external libgtk4;
+procedure gtk_cell_layout_add_attribute(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; attribute: PChar; column: longint); cdecl; external libgtk4;
+procedure gtk_cell_layout_set_cell_data_func(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; func: TGtkCellLayoutDataFunc; func_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external libgtk4;
+procedure gtk_cell_layout_clear_attributes(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer); cdecl; external libgtk4;
+procedure gtk_cell_layout_reorder(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; position: longint); cdecl; external libgtk4;
+function gtk_cell_layout_get_area(cell_layout: PGtkCellLayout): PGtkCellArea; cdecl; external libgtk4;
 function _gtk_cell_layout_buildable_custom_tag_start(buildable: PGtkBuildable; builder: PGtkBuilder; child: PGObject; tagname: PChar; parser: PGtkBuildableParser;
-  Data: Pgpointer): Tgboolean; cdecl; external gtklib;
-function _gtk_cell_layout_buildable_custom_tag_end(buildable: PGtkBuildable; builder: PGtkBuilder; child: PGObject; tagname: PChar; Data: Pgpointer): Tgboolean; cdecl; external gtklib;
-procedure _gtk_cell_layout_buildable_add_child(buildable: PGtkBuildable; builder: PGtkBuilder; child: PGObject; _type: PChar); cdecl; external gtklib;
+  Data: Pgpointer): Tgboolean; cdecl; external libgtk4;
+function _gtk_cell_layout_buildable_custom_tag_end(buildable: PGtkBuildable; builder: PGtkBuilder; child: PGObject; tagname: PChar; Data: Pgpointer): Tgboolean; cdecl; external libgtk4;
+procedure _gtk_cell_layout_buildable_add_child(buildable: PGtkBuildable; builder: PGtkBuilder; child: PGObject; _type: PChar); cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 16:59:49 ===
 

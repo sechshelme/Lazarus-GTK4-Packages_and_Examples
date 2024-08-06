@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -19,27 +19,27 @@ type
   end;
   PGdkGLTextureBuilderClass = ^TGdkGLTextureBuilderClass;
 
-function gdk_gl_texture_builder_get_type: TGType; cdecl; external gtklib;
-function gdk_gl_texture_builder_new: PGdkGLTextureBuilder; cdecl; external gtklib;
-function gdk_gl_texture_builder_get_context(self: PGdkGLTextureBuilder): PGdkGLContext; cdecl; external gtklib;
-procedure gdk_gl_texture_builder_set_context(self: PGdkGLTextureBuilder; context: PGdkGLContext); cdecl; external gtklib;
-function gdk_gl_texture_builder_get_id(self: PGdkGLTextureBuilder): Tguint; cdecl; external gtklib;
-procedure gdk_gl_texture_builder_set_id(self: PGdkGLTextureBuilder; id: Tguint); cdecl; external gtklib;
-function gdk_gl_texture_builder_get_width(self: PGdkGLTextureBuilder): longint; cdecl; external gtklib;
-procedure gdk_gl_texture_builder_set_width(self: PGdkGLTextureBuilder; Width: longint); cdecl; external gtklib;
-function gdk_gl_texture_builder_get_height(self: PGdkGLTextureBuilder): longint; cdecl; external gtklib;
-procedure gdk_gl_texture_builder_set_height(self: PGdkGLTextureBuilder; Height: longint); cdecl; external gtklib;
-function gdk_gl_texture_builder_get_format(self: PGdkGLTextureBuilder): TGdkMemoryFormat; cdecl; external gtklib;
-procedure gdk_gl_texture_builder_set_format(self: PGdkGLTextureBuilder; format: TGdkMemoryFormat); cdecl; external gtklib;
-function gdk_gl_texture_builder_get_has_mipmap(self: PGdkGLTextureBuilder): Tgboolean; cdecl; external gtklib;
-procedure gdk_gl_texture_builder_set_has_mipmap(self: PGdkGLTextureBuilder; has_mipmap: Tgboolean); cdecl; external gtklib;
-function gdk_gl_texture_builder_get_sync(self: PGdkGLTextureBuilder): Tgpointer; cdecl; external gtklib;
-procedure gdk_gl_texture_builder_set_sync(self: PGdkGLTextureBuilder; sync: Tgpointer); cdecl; external gtklib;
-function gdk_gl_texture_builder_get_update_texture(self: PGdkGLTextureBuilder): PGdkTexture; cdecl; external gtklib;
-procedure gdk_gl_texture_builder_set_update_texture(self: PGdkGLTextureBuilder; texture: PGdkTexture); cdecl; external gtklib;
-function gdk_gl_texture_builder_get_update_region(self: PGdkGLTextureBuilder): Pcairo_region_t; cdecl; external gtklib;
-procedure gdk_gl_texture_builder_set_update_region(self: PGdkGLTextureBuilder; region: Pcairo_region_t); cdecl; external gtklib;
-function gdk_gl_texture_builder_build(self: PGdkGLTextureBuilder; Destroy: TGDestroyNotify; Data: Tgpointer): PGdkTexture; cdecl; external gtklib;
+function gdk_gl_texture_builder_get_type: TGType; cdecl; external libgtk4;
+function gdk_gl_texture_builder_new: PGdkGLTextureBuilder; cdecl; external libgtk4;
+function gdk_gl_texture_builder_get_context(self: PGdkGLTextureBuilder): PGdkGLContext; cdecl; external libgtk4;
+procedure gdk_gl_texture_builder_set_context(self: PGdkGLTextureBuilder; context: PGdkGLContext); cdecl; external libgtk4;
+function gdk_gl_texture_builder_get_id(self: PGdkGLTextureBuilder): Tguint; cdecl; external libgtk4;
+procedure gdk_gl_texture_builder_set_id(self: PGdkGLTextureBuilder; id: Tguint); cdecl; external libgtk4;
+function gdk_gl_texture_builder_get_width(self: PGdkGLTextureBuilder): longint; cdecl; external libgtk4;
+procedure gdk_gl_texture_builder_set_width(self: PGdkGLTextureBuilder; Width: longint); cdecl; external libgtk4;
+function gdk_gl_texture_builder_get_height(self: PGdkGLTextureBuilder): longint; cdecl; external libgtk4;
+procedure gdk_gl_texture_builder_set_height(self: PGdkGLTextureBuilder; Height: longint); cdecl; external libgtk4;
+function gdk_gl_texture_builder_get_format(self: PGdkGLTextureBuilder): TGdkMemoryFormat; cdecl; external libgtk4;
+procedure gdk_gl_texture_builder_set_format(self: PGdkGLTextureBuilder; format: TGdkMemoryFormat); cdecl; external libgtk4;
+function gdk_gl_texture_builder_get_has_mipmap(self: PGdkGLTextureBuilder): Tgboolean; cdecl; external libgtk4;
+procedure gdk_gl_texture_builder_set_has_mipmap(self: PGdkGLTextureBuilder; has_mipmap: Tgboolean); cdecl; external libgtk4;
+function gdk_gl_texture_builder_get_sync(self: PGdkGLTextureBuilder): Tgpointer; cdecl; external libgtk4;
+procedure gdk_gl_texture_builder_set_sync(self: PGdkGLTextureBuilder; sync: Tgpointer); cdecl; external libgtk4;
+function gdk_gl_texture_builder_get_update_texture(self: PGdkGLTextureBuilder): PGdkTexture; cdecl; external libgtk4;
+procedure gdk_gl_texture_builder_set_update_texture(self: PGdkGLTextureBuilder; texture: PGdkTexture); cdecl; external libgtk4;
+function gdk_gl_texture_builder_get_update_region(self: PGdkGLTextureBuilder): Pcairo_region_t; cdecl; external libgtk4;
+procedure gdk_gl_texture_builder_set_update_region(self: PGdkGLTextureBuilder; region: Pcairo_region_t); cdecl; external libgtk4;
+function gdk_gl_texture_builder_build(self: PGdkGLTextureBuilder; Destroy: TGDestroyNotify; Data: Tgpointer): PGdkTexture; cdecl; external libgtk4;
 
 // === Konventiert am: 31-7-24 19:30:34 ===
 

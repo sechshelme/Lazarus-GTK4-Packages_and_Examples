@@ -14,14 +14,14 @@ type
   end;
   PGtkCellRendererToggle = ^TGtkCellRendererToggle;
 
-function gtk_cell_renderer_toggle_get_type: TGType; cdecl; external gtklib;
-function gtk_cell_renderer_toggle_new: PGtkCellRenderer; cdecl; external gtklib;
-function gtk_cell_renderer_toggle_get_radio(toggle: PGtkCellRendererToggle): Tgboolean; cdecl; external gtklib;
-procedure gtk_cell_renderer_toggle_set_radio(toggle: PGtkCellRendererToggle; radio: Tgboolean); cdecl; external gtklib;
-function gtk_cell_renderer_toggle_get_active(toggle: PGtkCellRendererToggle): Tgboolean; cdecl; external gtklib;
-procedure gtk_cell_renderer_toggle_set_active(toggle: PGtkCellRendererToggle; setting: Tgboolean); cdecl; external gtklib;
-function gtk_cell_renderer_toggle_get_activatable(toggle: PGtkCellRendererToggle): Tgboolean; cdecl; external gtklib;
-procedure gtk_cell_renderer_toggle_set_activatable(toggle: PGtkCellRendererToggle; setting: Tgboolean); cdecl; external gtklib;
+function gtk_cell_renderer_toggle_get_type: TGType; cdecl; external libgtk4;
+function gtk_cell_renderer_toggle_new: PGtkCellRenderer; cdecl; external libgtk4;
+function gtk_cell_renderer_toggle_get_radio(toggle: PGtkCellRendererToggle): Tgboolean; cdecl; external libgtk4;
+procedure gtk_cell_renderer_toggle_set_radio(toggle: PGtkCellRendererToggle; radio: Tgboolean); cdecl; external libgtk4;
+function gtk_cell_renderer_toggle_get_active(toggle: PGtkCellRendererToggle): Tgboolean; cdecl; external libgtk4;
+procedure gtk_cell_renderer_toggle_set_active(toggle: PGtkCellRendererToggle; setting: Tgboolean); cdecl; external libgtk4;
+function gtk_cell_renderer_toggle_get_activatable(toggle: PGtkCellRendererToggle): Tgboolean; cdecl; external libgtk4;
+procedure gtk_cell_renderer_toggle_set_activatable(toggle: PGtkCellRendererToggle; setting: Tgboolean); cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 17:01:23 ===
 

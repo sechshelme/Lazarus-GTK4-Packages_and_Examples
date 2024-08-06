@@ -10,7 +10,7 @@ uses
   {$ENDIF}
 
 
-function gdk_x11_device_get_id(device: PGdkDevice): longint; cdecl; external gtklib;
+function gdk_x11_device_get_id(device: PGdkDevice): longint; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 17:26:48 ===
 

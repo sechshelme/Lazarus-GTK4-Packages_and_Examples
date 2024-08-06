@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -17,27 +17,27 @@ type
 
   TGtkTreeSelectionForeachFunc = procedure(model: PGtkTreeModel; path: PGtkTreePath; iter: PGtkTreeIter; Data: Tgpointer); cdecl;
 
-function gtk_tree_selection_get_type: TGType; cdecl; external gtklib;
-procedure gtk_tree_selection_set_mode(selection: PGtkTreeSelection; _type: TGtkSelectionMode); cdecl; external gtklib;
-function gtk_tree_selection_get_mode(selection: PGtkTreeSelection): TGtkSelectionMode; cdecl; external gtklib;
-procedure gtk_tree_selection_set_select_function(selection: PGtkTreeSelection; func: TGtkTreeSelectionFunc; Data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external gtklib;
-function gtk_tree_selection_get_user_data(selection: PGtkTreeSelection): Tgpointer; cdecl; external gtklib;
-function gtk_tree_selection_get_tree_view(selection: PGtkTreeSelection): PGtkTreeView; cdecl; external gtklib;
-function gtk_tree_selection_get_select_function(selection: PGtkTreeSelection): TGtkTreeSelectionFunc; cdecl; external gtklib;
-function gtk_tree_selection_get_selected(selection: PGtkTreeSelection; model: PPGtkTreeModel; iter: PGtkTreeIter): Tgboolean; cdecl; external gtklib;
-function gtk_tree_selection_get_selected_rows(selection: PGtkTreeSelection; model: PPGtkTreeModel): PGList; cdecl; external gtklib;
-function gtk_tree_selection_count_selected_rows(selection: PGtkTreeSelection): longint; cdecl; external gtklib;
-procedure gtk_tree_selection_selected_foreach(selection: PGtkTreeSelection; func: TGtkTreeSelectionForeachFunc; Data: Tgpointer); cdecl; external gtklib;
-procedure gtk_tree_selection_select_path(selection: PGtkTreeSelection; path: PGtkTreePath); cdecl; external gtklib;
-procedure gtk_tree_selection_unselect_path(selection: PGtkTreeSelection; path: PGtkTreePath); cdecl; external gtklib;
-procedure gtk_tree_selection_select_iter(selection: PGtkTreeSelection; iter: PGtkTreeIter); cdecl; external gtklib;
-procedure gtk_tree_selection_unselect_iter(selection: PGtkTreeSelection; iter: PGtkTreeIter); cdecl; external gtklib;
-function gtk_tree_selection_path_is_selected(selection: PGtkTreeSelection; path: PGtkTreePath): Tgboolean; cdecl; external gtklib;
-function gtk_tree_selection_iter_is_selected(selection: PGtkTreeSelection; iter: PGtkTreeIter): Tgboolean; cdecl; external gtklib;
-procedure gtk_tree_selection_select_all(selection: PGtkTreeSelection); cdecl; external gtklib;
-procedure gtk_tree_selection_unselect_all(selection: PGtkTreeSelection); cdecl; external gtklib;
-procedure gtk_tree_selection_select_range(selection: PGtkTreeSelection; start_path: PGtkTreePath; end_path: PGtkTreePath); cdecl; external gtklib;
-procedure gtk_tree_selection_unselect_range(selection: PGtkTreeSelection; start_path: PGtkTreePath; end_path: PGtkTreePath); cdecl; external gtklib;
+function gtk_tree_selection_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_tree_selection_set_mode(selection: PGtkTreeSelection; _type: TGtkSelectionMode); cdecl; external libgtk4;
+function gtk_tree_selection_get_mode(selection: PGtkTreeSelection): TGtkSelectionMode; cdecl; external libgtk4;
+procedure gtk_tree_selection_set_select_function(selection: PGtkTreeSelection; func: TGtkTreeSelectionFunc; Data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external libgtk4;
+function gtk_tree_selection_get_user_data(selection: PGtkTreeSelection): Tgpointer; cdecl; external libgtk4;
+function gtk_tree_selection_get_tree_view(selection: PGtkTreeSelection): PGtkTreeView; cdecl; external libgtk4;
+function gtk_tree_selection_get_select_function(selection: PGtkTreeSelection): TGtkTreeSelectionFunc; cdecl; external libgtk4;
+function gtk_tree_selection_get_selected(selection: PGtkTreeSelection; model: PPGtkTreeModel; iter: PGtkTreeIter): Tgboolean; cdecl; external libgtk4;
+function gtk_tree_selection_get_selected_rows(selection: PGtkTreeSelection; model: PPGtkTreeModel): PGList; cdecl; external libgtk4;
+function gtk_tree_selection_count_selected_rows(selection: PGtkTreeSelection): longint; cdecl; external libgtk4;
+procedure gtk_tree_selection_selected_foreach(selection: PGtkTreeSelection; func: TGtkTreeSelectionForeachFunc; Data: Tgpointer); cdecl; external libgtk4;
+procedure gtk_tree_selection_select_path(selection: PGtkTreeSelection; path: PGtkTreePath); cdecl; external libgtk4;
+procedure gtk_tree_selection_unselect_path(selection: PGtkTreeSelection; path: PGtkTreePath); cdecl; external libgtk4;
+procedure gtk_tree_selection_select_iter(selection: PGtkTreeSelection; iter: PGtkTreeIter); cdecl; external libgtk4;
+procedure gtk_tree_selection_unselect_iter(selection: PGtkTreeSelection; iter: PGtkTreeIter); cdecl; external libgtk4;
+function gtk_tree_selection_path_is_selected(selection: PGtkTreeSelection; path: PGtkTreePath): Tgboolean; cdecl; external libgtk4;
+function gtk_tree_selection_iter_is_selected(selection: PGtkTreeSelection; iter: PGtkTreeIter): Tgboolean; cdecl; external libgtk4;
+procedure gtk_tree_selection_select_all(selection: PGtkTreeSelection); cdecl; external libgtk4;
+procedure gtk_tree_selection_unselect_all(selection: PGtkTreeSelection); cdecl; external libgtk4;
+procedure gtk_tree_selection_select_range(selection: PGtkTreeSelection; start_path: PGtkTreePath; end_path: PGtkTreePath); cdecl; external libgtk4;
+procedure gtk_tree_selection_unselect_range(selection: PGtkTreeSelection; start_path: PGtkTreePath; end_path: PGtkTreePath); cdecl; external libgtk4;
 
 // === Konventiert am: 30-7-24 15:24:15 ===
 

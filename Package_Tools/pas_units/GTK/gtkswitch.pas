@@ -15,12 +15,12 @@ type
   end;
   PGtkSwitch = ^TGtkSwitch;
 
-function gtk_switch_get_type: TGType; cdecl; external gtklib;
-function gtk_switch_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_switch_set_active(self: PGtkSwitch; is_active: Tgboolean); cdecl; external gtklib;
-function gtk_switch_get_active(self: PGtkSwitch): Tgboolean; cdecl; external gtklib;
-procedure gtk_switch_set_state(self: PGtkSwitch; state: Tgboolean); cdecl; external gtklib;
-function gtk_switch_get_state(self: PGtkSwitch): Tgboolean; cdecl; external gtklib;
+function gtk_switch_get_type: TGType; cdecl; external libgtk4;
+function gtk_switch_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_switch_set_active(self: PGtkSwitch; is_active: Tgboolean); cdecl; external libgtk4;
+function gtk_switch_get_active(self: PGtkSwitch): Tgboolean; cdecl; external libgtk4;
+procedure gtk_switch_set_state(self: PGtkSwitch; state: Tgboolean); cdecl; external libgtk4;
+function gtk_switch_get_state(self: PGtkSwitch): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 16:40:51 ===
 

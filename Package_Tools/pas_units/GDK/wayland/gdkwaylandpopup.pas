@@ -13,7 +13,7 @@ type
   PGdkWaylandPopup = ^TGdkWaylandPopup;
   TGdkWaylandPopup = TGdkPopup;
 
-function gdk_wayland_popup_get_type: TGType; cdecl; external gtklib;
+function gdk_wayland_popup_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 19:19:36 ===
 

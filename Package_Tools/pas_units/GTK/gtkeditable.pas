@@ -30,27 +30,27 @@ type
   PGtkEditableInterface = ^TGtkEditableInterface;
 
 
-function gtk_editable_get_type: TGType; cdecl; external gtklib;
-function gtk_editable_get_text(editable: PGtkEditable): PChar; cdecl; external gtklib;
-procedure gtk_editable_set_text(editable: PGtkEditable; Text: PChar); cdecl; external gtklib;
-function gtk_editable_get_chars(editable: PGtkEditable; start_pos: longint; end_pos: longint): PChar; cdecl; external gtklib;
-procedure gtk_editable_insert_text(editable: PGtkEditable; Text: PChar; length: longint; position: Plongint); cdecl; external gtklib;
-procedure gtk_editable_delete_text(editable: PGtkEditable; start_pos: longint; end_pos: longint); cdecl; external gtklib;
-function gtk_editable_get_selection_bounds(editable: PGtkEditable; start_pos: Plongint; end_pos: Plongint): Tgboolean; cdecl; external gtklib;
-procedure gtk_editable_delete_selection(editable: PGtkEditable); cdecl; external gtklib;
-procedure gtk_editable_select_region(editable: PGtkEditable; start_pos: longint; end_pos: longint); cdecl; external gtklib;
-procedure gtk_editable_set_position(editable: PGtkEditable; position: longint); cdecl; external gtklib;
-function gtk_editable_get_position(editable: PGtkEditable): longint; cdecl; external gtklib;
-function gtk_editable_get_editable(editable: PGtkEditable): Tgboolean; cdecl; external gtklib;
-procedure gtk_editable_set_editable(editable: PGtkEditable; is_editable: Tgboolean); cdecl; external gtklib;
-function gtk_editable_get_alignment(editable: PGtkEditable): single; cdecl; external gtklib;
-procedure gtk_editable_set_alignment(editable: PGtkEditable; xalign: single); cdecl; external gtklib;
-function gtk_editable_get_width_chars(editable: PGtkEditable): longint; cdecl; external gtklib;
-procedure gtk_editable_set_width_chars(editable: PGtkEditable; n_chars: longint); cdecl; external gtklib;
-function gtk_editable_get_max_width_chars(editable: PGtkEditable): longint; cdecl; external gtklib;
-procedure gtk_editable_set_max_width_chars(editable: PGtkEditable; n_chars: longint); cdecl; external gtklib;
-function gtk_editable_get_enable_undo(editable: PGtkEditable): Tgboolean; cdecl; external gtklib;
-procedure gtk_editable_set_enable_undo(editable: PGtkEditable; enable_undo: Tgboolean); cdecl; external gtklib;
+function gtk_editable_get_type: TGType; cdecl; external libgtk4;
+function gtk_editable_get_text(editable: PGtkEditable): PChar; cdecl; external libgtk4;
+procedure gtk_editable_set_text(editable: PGtkEditable; Text: PChar); cdecl; external libgtk4;
+function gtk_editable_get_chars(editable: PGtkEditable; start_pos: longint; end_pos: longint): PChar; cdecl; external libgtk4;
+procedure gtk_editable_insert_text(editable: PGtkEditable; Text: PChar; length: longint; position: Plongint); cdecl; external libgtk4;
+procedure gtk_editable_delete_text(editable: PGtkEditable; start_pos: longint; end_pos: longint); cdecl; external libgtk4;
+function gtk_editable_get_selection_bounds(editable: PGtkEditable; start_pos: Plongint; end_pos: Plongint): Tgboolean; cdecl; external libgtk4;
+procedure gtk_editable_delete_selection(editable: PGtkEditable); cdecl; external libgtk4;
+procedure gtk_editable_select_region(editable: PGtkEditable; start_pos: longint; end_pos: longint); cdecl; external libgtk4;
+procedure gtk_editable_set_position(editable: PGtkEditable; position: longint); cdecl; external libgtk4;
+function gtk_editable_get_position(editable: PGtkEditable): longint; cdecl; external libgtk4;
+function gtk_editable_get_editable(editable: PGtkEditable): Tgboolean; cdecl; external libgtk4;
+procedure gtk_editable_set_editable(editable: PGtkEditable; is_editable: Tgboolean); cdecl; external libgtk4;
+function gtk_editable_get_alignment(editable: PGtkEditable): single; cdecl; external libgtk4;
+procedure gtk_editable_set_alignment(editable: PGtkEditable; xalign: single); cdecl; external libgtk4;
+function gtk_editable_get_width_chars(editable: PGtkEditable): longint; cdecl; external libgtk4;
+procedure gtk_editable_set_width_chars(editable: PGtkEditable; n_chars: longint); cdecl; external libgtk4;
+function gtk_editable_get_max_width_chars(editable: PGtkEditable): longint; cdecl; external libgtk4;
+procedure gtk_editable_set_max_width_chars(editable: PGtkEditable; n_chars: longint); cdecl; external libgtk4;
+function gtk_editable_get_enable_undo(editable: PGtkEditable): Tgboolean; cdecl; external libgtk4;
+procedure gtk_editable_set_enable_undo(editable: PGtkEditable; enable_undo: Tgboolean); cdecl; external libgtk4;
 
 type
   PGtkEditableProperties = ^TGtkEditableProperties;
@@ -68,13 +68,13 @@ const
   GTK_EDITABLE_NUM_PROPERTIES = 8;
 
 
-function gtk_editable_install_properties(object_class: PGObjectClass; first_prop: Tguint): Tguint; cdecl; external gtklib;
-function gtk_editable_get_delegate(editable: PGtkEditable): PGtkEditable; cdecl; external gtklib;
-procedure gtk_editable_init_delegate(editable: PGtkEditable); cdecl; external gtklib;
-procedure gtk_editable_finish_delegate(editable: PGtkEditable); cdecl; external gtklib;
-function gtk_editable_delegate_set_property(obj: PGObject; prop_id: Tguint; Value: PGValue; pspec: PGParamSpec): Tgboolean; cdecl; external gtklib;
-function gtk_editable_delegate_get_property(obj: PGObject; prop_id: Tguint; Value: PGValue; pspec: PGParamSpec): Tgboolean; cdecl; external gtklib;
-function gtk_editable_delegate_get_accessible_platform_state(editable: PGtkEditable; state: TGtkAccessiblePlatformState): Tgboolean; cdecl; external gtklib;
+function gtk_editable_install_properties(object_class: PGObjectClass; first_prop: Tguint): Tguint; cdecl; external libgtk4;
+function gtk_editable_get_delegate(editable: PGtkEditable): PGtkEditable; cdecl; external libgtk4;
+procedure gtk_editable_init_delegate(editable: PGtkEditable); cdecl; external libgtk4;
+procedure gtk_editable_finish_delegate(editable: PGtkEditable); cdecl; external libgtk4;
+function gtk_editable_delegate_set_property(obj: PGObject; prop_id: Tguint; Value: PGValue; pspec: PGParamSpec): Tgboolean; cdecl; external libgtk4;
+function gtk_editable_delegate_get_property(obj: PGObject; prop_id: Tguint; Value: PGValue; pspec: PGParamSpec): Tgboolean; cdecl; external libgtk4;
+function gtk_editable_delegate_get_accessible_platform_state(editable: PGtkEditable; state: TGtkAccessiblePlatformState): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 22-7-24 19:35:24 ===
 

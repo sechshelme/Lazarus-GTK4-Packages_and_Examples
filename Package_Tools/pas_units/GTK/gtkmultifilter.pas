@@ -20,9 +20,9 @@ type
   end;
   PGtkMultiFilterClass = ^TGtkMultiFilterClass;
 
-function gtk_multi_filter_get_type: TGType; cdecl; external gtklib;
-procedure gtk_multi_filter_append(self: PGtkMultiFilter; filter: PGtkFilter); cdecl; external gtklib;
-procedure gtk_multi_filter_remove(self: PGtkMultiFilter; position: Tguint); cdecl; external gtklib;
+function gtk_multi_filter_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_multi_filter_append(self: PGtkMultiFilter; filter: PGtkFilter); cdecl; external libgtk4;
+procedure gtk_multi_filter_remove(self: PGtkMultiFilter; position: Tguint); cdecl; external libgtk4;
 
 {GDK_DECLARE_INTERNAL_TYPE (GtkAnyFilter, gtk_any_filter, GTK, ANY_FILTER, GtkMultiFilter) }
 type
@@ -34,8 +34,8 @@ type
   end;
   PGtkAnyFilterClass = ^TGtkAnyFilterClass;
 
-function gtk_any_filter_get_type: TGType; cdecl; external gtklib;
-function gtk_any_filter_new: PGtkAnyFilter; cdecl; external gtklib;
+function gtk_any_filter_get_type: TGType; cdecl; external libgtk4;
+function gtk_any_filter_new: PGtkAnyFilter; cdecl; external libgtk4;
 
 {GDK_DECLARE_INTERNAL_TYPE (GtkEveryFilter, gtk_every_filter, GTK, EVERY_FILTER, GtkMultiFilter) }
 type
@@ -47,9 +47,9 @@ type
   end;
   PGtkEveryFilterClass = ^TGtkEveryFilterClass;
 
-function gtk_every_filter_get_type: TGType; cdecl; external gtklib;
+function gtk_every_filter_get_type: TGType; cdecl; external libgtk4;
 
-function gtk_every_filter_new: PGtkEveryFilter; cdecl; external gtklib;
+function gtk_every_filter_new: PGtkEveryFilter; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 13:37:37 ===
 

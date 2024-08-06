@@ -14,7 +14,7 @@ type
   end;
   PGdkWaylandGLContext = ^TGdkWaylandGLContext;
 
-function gdk_wayland_gl_context_get_type: TGType; cdecl; external gtklib;
+function gdk_wayland_gl_context_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 19:19:25 ===
 

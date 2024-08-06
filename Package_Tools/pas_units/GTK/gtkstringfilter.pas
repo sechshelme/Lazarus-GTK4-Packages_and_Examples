@@ -28,16 +28,16 @@ type
     end;
     PGtkStringFilterClass = ^TGtkStringFilterClass;
 
-  function gtk_string_filter_get_type: TGType; cdecl; external gtklib;
-function gtk_string_filter_new(expression:PGtkExpression):PGtkStringFilter;cdecl;external gtklib;
-function gtk_string_filter_get_search(self:PGtkStringFilter):Pchar;cdecl;external gtklib;
-procedure gtk_string_filter_set_search(self:PGtkStringFilter; search:Pchar);cdecl;external gtklib;
-function gtk_string_filter_get_expression(self:PGtkStringFilter):PGtkExpression;cdecl;external gtklib;
-procedure gtk_string_filter_set_expression(self:PGtkStringFilter; expression:PGtkExpression);cdecl;external gtklib;
-function gtk_string_filter_get_ignore_case(self:PGtkStringFilter):Tgboolean;cdecl;external gtklib;
-procedure gtk_string_filter_set_ignore_case(self:PGtkStringFilter; ignore_case:Tgboolean);cdecl;external gtklib;
-function gtk_string_filter_get_match_mode(self:PGtkStringFilter):TGtkStringFilterMatchMode;cdecl;external gtklib;
-procedure gtk_string_filter_set_match_mode(self:PGtkStringFilter; mode:TGtkStringFilterMatchMode);cdecl;external gtklib;
+  function gtk_string_filter_get_type: TGType; cdecl; external libgtk4;
+function gtk_string_filter_new(expression:PGtkExpression):PGtkStringFilter;cdecl;external libgtk4;
+function gtk_string_filter_get_search(self:PGtkStringFilter):Pchar;cdecl;external libgtk4;
+procedure gtk_string_filter_set_search(self:PGtkStringFilter; search:Pchar);cdecl;external libgtk4;
+function gtk_string_filter_get_expression(self:PGtkStringFilter):PGtkExpression;cdecl;external libgtk4;
+procedure gtk_string_filter_set_expression(self:PGtkStringFilter; expression:PGtkExpression);cdecl;external libgtk4;
+function gtk_string_filter_get_ignore_case(self:PGtkStringFilter):Tgboolean;cdecl;external libgtk4;
+procedure gtk_string_filter_set_ignore_case(self:PGtkStringFilter; ignore_case:Tgboolean);cdecl;external libgtk4;
+function gtk_string_filter_get_match_mode(self:PGtkStringFilter):TGtkStringFilterMatchMode;cdecl;external libgtk4;
+procedure gtk_string_filter_set_match_mode(self:PGtkStringFilter; mode:TGtkStringFilterMatchMode);cdecl;external libgtk4;
 
 // === Konventiert am: 25-7-24 18:25:07 ===
 

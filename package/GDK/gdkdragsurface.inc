@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -19,8 +19,8 @@ type
   end;
   PGdkDragSurfaceInterface = ^TGdkDragSurfaceInterface;
 
-function gdk_drag_surface_get_type: TGType; cdecl; external gtklib;
-function gdk_drag_surface_present(drag_surface: PGdkDragSurface; Width: longint; Height: longint): Tgboolean; cdecl; external gtklib;
+function gdk_drag_surface_get_type: TGType; cdecl; external libgtk4;
+function gdk_drag_surface_present(drag_surface: PGdkDragSurface; Width: longint; Height: longint): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 17:10:32 ===
 

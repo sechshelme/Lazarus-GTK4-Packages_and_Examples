@@ -14,8 +14,8 @@ type
   end;
   PGtkSeparator = ^TGtkSeparator;
 
-function gtk_separator_get_type: TGType; cdecl; external gtklib;
-function gtk_separator_new(orientation: TGtkOrientation): PGtkWidget; cdecl; external gtklib;
+function gtk_separator_get_type: TGType; cdecl; external libgtk4;
+function gtk_separator_new(orientation: TGtkOrientation): PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:48:44 ===
 

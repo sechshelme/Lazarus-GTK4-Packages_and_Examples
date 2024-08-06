@@ -41,26 +41,26 @@ type
   PGtkFontChooserIface = ^TGtkFontChooserIface;
 
 
-function gtk_font_chooser_get_type: TGType; cdecl; external gtklib;
-function gtk_font_chooser_get_font_family(fontchooser: PGtkFontChooser): PPangoFontFamily; cdecl; external gtklib;
-function gtk_font_chooser_get_font_face(fontchooser: PGtkFontChooser): PPangoFontFace; cdecl; external gtklib;
-function gtk_font_chooser_get_font_size(fontchooser: PGtkFontChooser): longint; cdecl; external gtklib;
-function gtk_font_chooser_get_font_desc(fontchooser: PGtkFontChooser): PPangoFontDescription; cdecl; external gtklib;
-procedure gtk_font_chooser_set_font_desc(fontchooser: PGtkFontChooser; font_desc: PPangoFontDescription); cdecl; external gtklib;
-function gtk_font_chooser_get_font(fontchooser: PGtkFontChooser): PChar; cdecl; external gtklib;
-procedure gtk_font_chooser_set_font(fontchooser: PGtkFontChooser; fontname: PChar); cdecl; external gtklib;
-function gtk_font_chooser_get_preview_text(fontchooser: PGtkFontChooser): PChar; cdecl; external gtklib;
-procedure gtk_font_chooser_set_preview_text(fontchooser: PGtkFontChooser; Text: PChar); cdecl; external gtklib;
-function gtk_font_chooser_get_show_preview_entry(fontchooser: PGtkFontChooser): Tgboolean; cdecl; external gtklib;
-procedure gtk_font_chooser_set_show_preview_entry(fontchooser: PGtkFontChooser; show_preview_entry: Tgboolean); cdecl; external gtklib;
-procedure gtk_font_chooser_set_filter_func(fontchooser: PGtkFontChooser; filter: TGtkFontFilterFunc; user_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external gtklib;
-procedure gtk_font_chooser_set_font_map(fontchooser: PGtkFontChooser; fontmap: PPangoFontMap); cdecl; external gtklib;
-function gtk_font_chooser_get_font_map(fontchooser: PGtkFontChooser): PPangoFontMap; cdecl; external gtklib;
-procedure gtk_font_chooser_set_level(fontchooser: PGtkFontChooser; level: TGtkFontChooserLevel); cdecl; external gtklib;
-function gtk_font_chooser_get_level(fontchooser: PGtkFontChooser): TGtkFontChooserLevel; cdecl; external gtklib;
-function gtk_font_chooser_get_font_features(fontchooser: PGtkFontChooser): PChar; cdecl; external gtklib;
-function gtk_font_chooser_get_language(fontchooser: PGtkFontChooser): PChar; cdecl; external gtklib;
-procedure gtk_font_chooser_set_language(fontchooser: PGtkFontChooser; language: PChar); cdecl; external gtklib;
+function gtk_font_chooser_get_type: TGType; cdecl; external libgtk4;
+function gtk_font_chooser_get_font_family(fontchooser: PGtkFontChooser): PPangoFontFamily; cdecl; external libgtk4;
+function gtk_font_chooser_get_font_face(fontchooser: PGtkFontChooser): PPangoFontFace; cdecl; external libgtk4;
+function gtk_font_chooser_get_font_size(fontchooser: PGtkFontChooser): longint; cdecl; external libgtk4;
+function gtk_font_chooser_get_font_desc(fontchooser: PGtkFontChooser): PPangoFontDescription; cdecl; external libgtk4;
+procedure gtk_font_chooser_set_font_desc(fontchooser: PGtkFontChooser; font_desc: PPangoFontDescription); cdecl; external libgtk4;
+function gtk_font_chooser_get_font(fontchooser: PGtkFontChooser): PChar; cdecl; external libgtk4;
+procedure gtk_font_chooser_set_font(fontchooser: PGtkFontChooser; fontname: PChar); cdecl; external libgtk4;
+function gtk_font_chooser_get_preview_text(fontchooser: PGtkFontChooser): PChar; cdecl; external libgtk4;
+procedure gtk_font_chooser_set_preview_text(fontchooser: PGtkFontChooser; Text: PChar); cdecl; external libgtk4;
+function gtk_font_chooser_get_show_preview_entry(fontchooser: PGtkFontChooser): Tgboolean; cdecl; external libgtk4;
+procedure gtk_font_chooser_set_show_preview_entry(fontchooser: PGtkFontChooser; show_preview_entry: Tgboolean); cdecl; external libgtk4;
+procedure gtk_font_chooser_set_filter_func(fontchooser: PGtkFontChooser; filter: TGtkFontFilterFunc; user_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external libgtk4;
+procedure gtk_font_chooser_set_font_map(fontchooser: PGtkFontChooser; fontmap: PPangoFontMap); cdecl; external libgtk4;
+function gtk_font_chooser_get_font_map(fontchooser: PGtkFontChooser): PPangoFontMap; cdecl; external libgtk4;
+procedure gtk_font_chooser_set_level(fontchooser: PGtkFontChooser; level: TGtkFontChooserLevel); cdecl; external libgtk4;
+function gtk_font_chooser_get_level(fontchooser: PGtkFontChooser): TGtkFontChooserLevel; cdecl; external libgtk4;
+function gtk_font_chooser_get_font_features(fontchooser: PGtkFontChooser): PChar; cdecl; external libgtk4;
+function gtk_font_chooser_get_language(fontchooser: PGtkFontChooser): PChar; cdecl; external libgtk4;
+procedure gtk_font_chooser_set_language(fontchooser: PGtkFontChooser; language: PChar); cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 19:53:06 ===
 

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -17,8 +17,8 @@ type
   end;
   PGtkShortcutsGroupClass = ^TGtkShortcutsGroupClass;
 
-function gtk_shortcuts_group_get_type: TGType; cdecl; external gtklib;
-procedure gtk_shortcuts_group_add_shortcut(self: PGtkShortcutsGroup; shortcut: PGtkShortcutsShortcut); cdecl; external gtklib;
+function gtk_shortcuts_group_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_shortcuts_group_add_shortcut(self: PGtkShortcutsGroup; shortcut: PGtkShortcutsShortcut); cdecl; external libgtk4;
 
 // === Konventiert am: 21-7-24 13:26:57 ===
 

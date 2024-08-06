@@ -21,10 +21,10 @@ type
   end;
   PGtkWindowHandleClass = ^TGtkWindowHandleClass;
 
-function gtk_window_handle_get_type: TGType; cdecl; external gtklib;
-function gtk_window_handle_new: PGtkWidget; cdecl; external gtklib;
-function gtk_window_handle_get_child(self: PGtkWindowHandle): PGtkWidget; cdecl; external gtklib;
-procedure gtk_window_handle_set_child(self: PGtkWindowHandle; child: PGtkWidget); cdecl; external gtklib;
+function gtk_window_handle_get_type: TGType; cdecl; external libgtk4;
+function gtk_window_handle_new: PGtkWidget; cdecl; external libgtk4;
+function gtk_window_handle_get_child(self: PGtkWindowHandle): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_window_handle_set_child(self: PGtkWindowHandle; child: PGtkWidget); cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 19:22:58 ===
 

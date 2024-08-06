@@ -14,10 +14,10 @@ type
   end;
   PGdkGLTexture = ^TGdkGLTexture;
 
-function gdk_gl_texture_get_type: TGType; cdecl; external gtklib;
+function gdk_gl_texture_get_type: TGType; cdecl; external libgtk4;
 function gdk_gl_texture_new(context: PGdkGLContext; id: Tguint; Width: longint; Height: longint; Destroy: TGDestroyNotify;
-  Data: Tgpointer): PGdkTexture; cdecl; external gtklib;
-procedure gdk_gl_texture_release(self: PGdkGLTexture); cdecl; external gtklib;
+  Data: Tgpointer): PGdkTexture; cdecl; external libgtk4;
+procedure gdk_gl_texture_release(self: PGdkGLTexture); cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 15:54:52 ===
 

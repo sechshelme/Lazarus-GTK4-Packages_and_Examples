@@ -33,13 +33,13 @@ type
   PGtkTreeSortableIface = ^TGtkTreeSortableIface;
 
 
-function gtk_tree_sortable_get_type: TGType; cdecl; external gtklib;
-procedure gtk_tree_sortable_sort_column_changed(sortable: PGtkTreeSortable); cdecl; external gtklib;
-function gtk_tree_sortable_get_sort_column_id(sortable: PGtkTreeSortable; sort_column_id: Plongint; order: PGtkSortType): Tgboolean; cdecl; external gtklib;
-procedure gtk_tree_sortable_set_sort_column_id(sortable: PGtkTreeSortable; sort_column_id: longint; order: TGtkSortType); cdecl; external gtklib;
-procedure gtk_tree_sortable_set_sort_func(sortable: PGtkTreeSortable; sort_column_id: longint; sort_func: TGtkTreeIterCompareFunc; user_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external gtklib;
-procedure gtk_tree_sortable_set_default_sort_func(sortable: PGtkTreeSortable; sort_func: TGtkTreeIterCompareFunc; user_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external gtklib;
-function gtk_tree_sortable_has_default_sort_func(sortable: PGtkTreeSortable): Tgboolean; cdecl; external gtklib;
+function gtk_tree_sortable_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_tree_sortable_sort_column_changed(sortable: PGtkTreeSortable); cdecl; external libgtk4;
+function gtk_tree_sortable_get_sort_column_id(sortable: PGtkTreeSortable; sort_column_id: Plongint; order: PGtkSortType): Tgboolean; cdecl; external libgtk4;
+procedure gtk_tree_sortable_set_sort_column_id(sortable: PGtkTreeSortable; sort_column_id: longint; order: TGtkSortType); cdecl; external libgtk4;
+procedure gtk_tree_sortable_set_sort_func(sortable: PGtkTreeSortable; sort_column_id: longint; sort_func: TGtkTreeIterCompareFunc; user_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external libgtk4;
+procedure gtk_tree_sortable_set_default_sort_func(sortable: PGtkTreeSortable; sort_func: TGtkTreeIterCompareFunc; user_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external libgtk4;
+function gtk_tree_sortable_has_default_sort_func(sortable: PGtkTreeSortable): Tgboolean; cdecl; external libgtk4;
 
 // === Konventiert am: 30-7-24 15:24:25 ===
 

@@ -14,8 +14,8 @@ type
   end;
   PGtkCellRendererSpin = ^TGtkCellRendererSpin;
 
-function gtk_cell_renderer_spin_get_type: TGType; cdecl; external gtklib;
-function gtk_cell_renderer_spin_new: PGtkCellRenderer; cdecl; external gtklib;
+function gtk_cell_renderer_spin_get_type: TGType; cdecl; external libgtk4;
+function gtk_cell_renderer_spin_new: PGtkCellRenderer; cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 17:00:53 ===
 

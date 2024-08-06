@@ -116,7 +116,6 @@ begin
   sl := TStringList.Create;
   sl.LoadFromFile(SourcePath);
 
-  sl.Text := StringReplace(sl.Text, 'external;', 'external gtklib;', [rfReplaceAll]);
   sl.Text := StringReplace(sl.Text, '(o : longint)', '(obj : longint)', [rfReplaceAll]);
   sl.Text := StringReplace(sl.Text, '(object : longint)', '(obj : longint)', [rfReplaceAll]);
   sl.Text := StringReplace(sl.Text, '(k : longint)', '(klass : longint)', [rfReplaceAll]);
@@ -132,7 +131,14 @@ begin
     sl.Delete(4);
   until sl[4] = '{$IFDEF FPC}';
 
-  sl.Insert(4, 'uses' + #10 + '  glib2, common_GTK;' + #10);
+  if pos('function G_TYPE_', sl.Text) > 0 then begin
+    sl.Text := StringReplace(sl.Text, 'external;', 'external giolib;', [rfReplaceAll]);
+    sl.Insert(4, 'uses' + #10 + '  common_GLIB;' + #10);
+  end else begin
+    sl.Text := StringReplace(sl.Text, 'external;', 'external libgtk4;', [rfReplaceAll]);
+    sl.Insert(4, 'uses' + #10 + '  glib2, common_GTK;' + #10);
+  end;
+
 
   p := 0;
   repeat

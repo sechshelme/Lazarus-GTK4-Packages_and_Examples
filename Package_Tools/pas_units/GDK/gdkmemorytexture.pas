@@ -21,8 +21,8 @@ type
   end;
   PGdkMemoryTexture = ^TGdkMemoryTexture;
 
-function gdk_memory_texture_get_type: TGType; cdecl; external gtklib;
-function gdk_memory_texture_new(Width: longint; Height: longint; format: TGdkMemoryFormat; bytes: PGBytes; stride: Tgsize): PGdkTexture; cdecl; external gtklib;
+function gdk_memory_texture_get_type: TGType; cdecl; external libgtk4;
+function gdk_memory_texture_new(Width: longint; Height: longint; format: TGdkMemoryFormat; bytes: PGBytes; stride: Tgsize): PGdkTexture; cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 14:38:25 ===
 

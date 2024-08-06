@@ -35,8 +35,8 @@ type
 
 { #define GTK_DEBUG_CHECK(type) G_UNLIKELY (gtk_get_debug_flags () & GTK_DEBUG_##type) }
 
-function gtk_get_debug_flags:TGtkDebugFlags;cdecl;external gtklib;
-procedure gtk_set_debug_flags(flags:TGtkDebugFlags);cdecl;external gtklib;
+function gtk_get_debug_flags:TGtkDebugFlags;cdecl;external libgtk4;
+procedure gtk_set_debug_flags(flags:TGtkDebugFlags);cdecl;external libgtk4;
 
 implementation
 

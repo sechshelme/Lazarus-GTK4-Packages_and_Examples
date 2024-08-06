@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -19,13 +19,13 @@ type
   end;
   PGtkListHeaderClass = ^TGtkListHeaderClass;
 
-function gtk_list_header_get_type: TGType; cdecl; external gtklib;
-function gtk_list_header_get_item(self:PGtkListHeader):Tgpointer;cdecl;external gtklib;
-function gtk_list_header_get_start(self:PGtkListHeader):Tguint;cdecl;external gtklib;
-function gtk_list_header_get_end(self:PGtkListHeader):Tguint;cdecl;external gtklib;
-function gtk_list_header_get_n_items(self:PGtkListHeader):Tguint;cdecl;external gtklib;
-procedure gtk_list_header_set_child(self:PGtkListHeader; child:PGtkWidget);cdecl;external gtklib;
-function gtk_list_header_get_child(self:PGtkListHeader):PGtkWidget;cdecl;external gtklib;
+function gtk_list_header_get_type: TGType; cdecl; external libgtk4;
+function gtk_list_header_get_item(self:PGtkListHeader):Tgpointer;cdecl;external libgtk4;
+function gtk_list_header_get_start(self:PGtkListHeader):Tguint;cdecl;external libgtk4;
+function gtk_list_header_get_end(self:PGtkListHeader):Tguint;cdecl;external libgtk4;
+function gtk_list_header_get_n_items(self:PGtkListHeader):Tguint;cdecl;external libgtk4;
+procedure gtk_list_header_set_child(self:PGtkListHeader; child:PGtkWidget);cdecl;external libgtk4;
+function gtk_list_header_get_child(self:PGtkListHeader):PGtkWidget;cdecl;external libgtk4;
 
 // === Konventiert am: 27-7-24 19:13:06 ===
 

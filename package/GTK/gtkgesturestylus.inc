@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -17,14 +17,14 @@ type
   end;
   PGtkGestureStylusClass = ^TGtkGestureStylusClass;
 
-function gtk_gesture_stylus_get_type: TGType; cdecl; external gtklib;
-function gtk_gesture_stylus_new: PGtkGesture; cdecl; external gtklib;
-function gtk_gesture_stylus_get_stylus_only(gesture: PGtkGestureStylus): Tgboolean; cdecl; external gtklib;
-procedure gtk_gesture_stylus_set_stylus_only(gesture: PGtkGestureStylus; stylus_only: Tgboolean); cdecl; external gtklib;
-function gtk_gesture_stylus_get_axis(gesture: PGtkGestureStylus; axis: TGdkAxisUse; Value: Pdouble): Tgboolean; cdecl; external gtklib;
-function gtk_gesture_stylus_get_axes(gesture: PGtkGestureStylus; axes: PGdkAxisUse; values: PPdouble): Tgboolean; cdecl; external gtklib;
-function gtk_gesture_stylus_get_backlog(gesture: PGtkGestureStylus; backlog: PPGdkTimeCoord; n_elems: Pguint): Tgboolean; cdecl; external gtklib;
-function gtk_gesture_stylus_get_device_tool(gesture: PGtkGestureStylus): PGdkDeviceTool; cdecl; external gtklib;
+function gtk_gesture_stylus_get_type: TGType; cdecl; external libgtk4;
+function gtk_gesture_stylus_new: PGtkGesture; cdecl; external libgtk4;
+function gtk_gesture_stylus_get_stylus_only(gesture: PGtkGestureStylus): Tgboolean; cdecl; external libgtk4;
+procedure gtk_gesture_stylus_set_stylus_only(gesture: PGtkGestureStylus; stylus_only: Tgboolean); cdecl; external libgtk4;
+function gtk_gesture_stylus_get_axis(gesture: PGtkGestureStylus; axis: TGdkAxisUse; Value: Pdouble): Tgboolean; cdecl; external libgtk4;
+function gtk_gesture_stylus_get_axes(gesture: PGtkGestureStylus; axes: PGdkAxisUse; values: PPdouble): Tgboolean; cdecl; external libgtk4;
+function gtk_gesture_stylus_get_backlog(gesture: PGtkGestureStylus; backlog: PPGdkTimeCoord; n_elems: Pguint): Tgboolean; cdecl; external libgtk4;
+function gtk_gesture_stylus_get_device_tool(gesture: PGtkGestureStylus): PGdkDeviceTool; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:43:19 ===
 

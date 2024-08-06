@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -17,9 +17,9 @@ type
   end;
   PGtkGestureRotateClass = ^TGtkGestureRotateClass;
 
-function gtk_gesture_rotate_get_type: TGType; cdecl; external gtklib;
-function gtk_gesture_rotate_new: PGtkGesture; cdecl; external gtklib;
-function gtk_gesture_rotate_get_angle_delta(gesture: PGtkGestureRotate): Tdouble; cdecl; external gtklib;
+function gtk_gesture_rotate_get_type: TGType; cdecl; external libgtk4;
+function gtk_gesture_rotate_new: PGtkGesture; cdecl; external libgtk4;
+function gtk_gesture_rotate_get_angle_delta(gesture: PGtkGestureRotate): Tdouble; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:44:29 ===
 

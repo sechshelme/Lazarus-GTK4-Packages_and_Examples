@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -22,19 +22,19 @@ type
   PGtkScaleButtonClass = ^TGtkScaleButtonClass;
 
 
-function gtk_scale_button_get_type: TGType; cdecl; external gtklib;
-function gtk_scale_button_new(min: Tdouble; max: Tdouble; step: Tdouble; icons: PPchar): PGtkWidget; cdecl; external gtklib;
-procedure gtk_scale_button_set_icons(button: PGtkScaleButton; icons: PPchar); cdecl; external gtklib;
-function gtk_scale_button_get_value(button: PGtkScaleButton): Tdouble; cdecl; external gtklib;
-procedure gtk_scale_button_set_value(button: PGtkScaleButton; Value: Tdouble); cdecl; external gtklib;
-function gtk_scale_button_get_adjustment(button: PGtkScaleButton): PGtkAdjustment; cdecl; external gtklib;
-procedure gtk_scale_button_set_adjustment(button: PGtkScaleButton; adjustment: PGtkAdjustment); cdecl; external gtklib;
-function gtk_scale_button_get_plus_button(button: PGtkScaleButton): PGtkWidget; cdecl; external gtklib;
-function gtk_scale_button_get_minus_button(button: PGtkScaleButton): PGtkWidget; cdecl; external gtklib;
-function gtk_scale_button_get_popup(button: PGtkScaleButton): PGtkWidget; cdecl; external gtklib;
-function gtk_scale_button_get_active(button: PGtkScaleButton): Tgboolean; cdecl; external gtklib;
-function gtk_scale_button_get_has_frame(button: PGtkScaleButton): Tgboolean; cdecl; external gtklib;
-procedure gtk_scale_button_set_has_frame(button: PGtkScaleButton; has_frame: Tgboolean); cdecl; external gtklib;
+function gtk_scale_button_get_type: TGType; cdecl; external libgtk4;
+function gtk_scale_button_new(min: Tdouble; max: Tdouble; step: Tdouble; icons: PPchar): PGtkWidget; cdecl; external libgtk4;
+procedure gtk_scale_button_set_icons(button: PGtkScaleButton; icons: PPchar); cdecl; external libgtk4;
+function gtk_scale_button_get_value(button: PGtkScaleButton): Tdouble; cdecl; external libgtk4;
+procedure gtk_scale_button_set_value(button: PGtkScaleButton; Value: Tdouble); cdecl; external libgtk4;
+function gtk_scale_button_get_adjustment(button: PGtkScaleButton): PGtkAdjustment; cdecl; external libgtk4;
+procedure gtk_scale_button_set_adjustment(button: PGtkScaleButton; adjustment: PGtkAdjustment); cdecl; external libgtk4;
+function gtk_scale_button_get_plus_button(button: PGtkScaleButton): PGtkWidget; cdecl; external libgtk4;
+function gtk_scale_button_get_minus_button(button: PGtkScaleButton): PGtkWidget; cdecl; external libgtk4;
+function gtk_scale_button_get_popup(button: PGtkScaleButton): PGtkWidget; cdecl; external libgtk4;
+function gtk_scale_button_get_active(button: PGtkScaleButton): Tgboolean; cdecl; external libgtk4;
+function gtk_scale_button_get_has_frame(button: PGtkScaleButton): Tgboolean; cdecl; external libgtk4;
+procedure gtk_scale_button_set_has_frame(button: PGtkScaleButton; has_frame: Tgboolean); cdecl; external libgtk4;
 
 // === Konventiert am: 12-7-24 19:49:19 ===
 

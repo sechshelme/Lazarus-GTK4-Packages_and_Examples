@@ -15,10 +15,10 @@ type
   end;
   PGtkStackSwitcher = ^TGtkStackSwitcher;
 
-function gtk_stack_switcher_get_type: TGType; cdecl; external gtklib;
-function gtk_stack_switcher_new: PGtkWidget; cdecl; external gtklib;
-procedure gtk_stack_switcher_set_stack(switcher: PGtkStackSwitcher; stack: PGtkStack); cdecl; external gtklib;
-function gtk_stack_switcher_get_stack(switcher: PGtkStackSwitcher): PGtkStack; cdecl; external gtklib;
+function gtk_stack_switcher_get_type: TGType; cdecl; external libgtk4;
+function gtk_stack_switcher_new: PGtkWidget; cdecl; external libgtk4;
+procedure gtk_stack_switcher_set_stack(switcher: PGtkStackSwitcher; stack: PGtkStack); cdecl; external libgtk4;
+function gtk_stack_switcher_get_stack(switcher: PGtkStackSwitcher): PGtkStack; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 16:33:40 ===
 

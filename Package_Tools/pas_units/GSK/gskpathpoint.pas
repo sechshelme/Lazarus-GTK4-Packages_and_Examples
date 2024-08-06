@@ -23,16 +23,16 @@ type
   end;
 
 
-function gsk_path_point_get_type: TGType; cdecl; external gtklib;
-function gsk_path_point_copy(point: PGskPathPoint): PGskPathPoint; cdecl; external gtklib;
-procedure gsk_path_point_free(point: PGskPathPoint); cdecl; external gtklib;
-function gsk_path_point_equal(point1: PGskPathPoint; point2: PGskPathPoint): Tgboolean; cdecl; external gtklib;
-function gsk_path_point_compare(point1: PGskPathPoint; point2: PGskPathPoint): longint; cdecl; external gtklib;
-procedure gsk_path_point_get_position(point: PGskPathPoint; path: PGskPath; position: Pgraphene_point_t); cdecl; external gtklib;
-procedure gsk_path_point_get_tangent(point: PGskPathPoint; path: PGskPath; direction: TGskPathDirection; tangent: Pgraphene_vec2_t); cdecl; external gtklib;
-function gsk_path_point_get_rotation(point: PGskPathPoint; path: PGskPath; direction: TGskPathDirection): single; cdecl; external gtklib;
-function gsk_path_point_get_curvature(point: PGskPathPoint; path: PGskPath; direction: TGskPathDirection; center: Pgraphene_point_t): single; cdecl; external gtklib;
-function gsk_path_point_get_distance(point: PGskPathPoint; measure: PGskPathMeasure): single; cdecl; external gtklib;
+function gsk_path_point_get_type: TGType; cdecl; external libgtk4;
+function gsk_path_point_copy(point: PGskPathPoint): PGskPathPoint; cdecl; external libgtk4;
+procedure gsk_path_point_free(point: PGskPathPoint); cdecl; external libgtk4;
+function gsk_path_point_equal(point1: PGskPathPoint; point2: PGskPathPoint): Tgboolean; cdecl; external libgtk4;
+function gsk_path_point_compare(point1: PGskPathPoint; point2: PGskPathPoint): longint; cdecl; external libgtk4;
+procedure gsk_path_point_get_position(point: PGskPathPoint; path: PGskPath; position: Pgraphene_point_t); cdecl; external libgtk4;
+procedure gsk_path_point_get_tangent(point: PGskPathPoint; path: PGskPath; direction: TGskPathDirection; tangent: Pgraphene_vec2_t); cdecl; external libgtk4;
+function gsk_path_point_get_rotation(point: PGskPathPoint; path: PGskPath; direction: TGskPathDirection): single; cdecl; external libgtk4;
+function gsk_path_point_get_curvature(point: PGskPathPoint; path: PGskPath; direction: TGskPathDirection; center: Pgraphene_point_t): single; cdecl; external libgtk4;
+function gsk_path_point_get_distance(point: PGskPathPoint; measure: PGskPathMeasure): single; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 15:18:49 ===
 

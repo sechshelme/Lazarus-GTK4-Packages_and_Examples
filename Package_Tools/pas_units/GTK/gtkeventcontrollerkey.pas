@@ -20,12 +20,12 @@ type
   PGtkEventControllerKeyClass = ^TGtkEventControllerKeyClass;
 
 
-function gtk_event_controller_key_get_type: TGType; cdecl; external gtklib;
-function gtk_event_controller_key_new: PGtkEventController; cdecl; external gtklib;
-procedure gtk_event_controller_key_set_im_context(controller: PGtkEventControllerKey; im_context: PGtkIMContext); cdecl; external gtklib;
-function gtk_event_controller_key_get_im_context(controller: PGtkEventControllerKey): PGtkIMContext; cdecl; external gtklib;
-function gtk_event_controller_key_forward(controller: PGtkEventControllerKey; widget: PGtkWidget): Tgboolean; cdecl; external gtklib;
-function gtk_event_controller_key_get_group(controller: PGtkEventControllerKey): Tguint; cdecl; external gtklib;
+function gtk_event_controller_key_get_type: TGType; cdecl; external libgtk4;
+function gtk_event_controller_key_new: PGtkEventController; cdecl; external libgtk4;
+procedure gtk_event_controller_key_set_im_context(controller: PGtkEventControllerKey; im_context: PGtkIMContext); cdecl; external libgtk4;
+function gtk_event_controller_key_get_im_context(controller: PGtkEventControllerKey): PGtkIMContext; cdecl; external libgtk4;
+function gtk_event_controller_key_forward(controller: PGtkEventControllerKey; widget: PGtkWidget): Tgboolean; cdecl; external libgtk4;
+function gtk_event_controller_key_get_group(controller: PGtkEventControllerKey): Tguint; cdecl; external libgtk4;
 
 // === Konventiert am: 25-7-24 19:21:23 ===
 

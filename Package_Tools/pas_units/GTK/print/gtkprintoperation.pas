@@ -83,44 +83,44 @@ const
   GTK_PRINT_ERROR_NOMEM = 2;
   GTK_PRINT_ERROR_INVALID_FILE = 3;
 
-function gtk_print_error_quark: TGQuark; cdecl; external gtklib;
-function gtk_print_operation_get_type: TGType; cdecl; external gtklib;
-function gtk_print_operation_new: PGtkPrintOperation; cdecl; external gtklib;
-procedure gtk_print_operation_set_default_page_setup(op: PGtkPrintOperation; default_page_setup: PGtkPageSetup); cdecl; external gtklib;
-function gtk_print_operation_get_default_page_setup(op: PGtkPrintOperation): PGtkPageSetup; cdecl; external gtklib;
-procedure gtk_print_operation_set_print_settings(op: PGtkPrintOperation; print_settings: PGtkPrintSettings); cdecl; external gtklib;
-function gtk_print_operation_get_print_settings(op: PGtkPrintOperation): PGtkPrintSettings; cdecl; external gtklib;
-procedure gtk_print_operation_set_job_name(op: PGtkPrintOperation; job_name: PChar); cdecl; external gtklib;
-procedure gtk_print_operation_set_n_pages(op: PGtkPrintOperation; n_pages: longint); cdecl; external gtklib;
-procedure gtk_print_operation_set_current_page(op: PGtkPrintOperation; current_page: longint); cdecl; external gtklib;
-procedure gtk_print_operation_set_use_full_page(op: PGtkPrintOperation; full_page: Tgboolean); cdecl; external gtklib;
-procedure gtk_print_operation_set_unit(op: PGtkPrintOperation; unit_: TGtkUnit); cdecl; external gtklib;
-procedure gtk_print_operation_set_export_filename(op: PGtkPrintOperation; filename: PChar); cdecl; external gtklib;
-procedure gtk_print_operation_set_track_print_status(op: PGtkPrintOperation; track_status: Tgboolean); cdecl; external gtklib;
-procedure gtk_print_operation_set_show_progress(op: PGtkPrintOperation; show_progress: Tgboolean); cdecl; external gtklib;
-procedure gtk_print_operation_set_allow_async(op: PGtkPrintOperation; allow_async: Tgboolean); cdecl; external gtklib;
-procedure gtk_print_operation_set_custom_tab_label(op: PGtkPrintOperation; _label: PChar); cdecl; external gtklib;
-function gtk_print_operation_run(op: PGtkPrintOperation; action: TGtkPrintOperationAction; parent: PGtkWindow; error: PPGError): TGtkPrintOperationResult; cdecl; external gtklib;
-procedure gtk_print_operation_get_error(op: PGtkPrintOperation; error: PPGError); cdecl; external gtklib;
-function gtk_print_operation_get_status(op: PGtkPrintOperation): TGtkPrintStatus; cdecl; external gtklib;
-function gtk_print_operation_get_status_string(op: PGtkPrintOperation): PChar; cdecl; external gtklib;
-function gtk_print_operation_is_finished(op: PGtkPrintOperation): Tgboolean; cdecl; external gtklib;
-procedure gtk_print_operation_cancel(op: PGtkPrintOperation); cdecl; external gtklib;
-procedure gtk_print_operation_draw_page_finish(op: PGtkPrintOperation); cdecl; external gtklib;
-procedure gtk_print_operation_set_defer_drawing(op: PGtkPrintOperation); cdecl; external gtklib;
-procedure gtk_print_operation_set_support_selection(op: PGtkPrintOperation; support_selection: Tgboolean); cdecl; external gtklib;
-function gtk_print_operation_get_support_selection(op: PGtkPrintOperation): Tgboolean; cdecl; external gtklib;
-procedure gtk_print_operation_set_has_selection(op: PGtkPrintOperation; has_selection: Tgboolean); cdecl; external gtklib;
-function gtk_print_operation_get_has_selection(op: PGtkPrintOperation): Tgboolean; cdecl; external gtklib;
-procedure gtk_print_operation_set_embed_page_setup(op: PGtkPrintOperation; embed: Tgboolean); cdecl; external gtklib;
-function gtk_print_operation_get_embed_page_setup(op: PGtkPrintOperation): Tgboolean; cdecl; external gtklib;
-function gtk_print_operation_get_n_pages_to_print(op: PGtkPrintOperation): longint; cdecl; external gtklib;
-function gtk_print_run_page_setup_dialog(parent: PGtkWindow; page_setup: PGtkPageSetup; settings: PGtkPrintSettings): PGtkPageSetup; cdecl; external gtklib;
+function gtk_print_error_quark: TGQuark; cdecl; external libgtk4;
+function gtk_print_operation_get_type: TGType; cdecl; external libgtk4;
+function gtk_print_operation_new: PGtkPrintOperation; cdecl; external libgtk4;
+procedure gtk_print_operation_set_default_page_setup(op: PGtkPrintOperation; default_page_setup: PGtkPageSetup); cdecl; external libgtk4;
+function gtk_print_operation_get_default_page_setup(op: PGtkPrintOperation): PGtkPageSetup; cdecl; external libgtk4;
+procedure gtk_print_operation_set_print_settings(op: PGtkPrintOperation; print_settings: PGtkPrintSettings); cdecl; external libgtk4;
+function gtk_print_operation_get_print_settings(op: PGtkPrintOperation): PGtkPrintSettings; cdecl; external libgtk4;
+procedure gtk_print_operation_set_job_name(op: PGtkPrintOperation; job_name: PChar); cdecl; external libgtk4;
+procedure gtk_print_operation_set_n_pages(op: PGtkPrintOperation; n_pages: longint); cdecl; external libgtk4;
+procedure gtk_print_operation_set_current_page(op: PGtkPrintOperation; current_page: longint); cdecl; external libgtk4;
+procedure gtk_print_operation_set_use_full_page(op: PGtkPrintOperation; full_page: Tgboolean); cdecl; external libgtk4;
+procedure gtk_print_operation_set_unit(op: PGtkPrintOperation; unit_: TGtkUnit); cdecl; external libgtk4;
+procedure gtk_print_operation_set_export_filename(op: PGtkPrintOperation; filename: PChar); cdecl; external libgtk4;
+procedure gtk_print_operation_set_track_print_status(op: PGtkPrintOperation; track_status: Tgboolean); cdecl; external libgtk4;
+procedure gtk_print_operation_set_show_progress(op: PGtkPrintOperation; show_progress: Tgboolean); cdecl; external libgtk4;
+procedure gtk_print_operation_set_allow_async(op: PGtkPrintOperation; allow_async: Tgboolean); cdecl; external libgtk4;
+procedure gtk_print_operation_set_custom_tab_label(op: PGtkPrintOperation; _label: PChar); cdecl; external libgtk4;
+function gtk_print_operation_run(op: PGtkPrintOperation; action: TGtkPrintOperationAction; parent: PGtkWindow; error: PPGError): TGtkPrintOperationResult; cdecl; external libgtk4;
+procedure gtk_print_operation_get_error(op: PGtkPrintOperation; error: PPGError); cdecl; external libgtk4;
+function gtk_print_operation_get_status(op: PGtkPrintOperation): TGtkPrintStatus; cdecl; external libgtk4;
+function gtk_print_operation_get_status_string(op: PGtkPrintOperation): PChar; cdecl; external libgtk4;
+function gtk_print_operation_is_finished(op: PGtkPrintOperation): Tgboolean; cdecl; external libgtk4;
+procedure gtk_print_operation_cancel(op: PGtkPrintOperation); cdecl; external libgtk4;
+procedure gtk_print_operation_draw_page_finish(op: PGtkPrintOperation); cdecl; external libgtk4;
+procedure gtk_print_operation_set_defer_drawing(op: PGtkPrintOperation); cdecl; external libgtk4;
+procedure gtk_print_operation_set_support_selection(op: PGtkPrintOperation; support_selection: Tgboolean); cdecl; external libgtk4;
+function gtk_print_operation_get_support_selection(op: PGtkPrintOperation): Tgboolean; cdecl; external libgtk4;
+procedure gtk_print_operation_set_has_selection(op: PGtkPrintOperation; has_selection: Tgboolean); cdecl; external libgtk4;
+function gtk_print_operation_get_has_selection(op: PGtkPrintOperation): Tgboolean; cdecl; external libgtk4;
+procedure gtk_print_operation_set_embed_page_setup(op: PGtkPrintOperation; embed: Tgboolean); cdecl; external libgtk4;
+function gtk_print_operation_get_embed_page_setup(op: PGtkPrintOperation): Tgboolean; cdecl; external libgtk4;
+function gtk_print_operation_get_n_pages_to_print(op: PGtkPrintOperation): longint; cdecl; external libgtk4;
+function gtk_print_run_page_setup_dialog(parent: PGtkWindow; page_setup: PGtkPageSetup; settings: PGtkPrintSettings): PGtkPageSetup; cdecl; external libgtk4;
 
 type
   TGtkPageSetupDoneFunc = procedure(page_setup: PGtkPageSetup; Data: Tgpointer); cdecl;
 
-procedure gtk_print_run_page_setup_dialog_async(parent: PGtkWindow; page_setup: PGtkPageSetup; settings: PGtkPrintSettings; done_cb: TGtkPageSetupDoneFunc; Data: Tgpointer); cdecl; external gtklib;
+procedure gtk_print_run_page_setup_dialog_async(parent: PGtkWindow; page_setup: PGtkPageSetup; settings: PGtkPrintSettings; done_cb: TGtkPageSetupDoneFunc; Data: Tgpointer); cdecl; external libgtk4;
 
 // === Konventiert am: 24-7-24 16:37:58 ===
 

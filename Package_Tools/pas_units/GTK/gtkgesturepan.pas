@@ -18,10 +18,10 @@ type
   end;
   PGtkGesturePanClass = ^TGtkGesturePanClass;
 
-function gtk_gesture_pan_get_type: TGType; cdecl; external gtklib;
-function gtk_gesture_pan_new(orientation: TGtkOrientation): PGtkGesture; cdecl; external gtklib;
-function gtk_gesture_pan_get_orientation(gesture: PGtkGesturePan): TGtkOrientation; cdecl; external gtklib;
-procedure gtk_gesture_pan_set_orientation(gesture: PGtkGesturePan; orientation: TGtkOrientation); cdecl; external gtklib;
+function gtk_gesture_pan_get_type: TGType; cdecl; external libgtk4;
+function gtk_gesture_pan_new(orientation: TGtkOrientation): PGtkGesture; cdecl; external libgtk4;
+function gtk_gesture_pan_get_orientation(gesture: PGtkGesturePan): TGtkOrientation; cdecl; external libgtk4;
+procedure gtk_gesture_pan_set_orientation(gesture: PGtkGesturePan; orientation: TGtkOrientation); cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 15:44:24 ===
 

@@ -21,9 +21,9 @@ type
   end;
   PGtkStyleProvider = ^TGtkStyleProvider;
 
-function gtk_style_provider_get_type: TGType; cdecl; external gtklib;
-procedure gtk_style_context_add_provider_for_display(display: PGdkDisplay; provider: PGtkStyleProvider; priority: Tguint); cdecl; external gtklib;
-procedure gtk_style_context_remove_provider_for_display(display: PGdkDisplay; provider: PGtkStyleProvider); cdecl; external gtklib;
+function gtk_style_provider_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_style_context_add_provider_for_display(display: PGdkDisplay; provider: PGtkStyleProvider; priority: Tguint); cdecl; external libgtk4;
+procedure gtk_style_context_remove_provider_for_display(display: PGdkDisplay; provider: PGtkStyleProvider); cdecl; external libgtk4;
 
 // === Konventiert am: 17-7-24 16:33:43 ===
 

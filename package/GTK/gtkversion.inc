@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -24,12 +24,12 @@ const
 
  }
 
-function gtk_get_major_version: Tguint; cdecl; external gtklib;
-function gtk_get_minor_version: Tguint; cdecl; external gtklib;
-function gtk_get_micro_version: Tguint; cdecl; external gtklib;
-function gtk_get_binary_age: Tguint; cdecl; external gtklib;
-function gtk_get_interface_age: Tguint; cdecl; external gtklib;
-function gtk_check_version(required_major: Tguint; required_minor: Tguint; required_micro: Tguint): PChar; cdecl; external gtklib;
+function gtk_get_major_version: Tguint; cdecl; external libgtk4;
+function gtk_get_minor_version: Tguint; cdecl; external libgtk4;
+function gtk_get_micro_version: Tguint; cdecl; external libgtk4;
+function gtk_get_binary_age: Tguint; cdecl; external libgtk4;
+function gtk_get_interface_age: Tguint; cdecl; external libgtk4;
+function gtk_check_version(required_major: Tguint; required_minor: Tguint; required_micro: Tguint): PChar; cdecl; external libgtk4;
 
 {$ENDIF read_interface}
 

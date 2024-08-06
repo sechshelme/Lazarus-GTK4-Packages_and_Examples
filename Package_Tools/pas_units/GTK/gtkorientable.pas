@@ -21,9 +21,9 @@ type
   PGtkOrientableIface = ^TGtkOrientableIface;
 
 
-function gtk_orientable_get_type: TGType; cdecl; external gtklib;
-procedure gtk_orientable_set_orientation(orientable: PGtkOrientable; orientation: TGtkOrientation); cdecl; external gtklib;
-function gtk_orientable_get_orientation(orientable: PGtkOrientable): TGtkOrientation; cdecl; external gtklib;
+function gtk_orientable_get_type: TGType; cdecl; external libgtk4;
+procedure gtk_orientable_set_orientation(orientable: PGtkOrientable; orientation: TGtkOrientation); cdecl; external libgtk4;
+function gtk_orientable_get_orientation(orientable: PGtkOrientable): TGtkOrientation; cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:02:29 ===
 

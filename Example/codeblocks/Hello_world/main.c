@@ -13,11 +13,6 @@ static void scroll_Changed (GtkAdjustment *adj, gpointer user_data)
   double val = gtk_adjustment_get_value(adj);
   g_print("Value: %f\n", val);
 
-  gsk_broadway_renderer_get_type();
-  gsk_gl_renderer_get_type();
-  gsk_vulkan_renderer_get_type();
-
-
 }
 
 
@@ -122,6 +117,9 @@ printf("btn : %i\n",    button1);
 
 int main (int argc, char **argv)
 {
+  printf("xxx %i \n", G_UNICODE_BREAK_CLOSE_PARANTHESIS);
+  printf("xxx %i \n", G_UNICODE_BREAK_CONDITIONAL_JAPANESE_STARTER);
+
   GtkApplication *app;
   int status;
 

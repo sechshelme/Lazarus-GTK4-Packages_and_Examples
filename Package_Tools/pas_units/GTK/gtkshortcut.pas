@@ -22,16 +22,16 @@ type
   end;
   PGtkShortcutClass = ^TGtkShortcutClass;
 
-function gtk_shortcut_get_type: TGType; cdecl; external gtklib;
-function gtk_shortcut_new(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction): PGtkShortcut; cdecl; external gtklib;
-function gtk_shortcut_new_with_arguments(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction; format_string: PChar; args: array of const): PGtkShortcut; cdecl; external gtklib;
-function gtk_shortcut_new_with_arguments(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction; format_string: PChar): PGtkShortcut; cdecl; external gtklib;
-function gtk_shortcut_get_trigger(self: PGtkShortcut): PGtkShortcutTrigger; cdecl; external gtklib;
-procedure gtk_shortcut_set_trigger(self: PGtkShortcut; trigger: PGtkShortcutTrigger); cdecl; external gtklib;
-function gtk_shortcut_get_action(self: PGtkShortcut): PGtkShortcutAction; cdecl; external gtklib;
-procedure gtk_shortcut_set_action(self: PGtkShortcut; action: PGtkShortcutAction); cdecl; external gtklib;
-function gtk_shortcut_get_arguments(self: PGtkShortcut): PGVariant; cdecl; external gtklib;
-procedure gtk_shortcut_set_arguments(self: PGtkShortcut; args: PGVariant); cdecl; external gtklib;
+function gtk_shortcut_get_type: TGType; cdecl; external libgtk4;
+function gtk_shortcut_new(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction): PGtkShortcut; cdecl; external libgtk4;
+function gtk_shortcut_new_with_arguments(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction; format_string: PChar; args: array of const): PGtkShortcut; cdecl; external libgtk4;
+function gtk_shortcut_new_with_arguments(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction; format_string: PChar): PGtkShortcut; cdecl; external libgtk4;
+function gtk_shortcut_get_trigger(self: PGtkShortcut): PGtkShortcutTrigger; cdecl; external libgtk4;
+procedure gtk_shortcut_set_trigger(self: PGtkShortcut; trigger: PGtkShortcutTrigger); cdecl; external libgtk4;
+function gtk_shortcut_get_action(self: PGtkShortcut): PGtkShortcutAction; cdecl; external libgtk4;
+procedure gtk_shortcut_set_action(self: PGtkShortcut; action: PGtkShortcutAction); cdecl; external libgtk4;
+function gtk_shortcut_get_arguments(self: PGtkShortcut): PGVariant; cdecl; external libgtk4;
+procedure gtk_shortcut_set_arguments(self: PGtkShortcut; args: PGVariant); cdecl; external libgtk4;
 
 // === Konventiert am: 16-7-24 19:19:33 ===
 

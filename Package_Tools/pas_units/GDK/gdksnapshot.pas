@@ -15,7 +15,7 @@ type
   end;
   PGdkSnapshot = ^TGdkSnapshot;
 
-function gdk_snapshot_get_type: TGType; cdecl; external gtklib;
+function gdk_snapshot_get_type: TGType; cdecl; external libgtk4;
 
 // === Konventiert am: 2-8-24 15:19:57 ===
 

@@ -19,10 +19,10 @@ type
   end;
   PGtkATContextClass = ^TGtkATContextClass;
 
-function gtk_at_context_get_type: TGType; cdecl; external gtklib;
-function gtk_at_context_get_accessible(self: PGtkATContext): PGtkAccessible; cdecl; external gtklib;
-function gtk_at_context_get_accessible_role(self: PGtkATContext): TGtkAccessibleRole; cdecl; external gtklib;
-function gtk_at_context_create(accessible_role: TGtkAccessibleRole; accessible: PGtkAccessible; display: PGdkDisplay): PGtkATContext; cdecl; external gtklib;
+function gtk_at_context_get_type: TGType; cdecl; external libgtk4;
+function gtk_at_context_get_accessible(self: PGtkATContext): PGtkAccessible; cdecl; external libgtk4;
+function gtk_at_context_get_accessible_role(self: PGtkATContext): TGtkAccessibleRole; cdecl; external libgtk4;
+function gtk_at_context_create(accessible_role: TGtkAccessibleRole; accessible: PGtkAccessible; display: PGdkDisplay): PGtkATContext; cdecl; external libgtk4;
 
 // === Konventiert am: 27-7-24 14:05:43 ===
 

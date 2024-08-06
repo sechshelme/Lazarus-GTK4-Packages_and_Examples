@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 05-08-2024   17:02                        //
+//   Erzeugt am: 06-08-2024   15:17                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -15,10 +15,10 @@
 //  PGtkSettings = ^TGtkSettings;
 
 
-function gtk_settings_get_type: TGType; cdecl; external gtklib;
-function gtk_settings_get_default: PGtkSettings; cdecl; external gtklib;
-function gtk_settings_get_for_display(display: PGdkDisplay): PGtkSettings; cdecl; external gtklib;
-procedure gtk_settings_reset_property(settings: PGtkSettings; Name: PChar); cdecl; external gtklib;
+function gtk_settings_get_type: TGType; cdecl; external libgtk4;
+function gtk_settings_get_default: PGtkSettings; cdecl; external libgtk4;
+function gtk_settings_get_for_display(display: PGdkDisplay): PGtkSettings; cdecl; external libgtk4;
+procedure gtk_settings_reset_property(settings: PGtkSettings; Name: PChar); cdecl; external libgtk4;
 
 // === Konventiert am: 28-7-24 15:48:53 ===
 

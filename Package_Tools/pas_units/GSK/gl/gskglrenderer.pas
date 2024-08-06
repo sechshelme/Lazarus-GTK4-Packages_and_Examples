@@ -19,10 +19,10 @@ type
   end;
   PGskGLRendererClass = ^TGskGLRendererClass;
 
-function gsk_gl_renderer_get_type: TGType; cdecl; external gtklib;
-function gsk_gl_renderer_new: PGskRenderer; cdecl; external gtklib;
-function gsk_ngl_renderer_get_type: TGType; cdecl; external gtklib;
-function gsk_ngl_renderer_new: PGskRenderer; cdecl; external gtklib;
+function gsk_gl_renderer_get_type: TGType; cdecl; external libgtk4;
+function gsk_gl_renderer_new: PGskRenderer; cdecl; external libgtk4;
+function gsk_ngl_renderer_get_type: TGType; cdecl; external libgtk4;
+function gsk_ngl_renderer_new: PGskRenderer; cdecl; external libgtk4;
 
 function GSK_INCLUDE_WARNING(x: longint): longint;
 

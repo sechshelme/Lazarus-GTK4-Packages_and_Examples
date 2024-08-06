@@ -18,14 +18,14 @@ type
   end;
   PGdkX11ScreenClass = ^TGdkX11ScreenClass;
 
-function gdk_x11_screen_get_type: TGType; cdecl; external gtklib;
-function gdk_x11_screen_get_xscreen(screen: PGdkX11Screen): PScreen; cdecl; external gtklib;
-function gdk_x11_screen_get_screen_number(screen: PGdkX11Screen): longint; cdecl; external gtklib;
-function gdk_x11_screen_get_window_manager_name(screen: PGdkX11Screen): PChar; cdecl; external gtklib;
-function gdk_x11_screen_supports_net_wm_hint(screen: PGdkX11Screen; property_name: PChar): Tgboolean; cdecl; external gtklib;
-function gdk_x11_screen_get_monitor_output(screen: PGdkX11Screen; monitor_num: longint): TXID; cdecl; external gtklib;
-function gdk_x11_screen_get_number_of_desktops(screen: PGdkX11Screen): Tguint32; cdecl; external gtklib;
-function gdk_x11_screen_get_current_desktop(screen: PGdkX11Screen): Tguint32; cdecl; external gtklib;
+function gdk_x11_screen_get_type: TGType; cdecl; external libgtk4;
+function gdk_x11_screen_get_xscreen(screen: PGdkX11Screen): PScreen; cdecl; external libgtk4;
+function gdk_x11_screen_get_screen_number(screen: PGdkX11Screen): longint; cdecl; external libgtk4;
+function gdk_x11_screen_get_window_manager_name(screen: PGdkX11Screen): PChar; cdecl; external libgtk4;
+function gdk_x11_screen_supports_net_wm_hint(screen: PGdkX11Screen; property_name: PChar): Tgboolean; cdecl; external libgtk4;
+function gdk_x11_screen_get_monitor_output(screen: PGdkX11Screen; monitor_num: longint): TXID; cdecl; external libgtk4;
+function gdk_x11_screen_get_number_of_desktops(screen: PGdkX11Screen): Tguint32; cdecl; external libgtk4;
+function gdk_x11_screen_get_current_desktop(screen: PGdkX11Screen): Tguint32; cdecl; external libgtk4;
 
 // === Konventiert am: 3-8-24 17:50:33 ===
 

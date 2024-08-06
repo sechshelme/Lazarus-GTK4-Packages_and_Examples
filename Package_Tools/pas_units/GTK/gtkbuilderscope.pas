@@ -35,7 +35,7 @@ type
       error: PPGError): PGClosure; cdecl;
   end;
 
-function gtk_builder_scope_get_type: TGType; cdecl; external gtklib;
+function gtk_builder_scope_get_type: TGType; cdecl; external libgtk4;
 
 {G_DECLARE_DERIVABLE_TYPE (GtkBuilderCScope, gtk_builder_cscope, GTK, BUILDER_CSCOPE, GObject) }
 type
@@ -51,16 +51,16 @@ type
   end;
 
 
-function gtk_builder_cscope_get_type: TGType; cdecl; external gtklib;
-function gtk_builder_cscope_new: PGtkBuilderScope; cdecl; external gtklib;
-procedure gtk_builder_cscope_add_callback_symbol(self: PGtkBuilderCScope; callback_name: PChar; callback_symbol: TGCallback); cdecl; external gtklib;
-procedure gtk_builder_cscope_add_callback_symbols(self: PGtkBuilderCScope; first_callback_name: PChar; first_callback_symbol: TGCallback; args: array of const); cdecl; external gtklib;
-procedure gtk_builder_cscope_add_callback_symbols(self: PGtkBuilderCScope; first_callback_name: PChar; first_callback_symbol: TGCallback); cdecl; external gtklib;
+function gtk_builder_cscope_get_type: TGType; cdecl; external libgtk4;
+function gtk_builder_cscope_new: PGtkBuilderScope; cdecl; external libgtk4;
+procedure gtk_builder_cscope_add_callback_symbol(self: PGtkBuilderCScope; callback_name: PChar; callback_symbol: TGCallback); cdecl; external libgtk4;
+procedure gtk_builder_cscope_add_callback_symbols(self: PGtkBuilderCScope; first_callback_name: PChar; first_callback_symbol: TGCallback; args: array of const); cdecl; external libgtk4;
+procedure gtk_builder_cscope_add_callback_symbols(self: PGtkBuilderCScope; first_callback_name: PChar; first_callback_symbol: TGCallback); cdecl; external libgtk4;
 
 {#define gtk_builder_cscope_add_callback(scope, callback) \ }
 {  gtk_builder_cscope_add_callback_symbol (GTK_BUILDER_CSCOPE (scope), #callback, G_CALLBACK (callback)) }
 
-function gtk_builder_cscope_lookup_callback_symbol(self: PGtkBuilderCScope; callback_name: PChar): TGCallback; cdecl; external gtklib;
+function gtk_builder_cscope_lookup_callback_symbol(self: PGtkBuilderCScope; callback_name: PChar): TGCallback; cdecl; external libgtk4;
 
 // === Konventiert am: 17-7-24 16:42:50 ===
 
