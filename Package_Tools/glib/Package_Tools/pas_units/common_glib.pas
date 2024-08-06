@@ -8,7 +8,8 @@ uses
 const
   {$IFDEF Linux}
   libgtk4 = 'libgtk-4';
-  libgio2 = 'libgio-2.0';
+//  libgio2 = 'libgio-2.0';
+  libgio2 = 'libglib-2.0';
   libgobject2_0 = 'libgobject-2.0';
   {$ENDIF}
 

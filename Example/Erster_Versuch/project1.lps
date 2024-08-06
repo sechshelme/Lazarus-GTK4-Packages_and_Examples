@@ -7,8 +7,9 @@
       <Unit>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="339"/>
-        <CursorPos X="97" Y="354"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="350"/>
+        <CursorPos Y="379"/>
         <UsageCount Value="121"/>
         <Loaded Value="True"/>
       </Unit>
@@ -4498,7 +4499,6 @@
       </Unit>
       <Unit>
         <Filename Value="../../package/GDK/x11/gdkx11devicemanager.inc"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
         <CursorPos X="56" Y="11"/>
         <UsageCount Value="10"/>
@@ -4513,10 +4513,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="project1.lpr"/>
-        <Caret Line="389" Column="20" TopLine="373"/>
-      </Position>
       <Position>
         <Filename Value="project1.lpr"/>
         <Caret Line="74" TopLine="49"/>
@@ -4632,6 +4628,10 @@
       <Position>
         <Filename Value="project1.lpr"/>
         <Caret Line="370" Column="78" TopLine="338"/>
+      </Position>
+      <Position>
+        <Filename Value="../../package/GDK/x11/gdkx11devicemanager.inc"/>
+        <Caret Line="11" Column="56"/>
       </Position>
     </JumpHistory>
     <RunParams>
