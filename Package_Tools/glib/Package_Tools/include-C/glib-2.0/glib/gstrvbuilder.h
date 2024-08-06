@@ -45,11 +45,11 @@ GStrvBuilder *g_strv_builder_ref (GStrvBuilder *builder);
 void g_strv_builder_add (GStrvBuilder *builder,
                          const char *value);
 
-GLIB_AVAILABLE_IN_2_70
+
 void g_strv_builder_addv (GStrvBuilder *builder,
                           const char **value);
 
-GLIB_AVAILABLE_IN_2_70
+
 void g_strv_builder_add_many (GStrvBuilder *builder,
                               ...) G_GNUC_NULL_TERMINATED;
 

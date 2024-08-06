@@ -53,7 +53,7 @@ GThreadPool *   g_thread_pool_new               (GFunc            func,
                                                  gint             max_threads,
                                                  gboolean         exclusive,
                                                  GError         **error);
-GLIB_AVAILABLE_IN_2_70
+
 GThreadPool *   g_thread_pool_new_full          (GFunc            func,
                                                  gpointer         user_data,
                                                  GDestroyNotify   item_free_func,

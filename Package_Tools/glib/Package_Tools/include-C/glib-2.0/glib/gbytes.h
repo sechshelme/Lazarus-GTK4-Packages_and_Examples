@@ -87,7 +87,7 @@ gboolean        g_bytes_equal                   (gconstpointer   bytes1,
 gint            g_bytes_compare                 (gconstpointer   bytes1,
                                                  gconstpointer   bytes2);
 
-GLIB_AVAILABLE_IN_2_70
+
 gconstpointer   g_bytes_get_region              (GBytes         *bytes,
                                                  gsize           element_size,
                                                  gsize           offset,

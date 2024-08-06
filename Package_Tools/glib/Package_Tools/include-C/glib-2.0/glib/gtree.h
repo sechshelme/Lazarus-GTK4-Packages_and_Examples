@@ -114,7 +114,7 @@ void     g_tree_replace         (GTree            *tree,
 gboolean g_tree_remove          (GTree            *tree,
                                  gconstpointer     key);
 
-GLIB_AVAILABLE_IN_2_70
+
 void     g_tree_remove_all      (GTree            *tree);
 
 

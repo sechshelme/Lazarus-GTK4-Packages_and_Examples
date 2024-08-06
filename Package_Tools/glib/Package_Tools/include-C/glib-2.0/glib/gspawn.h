@@ -307,7 +307,7 @@ gboolean g_spawn_command_line_sync  (const gchar          *command_line,
 gboolean g_spawn_command_line_async (const gchar          *command_line,
                                      GError              **error);
 
-GLIB_AVAILABLE_IN_2_70
+
 gboolean g_spawn_check_wait_status (gint      wait_status,
                                     GError  **error);
 

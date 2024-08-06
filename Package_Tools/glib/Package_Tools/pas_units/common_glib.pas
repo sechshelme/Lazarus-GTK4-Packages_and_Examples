@@ -44,8 +44,14 @@ type
   Tgsize= culong;
   Pgsize=^culong;
 
+  Tguintptr=culong;
+  Pguintptr=^culong;
 
   Tdouble=Double;
+
+
+  Tva_list=Pointer;
+  Pva_list=^Tva_list;
 
 implementation
 

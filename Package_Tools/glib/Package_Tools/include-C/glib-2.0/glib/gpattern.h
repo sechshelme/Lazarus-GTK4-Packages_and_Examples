@@ -35,17 +35,17 @@ typedef struct _GPatternSpec    GPatternSpec;
 GPatternSpec* g_pattern_spec_new       (const gchar  *pattern);
 
 void          g_pattern_spec_free      (GPatternSpec *pspec);
-GLIB_AVAILABLE_IN_2_70
+
 GPatternSpec *g_pattern_spec_copy (GPatternSpec *pspec);
 
 gboolean      g_pattern_spec_equal     (GPatternSpec *pspec1,
 					GPatternSpec *pspec2);
-GLIB_AVAILABLE_IN_2_70
+
 gboolean g_pattern_spec_match (GPatternSpec *pspec,
                                gsize string_length,
                                const gchar *string,
                                const gchar *string_reversed);
-GLIB_AVAILABLE_IN_2_70
+
 gboolean g_pattern_spec_match_string (GPatternSpec *pspec,
                                       const gchar *string);
 _IN_2_70_FOR (g_pattern_spec_match)

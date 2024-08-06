@@ -3,7 +3,7 @@ unit gaction;
 interface
 
 uses
-  common_GLIB, gvariant;
+  common_GLIB, gtypes, gvariant, gvarianttype;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -27,18 +27,18 @@ type
   end;
   PGActionInterface = ^TGActionInterface;
 
-function g_action_get_type: TGType; cdecl; external giolib;
-function g_action_get_name(action: PGAction): Pgchar; cdecl; external giolib;
-function g_action_get_parameter_type(action: PGAction): PGVariantType; cdecl; external giolib;
-function g_action_get_state_type(action: PGAction): PGVariantType; cdecl; external giolib;
-function g_action_get_state_hint(action: PGAction): PGVariant; cdecl; external giolib;
-function g_action_get_enabled(action: PGAction): Tgboolean; cdecl; external giolib;
-function g_action_get_state(action: PGAction): PGVariant; cdecl; external giolib;
-procedure g_action_change_state(action: PGAction; Value: PGVariant); cdecl; external giolib;
-procedure g_action_activate(action: PGAction; parameter: PGVariant); cdecl; external giolib;
-function g_action_name_is_valid(action_name: Pgchar): Tgboolean; cdecl; external giolib;
-function g_action_parse_detailed_name(detailed_name: Pgchar; action_name: PPgchar; target_value: PPGVariant; error: PPGError): Tgboolean; cdecl; external giolib;
-function g_action_print_detailed_name(action_name: Pgchar; target_value: PGVariant): Pgchar; cdecl; external giolib;
+function g_action_get_type: TGType; cdecl; external libgio2;
+function g_action_get_name(action: PGAction): Pgchar; cdecl; external libgio2;
+function g_action_get_parameter_type(action: PGAction): PGVariantType; cdecl; external libgio2;
+function g_action_get_state_type(action: PGAction): PGVariantType; cdecl; external libgio2;
+function g_action_get_state_hint(action: PGAction): PGVariant; cdecl; external libgio2;
+function g_action_get_enabled(action: PGAction): Tgboolean; cdecl; external libgio2;
+function g_action_get_state(action: PGAction): PGVariant; cdecl; external libgio2;
+procedure g_action_change_state(action: PGAction; Value: PGVariant); cdecl; external libgio2;
+procedure g_action_activate(action: PGAction; parameter: PGVariant); cdecl; external libgio2;
+function g_action_name_is_valid(action_name: Pgchar): Tgboolean; cdecl; external libgio2;
+function g_action_parse_detailed_name(detailed_name: Pgchar; action_name: PPgchar; target_value: PPGVariant; error: PPGError): Tgboolean; cdecl; external libgio2;
+function g_action_print_detailed_name(action_name: Pgchar; target_value: PGVariant): Pgchar; cdecl; external libgio2;
 
 // === Konventiert am: 6-8-24 15:24:40 ===
 

@@ -11,6 +11,8 @@ uses
   gtypes,   // Komplizierte Makros
 garray,     // Makros
   gunicode,
+  gquark,
+  gerror,
 gstring;
 
 begin

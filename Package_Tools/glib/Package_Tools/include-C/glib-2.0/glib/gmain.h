@@ -645,7 +645,7 @@ gboolean g_source_is_destroyed    (GSource        *source);
 
 void                 g_source_set_name       (GSource        *source,
                                               const char     *name);
-GLIB_AVAILABLE_IN_2_70
+
 void                 g_source_set_static_name (GSource        *source,
                                                const char     *name);
 

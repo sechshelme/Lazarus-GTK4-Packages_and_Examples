@@ -75,6 +75,7 @@ begin
       slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_62', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_64', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_68', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_70', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_74', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_76', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_78', '', [rfReplaceAll]);

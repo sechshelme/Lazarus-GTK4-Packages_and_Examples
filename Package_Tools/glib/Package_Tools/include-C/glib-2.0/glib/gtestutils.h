@@ -390,17 +390,17 @@ const char * g_test_get_path            (void);
 /* tell about failure */
 
 void    g_test_fail                     (void);
-GLIB_AVAILABLE_IN_2_70
+
 void    g_test_fail_printf              (const char *format,
                                          ...) ;
 
 void    g_test_incomplete               (const gchar *msg);
-GLIB_AVAILABLE_IN_2_70
+
 void    g_test_incomplete_printf        (const char *format,
                                          ...) ;
 
 void    g_test_skip                     (const gchar *msg);
-GLIB_AVAILABLE_IN_2_70
+
 void    g_test_skip_printf              (const char *format,
                                          ...) ;
 
@@ -570,10 +570,10 @@ void          g_test_suite_add_suite    (GTestSuite     *suite,
 
 int           g_test_run_suite          (GTestSuite     *suite);
 
-GLIB_AVAILABLE_IN_2_70
+
 void          g_test_case_free          (GTestCase *test_case);
 
-GLIB_AVAILABLE_IN_2_70
+
 void          g_test_suite_free         (GTestSuite     *suite);
 
 

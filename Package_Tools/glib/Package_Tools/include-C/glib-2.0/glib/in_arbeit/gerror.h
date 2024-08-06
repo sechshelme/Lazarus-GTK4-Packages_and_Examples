@@ -71,11 +71,11 @@ struct _GError
  *
  * Since: 2.68
  */
+/*
 #define G_DEFINE_EXTENDED_ERROR(ErrorType, error_type)                  \
 static inline ErrorType ## Private *                                    \
 error_type ## _get_private (const GError *error)                        \
 {                                                                       \
-  /* Copied from gtype.c (STRUCT_ALIGNMENT and ALIGN_STRUCT macros). */ \
   const gsize sa = 2 * sizeof (gsize);                                  \
   const gsize as = (sizeof (ErrorType ## Private) + (sa - 1)) & -sa;    \
   g_return_val_if_fail (error != NULL, NULL);                           \
@@ -124,6 +124,7 @@ error_type ## _quark (void)                                             \
                                                                         \
   return q;                                                             \
 }
+*/
 
 /**
  * GErrorInitFunc:
@@ -192,7 +193,7 @@ GQuark   g_error_domain_register (const char        *error_type_name,
 GError*  g_error_new           (GQuark         domain,
                                 gint           code,
                                 const gchar   *format,
-                                ...) G_GNUC_PRINTF (3, 4);
+                                ...) ;
 
 
 GError*  g_error_new_literal   (GQuark         domain,
@@ -202,7 +203,7 @@ GError*  g_error_new_literal   (GQuark         domain,
 GError*  g_error_new_valist    (GQuark         domain,
                                 gint           code,
                                 const gchar   *format,
-                                va_list        args) G_GNUC_PRINTF(3, 0);
+                                va_list        args) ;
 
 
 void     g_error_free          (GError        *error);
@@ -222,7 +223,7 @@ void     g_set_error           (GError       **err,
                                 GQuark         domain,
                                 gint           code,
                                 const gchar   *format,
-                                ...) G_GNUC_PRINTF (4, 5);
+                                ...) ;
 
 
 void     g_set_error_literal   (GError       **err,
@@ -244,10 +245,10 @@ void     g_clear_error         (GError       **err);
 
 void     g_prefix_error               (GError       **err,
                                        const gchar   *format,
-                                       ...) G_GNUC_PRINTF (2, 3);
+                                       ...) ;
 
 /* if (err) prefix the string to the ->message */
-GLIB_AVAILABLE_IN_2_70
+
 void     g_prefix_error_literal       (GError       **err,
                                        const gchar   *prefix);
 
@@ -256,7 +257,7 @@ void     g_prefix_error_literal       (GError       **err,
 void     g_propagate_prefixed_error   (GError       **dest,
                                        GError        *src,
                                        const gchar   *format,
-                                       ...) G_GNUC_PRINTF (3, 4);
+                                       ...) ;
 
 
 
