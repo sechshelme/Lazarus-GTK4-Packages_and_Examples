@@ -8,10 +8,12 @@ uses
   // https://gstreamer.freedesktop.org/documentation/tutorials/basic/dynamic-pipelines.html?gi-language=c
 
   procedure gst_caps_unref(object_: Tgpointer); cdecl; external gstreamerlib;
+  procedure gst_query_parse_seeking(query: PGstQuery; format: PGstFormat; seekable: Pgboolean; segment_start: Pgint64; segment_end: Pgint64); cdecl; external gstreamerlib;
 
 
 const
   GST_CLOCK_TIME_NONE = TGstClockTime(-1);
+  GST_TIME_FORMAT = 'u:%02u:%02u.%09u';
 
 type
   TCustomData = record
@@ -56,7 +58,12 @@ const
   function GST_MSECOND: TGstClockTimeDiff;
   begin
     Result := TGstClockTimeDiff(GST_SECOND / 1000);
-    ;
+    Result:=1000000;
+  end;
+
+  function GST_CLOCK_TIME_IS_VALID(time: gint64): TGboolean;
+  begin
+    Result := TGstClockTime(time) <> GST_CLOCK_TIME_NONE;
   end;
 
   procedure handle_message(Data: PCustomData; msg: PGstMessage);
@@ -64,6 +71,8 @@ const
     err: PGError;
     debug_info: Pgchar;
     old_state, new_state, pending_state: TGstState;
+    query: PGstQuery;
+    start, end_: Tgint64;
   begin
     case GST_MESSAGE_TYPE(msg) of
       GST_MESSAGE_ERROR: begin
@@ -83,21 +92,38 @@ const
         Data^.terminate := True;
       end;
       GST_MESSAGE_DURATION_CHANGED: begin
-        Data^.duration:=GST_CLOCK_TIME_NONE;
-        Data^.terminate := True;
+        Data^.duration := GST_CLOCK_TIME_NONE;
+        WriteLn('Duaration');
       end;
       GST_MESSAGE_STATE_CHANGED: begin
+
+        WriteLn('Change');
+        gst_message_parse_state_changed(msg, @old_state, @new_state, @pending_state);
         if GST_MESSAGE_SRC(msg) = GST_OBJECT(Data^.playbin) then begin
-          gst_message_parse_state_changed(msg, @old_state, @new_state, @pending_state);
 
           g_print('Pipeline state changed from %s to %s '#10, gst_element_state_get_name(old_state), gst_element_state_get_name(new_state));
-          Data^.playing:=new_state=GST_STATE_PLAYING;;
+          Data^.playing := new_state = GST_STATE_PLAYING;
+
+          if Data^.playing then begin
+            query := gst_query_new_seeking(GST_FORMAT_TIME);
+            if gst_element_query(Data^.playbin, query) then  begin
+              gst_query_parse_seeking(query, nil, @Data^.seek_enabled, @start, @end_);
+              if Data^.seek_enabled then begin
+                WriteLn('Seeking is ENABLED from ', start, ' - ', end_);
+              end else begin
+                WriteLn('Seeking ist DISABLED');
+              end;
+            end else begin
+              g_printerr('Seejing qury failed'#10);
+            end;
+          end;
         end;
       end;
       else begin
-        g_print('Pipeline state unbekannt'#10);
+        g_print('Unexpected message received.'#10);
       end;
     end;
+    gst_message_unref(msg);
   end;
 
   function main(argc: cint; argv: PPChar): cint;
@@ -106,6 +132,7 @@ const
     ret: TGstStateChangeReturn;
     bus: PGstBus;
     msg: PGstMessage;
+    current: Tgint64;
   begin
     Data.playing := False;
     Data.terminate := False;
@@ -132,14 +159,42 @@ const
 
     bus := gst_element_get_bus(Data.playbin);
     repeat
-      msg := gst_bus_timed_pop_filtered(bus, 100 * GST_MSECOND, TGstMessageType(uint64(GST_MESSAGE_STATE_CHANGED) or uint64(GST_MESSAGE_ERROR) or uint64(GST_MESSAGE_EOS) or uint64(GST_MESSAGE_DURATION_CHANGED)));
+      msg := gst_bus_timed_pop_filtered(bus, 100 * GST_MSECOND, TGstMessageType(
+        uint64(GST_MESSAGE_STATE_CHANGED) or
+        uint64(GST_MESSAGE_ERROR) or
+        uint64(GST_MESSAGE_EOS) or
+        uint64(GST_MESSAGE_DURATION_CHANGED)));
       if msg <> nil then  begin
         handle_message(@Data, msg);
-        WriteLn('nil');
+      end else begin
+        if Data.playing then begin
+          current := -1;
+
+          if not gst_element_query_position(Data.playbin, GST_FORMAT_TIME, @current) then begin
+            g_printerr('Could not query current position.'#10);
+          end;
+
+          if not GST_CLOCK_TIME_IS_VALID(Data.duration) then begin
+            if not gst_element_query_duration(Data.playbin, GST_FORMAT_TIME, @Data.duration) then begin
+              g_error('Could not query current duration'#10);
+            end;
+          end;
+
+          WriteLn('Position: ', current, ' - ', Data.duration);
+
+          if (Data.seek_enabled) and (not Data.seek_done) and (current > 10 * GST_SECOND) then begin
+            g_print(#10'nReached 10s, performing seek...'#10);
+            gst_element_seek_simple(Data.playbin, GST_FORMAT_TIME, TGstSeekFlags(uint64(GST_SEEK_FLAG_FLUSH) or uint64(GST_SEEK_FLAG_KEY_UNIT)), 30 * GST_SECOND);
+            Data.seek_done := True;
+          end;
+        end;
       end;
 
     until Data.terminate;
 
+    g_object_unref(bus);
+    gst_element_set_state(Data.playbin,GST_STATE_NULL);
+    g_object_unref(Data.playbin);
 
     WriteLn('ende');
     Result := 0;
