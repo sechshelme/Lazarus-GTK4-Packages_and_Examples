@@ -46,15 +46,12 @@ function G_VARIANT_TYPE(type_string: Pgchar): PGVariantType;
 
 function g_variant_type_string_is_valid(type_string: Pgchar): Tgboolean; cdecl; external libglib2;
 function g_variant_type_string_scan(_string: Pgchar; limit: Pgchar; endptr: PPgchar): Tgboolean; cdecl; external libglib2;
-{ create/destroy  }
 procedure g_variant_type_free(_type: PGVariantType); cdecl; external libglib2;
 function g_variant_type_copy(_type: PGVariantType): PGVariantType; cdecl; external libglib2;
 function g_variant_type_new(type_string: Pgchar): PGVariantType; cdecl; external libglib2;
-{ getters  }
 function g_variant_type_get_string_length(_type: PGVariantType): Tgsize; cdecl; external libglib2;
 function g_variant_type_peek_string(_type: PGVariantType): Pgchar; cdecl; external libglib2;
 function g_variant_type_dup_string(_type: PGVariantType): Pgchar; cdecl; external libglib2;
-{ classification  }
 function g_variant_type_is_definite(_type: PGVariantType): Tgboolean; cdecl; external libglib2;
 function g_variant_type_is_container(_type: PGVariantType): Tgboolean; cdecl; external libglib2;
 function g_variant_type_is_basic(_type: PGVariantType): Tgboolean; cdecl; external libglib2;
@@ -63,24 +60,19 @@ function g_variant_type_is_array(_type: PGVariantType): Tgboolean; cdecl; extern
 function g_variant_type_is_tuple(_type: PGVariantType): Tgboolean; cdecl; external libglib2;
 function g_variant_type_is_dict_entry(_type: PGVariantType): Tgboolean; cdecl; external libglib2;
 function g_variant_type_is_variant(_type: PGVariantType): Tgboolean; cdecl; external libglib2;
-{ for hash tables  }
 function g_variant_type_hash(_type: Tgconstpointer): Tguint; cdecl; external libglib2;
 function g_variant_type_equal(type1: Tgconstpointer; type2: Tgconstpointer): Tgboolean; cdecl; external libglib2;
-{ subtypes  }
 function g_variant_type_is_subtype_of(_type: PGVariantType; supertype: PGVariantType): Tgboolean; cdecl; external libglib2;
-{ type iterator interface  }
 function g_variant_type_element(_type: PGVariantType): PGVariantType; cdecl; external libglib2;
 function g_variant_type_first(_type: PGVariantType): PGVariantType; cdecl; external libglib2;
 function g_variant_type_next(_type: PGVariantType): PGVariantType; cdecl; external libglib2;
 function g_variant_type_n_items(_type: PGVariantType): Tgsize; cdecl; external libglib2;
 function g_variant_type_key(_type: PGVariantType): PGVariantType; cdecl; external libglib2;
 function g_variant_type_value(_type: PGVariantType): PGVariantType; cdecl; external libglib2;
-{ constructors  }
 function g_variant_type_new_array(element: PGVariantType): PGVariantType; cdecl; external libglib2;
 function g_variant_type_new_maybe(element: PGVariantType): PGVariantType; cdecl; external libglib2;
 function g_variant_type_new_tuple(items: PPGVariantType; length: Tgint): PGVariantType; cdecl; external libglib2;
 function g_variant_type_new_dict_entry(key: PGVariantType; Value: PGVariantType): PGVariantType; cdecl; external libglib2;
-{< private > }
 function g_variant_type_checked_(type_string: Pgchar): PGVariantType; cdecl; external libglib2;
 function g_variant_type_string_get_depth_(type_string: Pgchar): Tgsize; cdecl; external libglib2;
 

@@ -5,25 +5,25 @@ uses
 
   // --- glib
 
-  gtypes,                  // Komplizierte Makros entfernt
+  gtypes,                  // Komplizierte Makros entfernt     ( neu übersetzen )
   gvarianttype,            // io.
-  gquark,                  // Makros
-  gatomic,                 // Komplizierte Makros entfernt
-  glist,                   //              const  g_list_free1 = g_list_free_1;
-  gslist,                  //              const g_slist_free1 = g_slist_free_1;
-  gpoll,                   //   32 / 64bit !
-  gthread,                 //                              doppelter gtheread.h von deprecated
-  gmain,                   // gslist, gthread, gpoll       Komplizierte Makros entfernt
-
-  garray,                  // Makros
-  gstring,                 // -> garray
+  gquark,                  // io.
   gerror,                  //      Makros
-  gvariant,                // -> garray, gerror, gstring,  gvarianttype      Makro
-  gunicode,                // -> gerror     Makros
+
+  gthread,                 //                   doppelter gtheread.h von deprecated
+  gunicode,                // io.
+  garray,                  // io.
+  gstring,                 // io. -> garray, gunicode
+  gatomic,                 // io.
   gtimezone,               // io.
-  gtimer,                  // io.
   gdatetime,               // io. -> gtimezone
-  gbookmarkfile,           // io. -> gerror, gdatetime
+  gbookmarkfile,           // io. -> gdatetime
+  gtimer,                  // io.
+  glist,                   // io.
+  gslist,                  // io.
+  gpoll,                   // io.
+  gmain,                   // io. gslist, gthread, gpoll
+  gvariant,                // io. -> garray,  gstring, gvarianttype
 
 
 

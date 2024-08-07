@@ -10,14 +10,13 @@ uses
   {$ENDIF}
 
 type
-  PGPollFD = ^TGPollFD;
-
   TGPollFD = record
     fd: Tgint64;
 //     fd: Tgint;  32bit OS
     events: Tgushort;
     revents: Tgushort;
   end;
+  PGPollFD = ^TGPollFD;
 
 type
   TGPollFunc = function(ufds: PGPollFD; nfsd: Tguint; timeout_: Tgint): Tgint; cdecl;

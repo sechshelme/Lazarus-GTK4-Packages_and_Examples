@@ -3,20 +3,19 @@ unit gstring;
 interface
 
 uses
-  common_GLIB,gunicode, gtypes, garray;
+  common_GLIB, gtypes, gunicode, garray;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
 type
-  PGString = ^TGString;
-
   TGString = record
     str: Pgchar;
     len: Tgsize;
     allocated_len: Tgsize;
   end;
+  PGString = ^TGString;
 
 
 function g_string_new(init: Pgchar): PGString; cdecl; external libglib2;
