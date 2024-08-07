@@ -126,15 +126,15 @@ gboolean g_file_set_contents (const gchar *filename,
                               const gchar *contents,
                               gssize         length,
                               GError       **error);
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-GLIB_AVAILABLE_IN_2_66
+
+
 gboolean g_file_set_contents_full (const gchar            *filename,
                                    const gchar            *contents,
                                    gssize                  length,
                                    GFileSetContentsFlags   flags,
                                    int                     mode,
                                    GError                **error);
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 gchar   *g_file_read_link    (const gchar  *filename,
                               GError      **error);
@@ -176,7 +176,7 @@ gchar   *g_build_filename     (const gchar *first_element,
                                ...)  G_GNUC_NULL_TERMINATED;
 
 gchar   *g_build_filenamev    (gchar      **args) ;
-GLIB_AVAILABLE_IN_2_56
+
 gchar   *g_build_filename_valist (const gchar  *first_element,
                                   va_list      *args) ;
 

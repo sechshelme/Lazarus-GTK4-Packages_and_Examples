@@ -44,8 +44,6 @@ type
   Pgdouble = ^Tgdouble;
   Tgdouble = Tdouble;
 
-
-type
   Pgpointer = ^Tgpointer;
   Tgpointer = pointer;
 
@@ -53,27 +51,17 @@ type
   Tgconstpointer = pointer;
 
   TGCompareFunc = function(a: Tgconstpointer; b: Tgconstpointer): Tgint; cdecl;
-
   TGCompareDataFunc = function(a: Tgconstpointer; b: Tgconstpointer; user_data: Tgpointer): Tgint; cdecl;
-
   TGEqualFunc = function(a: Tgconstpointer; b: Tgconstpointer): Tgboolean; cdecl;
-
   TGEqualFuncFull = function(a: Tgconstpointer; b: Tgconstpointer; user_data: Tgpointer): Tgboolean; cdecl;
-
   TGDestroyNotify = procedure(Data: Tgpointer); cdecl;
-
   TGFunc = procedure(Data: Tgpointer; user_data: Tgpointer); cdecl;
-
   TGHashFunc = function(key: Tgconstpointer): Tguint; cdecl;
-
   TGHFunc = procedure(key: Tgpointer; Value: Tgpointer; user_data: Tgpointer); cdecl;
-
   TGCopyFunc = function(src: Tgconstpointer; Data: Tgpointer): Tgpointer; cdecl;
-
   TGFreeFunc = procedure(Data: Tgpointer); cdecl;
-
-  PGTranslateFunc = ^TGTranslateFunc;
   TGTranslateFunc = function(str: Pgchar; Data: Tgpointer): Pgchar; cdecl;
+  PGTranslateFunc = ^TGTranslateFunc;
 
 const
   G_E = 2.7182818284590452353602874713526624977572470937000;
@@ -88,11 +76,9 @@ const
   G_BIG_ENDIAN = 4321;
 
 
-
 const
   G_IEEE754_FLOAT_BIAS = 127;
   G_IEEE754_DOUBLE_BIAS = 1023;
-  { multiply with base2 exponent to get base10 exponent (normal numbers)  }
   G_LOG_2_BASE_10 = 0.30102999566398119521;
 
 type
@@ -135,6 +121,13 @@ const
   bp_TGDoubleIEEE754_biased_exponent = 20;
   bm_TGDoubleIEEE754_sign = $80000000;
   bp_TGDoubleIEEE754_sign = 31;
+
+type
+  PGTimeVal = ^TGTimeVal;
+  TGTimeVal = record
+      tv_sec : Tglong;
+      tv_usec : Tglong;
+    end;
 
 
   // === Konventiert am: 6-8-24 15:51:59 ===

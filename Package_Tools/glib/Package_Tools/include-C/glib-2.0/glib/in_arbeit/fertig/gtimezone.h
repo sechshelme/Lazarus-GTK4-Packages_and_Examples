@@ -55,7 +55,6 @@ typedef enum
   G_TIME_TYPE_UNIVERSAL
 } GTimeType;
 
-_IN_2_68_FOR (g_time_zone_new_identifier)
 GTimeZone *             g_time_zone_new                                 (const gchar *identifier);
 
 GTimeZone *             g_time_zone_new_identifier                      (const gchar *identifier);

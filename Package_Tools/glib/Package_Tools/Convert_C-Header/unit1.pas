@@ -43,7 +43,7 @@ end;
 procedure TForm1.Button1Click(Sender: TObject);
 var
   slFile, slHeader: TStringList;
-  i, j: integer;
+  i, j, k: integer;
 begin
   Memo1.Clear;
   slFile := FindAllFiles('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK4/Package_Tools/glib/Package_Tools/include-C', '*.h', True);
@@ -62,23 +62,28 @@ begin
       slHeader[j] := StringReplace(slHeader[j], 'GIO_AVAILABLE_IN_2_38', '', [rfReplaceAll]);
 
       slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_ALL', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_30', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_32', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_34', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_36', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_38', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_40', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_52', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_54', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_58', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_60', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_62', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_64', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_68', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_70', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_74', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_76', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_78', '', [rfReplaceAll]);
+      k := 30;
+      repeat
+        slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_' + IntToStr(k), '', [rfReplaceAll]);
+        Inc(k, 2);
+      until k >= 82;
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_30', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_32', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_34', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_36', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_38', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_40', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_52', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_54', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_58', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_60', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_62', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_64', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_68', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_70', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_74', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_76', '', [rfReplaceAll]);
+      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_78', '', [rfReplaceAll]);
 
 
 
@@ -89,11 +94,16 @@ begin
 
       slHeader[j] := StringReplace(slHeader[j], 'GLIB_DEPRECATED', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_WARN_UNUSED_RESULT', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_BEGIN_IGNORE_DEPRECATIONS', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_END_IGNORE_DEPRECATIONS', '', [rfReplaceAll]);
 
 
 
-      slHeader[j] := DeleteLines(slHeader[j], 'GLIB_DEPRECATED_IN_2_38_FOR(');
+      slHeader[j] := DeleteLines(slHeader[j], '_IN_2_62_FOR(');
+      slHeader[j] := DeleteLines(slHeader[j], '_IN_2_66_FOR(');
+      slHeader[j] := DeleteLines(slHeader[j], '_IN_2_68_FOR(');
       slHeader[j] := DeleteLines(slHeader[j], 'G_DEFINE_AUTOPTR_CLEANUP_FUNC(');
+      slHeader[j] := DeleteLines(slHeader[j], 'GLIB_DEPRECATED_IN_2_38_FOR(');
 
     end;
     slHeader.SaveToFile(slFile[i]);

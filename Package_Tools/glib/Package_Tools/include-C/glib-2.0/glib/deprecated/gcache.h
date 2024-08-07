@@ -41,7 +41,7 @@ typedef gpointer        (*GCacheNewFunc)        (gpointer       key) _TYPE_IN_2_
 typedef gpointer        (*GCacheDupFunc)        (gpointer       value) _TYPE_IN_2_26;
 typedef void            (*GCacheDestroyFunc)    (gpointer       value) _TYPE_IN_2_26;
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 
 /* Caches
  */
@@ -70,7 +70,7 @@ void     g_cache_value_foreach (GCache            *cache,
                                 GHFunc             func,
                                 gpointer           user_data);
 
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 
 

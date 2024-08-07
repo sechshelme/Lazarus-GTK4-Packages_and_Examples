@@ -65,7 +65,7 @@ gchar                *g_compute_hmac_for_string     (GChecksumType  digest_type,
                                                      gsize          key_len,
                                                      const gchar   *str,
                                                      gssize         length);
-GLIB_AVAILABLE_IN_2_50
+
 gchar               *g_compute_hmac_for_bytes       (GChecksumType  digest_type,
                                                      GBytes        *key,
                                                      GBytes        *data);

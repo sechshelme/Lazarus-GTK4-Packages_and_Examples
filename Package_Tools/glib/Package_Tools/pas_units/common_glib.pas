@@ -9,13 +9,14 @@ const
   {$IFDEF Linux}
   libgtk4 = 'libgtk-4';
 //  libgio2 = 'libgio-2.0';
-  libgio2 = 'libglib-2.0';
+  libglib2 = 'libglib-2.0';
   libgobject2_0 = 'libgobject-2.0';
   {$ENDIF}
 
   {$IFDEF Windows}
   libgtk4 = 'libgtk-4.dll';
   libgio2 = 'libgio-2.0.dll';
+  libglib2 = 'libglib-2.0,dll';
   glibgobject2_0 = 'libgobject-2.0.dll';
   {$ENDIF}
 
@@ -40,15 +41,23 @@ type
   Pgint64=^Int64;
   Pguint64=^UInt64;
 
-  Tgssize= cslong;
-  Pgssize=^cslong;
-  Tgsize= culong;
-  Pgsize=^culong;
+  Tgssize= SizeInt;
+  Pgssize=PSizeInt;
+  Tgsize= SizeUInt;
+  Pgsize=PSizeUInt;
 
-  Tguintptr=culong;
-  Pguintptr=^culong;
+  Tgintptr=IntPtr;
+  Pgintptr=PIntPtr;
+  Tguintptr=PtrUInt;
+  Pguintptr=PPtrUInt;
 
   Tdouble=Double;
+
+  Ttime_t=clong; // types.h
+  Ptime_t=^Ttime_t;
+
+  TGPid=cint;
+  PGPid=^TGPid;
 
 
   Tva_list=Pointer;

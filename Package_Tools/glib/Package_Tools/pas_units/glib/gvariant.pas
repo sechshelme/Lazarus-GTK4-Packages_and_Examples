@@ -38,112 +38,108 @@ const
   G_VARIANT_CLASS_TUPLE = '(';
   G_VARIANT_CLASS_DICT_ENTRY = '{';
 
-procedure g_variant_unref(Value: PGVariant); cdecl; external libgio2;
-function g_variant_ref(Value: PGVariant): PGVariant; cdecl; external libgio2;
-function g_variant_ref_sink(Value: PGVariant): PGVariant; cdecl; external libgio2;
-function g_variant_is_floating(Value: PGVariant): Tgboolean; cdecl; external libgio2;
-function g_variant_take_ref(Value: PGVariant): PGVariant; cdecl; external libgio2;
-function g_variant_get_type(Value: PGVariant): PGVariantType; cdecl; external libgio2;
-function g_variant_get_type_string(Value: PGVariant): Pgchar; cdecl; external libgio2;
-function g_variant_is_of_type(Value: PGVariant; _type: PGVariantType): Tgboolean; cdecl; external libgio2;
-function g_variant_is_container(Value: PGVariant): Tgboolean; cdecl; external libgio2;
-function g_variant_classify(Value: PGVariant): TGVariantClass; cdecl; external libgio2;
-function g_variant_new_boolean(Value: Tgboolean): PGVariant; cdecl; external libgio2;
-function g_variant_new_byte(Value: Tguint8): PGVariant; cdecl; external libgio2;
-function g_variant_new_int16(Value: Tgint16): PGVariant; cdecl; external libgio2;
-function g_variant_new_uint16(Value: Tguint16): PGVariant; cdecl; external libgio2;
-function g_variant_new_int32(Value: Tgint32): PGVariant; cdecl; external libgio2;
-function g_variant_new_uint32(Value: Tguint32): PGVariant; cdecl; external libgio2;
-function g_variant_new_int64(Value: Tgint64): PGVariant; cdecl; external libgio2;
-function g_variant_new_uint64(Value: Tguint64): PGVariant; cdecl; external libgio2;
-function g_variant_new_handle(Value: Tgint32): PGVariant; cdecl; external libgio2;
-function g_variant_new_double(Value: Tgdouble): PGVariant; cdecl; external libgio2;
-function g_variant_new_string(_string: Pgchar): PGVariant; cdecl; external libgio2;
-function g_variant_new_take_string(_string: Pgchar): PGVariant; cdecl; external libgio2;
-function g_variant_new_printf(format_string: Pgchar; args: array of const): PGVariant; cdecl; external libgio2;
-function g_variant_new_printf(format_string: Pgchar): PGVariant; cdecl; external libgio2;
-function g_variant_new_object_path(object_path: Pgchar): PGVariant; cdecl; external libgio2;
-function g_variant_is_object_path(_string: Pgchar): Tgboolean; cdecl; external libgio2;
-function g_variant_new_signature(signature: Pgchar): PGVariant; cdecl; external libgio2;
-function g_variant_is_signature(_string: Pgchar): Tgboolean; cdecl; external libgio2;
-function g_variant_new_variant(Value: PGVariant): PGVariant; cdecl; external libgio2;
-function g_variant_new_strv(strv: PPgchar; length: Tgssize): PGVariant; cdecl; external libgio2;
-function g_variant_new_objv(strv: PPgchar; length: Tgssize): PGVariant; cdecl; external libgio2;
-function g_variant_new_bytestring(_string: Pgchar): PGVariant; cdecl; external libgio2;
-function g_variant_new_bytestring_array(strv: PPgchar; length: Tgssize): PGVariant; cdecl; external libgio2;
-function g_variant_new_fixed_array(element_type: PGVariantType; elements: Tgconstpointer; n_elements: Tgsize; element_size: Tgsize): PGVariant; cdecl; external libgio2;
-function g_variant_get_boolean(Value: PGVariant): Tgboolean; cdecl; external libgio2;
-function g_variant_get_byte(Value: PGVariant): Tguint8; cdecl; external libgio2;
-function g_variant_get_int16(Value: PGVariant): Tgint16; cdecl; external libgio2;
-function g_variant_get_uint16(Value: PGVariant): Tguint16; cdecl; external libgio2;
-function g_variant_get_int32(Value: PGVariant): Tgint32; cdecl; external libgio2;
-function g_variant_get_uint32(Value: PGVariant): Tguint32; cdecl; external libgio2;
-function g_variant_get_int64(Value: PGVariant): Tgint64; cdecl; external libgio2;
-function g_variant_get_uint64(Value: PGVariant): Tguint64; cdecl; external libgio2;
-function g_variant_get_handle(Value: PGVariant): Tgint32; cdecl; external libgio2;
-function g_variant_get_double(Value: PGVariant): Tgdouble; cdecl; external libgio2;
-function g_variant_get_variant(Value: PGVariant): PGVariant; cdecl; external libgio2;
-function g_variant_get_string(Value: PGVariant; length: Pgsize): Pgchar; cdecl; external libgio2;
-function g_variant_dup_string(Value: PGVariant; length: Pgsize): Pgchar; cdecl; external libgio2;
-function g_variant_get_strv(Value: PGVariant; length: Pgsize): PPgchar; cdecl; external libgio2;
-function g_variant_dup_strv(Value: PGVariant; length: Pgsize): PPgchar; cdecl; external libgio2;
-function g_variant_get_objv(Value: PGVariant; length: Pgsize): PPgchar; cdecl; external libgio2;
-function g_variant_dup_objv(Value: PGVariant; length: Pgsize): PPgchar; cdecl; external libgio2;
-function g_variant_get_bytestring(Value: PGVariant): Pgchar; cdecl; external libgio2;
-function g_variant_dup_bytestring(Value: PGVariant; length: Pgsize): Pgchar; cdecl; external libgio2;
-function g_variant_get_bytestring_array(Value: PGVariant; length: Pgsize): PPgchar; cdecl; external libgio2;
-function g_variant_dup_bytestring_array(Value: PGVariant; length: Pgsize): PPgchar; cdecl; external libgio2;
-function g_variant_new_maybe(child_type: PGVariantType; child: PGVariant): PGVariant; cdecl; external libgio2;
-function g_variant_new_array(child_type: PGVariantType; children: PPGVariant; n_children: Tgsize): PGVariant; cdecl; external libgio2;
-function g_variant_new_tuple(children: PPGVariant; n_children: Tgsize): PGVariant; cdecl; external libgio2;
-function g_variant_new_dict_entry(key: PGVariant; Value: PGVariant): PGVariant; cdecl; external libgio2;
-function g_variant_get_maybe(Value: PGVariant): PGVariant; cdecl; external libgio2;
-function g_variant_n_children(Value: PGVariant): Tgsize; cdecl; external libgio2;
-procedure g_variant_get_child(Value: PGVariant; index_: Tgsize; format_string: Pgchar; args: array of const); cdecl; external libgio2;
-procedure g_variant_get_child(Value: PGVariant; index_: Tgsize; format_string: Pgchar); cdecl; external libgio2;
-function g_variant_get_child_value(Value: PGVariant; index_: Tgsize): PGVariant; cdecl; external libgio2;
-function g_variant_lookup(dictionary: PGVariant; key: Pgchar; format_string: Pgchar; args: array of const): Tgboolean; cdecl; external libgio2;
-function g_variant_lookup(dictionary: PGVariant; key: Pgchar; format_string: Pgchar): Tgboolean; cdecl; external libgio2;
-function g_variant_lookup_value(dictionary: PGVariant; key: Pgchar; expected_type: PGVariantType): PGVariant; cdecl; external libgio2;
-function g_variant_get_fixed_array(Value: PGVariant; n_elements: Pgsize; element_size: Tgsize): Tgconstpointer; cdecl; external libgio2;
-function g_variant_get_size(Value: PGVariant): Tgsize; cdecl; external libgio2;
-function g_variant_get_data(Value: PGVariant): Tgconstpointer; cdecl; external libgio2;
-function g_variant_get_data_as_bytes(Value: PGVariant): PGBytes; cdecl; external libgio2;
-procedure g_variant_store(Value: PGVariant; Data: Tgpointer); cdecl; external libgio2;
-function g_variant_print(Value: PGVariant; type_annotate: Tgboolean): Pgchar; cdecl; external libgio2;
-function g_variant_print_string(Value: PGVariant; _string: PGString; type_annotate: Tgboolean): PGString; cdecl; external libgio2;
-function g_variant_hash(Value: Tgconstpointer): Tguint; cdecl; external libgio2;
-function g_variant_equal(one: Tgconstpointer; two: Tgconstpointer): Tgboolean; cdecl; external libgio2;
-function g_variant_get_normal_form(Value: PGVariant): PGVariant; cdecl; external libgio2;
-function g_variant_is_normal_form(Value: PGVariant): Tgboolean; cdecl; external libgio2;
-function g_variant_byteswap(Value: PGVariant): PGVariant; cdecl; external libgio2;
-function g_variant_new_from_bytes(_type: PGVariantType; bytes: PGBytes; trusted: Tgboolean): PGVariant; cdecl; external libgio2;
+procedure g_variant_unref(Value: PGVariant); cdecl; external libglib2;
+function g_variant_ref(Value: PGVariant): PGVariant; cdecl; external libglib2;
+function g_variant_ref_sink(Value: PGVariant): PGVariant; cdecl; external libglib2;
+function g_variant_is_floating(Value: PGVariant): Tgboolean; cdecl; external libglib2;
+function g_variant_take_ref(Value: PGVariant): PGVariant; cdecl; external libglib2;
+function g_variant_get_type(Value: PGVariant): PGVariantType; cdecl; external libglib2;
+function g_variant_get_type_string(Value: PGVariant): Pgchar; cdecl; external libglib2;
+function g_variant_is_of_type(Value: PGVariant; _type: PGVariantType): Tgboolean; cdecl; external libglib2;
+function g_variant_is_container(Value: PGVariant): Tgboolean; cdecl; external libglib2;
+function g_variant_classify(Value: PGVariant): TGVariantClass; cdecl; external libglib2;
+function g_variant_new_boolean(Value: Tgboolean): PGVariant; cdecl; external libglib2;
+function g_variant_new_byte(Value: Tguint8): PGVariant; cdecl; external libglib2;
+function g_variant_new_int16(Value: Tgint16): PGVariant; cdecl; external libglib2;
+function g_variant_new_uint16(Value: Tguint16): PGVariant; cdecl; external libglib2;
+function g_variant_new_int32(Value: Tgint32): PGVariant; cdecl; external libglib2;
+function g_variant_new_uint32(Value: Tguint32): PGVariant; cdecl; external libglib2;
+function g_variant_new_int64(Value: Tgint64): PGVariant; cdecl; external libglib2;
+function g_variant_new_uint64(Value: Tguint64): PGVariant; cdecl; external libglib2;
+function g_variant_new_handle(Value: Tgint32): PGVariant; cdecl; external libglib2;
+function g_variant_new_double(Value: Tgdouble): PGVariant; cdecl; external libglib2;
+function g_variant_new_string(_string: Pgchar): PGVariant; cdecl; external libglib2;
+function g_variant_new_take_string(_string: Pgchar): PGVariant; cdecl; external libglib2;
+function g_variant_new_printf(format_string: Pgchar; args: array of const): PGVariant; cdecl; external libglib2;
+function g_variant_new_printf(format_string: Pgchar): PGVariant; cdecl; external libglib2;
+function g_variant_new_object_path(object_path: Pgchar): PGVariant; cdecl; external libglib2;
+function g_variant_is_object_path(_string: Pgchar): Tgboolean; cdecl; external libglib2;
+function g_variant_new_signature(signature: Pgchar): PGVariant; cdecl; external libglib2;
+function g_variant_is_signature(_string: Pgchar): Tgboolean; cdecl; external libglib2;
+function g_variant_new_variant(Value: PGVariant): PGVariant; cdecl; external libglib2;
+function g_variant_new_strv(strv: PPgchar; length: Tgssize): PGVariant; cdecl; external libglib2;
+function g_variant_new_objv(strv: PPgchar; length: Tgssize): PGVariant; cdecl; external libglib2;
+function g_variant_new_bytestring(_string: Pgchar): PGVariant; cdecl; external libglib2;
+function g_variant_new_bytestring_array(strv: PPgchar; length: Tgssize): PGVariant; cdecl; external libglib2;
+function g_variant_new_fixed_array(element_type: PGVariantType; elements: Tgconstpointer; n_elements: Tgsize; element_size: Tgsize): PGVariant; cdecl; external libglib2;
+function g_variant_get_boolean(Value: PGVariant): Tgboolean; cdecl; external libglib2;
+function g_variant_get_byte(Value: PGVariant): Tguint8; cdecl; external libglib2;
+function g_variant_get_int16(Value: PGVariant): Tgint16; cdecl; external libglib2;
+function g_variant_get_uint16(Value: PGVariant): Tguint16; cdecl; external libglib2;
+function g_variant_get_int32(Value: PGVariant): Tgint32; cdecl; external libglib2;
+function g_variant_get_uint32(Value: PGVariant): Tguint32; cdecl; external libglib2;
+function g_variant_get_int64(Value: PGVariant): Tgint64; cdecl; external libglib2;
+function g_variant_get_uint64(Value: PGVariant): Tguint64; cdecl; external libglib2;
+function g_variant_get_handle(Value: PGVariant): Tgint32; cdecl; external libglib2;
+function g_variant_get_double(Value: PGVariant): Tgdouble; cdecl; external libglib2;
+function g_variant_get_variant(Value: PGVariant): PGVariant; cdecl; external libglib2;
+function g_variant_get_string(Value: PGVariant; length: Pgsize): Pgchar; cdecl; external libglib2;
+function g_variant_dup_string(Value: PGVariant; length: Pgsize): Pgchar; cdecl; external libglib2;
+function g_variant_get_strv(Value: PGVariant; length: Pgsize): PPgchar; cdecl; external libglib2;
+function g_variant_dup_strv(Value: PGVariant; length: Pgsize): PPgchar; cdecl; external libglib2;
+function g_variant_get_objv(Value: PGVariant; length: Pgsize): PPgchar; cdecl; external libglib2;
+function g_variant_dup_objv(Value: PGVariant; length: Pgsize): PPgchar; cdecl; external libglib2;
+function g_variant_get_bytestring(Value: PGVariant): Pgchar; cdecl; external libglib2;
+function g_variant_dup_bytestring(Value: PGVariant; length: Pgsize): Pgchar; cdecl; external libglib2;
+function g_variant_get_bytestring_array(Value: PGVariant; length: Pgsize): PPgchar; cdecl; external libglib2;
+function g_variant_dup_bytestring_array(Value: PGVariant; length: Pgsize): PPgchar; cdecl; external libglib2;
+function g_variant_new_maybe(child_type: PGVariantType; child: PGVariant): PGVariant; cdecl; external libglib2;
+function g_variant_new_array(child_type: PGVariantType; children: PPGVariant; n_children: Tgsize): PGVariant; cdecl; external libglib2;
+function g_variant_new_tuple(children: PPGVariant; n_children: Tgsize): PGVariant; cdecl; external libglib2;
+function g_variant_new_dict_entry(key: PGVariant; Value: PGVariant): PGVariant; cdecl; external libglib2;
+function g_variant_get_maybe(Value: PGVariant): PGVariant; cdecl; external libglib2;
+function g_variant_n_children(Value: PGVariant): Tgsize; cdecl; external libglib2;
+procedure g_variant_get_child(Value: PGVariant; index_: Tgsize; format_string: Pgchar; args: array of const); cdecl; external libglib2;
+procedure g_variant_get_child(Value: PGVariant; index_: Tgsize; format_string: Pgchar); cdecl; external libglib2;
+function g_variant_get_child_value(Value: PGVariant; index_: Tgsize): PGVariant; cdecl; external libglib2;
+function g_variant_lookup(dictionary: PGVariant; key: Pgchar; format_string: Pgchar; args: array of const): Tgboolean; cdecl; external libglib2;
+function g_variant_lookup(dictionary: PGVariant; key: Pgchar; format_string: Pgchar): Tgboolean; cdecl; external libglib2;
+function g_variant_lookup_value(dictionary: PGVariant; key: Pgchar; expected_type: PGVariantType): PGVariant; cdecl; external libglib2;
+function g_variant_get_fixed_array(Value: PGVariant; n_elements: Pgsize; element_size: Tgsize): Tgconstpointer; cdecl; external libglib2;
+function g_variant_get_size(Value: PGVariant): Tgsize; cdecl; external libglib2;
+function g_variant_get_data(Value: PGVariant): Tgconstpointer; cdecl; external libglib2;
+function g_variant_get_data_as_bytes(Value: PGVariant): PGBytes; cdecl; external libglib2;
+procedure g_variant_store(Value: PGVariant; Data: Tgpointer); cdecl; external libglib2;
+function g_variant_print(Value: PGVariant; type_annotate: Tgboolean): Pgchar; cdecl; external libglib2;
+function g_variant_print_string(Value: PGVariant; _string: PGString; type_annotate: Tgboolean): PGString; cdecl; external libglib2;
+function g_variant_hash(Value: Tgconstpointer): Tguint; cdecl; external libglib2;
+function g_variant_equal(one: Tgconstpointer; two: Tgconstpointer): Tgboolean; cdecl; external libglib2;
+function g_variant_get_normal_form(Value: PGVariant): PGVariant; cdecl; external libglib2;
+function g_variant_is_normal_form(Value: PGVariant): Tgboolean; cdecl; external libglib2;
+function g_variant_byteswap(Value: PGVariant): PGVariant; cdecl; external libglib2;
+function g_variant_new_from_bytes(_type: PGVariantType; bytes: PGBytes; trusted: Tgboolean): PGVariant; cdecl; external libglib2;
 function g_variant_new_from_data(_type: PGVariantType; Data: Tgconstpointer; size: Tgsize; trusted: Tgboolean; notify: TGDestroyNotify;
-  user_data: Tgpointer): PGVariant; cdecl; external libgio2;
+  user_data: Tgpointer): PGVariant; cdecl; external libglib2;
 
 type
-  {< private > }
-  PGVariantIter = ^TGVariantIter;
-
   TGVariantIter = record
     x: array[0..15] of Tguintptr;
   end;
+  PGVariantIter = ^TGVariantIter;
 
 
-function g_variant_iter_new(Value: PGVariant): PGVariantIter; cdecl; external libgio2;
-function g_variant_iter_init(iter: PGVariantIter; Value: PGVariant): Tgsize; cdecl; external libgio2;
-function g_variant_iter_copy(iter: PGVariantIter): PGVariantIter; cdecl; external libgio2;
-function g_variant_iter_n_children(iter: PGVariantIter): Tgsize; cdecl; external libgio2;
-procedure g_variant_iter_free(iter: PGVariantIter); cdecl; external libgio2;
-function g_variant_iter_next_value(iter: PGVariantIter): PGVariant; cdecl; external libgio2;
-function g_variant_iter_next(iter: PGVariantIter; format_string: Pgchar; args: array of const): Tgboolean; cdecl; external libgio2;
-function g_variant_iter_next(iter: PGVariantIter; format_string: Pgchar): Tgboolean; cdecl; external libgio2;
-function g_variant_iter_loop(iter: PGVariantIter; format_string: Pgchar; args: array of const): Tgboolean; cdecl; external libgio2;
-function g_variant_iter_loop(iter: PGVariantIter; format_string: Pgchar): Tgboolean; cdecl; external libgio2;
+function g_variant_iter_new(Value: PGVariant): PGVariantIter; cdecl; external libglib2;
+function g_variant_iter_init(iter: PGVariantIter; Value: PGVariant): Tgsize; cdecl; external libglib2;
+function g_variant_iter_copy(iter: PGVariantIter): PGVariantIter; cdecl; external libglib2;
+function g_variant_iter_n_children(iter: PGVariantIter): Tgsize; cdecl; external libglib2;
+procedure g_variant_iter_free(iter: PGVariantIter); cdecl; external libglib2;
+function g_variant_iter_next_value(iter: PGVariantIter): PGVariant; cdecl; external libglib2;
+function g_variant_iter_next(iter: PGVariantIter; format_string: Pgchar; args: array of const): Tgboolean; cdecl; external libglib2;
+function g_variant_iter_next(iter: PGVariantIter; format_string: Pgchar): Tgboolean; cdecl; external libglib2;
+function g_variant_iter_loop(iter: PGVariantIter; format_string: Pgchar; args: array of const): Tgboolean; cdecl; external libglib2;
+function g_variant_iter_loop(iter: PGVariantIter; format_string: Pgchar): Tgboolean; cdecl; external libglib2;
 
 type
-  PGVariantBuilder = ^TGVariantBuilder;
-
   TGVariantBuilder = record
     u: record
       case longint of
@@ -155,7 +151,7 @@ type
         1: (x: array[0..15] of Tguintptr);
       end;
   end;
-
+  PGVariantBuilder = ^TGVariantBuilder;
 
   PGVariantParseError = ^TGVariantParseError;
   TGVariantParseError = longint;
@@ -181,12 +177,8 @@ const
   G_VARIANT_PARSE_ERROR_VALUE_EXPECTED = 17;
   G_VARIANT_PARSE_ERROR_RECURSION = 18;
 
-
-{ was #define dname def_expr }
-function G_VARIANT_PARSE_ERROR: longint; { return type might be wrong }
-
-function g_variant_parser_get_error_quark: TGQuark; cdecl; external libgio2;
-function g_variant_parse_error_quark: TGQuark; cdecl; external libgio2;
+function g_variant_parser_get_error_quark: TGQuark; cdecl; external libglib2;
+function g_variant_parse_error_quark: TGQuark; cdecl; external libglib2;
 {#define G_VARIANT_BUILDER_INIT(variant_type)                                          \ }
 {                                                                                     \ }
 {                                                                                     \ }
@@ -195,32 +187,32 @@ function g_variant_parse_error_quark: TGQuark; cdecl; external libgio2;
 {                                                                                     \ }
 {                                                                                     \ }
 {   }
-function g_variant_builder_new(_type: PGVariantType): PGVariantBuilder; cdecl; external libgio2;
-procedure g_variant_builder_unref(builder: PGVariantBuilder); cdecl; external libgio2;
-function g_variant_builder_ref(builder: PGVariantBuilder): PGVariantBuilder; cdecl; external libgio2;
-procedure g_variant_builder_init(builder: PGVariantBuilder; _type: PGVariantType); cdecl; external libgio2;
-function g_variant_builder_end(builder: PGVariantBuilder): PGVariant; cdecl; external libgio2;
-procedure g_variant_builder_clear(builder: PGVariantBuilder); cdecl; external libgio2;
-procedure g_variant_builder_open(builder: PGVariantBuilder; _type: PGVariantType); cdecl; external libgio2;
-procedure g_variant_builder_close(builder: PGVariantBuilder); cdecl; external libgio2;
-procedure g_variant_builder_add_value(builder: PGVariantBuilder; Value: PGVariant); cdecl; external libgio2;
-procedure g_variant_builder_add(builder: PGVariantBuilder; format_string: Pgchar; args: array of const); cdecl; external libgio2;
-procedure g_variant_builder_add(builder: PGVariantBuilder; format_string: Pgchar); cdecl; external libgio2;
-procedure g_variant_builder_add_parsed(builder: PGVariantBuilder; format: Pgchar; args: array of const); cdecl; external libgio2;
-procedure g_variant_builder_add_parsed(builder: PGVariantBuilder; format: Pgchar); cdecl; external libgio2;
-function g_variant_new(format_string: Pgchar; args: array of const): PGVariant; cdecl; external libgio2;
-function g_variant_new(format_string: Pgchar): PGVariant; cdecl; external libgio2;
-procedure g_variant_get(Value: PGVariant; format_string: Pgchar; args: array of const); cdecl; external libgio2;
-procedure g_variant_get(Value: PGVariant; format_string: Pgchar); cdecl; external libgio2;
-function g_variant_new_va(format_string: Pgchar; endptr: PPgchar; app: Pva_list): PGVariant; cdecl; external libgio2;
-procedure g_variant_get_va(Value: PGVariant; format_string: Pgchar; endptr: PPgchar; app: Pva_list); cdecl; external libgio2;
-function g_variant_check_format_string(Value: PGVariant; format_string: Pgchar; copy_only: Tgboolean): Tgboolean; cdecl; external libgio2;
-function g_variant_parse(_type: PGVariantType; Text: Pgchar; limit: Pgchar; endptr: PPgchar; error: PPGError): PGVariant; cdecl; external libgio2;
-function g_variant_new_parsed(format: Pgchar; args: array of const): PGVariant; cdecl; external libgio2;
-function g_variant_new_parsed(format: Pgchar): PGVariant; cdecl; external libgio2;
-function g_variant_new_parsed_va(format: Pgchar; app: Pva_list): PGVariant; cdecl; external libgio2;
-function g_variant_parse_error_print_context(error: PGError; source_str: Pgchar): Pgchar; cdecl; external libgio2;
-function g_variant_compare(one: Tgconstpointer; two: Tgconstpointer): Tgint; cdecl; external libgio2;
+function g_variant_builder_new(_type: PGVariantType): PGVariantBuilder; cdecl; external libglib2;
+procedure g_variant_builder_unref(builder: PGVariantBuilder); cdecl; external libglib2;
+function g_variant_builder_ref(builder: PGVariantBuilder): PGVariantBuilder; cdecl; external libglib2;
+procedure g_variant_builder_init(builder: PGVariantBuilder; _type: PGVariantType); cdecl; external libglib2;
+function g_variant_builder_end(builder: PGVariantBuilder): PGVariant; cdecl; external libglib2;
+procedure g_variant_builder_clear(builder: PGVariantBuilder); cdecl; external libglib2;
+procedure g_variant_builder_open(builder: PGVariantBuilder; _type: PGVariantType); cdecl; external libglib2;
+procedure g_variant_builder_close(builder: PGVariantBuilder); cdecl; external libglib2;
+procedure g_variant_builder_add_value(builder: PGVariantBuilder; Value: PGVariant); cdecl; external libglib2;
+procedure g_variant_builder_add(builder: PGVariantBuilder; format_string: Pgchar; args: array of const); cdecl; external libglib2;
+procedure g_variant_builder_add(builder: PGVariantBuilder; format_string: Pgchar); cdecl; external libglib2;
+procedure g_variant_builder_add_parsed(builder: PGVariantBuilder; format: Pgchar; args: array of const); cdecl; external libglib2;
+procedure g_variant_builder_add_parsed(builder: PGVariantBuilder; format: Pgchar); cdecl; external libglib2;
+function g_variant_new(format_string: Pgchar; args: array of const): PGVariant; cdecl; external libglib2;
+function g_variant_new(format_string: Pgchar): PGVariant; cdecl; external libglib2;
+procedure g_variant_get(Value: PGVariant; format_string: Pgchar; args: array of const); cdecl; external libglib2;
+procedure g_variant_get(Value: PGVariant; format_string: Pgchar); cdecl; external libglib2;
+function g_variant_new_va(format_string: Pgchar; endptr: PPgchar; app: Pva_list): PGVariant; cdecl; external libglib2;
+procedure g_variant_get_va(Value: PGVariant; format_string: Pgchar; endptr: PPgchar; app: Pva_list); cdecl; external libglib2;
+function g_variant_check_format_string(Value: PGVariant; format_string: Pgchar; copy_only: Tgboolean): Tgboolean; cdecl; external libglib2;
+function g_variant_parse(_type: PGVariantType; Text: Pgchar; limit: Pgchar; endptr: PPgchar; error: PPGError): PGVariant; cdecl; external libglib2;
+function g_variant_new_parsed(format: Pgchar; args: array of const): PGVariant; cdecl; external libglib2;
+function g_variant_new_parsed(format: Pgchar): PGVariant; cdecl; external libglib2;
+function g_variant_new_parsed_va(format: Pgchar; app: Pva_list): PGVariant; cdecl; external libglib2;
+function g_variant_parse_error_print_context(error: PGError; source_str: Pgchar): Pgchar; cdecl; external libglib2;
+function g_variant_compare(one: Tgconstpointer; two: Tgconstpointer): Tgint; cdecl; external libglib2;
 
 type
   {< private > }
@@ -238,34 +230,6 @@ type
       end;
   end;
 
-{*
- * G_VARIANT_DICT_INIT:
- * @asv: (nullable): a GVariant*
- *
- * A stack-allocated #GVariantDict must be initialized if it is used
- * together with g_auto() to avoid warnings or crashes if function
- * returns before g_variant_dict_init() is called on the builder.
- *
- * This macro can be used as initializer instead of an explicit
- * zeroing a variable when declaring it and a following
- * g_variant_dict_init(), but it cannot be assigned to a variable.
- *
- * The passed @asv has to live long enough for #GVariantDict to gather
- * the entries from, as the gathering does not happen in the
- * G_VARIANT_DICT_INIT() call, but rather in functions that make sure
- * that #GVariantDict is valid.  In context where the initialization
- * value has to be a constant expression, the only possible value of
- * @asv is %NULL.  It is still possible to call g_variant_dict_init()
- * safely with a different @asv right after the variable was
- * initialized with G_VARIANT_DICT_INIT().
- *
- * |[<!-- language="C" -->
- *   g_autoptr(GVariant) variant = get_asv_variant ();
- *   g_auto(GVariantDict) dict = G_VARIANT_DICT_INIT (variant);
- * ]|
- *
- * Since: 2.50
-  }
   {#define G_VARIANT_DICT_INIT(asv)                                             \ }
   {                                                                            \ }
   {                                                                            \ }
@@ -275,29 +239,28 @@ type
   {                                                                            \ }
   {   }
 
-function g_variant_dict_new(from_asv: PGVariant): PGVariantDict; cdecl; external libgio2;
-procedure g_variant_dict_init(dict: PGVariantDict; from_asv: PGVariant); cdecl; external libgio2;
-function g_variant_dict_lookup(dict: PGVariantDict; key: Pgchar; format_string: Pgchar; args: array of const): Tgboolean; cdecl; external libgio2;
-function g_variant_dict_lookup(dict: PGVariantDict; key: Pgchar; format_string: Pgchar): Tgboolean; cdecl; external libgio2;
-function g_variant_dict_lookup_value(dict: PGVariantDict; key: Pgchar; expected_type: PGVariantType): PGVariant; cdecl; external libgio2;
-function g_variant_dict_contains(dict: PGVariantDict; key: Pgchar): Tgboolean; cdecl; external libgio2;
-procedure g_variant_dict_insert(dict: PGVariantDict; key: Pgchar; format_string: Pgchar; args: array of const); cdecl; external libgio2;
-procedure g_variant_dict_insert(dict: PGVariantDict; key: Pgchar; format_string: Pgchar); cdecl; external libgio2;
-procedure g_variant_dict_insert_value(dict: PGVariantDict; key: Pgchar; Value: PGVariant); cdecl; external libgio2;
-function g_variant_dict_remove(dict: PGVariantDict; key: Pgchar): Tgboolean; cdecl; external libgio2;
-procedure g_variant_dict_clear(dict: PGVariantDict); cdecl; external libgio2;
-function g_variant_dict_end(dict: PGVariantDict): PGVariant; cdecl; external libgio2;
-function g_variant_dict_ref(dict: PGVariantDict): PGVariantDict; cdecl; external libgio2;
-procedure g_variant_dict_unref(dict: PGVariantDict); cdecl; external libgio2;
+function g_variant_dict_new(from_asv: PGVariant): PGVariantDict; cdecl; external libglib2;
+procedure g_variant_dict_init(dict: PGVariantDict; from_asv: PGVariant); cdecl; external libglib2;
+function g_variant_dict_lookup(dict: PGVariantDict; key: Pgchar; format_string: Pgchar; args: array of const): Tgboolean; cdecl; external libglib2;
+function g_variant_dict_lookup(dict: PGVariantDict; key: Pgchar; format_string: Pgchar): Tgboolean; cdecl; external libglib2;
+function g_variant_dict_lookup_value(dict: PGVariantDict; key: Pgchar; expected_type: PGVariantType): PGVariant; cdecl; external libglib2;
+function g_variant_dict_contains(dict: PGVariantDict; key: Pgchar): Tgboolean; cdecl; external libglib2;
+procedure g_variant_dict_insert(dict: PGVariantDict; key: Pgchar; format_string: Pgchar; args: array of const); cdecl; external libglib2;
+procedure g_variant_dict_insert(dict: PGVariantDict; key: Pgchar; format_string: Pgchar); cdecl; external libglib2;
+procedure g_variant_dict_insert_value(dict: PGVariantDict; key: Pgchar; Value: PGVariant); cdecl; external libglib2;
+function g_variant_dict_remove(dict: PGVariantDict; key: Pgchar): Tgboolean; cdecl; external libglib2;
+procedure g_variant_dict_clear(dict: PGVariantDict); cdecl; external libglib2;
+function g_variant_dict_end(dict: PGVariantDict): PGVariant; cdecl; external libglib2;
+function g_variant_dict_ref(dict: PGVariantDict): PGVariantDict; cdecl; external libglib2;
+procedure g_variant_dict_unref(dict: PGVariantDict); cdecl; external libglib2;
+
+function G_VARIANT_PARSE_ERROR: TGQuark;
 
 // === Konventiert am: 6-8-24 15:38:31 ===
 
-
 implementation
 
-
-{ was #define dname def_expr }
-function G_VARIANT_PARSE_ERROR: longint; { return type might be wrong }
+function G_VARIANT_PARSE_ERROR: TGQuark;
 begin
   G_VARIANT_PARSE_ERROR := g_variant_parse_error_quark;
 end;

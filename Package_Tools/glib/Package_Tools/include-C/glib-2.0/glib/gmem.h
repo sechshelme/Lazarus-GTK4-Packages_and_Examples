@@ -116,15 +116,15 @@ gpointer g_try_realloc_n  (gpointer	 mem,
 			   gsize	 n_blocks,
 			   gsize	 n_block_bytes) ;
 
-GLIB_AVAILABLE_IN_2_72
+
 gpointer g_aligned_alloc  (gsize         n_blocks,
                            gsize         n_block_bytes,
                            gsize         alignment)  G_GNUC_ALLOC_SIZE2(1,2);
-GLIB_AVAILABLE_IN_2_72
+
 gpointer g_aligned_alloc0 (gsize         n_blocks,
                            gsize         n_block_bytes,
                            gsize         alignment)  G_GNUC_ALLOC_SIZE2(1,2);
-GLIB_AVAILABLE_IN_2_72
+
 void     g_aligned_free   (gpointer      mem);
 
 void     g_aligned_free_sized (gpointer  mem,

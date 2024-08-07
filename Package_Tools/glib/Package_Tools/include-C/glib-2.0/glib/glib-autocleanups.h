@@ -41,7 +41,7 @@ g_autoptr_cleanup_gstring_free (GString *string)
 
 /* Ignore deprecations in case we refer to a type which was added in a more
  * recent GLib version than the user’s #GLIB_VERSION_MAX_ALLOWED definition. */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 
 /* If adding a cleanup here, please also add a test case to
  * glib/tests/autoptr.c
@@ -106,6 +106,6 @@ G_DEFINE_AUTO_CLEANUP_FREE_FUNC(GStrv, g_strfreev, NULL)
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (GPathBuf, g_path_buf_free)
 G_DEFINE_AUTO_CLEANUP_CLEAR_FUNC (GPathBuf, g_path_buf_clear)
 
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 #endif /* __GI_SCANNER__ */

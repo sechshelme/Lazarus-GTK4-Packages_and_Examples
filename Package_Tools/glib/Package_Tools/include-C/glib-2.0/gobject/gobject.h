@@ -438,14 +438,14 @@ GObject*    g_object_new_with_properties      (GType           object_type,
                                                const char     *names[],
                                                const GValue    values[]);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 
 GOBJECT_DEPRECATED_IN_2_54_FOR(g_object_new_with_properties)
 gpointer    g_object_newv		      (GType           object_type,
 					       guint	       n_parameters,
 					       GParameter     *parameters);
 
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 GOBJECT_AVAILABLE_IN_ALL
 GObject*    g_object_new_valist               (GType           object_type,

@@ -400,7 +400,7 @@ gboolean                g_str_match_string                              (const g
                                                                          const gchar   *potential_hit,
                                                                          gboolean       accept_alternates);
 
-GLIB_AVAILABLE_IN_2_44
+
 gboolean              g_strv_contains  (const gchar * const *strv,
                                         const gchar         *str);
 

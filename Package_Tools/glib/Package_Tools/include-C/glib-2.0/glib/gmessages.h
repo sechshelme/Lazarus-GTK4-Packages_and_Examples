@@ -84,7 +84,7 @@ guint           g_log_set_handler       (const gchar    *log_domain,
                                          GLogLevelFlags  log_levels,
                                          GLogFunc        log_func,
                                          gpointer        user_data);
-GLIB_AVAILABLE_IN_2_46
+
 guint           g_log_set_handler_full  (const gchar    *log_domain,
                                          GLogLevelFlags  log_levels,
                                          GLogFunc        log_func,
@@ -199,52 +199,52 @@ typedef GLogWriterOutput (*GLogWriterFunc)     (GLogLevelFlags   log_level,
                                                 gsize            n_fields,
                                                 gpointer         user_data);
 
-GLIB_AVAILABLE_IN_2_50
+
 void             g_log_structured              (const gchar     *log_domain,
                                                 GLogLevelFlags   log_level,
                                                 ...);
-GLIB_AVAILABLE_IN_2_50
+
 void             g_log_structured_array        (GLogLevelFlags   log_level,
                                                 const GLogField *fields,
                                                 gsize            n_fields);
 
-GLIB_AVAILABLE_IN_2_50
+
 void             g_log_variant                 (const gchar     *log_domain,
                                                 GLogLevelFlags   log_level,
                                                 GVariant        *fields);
 
-GLIB_AVAILABLE_IN_2_50
+
 void             g_log_set_writer_func         (GLogWriterFunc   func,
                                                 gpointer         user_data,
                                                 GDestroyNotify   user_data_free);
 
-GLIB_AVAILABLE_IN_2_50
+
 gboolean         g_log_writer_supports_color   (gint             output_fd);
-GLIB_AVAILABLE_IN_2_50
+
 gboolean         g_log_writer_is_journald      (gint             output_fd);
 
-GLIB_AVAILABLE_IN_2_50
+
 gchar           *g_log_writer_format_fields    (GLogLevelFlags   log_level,
                                                 const GLogField *fields,
                                                 gsize            n_fields,
                                                 gboolean         use_color);
 
-GLIB_AVAILABLE_IN_2_80
+
 GLogWriterOutput g_log_writer_syslog           (GLogLevelFlags   log_level,
                                                 const GLogField *fields,
                                                 gsize            n_fields,
                                                 gpointer         user_data);
-GLIB_AVAILABLE_IN_2_50
+
 GLogWriterOutput g_log_writer_journald         (GLogLevelFlags   log_level,
                                                 const GLogField *fields,
                                                 gsize            n_fields,
                                                 gpointer         user_data);
-GLIB_AVAILABLE_IN_2_50
+
 GLogWriterOutput g_log_writer_standard_streams (GLogLevelFlags   log_level,
                                                 const GLogField *fields,
                                                 gsize            n_fields,
                                                 gpointer         user_data);
-GLIB_AVAILABLE_IN_2_50
+
 GLogWriterOutput g_log_writer_default          (GLogLevelFlags   log_level,
                                                 const GLogField *fields,
                                                 gsize            n_fields,
@@ -255,14 +255,14 @@ void            g_log_writer_default_set_use_stderr (gboolean use_stderr);
 
 gboolean        g_log_writer_default_would_drop (GLogLevelFlags  log_level,
                                                  const char     *log_domain);
-GLIB_AVAILABLE_IN_2_80
+
 void            g_log_writer_default_set_debug_domains (const gchar * const *domains);
 
 
 /* G_MESSAGES_DEBUG enablement */
-GLIB_AVAILABLE_IN_2_72
+
 gboolean         g_log_get_debug_enabled       (void);
-GLIB_AVAILABLE_IN_2_72
+
 void             g_log_set_debug_enabled       (gboolean         enabled);
 
 /**
@@ -307,7 +307,7 @@ void g_assert_warning         (const char *log_domain,
 		               const char *pretty_function,
 		               const char *expression);
 
-GLIB_AVAILABLE_IN_2_56
+
 void g_log_structured_standard (const gchar    *log_domain,
                                 GLogLevelFlags  log_level,
                                 const gchar    *file,

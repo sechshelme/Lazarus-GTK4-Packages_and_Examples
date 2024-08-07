@@ -91,7 +91,7 @@ void     g_async_initable_new_async        (GType                 object_type,
 					    const gchar          *first_property_name,
 					    ...);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 
 GIO_DEPRECATED_IN_2_54_FOR(g_object_new_with_properties and g_async_initable_init_async)
 void     g_async_initable_newv_async       (GType                 object_type,
@@ -102,7 +102,7 @@ void     g_async_initable_newv_async       (GType                 object_type,
 					    GAsyncReadyCallback   callback,
 					    gpointer              user_data);
 
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 
 void     g_async_initable_new_valist_async (GType                 object_type,

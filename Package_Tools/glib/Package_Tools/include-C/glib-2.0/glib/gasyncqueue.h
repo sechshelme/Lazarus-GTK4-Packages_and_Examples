@@ -99,27 +99,27 @@ void         g_async_queue_sort_unlocked        (GAsyncQueue      *queue,
                                                  GCompareDataFunc  func,
                                                  gpointer          user_data);
 
-GLIB_AVAILABLE_IN_2_46
+
 gboolean     g_async_queue_remove               (GAsyncQueue      *queue,
                                                  gpointer          item);
-GLIB_AVAILABLE_IN_2_46
+
 gboolean     g_async_queue_remove_unlocked      (GAsyncQueue      *queue,
                                                  gpointer          item);
-GLIB_AVAILABLE_IN_2_46
+
 void         g_async_queue_push_front           (GAsyncQueue      *queue,
                                                  gpointer          item);
-GLIB_AVAILABLE_IN_2_46
+
 void         g_async_queue_push_front_unlocked  (GAsyncQueue      *queue,
                                                  gpointer          item);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 _FOR(g_async_queue_timeout_pop)
 gpointer     g_async_queue_timed_pop            (GAsyncQueue      *queue,
                                                  GTimeVal         *end_time);
 _FOR(g_async_queue_timeout_pop_unlocked)
 gpointer     g_async_queue_timed_pop_unlocked   (GAsyncQueue      *queue,
                                                  GTimeVal         *end_time);
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 
 

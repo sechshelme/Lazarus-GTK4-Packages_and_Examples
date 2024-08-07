@@ -332,10 +332,10 @@ void		g_option_context_set_ignore_unknown_options (GOptionContext *context,
 
 gboolean        g_option_context_get_ignore_unknown_options (GOptionContext *context);
 
-GLIB_AVAILABLE_IN_2_44
+
 void            g_option_context_set_strict_posix           (GOptionContext *context,
                                                              gboolean        strict_posix);
-GLIB_AVAILABLE_IN_2_44
+
 gboolean        g_option_context_get_strict_posix           (GOptionContext *context);
 
 
@@ -388,9 +388,9 @@ void	      g_option_group_set_error_hook	    (GOptionGroup       *group,
 						     GOptionErrorFunc	 error_func);
 _IN_2_44
 void          g_option_group_free                   (GOptionGroup       *group);
-GLIB_AVAILABLE_IN_2_44
+
 GOptionGroup *g_option_group_ref                    (GOptionGroup       *group);
-GLIB_AVAILABLE_IN_2_44
+
 void          g_option_group_unref                  (GOptionGroup       *group);
 
 void          g_option_group_add_entries            (GOptionGroup       *group,

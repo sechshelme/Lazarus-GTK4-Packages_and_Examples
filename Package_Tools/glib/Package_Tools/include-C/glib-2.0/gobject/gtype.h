@@ -732,12 +732,12 @@ typedef enum	/*< skip >*/
 
 
 /* --- prototypes --- */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 GOBJECT_DEPRECATED_IN_2_36
 void                  g_type_init                    (void);
 GOBJECT_DEPRECATED_IN_2_36
 void                  g_type_init_with_debug_flags   (GTypeDebugFlags  debug_flags);
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 GOBJECT_AVAILABLE_IN_ALL
 const gchar *         g_type_name                    (GType            type);
@@ -1435,7 +1435,7 @@ typedef gchar * (* GTypeValueLCopyFunc) (const GValue *value,
  * The #GTypeValueTable provides the functions required by the #GValue
  * implementation, to serve as a container for values of a type.
  */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 struct _GTypeValueTable
 {
   GTypeValueInitFunc value_init;
@@ -1449,7 +1449,7 @@ struct _GTypeValueTable
   const gchar *lcopy_format;
   GTypeValueLCopyFunc lcopy_value;
 };
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 GOBJECT_AVAILABLE_IN_ALL
 GType g_type_register_static		(GType			     parent_type,
@@ -1601,7 +1601,7 @@ guint     g_type_get_type_registration_serial (void);
  **/
 #define G_DECLARE_FINAL_TYPE(ModuleObjName, module_obj_name, MODULE, OBJ_NAME, ParentName) \
   GType module_obj_name##_get_type (void);                                                               \
-  G_GNUC_BEGIN_IGNORE_DEPRECATIONS                                                                       \
+                                                                         \
   typedef struct _##ModuleObjName ModuleObjName;                                                         \
   typedef struct { ParentName##Class parent_class; } ModuleObjName##Class;                               \
                                                                                                          \
@@ -1612,7 +1612,7 @@ guint     g_type_get_type_registration_serial (void);
     return G_TYPE_CHECK_INSTANCE_CAST (ptr, module_obj_name##_get_type (), ModuleObjName); }             \
   G_GNUC_UNUSED static inline gboolean MODULE##_IS_##OBJ_NAME (gpointer ptr) {                           \
     return G_TYPE_CHECK_INSTANCE_TYPE (ptr, module_obj_name##_get_type ()); }                            \
-  G_GNUC_END_IGNORE_DEPRECATIONS
+  
 
 /**
  * G_DECLARE_DERIVABLE_TYPE:
@@ -1704,7 +1704,7 @@ guint     g_type_get_type_registration_serial (void);
  **/
 #define G_DECLARE_DERIVABLE_TYPE(ModuleObjName, module_obj_name, MODULE, OBJ_NAME, ParentName) \
   GType module_obj_name##_get_type (void);                                                               \
-  G_GNUC_BEGIN_IGNORE_DEPRECATIONS                                                                       \
+                                                                         \
   typedef struct _##ModuleObjName ModuleObjName;                                                         \
   typedef struct _##ModuleObjName##Class ModuleObjName##Class;                                           \
   struct _##ModuleObjName { ParentName parent_instance; };                                               \
@@ -1722,7 +1722,7 @@ guint     g_type_get_type_registration_serial (void);
     return G_TYPE_CHECK_CLASS_TYPE (ptr, module_obj_name##_get_type ()); }                               \
   G_GNUC_UNUSED static inline ModuleObjName##Class * MODULE##_##OBJ_NAME##_GET_CLASS (gpointer ptr) {    \
     return G_TYPE_INSTANCE_GET_CLASS (ptr, module_obj_name##_get_type (), ModuleObjName##Class); }       \
-  G_GNUC_END_IGNORE_DEPRECATIONS
+  
 
 /**
  * G_DECLARE_INTERFACE:
@@ -1796,7 +1796,7 @@ guint     g_type_get_type_registration_serial (void);
  **/
 #define G_DECLARE_INTERFACE(ModuleObjName, module_obj_name, MODULE, OBJ_NAME, PrerequisiteName) \
   GType module_obj_name##_get_type (void);                                                                 \
-  G_GNUC_BEGIN_IGNORE_DEPRECATIONS                                                                         \
+                                                                           \
   typedef struct _##ModuleObjName ModuleObjName;                                                           \
   typedef struct _##ModuleObjName##Interface ModuleObjName##Interface;                                     \
                                                                                                            \
@@ -1808,7 +1808,7 @@ guint     g_type_get_type_registration_serial (void);
     return G_TYPE_CHECK_INSTANCE_TYPE (ptr, module_obj_name##_get_type ()); }                              \
   G_GNUC_UNUSED static inline ModuleObjName##Interface * MODULE##_##OBJ_NAME##_GET_IFACE (gpointer ptr) {  \
     return G_TYPE_INSTANCE_GET_INTERFACE (ptr, module_obj_name##_get_type (), ModuleObjName##Interface); } \
-  G_GNUC_END_IGNORE_DEPRECATIONS
+  
 
 /**
  * G_DEFINE_TYPE:

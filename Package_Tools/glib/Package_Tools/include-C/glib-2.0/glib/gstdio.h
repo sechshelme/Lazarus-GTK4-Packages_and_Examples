@@ -192,9 +192,9 @@ g_clear_fd (int     *fd_ptr,
     return TRUE;
 
   /* Suppress "Not available before" warning */
-  G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+  
   return g_close (fd, error);
-  G_GNUC_END_IGNORE_DEPRECATIONS
+  
 }
 
 /* g_autofd should be defined on the same compilers where g_autofree is
@@ -209,7 +209,7 @@ _g_clear_fd_ignore_error (int *fd_ptr)
   int errsv = errno;
 
   /* Suppress "Not available before" warning */
-  G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+  
 
   if (!g_clear_fd (fd_ptr, NULL))
     {
@@ -217,7 +217,7 @@ _g_clear_fd_ignore_error (int *fd_ptr)
        * is a programming error, checked for by g_close(). */
     }
 
-  G_GNUC_END_IGNORE_DEPRECATIONS
+  
 
   errno = errsv;
 }

@@ -168,7 +168,7 @@ typedef enum
 
 /* Suppress "Not available before" warnings when declaring the
  * implementations */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 
 /**
  * g_unix_pipe_open:
@@ -326,13 +326,13 @@ g_unix_pipe_clear (GUnixPipe *self)
 
 G_DEFINE_AUTO_CLEANUP_CLEAR_FUNC (GUnixPipe, g_unix_pipe_clear)
 
-GLIB_AVAILABLE_IN_2_80
+
 int g_closefrom (int lowfd);
 
-GLIB_AVAILABLE_IN_2_80
+
 int g_fdwalk_set_cloexec (int lowfd);
 
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 
 

@@ -153,6 +153,7 @@ gpointer g_list_nth_data                (GList            *list,
 void     g_clear_list                   (GList           **list_ptr,
                                          GDestroyNotify    destroy);
 
+/*
 #define  g_clear_list(list_ptr, destroy)       \
   G_STMT_START {                               \
     GList *_list;                              \
@@ -169,6 +170,7 @@ void     g_clear_list                   (GList           **list_ptr,
       }                                        \
   } G_STMT_END                                 \
   GLIB_AVAILABLE_MACRO_IN_2_64
+*/
 
 
 #define g_list_previous(list)	        ((list) ? (((GList *)(list))->prev) : NULL)

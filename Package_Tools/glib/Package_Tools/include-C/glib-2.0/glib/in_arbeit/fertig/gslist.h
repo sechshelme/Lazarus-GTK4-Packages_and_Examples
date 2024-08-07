@@ -142,6 +142,7 @@ gpointer g_slist_nth_data                (GSList           *list,
 void     g_clear_slist                   (GSList          **slist_ptr,
                                           GDestroyNotify    destroy);
 
+/*
 #define  g_clear_slist(slist_ptr, destroy)       \
   G_STMT_START {                                 \
     GSList *_slist;                              \
@@ -158,6 +159,7 @@ void     g_clear_slist                   (GSList          **slist_ptr,
       }                                          \
   } G_STMT_END                                   \
   GLIB_AVAILABLE_MACRO_IN_2_64
+*/
 
 #define  g_slist_next(slist)	         ((slist) ? (((GSList *)(slist))->next) : NULL)
 

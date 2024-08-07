@@ -64,16 +64,15 @@ gboolean g_timer_is_active       (GTimer      *timer);
 
 void     g_usleep                (gulong       microseconds);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-_IN_2_62
+
 void     g_time_val_add          (GTimeVal    *time_, 
                                   glong        microseconds);
-_IN_2_62_FOR(g_date_time_new_from_iso8601)
+
 gboolean g_time_val_from_iso8601 (const gchar *iso_date,
 				  GTimeVal    *time_);
-_IN_2_62_FOR(g_date_time_format)
+
 gchar*   g_time_val_to_iso8601   (GTimeVal    *time_) ;
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 
 

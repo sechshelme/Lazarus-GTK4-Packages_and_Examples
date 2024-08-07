@@ -744,32 +744,32 @@
 #endif /* __GNUC__ */
 
 #ifdef __ICC
-#define G_GNUC_BEGIN_IGNORE_DEPRECATIONS                \
+#define                 \
   _Pragma ("warning (push)")                            \
   _Pragma ("warning (disable:1478)")
-#define G_GNUC_END_IGNORE_DEPRECATIONS			\
+#define 			\
   _Pragma ("warning (pop)")
 #elif G_GNUC_CHECK_VERSION(4, 6)
-#define G_GNUC_BEGIN_IGNORE_DEPRECATIONS		\
+#define 		\
   _Pragma ("GCC diagnostic push")			\
   _Pragma ("GCC diagnostic ignored \"-Wdeprecated-declarations\"")
-#define G_GNUC_END_IGNORE_DEPRECATIONS			\
+#define 			\
   _Pragma ("GCC diagnostic pop")
 #elif defined (_MSC_VER) && (_MSC_VER >= 1500) && !defined (__clang__)
-#define G_GNUC_BEGIN_IGNORE_DEPRECATIONS		\
+#define 		\
   __pragma (warning (push))  \
   __pragma (warning (disable : 4996))
-#define G_GNUC_END_IGNORE_DEPRECATIONS			\
+#define 			\
   __pragma (warning (pop))
 #elif defined (__clang__)
-#define G_GNUC_BEGIN_IGNORE_DEPRECATIONS \
+#define  \
   _Pragma("clang diagnostic push") \
   _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
-#define G_GNUC_END_IGNORE_DEPRECATIONS \
+#define  \
   _Pragma("clang diagnostic pop")
 #else
-#define G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-#define G_GNUC_END_IGNORE_DEPRECATIONS
+#define 
+#define 
 #define GLIB_CANNOT_IGNORE_DEPRECATIONS
 #endif
 
@@ -1351,7 +1351,7 @@
   typedef GList *_GLIB_AUTOPTR_LIST_TYPENAME(TypeName);                                                         \
   typedef GSList *_GLIB_AUTOPTR_SLIST_TYPENAME(TypeName);                                                       \
   typedef GQueue *_GLIB_AUTOPTR_QUEUE_TYPENAME(TypeName);                                                       \
-  G_GNUC_BEGIN_IGNORE_DEPRECATIONS                                                                              \
+                                                                                \
   static G_GNUC_UNUSED inline void _GLIB_AUTOPTR_CLEAR_FUNC_NAME(TypeName) (TypeName *_ptr)                     \
     { if (_ptr) (cleanup) ((ParentName *) _ptr); }                                                              \
   static G_GNUC_UNUSED inline void _GLIB_AUTOPTR_FUNC_NAME(TypeName) (TypeName **_ptr)                          \
@@ -1362,7 +1362,7 @@
     { g_slist_free_full (*_l, (GDestroyNotify) (void(*)(void)) cleanup); }                                      \
   static G_GNUC_UNUSED inline void _GLIB_AUTOPTR_QUEUE_FUNC_NAME(TypeName) (GQueue **_q)                        \
     { if (*_q) g_queue_free_full (*_q, (GDestroyNotify) (void(*)(void)) cleanup); }                             \
-  G_GNUC_END_IGNORE_DEPRECATIONS
+  
 #define _GLIB_DEFINE_AUTOPTR_CHAINUP(ModuleObjName, ParentName) \
   _GLIB_DEFINE_AUTOPTR_CLEANUP_FUNCS(ModuleObjName, ParentName, _GLIB_AUTOPTR_CLEAR_FUNC_NAME(ParentName))
 
@@ -1371,13 +1371,13 @@
 #define G_DEFINE_AUTOPTR_CLEANUP_FUNC(TypeName, func) \
   _GLIB_DEFINE_AUTOPTR_CLEANUP_FUNCS(TypeName, TypeName, func)
 #define G_DEFINE_AUTO_CLEANUP_CLEAR_FUNC(TypeName, func) \
-  G_GNUC_BEGIN_IGNORE_DEPRECATIONS                                                                              \
+                                                                                \
   static G_GNUC_UNUSED inline void _GLIB_AUTO_FUNC_NAME(TypeName) (TypeName *_ptr) { (func) (_ptr); }                         \
-  G_GNUC_END_IGNORE_DEPRECATIONS
+  
 #define G_DEFINE_AUTO_CLEANUP_FREE_FUNC(TypeName, func, none) \
-  G_GNUC_BEGIN_IGNORE_DEPRECATIONS                                                                              \
+                                                                                \
   static G_GNUC_UNUSED inline void _GLIB_AUTO_FUNC_NAME(TypeName) (TypeName *_ptr) { if (*_ptr != none) (func) (*_ptr); }     \
-  G_GNUC_END_IGNORE_DEPRECATIONS
+  
 #define g_autoptr(TypeName) _GLIB_CLEANUP(_GLIB_AUTOPTR_FUNC_NAME(TypeName)) _GLIB_AUTOPTR_TYPENAME(TypeName)
 #define g_autolist(TypeName) _GLIB_CLEANUP(_GLIB_AUTOPTR_LIST_FUNC_NAME(TypeName)) _GLIB_AUTOPTR_LIST_TYPENAME(TypeName)
 #define g_autoslist(TypeName) _GLIB_CLEANUP(_GLIB_AUTOPTR_SLIST_FUNC_NAME(TypeName)) _GLIB_AUTOPTR_SLIST_TYPENAME(TypeName)

@@ -74,7 +74,7 @@ guint           g_thread_pool_unprocessed       (GThreadPool     *pool);
 void            g_thread_pool_set_sort_function (GThreadPool      *pool,
                                                  GCompareDataFunc  func,
                                                  gpointer          user_data);
-GLIB_AVAILABLE_IN_2_46
+
 gboolean        g_thread_pool_move_to_front     (GThreadPool      *pool,
                                                  gpointer          data);
 

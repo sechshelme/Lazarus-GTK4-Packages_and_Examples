@@ -1433,11 +1433,11 @@ GIcon *           g_file_info_get_symbolic_icon      (GFileInfo         *info);
 const char *      g_file_info_get_content_type       (GFileInfo         *info);
 
 goffset           g_file_info_get_size               (GFileInfo         *info);
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 GIO_DEPRECATED_IN_2_62_FOR(g_file_info_get_modification_date_time)
 void              g_file_info_get_modification_time  (GFileInfo         *info,
                                                       GTimeVal          *result);
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 GIO_AVAILABLE_IN_2_62
 GDateTime *       g_file_info_get_modification_date_time (GFileInfo     *info);
 GIO_AVAILABLE_IN_2_70
@@ -1488,11 +1488,11 @@ void              g_file_info_set_content_type       (GFileInfo         *info,
 
 void              g_file_info_set_size               (GFileInfo         *info,
 						      goffset            size);
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 GIO_DEPRECATED_IN_2_62_FOR(g_file_info_set_modification_date_time)
 void              g_file_info_set_modification_time  (GFileInfo         *info,
                                                       GTimeVal          *mtime);
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 GIO_AVAILABLE_IN_2_62
 void              g_file_info_set_modification_date_time (GFileInfo     *info,
                                                           GDateTime     *mtime);

@@ -35,7 +35,7 @@
 
 
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 
 typedef struct _GTrashStack GTrashStack _TYPE_IN_2_48;
 struct _GTrashStack
@@ -53,7 +53,7 @@ gpointer  g_trash_stack_peek   (GTrashStack **stack_p);
 _IN_2_48
 guint     g_trash_stack_height (GTrashStack **stack_p);
 
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 
 

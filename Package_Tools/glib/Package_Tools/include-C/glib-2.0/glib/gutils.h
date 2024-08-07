@@ -186,7 +186,7 @@ const gchar *         g_get_user_data_dir      (void);
 const gchar *         g_get_user_config_dir    (void);
 
 const gchar *         g_get_user_cache_dir     (void);
-GLIB_AVAILABLE_IN_2_72
+
 const gchar *         g_get_user_state_dir     (void);
 
 const gchar * const * g_get_system_data_dirs   (void);
@@ -324,10 +324,10 @@ gchar *g_format_size_for_display (goffset size);
 typedef void (*GVoidFunc) (void) _TYPE_IN_2_32;
 #define ATEXIT(proc) g_ATEXIT(proc) _MACRO_IN_2_32
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 
 void	g_atexit		(GVoidFunc    func);
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 #ifdef G_OS_WIN32
 /* It's a bad idea to wrap atexit() on Windows. If the GLib DLL calls
@@ -426,7 +426,7 @@ g_bit_storage_impl (gulong number)
 #  include <stdlib.h>
 #  define g_abort() abort ()
 #else
-G_NORETURN GLIB_AVAILABLE_IN_2_50 void g_abort (void) G_ANALYZER_NORETURN;
+G_NORETURN  void g_abort (void) G_ANALYZER_NORETURN;
 #endif
 #endif
 

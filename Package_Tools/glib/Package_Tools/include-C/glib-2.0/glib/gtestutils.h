@@ -496,13 +496,13 @@ typedef enum {
   G_TEST_TRAP_INHERIT_STDIN     = 1 << 9
 } GTestTrapFlags _TYPE_IN_2_38_FOR(GTestSubprocessFlags);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 
 _IN_2_38_FOR (g_test_trap_subprocess)
 gboolean g_test_trap_fork               (guint64              usec_timeout,
                                          GTestTrapFlags       test_trap_flags);
 
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 typedef enum {
   G_TEST_SUBPROCESS_DEFAULT GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
@@ -515,7 +515,7 @@ typedef enum {
 void     g_test_trap_subprocess         (const char           *test_path,
                                          guint64               usec_timeout,
                                          GTestSubprocessFlags  test_flags);
-GLIB_AVAILABLE_IN_2_80
+
 void     g_test_trap_subprocess_with_envp (const char           *test_path,
                                            const char * const   *envp,
                                            guint64               usec_timeout,

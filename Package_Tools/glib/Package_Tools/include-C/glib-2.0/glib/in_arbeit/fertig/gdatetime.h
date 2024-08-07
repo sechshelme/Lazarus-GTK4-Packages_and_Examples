@@ -138,19 +138,19 @@ GDateTime *             g_date_time_new_from_unix_local                 (gint64 
 
 GDateTime *             g_date_time_new_from_unix_utc                   (gint64          t);
 
-GLIB_AVAILABLE_IN_2_80
+
 GDateTime *             g_date_time_new_from_unix_local_usec            (gint64          usecs);
-GLIB_AVAILABLE_IN_2_80
+
 GDateTime *             g_date_time_new_from_unix_utc_usec              (gint64          usecs);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-_IN_2_62_FOR(g_date_time_new_from_unix_local)
-GDateTime *             g_date_time_new_from_timeval_local              (const GTimeVal *tv);
-_IN_2_62_FOR(g_date_time_new_from_unix_utc)
-GDateTime *             g_date_time_new_from_timeval_utc                (const GTimeVal *tv);
-G_GNUC_END_IGNORE_DEPRECATIONS
 
-GLIB_AVAILABLE_IN_2_56
+
+GDateTime *             g_date_time_new_from_timeval_local              (const GTimeVal *tv);
+
+GDateTime *             g_date_time_new_from_timeval_utc                (const GTimeVal *tv);
+
+
+
 GDateTime *             g_date_time_new_from_iso8601                    (const gchar    *text,
                                                                          GTimeZone      *default_tz);
 
@@ -270,14 +270,14 @@ gdouble                 g_date_time_get_seconds                         (GDateTi
 
 
 gint64                  g_date_time_to_unix                             (GDateTime      *datetime);
-GLIB_AVAILABLE_IN_2_80
+
 gint64                  g_date_time_to_unix_usec                        (GDateTime      *datetime);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-_IN_2_62_FOR(g_date_time_to_unix)
+
+
 gboolean                g_date_time_to_timeval                          (GDateTime      *datetime,
                                                                          GTimeVal       *tv);
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 
 GTimeSpan               g_date_time_get_utc_offset                      (GDateTime      *datetime);

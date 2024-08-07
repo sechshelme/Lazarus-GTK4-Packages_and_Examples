@@ -85,7 +85,7 @@ struct _GRecMutex
   guint i[2];
 };
 
-#define G_PRIVATE_INIT(notify) { NULL, (notify), { NULL, NULL } }
+//#define G_PRIVATE_INIT(notify) { NULL, (notify), { NULL, NULL } }
 struct _GPrivate
 {
   /*< private >*/
@@ -101,47 +101,13 @@ typedef enum
   G_ONCE_STATUS_READY
 } GOnceStatus;
 
-#define G_ONCE_INIT { G_ONCE_STATUS_NOTCALLED, NULL }
+//#define G_ONCE_INIT { G_ONCE_STATUS_NOTCALLED, NULL }
 struct _GOnce
 {
-  volatile GOnceStatus status;
-  volatile gpointer retval;
+   GOnceStatus status;
+   gpointer retval;
 };
 
-#define G_LOCK_NAME(name)             g__ ## name ## _lock
-#define G_LOCK_DEFINE_STATIC(name)    static G_LOCK_DEFINE (name)
-#define G_LOCK_DEFINE(name)           GMutex G_LOCK_NAME (name)
-#define G_LOCK_EXTERN(name)           extern GMutex G_LOCK_NAME (name)
-
-#ifdef G_DEBUG_LOCKS
-#  define G_LOCK(name)                G_STMT_START{             \
-      g_log (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,                   \
-             "file %s: line %d (%s): locking: %s ",             \
-             __FILE__,        __LINE__, G_STRFUNC,              \
-             #name);                                            \
-      g_mutex_lock (&G_LOCK_NAME (name));                       \
-   }G_STMT_END
-#  define G_UNLOCK(name)              G_STMT_START{             \
-      g_log (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,                   \
-             "file %s: line %d (%s): unlocking: %s ",           \
-             __FILE__,        __LINE__, G_STRFUNC,              \
-             #name);                                            \
-     g_mutex_unlock (&G_LOCK_NAME (name));                      \
-   }G_STMT_END
-#  define G_TRYLOCK(name)                                       \
-      (g_log (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,                  \
-             "file %s: line %d (%s): try locking: %s ",         \
-             __FILE__,        __LINE__, G_STRFUNC,              \
-             #name), g_mutex_trylock (&G_LOCK_NAME (name)))
-#else  /* !G_DEBUG_LOCKS */
-#  define G_LOCK(name) g_mutex_lock       (&G_LOCK_NAME (name))
-#  define G_UNLOCK(name) g_mutex_unlock   (&G_LOCK_NAME (name))
-#  define G_TRYLOCK(name) g_mutex_trylock (&G_LOCK_NAME (name))
-#endif /* !G_DEBUG_LOCKS */
-
-#ifdef g_autoptr
-#define G_AUTO_LOCK(name) G_MUTEX_AUTO_LOCK (&G_LOCK_NAME (name), g__##name##_locker)
-#endif /* g_autoptr */
 
 
 GThread *       g_thread_ref                    (GThread        *thread);
@@ -158,7 +124,6 @@ GThread *       g_thread_try_new                (const gchar    *name,
                                                  GError        **error);
 
 GThread *       g_thread_self                   (void);
-G_NORETURN 
 void            g_thread_exit                   (gpointer        retval);
 
 gpointer        g_thread_join                   (GThread        *thread);
@@ -235,14 +200,14 @@ gpointer        g_once_impl                     (GOnce          *once,
                                                  GThreadFunc     func,
                                                  gpointer        arg);
 
-gboolean        g_once_init_enter               (volatile void  *location);
+gboolean        g_once_init_enter               ( void  *location);
 
-void            g_once_init_leave               (volatile void  *location,
+void            g_once_init_leave               ( void  *location,
                                                  gsize           result);
 
-GLIB_AVAILABLE_IN_2_80
+
 gboolean g_once_init_enter_pointer              (void *location);
-GLIB_AVAILABLE_IN_2_80
+
 void g_once_init_leave_pointer                  (void *location,
                                                  gpointer result);
 
@@ -255,55 +220,6 @@ void g_once_init_leave_pointer                  (void *location,
  * happens-before relation. Release-acquire semantics are defined such that any
  * atomic/non-atomic write which happens-before a store/release is guaranteed to
  * be seen by the load/acquire of the same atomic variable. */
-#if defined(G_ATOMIC_LOCK_FREE) && defined(__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4) && defined(__ATOMIC_SEQ_CST)
-# define g_once(once, func, arg) \
-  ((__atomic_load_n (&(once)->status, __ATOMIC_ACQUIRE) == G_ONCE_STATUS_READY) ? \
-   (once)->retval : \
-   g_once_impl ((once), (func), (arg)))
-#else
-# define g_once(once, func, arg) g_once_impl ((once), (func), (arg))
-#endif
-
-#ifdef __GNUC__
-# define g_once_init_enter(location) \
-  (G_GNUC_EXTENSION ({                                               \
-    G_STATIC_ASSERT (sizeof *(location) == sizeof (gpointer));       \
-    (void) (0 ? (gpointer) *(location) : NULL);                      \
-    (!g_atomic_pointer_get (location) &&                             \
-     g_once_init_enter (location));                                  \
-  }))
-# define g_once_init_leave(location, result) \
-  (G_GNUC_EXTENSION ({                                               \
-    G_STATIC_ASSERT (sizeof *(location) == sizeof (gpointer));       \
-    0 ? (void) (*(location) = (result)) : (void) 0;                  \
-    g_once_init_leave ((location), (gsize) (result));                \
-  }))
-# define g_once_init_enter_pointer(location)                   \
-  (G_GNUC_EXTENSION ({                                         \
-    G_STATIC_ASSERT (sizeof *(location) == sizeof (gpointer)); \
-    (void) (0 ? (gpointer) * (location) : NULL);               \
-    (!g_atomic_pointer_get (location) &&                       \
-     g_once_init_enter_pointer (location));                    \
-  })) GLIB_AVAILABLE_MACRO_IN_2_80
-# define g_once_init_leave_pointer(location, result)                        \
-  (G_GNUC_EXTENSION ({                                                      \
-    G_STATIC_ASSERT (sizeof *(location) == sizeof (gpointer));              \
-    0 ? (void) (*(location) = (result)) : (void) 0;                         \
-    g_once_init_leave_pointer ((location), (gpointer) (guintptr) (result)); \
-  })) GLIB_AVAILABLE_MACRO_IN_2_80
-#else
-# define g_once_init_enter(location) \
-  (g_once_init_enter((location)))
-# define g_once_init_leave(location, result) \
-  (g_once_init_leave((location), (gsize) (result)))
-# define g_once_init_enter_pointer(location) \
-  (g_once_init_enter_pointer((location))) \
-  GLIB_AVAILABLE_MACRO_IN_2_80
-# define g_once_init_leave_pointer(location, result) \
-  (g_once_init_leave_pointer((location), (gpointer) (guintptr) (result))) \
-  GLIB_AVAILABLE_MACRO_IN_2_80
-#endif
-
 
 guint          g_get_num_processors (void);
 
@@ -361,14 +277,6 @@ typedef void GMutexLocker;
  * Returns: a #GMutexLocker
  * Since: 2.44
  */
-GLIB_AVAILABLE_STATIC_INLINE_IN_2_44
-static inline GMutexLocker *
-g_mutex_locker_new (GMutex *mutex)
-{
-  g_mutex_lock (mutex);
-  return (GMutexLocker *) mutex;
-}
-
 /**
  * g_mutex_locker_free:
  * @locker: a GMutexLocker
@@ -379,13 +287,6 @@ g_mutex_locker_new (GMutex *mutex)
  *
  * Since: 2.44
  */
-GLIB_AVAILABLE_STATIC_INLINE_IN_2_44
-static inline void
-g_mutex_locker_free (GMutexLocker *locker)
-{
-  g_mutex_unlock ((GMutex *) locker);
-}
-
 /**
  * G_MUTEX_AUTO_LOCK:
  * @mutex: a [type@GLib.Mutex]
@@ -423,11 +324,6 @@ g_mutex_locker_free (GMutexLocker *locker)
  *
  * Since: 2.80.0
  */
-#ifdef g_autoptr
-#define G_MUTEX_AUTO_LOCK(mutex, var)                   \
-  GLIB_AVAILABLE_MACRO_IN_2_80 g_autoptr (GMutexLocker) \
-  G_GNUC_UNUSED var = g_mutex_locker_new (mutex)
-#endif /* g_autoptr */
 
 /**
  * GRecMutexLocker:
@@ -483,15 +379,7 @@ typedef void GRecMutexLocker;
  * Returns: a #GRecMutexLocker
  * Since: 2.60
  */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-GLIB_AVAILABLE_STATIC_INLINE_IN_2_60
-static inline GRecMutexLocker *
-g_rec_mutex_locker_new (GRecMutex *rec_mutex)
-{
-  g_rec_mutex_lock (rec_mutex);
-  return (GRecMutexLocker *) rec_mutex;
-}
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 /**
  * g_rec_mutex_locker_free:
@@ -503,14 +391,8 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  *
  * Since: 2.60
  */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-GLIB_AVAILABLE_STATIC_INLINE_IN_2_60
-static inline void
-g_rec_mutex_locker_free (GRecMutexLocker *locker)
-{
-  g_rec_mutex_unlock ((GRecMutex *) locker);
-}
-G_GNUC_END_IGNORE_DEPRECATIONS
+
+
 
 /**
  * G_REC_MUTEX_AUTO_LOCK:
@@ -549,11 +431,6 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  *
  * Since: 2.80.0
  */
-#ifdef g_autoptr
-#define G_REC_MUTEX_AUTO_LOCK(mutex, var)                  \
-  GLIB_AVAILABLE_MACRO_IN_2_80 g_autoptr (GRecMutexLocker) \
-  G_GNUC_UNUSED var = g_rec_mutex_locker_new (mutex)
-#endif /* g_autoptr */
 
 /**
  * GRWLockWriterLocker:
@@ -640,15 +517,8 @@ typedef void GRWLockWriterLocker;
  * Returns: a #GRWLockWriterLocker
  * Since: 2.62
  */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-GLIB_AVAILABLE_STATIC_INLINE_IN_2_62
-static inline GRWLockWriterLocker *
-g_rw_lock_writer_locker_new (GRWLock *rw_lock)
-{
-  g_rw_lock_writer_lock (rw_lock);
-  return (GRWLockWriterLocker *) rw_lock;
-}
-G_GNUC_END_IGNORE_DEPRECATIONS
+
+
 
 /**
  * g_rw_lock_writer_locker_free:
@@ -661,14 +531,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  *
  * Since: 2.62
  */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-GLIB_AVAILABLE_STATIC_INLINE_IN_2_62
-static inline void
-g_rw_lock_writer_locker_free (GRWLockWriterLocker *locker)
-{
-  g_rw_lock_writer_unlock ((GRWLock *) locker);
-}
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 /**
  * G_RW_LOCK_WRITER_AUTO_LOCK:
@@ -707,11 +570,6 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  *
  * Since: 2.80.0
  */
-#ifdef g_autoptr
-#define G_RW_LOCK_WRITER_AUTO_LOCK(mutex, var)                 \
-  GLIB_AVAILABLE_MACRO_IN_2_80 g_autoptr (GRWLockWriterLocker) \
-  G_GNUC_UNUSED var = g_rw_lock_writer_locker_new (mutex)
-#endif /* g_autoptr */
 
 /**
  * GRWLockReaderLocker:
@@ -738,15 +596,8 @@ typedef void GRWLockReaderLocker;
  * Returns: a #GRWLockReaderLocker
  * Since: 2.62
  */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-GLIB_AVAILABLE_STATIC_INLINE_IN_2_62
-static inline GRWLockReaderLocker *
-g_rw_lock_reader_locker_new (GRWLock *rw_lock)
-{
-  g_rw_lock_reader_lock (rw_lock);
-  return (GRWLockReaderLocker *) rw_lock;
-}
-G_GNUC_END_IGNORE_DEPRECATIONS
+
+
 
 /**
  * g_rw_lock_reader_locker_free:
@@ -759,14 +610,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  *
  * Since: 2.62
  */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-GLIB_AVAILABLE_STATIC_INLINE_IN_2_62
-static inline void
-g_rw_lock_reader_locker_free (GRWLockReaderLocker *locker)
-{
-  g_rw_lock_reader_unlock ((GRWLock *) locker);
-}
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 /**
  * G_RW_LOCK_READER_AUTO_LOCK:
@@ -805,11 +649,6 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  *
  * Since: 2.80.0
  */
-#ifdef g_autoptr
-#define G_RW_LOCK_READER_AUTO_LOCK(mutex, var)                 \
-  GLIB_AVAILABLE_MACRO_IN_2_80 g_autoptr (GRWLockReaderLocker) \
-  G_GNUC_UNUSED var = g_rw_lock_reader_locker_new (mutex)
-#endif /* g_autoptr */
 
 
 

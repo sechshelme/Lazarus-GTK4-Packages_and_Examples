@@ -45,7 +45,7 @@ void      g_bit_unlock                    (volatile gint *address,
 void      g_pointer_bit_lock              (volatile void *address,
                                            gint           lock_bit);
 
-GLIB_AVAILABLE_IN_2_80
+
 void      g_pointer_bit_lock_and_get      (gpointer address,
                                            guint lock_bit,
                                            guintptr *out_ptr);
@@ -57,14 +57,14 @@ gboolean  g_pointer_bit_trylock           (volatile void *address,
 void      g_pointer_bit_unlock            (volatile void *address,
                                            gint           lock_bit);
 
-GLIB_AVAILABLE_IN_2_80
+
 gpointer  g_pointer_bit_lock_mask_ptr     (gpointer ptr,
                                            guint lock_bit,
                                            gboolean set,
                                            guintptr preserve_mask,
                                            gpointer preserve_ptr);
 
-GLIB_AVAILABLE_IN_2_80
+
 void g_pointer_bit_unlock_and_set         (void *address,
                                            guint lock_bit,
                                            gpointer ptr,

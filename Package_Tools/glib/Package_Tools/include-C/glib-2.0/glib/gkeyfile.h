@@ -78,7 +78,7 @@ gboolean  g_key_file_load_from_data         (GKeyFile             *key_file,
 					     gsize                 length,
 					     GKeyFileFlags         flags,
 					     GError              **error);
-GLIB_AVAILABLE_IN_2_50
+
 gboolean  g_key_file_load_from_bytes        (GKeyFile             *key_file,
                                              GBytes               *bytes,
                                              GKeyFileFlags         flags,
@@ -148,7 +148,7 @@ gchar    *g_key_file_get_locale_string      (GKeyFile             *key_file,
 					     const gchar          *key,
 					     const gchar          *locale,
 					     GError              **error) ;
-GLIB_AVAILABLE_IN_2_56
+
 gchar    *g_key_file_get_locale_for_key     (GKeyFile             *key_file,
                                              const gchar          *group_name,
                                              const gchar          *key,

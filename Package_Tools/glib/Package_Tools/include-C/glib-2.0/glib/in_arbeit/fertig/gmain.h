@@ -32,12 +32,12 @@
 
 typedef enum /*< flags >*/
 {
-  G_IO_IN	GLIB_SYSDEF_POLLIN,
-  G_IO_OUT	GLIB_SYSDEF_POLLOUT,
-  G_IO_PRI	GLIB_SYSDEF_POLLPRI,
-  G_IO_ERR	GLIB_SYSDEF_POLLERR,
-  G_IO_HUP	GLIB_SYSDEF_POLLHUP,
-  G_IO_NVAL	GLIB_SYSDEF_POLLNVAL
+  G_IO_IN	=1,
+  G_IO_OUT	=4,
+  G_IO_PRI	=2,
+  G_IO_ERR	=8,
+  G_IO_HUP	=16,
+  G_IO_NVAL=	32
 } GIOCondition;
 
 /**
@@ -53,7 +53,6 @@ typedef enum /*< flags >*/
  *
  * Since: 2.72
  */
-GLIB_AVAILABLE_TYPE_IN_2_72
 typedef enum /*< flags >*/
 {
   G_MAIN_CONTEXT_FLAGS_NONE = 0,
@@ -224,7 +223,7 @@ typedef void (* GSourceOnceFunc) (gpointer user_data);
  *
  * Since: 2.58
  */
-#define G_SOURCE_FUNC(f) ((GSourceFunc) (void (*)(void)) (f)) GLIB_AVAILABLE_MACRO_IN_2_58
+//#define G_SOURCE_FUNC(f) ((GSourceFunc) (void (*)(void)) (f)) 
 
 /**
  * GChildWatchFunc:
@@ -255,7 +254,6 @@ typedef void     (*GChildWatchFunc)   (GPid     pid,
  *
  * Since: 2.64
  */
-GLIB_AVAILABLE_TYPE_IN_2_64
 typedef void (*GSourceDisposeFunc)       (GSource *source);
 
 struct _GSource
@@ -394,10 +392,10 @@ struct _GSourceFuncs
 
 
 GMainContext *g_main_context_new       (void);
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-GLIB_AVAILABLE_IN_2_72
+
+
 GMainContext *g_main_context_new_with_flags (GMainContextFlags flags);
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 GMainContext *g_main_context_ref       (GMainContext *context);
 
@@ -434,7 +432,6 @@ gboolean g_main_context_acquire (GMainContext *context);
 void     g_main_context_release (GMainContext *context);
 
 gboolean g_main_context_is_owner (GMainContext *context);
-_IN_2_58_FOR(g_main_context_is_owner)
 gboolean g_main_context_wait    (GMainContext *context,
                                  GCond        *cond,
                                  GMutex       *mutex);
@@ -495,7 +492,7 @@ GMainContext *g_main_context_ref_thread_default  (void);
  *
  * Since: 2.64
  */
-typedef void GMainContextPusher GLIB_AVAILABLE_TYPE_IN_2_64;
+typedef void GMainContextPusher;
 
 /**
  * g_main_context_pusher_new:
@@ -542,15 +539,8 @@ typedef void GMainContextPusher GLIB_AVAILABLE_TYPE_IN_2_64;
  * Returns: (transfer full): a #GMainContextPusher
  * Since: 2.64
  */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-GLIB_AVAILABLE_STATIC_INLINE_IN_2_64
-static inline GMainContextPusher *
-g_main_context_pusher_new (GMainContext *main_context)
-{
-  g_main_context_push_thread_default (main_context);
-  return (GMainContextPusher *) main_context;
-}
-G_GNUC_END_IGNORE_DEPRECATIONS
+
+
 
 /**
  * g_main_context_pusher_free:
@@ -564,14 +554,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  *
  * Since: 2.64
  */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-GLIB_AVAILABLE_STATIC_INLINE_IN_2_64
-static inline void
-g_main_context_pusher_free (GMainContextPusher *pusher)
-{
-  g_main_context_pop_thread_default ((GMainContext *) pusher);
-}
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 /* GMainLoop: */
 
@@ -597,11 +580,11 @@ GMainContext *g_main_loop_get_context (GMainLoop    *loop);
 GSource *g_source_new             (GSourceFuncs   *source_funcs,
                                    guint           struct_size);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 
 void     g_source_set_dispose_function (GSource            *source,
                                         GSourceDisposeFunc  dispose);
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 
 GSource *g_source_ref             (GSource        *source);
@@ -697,11 +680,10 @@ void     g_source_add_child_source    (GSource        *source,
 void     g_source_remove_child_source (GSource        *source,
 				       GSource        *child_source);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-_IN_2_28_FOR(g_source_get_time)
+
 void     g_source_get_current_time (GSource        *source,
                                     GTimeVal       *timeval);
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 
 gint64   g_source_get_time         (GSource        *source);
@@ -723,10 +705,10 @@ GSource *g_timeout_source_new_seconds (guint interval);
 
 /* Miscellaneous functions
  */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-_IN_2_62_FOR(g_get_real_time)
+
+
 void   g_get_current_time                 (GTimeVal       *result);
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 
 gint64 g_get_monotonic_time               (void);
@@ -756,24 +738,10 @@ gboolean g_source_remove_by_funcs_user_data  (GSourceFuncs  *funcs,
  */
 typedef void (* GClearHandleFunc) (guint handle_id);
 
-GLIB_AVAILABLE_IN_2_56
+
 void    g_clear_handle_id (guint           *tag_ptr,
                            GClearHandleFunc clear_func);
 
-#define g_clear_handle_id(tag_ptr, clear_func)             \
-  G_STMT_START {                                           \
-    G_STATIC_ASSERT (sizeof *(tag_ptr) == sizeof (guint)); \
-    guint *_tag_ptr = (guint *) (tag_ptr);                 \
-    guint _handle_id;                                      \
-                                                           \
-    _handle_id = *_tag_ptr;                                \
-    if (_handle_id > 0)                                    \
-      {                                                    \
-        *_tag_ptr = 0;                                     \
-        clear_func (_handle_id);                           \
-      }                                                    \
-  } G_STMT_END                                             \
-  GLIB_AVAILABLE_MACRO_IN_2_56
 
 /* Idles, child watchers and timeouts */
 
@@ -839,14 +807,6 @@ void     g_main_context_invoke      (GMainContext   *context,
                                      GSourceFunc     function,
                                      gpointer        data);
 
-GLIB_AVAILABLE_STATIC_INLINE_IN_2_70
-static inline int
-g_steal_fd (int *fd_ptr)
-{
-  int fd = *fd_ptr;
-  *fd_ptr = -1;
-  return fd;
-}
 
 /* Hook for GClosure / GSource integration. Don't touch */
  GSourceFuncs g_timeout_funcs;

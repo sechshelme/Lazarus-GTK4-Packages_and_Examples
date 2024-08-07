@@ -27,9 +27,14 @@ type
     GroupBox1: TGroupBox;
     Label1: TLabel;
     Memo1: TMemo;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    RadioGroup1: TRadioGroup;
     procedure Button1Click(Sender: TObject);
     procedure ConvertClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure RadioButton1Change(Sender: TObject);
+    procedure RadioButton2Change(Sender: TObject);
   private
     SourcePath, DestPath: string;
     procedure Form1DropFiles(Sender: TObject; const FileNames: array of string);
@@ -85,6 +90,11 @@ begin
   AllowDropFiles := True;
   OnDropFiles := @Form1DropFiles;
 
+  RadioButton1Change(Sender); // Alle Checkboxen aus
+
+  RadioButton1.Caption := 'libglib-2.0';
+  RadioButton2.Caption := 'libgtk-4';
+
   CheckBox1.Caption := 'GTK_TYPE_WINDOW';
   CheckBox2.Caption := 'GTK_WINDOW(obj)';
   CheckBox3.Caption := 'GTK_WINDOW_CLASS(klass)';
@@ -92,6 +102,28 @@ begin
   CheckBox5.Caption := 'GTK_IS_WINDOW_CLASS(klass)';
   CheckBox6.Caption := 'GTK_WINDOW_GET_CLASS(obj)';
   CheckBox7.Caption := 'GTK_WINDOW_GET_IFACE(obj)';
+end;
+
+procedure TForm1.RadioButton1Change(Sender: TObject);
+begin
+  CheckBox1.Checked := False;
+  CheckBox2.Checked := False;
+  CheckBox3.Checked := False;
+  CheckBox4.Checked := False;
+  CheckBox5.Checked := False;
+  CheckBox6.Checked := False;
+  CheckBox7.Checked := False;
+end;
+
+procedure TForm1.RadioButton2Change(Sender: TObject);
+begin
+  CheckBox1.Checked := True;
+  CheckBox2.Checked := True;
+  CheckBox3.Checked := True;
+  CheckBox4.Checked := True;
+  CheckBox5.Checked := True;
+  CheckBox6.Checked := True;
+  CheckBox7.Checked := False;
 end;
 
 procedure TForm1.ConvertClick(Sender: TObject);
@@ -131,10 +163,10 @@ begin
     sl.Delete(4);
   until sl[4] = '{$IFDEF FPC}';
 
-  if pos('function G_TYPE_', sl.Text) > 0 then begin
-    sl.Text := StringReplace(sl.Text, 'external;', 'external giolib;', [rfReplaceAll]);
-    sl.Insert(4, 'uses' + #10 + '  common_GLIB;' + #10);
-  end else begin
+  if RadioButton1.Checked then begin
+    sl.Text := StringReplace(sl.Text, 'external;', 'external libglib2;', [rfReplaceAll]);
+    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes;' + #10);
+  end else if RadioButton2.Checked then begin
     sl.Text := StringReplace(sl.Text, 'external;', 'external libgtk4;', [rfReplaceAll]);
     sl.Insert(4, 'uses' + #10 + '  glib2, common_GTK;' + #10);
   end;
@@ -146,24 +178,12 @@ begin
   until (pos('{ was #define dname def_expr }', sl[p]) = 1) or (p >= sl.Count - 1);
   if p >= sl.Count - 1 then begin
     p := 0;
-    CheckBox1.Checked := False;
-    CheckBox2.Checked := False;
-    CheckBox3.Checked := False;
-    CheckBox4.Checked := False;
-    CheckBox5.Checked := False;
-    CheckBox6.Checked := False;
-    CheckBox7.Checked := False;
+    RadioButton1Change(Sender); // Alle Checkboxen aus
   end;
 
   G_DECLARE := Find_G_DECLARE(sl);
   if G_DECLARE <> is_G_DECLARE_none then begin
-    CheckBox1.Checked := False;
-    CheckBox2.Checked := False;
-    CheckBox3.Checked := False;
-    CheckBox4.Checked := False;
-    CheckBox5.Checked := False;
-    CheckBox6.Checked := False;
-    CheckBox7.Checked := False;
+    RadioButton1Change(Sender); // Alle Checkboxen aus
     DeleteLines(p, 3);
   end;
   WriteLn('G_DECLARE: ', G_DECLARE);

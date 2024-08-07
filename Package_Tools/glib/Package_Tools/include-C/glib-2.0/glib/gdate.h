@@ -120,7 +120,7 @@ GDate*       g_date_new_dmy               (GDateDay     day,
 GDate*       g_date_new_julian            (guint32      julian_day);
 
 void         g_date_free                  (GDate       *date);
-GLIB_AVAILABLE_IN_2_56
+
 GDate*       g_date_copy                  (const GDate *date);
 
 /* check g_date_valid() after doing an operation that might fail, like
@@ -188,14 +188,14 @@ void         g_date_set_parse             (GDate       *date,
 
 void         g_date_set_time_t            (GDate       *date,
 					   time_t       timet);
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-_IN_2_62_FOR(g_date_set_time_t)
+
+
 void         g_date_set_time_val          (GDate       *date,
 					   GTimeVal    *timeval);
 _FOR(g_date_set_time_t)
 void         g_date_set_time              (GDate       *date,
                                            GTime        time_);
-G_GNUC_END_IGNORE_DEPRECATIONS
+
 
 void         g_date_set_month             (GDate       *date,
                                            GDateMonth   month);
