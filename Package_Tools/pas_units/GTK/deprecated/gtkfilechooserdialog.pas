@@ -15,8 +15,7 @@ type
   PGtkFileChooserDialog = ^TGtkFileChooserDialog;
 
 function gtk_file_chooser_dialog_get_type: TGType; cdecl; external libgtk4;
-function gtk_file_chooser_dialog_new(title: PChar; parent: PGtkWindow; action: TGtkFileChooserAction; first_button_text: PChar; args: array of const): PGtkWidget; cdecl; external libgtk4;
-function gtk_file_chooser_dialog_new(title: PChar; parent: PGtkWindow; action: TGtkFileChooserAction; first_button_text: PChar): PGtkWidget; cdecl; external libgtk4;
+function gtk_file_chooser_dialog_new(title: PChar; parent: PGtkWindow; action: TGtkFileChooserAction; first_button_text: PChar): PGtkWidget; varargs cdecl; external libgtk4;
 
 // === Konventiert am: 29-7-24 19:42:30 ===
 

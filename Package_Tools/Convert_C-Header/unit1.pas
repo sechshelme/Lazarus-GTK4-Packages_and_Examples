@@ -17,7 +17,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
-    function DeleteLines(const s, delStr: String): String;
+    function DeleteLines(const s, delStr: string): string;
   public
 
   end;
@@ -31,23 +31,40 @@ implementation
 
 { TForm1 }
 
-function TForm1.DeleteLines(const s, delStr: String): String;
+function TForm1.DeleteLines(const s, delStr: string): string;
 begin
-if Pos(delStr,s)=1 then Result:='' else Result:=s;
+  if Pos(delStr, s) = 1 then begin
+    Result := '';
+  end else begin
+    Result := s;
+  end;
 end;
+
 procedure TForm1.Button1Click(Sender: TObject);
 var
   slFile, slHeader: TStringList;
   i, j: integer;
 begin
   Memo1.Clear;
-  slFile := FindAllFiles('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/Package_Tools/include-C', '*.h',True);
+  slFile := FindAllFiles('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK4/Package_Tools/include-C', '*.h', True);
   Memo1.Lines := slFile;
 
   for i := 0 to slFile.Count - 1 do begin
     slHeader := TStringList.Create;
     slHeader.LoadFromFile(slFile[i]);
+
     for j := 0 to slHeader.Count - 1 do begin
+      if pos('long', slHeader[j]) > 0 then begin
+        WriteLn();
+        WriteLn(slFile[i]);
+        WriteLn(slHeader[j]);
+
+        WriteLn();
+        WriteLn();
+      end;
+
+
+
       slHeader[j] := StringReplace(slHeader[j], 'G_BEGIN_DECLS', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_END_DECLS', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_IN_ALL', '', [rfReplaceAll]);

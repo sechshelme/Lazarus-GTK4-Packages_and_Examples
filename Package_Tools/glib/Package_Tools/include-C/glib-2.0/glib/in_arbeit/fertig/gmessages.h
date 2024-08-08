@@ -43,7 +43,7 @@
  */
 
 gsize	g_printf_string_upper_bound (const gchar* format,
-				     va_list	  args) G_GNUC_PRINTF(1, 0);
+				     va_list	  args) ;
 
 /* Log level shift offset for user defined
  * log levels (0-7 are used by GLib).
@@ -105,12 +105,12 @@ GLogFunc        g_log_set_default_handler (GLogFunc      log_func,
 void            g_log                   (const gchar    *log_domain,
                                          GLogLevelFlags  log_level,
                                          const gchar    *format,
-                                         ...) G_GNUC_PRINTF (3, 4);
+                                         ...);
 
 void            g_logv                  (const gchar    *log_domain,
                                          GLogLevelFlags  log_level,
                                          const gchar    *format,
-                                         va_list         args) G_GNUC_PRINTF(3, 0);
+                                         va_list         args) ;
 
 GLogLevelFlags  g_log_set_fatal_mask    (const gchar    *log_domain,
                                          GLogLevelFlags  fatal_mask);
@@ -274,6 +274,7 @@ void             g_log_set_debug_enabled       (gboolean         enabled);
  *
  * Since: 2.50
  */
+/*
 #define G_DEBUG_HERE()                                          \
   g_log_structured (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,            \
                     "CODE_FILE", __FILE__,                      \
@@ -281,6 +282,7 @@ void             g_log_set_debug_enabled       (gboolean         enabled);
                     "CODE_FUNC", G_STRFUNC,                      \
                     "MESSAGE", "%" G_GINT64_FORMAT ": %s",      \
                     g_get_monotonic_time (), G_STRLOC)
+*/
 
 /* internal */
 void	_g_log_fallback_handler	(const gchar   *log_domain,
@@ -292,14 +294,13 @@ void	_g_log_fallback_handler	(const gchar   *log_domain,
 
 void g_return_if_fail_warning (const char *log_domain,
 			       const char *pretty_function,
-			       const char *expression) G_ANALYZER_NORETURN;
+			       const char *expression);
 
 void g_warn_message           (const char     *domain,
                                const char     *file,
                                int             line,
                                const char     *func,
-                               const char     *warnexpr) G_ANALYZER_NORETURN;
-G_NORETURN
+                               const char     *warnexpr) ;
 
 void g_assert_warning         (const char *log_domain,
 			       const char *file,
@@ -314,11 +315,12 @@ void g_log_structured_standard (const gchar    *log_domain,
                                 const gchar    *line,
                                 const gchar    *func,
                                 const gchar    *message_format,
-                                ...) G_GNUC_PRINTF (6, 7);
+                                ...) ;
 
+/*
 #ifndef G_LOG_DOMAIN
 #define G_LOG_DOMAIN    ((gchar*) 0)
-#endif  /* G_LOG_DOMAIN */
+#endif 
 
 #if defined(G_HAVE_ISO_VARARGS) && !G_ANALYZER_ANALYZING
 #if defined(G_LOG_USE_STRUCTURED) && GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_56
@@ -344,9 +346,6 @@ void g_log_structured_standard (const gchar    *log_domain,
                                                    __FILE__, G_STRINGIFY (__LINE__), \
                                                    G_STRFUNC, __VA_ARGS__)
 #else
-/* for(;;) ; so that GCC knows that control doesn't go past g_error().
- * Put space before ending semicolon to avoid C++ build warnings.
- */
 #define g_error(...)  G_STMT_START {                 \
                         g_log (G_LOG_DOMAIN,         \
                                G_LOG_LEVEL_ERROR,    \
@@ -416,10 +415,11 @@ void g_log_structured_standard (const gchar    *log_domain,
                                        G_LOG_LEVEL_DEBUG,    \
                                        format)
 #endif
-#else   /* no varargs macros */
-G_NORETURN static void g_error (const gchar *format, ...) G_ANALYZER_NORETURN;
-static void g_critical (const gchar *format, ...) G_ANALYZER_NORETURN;
+#else   */
+  void g_error (const gchar *format, ...) ;
+void g_critical (const gchar *format, ...) ;
 
+/*
 static inline void
 g_error (const gchar *format,
          ...)
@@ -476,7 +476,7 @@ g_debug (const gchar *format,
   g_logv (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, format, args);
   va_end (args);
 }
-#endif  /* !__GNUC__ */
+#endif  */
 
 /**
  * g_warning_once:
@@ -493,10 +493,11 @@ g_debug (const gchar *format,
  *
  * Since: 2.64
  */
+/*
 #if defined(G_HAVE_ISO_VARARGS) && !G_ANALYZER_ANALYZING
 #define g_warning_once(...) \
   G_STMT_START { \
-    static int G_PASTE (_GWarningOnceBoolean, __LINE__) = 0;  /* (atomic) */ \
+    static int G_PASTE (_GWarningOnceBoolean, __LINE__) = 0;   \
     if (g_atomic_int_compare_and_exchange (&G_PASTE (_GWarningOnceBoolean, __LINE__), \
                                            0, 1)) \
       g_warning (__VA_ARGS__); \
@@ -505,7 +506,7 @@ g_debug (const gchar *format,
 #elif defined(G_HAVE_GNUC_VARARGS)  && !G_ANALYZER_ANALYZING
 #define g_warning_once(format...) \
   G_STMT_START { \
-    static int G_PASTE (_GWarningOnceBoolean, __LINE__) = 0;  /* (atomic) */ \
+    static int G_PASTE (_GWarningOnceBoolean, __LINE__) = 0;   \
     if (g_atomic_int_compare_and_exchange (&G_PASTE (_GWarningOnceBoolean, __LINE__), \
                                            0, 1)) \
       g_warning (format); \
@@ -514,7 +515,7 @@ g_debug (const gchar *format,
 #else
 #define g_warning_once g_warning
 #endif
-
+*/
 /**
  * GPrintFunc:
  * @string: the message to output
@@ -541,10 +542,10 @@ GPrintFunc      g_set_printerr_handler  (GPrintFunc      func);
  *
  * Since: 2.16
  */
-#define g_warn_if_reached() \
-  do { \
-    g_warn_message (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, NULL); \
-  } while (0)
+//#define g_warn_if_reached() \
+//  do { \
+//    g_warn_message (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, NULL); \
+//  } while (0)
 
 /**
  * g_warn_if_fail:
@@ -557,13 +558,13 @@ GPrintFunc      g_set_printerr_handler  (GPrintFunc      func);
  *
  * Since: 2.16
  */
-#define g_warn_if_fail(expr) \
-  do { \
-    if G_LIKELY (expr) ; \
-    else g_warn_message (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, #expr); \
-  } while (0)
+//#define g_warn_if_fail(expr) \
+//  do { \
+//    if G_LIKELY (expr) ; \
+//    else g_warn_message (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, #expr); \
+//  } while (0)
 
-#ifdef G_DISABLE_CHECKS
+//#ifdef G_DISABLE_CHECKS
 
 /**
  * g_return_if_fail:
@@ -596,7 +597,7 @@ GPrintFunc      g_set_printerr_handler  (GPrintFunc      func);
  * Any unrelated failures can be skipped over in
  * [gdb](https://www.gnu.org/software/gdb/) using the `continue` command.
  */
-#define g_return_if_fail(expr) G_STMT_START{ (void)0; }G_STMT_END
+//#define g_return_if_fail(expr) G_STMT_START{ (void)0; }G_STMT_END
 
 /**
  * g_return_val_if_fail:
@@ -622,7 +623,7 @@ GPrintFunc      g_set_printerr_handler  (GPrintFunc      func);
  *
  * See g_return_if_fail() for guidance on how to debug failure of this check.
  */
-#define g_return_val_if_fail(expr,val) G_STMT_START{ (void)0; }G_STMT_END
+//#define g_return_val_if_fail(expr,val) G_STMT_START{ (void)0; }G_STMT_END
 
 /**
  * g_return_if_reached:
@@ -632,7 +633,7 @@ GPrintFunc      g_set_printerr_handler  (GPrintFunc      func);
  *
  * See g_return_if_fail() for guidance on how to debug failure of this check.
  */
-#define g_return_if_reached() G_STMT_START{ return; }G_STMT_END
+//#define g_return_if_reached() G_STMT_START{ return; }G_STMT_END
 
 /**
  * g_return_val_if_reached:
@@ -642,10 +643,11 @@ GPrintFunc      g_set_printerr_handler  (GPrintFunc      func);
  *
  * See g_return_if_fail() for guidance on how to debug failure of this check.
  */
-#define g_return_val_if_reached(val) G_STMT_START{ return (val); }G_STMT_END
+//#define g_return_val_if_reached(val) G_STMT_START{ return (val); }G_STMT_END
 
-#else /* !G_DISABLE_CHECKS */
+//#else /* !G_DISABLE_CHECKS */
 
+/*
 #define g_return_if_fail(expr) \
   G_STMT_START { \
     if (G_LIKELY (expr)) \
@@ -694,7 +696,7 @@ GPrintFunc      g_set_printerr_handler  (GPrintFunc      func);
     return (val); \
   } G_STMT_END
 
-#endif /* !G_DISABLE_CHECKS */
+#endif*/
 
 
 

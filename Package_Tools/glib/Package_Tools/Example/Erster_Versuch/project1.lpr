@@ -14,6 +14,7 @@ uses
   gunicode,                // io.
   garray,                  // io.
   gstring,                 // io. -> garray, gunicode
+  gstrfuncs,               // io.                        Makros entfernt
   gatomic,                 // io.
   gtimezone,               // io.
   gdatetime,               // io. -> gtimezone
@@ -24,6 +25,10 @@ uses
   gpoll,                   // io.
   gmain,                   // io. gslist, gthread, gpoll
   gvariant,                // io. -> garray,  gstring, gvarianttype
+  gmessages,               // io. -> gvariant            Makros entfernt
+  gregex,                  // io. -> gstring
+
+  goption,
 
 
 
@@ -39,7 +44,12 @@ var
   us: Tgulong;
   time: Tgdouble;
 begin
-  timer:=g_timer_new;
+
+  WriteLn(g_ascii_isalnum('1'));
+  WriteLn(g_ascii_isalnum('a'));
+  WriteLn(g_ascii_isalnum(#10));
+
+timer:=g_timer_new;
   g_timer_start(timer);
   ReadLn;
   g_timer_stop(timer);

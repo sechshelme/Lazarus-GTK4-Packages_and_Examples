@@ -27,17 +27,11 @@ const
   GTK_BUTTONS_OK_CANCEL = 5;
 
 function gtk_message_dialog_get_type: TGType; cdecl; external libgtk4;
-function gtk_message_dialog_new(parent: PGtkWindow; flags: TGtkDialogFlags; _type: TGtkMessageType; Buttons: TGtkButtonsType; message_format: PChar;
-  args: array of const): PGtkWidget; cdecl; external libgtk4;
-function gtk_message_dialog_new(parent: PGtkWindow; flags: TGtkDialogFlags; _type: TGtkMessageType; Buttons: TGtkButtonsType; message_format: PChar): PGtkWidget; cdecl; external libgtk4;
-function gtk_message_dialog_new_with_markup(parent: PGtkWindow; flags: TGtkDialogFlags; _type: TGtkMessageType; Buttons: TGtkButtonsType; message_format: PChar;
-  args: array of const): PGtkWidget; cdecl; external libgtk4;
-function gtk_message_dialog_new_with_markup(parent: PGtkWindow; flags: TGtkDialogFlags; _type: TGtkMessageType; Buttons: TGtkButtonsType; message_format: PChar): PGtkWidget; cdecl; external libgtk4;
+function gtk_message_dialog_new(parent: PGtkWindow; flags: TGtkDialogFlags; _type: TGtkMessageType; Buttons: TGtkButtonsType; message_format: PChar): PGtkWidget; varargs cdecl; external libgtk4;
+function gtk_message_dialog_new_with_markup(parent: PGtkWindow; flags: TGtkDialogFlags; _type: TGtkMessageType; Buttons: TGtkButtonsType; message_format: PChar): PGtkWidget; varargs cdecl; external libgtk4;
 procedure gtk_message_dialog_set_markup(message_dialog: PGtkMessageDialog; str: PChar); cdecl; external libgtk4;
-procedure gtk_message_dialog_format_secondary_text(message_dialog: PGtkMessageDialog; message_format: PChar; args: array of const); cdecl; external libgtk4;
-procedure gtk_message_dialog_format_secondary_text(message_dialog: PGtkMessageDialog; message_format: PChar); cdecl; external libgtk4;
-procedure gtk_message_dialog_format_secondary_markup(message_dialog: PGtkMessageDialog; message_format: PChar; args: array of const); cdecl; external libgtk4;
-procedure gtk_message_dialog_format_secondary_markup(message_dialog: PGtkMessageDialog; message_format: PChar); cdecl; external libgtk4;
+procedure gtk_message_dialog_format_secondary_text(message_dialog: PGtkMessageDialog; message_format: PChar); varargs cdecl; external libgtk4;
+procedure gtk_message_dialog_format_secondary_markup(message_dialog: PGtkMessageDialog; message_format: PChar); varargs cdecl; external libgtk4;
 function gtk_message_dialog_get_message_area(message_dialog: PGtkMessageDialog): PGtkWidget; cdecl; external libgtk4;
 
 // === Konventiert am: 30-7-24 16:04:30 ===

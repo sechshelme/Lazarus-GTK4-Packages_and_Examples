@@ -95,15 +95,9 @@ procedure gtk_widget_set_layout_manager(widget: PGtkWidget; layout_manager: PGtk
 function gtk_widget_get_layout_manager(widget: PGtkWidget): PGtkLayoutManager; cdecl; external libgtk4;
 procedure gtk_widget_class_set_layout_manager_type(widget_class: PGtkWidgetClass; _type: TGType); cdecl; external libgtk4;
 function gtk_widget_class_get_layout_manager_type(widget_class: PGtkWidgetClass): TGType; cdecl; external libgtk4;
-procedure gtk_widget_class_add_binding(widget_class: PGtkWidgetClass; keyval: Tguint; mods: TGdkModifierType; callback: TGtkShortcutFunc; format_string: PChar;
-  args: array of const); cdecl; external libgtk4;
-procedure gtk_widget_class_add_binding(widget_class: PGtkWidgetClass; keyval: Tguint; mods: TGdkModifierType; callback: TGtkShortcutFunc; format_string: PChar); cdecl; external libgtk4;
-procedure gtk_widget_class_add_binding_signal(widget_class: PGtkWidgetClass; keyval: Tguint; mods: TGdkModifierType; signal: PChar; format_string: PChar;
-  args: array of const); cdecl; external libgtk4;
-procedure gtk_widget_class_add_binding_signal(widget_class: PGtkWidgetClass; keyval: Tguint; mods: TGdkModifierType; signal: PChar; format_string: PChar); cdecl; external libgtk4;
-procedure gtk_widget_class_add_binding_action(widget_class: PGtkWidgetClass; keyval: Tguint; mods: TGdkModifierType; action_name: PChar; format_string: PChar;
-  args: array of const); cdecl; external libgtk4;
-procedure gtk_widget_class_add_binding_action(widget_class: PGtkWidgetClass; keyval: Tguint; mods: TGdkModifierType; action_name: PChar; format_string: PChar); cdecl; external libgtk4;
+procedure gtk_widget_class_add_binding(widget_class: PGtkWidgetClass; keyval: Tguint; mods: TGdkModifierType; callback: TGtkShortcutFunc; format_string: PChar); varargs cdecl; external libgtk4;
+procedure gtk_widget_class_add_binding_signal(widget_class: PGtkWidgetClass; keyval: Tguint; mods: TGdkModifierType; signal: PChar; format_string: PChar); varargs cdecl; external libgtk4;
+procedure gtk_widget_class_add_binding_action(widget_class: PGtkWidgetClass; keyval: Tguint; mods: TGdkModifierType; action_name: PChar; format_string: PChar); varargs cdecl; external libgtk4;
 procedure gtk_widget_class_add_shortcut(widget_class: PGtkWidgetClass; shortcut: PGtkShortcut); cdecl; external libgtk4;
 procedure gtk_widget_class_set_activate_signal(widget_class: PGtkWidgetClass; signal_id: Tguint); cdecl; external libgtk4;
 procedure gtk_widget_class_set_activate_signal_from_name(widget_class: PGtkWidgetClass; signal_name: PChar); cdecl; external libgtk4;
@@ -271,8 +265,7 @@ procedure gtk_widget_class_bind_template_callback_full(widget_class: PGtkWidgetC
 procedure gtk_widget_class_set_template_scope(widget_class: PGtkWidgetClass; scope: PGtkBuilderScope); cdecl; external libgtk4;
 procedure gtk_widget_class_bind_template_child_full(widget_class: PGtkWidgetClass; Name: PChar; internal_child: Tgboolean; struct_offset: Tgssize); cdecl; external libgtk4;
 procedure gtk_widget_insert_action_group(widget: PGtkWidget; Name: PChar; group: PGActionGroup); cdecl; external libgtk4;
-function gtk_widget_activate_action(widget: PGtkWidget; Name: PChar; format_string: PChar; args: array of const): Tgboolean; cdecl; external libgtk4;
-function gtk_widget_activate_action(widget: PGtkWidget; Name: PChar; format_string: PChar): Tgboolean; cdecl; external libgtk4;
+function gtk_widget_activate_action(widget: PGtkWidget; Name: PChar; format_string: PChar): Tgboolean; varargs cdecl; external libgtk4;
 function gtk_widget_activate_action_variant(widget: PGtkWidget; Name: PChar; args: PGVariant): Tgboolean; cdecl; external libgtk4;
 procedure gtk_widget_activate_default(widget: PGtkWidget); cdecl; external libgtk4;
 procedure gtk_widget_set_font_map(widget: PGtkWidget; font_map: PPangoFontMap); cdecl; external libgtk4;

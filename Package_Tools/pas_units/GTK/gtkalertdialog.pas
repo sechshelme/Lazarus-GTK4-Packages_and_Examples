@@ -21,8 +21,7 @@ type
   PGtkAlertDialogClass = ^TGtkAlertDialogClass;
 
 
-function gtk_alert_dialog_new(format: PChar; args: array of const): PGtkAlertDialog; cdecl; external libgtk4;
-function gtk_alert_dialog_new(format: PChar): PGtkAlertDialog; cdecl; external libgtk4;
+function gtk_alert_dialog_new(format: PChar): PGtkAlertDialog; varargs cdecl; external libgtk4;
 function gtk_alert_dialog_get_modal(self: PGtkAlertDialog): Tgboolean; cdecl; external libgtk4;
 procedure gtk_alert_dialog_set_modal(self: PGtkAlertDialog; modal: Tgboolean); cdecl; external libgtk4;
 function gtk_alert_dialog_get_message(self: PGtkAlertDialog): PChar; cdecl; external libgtk4;

@@ -25,8 +25,7 @@ function gtk_snapshot_free_to_node(snapshot: PGtkSnapshot): PGskRenderNode; cdec
 function gtk_snapshot_free_to_paintable(snapshot: PGtkSnapshot; size: Pgraphene_size_t): PGdkPaintable; cdecl; external libgtk4;
 function gtk_snapshot_to_node(snapshot: PGtkSnapshot): PGskRenderNode; cdecl; external libgtk4;
 function gtk_snapshot_to_paintable(snapshot: PGtkSnapshot; size: Pgraphene_size_t): PGdkPaintable; cdecl; external libgtk4;
-procedure gtk_snapshot_push_debug(snapshot: PGtkSnapshot; message: PChar; args: array of const); cdecl; external libgtk4;
-procedure gtk_snapshot_push_debug(snapshot: PGtkSnapshot; message: PChar); cdecl; external libgtk4;
+procedure gtk_snapshot_push_debug(snapshot: PGtkSnapshot; message: PChar); varargs cdecl; external libgtk4;
 procedure gtk_snapshot_push_opacity(snapshot: PGtkSnapshot; opacity: Tdouble); cdecl; external libgtk4;
 procedure gtk_snapshot_push_blur(snapshot: PGtkSnapshot; radius: Tdouble); cdecl; external libgtk4;
 procedure gtk_snapshot_push_color_matrix(snapshot: PGtkSnapshot; color_matrix: Pgraphene_matrix_t; color_offset: Pgraphene_vec4_t); cdecl; external libgtk4;

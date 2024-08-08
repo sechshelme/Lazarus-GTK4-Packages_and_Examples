@@ -7,8 +7,9 @@
       <Unit>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="707"/>
-        <CursorPos X="114" Y="745"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="20"/>
+        <CursorPos X="71" Y="28"/>
         <UsageCount Value="117"/>
         <Loaded Value="True"/>
       </Unit>
@@ -47,7 +48,6 @@
       <Unit>
         <Filename Value="../../Package_Tools/pas_units/common_gtk.pas"/>
         <UnitName Value="common_GTK"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <CursorPos X="17" Y="22"/>
         <UsageCount Value="30"/>

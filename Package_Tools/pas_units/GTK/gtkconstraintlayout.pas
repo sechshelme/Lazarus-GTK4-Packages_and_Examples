@@ -44,9 +44,7 @@ procedure gtk_constraint_layout_add_guide(layout: PGtkConstraintLayout; guide: P
 procedure gtk_constraint_layout_remove_guide(layout: PGtkConstraintLayout; guide: PGtkConstraintGuide); cdecl; external libgtk4;
 procedure gtk_constraint_layout_remove_all_constraints(layout: PGtkConstraintLayout); cdecl; external libgtk4;
 function gtk_constraint_layout_add_constraints_from_description(layout: PGtkConstraintLayout; Lines: PPchar; n_lines: Tgsize; hspacing: longint; vspacing: longint;
-  error: PPGError; first_view: PChar; args: array of const): PGList; cdecl; external libgtk4;
-function gtk_constraint_layout_add_constraints_from_description(layout: PGtkConstraintLayout; Lines: PPchar; n_lines: Tgsize; hspacing: longint; vspacing: longint;
-  error: PPGError; first_view: PChar): PGList; cdecl; external libgtk4;
+  error: PPGError; first_view: PChar): PGList; varargs cdecl; external libgtk4;
 function gtk_constraint_layout_add_constraints_from_descriptionv(layout: PGtkConstraintLayout; Lines: PPchar; n_lines: Tgsize; hspacing: longint; vspacing: longint;
   views: PGHashTable; error: PPGError): PGList; cdecl; external libgtk4;
 function gtk_constraint_layout_observe_constraints(layout: PGtkConstraintLayout): PGListModel; cdecl; external libgtk4;

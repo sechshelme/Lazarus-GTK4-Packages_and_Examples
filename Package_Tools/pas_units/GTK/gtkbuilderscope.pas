@@ -54,8 +54,7 @@ type
 function gtk_builder_cscope_get_type: TGType; cdecl; external libgtk4;
 function gtk_builder_cscope_new: PGtkBuilderScope; cdecl; external libgtk4;
 procedure gtk_builder_cscope_add_callback_symbol(self: PGtkBuilderCScope; callback_name: PChar; callback_symbol: TGCallback); cdecl; external libgtk4;
-procedure gtk_builder_cscope_add_callback_symbols(self: PGtkBuilderCScope; first_callback_name: PChar; first_callback_symbol: TGCallback; args: array of const); cdecl; external libgtk4;
-procedure gtk_builder_cscope_add_callback_symbols(self: PGtkBuilderCScope; first_callback_name: PChar; first_callback_symbol: TGCallback); cdecl; external libgtk4;
+procedure gtk_builder_cscope_add_callback_symbols(self: PGtkBuilderCScope; first_callback_name: PChar; first_callback_symbol: TGCallback); varargs cdecl; external libgtk4;
 
 {#define gtk_builder_cscope_add_callback(scope, callback) \ }
 {  gtk_builder_cscope_add_callback_symbol (GTK_BUILDER_CSCOPE (scope), #callback, G_CALLBACK (callback)) }

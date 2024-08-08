@@ -69,8 +69,7 @@ procedure gtk_tree_view_set_activate_on_single_click(tree_view: PGtkTreeView; si
 function gtk_tree_view_append_column(tree_view: PGtkTreeView; column: PGtkTreeViewColumn): longint; cdecl; external libgtk4;
 function gtk_tree_view_remove_column(tree_view: PGtkTreeView; column: PGtkTreeViewColumn): longint; cdecl; external libgtk4;
 function gtk_tree_view_insert_column(tree_view: PGtkTreeView; column: PGtkTreeViewColumn; position: longint): longint; cdecl; external libgtk4;
-function gtk_tree_view_insert_column_with_attributes(tree_view: PGtkTreeView; position: longint; title: PChar; cell: PGtkCellRenderer; args: array of const): longint; cdecl; external libgtk4;
-function gtk_tree_view_insert_column_with_attributes(tree_view: PGtkTreeView; position: longint; title: PChar; cell: PGtkCellRenderer): longint; cdecl; external libgtk4;
+function gtk_tree_view_insert_column_with_attributes(tree_view: PGtkTreeView; position: longint; title: PChar; cell: PGtkCellRenderer): longint; varargs cdecl; external libgtk4;
 function gtk_tree_view_insert_column_with_data_func(tree_view: PGtkTreeView; position: longint; title: PChar; cell: PGtkCellRenderer; func: TGtkTreeCellDataFunc;
   Data: Tgpointer; dnotify: TGDestroyNotify): longint; cdecl; external libgtk4;
 function gtk_tree_view_get_n_columns(tree_view: PGtkTreeView): Tguint; cdecl; external libgtk4;

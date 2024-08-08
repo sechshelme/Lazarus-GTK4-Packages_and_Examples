@@ -42,8 +42,6 @@ type
 
 function gtk_about_dialog_get_type: TGType; cdecl; external libgtk4;
 function gtk_about_dialog_new: PGtkWidget; cdecl; external libgtk4;
-//procedure gtk_show_about_dialog(parent: PGtkWindow; first_property_name: PChar; args: array of const); cdecl; external libgtk4;
-//procedure gtk_show_about_dialog(parent: PGtkWindow; first_property_name: PChar); cdecl; external libgtk4;
 procedure gtk_show_about_dialog(parent: PGtkWindow; first_property_name: PChar);varargs cdecl; external libgtk4;
 function gtk_about_dialog_get_program_name(about: PGtkAboutDialog): PChar; cdecl; external libgtk4;
 procedure gtk_about_dialog_set_program_name(about: PGtkAboutDialog; Name: PChar); cdecl; external libgtk4;

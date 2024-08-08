@@ -303,7 +303,7 @@ GQuark g_regex_error_quark (void);
  */
 typedef enum
 {
-  G_REGEX_DEFAULT GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
+  G_REGEX_DEFAULT  = 0,
   G_REGEX_CASELESS          = 1 << 0,
   G_REGEX_MULTILINE         = 1 << 1,
   G_REGEX_DOTALL            = 1 << 2,
@@ -321,7 +321,7 @@ typedef enum
   G_REGEX_NEWLINE_CRLF      = G_REGEX_NEWLINE_CR | G_REGEX_NEWLINE_LF,
   G_REGEX_NEWLINE_ANYCRLF   = G_REGEX_NEWLINE_CR | 1 << 22,
   G_REGEX_BSR_ANYCRLF       = 1 << 23,
-  G_REGEX_JAVASCRIPT_COMPAT _ENUMERATOR_IN_2_74 = 1 << 25
+  G_REGEX_JAVASCRIPT_COMPAT  = 1 << 25
 } GRegexCompileFlags;
 
 /**
@@ -395,7 +395,7 @@ typedef enum
  * adding a new flag. */
 typedef enum
 {
-  G_REGEX_MATCH_DEFAULT GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
+  G_REGEX_MATCH_DEFAULT  = 0,
   G_REGEX_MATCH_ANCHORED         = 1 << 4,
   G_REGEX_MATCH_NOTBOL           = 1 << 7,
   G_REGEX_MATCH_NOTEOL           = 1 << 8,

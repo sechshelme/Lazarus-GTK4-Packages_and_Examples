@@ -10,6 +10,7 @@ uses
   {$ENDIF}
 
 type
+  PPPgchar = ^PPgchar;
   PPgchar = ^Pgchar;
   Pgchar = ^Tgchar;
   Tgchar = char;

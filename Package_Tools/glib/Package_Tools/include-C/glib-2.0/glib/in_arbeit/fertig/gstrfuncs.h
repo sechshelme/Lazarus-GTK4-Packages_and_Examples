@@ -156,6 +156,7 @@ gboolean             (g_str_has_prefix) (const gchar *str,
  */
 #define _G_STR_NONNULL(x) ((x) + !(x))
 
+/*
 #define g_str_has_prefix(STR, PREFIX)                                         \
   (__builtin_constant_p (PREFIX)?                                             \
     G_GNUC_EXTENSION ({                                                       \
@@ -203,6 +204,7 @@ gboolean             (g_str_has_prefix) (const gchar *str,
   :                                                                           \
     (g_str_has_suffix) (STR, SUFFIX)                                          \
   )
+*/
 
 #endif /* !defined (__GI_SCANNER__) */
 #endif /* !defined (__GTK_DOC_IGNORE__) */
@@ -287,7 +289,7 @@ gchar*	              g_strdup_printf  (const gchar *format,
 					...)  ;
 
 gchar*	              g_strdup_vprintf (const gchar *format,
-					va_list      args) G_GNUC_PRINTF(1, 0) ;
+					va_list      args);
 
 gchar*	              g_strndup	       (const gchar *str,
 					gsize        n) ;  
@@ -296,15 +298,16 @@ gchar*	              g_strnfill       (gsize        length,
 					gchar        fill_char) ;
 
 gchar*	              g_strconcat      (const gchar *string1,
-					...)  G_GNUC_NULL_TERMINATED;
+					...)  ;
 
 gchar*                g_strjoin	       (const gchar  *separator,
-					...)  G_GNUC_NULL_TERMINATED;
+					...)  ;
 
 #if G_GNUC_CHECK_VERSION(2, 0)
 #ifndef __GTK_DOC_IGNORE__
 #ifndef __GI_SCANNER__
 
+/*
 G_ALWAYS_INLINE static inline char *
 g_strdup_inline (const char *str)
 {
@@ -320,6 +323,7 @@ g_strdup_inline (const char *str)
 
   return g_strdup (str);
 }
+*/
 
 #define g_strdup(x) g_strdup_inline (x)
 
@@ -346,13 +350,12 @@ gchar*                g_strcompress    (const gchar *source) ;
 gchar*                g_strescape      (const gchar *source,
 					const gchar *exceptions) ;
 
-_IN_2_68_FOR (g_memdup2)
 gpointer              g_memdup         (gconstpointer mem,
-                                        guint         byte_size) G_GNUC_ALLOC_SIZE(2);
+                                        guint         byte_size);
 
 
 gpointer              g_memdup2        (gconstpointer mem,
-                                        gsize         byte_size) G_GNUC_ALLOC_SIZE(2);
+                                        gsize         byte_size);
 
 /* NULL terminated string arrays.
  * g_strsplit(), g_strsplit_set() split up string into max_tokens tokens
@@ -487,6 +490,7 @@ gboolean              g_ascii_string_to_unsigned   (const gchar  *str,
  *
  * Since: 2.76
  */
+/*
 GLIB_AVAILABLE_STATIC_INLINE_IN_2_76
 static inline gboolean
 g_set_str (char       **str_pointer,
@@ -504,6 +508,7 @@ g_set_str (char       **str_pointer,
 
   return TRUE;
 }
+*/
 
 
 

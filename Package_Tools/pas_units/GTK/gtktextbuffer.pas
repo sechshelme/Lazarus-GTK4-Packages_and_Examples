@@ -60,12 +60,8 @@ function gtk_text_buffer_insert_interactive(buffer: PGtkTextBuffer; iter: PGtkTe
 function gtk_text_buffer_insert_interactive_at_cursor(buffer: PGtkTextBuffer; Text: PChar; len: longint; default_editable: Tgboolean): Tgboolean; cdecl; external libgtk4;
 procedure gtk_text_buffer_insert_range(buffer: PGtkTextBuffer; iter: PGtkTextIter; start: PGtkTextIter; _end: PGtkTextIter); cdecl; external libgtk4;
 function gtk_text_buffer_insert_range_interactive(buffer: PGtkTextBuffer; iter: PGtkTextIter; start: PGtkTextIter; _end: PGtkTextIter; default_editable: Tgboolean): Tgboolean; cdecl; external libgtk4;
-procedure gtk_text_buffer_insert_with_tags(buffer: PGtkTextBuffer; iter: PGtkTextIter; Text: PChar; len: longint; first_tag: PGtkTextTag;
-  args: array of const); cdecl; external libgtk4;
-procedure gtk_text_buffer_insert_with_tags(buffer: PGtkTextBuffer; iter: PGtkTextIter; Text: PChar; len: longint; first_tag: PGtkTextTag); cdecl; external libgtk4;
-procedure gtk_text_buffer_insert_with_tags_by_name(buffer: PGtkTextBuffer; iter: PGtkTextIter; Text: PChar; len: longint; first_tag_name: PChar;
-  args: array of const); cdecl; external libgtk4;
-procedure gtk_text_buffer_insert_with_tags_by_name(buffer: PGtkTextBuffer; iter: PGtkTextIter; Text: PChar; len: longint; first_tag_name: PChar); cdecl; external libgtk4;
+procedure gtk_text_buffer_insert_with_tags(buffer: PGtkTextBuffer; iter: PGtkTextIter; Text: PChar; len: longint; first_tag: PGtkTextTag); varargs cdecl; external libgtk4;
+procedure gtk_text_buffer_insert_with_tags_by_name(buffer: PGtkTextBuffer; iter: PGtkTextIter; Text: PChar; len: longint; first_tag_name: PChar); varargs cdecl; external libgtk4;
 procedure gtk_text_buffer_insert_markup(buffer: PGtkTextBuffer; iter: PGtkTextIter; markup: PChar; len: longint); cdecl; external libgtk4;
 procedure gtk_text_buffer_delete(buffer: PGtkTextBuffer; start: PGtkTextIter; _end: PGtkTextIter); cdecl; external libgtk4;
 function gtk_text_buffer_delete_interactive(buffer: PGtkTextBuffer; start_iter: PGtkTextIter; end_iter: PGtkTextIter; default_editable: Tgboolean): Tgboolean; cdecl; external libgtk4;
@@ -91,8 +87,7 @@ procedure gtk_text_buffer_remove_tag(buffer: PGtkTextBuffer; tag: PGtkTextTag; s
 procedure gtk_text_buffer_apply_tag_by_name(buffer: PGtkTextBuffer; Name: PChar; start: PGtkTextIter; _end: PGtkTextIter); cdecl; external libgtk4;
 procedure gtk_text_buffer_remove_tag_by_name(buffer: PGtkTextBuffer; Name: PChar; start: PGtkTextIter; _end: PGtkTextIter); cdecl; external libgtk4;
 procedure gtk_text_buffer_remove_all_tags(buffer: PGtkTextBuffer; start: PGtkTextIter; _end: PGtkTextIter); cdecl; external libgtk4;
-function gtk_text_buffer_create_tag(buffer: PGtkTextBuffer; tag_name: PChar; first_property_name: PChar; args: array of const): PGtkTextTag; cdecl; external libgtk4;
-function gtk_text_buffer_create_tag(buffer: PGtkTextBuffer; tag_name: PChar; first_property_name: PChar): PGtkTextTag; cdecl; external libgtk4;
+function gtk_text_buffer_create_tag(buffer: PGtkTextBuffer; tag_name: PChar; first_property_name: PChar): PGtkTextTag; varargs cdecl; external libgtk4;
 function gtk_text_buffer_get_iter_at_line_offset(buffer: PGtkTextBuffer; iter: PGtkTextIter; line_number: longint; char_offset: longint): Tgboolean; cdecl; external libgtk4;
 function gtk_text_buffer_get_iter_at_line_index(buffer: PGtkTextBuffer; iter: PGtkTextIter; line_number: longint; byte_index: longint): Tgboolean; cdecl; external libgtk4;
 procedure gtk_text_buffer_get_iter_at_offset(buffer: PGtkTextBuffer; iter: PGtkTextIter; char_offset: longint); cdecl; external libgtk4;

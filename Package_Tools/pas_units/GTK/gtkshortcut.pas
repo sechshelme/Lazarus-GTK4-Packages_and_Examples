@@ -24,8 +24,7 @@ type
 
 function gtk_shortcut_get_type: TGType; cdecl; external libgtk4;
 function gtk_shortcut_new(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction): PGtkShortcut; cdecl; external libgtk4;
-function gtk_shortcut_new_with_arguments(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction; format_string: PChar; args: array of const): PGtkShortcut; cdecl; external libgtk4;
-function gtk_shortcut_new_with_arguments(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction; format_string: PChar): PGtkShortcut; cdecl; external libgtk4;
+function gtk_shortcut_new_with_arguments(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction; format_string: PChar): PGtkShortcut; varargs cdecl; external libgtk4;
 function gtk_shortcut_get_trigger(self: PGtkShortcut): PGtkShortcutTrigger; cdecl; external libgtk4;
 procedure gtk_shortcut_set_trigger(self: PGtkShortcut; trigger: PGtkShortcutTrigger); cdecl; external libgtk4;
 function gtk_shortcut_get_action(self: PGtkShortcut): PGtkShortcutAction; cdecl; external libgtk4;

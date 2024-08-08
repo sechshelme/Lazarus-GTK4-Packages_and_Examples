@@ -63,8 +63,7 @@ type
 
 
 function gtk_constant_expression_get_type: TGType; cdecl; external;
-function gtk_constant_expression_new(value_type: TGType; args: array of const): PGtkExpression; cdecl; external;
-function gtk_constant_expression_new(value_type: TGType): PGtkExpression; cdecl; external;
+function gtk_constant_expression_new(value_type: TGType): PGtkExpression; varargs cdecl; external;
 function gtk_constant_expression_new_for_value(Value: PGValue): PGtkExpression; cdecl; external;
 function gtk_constant_expression_get_value(expression: PGtkExpression): PGValue; cdecl; external;
 

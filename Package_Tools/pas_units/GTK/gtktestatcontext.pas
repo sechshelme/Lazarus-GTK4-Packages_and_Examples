@@ -69,12 +69,9 @@ function gtk_test_accessible_has_role(accessible: PGtkAccessible; role: TGtkAcce
 function gtk_test_accessible_has_property(accessible: PGtkAccessible; _property: TGtkAccessibleProperty): Tgboolean; cdecl; external libgtk4;
 function gtk_test_accessible_has_relation(accessible: PGtkAccessible; relation: TGtkAccessibleRelation): Tgboolean; cdecl; external libgtk4;
 function gtk_test_accessible_has_state(accessible: PGtkAccessible; state: TGtkAccessibleState): Tgboolean; cdecl; external libgtk4;
-function gtk_test_accessible_check_property(accessible: PGtkAccessible; _property: TGtkAccessibleProperty; args: array of const): PChar; cdecl; external libgtk4;
-function gtk_test_accessible_check_property(accessible: PGtkAccessible; _property: TGtkAccessibleProperty): PChar; cdecl; external libgtk4;
-function gtk_test_accessible_check_relation(accessible: PGtkAccessible; relation: TGtkAccessibleRelation; args: array of const): PChar; cdecl; external libgtk4;
-function gtk_test_accessible_check_relation(accessible: PGtkAccessible; relation: TGtkAccessibleRelation): PChar; cdecl; external libgtk4;
-function gtk_test_accessible_check_state(accessible: PGtkAccessible; state: TGtkAccessibleState; args: array of const): PChar; cdecl; external libgtk4;
-function gtk_test_accessible_check_state(accessible: PGtkAccessible; state: TGtkAccessibleState): PChar; cdecl; external libgtk4;
+function gtk_test_accessible_check_property(accessible: PGtkAccessible; _property: TGtkAccessibleProperty): PChar; varargs cdecl; external libgtk4;
+function gtk_test_accessible_check_relation(accessible: PGtkAccessible; relation: TGtkAccessibleRelation): PChar; varargs cdecl; external libgtk4;
+function gtk_test_accessible_check_state(accessible: PGtkAccessible; state: TGtkAccessibleState): PChar; varargs cdecl; external libgtk4;
 procedure gtk_test_accessible_assertion_message_role(domain: PChar; _file: PChar; line: longint; func: PChar; expr: PChar;
   accessible: PGtkAccessible; expected_role: TGtkAccessibleRole; actual_role: TGtkAccessibleRole); cdecl; external libgtk4;
 

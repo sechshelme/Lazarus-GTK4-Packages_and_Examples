@@ -302,9 +302,9 @@ struct _GOptionEntry
  *
  * Since: 2.70
  */
-#define G_OPTION_ENTRY_NULL    \
-  GLIB_AVAILABLE_MACRO_IN_2_70 \
-  { NULL, 0, 0, 0, NULL, NULL, NULL }
+////#define G_OPTION_ENTRY_NULL    \
+//  GLIB_AVAILABLE_MACRO_IN_2_70 \
+//  { NULL, 0, 0, 0, NULL, NULL, NULL }
 
 
 
@@ -386,7 +386,6 @@ void	      g_option_group_set_parse_hooks	    (GOptionGroup       *group,
 
 void	      g_option_group_set_error_hook	    (GOptionGroup       *group,
 						     GOptionErrorFunc	 error_func);
-_IN_2_44
 void          g_option_group_free                   (GOptionGroup       *group);
 
 GOptionGroup *g_option_group_ref                    (GOptionGroup       *group);

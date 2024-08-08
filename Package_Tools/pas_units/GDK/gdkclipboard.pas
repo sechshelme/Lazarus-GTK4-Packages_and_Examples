@@ -32,8 +32,7 @@ function gdk_clipboard_read_texture_finish(clipboard: PGdkClipboard; Result: PGA
 procedure gdk_clipboard_read_text_async(clipboard: PGdkClipboard; cancellable: PGCancellable; callback: TGAsyncReadyCallback; user_data: Tgpointer); cdecl; external libgtk4;
 function gdk_clipboard_read_text_finish(clipboard: PGdkClipboard; Result: PGAsyncResult; error: PPGError): PChar; cdecl; external libgtk4;
 function gdk_clipboard_set_content(clipboard: PGdkClipboard; provider: PGdkContentProvider): Tgboolean; cdecl; external libgtk4;
-procedure gdk_clipboard_set(clipboard: PGdkClipboard; _type: TGType; args: array of const); cdecl; external libgtk4;
-procedure gdk_clipboard_set(clipboard: PGdkClipboard; _type: TGType); cdecl; external libgtk4;
+procedure gdk_clipboard_set(clipboard: PGdkClipboard; _type: TGType); varargs cdecl; external libgtk4;
 procedure gdk_clipboard_set_valist(clipboard: PGdkClipboard; _type: TGType; args: Tva_list); cdecl; external libgtk4;
 procedure gdk_clipboard_set_value(clipboard: PGdkClipboard; Value: PGValue); cdecl; external libgtk4;
 procedure gdk_clipboard_set_text(clipboard: PGdkClipboard; Text: PChar); cdecl; external libgtk4;

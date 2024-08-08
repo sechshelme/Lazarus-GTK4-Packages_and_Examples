@@ -38,8 +38,7 @@ function gsk_gl_shader_get_uniform_type(shader: PGskGLShader; idx: longint): TGs
 function gsk_gl_shader_get_uniform_offset(shader: PGskGLShader; idx: longint): longint; cdecl; external libgtk4;
 function gsk_gl_shader_get_args_size(shader: PGskGLShader): Tgsize; cdecl; external libgtk4;
 function gsk_gl_shader_format_args_va(shader: PGskGLShader; uniforms: Tva_list): PGBytes; cdecl; external libgtk4;
-function gsk_gl_shader_format_args(shader: PGskGLShader; args: array of const): PGBytes; cdecl; external libgtk4;
-function gsk_gl_shader_format_args(shader: PGskGLShader): PGBytes; cdecl; external libgtk4;
+function gsk_gl_shader_format_args(shader: PGskGLShader): PGBytes; varargs cdecl; external libgtk4;
 function gsk_gl_shader_get_arg_float(shader: PGskGLShader; args: PGBytes; idx: longint): single; cdecl; external libgtk4;
 function gsk_gl_shader_get_arg_int(shader: PGskGLShader; args: PGBytes; idx: longint): Tgint32; cdecl; external libgtk4;
 function gsk_gl_shader_get_arg_uint(shader: PGskGLShader; args: PGBytes; idx: longint): Tguint32; cdecl; external libgtk4;
