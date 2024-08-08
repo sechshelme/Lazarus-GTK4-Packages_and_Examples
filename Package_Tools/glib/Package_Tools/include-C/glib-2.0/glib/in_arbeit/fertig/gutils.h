@@ -65,7 +65,7 @@ gchar *               g_get_os_info          (const gchar *key_name);
  * Since: 2.64
  */
 #define G_OS_INFO_KEY_NAME \
-    GLIB_AVAILABLE_MACRO_IN_2_64 \
+     \
     "NAME"
 
 /**
@@ -76,7 +76,7 @@ gchar *               g_get_os_info          (const gchar *key_name);
  * Since: 2.64
  */
 #define G_OS_INFO_KEY_PRETTY_NAME \
-    GLIB_AVAILABLE_MACRO_IN_2_64 \
+     \
     "PRETTY_NAME"
 
 /**
@@ -87,7 +87,7 @@ gchar *               g_get_os_info          (const gchar *key_name);
  * Since: 2.64
  */
 #define G_OS_INFO_KEY_VERSION \
-    GLIB_AVAILABLE_MACRO_IN_2_64 \
+     \
     "VERSION"
 
 /**
@@ -98,7 +98,7 @@ gchar *               g_get_os_info          (const gchar *key_name);
  * Since: 2.64
  */
 #define G_OS_INFO_KEY_VERSION_CODENAME \
-    GLIB_AVAILABLE_MACRO_IN_2_64 \
+     \
     "VERSION_CODENAME"
 
 /**
@@ -109,7 +109,7 @@ gchar *               g_get_os_info          (const gchar *key_name);
  * Since: 2.64
  */
 #define G_OS_INFO_KEY_VERSION_ID \
-    GLIB_AVAILABLE_MACRO_IN_2_64 \
+     \
     "VERSION_ID"
 
 /**
@@ -120,7 +120,7 @@ gchar *               g_get_os_info          (const gchar *key_name);
  * Since: 2.64
  */
 #define G_OS_INFO_KEY_ID \
-    GLIB_AVAILABLE_MACRO_IN_2_64 \
+     \
     "ID"
 
 /**
@@ -131,7 +131,7 @@ gchar *               g_get_os_info          (const gchar *key_name);
  * Since: 2.64
  */
 #define G_OS_INFO_KEY_HOME_URL \
-    GLIB_AVAILABLE_MACRO_IN_2_64 \
+     \
     "HOME_URL"
 
 /**
@@ -142,7 +142,7 @@ gchar *               g_get_os_info          (const gchar *key_name);
  * Since: 2.64
  */
 #define G_OS_INFO_KEY_DOCUMENTATION_URL \
-    GLIB_AVAILABLE_MACRO_IN_2_64 \
+     \
     "DOCUMENTATION_URL"
 
 /**
@@ -153,7 +153,7 @@ gchar *               g_get_os_info          (const gchar *key_name);
  * Since: 2.64
  */
 #define G_OS_INFO_KEY_SUPPORT_URL \
-    GLIB_AVAILABLE_MACRO_IN_2_64 \
+     \
     "SUPPORT_URL"
 
 /**
@@ -164,7 +164,7 @@ gchar *               g_get_os_info          (const gchar *key_name);
  * Since: 2.64
  */
 #define G_OS_INFO_KEY_BUG_REPORT_URL \
-    GLIB_AVAILABLE_MACRO_IN_2_64 \
+     \
     "BUG_REPORT_URL"
 
 /**
@@ -175,7 +175,7 @@ gchar *               g_get_os_info          (const gchar *key_name);
  * Since: 2.64
  */
 #define G_OS_INFO_KEY_PRIVACY_POLICY_URL \
-    GLIB_AVAILABLE_MACRO_IN_2_64 \
+     \
     "PRIVACY_POLICY_URL"
 
 
@@ -202,12 +202,12 @@ const gchar * const * g_win32_get_system_data_dirs_for_module (void (*address_of
  * g_get_system_data_dirs() in your code, never mind that that is
  * actually a macro and you will in fact call this inline function.
  */
-static inline const gchar * const *
-_g_win32_get_system_data_dirs (void)
-{
-  return g_win32_get_system_data_dirs_for_module ((void (*)(void)) &_g_win32_get_system_data_dirs);
-}
-#define g_get_system_data_dirs _g_win32_get_system_data_dirs
+//static inline const gchar * const *
+//_g_win32_get_system_data_dirs (void)
+//{
+//  return g_win32_get_system_data_dirs_for_module ((void (*)(void)) &_g_win32_get_system_data_dirs);
+//}
+//#define g_get_system_data_dirs _g_win32_get_system_data_dirs
 #endif
 
 
@@ -280,13 +280,13 @@ guint                 g_parse_debug_string (const gchar     *string,
 gint                  g_snprintf           (gchar       *string,
 					    gulong       n,
 					    gchar const *format,
-					    ...) G_GNUC_PRINTF (3, 4);
+					    ...);
 
 gint                  g_vsnprintf          (gchar       *string,
 					    gulong       n,
 					    gchar const *format,
 					    va_list      args)
-					    G_GNUC_PRINTF(3, 0);
+					    ;
 
 
 void                  g_nullify_pointer    (gpointer    *nullify_location);
@@ -297,8 +297,8 @@ typedef enum
   G_FORMAT_SIZE_LONG_FORMAT = 1 << 0,
   G_FORMAT_SIZE_IEC_UNITS   = 1 << 1,
   G_FORMAT_SIZE_BITS        = 1 << 2,
-  G_FORMAT_SIZE_ONLY_VALUE GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 1 << 3,
-  G_FORMAT_SIZE_ONLY_UNIT GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 1 << 4
+  G_FORMAT_SIZE_ONLY_VALUE = 1 << 3,
+  G_FORMAT_SIZE_ONLY_UNIT  = 1 << 4
 } GFormatSizeFlags;
 
 
@@ -307,12 +307,11 @@ gchar *g_format_size_full   (guint64          size,
 
 gchar *g_format_size        (guint64          size);
 
-_IN_2_30_FOR(g_format_size)
 gchar *g_format_size_for_display (goffset size);
 
-#define g_ATEXIT(proc)	(atexit (proc)) _MACRO_IN_2_32
-#define g_memmove(dest,src,len) \
-  G_STMT_START { memmove ((dest), (src), (len)); } G_STMT_END  _MACRO_IN_2_40_FOR(memmove)
+#define g_ATEXIT(proc)	(atexit (proc)) 
+//#define g_memmove(dest,src,len) \
+//   { memmove ((dest), (src), (len)); } 
 
 /**
  * GVoidFunc:
@@ -321,26 +320,26 @@ gchar *g_format_size_for_display (goffset size);
  * and has no return value. It is used to specify the type
  * function passed to g_atexit().
  */
-typedef void (*GVoidFunc) (void) _TYPE_IN_2_32;
-#define ATEXIT(proc) g_ATEXIT(proc) _MACRO_IN_2_32
+//typedef void (*GVoidFunc) (void) 
+//#define ATEXIT(proc) g_ATEXIT(proc) 
 
 
 
 void	g_atexit		(GVoidFunc    func);
 
 
-#ifdef G_OS_WIN32
+//#ifdef G_OS_WIN32
 /* It's a bad idea to wrap atexit() on Windows. If the GLib DLL calls
  * atexit(), the function will be called when the GLib DLL is detached
  * from the program, which is not what the caller wants. The caller
  * wants the function to be called when it *itself* exits (or is
  * detached, in case the caller, too, is a DLL).
  */
-#if (defined(__MINGW_H) && !defined(_STDLIB_H_)) || (defined(_MSC_VER) && !defined(_INC_STDLIB))
+//#if (defined(__MINGW_H) && !defined(_STDLIB_H_)) || (defined(_MSC_VER) && !defined(_INC_STDLIB))
 int atexit (void (*)(void));
-#endif
-#define g_atexit(func) atexit(func) _MACRO_IN_2_32
-#endif
+//#endif
+//#define g_atexit(func) atexit(func) _MACRO_IN_2_32
+//#endif
 
 
 /* Look for an executable in PATH, following execvp() rules */
@@ -371,6 +370,7 @@ gint    (g_bit_nth_msf)         (gulong mask,
 
 guint   (g_bit_storage)         (gulong number);
 
+/*
 static inline gint
 g_bit_nth_lsf_impl (gulong mask,
                     gint   nth_bit)
@@ -420,13 +420,15 @@ g_bit_storage_impl (gulong number)
 #endif
 }
 
+*/
+
 /* Crashes the program. */
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_50
 #ifndef G_OS_WIN32
 #  include <stdlib.h>
 #  define g_abort() abort ()
 #else
-G_NORETURN  void g_abort (void) G_ANALYZER_NORETURN;
+void g_abort (void) ;
 #endif
 #endif
 
@@ -447,32 +449,6 @@ G_NORETURN  void g_abort (void) G_ANALYZER_NORETURN;
  * On non-Windows platforms, expands to nothing.
  */
 
-#ifndef G_PLATFORM_WIN32
-# define G_WIN32_DLLMAIN_FOR_DLL_NAME(static, dll_name) _MACRO_IN_2_26
-#else
-# define G_WIN32_DLLMAIN_FOR_DLL_NAME(static, dll_name)			\
-static char *dll_name;							\
-									\
-BOOL WINAPI								\
-DllMain (HINSTANCE hinstDLL,						\
-	 DWORD     fdwReason,						\
-	 LPVOID    lpvReserved)						\
-{									\
-  wchar_t wcbfr[1000];							\
-  char *tem;								\
-  switch (fdwReason)							\
-    {									\
-    case DLL_PROCESS_ATTACH:						\
-      GetModuleFileNameW ((HMODULE) hinstDLL, wcbfr, G_N_ELEMENTS (wcbfr)); \
-      tem = g_utf16_to_utf8 (wcbfr, -1, NULL, NULL, NULL);		\
-      dll_name = g_path_get_basename (tem);				\
-      g_free (tem);							\
-      break;								\
-    }									\
-									\
-  return TRUE;								\
-} _MACRO_IN_2_26
-#endif /* G_PLATFORM_WIN32 */
 
 
 

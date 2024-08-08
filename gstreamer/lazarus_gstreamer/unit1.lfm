@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 200
+  Left = 556
   Height = 240
-  Top = 100
+  Top = 192
   Width = 320
   Caption = 'Form1'
   ClientHeight = 240
@@ -13,7 +13,7 @@ object Form1: TForm1
     Height = 25
     Top = 48
     Width = 75
-    Caption = 'Button1'
+    Caption = 'play'
     TabOrder = 0
     OnClick = Button1Click
   end
@@ -22,8 +22,42 @@ object Form1: TForm1
     Height = 25
     Top = 48
     Width = 75
-    Caption = 'Button2'
+    Caption = 'pause'
     TabOrder = 1
     OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 56
+    Height = 25
+    Top = 120
+    Width = 75
+    Caption = 'spring'
+    TabOrder = 2
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 48
+    Height = 25
+    Top = 191
+    Width = 75
+    Caption = 'stop'
+    TabOrder = 3
+    OnClick = Button4Click
+  end
+  object Button5: TButton
+    Left = 36
+    Height = 25
+    Top = 8
+    Width = 75
+    Caption = 'load'
+    TabOrder = 4
+    OnClick = Button5Click
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = Timer1Timer
+    Left = 224
+    Top = 96
   end
 end

@@ -85,7 +85,7 @@ typedef enum
 
 typedef enum
 {
-  G_IO_FLAG_NONE GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
+  G_IO_FLAG_NONE  = 0,
   G_IO_FLAG_APPEND = 1 << 0,
   G_IO_FLAG_NONBLOCK = 1 << 1,
   G_IO_FLAG_IS_READABLE = 1 << 2,	/* Read only flag */
@@ -165,24 +165,20 @@ GIOChannel *g_io_channel_ref    (GIOChannel    *channel);
 
 void        g_io_channel_unref  (GIOChannel    *channel);
 
-_FOR(g_io_channel_read_chars)
 GIOError    g_io_channel_read   (GIOChannel    *channel,
                                  gchar         *buf,
                                  gsize          count,
                                  gsize         *bytes_read);
 
-_FOR(g_io_channel_write_chars)
 GIOError  g_io_channel_write    (GIOChannel    *channel,
                                  const gchar   *buf,
                                  gsize          count,
                                  gsize         *bytes_written);
 
-_FOR(g_io_channel_seek_position)
 GIOError  g_io_channel_seek     (GIOChannel    *channel,
                                  gint64         offset,
                                  GSeekType      type);
 
-_FOR(g_io_channel_shutdown)
 void      g_io_channel_close    (GIOChannel    *channel);
 
 
@@ -393,7 +389,6 @@ gint        g_io_channel_win32_get_fd (GIOChannel *channel);
 
 GIOChannel *g_io_channel_win32_new_socket (gint socket);
 
-_FOR(g_io_channel_win32_new_socket)
 GIOChannel *g_io_channel_win32_new_stream_socket (gint socket);
 
 

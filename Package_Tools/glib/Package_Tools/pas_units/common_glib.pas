@@ -52,6 +52,8 @@ type
   Tguintptr=PtrUInt;
   Pguintptr=PPtrUInt;
 
+  Tgoffset=SizeInt;
+
   // no GLIB
 
   Tdouble=Double;
