@@ -75,7 +75,7 @@ typedef enum
   G_SPAWN_ERROR_ACCES,  /* execv() returned EACCES */
   G_SPAWN_ERROR_PERM,   /* execv() returned EPERM */
   G_SPAWN_ERROR_TOO_BIG,/* execv() returned E2BIG */
-  G_SPAWN_ERROR_2BIG _ENUMERATOR_IN_2_32_FOR(G_SPAWN_ERROR_TOO_BIG) = G_SPAWN_ERROR_TOO_BIG,
+  G_SPAWN_ERROR_2BIG  = G_SPAWN_ERROR_TOO_BIG,
   G_SPAWN_ERROR_NOEXEC, /* execv() returned ENOEXEC */
   G_SPAWN_ERROR_NAMETOOLONG, /* ""  "" ENAMETOOLONG */
   G_SPAWN_ERROR_NOENT,       /* ""  "" ENOENT */
@@ -311,7 +311,6 @@ gboolean g_spawn_command_line_async (const gchar          *command_line,
 gboolean g_spawn_check_wait_status (gint      wait_status,
                                     GError  **error);
 
-_IN_2_70_FOR(g_spawn_check_wait_status)
 gboolean g_spawn_check_exit_status (gint      wait_status,
 				    GError  **error);
 

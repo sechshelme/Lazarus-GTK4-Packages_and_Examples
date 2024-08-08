@@ -57,13 +57,26 @@ const
 
   function GST_MSECOND: TGstClockTimeDiff;
   begin
-    Result := TGstClockTimeDiff(GST_SECOND / 1000);
-    Result:=1000000;
+    Result := TGstClockTimeDiff(GST_SECOND div 1000);
   end;
 
   function GST_CLOCK_TIME_IS_VALID(time: gint64): TGboolean;
   begin
     Result := TGstClockTime(time) <> GST_CLOCK_TIME_NONE;
+  end;
+
+  function GST_TIME_ARGS(t:TGstClockTime):String;
+  var
+    ms, s, min: TGstClockTime;
+  begin
+    t:=t div 1000000;
+
+    min:=t div  60000;
+    s:=(t mod 60000) div 1000;
+    ms:=t mod 1000;
+
+
+    WriteStr(Result,min,':', s:2,':', ms:3);
   end;
 
   procedure handle_message(Data: PCustomData; msg: PGstMessage);
@@ -159,7 +172,7 @@ const
 
     bus := gst_element_get_bus(Data.playbin);
     repeat
-      msg := gst_bus_timed_pop_filtered(bus, 100 * GST_MSECOND, TGstMessageType(
+      msg := gst_bus_timed_pop_filtered(bus, 1000 * GST_MSECOND, TGstMessageType(
         uint64(GST_MESSAGE_STATE_CHANGED) or
         uint64(GST_MESSAGE_ERROR) or
         uint64(GST_MESSAGE_EOS) or
@@ -180,7 +193,8 @@ const
             end;
           end;
 
-          WriteLn('Position: ', current, ' - ', Data.duration);
+ //         WriteLn('Position: ', current, ' - ', Data.duration);
+          Write('Position: ', GST_TIME_ARGS(current), ' - ',GST_TIME_ARGS( Data.duration),#13);
 
           if (Data.seek_enabled) and (not Data.seek_done) and (current > 10 * GST_SECOND) then begin
             g_print(#10'nReached 10s, performing seek...'#10);

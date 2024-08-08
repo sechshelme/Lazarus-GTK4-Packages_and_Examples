@@ -46,13 +46,17 @@ type
   Tgsize= SizeUInt;
   Pgsize=PSizeUInt;
 
+
   Tgintptr=IntPtr;
   Pgintptr=PIntPtr;
   Tguintptr=PtrUInt;
   Pguintptr=PPtrUInt;
 
+  // no GLIB
+
   Tdouble=Double;
 
+  Tsize_t=SizeUInt;
   Ttime_t=clong; // types.h
   Ptime_t=^Ttime_t;
 

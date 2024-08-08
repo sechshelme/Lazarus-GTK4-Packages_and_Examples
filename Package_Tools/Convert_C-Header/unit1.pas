@@ -54,14 +54,14 @@ begin
     slHeader.LoadFromFile(slFile[i]);
 
     for j := 0 to slHeader.Count - 1 do begin
-      if pos('long', slHeader[j]) > 0 then begin
-        WriteLn();
-        WriteLn(slFile[i]);
-        WriteLn(slHeader[j]);
-
-        WriteLn();
-        WriteLn();
-      end;
+      //if pos('long', slHeader[j]) > 0 then begin
+      //  WriteLn();
+      //  WriteLn(slFile[i]);
+      //  WriteLn(slHeader[j]);
+      //
+      //  WriteLn();
+      //  WriteLn();
+      //end;
 
 
 

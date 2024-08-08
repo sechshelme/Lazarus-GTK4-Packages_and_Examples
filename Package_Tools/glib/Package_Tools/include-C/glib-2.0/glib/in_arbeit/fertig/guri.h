@@ -78,7 +78,6 @@ void         g_uri_unref            (GUri *uri);
  *
  * Since: 2.66
  */
-GLIB_AVAILABLE_TYPE_IN_2_66
 typedef enum {
   G_URI_FLAGS_NONE            = 0,
   G_URI_FLAGS_PARSE_RELAXED   = 1 << 0,
@@ -89,7 +88,7 @@ typedef enum {
   G_URI_FLAGS_ENCODED_QUERY   = 1 << 5,
   G_URI_FLAGS_ENCODED_PATH    = 1 << 6,
   G_URI_FLAGS_ENCODED_FRAGMENT = 1 << 7,
-  G_URI_FLAGS_SCHEME_NORMALIZE GLIB_AVAILABLE_ENUMERATOR_IN_2_68 = 1 << 8,
+  G_URI_FLAGS_SCHEME_NORMALIZE  = 1 << 8,
 } GUriFlags;
 
 
@@ -203,7 +202,6 @@ GUri *       g_uri_build_with_user  (GUriFlags     flags,
  *
  * Since: 2.66
  */
-GLIB_AVAILABLE_TYPE_IN_2_66
 typedef enum {
   G_URI_HIDE_NONE        = 0,
   G_URI_HIDE_USERINFO    = 1 << 0,
@@ -255,7 +253,6 @@ GUriFlags    g_uri_get_flags         (GUri          *uri);
  *
  * Since: 2.66
  */
-GLIB_AVAILABLE_TYPE_IN_2_66
 typedef enum {
   G_URI_PARAMS_NONE             = 0,
   G_URI_PARAMS_CASE_INSENSITIVE = 1 << 0,
@@ -303,7 +300,7 @@ gboolean    g_uri_params_iter_next   (GUriParamsIter *iter,
  *
  * Since: 2.66
  */
-#define G_URI_ERROR (g_uri_error_quark ()) GLIB_AVAILABLE_MACRO_IN_2_66
+#define G_URI_ERROR (g_uri_error_quark ())
 
 GQuark g_uri_error_quark (void);
 
@@ -365,7 +362,7 @@ typedef enum {
  *
  * Since: 2.16
  **/
-#define G_URI_RESERVED_CHARS_ALLOWED_IN_PATH_ELEMENT G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS ":@"
+#define G_URI_RESERVED_CHARS_ALLOWED_IN_PATH_ELEMENT "!$&'()*+,;=:@"
 
 /**
  * G_URI_RESERVED_CHARS_ALLOWED_IN_PATH:
@@ -374,7 +371,7 @@ typedef enum {
  *
  * Since: 2.16
  **/
-#define G_URI_RESERVED_CHARS_ALLOWED_IN_PATH G_URI_RESERVED_CHARS_ALLOWED_IN_PATH_ELEMENT "/"
+#define G_URI_RESERVED_CHARS_ALLOWED_IN_PATH  "!$&'()*+,;=:@/"
 
 /**
  * G_URI_RESERVED_CHARS_ALLOWED_IN_USERINFO:
@@ -384,7 +381,7 @@ typedef enum {
  *
  * Since: 2.16
  **/
-#define G_URI_RESERVED_CHARS_ALLOWED_IN_USERINFO G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS ":"
+#define G_URI_RESERVED_CHARS_ALLOWED_IN_USERINFO  "!$&'()*+,;=:"
 
 
 char *      g_uri_unescape_string  (const char *escaped_string,

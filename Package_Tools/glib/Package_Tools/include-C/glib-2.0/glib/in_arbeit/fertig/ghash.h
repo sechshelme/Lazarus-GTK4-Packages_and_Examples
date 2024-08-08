@@ -162,8 +162,8 @@ GHashTable* g_hash_table_ref               (GHashTable     *hash_table);
 
 void        g_hash_table_unref             (GHashTable     *hash_table);
 
-#define g_hash_table_freeze(hash_table) ((void)0) _MACRO_IN_2_26
-#define g_hash_table_thaw(hash_table) ((void)0) _MACRO_IN_2_26
+#define g_hash_table_freeze(hash_table) ((void)0) 
+#define g_hash_table_thaw(hash_table) ((void)0) 
 
 /* Hash Functions
  */
