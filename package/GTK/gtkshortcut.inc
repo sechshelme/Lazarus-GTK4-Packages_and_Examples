@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 06-08-2024   15:17                        //
+//   Erzeugt am: 09-08-2024   16:12                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -23,8 +23,7 @@ type
 
 function gtk_shortcut_get_type: TGType; cdecl; external libgtk4;
 function gtk_shortcut_new(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction): PGtkShortcut; cdecl; external libgtk4;
-function gtk_shortcut_new_with_arguments(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction; format_string: PChar; args: array of const): PGtkShortcut; cdecl; external libgtk4;
-function gtk_shortcut_new_with_arguments(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction; format_string: PChar): PGtkShortcut; cdecl; external libgtk4;
+function gtk_shortcut_new_with_arguments(trigger: PGtkShortcutTrigger; action: PGtkShortcutAction; format_string: PChar): PGtkShortcut; varargs cdecl; external libgtk4;
 function gtk_shortcut_get_trigger(self: PGtkShortcut): PGtkShortcutTrigger; cdecl; external libgtk4;
 procedure gtk_shortcut_set_trigger(self: PGtkShortcut; trigger: PGtkShortcutTrigger); cdecl; external libgtk4;
 function gtk_shortcut_get_action(self: PGtkShortcut): PGtkShortcutAction; cdecl; external libgtk4;

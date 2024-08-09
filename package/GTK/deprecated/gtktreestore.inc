@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 06-08-2024   15:17                        //
+//   Erzeugt am: 09-08-2024   16:12                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -27,21 +27,18 @@ type
 
 
 function gtk_tree_store_get_type: TGType; cdecl; external libgtk4;
-function gtk_tree_store_new(n_columns: longint; args: array of const): PGtkTreeStore; cdecl; external libgtk4;
-function gtk_tree_store_new(n_columns: longint): PGtkTreeStore; cdecl; external libgtk4;
+function gtk_tree_store_new(n_columns: longint): PGtkTreeStore; varargs cdecl; external libgtk4;
 function gtk_tree_store_newv(n_columns: longint; types: PGType): PGtkTreeStore; cdecl; external libgtk4;
 procedure gtk_tree_store_set_column_types(tree_store: PGtkTreeStore; n_columns: longint; types: PGType); cdecl; external libgtk4;
 procedure gtk_tree_store_set_value(tree_store: PGtkTreeStore; iter: PGtkTreeIter; column: longint; Value: PGValue); cdecl; external libgtk4;
-procedure gtk_tree_store_set(tree_store: PGtkTreeStore; iter: PGtkTreeIter; args: array of const); cdecl; external libgtk4;
-procedure gtk_tree_store_set(tree_store: PGtkTreeStore; iter: PGtkTreeIter); cdecl; external libgtk4;
+procedure gtk_tree_store_set(tree_store: PGtkTreeStore; iter: PGtkTreeIter); varargs cdecl; external libgtk4;
 procedure gtk_tree_store_set_valuesv(tree_store: PGtkTreeStore; iter: PGtkTreeIter; columns: Plongint; values: PGValue; n_values: longint); cdecl; external libgtk4;
 procedure gtk_tree_store_set_valist(tree_store: PGtkTreeStore; iter: PGtkTreeIter; var_args: Tva_list); cdecl; external libgtk4;
 function gtk_tree_store_remove(tree_store: PGtkTreeStore; iter: PGtkTreeIter): Tgboolean; cdecl; external libgtk4;
 procedure gtk_tree_store_insert(tree_store: PGtkTreeStore; iter: PGtkTreeIter; parent: PGtkTreeIter; position: longint); cdecl; external libgtk4;
 procedure gtk_tree_store_insert_before(tree_store: PGtkTreeStore; iter: PGtkTreeIter; parent: PGtkTreeIter; sibling: PGtkTreeIter); cdecl; external libgtk4;
 procedure gtk_tree_store_insert_after(tree_store: PGtkTreeStore; iter: PGtkTreeIter; parent: PGtkTreeIter; sibling: PGtkTreeIter); cdecl; external libgtk4;
-procedure gtk_tree_store_insert_with_values(tree_store: PGtkTreeStore; iter: PGtkTreeIter; parent: PGtkTreeIter; position: longint; args: array of const); cdecl; external libgtk4;
-procedure gtk_tree_store_insert_with_values(tree_store: PGtkTreeStore; iter: PGtkTreeIter; parent: PGtkTreeIter; position: longint); cdecl; external libgtk4;
+procedure gtk_tree_store_insert_with_values(tree_store: PGtkTreeStore; iter: PGtkTreeIter; parent: PGtkTreeIter; position: longint); varargs cdecl; external libgtk4;
 procedure gtk_tree_store_insert_with_valuesv(tree_store: PGtkTreeStore; iter: PGtkTreeIter; parent: PGtkTreeIter; position: longint; columns: Plongint;
   values: PGValue; n_values: longint); cdecl; external libgtk4;
 procedure gtk_tree_store_prepend(tree_store: PGtkTreeStore; iter: PGtkTreeIter; parent: PGtkTreeIter); cdecl; external libgtk4;

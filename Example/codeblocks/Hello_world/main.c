@@ -115,6 +115,8 @@ printf("btn : %i\n",    button1);
  printf("btn GET_CLASS: %i\n", GTK_WINDOW_GET_CLASS(button1));
 }
 
+
+
 int main (int argc, char **argv)
 {
   printf("xxx %i \n", G_UNICODE_BREAK_CLOSE_PARANTHESIS);
@@ -132,4 +134,3 @@ int main (int argc, char **argv)
 
   return status;
 }
-

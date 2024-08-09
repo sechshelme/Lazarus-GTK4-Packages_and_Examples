@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 06-08-2024   15:17                        //
+//   Erzeugt am: 09-08-2024   16:12                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -49,12 +49,9 @@ function gtk_accessible_get_next_accessible_sibling(self: PGtkAccessible): PGtkA
 procedure gtk_accessible_update_next_accessible_sibling(self: PGtkAccessible; new_sibling: PGtkAccessible); cdecl; external libgtk4;
 function gtk_accessible_get_bounds(self: PGtkAccessible; x: Plongint; y: Plongint; Width: Plongint; Height: Plongint): Tgboolean; cdecl; external libgtk4;
 function gtk_accessible_get_accessible_role(self: PGtkAccessible): TGtkAccessibleRole; cdecl; external libgtk4;
-procedure gtk_accessible_update_state(self: PGtkAccessible; first_state: TGtkAccessibleState; args: array of const); cdecl; external libgtk4;
-procedure gtk_accessible_update_state(self: PGtkAccessible; first_state: TGtkAccessibleState); cdecl; external libgtk4;
-procedure gtk_accessible_update_property(self: PGtkAccessible; first_property: TGtkAccessibleProperty; args: array of const); cdecl; external libgtk4;
-procedure gtk_accessible_update_property(self: PGtkAccessible; first_property: TGtkAccessibleProperty); cdecl; external libgtk4;
-procedure gtk_accessible_update_relation(self: PGtkAccessible; first_relation: TGtkAccessibleRelation; args: array of const); cdecl; external libgtk4;
-procedure gtk_accessible_update_relation(self: PGtkAccessible; first_relation: TGtkAccessibleRelation); cdecl; external libgtk4;
+procedure gtk_accessible_update_state(self: PGtkAccessible; first_state: TGtkAccessibleState); varargs cdecl; external libgtk4;
+procedure gtk_accessible_update_property(self: PGtkAccessible; first_property: TGtkAccessibleProperty); varargs cdecl; external libgtk4;
+procedure gtk_accessible_update_relation(self: PGtkAccessible; first_relation: TGtkAccessibleRelation);  varargs cdecl; external libgtk4;
 procedure gtk_accessible_update_state_value(self: PGtkAccessible; n_states: longint; states: PGtkAccessibleState; values: PGValue); cdecl; external libgtk4;
 procedure gtk_accessible_update_property_value(self: PGtkAccessible; n_properties: longint; properties: PGtkAccessibleProperty; values: PGValue); cdecl; external libgtk4;
 procedure gtk_accessible_update_relation_value(self: PGtkAccessible; n_relations: longint; relations: PGtkAccessibleRelation; values: PGValue); cdecl; external libgtk4;

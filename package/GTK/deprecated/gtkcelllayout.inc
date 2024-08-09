@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 06-08-2024   15:17                        //
+//   Erzeugt am: 09-08-2024   16:12                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -35,8 +35,7 @@ procedure gtk_cell_layout_pack_start(cell_layout: PGtkCellLayout; cell: PGtkCell
 procedure gtk_cell_layout_pack_end(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; expand: Tgboolean); cdecl; external libgtk4;
 function gtk_cell_layout_get_cells(cell_layout: PGtkCellLayout): PGList; cdecl; external libgtk4;
 procedure gtk_cell_layout_clear(cell_layout: PGtkCellLayout); cdecl; external libgtk4;
-procedure gtk_cell_layout_set_attributes(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; args: array of const); cdecl; external libgtk4;
-procedure gtk_cell_layout_set_attributes(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer); cdecl; external libgtk4;
+procedure gtk_cell_layout_set_attributes(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer); cdecl; varargs external libgtk4;
 procedure gtk_cell_layout_add_attribute(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; attribute: PChar; column: longint); cdecl; external libgtk4;
 procedure gtk_cell_layout_set_cell_data_func(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer; func: TGtkCellLayoutDataFunc; func_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external libgtk4;
 procedure gtk_cell_layout_clear_attributes(cell_layout: PGtkCellLayout; cell: PGtkCellRenderer); cdecl; external libgtk4;

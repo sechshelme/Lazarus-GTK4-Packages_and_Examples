@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 06-08-2024   15:17                        //
+//   Erzeugt am: 09-08-2024   16:12                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -86,11 +86,8 @@ function gtk_cell_area_attribute_get_column(area: PGtkCellArea; renderer: PGtkCe
 procedure gtk_cell_area_class_install_cell_property(aclass: PGtkCellAreaClass; property_id: Tguint; pspec: PGParamSpec); cdecl; external libgtk4;
 function gtk_cell_area_class_find_cell_property(aclass: PGtkCellAreaClass; property_name: PChar): PGParamSpec; cdecl; external libgtk4;
 function gtk_cell_area_class_list_cell_properties(aclass: PGtkCellAreaClass; n_properties: Pguint): PPGParamSpec; cdecl; external libgtk4;
-procedure gtk_cell_area_add_with_properties(area: PGtkCellArea; renderer: PGtkCellRenderer; first_prop_name: PChar; args: array of const); cdecl; external libgtk4;
-procedure gtk_cell_area_add_with_properties(area: PGtkCellArea; renderer: PGtkCellRenderer; first_prop_name: PChar); cdecl; external libgtk4;
-procedure gtk_cell_area_cell_set(area: PGtkCellArea; renderer: PGtkCellRenderer; first_prop_name: PChar; args: array of const); cdecl; external libgtk4;
-procedure gtk_cell_area_cell_set(area: PGtkCellArea; renderer: PGtkCellRenderer; first_prop_name: PChar); cdecl; external libgtk4;
-procedure gtk_cell_area_cell_get(area: PGtkCellArea; renderer: PGtkCellRenderer; first_prop_name: PChar; args: array of const); cdecl; external libgtk4;
+procedure gtk_cell_area_add_with_properties(area: PGtkCellArea; renderer: PGtkCellRenderer; first_prop_name: PChar); varargs cdecl; external libgtk4;
+procedure gtk_cell_area_cell_set(area: PGtkCellArea; renderer: PGtkCellRenderer; first_prop_name: PChar); varargs varargs cdecl; external libgtk4;
 procedure gtk_cell_area_cell_get(area: PGtkCellArea; renderer: PGtkCellRenderer; first_prop_name: PChar); cdecl; external libgtk4;
 procedure gtk_cell_area_cell_set_valist(area: PGtkCellArea; renderer: PGtkCellRenderer; first_property_name: PChar; var_args: Tva_list); cdecl; external libgtk4;
 procedure gtk_cell_area_cell_get_valist(area: PGtkCellArea; renderer: PGtkCellRenderer; first_property_name: PChar; var_args: Tva_list); cdecl; external libgtk4;

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 06-08-2024   15:17                        //
+//   Erzeugt am: 09-08-2024   16:12                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -54,12 +54,10 @@ type
 
 function gtk_dialog_get_type: TGType; cdecl; external libgtk4;
 function gtk_dialog_new: PGtkWidget; cdecl; external libgtk4;
-function gtk_dialog_new_with_buttons(title: PChar; parent: PGtkWindow; flags: TGtkDialogFlags; first_button_text: PChar; args: array of const): PGtkWidget; cdecl; external libgtk4;
-function gtk_dialog_new_with_buttons(title: PChar; parent: PGtkWindow; flags: TGtkDialogFlags; first_button_text: PChar): PGtkWidget; cdecl; external libgtk4;
+function gtk_dialog_new_with_buttons(title: PChar; parent: PGtkWindow; flags: TGtkDialogFlags; first_button_text: PChar): PGtkWidget; varargs cdecl; external libgtk4;
 procedure gtk_dialog_add_action_widget(dialog: PGtkDialog; child: PGtkWidget; response_id: longint); cdecl; external libgtk4;
 function gtk_dialog_add_button(dialog: PGtkDialog; button_text: PChar; response_id: longint): PGtkWidget; cdecl; external libgtk4;
-procedure gtk_dialog_add_buttons(dialog: PGtkDialog; first_button_text: PChar; args: array of const); cdecl; external libgtk4;
-procedure gtk_dialog_add_buttons(dialog: PGtkDialog; first_button_text: PChar); cdecl; external libgtk4;
+procedure gtk_dialog_add_buttons(dialog: PGtkDialog; first_button_text: PChar); cdecl; varargs external libgtk4;
 procedure gtk_dialog_set_response_sensitive(dialog: PGtkDialog; response_id: longint; setting: Tgboolean); cdecl; external libgtk4;
 procedure gtk_dialog_set_default_response(dialog: PGtkDialog; response_id: longint); cdecl; external libgtk4;
 function gtk_dialog_get_widget_for_response(dialog: PGtkDialog; response_id: longint): PGtkWidget; cdecl; external libgtk4;

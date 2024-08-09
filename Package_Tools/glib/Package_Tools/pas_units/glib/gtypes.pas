@@ -3,7 +3,7 @@ unit gtypes;
 interface
 
 uses
-  common_GLIB;
+  ctypes, common_GLIB;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -37,7 +37,7 @@ type
   Tgulong = dword;
 
   Pguint = ^Tguint;
-  Tguint = dword;
+  Tguint = cuint;
 
   Pgfloat = ^Tgfloat;
   Tgfloat = single;
@@ -56,6 +56,7 @@ type
   TGEqualFunc = function(a: Tgconstpointer; b: Tgconstpointer): Tgboolean; cdecl;
   TGEqualFuncFull = function(a: Tgconstpointer; b: Tgconstpointer; user_data: Tgpointer): Tgboolean; cdecl;
   TGDestroyNotify = procedure(Data: Tgpointer); cdecl;
+  PGDestroyNotify=^TGDestroyNotify;
   TGFunc = procedure(Data: Tgpointer; user_data: Tgpointer); cdecl;
   TGHashFunc = function(key: Tgconstpointer): Tguint; cdecl;
   TGHFunc = procedure(key: Tgpointer; Value: Tgpointer; user_data: Tgpointer); cdecl;

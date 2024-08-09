@@ -38,10 +38,12 @@
 
 
 
-typedef gint32  GTime (GDateTime);
+typedef gint32  GDateTime;
 typedef guint16 GDateYear;
 typedef guint8  GDateDay;   /* day of the month */
 typedef struct _GDate GDate;
+
+//  typedef gint32 GTime (GDateTime);
 
 /* enum used to specify order of appearance in parsed date strings */
 typedef enum
@@ -192,7 +194,7 @@ void         g_date_set_time_t            (GDate       *date,
 
 void         g_date_set_time_val          (GDate       *date,
 					   GTimeVal    *timeval);
-_FOR(g_date_set_time_t)
+
 void         g_date_set_time              (GDate       *date,
                                            GTime        time_);
 
@@ -283,17 +285,17 @@ gsize        g_date_strftime              (gchar       *s,
                                            const gchar *format,
                                            const GDate *date);
 
-#define g_date_weekday 			g_date_get_weekday _MACRO_IN_2_26_FOR(g_date_get_weekday)
-#define g_date_month 			g_date_get_month _MACRO_IN_2_26_FOR(g_date_get_month)
-#define g_date_year 			g_date_get_year _MACRO_IN_2_26_FOR(g_date_get_year)
-#define g_date_day 			g_date_get_day _MACRO_IN_2_26_FOR(g_date_get_day)
-#define g_date_julian 			g_date_get_julian _MACRO_IN_2_26_FOR(g_date_get_julian)
-#define g_date_day_of_year 		g_date_get_day_of_year _MACRO_IN_2_26_FOR(g_date_get_day_of_year)
-#define g_date_monday_week_of_year 	g_date_get_monday_week_of_year _MACRO_IN_2_26_FOR(g_date_get_monday_week_of_year)
-#define g_date_sunday_week_of_year 	g_date_get_sunday_week_of_year _MACRO_IN_2_26_FOR(g_date_get_sunday_week_of_year)
-#define g_date_days_in_month 		g_date_get_days_in_month _MACRO_IN_2_26_FOR(g_date_get_days_in_month)
-#define g_date_monday_weeks_in_year 	g_date_get_monday_weeks_in_year _MACRO_IN_2_26_FOR(g_date_get_monday_weeks_in_year)
-#define g_date_sunday_weeks_in_year	g_date_get_sunday_weeks_in_year _MACRO_IN_2_26_FOR(g_date_get_sunday_weeks_in_year)
+#define g_date_weekday 			g_date_get_weekday 
+#define g_date_month 			g_date_get_month 
+#define g_date_year 			g_date_get_year 
+#define g_date_day 			g_date_get_day 
+#define g_date_julian 			g_date_get_julian 
+#define g_date_day_of_year 		g_date_get_day_of_year 
+#define g_date_monday_week_of_year 	g_date_get_monday_week_of_year 
+#define g_date_sunday_week_of_year 	g_date_get_sunday_week_of_year 
+#define g_date_days_in_month 		g_date_get_days_in_month 
+#define g_date_monday_weeks_in_year 	g_date_get_monday_weeks_in_year 
+#define g_date_sunday_weeks_in_year	g_date_get_sunday_weeks_in_year 
 
 
 

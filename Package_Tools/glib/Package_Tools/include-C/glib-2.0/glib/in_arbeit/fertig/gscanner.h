@@ -51,14 +51,14 @@ typedef void		(*GScannerMsgFunc)	(GScanner      *scanner,
 #define G_CSET_A_2_Z	"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 #define G_CSET_a_2_z	"abcdefghijklmnopqrstuvwxyz"
 #define G_CSET_DIGITS	"0123456789"
-#define G_CSET_LATINC	"\300\301\302\303\304\305\306"\
-			"\307\310\311\312\313\314\315\316\317\320"\
-			"\321\322\323\324\325\326"\
-			"\330\331\332\333\334\335\336"
-#define G_CSET_LATINS	"\337\340\341\342\343\344\345\346"\
-			"\347\350\351\352\353\354\355\356\357\360"\
-			"\361\362\363\364\365\366"\
-			"\370\371\372\373\374\375\376\377"
+//#define G_CSET_LATINC	"\300\301\302\303\304\305\306"\
+//			"\307\310\311\312\313\314\315\316\317\320"\
+//			"\321\322\323\324\325\326"\
+//			"\330\331\332\333\334\335\336"
+//#define G_CSET_LATINS	"\337\340\341\342\343\344\345\346"\
+//			"\347\350\351\352\353\354\355\356\357\360"\
+//			"\361\362\363\364\365\366"\
+//			"\370\371\372\373\374\375\376\377"
 
 /* Error types */
 typedef enum
@@ -274,13 +274,14 @@ void		g_scanner_unexp_token		(GScanner	*scanner,
 
 void		g_scanner_error			(GScanner	*scanner,
 						 const gchar	*format,
-						 ...) G_GNUC_PRINTF (2,3);
+						 ...);
 
 void		g_scanner_warn			(GScanner	*scanner,
 						 const gchar	*format,
-						 ...) G_GNUC_PRINTF (2,3);
+						 ...);
 
 /* keep downward source compatibility */
+/*
 #define		g_scanner_add_symbol( scanner, symbol, value )	G_STMT_START { \
   g_scanner_scope_add_symbol ((scanner), 0, (symbol), (value)); \
 } G_STMT_END _MACRO_IN_2_26_FOR(g_scanner_scope_add_symbol)
@@ -290,11 +291,12 @@ void		g_scanner_warn			(GScanner	*scanner,
 #define		g_scanner_foreach_symbol( scanner, func, data )	G_STMT_START { \
   g_scanner_scope_foreach_symbol ((scanner), 0, (func), (data)); \
 } G_STMT_END _MACRO_IN_2_26_FOR(g_scanner_scope_foreach_symbol)
+*/
 
 /* The following two functions are deprecated and will be removed in
  * the next major release. They do no good. */
-#define g_scanner_freeze_symbol_table(scanner) ((void)0) _MACRO_IN_2_26
-#define g_scanner_thaw_symbol_table(scanner) ((void)0) _MACRO_IN_2_26
+#define g_scanner_freeze_symbol_table(scanner) ((void)0) 
+#define g_scanner_thaw_symbol_table(scanner) ((void)0)
 
 
 

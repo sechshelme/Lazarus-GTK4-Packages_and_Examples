@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 06-08-2024   15:17                        //
+//   Erzeugt am: 09-08-2024   16:12                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -70,8 +70,7 @@ type
 
 function gtk_tree_path_new: PGtkTreePath; cdecl; external libgtk4;
 function gtk_tree_path_new_from_string(path: PChar): PGtkTreePath; cdecl; external libgtk4;
-function gtk_tree_path_new_from_indices(first_index: longint; args: array of const): PGtkTreePath; cdecl; external libgtk4;
-function gtk_tree_path_new_from_indices(first_index: longint): PGtkTreePath; cdecl; external libgtk4;
+function gtk_tree_path_new_from_indices(first_index: longint): PGtkTreePath; varargs cdecl; external libgtk4;
 function gtk_tree_path_new_from_indicesv(indices: Plongint; length: Tgsize): PGtkTreePath; cdecl; external libgtk4;
 function gtk_tree_path_to_string(path: PGtkTreePath): PChar; cdecl; external libgtk4;
 function gtk_tree_path_new_first: PGtkTreePath; cdecl; external libgtk4;
@@ -124,8 +123,7 @@ function gtk_tree_model_iter_nth_child(tree_model: PGtkTreeModel; iter: PGtkTree
 function gtk_tree_model_iter_parent(tree_model: PGtkTreeModel; iter: PGtkTreeIter; child: PGtkTreeIter): Tgboolean; cdecl; external libgtk4;
 procedure gtk_tree_model_ref_node(tree_model: PGtkTreeModel; iter: PGtkTreeIter); cdecl; external libgtk4;
 procedure gtk_tree_model_unref_node(tree_model: PGtkTreeModel; iter: PGtkTreeIter); cdecl; external libgtk4;
-procedure gtk_tree_model_get(tree_model: PGtkTreeModel; iter: PGtkTreeIter; args: array of const); cdecl; external libgtk4;
-procedure gtk_tree_model_get(tree_model: PGtkTreeModel; iter: PGtkTreeIter); cdecl; external libgtk4;
+procedure gtk_tree_model_get(tree_model: PGtkTreeModel; iter: PGtkTreeIter); varargs cdecl; external libgtk4;
 procedure gtk_tree_model_get_valist(tree_model: PGtkTreeModel; iter: PGtkTreeIter; var_args: Tva_list); cdecl; external libgtk4;
 procedure gtk_tree_model_foreach(model: PGtkTreeModel; func: TGtkTreeModelForeachFunc; user_data: Tgpointer); cdecl; external libgtk4;
 procedure gtk_tree_model_row_changed(tree_model: PGtkTreeModel; path: PGtkTreePath; iter: PGtkTreeIter); cdecl; external libgtk4;

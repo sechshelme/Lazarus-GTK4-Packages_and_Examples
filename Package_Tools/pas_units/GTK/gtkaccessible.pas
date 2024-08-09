@@ -52,7 +52,7 @@ function gtk_accessible_get_bounds(self: PGtkAccessible; x: Plongint; y: Plongin
 function gtk_accessible_get_accessible_role(self: PGtkAccessible): TGtkAccessibleRole; cdecl; external libgtk4;
 procedure gtk_accessible_update_state(self: PGtkAccessible; first_state: TGtkAccessibleState); varargs cdecl; external libgtk4;
 procedure gtk_accessible_update_property(self: PGtkAccessible; first_property: TGtkAccessibleProperty); varargs cdecl; external libgtk4;
-procedure gtk_accessible_update_relation(self: PGtkAccessible; first_relation: TGtkAccessibleRelation);  varargscdecl; external libgtk4;
+procedure gtk_accessible_update_relation(self: PGtkAccessible; first_relation: TGtkAccessibleRelation);  varargs cdecl; external libgtk4;
 procedure gtk_accessible_update_state_value(self: PGtkAccessible; n_states: longint; states: PGtkAccessibleState; values: PGValue); cdecl; external libgtk4;
 procedure gtk_accessible_update_property_value(self: PGtkAccessible; n_properties: longint; properties: PGtkAccessibleProperty; values: PGValue); cdecl; external libgtk4;
 procedure gtk_accessible_update_relation_value(self: PGtkAccessible; n_relations: longint; relations: PGtkAccessibleRelation; values: PGValue); cdecl; external libgtk4;

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 06-08-2024   15:17                        //
+//   Erzeugt am: 09-08-2024   16:12                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -29,14 +29,12 @@ type
 function gtk_tree_view_column_get_type: TGType; cdecl; external libgtk4;
 function gtk_tree_view_column_new: PGtkTreeViewColumn; cdecl; external libgtk4;
 function gtk_tree_view_column_new_with_area(area: PGtkCellArea): PGtkTreeViewColumn; cdecl; external libgtk4;
-function gtk_tree_view_column_new_with_attributes(title: PChar; cell: PGtkCellRenderer; args: array of const): PGtkTreeViewColumn; cdecl; external libgtk4;
-function gtk_tree_view_column_new_with_attributes(title: PChar; cell: PGtkCellRenderer): PGtkTreeViewColumn; cdecl; external libgtk4;
+function gtk_tree_view_column_new_with_attributes(title: PChar; cell: PGtkCellRenderer): PGtkTreeViewColumn; varargs cdecl; external libgtk4;
 procedure gtk_tree_view_column_pack_start(tree_column: PGtkTreeViewColumn; cell: PGtkCellRenderer; expand: Tgboolean); cdecl; external libgtk4;
 procedure gtk_tree_view_column_pack_end(tree_column: PGtkTreeViewColumn; cell: PGtkCellRenderer; expand: Tgboolean); cdecl; external libgtk4;
 procedure gtk_tree_view_column_clear(tree_column: PGtkTreeViewColumn); cdecl; external libgtk4;
 procedure gtk_tree_view_column_add_attribute(tree_column: PGtkTreeViewColumn; cell_renderer: PGtkCellRenderer; attribute: PChar; column: longint); cdecl; external libgtk4;
-procedure gtk_tree_view_column_set_attributes(tree_column: PGtkTreeViewColumn; cell_renderer: PGtkCellRenderer; args: array of const); cdecl; external libgtk4;
-procedure gtk_tree_view_column_set_attributes(tree_column: PGtkTreeViewColumn; cell_renderer: PGtkCellRenderer); cdecl; external libgtk4;
+procedure gtk_tree_view_column_set_attributes(tree_column: PGtkTreeViewColumn; cell_renderer: PGtkCellRenderer); varargs cdecl; external libgtk4;
 procedure gtk_tree_view_column_set_cell_data_func(tree_column: PGtkTreeViewColumn; cell_renderer: PGtkCellRenderer; func: TGtkTreeCellDataFunc; func_data: Tgpointer; Destroy: TGDestroyNotify); cdecl; external libgtk4;
 procedure gtk_tree_view_column_clear_attributes(tree_column: PGtkTreeViewColumn; cell_renderer: PGtkCellRenderer); cdecl; external libgtk4;
 procedure gtk_tree_view_column_set_spacing(tree_column: PGtkTreeViewColumn; spacing: longint); cdecl; external libgtk4;

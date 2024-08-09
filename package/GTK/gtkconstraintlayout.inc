@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 06-08-2024   15:17                        //
+//   Erzeugt am: 09-08-2024   16:12                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -43,9 +43,7 @@ procedure gtk_constraint_layout_add_guide(layout: PGtkConstraintLayout; guide: P
 procedure gtk_constraint_layout_remove_guide(layout: PGtkConstraintLayout; guide: PGtkConstraintGuide); cdecl; external libgtk4;
 procedure gtk_constraint_layout_remove_all_constraints(layout: PGtkConstraintLayout); cdecl; external libgtk4;
 function gtk_constraint_layout_add_constraints_from_description(layout: PGtkConstraintLayout; Lines: PPchar; n_lines: Tgsize; hspacing: longint; vspacing: longint;
-  error: PPGError; first_view: PChar; args: array of const): PGList; cdecl; external libgtk4;
-function gtk_constraint_layout_add_constraints_from_description(layout: PGtkConstraintLayout; Lines: PPchar; n_lines: Tgsize; hspacing: longint; vspacing: longint;
-  error: PPGError; first_view: PChar): PGList; cdecl; external libgtk4;
+  error: PPGError; first_view: PChar): PGList; varargs cdecl; external libgtk4;
 function gtk_constraint_layout_add_constraints_from_descriptionv(layout: PGtkConstraintLayout; Lines: PPchar; n_lines: Tgsize; hspacing: longint; vspacing: longint;
   views: PGHashTable; error: PPGError): PGList; cdecl; external libgtk4;
 function gtk_constraint_layout_observe_constraints(layout: PGtkConstraintLayout): PGListModel; cdecl; external libgtk4;

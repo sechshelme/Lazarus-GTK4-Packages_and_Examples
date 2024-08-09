@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 06-08-2024   15:17                        //
+//   Erzeugt am: 09-08-2024   16:12                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -62,8 +62,7 @@ type
 
 
 function gtk_constant_expression_get_type: TGType; cdecl; external;
-function gtk_constant_expression_new(value_type: TGType; args: array of const): PGtkExpression; cdecl; external;
-function gtk_constant_expression_new(value_type: TGType): PGtkExpression; cdecl; external;
+function gtk_constant_expression_new(value_type: TGType): PGtkExpression; varargs cdecl; external;
 function gtk_constant_expression_new_for_value(Value: PGValue): PGtkExpression; cdecl; external;
 function gtk_constant_expression_get_value(expression: PGtkExpression): PGValue; cdecl; external;
 

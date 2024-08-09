@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 06-08-2024   15:17                        //
+//   Erzeugt am: 09-08-2024   16:12                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -68,8 +68,7 @@ procedure gtk_media_stream_stream_ended(self: PGtkMediaStream); cdecl; external 
 procedure gtk_media_stream_seek_success(self: PGtkMediaStream); cdecl; external libgtk4;
 procedure gtk_media_stream_seek_failed(self: PGtkMediaStream); cdecl; external libgtk4;
 procedure gtk_media_stream_gerror(self: PGtkMediaStream; error: PGError); cdecl; external libgtk4;
-procedure gtk_media_stream_error(self: PGtkMediaStream; domain: TGQuark; code: longint; format: PChar; args: array of const); cdecl; external libgtk4;
-procedure gtk_media_stream_error(self: PGtkMediaStream; domain: TGQuark; code: longint; format: PChar); cdecl; external libgtk4;
+procedure gtk_media_stream_error(self: PGtkMediaStream; domain: TGQuark; code: longint; format: PChar); varargs cdecl; external libgtk4;
 procedure gtk_media_stream_error_valist(self: PGtkMediaStream; domain: TGQuark; code: longint; format: PChar; args: Tva_list); cdecl; external libgtk4;
 
 // === Konventiert am: 23-7-24 13:54:56 ===

@@ -7,8 +7,6 @@
       <Unit>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="350"/>
         <CursorPos Y="379"/>
         <UsageCount Value="121"/>
         <Loaded Value="True"/>
@@ -41,7 +39,7 @@
         <Filename Value="drawarena.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="DrawArena"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <CursorPos X="38" Y="8"/>
         <UsageCount Value="60"/>
         <Loaded Value="True"/>
@@ -4112,7 +4110,7 @@
       </Unit>
       <Unit>
         <Filename Value="../../package/GTK4_includes.inc"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <CursorPos X="18" Y="2"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
@@ -4120,14 +4118,14 @@
       <Unit>
         <Filename Value="../../package/gdk4.pas"/>
         <UnitName Value="GDK4"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="9"/>
         <CursorPos Y="11"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="../../package/GDK4_includes.inc"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="11"/>
         <TopLine Value="53"/>
         <CursorPos Y="82"/>
         <UsageCount Value="11"/>
@@ -4135,7 +4133,7 @@
       </Unit>
       <Unit>
         <Filename Value="../../package/common_gtk.inc"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="14"/>
         <CursorPos X="29" Y="20"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
@@ -4143,7 +4141,7 @@
       <Unit>
         <Filename Value="../../package/gtk4.pas"/>
         <UnitName Value="GTK4"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <CursorPos X="20" Y="13"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
@@ -4308,7 +4306,7 @@
       </Unit>
       <Unit>
         <Filename Value="../../package/GSK4_includes.inc"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <CursorPos X="18" Y="26"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
@@ -4333,7 +4331,7 @@
       <Unit>
         <Filename Value="../../package/gsk4.pas"/>
         <UnitName Value="GSK4"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <CursorPos X="18" Y="15"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
@@ -4446,7 +4444,7 @@
       <Unit>
         <Filename Value="../../package/gtk4_unix_print.pas"/>
         <UnitName Value="GTK4_unix_print"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="10"/>
         <CursorPos Y="25"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
@@ -4460,7 +4458,7 @@
       <Unit>
         <Filename Value="../../package/gdk4_broadway.pas"/>
         <UnitName Value="GDK4_broadway"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="8"/>
         <CursorPos Y="29"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
@@ -4492,31 +4490,36 @@
       </Unit>
       <Unit>
         <Filename Value="../../package/GDK/x11/gdkx11devicemanager_xi2.inc"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="13"/>
         <CursorPos X="26" Y="12"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="../../package/GDK/x11/gdkx11devicemanager.inc"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="7"/>
         <CursorPos X="56" Y="11"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="../../package/GDK/x11/gdkx11screen.inc"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="12"/>
         <CursorPos X="61" Y="21"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../package/GTK/gtkaccessible.inc"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="33"/>
+        <CursorPos X="114" Y="54"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="project1.lpr"/>
-        <Caret Line="74" TopLine="49"/>
-      </Position>
       <Position>
         <Filename Value="../../package/gdk4_broadway.pas"/>
         <Caret Line="17" Column="33"/>
@@ -4632,6 +4635,10 @@
       <Position>
         <Filename Value="../../package/GDK/x11/gdkx11devicemanager.inc"/>
         <Caret Line="11" Column="56"/>
+      </Position>
+      <Position>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="379"/>
       </Position>
     </JumpHistory>
     <RunParams>

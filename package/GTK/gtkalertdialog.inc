@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 06-08-2024   15:17                        //
+//   Erzeugt am: 09-08-2024   16:12                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,8 +20,7 @@ type
   PGtkAlertDialogClass = ^TGtkAlertDialogClass;
 
 
-function gtk_alert_dialog_new(format: PChar; args: array of const): PGtkAlertDialog; cdecl; external libgtk4;
-function gtk_alert_dialog_new(format: PChar): PGtkAlertDialog; cdecl; external libgtk4;
+function gtk_alert_dialog_new(format: PChar): PGtkAlertDialog; varargs cdecl; external libgtk4;
 function gtk_alert_dialog_get_modal(self: PGtkAlertDialog): Tgboolean; cdecl; external libgtk4;
 procedure gtk_alert_dialog_set_modal(self: PGtkAlertDialog; modal: Tgboolean); cdecl; external libgtk4;
 function gtk_alert_dialog_get_message(self: PGtkAlertDialog): PChar; cdecl; external libgtk4;

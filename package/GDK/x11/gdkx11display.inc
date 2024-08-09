@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 06-08-2024   15:17                        //
+//   Erzeugt am: 09-08-2024   16:12                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -27,8 +27,7 @@ function gdk_x11_display_get_startup_notification_id(display: PGdkDisplay): PCha
 procedure gdk_x11_display_set_startup_notification_id(display: PGdkDisplay; startup_id: PChar); cdecl; external libgtk4;
 procedure gdk_x11_display_set_program_class(display: PGdkDisplay; program_class: PChar); cdecl; external libgtk4;
 procedure gdk_x11_display_set_cursor_theme(display: PGdkDisplay; theme: PChar; size: longint); cdecl; external libgtk4;
-procedure gdk_x11_display_broadcast_startup_message(display: PGdkDisplay; message_type: PChar; args: array of const); cdecl; external libgtk4;
-procedure gdk_x11_display_broadcast_startup_message(display: PGdkDisplay; message_type: PChar); cdecl; external libgtk4;
+procedure gdk_x11_display_broadcast_startup_message(display: PGdkDisplay; message_type: PChar); varargs cdecl; external libgtk4;
 function gdk_x11_lookup_xdisplay(xdisplay: PDisplay): PGdkDisplay; cdecl; external libgtk4;
 function gdk_x11_display_get_screen(display: PGdkDisplay): PGdkX11Screen; cdecl; external libgtk4;
 function gdk_x11_display_get_primary_monitor(display: PGdkDisplay): PGdkMonitor; cdecl; external libgtk4;

@@ -70,9 +70,8 @@ const
   G_IO_FLAG_SET_MASK = G_IO_FLAG_APPEND or G_IO_FLAG_NONBLOCK;
 
 type
-  PGIOChannel = ^TGIOChannel;
 
-  TGIOChannel = record
+  TGIOChannel = bitpacked record
     ref_count: Tgint;
     funcs: ^TGIOFuncs;
     encoding: Pgchar;
@@ -106,6 +105,7 @@ type
     reserved1: Tgpointer;
     reserved2: Tgpointer;
   end;
+  PGIOChannel = ^TGIOChannel;
 
   TGIOFunc = function(Source: PGIOChannel; condition: TGIOCondition; Data: Tgpointer): Tgboolean; cdecl;
   PGIOFuncs = ^TGIOFuncs;

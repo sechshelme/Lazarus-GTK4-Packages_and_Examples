@@ -15,6 +15,8 @@ uses
   gmem,                    // io.
   gconvert,                // io.
   gutils,                  // io.
+  gdate,                   // io.
+  gdataset,                // io.
   gspawn,                  // io.
   goption,                 // io.
   gunicode,                // io.
@@ -28,6 +30,7 @@ uses
   glist,                   // io.
   gslist,                  // io.
   gpoll,                   // io.
+  gmarkup,                 // io. -> gslist
   gmain,                   // io. -> gslist, gthread, gpoll
   gvariant,                // io. -> gstring, gvarianttype
   gmessages,               // io. -> gvariant                    Makros entfernt
@@ -35,7 +38,9 @@ uses
   gkeyfile,                // io.
   ghash,                   // io. -> glist
   guri,                    // io. -> ghash
+  gscanner,                // io. -> gdataset, ghash
   giochannel,              //  -> gmain, gstring, gunicode, gconvert    ( Komischer Record )
+  gnode,                   // io.
 
 
 
@@ -52,7 +57,12 @@ var
   timer: PGTimer;
   us: Tgulong;
   time: Tgdouble;
+
+  t:TGScannerConfig;
 begin
+
+  WriteLn('TGScannerConfig: ', SizeOf(  TGScannerConfig));
+  WriteLn('TGScannerConfig: ', PtrUInt(@t.padding_dummy)- PtrUInt(@t));
 
   WriteLn(g_ascii_isalnum('1'));
   WriteLn(g_ascii_isalnum('a'));
