@@ -25,7 +25,8 @@ type
   Tgint = longint;
 
   Pgboolean = ^Tgboolean;
-  Tgboolean = Tgint;
+//  Tgboolean = Tgint;
+  Tgboolean = Boolean32;
 
   Pguchar = ^Tguchar;
   Tguchar = byte;
@@ -56,7 +57,7 @@ type
   TGEqualFunc = function(a: Tgconstpointer; b: Tgconstpointer): Tgboolean; cdecl;
   TGEqualFuncFull = function(a: Tgconstpointer; b: Tgconstpointer; user_data: Tgpointer): Tgboolean; cdecl;
   TGDestroyNotify = procedure(Data: Tgpointer); cdecl;
-  PGDestroyNotify=^TGDestroyNotify;
+  PGDestroyNotify = ^TGDestroyNotify;
   TGFunc = procedure(Data: Tgpointer; user_data: Tgpointer); cdecl;
   TGHashFunc = function(key: Tgconstpointer): Tguint; cdecl;
   TGHFunc = procedure(key: Tgpointer; Value: Tgpointer; user_data: Tgpointer); cdecl;
@@ -126,17 +127,48 @@ const
 
 type
   PGTimeVal = ^TGTimeVal;
+
   TGTimeVal = record
-      tv_sec : Tglong;
-      tv_usec : Tglong;
-    end;
+    tv_sec: Tglong;
+    tv_usec: Tglong;
+  end;
 
 
   // === Konventiert am: 6-8-24 15:51:59 ===
 
+function GUINT16_SWAP_LE_BE_CONSTANT(val: Tguint16): Tguint16;
+function GUINT32_SWAP_LE_BE_CONSTANT(val: Tguint32): Tguint32;
+function GUINT64_SWAP_LE_BE_CONSTANT(val: Tguint64): Tguint64;
+
 
 implementation
 
+function GUINT16_SWAP_LE_BE_CONSTANT(val: Tguint16): Tguint16;
+begin
+  Result := ((val and $ff) shl 8) or ((val and $ff00) shr 8);
+end;
 
+function GUINT32_SWAP_LE_BE_CONSTANT(val: Tguint32): Tguint32;
+begin
+  Result :=
+    ((val and $000000ff) shl 24) or
+    ((val and $0000ff00) shl 8) or
+    ((val and $00ff0000) shr 8) or
+    ((val and $ff000000) shr 24);
+end;
+
+function GUINT64_SWAP_LE_BE_CONSTANT(val: Tguint64): Tguint64;
+begin
+  Result :=
+    ((val and $00000000000000ff) shl 56) or
+    ((val and $000000000000ff00) shl 40) or
+    ((val and $0000000000ff0000) shl 24) or
+    ((val and $00000000ff000000) shl 8) or
+
+    ((val and $00000000000000ff00000000) shr 8) or
+    ((val and $000000000000ff0000000000) shr 24) or
+    ((val and $0000000000ff000000000000) shr 40) or
+    ((val and $00000000ff00000000000000) shr 56);
+end;
 
 end.

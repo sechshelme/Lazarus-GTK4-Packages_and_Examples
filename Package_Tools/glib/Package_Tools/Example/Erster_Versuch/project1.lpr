@@ -12,7 +12,8 @@ uses
   garray,                  // io.
 
   gthread,                 //                   doppelter gtheread.h von deprecated
-  gmem,                    // io.
+  gallocator,
+  gmem,                    // io. -> gallocator
   gconvert,                // io.
   gutils,                  // io.
   gdate,                   // io.
@@ -41,6 +42,7 @@ uses
   gscanner,                // io. -> gdataset, ghash
   giochannel,              //  -> gmain, gstring, gunicode, gconvert    ( Komischer Record )
   gnode,                   // io.
+
 
 
 

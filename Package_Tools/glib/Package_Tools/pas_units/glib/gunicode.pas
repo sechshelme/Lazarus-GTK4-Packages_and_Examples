@@ -318,7 +318,7 @@ procedure g_unicode_canonical_ordering(_string: Pgunichar; len: Tgsize); cdecl; 
 function g_unicode_canonical_decomposition(ch: Tgunichar; result_len: Pgsize): Pgunichar; cdecl; external libglib2;
 
 var
-//  g_utf8_skip: Pgchar; cvar;public;
+  //  g_utf8_skip: Pgchar; cvar;public;
   g_utf8_skip: Pgchar; cvar;external libglib2;
 
 
@@ -374,9 +374,13 @@ function g_utf8_make_valid(str: Pgchar; len: Tgssize): Pgchar; cdecl; external l
 
 // === Konventiert am: 6-8-24 17:03:20 ===
 
+function g_utf8_next_char(p: Pguchar): Pguchar;
 
 implementation
 
-
+function g_utf8_next_char(p: Pguchar): Pguchar;
+begin
+  g_utf8_next_char := p + Ord((g_utf8_skip + p^)^);     // needs to be tested
+end;
 
 end.

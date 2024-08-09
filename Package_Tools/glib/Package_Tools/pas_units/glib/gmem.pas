@@ -3,7 +3,7 @@ unit gmem;
 interface
 
 uses
-  common_GLIB, gtypes;
+  common_GLIB, gtypes, gallocator;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -49,11 +49,49 @@ var
 
 procedure g_mem_profile; cdecl; external libglib2;
 
+function g_new(bytes_per_struct, n_structs: Tgsize): Tgpointer;
+function g_new0(bytes_per_struct, n_structs: Tgsize): Tgpointer;
+function g_renew(struct_size: Tgsize; OldMem: Tgpointer; n_structs : Tgsize) : Tgpointer;
+function g_chunk_new(chunk : Pointer) : Pointer;
+function g_chunk_new0(chunk : Pointer) : Pointer;
+procedure g_chunk_free(mem_chunk:PGMemChunk; mem:Tgpointer);
+
+
 // === Konventiert am: 8-8-24 17:20:52 ===
 
 
 implementation
 
+function g_new(bytes_per_struct, n_structs: Tgsize): Tgpointer;
+begin
+   g_new:=g_malloc(n_structs*bytes_per_struct);
+end;
+
+function g_new0(bytes_per_struct, n_structs: Tgsize): Tgpointer;
+begin
+   g_new0:=g_malloc0(n_structs*bytes_per_struct);
+end;
+
+function g_renew(struct_size: Tgsize; OldMem: Tgpointer; n_structs: Tgsize
+  ): Tgpointer;
+begin
+   g_renew:=g_realloc(OldMem,struct_size*n_structs);
+end;
+
+function g_chunk_new(chunk : Pointer) : Pointer;
+begin
+   g_chunk_new:=g_mem_chunk_alloc(chunk);
+end;
+
+function g_chunk_new0(chunk : Pointer) : Pointer;
+begin
+   g_chunk_new0:=g_mem_chunk_alloc0(chunk);
+end;
+
+procedure g_chunk_free(mem_chunk: PGMemChunk; mem: Tgpointer);
+begin
+   g_mem_chunk_free(mem_chunk,mem);
+end;
 
 
 end.

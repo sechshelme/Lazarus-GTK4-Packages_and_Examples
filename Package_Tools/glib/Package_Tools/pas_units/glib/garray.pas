@@ -55,8 +55,6 @@ procedure g_array_sort(_array: PGArray; compare_func: TGCompareFunc); cdecl; ext
 procedure g_array_sort_with_data(_array: PGArray; compare_func: TGCompareDataFunc; user_data: Tgpointer); cdecl; external libglib2;
 function g_array_binary_search(_array: PGArray; target: Tgconstpointer; compare_func: TGCompareFunc; out_match_index: Pguint): Tgboolean; cdecl; external libglib2;
 procedure g_array_set_clear_func(_array: PGArray; clear_func: TGDestroyNotify); cdecl; external libglib2;
-
-{#define    g_ptr_array_index(array,index_) ((array)->pdata)[index_] }
 function g_ptr_array_new: PGPtrArray; cdecl; external libglib2;
 function g_ptr_array_new_with_free_func(element_free_func: TGDestroyNotify): PGPtrArray; cdecl; external libglib2;
 function g_ptr_array_new_take(Data: Pgpointer; len: Tgsize; element_free_func: TGDestroyNotify): PGPtrArray; cdecl; external libglib2;
@@ -112,6 +110,7 @@ procedure g_byte_array_sort_with_data(_array: PGByteArray; compare_func: TGCompa
 function g_array_append_val(a: PGArray; v: Tgconstpointer): PGArray;
 function g_array_prepend_val(a: PGArray; v: Tgconstpointer): PGArray;
 function g_array_insert_val(a: PGArray; i: Tguint; v: Tgconstpointer): PGArray;
+function g_ptr_array_index (parray: PGPtrArray; index: Tguint): Tgpointer;
 
 // === Konventiert am: 6-8-24 16:27:59 ===
 
@@ -137,5 +136,9 @@ begin
   g_array_insert_val := g_array_insert_vals(a, i, @(v), 1);
 end;
 
+function g_ptr_array_index(parray: PGPtrArray; index: Tguint): Tgpointer;
+begin
+  g_ptr_array_index := parray^.pdata[index];
+end;
 
 end.

@@ -39,6 +39,12 @@ type
 
   // ====
 
+const
+  GLIB_MAJOR_VERSION = 2;
+  GLIB_MINOR_VERSION = 80;
+  GLIB_MICRO_VERSION = 0;
+
+type
   Tgint8 = int8;
   Tguint8 = uint8;
   Pgint8 = ^int8;

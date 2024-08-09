@@ -9,6 +9,8 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
+//   komplizierte Makros entfernt
+
 function g_printf_string_upper_bound(format: Pgchar; args: Tva_list): Tgsize; cdecl; external libglib2;
 
 const

@@ -85,46 +85,46 @@ type
       11: (v_error: Tguint);
   end;
 
-  // struct	_GScannerConfig
+  // struct  _GScannerConfig
   //{
   //  /* Character sets
   //   */
-  //  gchar		*cset_skip_characters;		/* default: " \t\n" */
-  //  gchar		*cset_identifier_first;
-  //  gchar		*cset_identifier_nth;
-  //  gchar		*cpair_comment_single;		/* default: "#\n" */
+  //  gchar    *cset_skip_characters;    /* default: " \t\n" */
+  //  gchar    *cset_identifier_first;
+  //  gchar    *cset_identifier_nth;
+  //  gchar    *cpair_comment_single;    /* default: "#\n" */
   //
   //  /* Should symbol lookup work case sensitive?
   //   */
-  //  guint		case_sensitive : 1;
+  //  guint    case_sensitive : 1;
   //
   //  /* Boolean values to be adjusted "on the fly"
   //   * to configure scanning behaviour.
   //   */
-  //  guint		skip_comment_multi : 1;		/* C like comment */
-  //  guint		skip_comment_single : 1;	/* single line comment */
-  //  guint		scan_comment_multi : 1;		/* scan multi line comments? */
-  //  guint		scan_identifier : 1;
-  //  guint		scan_identifier_1char : 1;
-  //  guint		scan_identifier_NULL : 1;
-  //  guint		scan_symbols : 1;
-  //  guint		scan_binary : 1;
-  //  guint		scan_octal : 1;
-  //  guint		scan_float : 1;
-  //  guint		scan_hex : 1;			/* '0x0ff0' */
-  //  guint		scan_hex_dollar : 1;		/* '$0ff0' */
-  //  guint		scan_string_sq : 1;		/* string: 'anything' */
-  //  guint		scan_string_dq : 1;		/* string: "\\-escapes!\n" */
-  //  guint		numbers_2_int : 1;		/* bin, octal, hex => int */
-  //  guint		int_2_float : 1;		/* int => G_TOKEN_FLOAT? */
-  //  guint		identifier_2_string : 1;
-  //  guint		char_2_token : 1;		/* return G_TOKEN_CHAR? */
-  //  guint		symbol_2_token : 1;
-  //  guint		scope_0_fallback : 1;		/* try scope 0 on lookups? */
-  //  guint		store_int64 : 1; 		/* use value.v_int64 rather than v_int */
+  //  guint    skip_comment_multi : 1;    /* C like comment */
+  //  guint    skip_comment_single : 1;  /* single line comment */
+  //  guint    scan_comment_multi : 1;    /* scan multi line comments? */
+  //  guint    scan_identifier : 1;
+  //  guint    scan_identifier_1char : 1;
+  //  guint    scan_identifier_NULL : 1;
+  //  guint    scan_symbols : 1;
+  //  guint    scan_binary : 1;
+  //  guint    scan_octal : 1;
+  //  guint    scan_float : 1;
+  //  guint    scan_hex : 1;      /* '0x0ff0' */
+  //  guint    scan_hex_dollar : 1;    /* '$0ff0' */
+  //  guint    scan_string_sq : 1;    /* string: 'anything' */
+  //  guint    scan_string_dq : 1;    /* string: "\\-escapes!\n" */
+  //  guint    numbers_2_int : 1;    /* bin, octal, hex => int */
+  //  guint    int_2_float : 1;    /* int => G_TOKEN_FLOAT? */
+  //  guint    identifier_2_string : 1;
+  //  guint    char_2_token : 1;    /* return G_TOKEN_CHAR? */
+  //  guint    symbol_2_token : 1;
+  //  guint    scope_0_fallback : 1;    /* try scope 0 on lookups? */
+  //  guint    store_int64 : 1;     /* use value.v_int64 rather than v_int */
   //
   //  /*< private >*/
-  //  guint		padding_dummy;
+  //  guint    padding_dummy;
   //};
 
 
@@ -157,10 +157,10 @@ type
     scope_0_fallback: 0..1;
     store_int64: 0..1;
 
-    pp:array[0..8] of 0..1;
+    pp: array[0..8] of 0..1;
 
     padding_dummy: Tguint;
-//    c:PChar;
+    //    c:PChar;
   end;
   PGScannerConfig = ^TGScannerConfig;
 
@@ -168,6 +168,7 @@ type
 type
   PGScanner = ^TGScanner;
   TGScannerMsgFunc = procedure(scanner: PGScanner; message: Pgchar; error: Tgboolean); cdecl;
+
   TGScanner = record
     user_data: Tgpointer;
     max_parse_errors: Tguint;
@@ -224,6 +225,23 @@ function g_scanner_thaw_symbol_table(scanner: Pointer): pointer;
 
 // === Konventiert am: 9-8-24 16:52:36 ===
 
+procedure g_scanner_add_symbol(scanner: PGScanner; symbol: Pgchar; Value: Tgpointer);
+procedure g_scanner_remove_symbol(scanner: PGScanner; symbol: Pgchar);
+procedure g_scanner_foreach_symbol(scanner: PGScanner; func: TGHFunc; Data: Tgpointer);
+
+
+(*
+#define    g_scanner_add_symbol( scanner, symbol, value )  G_STMT_START { \
+  g_scanner_scope_add_symbol ((scanner), 0, (symbol), (value)); \
+} G_STMT_END GLIB_DEPRECATED_MACRO_IN_2_26_FOR(g_scanner_scope_add_symbol)
+#define    g_scanner_remove_symbol( scanner, symbol )  G_STMT_START { \
+  g_scanner_scope_remove_symbol ((scanner), 0, (symbol)); \
+} G_STMT_END GLIB_DEPRECATED_MACRO_IN_2_26_FOR(g_scanner_scope_remove_symbol)
+#define    g_scanner_foreach_symbol( scanner, func, data )  G_STMT_START { \
+  g_scanner_scope_foreach_symbol ((scanner), 0, (func), (data)); \
+} G_STMT_END GLIB_DEPRECATED_MACRO_IN_2_26_FOR(g_scanner_scope_foreach_symbol)
+*)
+
 
 implementation
 
@@ -236,6 +254,23 @@ end;
 function g_scanner_thaw_symbol_table(scanner: Pointer): pointer;
 begin
   g_scanner_thaw_symbol_table := pointer(0);
+end;
+
+procedure g_scanner_add_symbol(scanner: PGScanner; symbol: Pgchar;
+  Value: Tgpointer);
+begin
+  g_scanner_scope_add_symbol(scanner, 0, symbol, Value);
+end;
+
+procedure g_scanner_remove_symbol(scanner: PGScanner; symbol: Pgchar);
+begin
+  g_scanner_scope_remove_symbol(scanner, 0, symbol);
+end;
+
+procedure g_scanner_foreach_symbol(scanner: PGScanner; func: TGHFunc;
+  Data: Tgpointer);
+begin
+  g_scanner_scope_foreach_symbol(scanner, 0, func, Data);
 end;
 
 
