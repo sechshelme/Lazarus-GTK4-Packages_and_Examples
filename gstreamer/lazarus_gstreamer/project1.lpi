@@ -40,6 +40,11 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
       </Unit>
+      <Unit>
+        <Filename Value="streamer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Streamer"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

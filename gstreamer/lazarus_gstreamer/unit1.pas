@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
-  gst;
+  ComCtrls, gst, Streamer;
 
   // https://forums.developer.nvidia.com/t/pipeline-ends-after-4-seconds-with-gst-message-eos/253486
 
@@ -21,16 +21,18 @@ type
     Button4: TButton;
     Button5: TButton;
     Timer1: TTimer;
+    TrackBar1: TTrackBar;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure TrackBar1Change(Sender: TObject);
   private
-    pipeline: PGstElement;
-
+    st: TStreamer;
   public
 
   end;
@@ -48,7 +50,6 @@ function GstClockToStr(t: TGstClockTime): string;
 var
   ms, s, min: TGstClockTime;
 begin
-  t := t div 1000000;
   min := t div 60000;
   s := (t mod 60000) div 1000;
   ms := t mod 1000;
@@ -57,45 +58,61 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  gst_init(@argc, @argv);
-  pipeline := nil;
+  st := TStreamer.Create('filesrc location=../test.mp3 !  mpegaudioparse ! mpg123audiodec ! audioconvert ! audioresample ! pulsesink');
+end;
+
+procedure TForm1.FormDestroy(Sender: TObject);
+begin
+  st.Free;
 end;
 
 procedure TForm1.Timer1Timer(Sender: TObject);
 var
-  current: Tgint64;
+  current: Integer;
+  oldChange: TNotifyEvent;
 begin
-  gst_element_query_position(pipeline, GST_FORMAT_TIME, @current);
-  Caption := GstClockToStr(current);
+  current := st.GetPosition;
+  oldChange:=TrackBar1.OnChange;
+  TrackBar1.OnChange:=nil;
+  TrackBar1.Max:=st.GetDuration;
+  TrackBar1.Position:=current;
+  TrackBar1.OnChange:=oldChange;
+end;
+
+procedure TForm1.TrackBar1Change(Sender: TObject);
+var
+  oldChange: TNotifyEvent;
+begin
+//  Timer1.Enabled:=False;
+  st.spring(TrackBar1.Position);
+  WriteLn('change');
+//  Timer1.Enabled:=True;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  gst_element_set_state(pipeline, GST_STATE_PLAYING);
+  st.Play;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 begin
-    gst_element_set_state(pipeline, GST_STATE_PAUSED);
+  st.Pause;
 end;
 
 procedure TForm1.Button3Click(Sender: TObject);
 begin
-  gst_element_seek_simple(pipeline, GST_FORMAT_TIME, TGstSeekFlags(int64(GST_SEEK_FLAG_FLUSH) or int64(GST_SEEK_FLAG_KEY_UNIT)), 6000000000); // 6s
+  st.spring(6000);;
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);
 begin
-    gst_element_set_state(pipeline, GST_STATE_READY);
+  st.Stop;
 end;
 
 procedure TForm1.Button5Click(Sender: TObject);
 begin
-  //  pipeline := gst_parse_launch('playbin uri=file:/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/gstreamer/test.mp3', nil);
-  if pipeline = nil then begin
-    pipeline := gst_parse_launch('filesrc location=../test.mp3 !  mpegaudioparse ! mpg123audiodec ! audioconvert ! audioresample ! pulsesink', nil);
-    //    pipeline := gst_parse_launch('filesrc location=test.flac ! decodebin3 ! audioconvert ! audioresample ! autoaudiosink', nil);
-  end;
+  st.Start;
+  TrackBar1.Position:=0;
   Timer1.Enabled := True;
 end;
 

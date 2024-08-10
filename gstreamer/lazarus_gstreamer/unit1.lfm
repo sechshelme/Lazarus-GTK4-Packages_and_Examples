@@ -8,6 +8,7 @@ object Form1: TForm1
   ClientWidth = 320
   LCLVersion = '3.99.0.0'
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   object Button1: TButton
     Left = 56
     Height = 25
@@ -38,7 +39,7 @@ object Form1: TForm1
   object Button4: TButton
     Left = 48
     Height = 25
-    Top = 191
+    Top = 168
     Width = 75
     Caption = 'stop'
     TabOrder = 3
@@ -49,9 +50,19 @@ object Form1: TForm1
     Height = 25
     Top = 8
     Width = 75
-    Caption = 'load'
+    Caption = 'Start'
     TabOrder = 4
     OnClick = Button5Click
+  end
+  object TrackBar1: TTrackBar
+    Left = 23
+    Height = 37
+    Top = 192
+    Width = 281
+    Position = 0
+    OnChange = TrackBar1Change
+    Anchors = [akTop, akLeft, akRight]
+    TabOrder = 5
   end
   object Timer1: TTimer
     Enabled = False
