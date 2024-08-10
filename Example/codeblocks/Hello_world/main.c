@@ -2,6 +2,8 @@
 
 #include <stdlib.h>
 #include <gtk/gtk.h>
+#include <glib.h>
+#include <glib/gstdio.h>
 //#include <gtk/css/gtkcss.h>
 //#include <gtk/a11y/gtkatspi.h>
 #include <gdk/broadway/gdkbroadway.h>
@@ -134,3 +136,10 @@ int main (int argc, char **argv)
 
   return status;
 }
+g_access
+
+alloca
+
+g_chdir
+
+

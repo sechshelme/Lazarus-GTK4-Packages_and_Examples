@@ -89,6 +89,10 @@ type
 
   // no GLIB
 
+  TFILE=record //  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h
+      end;
+  PFILE=^TFILE;
+
   Tdouble = double;
 
   Tsize_t = SizeUInt;
@@ -101,6 +105,10 @@ type
 
   Tva_list = Pointer;
   Pva_list = ^Tva_list;
+
+  Tstat=record  // /usr/include/x86_64-linux-gnu/bits/struct_stat.h
+      end;
+  PTstat=^Tstat;
 
 implementation
 

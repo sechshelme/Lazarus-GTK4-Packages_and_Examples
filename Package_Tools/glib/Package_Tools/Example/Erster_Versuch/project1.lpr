@@ -12,6 +12,8 @@ uses
   gerror,                  //      Makros
   garray,                  // io.
 
+  galloca,                 // nicht auflösbar
+  gslice,                  // nicht auflösbar
   gthread,                 //                   doppelter gtheread.h von deprecated
   gallocator,
   gmem,                    // io. -> gallocator
@@ -50,9 +52,12 @@ uses
   ghook,                   // io.
   gtree,                   // io. -> gnode
 
+  gstdio,                  // io.
+  grefcount,               // io.
+  gasyncqueue,             // io.
 
 
-
+  gbitlock,
 
 
 

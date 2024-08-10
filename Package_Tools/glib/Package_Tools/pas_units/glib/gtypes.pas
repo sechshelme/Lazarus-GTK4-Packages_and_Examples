@@ -25,7 +25,7 @@ type
   Tgint = longint;
 
   Pgboolean = ^Tgboolean;
-//  Tgboolean = Tgint;
+  //  Tgboolean = Tgint;
   Tgboolean = Boolean32;
 
   Pguchar = ^Tguchar;
@@ -132,6 +132,14 @@ type
     tv_sec: Tglong;
     tv_usec: Tglong;
   end;
+
+  Tgrefcount = Tgint;
+  Pgrefcount = ^Tgrefcount;
+
+  Tgatomicrefcount = Tgint;
+  Pgatomicrefcount = ^Tgatomicrefcount;
+
+
 
 
   // === Konventiert am: 6-8-24 15:51:59 ===

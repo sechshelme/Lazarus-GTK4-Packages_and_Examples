@@ -32,17 +32,17 @@
 
 
 
-void      g_bit_lock                      (volatile gint *address,
+void      g_bit_lock                      ( gint *address,
                                            gint           lock_bit);
 
-gboolean  g_bit_trylock                   (volatile gint *address,
+gboolean  g_bit_trylock                   ( gint *address,
                                            gint           lock_bit);
 
-void      g_bit_unlock                    (volatile gint *address,
+void      g_bit_unlock                    ( gint *address,
                                            gint           lock_bit);
 
 
-void      g_pointer_bit_lock              (volatile void *address,
+void      g_pointer_bit_lock              ( void *address,
                                            gint           lock_bit);
 
 
@@ -51,10 +51,10 @@ void      g_pointer_bit_lock_and_get      (gpointer address,
                                            guintptr *out_ptr);
 
 
-gboolean  g_pointer_bit_trylock           (volatile void *address,
+gboolean  g_pointer_bit_trylock           ( void *address,
                                            gint           lock_bit);
 
-void      g_pointer_bit_unlock            (volatile void *address,
+void      g_pointer_bit_unlock            ( void *address,
                                            gint           lock_bit);
 
 
@@ -69,40 +69,6 @@ void g_pointer_bit_unlock_and_set         (void *address,
                                            guint lock_bit,
                                            gpointer ptr,
                                            guintptr preserve_mask);
-
-#ifdef __GNUC__
-
-#define g_pointer_bit_lock(address, lock_bit) \
-  (G_GNUC_EXTENSION ({                                                       \
-    G_STATIC_ASSERT (sizeof *(address) == sizeof (gpointer));                \
-    g_pointer_bit_lock ((address), (lock_bit));                              \
-  }))
-
-#define g_pointer_bit_lock_and_get(address, lock_bit, out_ptr)     \
-  (G_GNUC_EXTENSION ({                                             \
-    G_STATIC_ASSERT (sizeof *(address) == sizeof (gpointer));      \
-    g_pointer_bit_lock_and_get ((address), (lock_bit), (out_ptr)); \
-  }))
-
-#define g_pointer_bit_trylock(address, lock_bit) \
-  (G_GNUC_EXTENSION ({                                                       \
-    G_STATIC_ASSERT (sizeof *(address) == sizeof (gpointer));                \
-    g_pointer_bit_trylock ((address), (lock_bit));                           \
-  }))
-
-#define g_pointer_bit_unlock(address, lock_bit) \
-  (G_GNUC_EXTENSION ({                                                       \
-    G_STATIC_ASSERT (sizeof *(address) == sizeof (gpointer));                \
-    g_pointer_bit_unlock ((address), (lock_bit));                            \
-  }))
-
-#define g_pointer_bit_unlock_and_set(address, lock_bit, ptr, preserve_mask)       \
-  (G_GNUC_EXTENSION ({                                                            \
-    G_STATIC_ASSERT (sizeof *(address) == sizeof (gpointer));                     \
-    g_pointer_bit_unlock_and_set ((address), (lock_bit), (ptr), (preserve_mask)); \
-  }))
-
-#endif
 
 
 

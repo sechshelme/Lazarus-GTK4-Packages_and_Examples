@@ -32,12 +32,12 @@
 /* slices - fast allocation/release of small memory blocks
  */
 
-gpointer g_slice_alloc          	(gsize	       block_size)  G_GNUC_ALLOC_SIZE(1);
+gpointer g_slice_alloc          	(gsize	       block_size)  ;
 
-gpointer g_slice_alloc0         	(gsize         block_size)  G_GNUC_ALLOC_SIZE(1);
+gpointer g_slice_alloc0         	(gsize         block_size)  ;
 
 gpointer g_slice_copy                   (gsize         block_size,
-                                         gconstpointer mem_block) G_GNUC_ALLOC_SIZE(1);
+                                         gconstpointer mem_block) ;
 
 void     g_slice_free1          	(gsize         block_size,
 					 gpointer      mem_block);
@@ -47,8 +47,7 @@ void     g_slice_free_chain_with_offset (gsize         block_size,
 					 gsize         next_offset);
 #define  g_slice_new(type)      ((type*) g_slice_alloc (sizeof (type)))
 
-/* Allow the compiler to inline memset(). Since the size is a constant, this
- * can significantly improve performance. */
+/*
 #if defined (__GNUC__) && (__GNUC__ >= 2) && defined (__OPTIMIZE__)
 #  define g_slice_new0(type)                                    \
   (type *) (G_GNUC_EXTENSION ({                                 \
@@ -61,6 +60,7 @@ void     g_slice_free_chain_with_offset (gsize         block_size,
 #else
 #  define g_slice_new0(type)    ((type*) g_slice_alloc0 (sizeof (type)))
 #endif
+*/
 
 /* MemoryBlockType *
  *       g_slice_dup                    (MemoryBlockType,
@@ -74,7 +74,7 @@ void     g_slice_free_chain_with_offset (gsize         block_size,
  * definitions following below.
  */
 
-/* we go through extra hoops to ensure type safety */
+/*
 #define g_slice_dup(type, mem)                                  \
   (1 ? (type*) g_slice_copy (sizeof (type), (mem))              \
      : ((void) ((type*) 0 == (mem)), (type*) 0))
@@ -89,6 +89,7 @@ G_STMT_START {                                                  \
                  (mem_chain), G_STRUCT_OFFSET (type, next)); 	\
   else   (void) ((type*) 0 == (mem_chain));			\
 } G_STMT_END
+*/
 
 /* --- internal debugging API --- */
 typedef enum {
@@ -100,11 +101,8 @@ typedef enum {
   G_SLICE_CONFIG_CONTENTION_COUNTER
 } GSliceConfig;
 
-_IN_2_34
 void     g_slice_set_config	   (GSliceConfig ckey, gint64 value);
-_IN_2_34
 gint64   g_slice_get_config	   (GSliceConfig ckey);
-_IN_2_34
 gint64*  g_slice_get_config_state  (GSliceConfig ckey, gint64 address, guint *n_values);
 
 #ifndef __GI_SCANNER__
