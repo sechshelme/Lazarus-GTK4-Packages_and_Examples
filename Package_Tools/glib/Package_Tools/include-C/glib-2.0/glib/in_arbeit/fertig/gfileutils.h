@@ -105,7 +105,7 @@ typedef enum
   G_FILE_SET_CONTENTS_DURABLE = 1 << 1,
   G_FILE_SET_CONTENTS_ONLY_EXISTING = 1 << 2
 } GFileSetContentsFlags
-GLIB_AVAILABLE_ENUMERATOR_IN_2_66;
+;
 
 
 GQuark     g_file_error_quark      (void);
@@ -166,14 +166,14 @@ gchar   *g_dir_make_tmp       (const gchar  *tmpl,
 
 gchar   *g_build_path         (const gchar *separator,
                                const gchar *first_element,
-                               ...)  G_GNUC_NULL_TERMINATED;
+                               ...)  ;
 
 gchar   *g_build_pathv        (const gchar  *separator,
                                gchar       **args) ;
 
 
 gchar   *g_build_filename     (const gchar *first_element,
-                               ...)  G_GNUC_NULL_TERMINATED;
+                               ...)  ;
 
 gchar   *g_build_filenamev    (gchar      **args) ;
 
@@ -190,7 +190,7 @@ gint     g_mkdir_with_parents (const gchar *pathname,
  * the search path separator is the semicolon. Note that also the
  * (forward) slash works as directory separator.
  */
-#define G_IS_DIR_SEPARATOR(c) ((c) == G_DIR_SEPARATOR || (c) == '/')
+#define G_IS_DIR_SEPARATOR(c) ((c) == G_DIR_SEPARATOR | (c) == '/')
 
 #else  /* !G_OS_WIN32 */
 
@@ -203,9 +203,9 @@ gboolean     g_path_is_absolute (const gchar *file_name);
 
 const gchar *g_path_skip_root   (const gchar *file_name);
 
-_FOR(g_path_get_basename)
+
 const gchar *g_basename         (const gchar *file_name);
-#define g_dirname g_path_get_dirname _MACRO_IN_2_26_FOR(g_path_get_dirname)
+#define g_dirname g_path_get_dirname 
 
 
 gchar *g_get_current_dir   (void);

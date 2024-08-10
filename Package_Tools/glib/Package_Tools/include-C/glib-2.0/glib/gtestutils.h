@@ -297,7 +297,7 @@ void    g_test_maximized_result         (double          maximized_quantity,
 
 void    g_test_init                     (int            *argc,
                                          char         ***argv,
-                                         ...) G_GNUC_NULL_TERMINATED;
+                                         ...) ;
 
 /**
  * G_TEST_OPTION_ISOLATE_DIRS:
@@ -753,13 +753,13 @@ typedef enum
 
 gchar * g_test_build_filename                    (GTestFileType   file_type,
                                                   const gchar    *first_path,
-                                                  ...) G_GNUC_NULL_TERMINATED;
+                                                  ...) ;
 
 const gchar *g_test_get_dir                      (GTestFileType   file_type);
 
 const gchar *g_test_get_filename                 (GTestFileType   file_type,
                                                   const gchar    *first_path,
-                                                  ...) G_GNUC_NULL_TERMINATED;
+                                                  ...) ;
 
 #define g_test_assert_expected_messages() g_test_assert_expected_messages_internal (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC)
 

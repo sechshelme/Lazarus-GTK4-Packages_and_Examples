@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 556
+  Left = 534
   Height = 240
-  Top = 192
+  Top = 186
   Width = 320
   Caption = 'Form1'
   ClientHeight = 240
@@ -64,9 +64,18 @@ object Form1: TForm1
     Anchors = [akTop, akLeft, akRight]
     TabOrder = 5
   end
+  object Button6: TButton
+    Left = 208
+    Height = 25
+    Top = 168
+    Width = 75
+    Caption = 'info'
+    TabOrder = 6
+    OnClick = Button6Click
+  end
   object Timer1: TTimer
     Enabled = False
-    Interval = 100
+    Interval = 200
     OnTimer = Timer1Timer
     Left = 224
     Top = 96

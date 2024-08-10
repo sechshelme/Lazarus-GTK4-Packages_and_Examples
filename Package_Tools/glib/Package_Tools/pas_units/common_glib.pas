@@ -44,6 +44,15 @@ const
   GLIB_MINOR_VERSION = 80;
   GLIB_MICRO_VERSION = 0;
 
+
+  {$IFDEF Linux}
+  G_DIR_SEPARATOR= '/';
+  {$ENDIF}
+  {$IFDEF Windows}
+  G_DIR_SEPARATOR= '';
+  {$ENDIF}
+
+
 type
   Tgint8 = int8;
   Tguint8 = uint8;

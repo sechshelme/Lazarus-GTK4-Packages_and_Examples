@@ -20,6 +20,7 @@ type
     Button3: TButton;
     Button4: TButton;
     Button5: TButton;
+    Button6: TButton;
     Timer1: TTimer;
     TrackBar1: TTrackBar;
     procedure Button1Click(Sender: TObject);
@@ -27,6 +28,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
@@ -58,6 +60,7 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+   Timer1.Enabled := True;
   st := TStreamer.Create('filesrc location=../test.mp3 !  mpegaudioparse ! mpg123audiodec ! audioconvert ! audioresample ! pulsesink');
 end;
 
@@ -68,15 +71,19 @@ end;
 
 procedure TForm1.Timer1Timer(Sender: TObject);
 var
-  current: Integer;
+  d, p: Integer;
   oldChange: TNotifyEvent;
 begin
-  current := st.GetPosition;
+
   oldChange:=TrackBar1.OnChange;
   TrackBar1.OnChange:=nil;
-  TrackBar1.Max:=st.GetDuration;
-  TrackBar1.Position:=current;
+  p:=st.GetPosition;
+  d:=st.GetDuration;
+  TrackBar1.Max:=d;
+  TrackBar1.Position:=p;
   TrackBar1.OnChange:=oldChange;
+  WriteLn('dur: ',d,'   pos: ', p,  '  state: ', st.getState);
+
 end;
 
 procedure TForm1.TrackBar1Change(Sender: TObject);
@@ -113,7 +120,11 @@ procedure TForm1.Button5Click(Sender: TObject);
 begin
   st.Start;
   TrackBar1.Position:=0;
-  Timer1.Enabled := True;
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+begin
+   st.printInfo;
 end;
 
 end.

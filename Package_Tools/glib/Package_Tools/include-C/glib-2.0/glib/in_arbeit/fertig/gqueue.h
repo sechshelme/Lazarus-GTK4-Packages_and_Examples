@@ -67,7 +67,7 @@ struct _GQueue
  *
  * Since: 2.14
  */
-#define G_QUEUE_INIT { NULL, NULL, 0 }
+//#define G_QUEUE_INIT { NULL, NULL, 0 }
 
 /* Queues
  */

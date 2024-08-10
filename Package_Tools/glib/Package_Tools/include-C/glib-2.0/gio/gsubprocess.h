@@ -44,7 +44,7 @@ GIO_AVAILABLE_IN_2_40
 GSubprocess *    g_subprocess_new                       (GSubprocessFlags        flags,
                                                          GError                **error,
                                                          const gchar            *argv0,
-                                                         ...) G_GNUC_NULL_TERMINATED;
+                                                         ...) ;
 GIO_AVAILABLE_IN_2_40
 GSubprocess *    g_subprocess_newv                      (const gchar * const  *argv,
                                                          GSubprocessFlags      flags,

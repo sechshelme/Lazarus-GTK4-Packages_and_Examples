@@ -302,7 +302,7 @@
 #endif
 
 /**
- * G_GNUC_NULL_TERMINATED:
+ * :
  *
  * Expands to the GNU C `sentinel` function attribute if the compiler is gcc.
  * This function attribute only applies to variadic functions and instructs
@@ -313,7 +313,7 @@
  *
  * |[<!-- language="C" -->
  * gchar *g_strconcat (const gchar *string1,
- *                     ...) G_GNUC_NULL_TERMINATED;
+ *                     ...) ;
  * ]|
  *
  * See the [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-sentinel-function-attribute) for more details.
@@ -321,9 +321,9 @@
  * Since: 2.8
  */
 #if g_macro__has_attribute(__sentinel__)
-#define G_GNUC_NULL_TERMINATED __attribute__((__sentinel__))
+#define  __attribute__((__sentinel__))
 #else
-#define G_GNUC_NULL_TERMINATED
+#define 
 #endif
 
 /*

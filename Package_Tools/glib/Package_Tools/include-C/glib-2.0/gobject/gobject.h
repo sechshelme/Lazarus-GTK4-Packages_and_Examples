@@ -454,19 +454,19 @@ GObject*    g_object_new_valist               (GType           object_type,
 GOBJECT_AVAILABLE_IN_ALL
 void	    g_object_set                      (gpointer	       object,
 					       const gchar    *first_property_name,
-					       ...) G_GNUC_NULL_TERMINATED;
+					       ...) ;
 GOBJECT_AVAILABLE_IN_ALL
 void        g_object_get                      (gpointer        object,
 					       const gchar    *first_property_name,
-					       ...) G_GNUC_NULL_TERMINATED;
+					       ...) ;
 GOBJECT_AVAILABLE_IN_ALL
 gpointer    g_object_connect                  (gpointer	       object,
 					       const gchar    *signal_spec,
-					       ...) G_GNUC_NULL_TERMINATED;
+					       ...) ;
 GOBJECT_AVAILABLE_IN_ALL
 void	    g_object_disconnect               (gpointer	       object,
 					       const gchar    *signal_spec,
-					       ...) G_GNUC_NULL_TERMINATED;
+					       ...) ;
 GOBJECT_AVAILABLE_IN_2_54
 void        g_object_setv                     (GObject        *object,
                                                guint           n_properties,
