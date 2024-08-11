@@ -1,92 +1,16 @@
 object Form1: TForm1
   Left = 534
-  Height = 240
+  Height = 111
   Top = 186
-  Width = 320
+  Width = 232
   Caption = 'Form1'
-  ClientHeight = 240
-  ClientWidth = 320
   LCLVersion = '3.99.0.0'
   OnCreate = FormCreate
-  OnDestroy = FormDestroy
-  object Button1: TButton
-    Left = 56
-    Height = 25
-    Top = 48
-    Width = 75
-    Caption = 'play'
-    TabOrder = 0
-    OnClick = Button1Click
-  end
-  object Button2: TButton
-    Left = 152
-    Height = 25
-    Top = 48
-    Width = 75
-    Caption = 'pause'
-    TabOrder = 1
-    OnClick = Button2Click
-  end
-  object Button3: TButton
-    Left = 56
-    Height = 25
-    Top = 120
-    Width = 75
-    Caption = 'spring'
-    TabOrder = 2
-    OnClick = Button3Click
-  end
-  object Button4: TButton
-    Left = 48
-    Height = 25
-    Top = 168
-    Width = 75
-    Caption = 'stop'
-    TabOrder = 3
-    OnClick = Button4Click
-  end
-  object Button5: TButton
-    Left = 36
-    Height = 25
-    Top = 8
-    Width = 75
-    Caption = 'Start'
-    TabOrder = 4
-    OnClick = Button5Click
-  end
-  object TrackBar1: TTrackBar
-    Left = 23
-    Height = 37
-    Top = 192
-    Width = 281
-    Position = 0
-    OnChange = TrackBar1Change
-    Anchors = [akTop, akLeft, akRight]
-    TabOrder = 5
-  end
-  object Button6: TButton
-    Left = 208
-    Height = 25
-    Top = 168
-    Width = 75
-    Caption = 'info'
-    TabOrder = 6
-    OnClick = Button6Click
-  end
-  object Button7: TButton
-    Left = 252
-    Height = 25
-    Top = 37
-    Width = 75
-    Caption = 'Button7'
-    TabOrder = 7
-    OnClick = Button7Click
-  end
   object Timer1: TTimer
     Enabled = False
     Interval = 200
     OnTimer = Timer1Timer
-    Left = 224
-    Top = 96
+    Left = 64
+    Top = 32
   end
 end

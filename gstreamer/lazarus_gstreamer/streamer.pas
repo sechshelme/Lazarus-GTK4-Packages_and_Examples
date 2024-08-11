@@ -66,7 +66,7 @@ var
   bus: PGstBus;
 begin
 //  fsong := 'filesrc location=../test.mp3 !  mpegaudioparse ! mpg123audiodec ! audioconvert ! audioresample ! autoaudiosink';
-  fsong := 'filesrc location=../test.mp3 !  mpegaudioparse ! mpg123audiodec ! audioconvert ! audioresample ! autoaudiosink ! volume volume=0.5';
+//  fsong := 'filesrc location=../test.mp3 !  mpegaudioparse ! mpg123audiodec ! audioconvert ! audioresample ! autoaudiosink ! volume volume=0.5';
 
   if pipeline = nil then begin
     pipeline := gst_parse_launch(PChar(fsong), nil);
