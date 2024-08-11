@@ -136,10 +136,5 @@ int main (int argc, char **argv)
 
   return status;
 }
-g_access
-
-alloca
-
-g_chdir
 
 

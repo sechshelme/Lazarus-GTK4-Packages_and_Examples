@@ -21,6 +21,7 @@ type
     Button4: TButton;
     Button5: TButton;
     Button6: TButton;
+    Button7: TButton;
     Timer1: TTimer;
     TrackBar1: TTrackBar;
     procedure Button1Click(Sender: TObject);
@@ -29,6 +30,7 @@ type
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
@@ -125,6 +127,11 @@ end;
 procedure TForm1.Button6Click(Sender: TObject);
 begin
    st.printInfo;
+end;
+
+procedure TForm1.Button7Click(Sender: TObject);
+begin
+  st.SetVolume(0.1);
 end;
 
 end.

@@ -48,12 +48,10 @@ gboolean g_pattern_spec_match (GPatternSpec *pspec,
 
 gboolean g_pattern_spec_match_string (GPatternSpec *pspec,
                                       const gchar *string);
-_IN_2_70_FOR (g_pattern_spec_match)
 gboolean      g_pattern_match          (GPatternSpec *pspec,
 					guint         string_length,
 					const gchar  *string,
 					const gchar  *string_reversed);
-_IN_2_70_FOR (g_pattern_spec_match_string)
 gboolean      g_pattern_match_string   (GPatternSpec *pspec,
 					const gchar  *string);
 

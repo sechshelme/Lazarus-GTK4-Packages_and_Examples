@@ -37,28 +37,28 @@
 
 
 const gchar *g_strip_context (const gchar *msgid,
-                              const gchar *msgval) G_GNUC_FORMAT(1);
+                              const gchar *msgval) ;
 
 
 const gchar *g_dgettext      (const gchar *domain,
-                              const gchar *msgid) G_GNUC_FORMAT(2);
+                              const gchar *msgid) ;
 
 const gchar *g_dcgettext     (const gchar *domain,
                               const gchar *msgid,
-                              gint         category) G_GNUC_FORMAT(2);
+                              gint         category) ;
 
 const gchar *g_dngettext     (const gchar *domain,
                               const gchar *msgid,
                               const gchar *msgid_plural,
-                              gulong       n) G_GNUC_FORMAT(3);
+                              gulong       n) ;
 
 const gchar *g_dpgettext     (const gchar *domain,
                               const gchar *msgctxtid,
-                              gsize        msgidoffset) G_GNUC_FORMAT(2);
+                              gsize        msgidoffset) ;
 
 const gchar *g_dpgettext2    (const gchar *domain,
                               const gchar *context,
-                              const gchar *msgid) G_GNUC_FORMAT(3);
+                              const gchar *msgid) ;
 
 
 

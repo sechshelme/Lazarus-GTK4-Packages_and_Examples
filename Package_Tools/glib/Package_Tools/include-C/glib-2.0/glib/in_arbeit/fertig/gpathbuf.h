@@ -37,8 +37,8 @@ struct _GPathBuf
  *
  * Since: 2.76
  */
-#define G_PATH_BUF_INIT { { NULL, } } \
-  GLIB_AVAILABLE_MACRO_IN_2_76
+#define G_PATH_BUF_INIT  NULL
+
 
 
 GPathBuf *    g_path_buf_new            (void);

@@ -14,9 +14,32 @@ uses
 
   galloca,                 // nicht auflösbar
   gslice,                  // nicht auflösbar
+  grcbox,                  // nicht auflösbar
   gthread,                 //                   doppelter gtheread.h von deprecated
   gallocator,
   gmem,                    // io. -> gallocator
+  gchecksum,               // io.
+  ghmac,                   // io. -> gchecksum
+  gnode,                   // io.
+  gtree,                   // io. -> gnode
+  gmappedfile,             // io.
+  gbase64,                 // io.
+  ggettext,                // io.
+  genviron,                // io.
+  gpathbuf,                // io.
+  gpattern,                // io.
+  gstringchunk,            // io.
+  gsequence,               // io.
+  gfileutils,              // io.
+  ghook,                   // io.
+  gstdio,                  // io.
+  grefcount,               // io.
+  gasyncqueue,             // io.
+  gbitlock,                // io.
+  gbacktrace,              // io.
+  gbytes,                  // io.
+  grand,                   // io.
+  gthreadpool,             // io.
   gconvert,                // io.
   gutils,                  // io.
   gdate,                   // io.
@@ -46,18 +69,7 @@ uses
   gscanner,                // io. -> gdataset, ghash
   giochannel,              //  -> gmain, gstring, gunicode, gconvert    ( Komischer Record )
 
-  gnode,                   // io.
-  gsequence,               // io.
-  gfileutils,              // io.
-  ghook,                   // io.
-  gtree,                   // io. -> gnode
 
-  gstdio,                  // io.
-  grefcount,               // io.
-  gasyncqueue,             // io.
-
-
-  gbitlock,
 
 
 
@@ -89,6 +101,7 @@ timer:=g_timer_new;
   ReadLn;
   g_timer_stop(timer);
 
+  glib2.g_rc_box_alloc
 
 
 time:= g_timer_elapsed(timer, @us);
