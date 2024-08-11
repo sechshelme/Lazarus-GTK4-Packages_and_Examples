@@ -22,6 +22,8 @@ uses
   ghmac,                   // io. -> gchecksum
   gnode,                   // io.
   gtree,                   // io. -> gnode
+  gcache,                  // io.
+  grel,                    // io.
   gmappedfile,             // io.
   gbase64,                 // io.
   ggettext,                // io.
@@ -46,17 +48,30 @@ uses
   gdataset,                // io.
   gspawn,                  // io.
   goption,                 // io.
+  gprintf,                 // io.
+  gversion,                // io.
+  gdir,                    // io.
+  grefstring,              // io.
+  gtrashstack,             // io.
+  gcharset,                // io.
+  gprimes,                 // io.
+  gqsort,                  // io.
+  gshell,                  // io.
+  ghostutils,              // io.
+  guuid,                   // io.
   gunicode,                // io.
   gstring,                 // io. -> unicode
   gstrfuncs,               // io.                                Makros entfernt
+  gstrvbuilder,            // io. -> gstrfuncs
   gatomic,                 // io.
   gtimezone,               // io.
   gdatetime,               // io. -> gtimezone
   gbookmarkfile,           // io. -> gdatetime
   gtimer,                  // io.
   glist,                   // io.
-  gqueue,                  // io. -> glist
   gslist,                  // io.
+  gqueue,                  // io. -> glist
+  gcompletion,             // io. -> glist
   gpoll,                   // io.
   gmarkup,                 // io. -> gslist
   gmain,                   // io. -> gslist, gthread, gpoll
@@ -68,6 +83,10 @@ uses
   guri,                    // io. -> ghash
   gscanner,                // io. -> gdataset, ghash
   giochannel,              //  -> gmain, gstring, gunicode, gconvert    ( Komischer Record )
+
+
+//  gmain_dep,
+
 
 
 
@@ -101,7 +120,7 @@ timer:=g_timer_new;
   ReadLn;
   g_timer_stop(timer);
 
-  glib2.g_rc_box_alloc
+  glib2.GLIB_CHECK_VERSION
 
 
 time:= g_timer_elapsed(timer, @us);

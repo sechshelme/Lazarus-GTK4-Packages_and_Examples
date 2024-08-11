@@ -43,38 +43,38 @@ struct _GTuples
   guint len;
 };
 
-_IN_2_26
+
 GRelation* g_relation_new     (gint         fields);
-_IN_2_26
+
 void       g_relation_destroy (GRelation   *relation);
-_IN_2_26
+
 void       g_relation_index   (GRelation   *relation,
                                gint         field,
                                GHashFunc    hash_func,
                                GEqualFunc   key_equal_func);
-_IN_2_26
+
 void       g_relation_insert  (GRelation   *relation,
                                ...);
-_IN_2_26
+
 gint       g_relation_delete  (GRelation   *relation,
                                gconstpointer  key,
                                gint         field);
-_IN_2_26
+
 GTuples*   g_relation_select  (GRelation   *relation,
                                gconstpointer  key,
                                gint         field);
-_IN_2_26
+
 gint       g_relation_count   (GRelation   *relation,
                                gconstpointer  key,
                                gint         field);
-_IN_2_26
+
 gboolean   g_relation_exists  (GRelation   *relation,
                                ...);
-_IN_2_26
+
 void       g_relation_print   (GRelation   *relation);
-_IN_2_26
+
 void       g_tuples_destroy   (GTuples     *tuples);
-_IN_2_26
+
 gpointer   g_tuples_index     (GTuples     *tuples,
                                gint         index_,
                                gint         field);

@@ -35,11 +35,11 @@
 
 
 
-typedef struct _GCache          GCache _TYPE_IN_2_26_FOR(GHashTable);
+//typedef struct _GCache       ;
 
-typedef gpointer        (*GCacheNewFunc)        (gpointer       key) _TYPE_IN_2_26;
-typedef gpointer        (*GCacheDupFunc)        (gpointer       value) _TYPE_IN_2_26;
-typedef void            (*GCacheDestroyFunc)    (gpointer       value) _TYPE_IN_2_26;
+typedef gpointer        (*GCacheNewFunc)        (gpointer       key) ;
+typedef gpointer        (*GCacheDupFunc)        (gpointer       value);
+typedef void            (*GCacheDestroyFunc)    (gpointer       value);
 
 
 

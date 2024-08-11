@@ -24,34 +24,33 @@
  * GLib at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __G_VERSION_H__
-#define __G_VERSION_H__
+#ifndef __G_TRASH_STACK_H__
+#define __G_TRASH_STACK_H__
 
 #if !defined (__GLIB_H_INSIDE__) && !defined (GLIB_COMPILATION)
 #error "Only <glib.h> can be included directly."
 #endif
 
-#include <glib/gtypes.h>
+#include <glib/gutils.h>
 
 
 
- const guint glib_major_version;
- const guint glib_minor_version;
- const guint glib_micro_version;
- const guint glib_interface_age;
- const guint glib_binary_age;
 
 
-const gchar * glib_check_version (guint required_major,
-                                  guint required_minor,
-                                  guint required_micro);
+typedef struct _GTrashStack GTrashStack ;
+struct _GTrashStack
+{
+  GTrashStack *next;
+} ;
 
-#define GLIB_CHECK_VERSION(major,minor,micro)    \
-    (GLIB_MAJOR_VERSION > (major) || \
-     (GLIB_MAJOR_VERSION == (major) && GLIB_MINOR_VERSION > (minor)) || \
-     (GLIB_MAJOR_VERSION == (major) && GLIB_MINOR_VERSION == (minor) && \
-      GLIB_MICRO_VERSION >= (micro)))
+void      g_trash_stack_push   (GTrashStack **stack_p,
+                                gpointer      data_p);
+gpointer  g_trash_stack_pop    (GTrashStack **stack_p);
+gpointer  g_trash_stack_peek   (GTrashStack **stack_p);
+guint     g_trash_stack_height (GTrashStack **stack_p);
 
 
 
-#endif /*  __G_VERSION_H__ */
+
+
+#endif /* __G_TRASH_STACK_H_ */

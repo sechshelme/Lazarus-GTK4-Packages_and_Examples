@@ -32,27 +32,27 @@ gint                  g_printf    (gchar const *format,
 
 gint                  g_fprintf   (FILE        *file,
 				   gchar const *format,
-				   ...) G_GNUC_PRINTF (2, 3);
+				   ...);
 
 gint                  g_sprintf   (gchar       *string,
 				   gchar const *format,
-				   ...) G_GNUC_PRINTF (2, 3);
+				   ...);
 
 
 gint                  g_vprintf   (gchar const *format,
-                                   va_list      args) G_GNUC_PRINTF(1, 0);
+                                   va_list      args) ;
 
 gint                  g_vfprintf  (FILE        *file,
 				   gchar const *format,
-				   va_list      args) G_GNUC_PRINTF(2, 0);
+				   va_list      args) ;
 
 gint                  g_vsprintf  (gchar       *string,
 				   gchar const *format,
-				   va_list      args) G_GNUC_PRINTF(2, 0);
+				   va_list      args) ;
 
 gint                  g_vasprintf (gchar      **string,
 				   gchar const *format,
-				   va_list      args) G_GNUC_PRINTF(2, 0);
+				   va_list      args) ;
 
 
 
