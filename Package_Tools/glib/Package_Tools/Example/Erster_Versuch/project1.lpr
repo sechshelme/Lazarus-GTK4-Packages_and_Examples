@@ -88,27 +88,23 @@ uses
   gmain_deprecated,        // io.
 
 
+  // --- gobject
+
+//      gtype,
+//  gvalue,
 
 
-
-
-  math;
-
-// --- gobject
 
 // --- gio
-//gaction;
+//gaction.
+
+  math;
 
 var
   timer: PGTimer;
   us: Tgulong;
   time: Tgdouble;
-
-  t:TGScannerConfig;
 begin
-
-  WriteLn('TGScannerConfig: ', SizeOf(  TGScannerConfig));
-  WriteLn('TGScannerConfig: ', PtrUInt(@t.padding_dummy)- PtrUInt(@t));
 
   WriteLn(g_ascii_isalnum('1'));
   WriteLn(g_ascii_isalnum('a'));

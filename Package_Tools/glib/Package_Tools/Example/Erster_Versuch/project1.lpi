@@ -42,7 +42,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="../../pas_units/gio;../../pas_units;../../pas_units/glib;../../pas_units/glib/deprecated"/>
+      <OtherUnitFiles Value="../../pas_units/gio;../../pas_units;../../pas_units/glib;../../pas_units/glib/deprecated;../../pas_units/gobject"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
