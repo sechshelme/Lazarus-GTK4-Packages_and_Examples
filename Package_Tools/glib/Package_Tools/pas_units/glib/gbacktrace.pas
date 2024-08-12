@@ -24,7 +24,7 @@ function raise_(__sig: longint): longint; cdecl; external libglib2 Name 'raise';
 
 function G_BREAKPOINT: longint;
 begin
-  Result := raise_(SIGTRAP);
+//  Result := raise_(SIGTRAP);
 end;
 
 

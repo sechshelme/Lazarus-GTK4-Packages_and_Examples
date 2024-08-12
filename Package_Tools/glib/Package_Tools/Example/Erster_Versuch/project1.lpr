@@ -84,8 +84,8 @@ uses
   gscanner,                // io. -> gdataset, ghash
   giochannel,              //  -> gmain, gstring, gunicode, gconvert    ( Komischer Record )
 
-
-//  gmain_dep,
+  gthread_deprecated,      // io. -> gmain, gpoll
+  gmain_deprecated,        // io.
 
 
 
@@ -120,7 +120,7 @@ timer:=g_timer_new;
   ReadLn;
   g_timer_stop(timer);
 
-  glib2.GLIB_CHECK_VERSION
+//  glib2.GLIB_CHECK_VERSION
 
 
 time:= g_timer_elapsed(timer, @us);

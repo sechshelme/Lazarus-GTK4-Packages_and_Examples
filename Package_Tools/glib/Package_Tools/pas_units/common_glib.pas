@@ -46,10 +46,10 @@ const
 
 
   {$IFDEF Linux}
-  G_DIR_SEPARATOR= '/';
+  G_DIR_SEPARATOR = '/';
   {$ENDIF}
   {$IFDEF Windows}
-  G_DIR_SEPARATOR= '';
+  G_DIR_SEPARATOR = '';
   {$ENDIF}
 
 
@@ -89,9 +89,9 @@ type
 
   // no GLIB
 
-  TFILE=record //  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h
-      end;
-  PFILE=^TFILE;
+  TFILE = record //  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h
+  end;
+  PFILE = ^TFILE;
 
   Tdouble = double;
 
@@ -106,9 +106,23 @@ type
   Tva_list = Pointer;
   Pva_list = ^Tva_list;
 
-  Tstat=record  // /usr/include/x86_64-linux-gnu/bits/struct_stat.h
-      end;
-  PTstat=^Tstat;
+  Tstat = record  // /usr/include/x86_64-linux-gnu/bits/struct_stat.h
+  end;
+  PTstat = ^Tstat;
+
+const
+  __SIZEOF_PTHREAD_MUTEX_T = 40;
+
+type
+  Ppthread_mutex_t = ^Tpthread_mutex_t;   // /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h
+  Tpthread_mutex_t = record
+    case longint of
+      //        0 : ( __data : T_pthread_mutex_s );
+      1: (__size: array[0..__SIZEOF_PTHREAD_MUTEX_T - 1] of char);
+      2: (__align: culong);
+  end;
+
+  Tpthread_t = culong;  // /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h
 
 implementation
 

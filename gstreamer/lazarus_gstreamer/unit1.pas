@@ -42,7 +42,7 @@ begin
       Width := self.ClientWidth;
       Top := 100 * i;
       Anchors := [akLeft, akTop, akRight];
-      CreateSound('filesrc location=../test.mp3 !  mpegaudioparse ! mpg123audiodec ! audioconvert ! audioresample ! autoaudiosink ! volume volume=0.5');
+      CreateSound('filesrc location=../test.mp3 !  mpegaudioparse ! mpg123audiodec ! audioconvert ! audioresample ! autoaudiosink ! volume volume=0.1');
     end;
   end;
   Timer1.Enabled := True;

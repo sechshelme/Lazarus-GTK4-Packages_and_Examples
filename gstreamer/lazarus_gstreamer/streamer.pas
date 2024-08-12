@@ -139,8 +139,10 @@ begin
 end;
 
 procedure TStreamer.SetVolume(vol: gdouble);
+var v:Int64=5;
 begin
-  g_object_set(customData.volume, 'volume', vol, nil);
+
+  g_object_set(customData.volume, 'volume', @v, nil);
 //  g_object_set(customData.volume, 'mute', gTRUE, nil);
   WriteLn('volume: ',vol:4:2);
 end;

@@ -33,10 +33,6 @@
 
 #include <glib/gthread.h>
 
-
-
-
-
 typedef enum
 {
   G_THREAD_PRIORITY_LOW,
@@ -54,8 +50,8 @@ struct  _GThread
   GThreadPriority priority;
 };
 
-typedef struct _GThreadFunctions GThreadFunctions ;
-struct _GThreadFunctions
+//typedef struct _GThreadFunctions;
+struct GThreadFunctions
 {
   GMutex*  (*mutex_new)           (void);
   void     (*mutex_lock)          (GMutex               *mutex);
@@ -91,19 +87,17 @@ struct _GThreadFunctions
   void      (*thread_self)        (gpointer              thread);
   gboolean  (*thread_equal)       (gpointer              thread1,
                                    gpointer              thread2);
-} ;
+};
 
- GThreadFunctions       g_thread_functions_for_glib_use;
- gboolean               g_thread_use_default_impl;
+GThreadFunctions       g_thread_functions_for_glib_use;
+gboolean               g_thread_use_default_impl;
 
- guint64   (*g_thread_gettime) (void);
-
+guint64   (*g_thread_gettime) (void);
 
 GThread *g_thread_create       (GThreadFunc       func,
                                 gpointer          data,
                                 gboolean          joinable,
                                 GError          **error);
-
 
 GThread *g_thread_create_full  (GThreadFunc       func,
                                 gpointer          data,
@@ -113,10 +107,8 @@ GThread *g_thread_create_full  (GThreadFunc       func,
                                 GThreadPriority   priority,
                                 GError          **error);
 
-
 void     g_thread_set_priority (GThread          *thread,
                                 GThreadPriority   priority);
-
 
 void     g_thread_foreach      (GFunc             thread_func,
                                 gpointer          user_data);
@@ -126,12 +118,12 @@ void     g_thread_foreach      (GFunc             thread_func,
 #include <pthread.h>
 #endif
 
-#define g_static_mutex_get_mutex g_static_mutex_get_mutex_impl 
-#ifndef G_OS_WIN32
-//#define G_STATIC_MUTEX_INIT { NULL, PTHREAD_MUTEX_INITIALIZER }
-#else
-//#define G_STATIC_MUTEX_INIT { NULL } 
-#endif
+//#define g_static_mutex_get_mutex g_static_mutex_get_mutex_impl GLIB_DEPRECATED_MACRO_IN_2_32
+//#ifndef G_OS_WIN32
+//#define G_STATIC_MUTEX_INIT { NULL, PTHREAD_MUTEX_INITIALIZER } GLIB_DEPRECATED_MACRO_IN_2_32_FOR(g_mutex_init)
+//#else
+//#define G_STATIC_MUTEX_INIT { NULL } GLIB_DEPRECATED_MACRO_IN_2_32_FOR(g_mutex_init)
+//#endif
 typedef struct
 {
   GMutex *mutex;
@@ -141,7 +133,7 @@ typedef struct
   pthread_mutex_t unused;
 # endif /* !G_OS_WIN32 */
 #endif /* !__GI_SCANNER__ */
-} GStaticMutex ;
+}GStaticMutex  ;
 
 #define g_static_mutex_lock(mutex) \
     g_mutex_lock (g_static_mutex_get_mutex (mutex)) 
@@ -154,8 +146,8 @@ void    g_static_mutex_init           (GStaticMutex *mutex);
 void    g_static_mutex_free           (GStaticMutex *mutex);
 GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
 
-//typedef struct _GStaticRecMutex GStaticRecMutex
-typedef struct 
+typedef struct _GStaticRecMutex GStaticRecMutex ;
+struct _GStaticRecMutex
 {
   /*< private >*/
   GStaticMutex mutex;
@@ -172,9 +164,9 @@ typedef struct
     gdouble dummy;
   } unused;
 #endif /* !__GI_SCANNER__ */
-} GStaticRecMute ;
+} ;
 
-//#define G_STATIC_REC_MUTEX_INIT { G_STATIC_MUTEX_INIT, 0, { 0 } }
+//#define G_STATIC_REC_MUTEX_INIT { G_STATIC_MUTEX_INIT, 0, { 0 } } GLIB_DEPRECATED_MACRO_IN_2_32_FOR(g_rec_mutex_init)
 void     g_static_rec_mutex_init        (GStaticRecMutex *mutex);
 
 void     g_static_rec_mutex_lock        (GStaticRecMutex *mutex);
@@ -203,7 +195,7 @@ struct _GStaticRWLock
   guint want_to_write;
 } ;
 
-//#define G_STATIC_RW_LOCK_INIT { G_STATIC_MUTEX_INIT, NULL, NULL, 0, FALSE, 0, 0 } 
+//#define G_STATIC_RW_LOCK_INIT { G_STATIC_MUTEX_INIT, NULL, NULL, 0, FALSE, 0, 0 }
 
 void      g_static_rw_lock_init           (GStaticRWLock *lock);
 
@@ -228,9 +220,9 @@ struct _GStaticPrivate
 {
   /*< private >*/
   guint index;
-};
+} ;
 
-//#define G_STATIC_PRIVATE_INIT { 0 } 
+//#define G_STATIC_PRIVATE_INIT { 0 } GLIB_DEPRECATED_MACRO_IN_2_32_FOR(G_PRIVATE_INIT)
 void     g_static_private_init           (GStaticPrivate *private_key);
 
 gpointer g_static_private_get            (GStaticPrivate *private_key);
@@ -241,7 +233,7 @@ void     g_static_private_set            (GStaticPrivate *private_key,
 
 void     g_static_private_free           (GStaticPrivate *private_key);
 
-gboolean g_once_init_enter_impl          ( gsize *location);
+gboolean g_once_init_enter_impl          (gsize *location);
 
 void     g_thread_init                   (gpointer vtable);
 void    g_thread_init_with_errorcheck_mutexes (gpointer vtable);
@@ -250,7 +242,7 @@ gboolean g_thread_get_initialized        (void);
 
  gboolean g_threads_got_initialized;
 
-//#define g_thread_supported()     (1) _MACRO_IN_2_32
+//#define g_thread_supported()     (1) GLIB_DEPRECATED_MACRO_IN_2_32
 
 GMutex *        g_mutex_new             (void);
 void            g_mutex_free            (GMutex *mutex);
@@ -259,7 +251,6 @@ void            g_cond_free             (GCond  *cond);
 gboolean        g_cond_timed_wait       (GCond          *cond,
                                          GMutex         *mutex,
                                          GTimeVal       *abs_time);
-
 
 
 #endif /* __G_DEPRECATED_THREAD_H__ */
