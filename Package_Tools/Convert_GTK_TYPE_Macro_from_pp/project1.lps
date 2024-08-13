@@ -21,8 +21,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="77"/>
         <CursorPos X="61" Y="93"/>
         <UsageCount Value="29"/>
         <Loaded Value="True"/>
@@ -32,9 +30,10 @@
         <Filename Value="g_declare_tools.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="G_DECLARE_Tools"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="36"/>
-        <CursorPos Y="114"/>
+        <TopLine Value="17"/>
+        <CursorPos X="116" Y="33"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit>
@@ -56,11 +55,7 @@
         <UsageCount Value="11"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="native_tools.pas"/>
-        <Caret Line="70" Column="12" TopLine="52"/>
-      </Position>
+    <JumpHistory HistoryIndex="28">
       <Position>
         <Filename Value="native_tools.pas"/>
         <Caret Line="82" Column="12" TopLine="60"/>

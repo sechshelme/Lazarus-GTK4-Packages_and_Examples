@@ -90,13 +90,13 @@ uses
 
   // --- gobject
 
-  gtype,                   // Viele Makros entfern
+  gtype,                   // io.
   gvalue,                  // io.
 
-  gparam,
-  gclosure,
-  gsignal,
-  gobject,
+  gobject,                 // io.
+  gparam,                  // io.
+  gclosure,                // io.
+  gsignal,                 // io. -gclosure
 
 
 
@@ -119,10 +119,14 @@ begin
 timer:=g_timer_new;
   g_timer_start(timer);
   ReadLn;
+
+
   g_timer_stop(timer);
 
-//  glib2.GLIB_CHECK_VERSION
+
 //glib2.G_OBJECT_WARN_INVALID_PROPERTY_ID;
+//glib2.private_g_type_check_class_is_a;
+// private_g_type_check_instance_cast
 
 
 time:= g_timer_elapsed(timer, @us);

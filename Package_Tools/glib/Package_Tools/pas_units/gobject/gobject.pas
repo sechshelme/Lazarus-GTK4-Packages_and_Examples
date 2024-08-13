@@ -202,6 +202,9 @@ end;
 
 function G_OBJECT_GET_CLASS(obj: Tgpointer): PGObjectClass;
 begin
+
+  G_OBJECT_GET_CLASS:=PGObjectClass(G_TYPE_INSTANCE_GET_CLASS(obj,G_TYPE_OBJECT));
+
 //  G_OBJECT_GET_CLASS:=PGObjectClass(G_TYPE_INSTANCE_GET_CLASS(anObject,G_TYPE_OBJECT));
 
 //  Result:=PGObjectClass(obj)^.g_type_class;

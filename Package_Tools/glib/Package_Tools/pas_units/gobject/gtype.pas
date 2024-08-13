@@ -10,7 +10,7 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
-  // Viele Makros entfernt
+  // unwichtige Makros entfernt
 type
   PGType = ^TGType;
   TGType = Tguintptr;
@@ -46,50 +46,11 @@ const
   G_TYPE_FUNDAMENTAL_SHIFT = 2;
   G_TYPE_FUNDAMENTAL_MAX = 255 shl G_TYPE_FUNDAMENTAL_SHIFT;
 
-function G_TYPE_INVALID: TGType;
-function G_TYPE_NONE: TGType;
-function G_TYPE_INTERFACE: TGType;
-function G_TYPE_CHAR: TGType;
-function G_TYPE_UCHAR: TGType;
-function G_TYPE_BOOLEAN: TGType;
-function G_TYPE_INT: TGType;
-function G_TYPE_UINT: TGType;
-function G_TYPE_LONG: TGType;
-function G_TYPE_ULONG: TGType;
-function G_TYPE_INT64: TGType;
-function G_TYPE_UINT64: TGType;
-function G_TYPE_ENUM: TGType;
-function G_TYPE_FLAGS: TGType;
-function G_TYPE_FLOAT: TGType;
-function G_TYPE_DOUBLE: TGType;
-function G_TYPE_STRING: TGType;
-function G_TYPE_POINTER: TGType;
-function G_TYPE_BOXED: TGType;
-function G_TYPE_PARAM: TGType;
-function G_TYPE_OBJECT: TGType;
-function G_TYPE_VARIANT: TGType;
-function G_TYPE_MAKE_FUNDAMENTAL(x: longint): TGType;
-
-const
   G_TYPE_RESERVED_GLIB_FIRST = 22;
   G_TYPE_RESERVED_GLIB_LAST = 31;
   G_TYPE_RESERVED_BSE_FIRST = 32;
   G_TYPE_RESERVED_BSE_LAST = 48;
   G_TYPE_RESERVED_USER_FIRST = 49;
-
-//function G_TYPE_IS_FUNDAMENTAL(_type: TGType): Tgboolean;
-//function G_TYPE_IS_DERIVED(_type: TGType): Tgboolean;
-//function G_TYPE_IS_INTERFACE(_type: TGType): Tgboolean;
-//function G_TYPE_IS_CLASSED(_type: TGType): Tgboolean;
-//function G_TYPE_IS_INSTANTIATABLE(_type: TGType): Tgboolean;
-//function G_TYPE_IS_DERIVABLE(_type: TGType): Tgboolean;
-//function G_TYPE_IS_DEEP_DERIVABLE(_type: TGType): Tgboolean;
-//function G_TYPE_IS_ABSTRACT(_type: TGType): Tgboolean;
-//function G_TYPE_IS_VALUE_ABSTRACT(_type: TGType): Tgboolean;
-//function G_TYPE_IS_VALUE_TYPE(_type: TGType): Tgboolean;
-//function G_TYPE_HAS_VALUE_TABLE(_type: TGType): Tgboolean;
-//function G_TYPE_IS_FINAL(_type: TGType): Tgboolean;
-//function G_TYPE_IS_DEPRECATED(_type: TGType): Tgboolean;
 
 type
 
@@ -125,38 +86,6 @@ type
     instance_size: Tguint;
   end;
 
-
-
-//function G_TYPE_CHECK_INSTANCE(instance: longint): longint;
-//function G_TYPE_CHECK_INSTANCE_CAST(instance, g_type, c_type: longint): longint;
-
-//function G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type: longint): longint;
-function G_TYPE_CHECK_INSTANCE_TYPE(instance: Pointer; g_type: TGType) : Tgboolean;
-
-
-
-//function G_TYPE_CHECK_INSTANCE_FUNDAMENTAL_TYPE(instance, g_type: longint): longint;
-//function G_TYPE_INSTANCE_GET_CLASS(instance, g_type, c_type: longint): longint;
-//function G_TYPE_INSTANCE_GET_INTERFACE(instance, g_type, c_type: longint): longint;
-//function G_TYPE_CHECK_CLASS_CAST(g_class, g_type, c_type: longint): longint;
-//function G_TYPE_CHECK_CLASS_TYPE(g_class, g_type: longint): longint;
-//function G_TYPE_CHECK_VALUE(Value: longint): longint;
-//function G_TYPE_CHECK_VALUE_TYPE(Value, g_type: longint): longint;
-function G_TYPE_CHECK_VALUE_TYPE(value: pointer; g_type : TGType) : Tgboolean;
-
-
-//function G_TYPE_FROM_INSTANCE(instance: longint): longint;
-function G_TYPE_FROM_INSTANCE(instance : Tgpointer) : TGType;
-
-
-//function G_TYPE_FROM_CLASS(g_class: longint): longint;
-function G_TYPE_FROM_CLASS(g_class : Tgpointer) : TGType;
-
-
-
-//function G_TYPE_FROM_INTERFACE(g_iface: longint): longint;
-//function G_TYPE_INSTANCE_GET_PRIVATE(instance, g_type, c_type: longint): longint;
-//function G_TYPE_CLASS_GET_PRIVATE(klass, g_type, c_type: longint): longint;
 
 type
   PGTypeDebugFlags = ^TGTypeDebugFlags;
@@ -325,10 +254,67 @@ function g_type_name_from_instance(instance: PGTypeInstance): Pgchar; cdecl; ext
 function g_type_name_from_class(g_class: PGTypeClass): Pgchar; cdecl; external;
 
 const
-  G_TYPE_FLAG_RESERVED_ID_BIT= 1 shl 0;
+  G_TYPE_FLAG_RESERVED_ID_BIT = 1 shl 0;
 
+function G_TYPE_INVALID: TGType;
+function G_TYPE_NONE: TGType;
+function G_TYPE_INTERFACE: TGType;
+function G_TYPE_CHAR: TGType;
+function G_TYPE_UCHAR: TGType;
+function G_TYPE_BOOLEAN: TGType;
+function G_TYPE_INT: TGType;
+function G_TYPE_UINT: TGType;
+function G_TYPE_LONG: TGType;
+function G_TYPE_ULONG: TGType;
+function G_TYPE_INT64: TGType;
+function G_TYPE_UINT64: TGType;
+function G_TYPE_ENUM: TGType;
+function G_TYPE_FLAGS: TGType;
+function G_TYPE_FLOAT: TGType;
+function G_TYPE_DOUBLE: TGType;
+function G_TYPE_STRING: TGType;
+function G_TYPE_POINTER: TGType;
+function G_TYPE_BOXED: TGType;
+function G_TYPE_PARAM: TGType;
+function G_TYPE_OBJECT: TGType;
+function G_TYPE_VARIANT: TGType;
+function G_TYPE_MAKE_FUNDAMENTAL(x: longint): TGType;
+
+function G_TYPE_IS_FUNDAMENTAL(_type: TGType): Tgboolean;
+function G_TYPE_IS_DERIVED(_type: TGType): Tgboolean;
+function G_TYPE_IS_INTERFACE(_type: TGType): Tgboolean;
+function G_TYPE_IS_CLASSED(_type: TGType): Tgboolean;
+function G_TYPE_IS_INSTANTIATABLE(_type: TGType): Tgboolean;
+function G_TYPE_IS_DERIVABLE(_type: TGType): Tgboolean;
+function G_TYPE_IS_DEEP_DERIVABLE(_type: TGType): Tgboolean;
+function G_TYPE_IS_ABSTRACT(_type: TGType): Tgboolean;
+function G_TYPE_IS_VALUE_ABSTRACT(_type: TGType): Tgboolean;
+function G_TYPE_IS_VALUE_TYPE(_type: TGType): Tgboolean;
+function G_TYPE_HAS_VALUE_TABLE(_type: TGType): Tgboolean;
+function G_TYPE_IS_FINAL(_type: TGType): Tgboolean;
+function G_TYPE_IS_DEPRECATED(_type: TGType): Tgboolean;
+
+
+function G_TYPE_CHECK_INSTANCE_CAST(instance: Pointer; g_type: TGType): PGTypeInstance;
+function G_TYPE_CHECK_INSTANCE_TYPE(instance: Pointer; g_type: TGType): Tgboolean;
+function G_TYPE_CHECK_INSTANCE_FUNDAMENTAL_TYPE(instance: PGTypeInstance; g_type: TGType): Tgboolean;
+function G_TYPE_INSTANCE_GET_CLASS(instance: Tgpointer; g_type: TGType): PGTypeClass;
+function G_TYPE_INSTANCE_GET_INTERFACE(instance: Pointer; g_type: TGType): Pointer;
+function G_TYPE_CHECK_CLASS_CAST(g_class: pointer; g_type: TGType): Pointer;
+function G_TYPE_CHECK_CLASS_TYPE(g_class: pointer; g_type: TGType): Tgboolean;
+function G_TYPE_CHECK_VALUE(Value: Pointer): Tgboolean;
+function G_TYPE_CHECK_VALUE_TYPE(Value: pointer; g_type: TGType): Tgboolean;
+function G_TYPE_FROM_INSTANCE(instance: Tgpointer): TGType;
+function G_TYPE_FROM_CLASS(g_class: Tgpointer): TGType;
+function G_TYPE_FROM_INTERFACE(g_iface: Pointer): TGType;
+function G_TYPE_INSTANCE_GET_PRIVATE(instance, g_type, c_type: longint): Tgpointer;
+function G_TYPE_CLASS_GET_PRIVATE(klass, g_type, c_type: longint): Tgpointer;
+
+function GPOINTER_TO_TYPE(p : Tgpointer) : TGType;
+function GTYPE_TO_POINTER(t : TGType) : Tgpointer;
 
 implementation
+
 
 function G_TYPE_INVALID: TGType;
 begin
@@ -468,234 +454,168 @@ begin
   G_TYPE_MAKE_FUNDAMENTAL := TGType(x shl G_TYPE_FUNDAMENTAL_SHIFT);
 end;
 
+function G_TYPE_CHECK_INSTANCE_CAST(instance: Pointer; g_type: TGType
+  ): PGTypeInstance;
+begin
+  G_TYPE_CHECK_INSTANCE_CAST := g_type_check_instance_cast(instance, g_type);
+end;
+
 function G_TYPE_CHECK_INSTANCE_TYPE(instance: Pointer; g_type: TGType
   ): Tgboolean;
 begin
-
+  Result := g_type_check_instance_is_a(instance, g_type);
 end;
 
-function G_TYPE_CHECK_VALUE_TYPE(value: pointer; g_type: TGType): Tgboolean;
+function G_TYPE_INSTANCE_GET_CLASS(instance: Tgpointer; g_type: TGType
+  ): PGTypeClass;
 begin
-   G_TYPE_CHECK_VALUE_TYPE:=g_type_check_value_holds(PGValue(value),g_type);
+  // #define G_TYPE_INSTANCE_GET_CLASS(instance, g_type, c_type)     (_G_TYPE_IGC ((instance), (g_type), c_type))
+  // #define _G_TYPE_IGC(ip, gt, ct)         ((ct*) (((GTypeInstance*) ip)->g_class))
+  Result := PGTypeInstance(Instance)^.g_class;
+  Result := g_type_check_class_cast(Result, g_type);
+end;
+
+function G_TYPE_INSTANCE_GET_INTERFACE(instance: Pointer; g_type: TGType
+  ): Pointer;
+begin
+  G_TYPE_INSTANCE_GET_INTERFACE := g_type_interface_peek((PGTypeInstance(instance))^.g_class, g_type);
+end;
+
+function G_TYPE_CHECK_CLASS_CAST(g_class: pointer; g_type: TGType): Pointer;
+begin
+  G_TYPE_CHECK_CLASS_CAST := g_type_check_class_cast(PGTypeClass(g_class), g_type);
+end;
+
+function G_TYPE_CHECK_CLASS_TYPE(g_class: pointer; g_type: TGType): Tgboolean;
+begin
+  G_TYPE_CHECK_CLASS_TYPE := g_type_check_class_is_a(PGTypeClass(g_class), g_type);
+end;
+
+function G_TYPE_CHECK_VALUE(Value: Pointer): Tgboolean;
+begin
+  G_TYPE_CHECK_VALUE := g_type_check_value(PGValue(Value));
+end;
+
+function G_TYPE_CHECK_VALUE_TYPE(Value: pointer; g_type: TGType): Tgboolean;
+begin
+  G_TYPE_CHECK_VALUE_TYPE := g_type_check_value_holds(PGValue(Value), g_type);
 end;
 
 function G_TYPE_FROM_INSTANCE(instance: Tgpointer): TGType;
 begin
-     G_TYPE_FROM_INSTANCE:=G_TYPE_FROM_CLASS((PGTypeInstance(instance))^.g_class);
+  G_TYPE_FROM_INSTANCE := G_TYPE_FROM_CLASS((PGTypeInstance(instance))^.g_class);
 end;
 
 function G_TYPE_FROM_CLASS(g_class: Tgpointer): TGType;
 begin
-        G_TYPE_FROM_CLASS:=(PGTypeClass(g_class))^.g_type;
+  G_TYPE_FROM_CLASS := (PGTypeClass(g_class))^.g_type;
+end;
+
+function G_TYPE_FROM_INTERFACE(g_iface: Pointer): TGType;
+begin
+  G_TYPE_FROM_INTERFACE := (PGTypeInterface(g_iface))^.g_type;
 end;
 
 
-//
-//function G_TYPE_IS_FUNDAMENTAL(_type: TGType): Tgboolean;
-//begin
-//  G_TYPE_IS_FUNDAMENTAL := _type <= G_TYPE_FUNDAMENTAL_MAX;
-//end;
-//
-//
-//
-//
-//function G_TYPE_IS_DERIVED(_type: TGType): Tgboolean;
-//begin
-//  G_TYPE_IS_DERIVED := _type > G_TYPE_FUNDAMENTAL_MAX;
-//end;
-//
-//
-//
-//
-//function G_TYPE_IS_INTERFACE(_type: TGType): Tgboolean;
-//begin
-//  G_TYPE_IS_INTERFACE := (G_TYPE_FUNDAMENTAL(_type)) = G_TYPE_INTERFACE;
-//end;
-//
-//
-//
-//
-//function G_TYPE_IS_CLASSED(_type: TGType): Tgboolean;
-//begin
-//  G_TYPE_IS_CLASSED := g_type_test_flags(_type, G_TYPE_FLAG_CLASSED);
-//end;
-//
-//
-//
-//
-//function G_TYPE_IS_INSTANTIATABLE(_type: TGType): Tgboolean;
-//begin
-//  G_TYPE_IS_INSTANTIATABLE := g_type_test_flags(_type, G_TYPE_FLAG_INSTANTIATABLE);
-//end;
-//
-//
-//
-//
-//function G_TYPE_IS_DERIVABLE(_type: TGType): Tgboolean;
-//begin
-//  G_TYPE_IS_DERIVABLE := g_type_test_flags(_type, G_TYPE_FLAG_DERIVABLE);
-//end;
-//
-//
-//
-//
-//function G_TYPE_IS_DEEP_DERIVABLE(_type: TGType): Tgboolean;
-//begin
-//  G_TYPE_IS_DEEP_DERIVABLE := g_type_test_flags(_type, G_TYPE_FLAG_DEEP_DERIVABLE);
-//end;
-//
-//
-//
-//
-//function G_TYPE_IS_ABSTRACT(_type: TGType): Tgboolean;
-//begin
-//  G_TYPE_IS_ABSTRACT := g_type_test_flags(_type, G_TYPE_FLAG_ABSTRACT);
-//end;
-//
-//
-//
-//
-//function G_TYPE_IS_VALUE_ABSTRACT(_type: TGType): Tgboolean;
-//begin
-//  G_TYPE_IS_VALUE_ABSTRACT := g_type_test_flags(_type, G_TYPE_FLAG_VALUE_ABSTRACT);
-//end;
-//
-//
-//
-//
-//function G_TYPE_IS_VALUE_TYPE(_type: TGType): Tgboolean;
-//begin
-//  G_TYPE_IS_VALUE_TYPE := g_type_check_is_value_type(_type);
-//end;
-//
-//
-//
-//
-//function G_TYPE_HAS_VALUE_TABLE(_type: TGType): Tgboolean;
-//begin
-//  G_TYPE_HAS_VALUE_TABLE := (g_type_value_table_peek(_type)) <> nil;
-//end;
-//
-//
-//
-//
-//function G_TYPE_IS_FINAL(_type: TGType): Tgboolean;
-//begin
-//  G_TYPE_IS_FINAL := g_type_test_flags(_type, G_TYPE_FLAG_FINAL);
-//end;
-//
-//
-//
-//
-//function G_TYPE_IS_DEPRECATED(_type: TGType): Tgboolean;
-//begin
-//  G_TYPE_IS_DEPRECATED := g_type_test_flags(_type, G_TYPE_FLAG_DEPRECATED);
-//end;
-//
-//
+function G_TYPE_CHECK_INSTANCE_FUNDAMENTAL_TYPE(instance: PGTypeInstance;
+  g_type: TGType): Tgboolean;
+begin
+  G_TYPE_CHECK_INSTANCE_FUNDAMENTAL_TYPE := g_type_check_instance_is_fundamentally_a(instance, g_type);
+end;
+
+function G_TYPE_INSTANCE_GET_PRIVATE(instance, g_type, c_type: longint): Tgpointer;
+begin
+  G_TYPE_INSTANCE_GET_PRIVATE := g_type_instance_get_private(PGTypeInstance(instance), g_type);
+end;
 
 
-//function G_TYPE_CHECK_INSTANCE(instance: longint): longint;
-//begin
-////  G_TYPE_CHECK_INSTANCE := _G_TYPE_CHI(PGTypeInstance(instance));
-//  G_TYPE_CHECK_INSTANCE := G_TYPE_CHECK_INSTANCE(PGTypeInstance(instance));
-//end;
-//
-
-//
-//
-//function G_TYPE_CHECK_INSTANCE_CAST(instance, g_type, c_type: longint): longint;
-//begin
-//  G_TYPE_CHECK_INSTANCE_CAST := _G_TYPE_CIC(instance, g_type, c_type);
-//end;
-//
-//
+function G_TYPE_CLASS_GET_PRIVATE(klass, g_type, c_type: longint): Tgpointer;
+begin
+  G_TYPE_CLASS_GET_PRIVATE := g_type_class_get_private(PGTypeClass(klass), g_type);
+end;
 
 
-//function G_TYPE_CHECK_INSTANCE_TYPE(instance, g_type: longint): longint;
-//begin
-//  G_TYPE_CHECK_INSTANCE_TYPE := _G_TYPE_CIT(instance, g_type);
-//end;
-//
+// =====
 
 
-//
-//function G_TYPE_CHECK_INSTANCE_FUNDAMENTAL_TYPE(instance, g_type: longint): longint;
-//begin
-//  G_TYPE_CHECK_INSTANCE_FUNDAMENTAL_TYPE := _G_TYPE_CIFT(instance, g_type);
-//end;
-//
-//
-//
-//
-//function G_TYPE_INSTANCE_GET_CLASS(instance, g_type, c_type: longint): longint;
-//begin
-//  G_TYPE_INSTANCE_GET_CLASS := _G_TYPE_IGC(instance, g_type, c_type);
-//end;
-//
-//
-//
-//
-//function G_TYPE_INSTANCE_GET_INTERFACE(instance, g_type, c_type: longint): longint;
-//begin
-//  G_TYPE_INSTANCE_GET_INTERFACE := _G_TYPE_IGI(instance, g_type, c_type);
-//end;
-//
-//
-//
-//
-//function G_TYPE_CHECK_CLASS_CAST(g_class, g_type, c_type: longint): longint;
-//begin
-//  G_TYPE_CHECK_CLASS_CAST := _G_TYPE_CCC(g_class, g_type, c_type);
-//end;
-//
-//
-//
-//
-//function G_TYPE_CHECK_CLASS_TYPE(g_class, g_type: longint): longint;
-//begin
-//  G_TYPE_CHECK_CLASS_TYPE := _G_TYPE_CCT(g_class, g_type);
-//end;
-//
-//
-//
-//
-//function G_TYPE_CHECK_VALUE(Value: longint): longint;
-//begin
-//  G_TYPE_CHECK_VALUE := _G_TYPE_CHV(Value);
-//end;
-//
-//
-//
-//
-//function G_TYPE_CHECK_VALUE_TYPE(Value, g_type: longint): longint;
-//begin
-//  G_TYPE_CHECK_VALUE_TYPE := _G_TYPE_CVH(Value, g_type);
-//end;
-//
-//
-//
-//
-//
-//function G_TYPE_FROM_INTERFACE(g_iface: longint): longint;
-//begin
-//  G_TYPE_FROM_INTERFACE := (PGTypeInterface(g_iface))^.g_type;
-//end;
-//
-//
-//
-//function G_TYPE_INSTANCE_GET_PRIVATE(instance, g_type, c_type: longint
-//  ): longint;
-//begin
-//  G_TYPE_INSTANCE_GET_PRIVATE := Pc_type(g_type_instance_get_private(PGTypeInstance(instance), g_type));
-//end;
-//
-//
-//
-//function G_TYPE_CLASS_GET_PRIVATE(klass, g_type, c_type: longint): longint;
-//begin
-//  G_TYPE_CLASS_GET_PRIVATE := Pc_type(g_type_class_get_private(PGTypeClass(klass), g_type));
-//end;
-//
+function G_TYPE_IS_FUNDAMENTAL(_type: TGType): Tgboolean;
+begin
+  G_TYPE_IS_FUNDAMENTAL := _type <= G_TYPE_FUNDAMENTAL_MAX;
+end;
+
+function G_TYPE_IS_DERIVED(_type: TGType): Tgboolean;
+begin
+  G_TYPE_IS_DERIVED := _type > G_TYPE_FUNDAMENTAL_MAX;
+end;
+
+function G_TYPE_IS_INTERFACE(_type: TGType): Tgboolean;
+begin
+  G_TYPE_IS_INTERFACE := (G_TYPE_FUNDAMENTAL(_type)) = G_TYPE_INTERFACE;
+end;
+
+function G_TYPE_IS_CLASSED(_type: TGType): Tgboolean;
+begin
+  G_TYPE_IS_CLASSED := g_type_test_flags(_type, G_TYPE_FLAG_CLASSED);
+end;
+
+function G_TYPE_IS_INSTANTIATABLE(_type: TGType): Tgboolean;
+begin
+  G_TYPE_IS_INSTANTIATABLE := g_type_test_flags(_type, G_TYPE_FLAG_INSTANTIATABLE);
+end;
+
+function G_TYPE_IS_DERIVABLE(_type: TGType): Tgboolean;
+begin
+  G_TYPE_IS_DERIVABLE := g_type_test_flags(_type, G_TYPE_FLAG_DERIVABLE);
+end;
+
+function G_TYPE_IS_DEEP_DERIVABLE(_type: TGType): Tgboolean;
+begin
+  G_TYPE_IS_DEEP_DERIVABLE := g_type_test_flags(_type, G_TYPE_FLAG_DEEP_DERIVABLE);
+end;
+
+function G_TYPE_IS_ABSTRACT(_type: TGType): Tgboolean;
+begin
+  G_TYPE_IS_ABSTRACT := g_type_test_flags(_type, G_TYPE_FLAG_ABSTRACT);
+end;
+
+function G_TYPE_IS_VALUE_ABSTRACT(_type: TGType): Tgboolean;
+begin
+  G_TYPE_IS_VALUE_ABSTRACT := g_type_test_flags(_type, G_TYPE_FLAG_VALUE_ABSTRACT);
+end;
+
+function G_TYPE_IS_VALUE_TYPE(_type: TGType): Tgboolean;
+begin
+  G_TYPE_IS_VALUE_TYPE := g_type_check_is_value_type(_type);
+end;
+
+function G_TYPE_HAS_VALUE_TABLE(_type: TGType): Tgboolean;
+begin
+  G_TYPE_HAS_VALUE_TABLE := (g_type_value_table_peek(_type)) <> nil;
+end;
+
+function G_TYPE_IS_FINAL(_type: TGType): Tgboolean;
+begin
+  G_TYPE_IS_FINAL := g_type_test_flags(_type, G_TYPE_FLAG_FINAL);
+end;
+
+function G_TYPE_IS_DEPRECATED(_type: TGType): Tgboolean;
+begin
+  G_TYPE_IS_DEPRECATED := g_type_test_flags(_type, G_TYPE_FLAG_DEPRECATED);
+end;
+
+// ====
+
+function GPOINTER_TO_TYPE(p: Tgpointer): TGType;
+begin
+  GPOINTER_TO_TYPE:=TGType(Tguintptr(p));
+end;
+
+function GTYPE_TO_POINTER(t: TGType): Tgpointer;
+begin
+  GTYPE_TO_POINTER:=Tgpointer(Tguintptr(t));
+end;
+
+
+
 
 end.
