@@ -136,17 +136,4 @@ int main (int argc, char **argv)
 
   return status;
 }
-GParamSpec
-GData
-GTypeInstance
-GParamSpecPool
-G_IS_PARAM_SPEC
-G_TYPE_CHECK_CLASS_TYPE
-G_TYPE_INSTANCE_GET_CLASS
-G_TYPE_FROM_INSTANCE()
-G_PARAM_SPEC_VALUE_TYPE
-GClosure
 
-GObjectConstructParam
-G_PARAM_SPEC_VALUE_TYPE
-GConnectFlags
