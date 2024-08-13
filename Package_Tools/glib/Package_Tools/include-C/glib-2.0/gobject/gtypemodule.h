@@ -261,31 +261,31 @@ type_name##_register_type (GTypeModule *type_module) \
   TypeName##_private_offset = sizeof (TypeName##Private); \
 }
 
-GOBJECT_AVAILABLE_IN_ALL
+
 GType    g_type_module_get_type       (void) ;
-GOBJECT_AVAILABLE_IN_ALL
+
 gboolean g_type_module_use            (GTypeModule          *module);
-GOBJECT_AVAILABLE_IN_ALL
+
 void     g_type_module_unuse          (GTypeModule          *module);
-GOBJECT_AVAILABLE_IN_ALL
+
 void     g_type_module_set_name       (GTypeModule          *module,
                                        const gchar          *name);
-GOBJECT_AVAILABLE_IN_ALL
+
 GType    g_type_module_register_type  (GTypeModule          *module,
                                        GType                 parent_type,
                                        const gchar          *type_name,
                                        const GTypeInfo      *type_info,
                                        GTypeFlags            flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 void     g_type_module_add_interface  (GTypeModule          *module,
                                        GType                 instance_type,
                                        GType                 interface_type,
                                        const GInterfaceInfo *interface_info);
-GOBJECT_AVAILABLE_IN_ALL
+
 GType    g_type_module_register_enum  (GTypeModule          *module,
                                        const gchar          *name,
                                        const GEnumValue     *const_static_values);
-GOBJECT_AVAILABLE_IN_ALL
+
 GType    g_type_module_register_flags (GTypeModule          *module,
                                        const gchar          *name,
                                        const GFlagsValue    *const_static_values);

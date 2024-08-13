@@ -62,34 +62,17 @@ begin
       slHeader[j] := StringReplace(slHeader[j], 'GIO_AVAILABLE_IN_2_38', '', [rfReplaceAll]);
 
       slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_ALL', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'GOBJECT_AVAILABLE_IN_ALL', '', [rfReplaceAll]);
       k := 30;
       repeat
         slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_' + IntToStr(k), '', [rfReplaceAll]);
+        slHeader[j] := StringReplace(slHeader[j], 'GOBJECT_AVAILABLE_IN_2_' + IntToStr(k), '', [rfReplaceAll]);
         Inc(k, 2);
       until k >= 82;
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_30', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_32', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_34', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_36', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_38', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_40', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_52', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_54', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_58', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_60', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_62', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_64', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_68', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_70', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_74', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_76', '', [rfReplaceAll]);
-      //slHeader[j] := StringReplace(slHeader[j], 'GLIB_AVAILABLE_IN_2_78', '', [rfReplaceAll]);
-
-
 
 
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_MALLOC', '', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'GLIB_VAR', '', [rfReplaceAll]);
+//      slHeader[j] := StringReplace(slHeader[j], 'GLIB_VAR', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_PURE', '', [rfReplaceAll]);
 
       slHeader[j] := StringReplace(slHeader[j], 'GLIB_DEPRECATED', '', [rfReplaceAll]);

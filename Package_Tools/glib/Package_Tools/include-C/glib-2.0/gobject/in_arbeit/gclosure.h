@@ -219,62 +219,62 @@ struct _GCClosure
 
 
 /* --- prototypes --- */
-GOBJECT_AVAILABLE_IN_ALL
+
 GClosure* g_cclosure_new			(GCallback	callback_func,
 						 gpointer	user_data,
 						 GClosureNotify destroy_data);
-GOBJECT_AVAILABLE_IN_ALL
+
 GClosure* g_cclosure_new_swap			(GCallback	callback_func,
 						 gpointer	user_data,
 						 GClosureNotify destroy_data);
-GOBJECT_AVAILABLE_IN_ALL
+
 GClosure* g_signal_type_cclosure_new		(GType          itype,
 						 guint          struct_offset);
 
 
 /* --- prototypes --- */
-GOBJECT_AVAILABLE_IN_ALL
+
 GClosure* g_closure_ref				(GClosure	*closure);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	  g_closure_sink			(GClosure	*closure);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	  g_closure_unref			(GClosure	*closure);
 /* intimidating */
-GOBJECT_AVAILABLE_IN_ALL
+
 GClosure* g_closure_new_simple			(guint		 sizeof_closure,
 						 gpointer	 data);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	  g_closure_add_finalize_notifier	(GClosure       *closure,
 						 gpointer	 notify_data,
 						 GClosureNotify	 notify_func);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	  g_closure_remove_finalize_notifier	(GClosure       *closure,
 						 gpointer	 notify_data,
 						 GClosureNotify	 notify_func);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	  g_closure_add_invalidate_notifier	(GClosure       *closure,
 						 gpointer	 notify_data,
 						 GClosureNotify	 notify_func);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	  g_closure_remove_invalidate_notifier	(GClosure       *closure,
 						 gpointer	 notify_data,
 						 GClosureNotify	 notify_func);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	  g_closure_add_marshal_guards		(GClosure	*closure,
 						 gpointer        pre_marshal_data,
 						 GClosureNotify	 pre_marshal_notify,
 						 gpointer        post_marshal_data,
 						 GClosureNotify	 post_marshal_notify);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	  g_closure_set_marshal			(GClosure	*closure,
 						 GClosureMarshal marshal);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	  g_closure_set_meta_marshal		(GClosure       *closure,
 						 gpointer	 marshal_data,
 						 GClosureMarshal meta_marshal);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	  g_closure_invalidate			(GClosure	*closure);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	  g_closure_invoke			(GClosure 	*closure,
 						 GValue	/*out*/	*return_value,
 						 guint		 n_param_values,
@@ -292,7 +292,7 @@ void	  g_closure_invoke			(GClosure 	*closure,
    - provide marshaller collection, virtually covering anything out there
 */
 
-GOBJECT_AVAILABLE_IN_ALL
+
 void g_cclosure_marshal_generic (GClosure     *closure,
                                  GValue       *return_gvalue,
                                  guint         n_param_values,
@@ -300,7 +300,7 @@ void g_cclosure_marshal_generic (GClosure     *closure,
                                  gpointer      invocation_hint,
                                  gpointer      marshal_data);
 
-GOBJECT_AVAILABLE_IN_ALL
+
 void g_cclosure_marshal_generic_va (GClosure *closure,
 				    GValue   *return_value,
 				    gpointer  instance,

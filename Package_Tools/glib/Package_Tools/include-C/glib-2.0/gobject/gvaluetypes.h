@@ -195,110 +195,110 @@ void                  g_value_set_char          (GValue       *value,
                                                  gchar         v_char);
 GOBJECT_DEPRECATED_IN_2_32_FOR(g_value_get_schar)
 gchar                 g_value_get_char          (const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_schar		(GValue	      *value,
 						 gint8	       v_char);
-GOBJECT_AVAILABLE_IN_ALL
+
 gint8		      g_value_get_schar		(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_uchar		(GValue	      *value,
 						 guchar	       v_uchar);
-GOBJECT_AVAILABLE_IN_ALL
+
 guchar		      g_value_get_uchar		(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_boolean	(GValue	      *value,
 						 gboolean      v_boolean);
-GOBJECT_AVAILABLE_IN_ALL
+
 gboolean	      g_value_get_boolean	(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_int		(GValue	      *value,
 						 gint	       v_int);
-GOBJECT_AVAILABLE_IN_ALL
+
 gint		      g_value_get_int		(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_uint		(GValue	      *value,
 						 guint	       v_uint);
-GOBJECT_AVAILABLE_IN_ALL
+
 guint		      g_value_get_uint		(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_long		(GValue	      *value,
 						 glong	       v_long);
-GOBJECT_AVAILABLE_IN_ALL
+
 glong		      g_value_get_long		(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_ulong		(GValue	      *value,
 						 gulong	       v_ulong);
-GOBJECT_AVAILABLE_IN_ALL
+
 gulong		      g_value_get_ulong		(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_int64		(GValue	      *value,
 						 gint64	       v_int64);
-GOBJECT_AVAILABLE_IN_ALL
+
 gint64		      g_value_get_int64		(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_uint64	(GValue	      *value,
 						 guint64      v_uint64);
-GOBJECT_AVAILABLE_IN_ALL
+
 guint64		      g_value_get_uint64	(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_float		(GValue	      *value,
 						 gfloat	       v_float);
-GOBJECT_AVAILABLE_IN_ALL
+
 gfloat		      g_value_get_float		(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_double	(GValue	      *value,
 						 gdouble       v_double);
-GOBJECT_AVAILABLE_IN_ALL
+
 gdouble		      g_value_get_double	(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_string	(GValue	      *value,
 						 const gchar  *v_string);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_static_string (GValue	      *value,
 						 const gchar  *v_string);
-GOBJECT_AVAILABLE_IN_2_66
+
 void		      g_value_set_interned_string (GValue      *value,
 						   const gchar  *v_string);
-GOBJECT_AVAILABLE_IN_ALL
+
 const gchar *         g_value_get_string	(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 gchar*		      g_value_dup_string	(const GValue *value);
-GOBJECT_AVAILABLE_IN_2_80
+
 gchar*		      g_value_steal_string	(GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_pointer	(GValue	      *value,
 						 gpointer      v_pointer);
-GOBJECT_AVAILABLE_IN_ALL
+
 gpointer	      g_value_get_pointer	(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 GType		      g_gtype_get_type		(void);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_gtype	        (GValue	      *value,
 						 GType         v_gtype);
-GOBJECT_AVAILABLE_IN_ALL
+
 GType	              g_value_get_gtype	        (const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_set_variant	(GValue	      *value,
 						 GVariant     *variant);
-GOBJECT_AVAILABLE_IN_ALL
+
 void		      g_value_take_variant	(GValue	      *value,
 						 GVariant     *variant);
-GOBJECT_AVAILABLE_IN_ALL
+
 GVariant*	      g_value_get_variant	(const GValue *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 GVariant*	      g_value_dup_variant	(const GValue *value);
 
 
 /* Convenience for registering new pointer types */
-GOBJECT_AVAILABLE_IN_ALL
+
 GType                 g_pointer_type_register_static (const gchar *name);
 
 /* debugging aid, describe value contents as string */
-GOBJECT_AVAILABLE_IN_ALL
+
 gchar*                g_strdup_value_contents   (const GValue *value);
 
 
-GOBJECT_AVAILABLE_IN_ALL
+
 void g_value_take_string		        (GValue		   *value,
 						 gchar		   *v_string);
 GOBJECT_DEPRECATED_FOR(g_value_take_string)

@@ -108,18 +108,18 @@ struct _GTypePluginClass
 
 
 /* --- prototypes --- */
-GOBJECT_AVAILABLE_IN_ALL
+
 GType	g_type_plugin_get_type			(void)	;
-GOBJECT_AVAILABLE_IN_ALL
+
 void	g_type_plugin_use			(GTypePlugin	 *plugin);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	g_type_plugin_unuse			(GTypePlugin	 *plugin);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	g_type_plugin_complete_type_info	(GTypePlugin     *plugin,
 						 GType            g_type,
 						 GTypeInfo       *info,
 						 GTypeValueTable *value_table);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	g_type_plugin_complete_interface_info	(GTypePlugin     *plugin,
 						 GType            instance_type,
 						 GType            interface_type,

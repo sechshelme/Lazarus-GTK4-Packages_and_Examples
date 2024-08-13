@@ -38,22 +38,22 @@
 
 typedef struct _GBindingGroup GBindingGroup;
 
-GOBJECT_AVAILABLE_IN_2_72
+
 GType          g_binding_group_get_type           (void) ;
-GOBJECT_AVAILABLE_IN_2_72
+
 GBindingGroup *g_binding_group_new                (void);
-GOBJECT_AVAILABLE_IN_2_72
+
 gpointer       g_binding_group_dup_source         (GBindingGroup         *self);
-GOBJECT_AVAILABLE_IN_2_72
+
 void           g_binding_group_set_source         (GBindingGroup         *self,
                                                    gpointer               source);
-GOBJECT_AVAILABLE_IN_2_72
+
 void           g_binding_group_bind               (GBindingGroup         *self,
                                                    const gchar           *source_property,
                                                    gpointer               target,
                                                    const gchar           *target_property,
                                                    GBindingFlags          flags);
-GOBJECT_AVAILABLE_IN_2_72
+
 void           g_binding_group_bind_full          (GBindingGroup         *self,
                                                    const gchar           *source_property,
                                                    gpointer               target,
@@ -63,7 +63,7 @@ void           g_binding_group_bind_full          (GBindingGroup         *self,
                                                    GBindingTransformFunc  transform_from,
                                                    gpointer               user_data,
                                                    GDestroyNotify         user_data_destroy);
-GOBJECT_AVAILABLE_IN_2_72
+
 void           g_binding_group_bind_with_closures (GBindingGroup         *self,
                                                    const gchar           *source_property,
                                                    gpointer               target,

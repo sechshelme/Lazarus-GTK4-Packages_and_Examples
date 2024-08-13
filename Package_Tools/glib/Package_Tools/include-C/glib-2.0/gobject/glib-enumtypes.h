@@ -9,13 +9,13 @@
 
 
 /* enumerations from "../../../gobject/../glib/gunicode.h" */
-GOBJECT_AVAILABLE_IN_2_60 GType g_unicode_type_get_type (void) ;
+ GType g_unicode_type_get_type (void) ;
 #define G_TYPE_UNICODE_TYPE (g_unicode_type_get_type ())
-GOBJECT_AVAILABLE_IN_2_60 GType g_unicode_break_type_get_type (void) ;
+ GType g_unicode_break_type_get_type (void) ;
 #define G_TYPE_UNICODE_BREAK_TYPE (g_unicode_break_type_get_type ())
-GOBJECT_AVAILABLE_IN_2_60 GType g_unicode_script_get_type (void) ;
+ GType g_unicode_script_get_type (void) ;
 #define G_TYPE_UNICODE_SCRIPT (g_unicode_script_get_type ())
-GOBJECT_AVAILABLE_IN_2_60 GType g_normalize_mode_get_type (void) ;
+ GType g_normalize_mode_get_type (void) ;
 #define G_TYPE_NORMALIZE_MODE (g_normalize_mode_get_type ())
 
 

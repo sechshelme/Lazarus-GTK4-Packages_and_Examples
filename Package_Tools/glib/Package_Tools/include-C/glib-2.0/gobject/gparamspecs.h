@@ -986,7 +986,7 @@ struct _GParamSpecVariant
 };
 
 /* --- GParamSpec prototypes --- */
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_char	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
@@ -994,7 +994,7 @@ GParamSpec*	g_param_spec_char	 (const gchar	 *name,
 					  gint8		  maximum,
 					  gint8		  default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_uchar	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
@@ -1002,13 +1002,13 @@ GParamSpec*	g_param_spec_uchar	 (const gchar	 *name,
 					  guint8	  maximum,
 					  guint8	  default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_boolean	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
 					  gboolean	  default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_int	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
@@ -1016,7 +1016,7 @@ GParamSpec*	g_param_spec_int	 (const gchar	 *name,
 					  gint		  maximum,
 					  gint		  default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_uint	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
@@ -1024,7 +1024,7 @@ GParamSpec*	g_param_spec_uint	 (const gchar	 *name,
 					  guint		  maximum,
 					  guint		  default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_long	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
@@ -1032,7 +1032,7 @@ GParamSpec*	g_param_spec_long	 (const gchar	 *name,
 					  glong		  maximum,
 					  glong		  default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_ulong	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
@@ -1040,7 +1040,7 @@ GParamSpec*	g_param_spec_ulong	 (const gchar	 *name,
 					  gulong	  maximum,
 					  gulong	  default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_int64	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
@@ -1048,7 +1048,7 @@ GParamSpec*	g_param_spec_int64	 (const gchar	 *name,
 					  gint64       	  maximum,
 					  gint64       	  default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_uint64	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
@@ -1056,27 +1056,27 @@ GParamSpec*	g_param_spec_uint64	 (const gchar	 *name,
 					  guint64	  maximum,
 					  guint64	  default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_unichar      (const gchar    *name,
 				          const gchar    *nick,
 				          const gchar    *blurb,
 				          gunichar	  default_value,
 				          GParamFlags     flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_enum	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
 					  GType		  enum_type,
 					  gint		  default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_flags	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
 					  GType		  flags_type,
 					  guint		  default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_float	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
@@ -1084,7 +1084,7 @@ GParamSpec*	g_param_spec_float	 (const gchar	 *name,
 					  gfloat	  maximum,
 					  gfloat	  default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_double	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
@@ -1092,51 +1092,51 @@ GParamSpec*	g_param_spec_double	 (const gchar	 *name,
 					  gdouble	  maximum,
 					  gdouble	  default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_string	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
 					  const gchar	 *default_value,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_param	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
 					  GType		  param_type,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_boxed	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
 					  GType		  boxed_type,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_pointer	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_value_array (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
 					  GParamSpec	 *element_spec,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_object	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
 					  GType		  object_type,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_override    (const gchar    *name,
 					  GParamSpec     *overridden);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_gtype	 (const gchar	 *name,
 					  const gchar	 *nick,
 					  const gchar	 *blurb,
 					  GType           is_a_type,
 					  GParamFlags	  flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec*	g_param_spec_variant	 (const gchar        *name,
 					  const gchar        *nick,
 					  const gchar	     *blurb,

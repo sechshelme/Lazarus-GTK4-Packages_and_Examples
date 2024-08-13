@@ -217,39 +217,39 @@ struct _GFlagsValue
 
 
 /* --- prototypes --- */
-GOBJECT_AVAILABLE_IN_ALL
+
 GEnumValue*	g_enum_get_value		(GEnumClass	*enum_class,
 						 gint		 value);
-GOBJECT_AVAILABLE_IN_ALL
+
 GEnumValue*	g_enum_get_value_by_name	(GEnumClass	*enum_class,
 						 const gchar	*name);
-GOBJECT_AVAILABLE_IN_ALL
+
 GEnumValue*	g_enum_get_value_by_nick	(GEnumClass	*enum_class,
 						 const gchar	*nick);
-GOBJECT_AVAILABLE_IN_ALL
+
 GFlagsValue*	g_flags_get_first_value		(GFlagsClass	*flags_class,
 						 guint		 value);
-GOBJECT_AVAILABLE_IN_ALL
+
 GFlagsValue*	g_flags_get_value_by_name	(GFlagsClass	*flags_class,
 						 const gchar	*name);
-GOBJECT_AVAILABLE_IN_ALL
+
 GFlagsValue*	g_flags_get_value_by_nick	(GFlagsClass	*flags_class,
 						 const gchar	*nick);
-GOBJECT_AVAILABLE_IN_2_54
+
 gchar          *g_enum_to_string                (GType           g_enum_type,
                                                  gint            value);
-GOBJECT_AVAILABLE_IN_2_54
+
 gchar          *g_flags_to_string               (GType           flags_type,
                                                  guint           value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void            g_value_set_enum        	(GValue         *value,
 						 gint            v_enum);
-GOBJECT_AVAILABLE_IN_ALL
+
 gint            g_value_get_enum        	(const GValue   *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void            g_value_set_flags       	(GValue         *value,
 						 guint           v_flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 guint           g_value_get_flags       	(const GValue   *value);
 
 
@@ -258,20 +258,20 @@ guint           g_value_get_flags       	(const GValue   *value);
 /* const_static_values is a NULL terminated array of enum/flags
  * values that is taken over!
  */
-GOBJECT_AVAILABLE_IN_ALL
+
 GType	g_enum_register_static	   (const gchar	      *name,
 				    const GEnumValue  *const_static_values);
-GOBJECT_AVAILABLE_IN_ALL
+
 GType	g_flags_register_static	   (const gchar	      *name,
 				    const GFlagsValue *const_static_values);
 /* functions to complete the type information
  * for enums/flags implemented by plugins
  */
-GOBJECT_AVAILABLE_IN_ALL
+
 void	g_enum_complete_type_info  (GType	       g_enum_type,
 				    GTypeInfo	      *info,
 				    const GEnumValue  *const_values);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	g_flags_complete_type_info (GType	       g_flags_type,
 				    GTypeInfo	      *info,
 				    const GFlagsValue *const_values);

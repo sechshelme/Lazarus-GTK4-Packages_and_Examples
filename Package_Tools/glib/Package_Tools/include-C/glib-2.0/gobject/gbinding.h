@@ -96,35 +96,35 @@ typedef enum { /*< prefix=G_BINDING >*/
   G_BINDING_INVERT_BOOLEAN = 1 << 2
 } GBindingFlags;
 
-GOBJECT_AVAILABLE_IN_ALL
+
 GType                 g_binding_flags_get_type      (void) ;
-GOBJECT_AVAILABLE_IN_ALL
+
 GType                 g_binding_get_type            (void) ;
 
-GOBJECT_AVAILABLE_IN_ALL
+
 GBindingFlags         g_binding_get_flags           (GBinding *binding);
 GOBJECT_DEPRECATED_IN_2_68_FOR(g_binding_dup_source)
 GObject *             g_binding_get_source          (GBinding *binding);
-GOBJECT_AVAILABLE_IN_2_68
+
 GObject *             g_binding_dup_source          (GBinding *binding);
 GOBJECT_DEPRECATED_IN_2_68_FOR(g_binding_dup_target)
 GObject *             g_binding_get_target          (GBinding *binding);
-GOBJECT_AVAILABLE_IN_2_68
+
 GObject *             g_binding_dup_target          (GBinding *binding);
-GOBJECT_AVAILABLE_IN_ALL
+
 const gchar *         g_binding_get_source_property (GBinding *binding);
-GOBJECT_AVAILABLE_IN_ALL
+
 const gchar *         g_binding_get_target_property (GBinding *binding);
-GOBJECT_AVAILABLE_IN_2_38
+
 void                  g_binding_unbind              (GBinding *binding);
 
-GOBJECT_AVAILABLE_IN_ALL
+
 GBinding *g_object_bind_property               (gpointer               source,
                                                 const gchar           *source_property,
                                                 gpointer               target,
                                                 const gchar           *target_property,
                                                 GBindingFlags          flags);
-GOBJECT_AVAILABLE_IN_ALL
+
 GBinding *g_object_bind_property_full          (gpointer               source,
                                                 const gchar           *source_property,
                                                 gpointer               target,
@@ -134,7 +134,7 @@ GBinding *g_object_bind_property_full          (gpointer               source,
                                                 GBindingTransformFunc  transform_from,
                                                 gpointer               user_data,
                                                 GDestroyNotify         notify);
-GOBJECT_AVAILABLE_IN_ALL
+
 GBinding *g_object_bind_property_with_closures (gpointer               source,
                                                 const gchar           *source_property,
                                                 gpointer               target,

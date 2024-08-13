@@ -38,48 +38,48 @@
 
 typedef struct _GSignalGroup GSignalGroup;
 
-GOBJECT_AVAILABLE_IN_2_72
+
 GType         g_signal_group_get_type        (void) ;
-GOBJECT_AVAILABLE_IN_2_72
+
 GSignalGroup *g_signal_group_new             (GType           target_type);
-GOBJECT_AVAILABLE_IN_2_72
+
 void          g_signal_group_set_target      (GSignalGroup   *self,
                                               gpointer        target);
-GOBJECT_AVAILABLE_IN_2_72
+
 gpointer      g_signal_group_dup_target      (GSignalGroup   *self);
-GOBJECT_AVAILABLE_IN_2_72
+
 void          g_signal_group_block           (GSignalGroup   *self);
-GOBJECT_AVAILABLE_IN_2_72
+
 void          g_signal_group_unblock         (GSignalGroup   *self);
-GOBJECT_AVAILABLE_IN_2_74
+
 void          g_signal_group_connect_closure (GSignalGroup   *self,
                                               const gchar    *detailed_signal,
                                               GClosure       *closure,
                                               gboolean        after);
-GOBJECT_AVAILABLE_IN_2_72
+
 void          g_signal_group_connect_object  (GSignalGroup   *self,
                                               const gchar    *detailed_signal,
                                               GCallback       c_handler,
                                               gpointer        object,
                                               GConnectFlags   flags);
-GOBJECT_AVAILABLE_IN_2_72
+
 void          g_signal_group_connect_data    (GSignalGroup   *self,
                                               const gchar    *detailed_signal,
                                               GCallback       c_handler,
                                               gpointer        data,
                                               GClosureNotify  notify,
                                               GConnectFlags   flags);
-GOBJECT_AVAILABLE_IN_2_72
+
 void          g_signal_group_connect         (GSignalGroup   *self,
                                               const gchar    *detailed_signal,
                                               GCallback       c_handler,
                                               gpointer        data);
-GOBJECT_AVAILABLE_IN_2_72
+
 void          g_signal_group_connect_after   (GSignalGroup   *self,
                                               const gchar    *detailed_signal,
                                               GCallback       c_handler,
                                               gpointer        data);
-GOBJECT_AVAILABLE_IN_2_72
+
 void          g_signal_group_connect_swapped (GSignalGroup   *self,
                                               const gchar    *detailed_signal,
                                               GCallback       c_handler,

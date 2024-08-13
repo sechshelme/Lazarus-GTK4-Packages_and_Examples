@@ -395,44 +395,44 @@ struct _GObjectConstructParam
 
 
 /* --- prototypes --- */
-GOBJECT_AVAILABLE_IN_ALL
+
 GType       g_initially_unowned_get_type      (void);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_class_install_property   (GObjectClass   *oclass,
 					       guint           property_id,
 					       GParamSpec     *pspec);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec* g_object_class_find_property      (GObjectClass   *oclass,
 					       const gchar    *property_name);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec**g_object_class_list_properties    (GObjectClass   *oclass,
 					       guint	      *n_properties);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_class_override_property  (GObjectClass   *oclass,
 					       guint           property_id,
 					       const gchar    *name);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_class_install_properties (GObjectClass   *oclass,
                                                guint           n_pspecs,
                                                GParamSpec    **pspecs);
 
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_interface_install_property (gpointer     g_iface,
 						 GParamSpec  *pspec);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec* g_object_interface_find_property    (gpointer     g_iface,
 						 const gchar *property_name);
-GOBJECT_AVAILABLE_IN_ALL
+
 GParamSpec**g_object_interface_list_properties  (gpointer     g_iface,
 						 guint       *n_properties_p);
 
-GOBJECT_AVAILABLE_IN_ALL
+
 GType       g_object_get_type                 (void) ;
-GOBJECT_AVAILABLE_IN_ALL
+
 gpointer    g_object_new                      (GType           object_type,
 					       const gchar    *first_property_name,
 					       ...);
-GOBJECT_AVAILABLE_IN_2_54
+
 GObject*    g_object_new_with_properties      (GType           object_type,
                                                guint           n_properties,
                                                const char     *names[],
@@ -440,98 +440,98 @@ GObject*    g_object_new_with_properties      (GType           object_type,
 
 
 
-GOBJECT_DEPRECATED_IN_2_54_FOR(g_object_new_with_properties)
+
 gpointer    g_object_newv		      (GType           object_type,
 					       guint	       n_parameters,
 					       GParameter     *parameters);
 
 
 
-GOBJECT_AVAILABLE_IN_ALL
+
 GObject*    g_object_new_valist               (GType           object_type,
 					       const gchar    *first_property_name,
 					       va_list         var_args);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	    g_object_set                      (gpointer	       object,
 					       const gchar    *first_property_name,
 					       ...) ;
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_get                      (gpointer        object,
 					       const gchar    *first_property_name,
 					       ...) ;
-GOBJECT_AVAILABLE_IN_ALL
+
 gpointer    g_object_connect                  (gpointer	       object,
 					       const gchar    *signal_spec,
 					       ...) ;
-GOBJECT_AVAILABLE_IN_ALL
+
 void	    g_object_disconnect               (gpointer	       object,
 					       const gchar    *signal_spec,
 					       ...) ;
-GOBJECT_AVAILABLE_IN_2_54
+
 void        g_object_setv                     (GObject        *object,
                                                guint           n_properties,
                                                const gchar    *names[],
                                                const GValue    values[]);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_set_valist               (GObject        *object,
 					       const gchar    *first_property_name,
 					       va_list         var_args);
-GOBJECT_AVAILABLE_IN_2_54
+
 void        g_object_getv                     (GObject        *object,
                                                guint           n_properties,
                                                const gchar    *names[],
                                                GValue          values[]);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_get_valist               (GObject        *object,
 					       const gchar    *first_property_name,
 					       va_list         var_args);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_set_property             (GObject        *object,
 					       const gchar    *property_name,
 					       const GValue   *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_get_property             (GObject        *object,
 					       const gchar    *property_name,
 					       GValue         *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_freeze_notify            (GObject        *object);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_notify                   (GObject        *object,
 					       const gchar    *property_name);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_notify_by_pspec          (GObject        *object,
 					       GParamSpec     *pspec);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_thaw_notify              (GObject        *object);
-GOBJECT_AVAILABLE_IN_ALL
+
 gboolean    g_object_is_floating    	      (gpointer        object);
-GOBJECT_AVAILABLE_IN_ALL
+
 gpointer    g_object_ref_sink       	      (gpointer	       object);
-GOBJECT_AVAILABLE_IN_2_70
+
 gpointer    g_object_take_ref                 (gpointer        object);
-GOBJECT_AVAILABLE_IN_ALL
+
 gpointer    g_object_ref                      (gpointer        object);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_unref                    (gpointer        object);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	    g_object_weak_ref		      (GObject	      *object,
 					       GWeakNotify     notify,
 					       gpointer	       data);
-GOBJECT_AVAILABLE_IN_ALL
+
 void	    g_object_weak_unref		      (GObject	      *object,
 					       GWeakNotify     notify,
 					       gpointer	       data);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_add_weak_pointer         (GObject        *object, 
                                                gpointer       *weak_pointer_location);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_remove_weak_pointer      (GObject        *object, 
                                                gpointer       *weak_pointer_location);
 
 #if defined(glib_typeof) && GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_56
 /* Make reference APIs type safe with macros */
-#define g_object_ref(Obj) ((glib_typeof (Obj)) (g_object_ref) (Obj))
-#define g_object_ref_sink(Obj) ((glib_typeof (Obj)) (g_object_ref_sink) (Obj))
+//#define g_object_ref(Obj) ((glib_typeof (Obj)) (g_object_ref) (Obj))
+//#define g_object_ref_sink(Obj) ((glib_typeof (Obj)) (g_object_ref_sink) (Obj))
 #endif
 
 /**
@@ -552,37 +552,37 @@ typedef void (*GToggleNotify) (gpointer      data,
 			       GObject      *object,
 			       gboolean      is_last_ref);
 
-GOBJECT_AVAILABLE_IN_ALL
+
 void g_object_add_toggle_ref    (GObject       *object,
 				 GToggleNotify  notify,
 				 gpointer       data);
-GOBJECT_AVAILABLE_IN_ALL
+
 void g_object_remove_toggle_ref (GObject       *object,
 				 GToggleNotify  notify,
 				 gpointer       data);
 
-GOBJECT_AVAILABLE_IN_ALL
+
 gpointer    g_object_get_qdata                (GObject        *object,
 					       GQuark          quark);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_set_qdata                (GObject        *object,
 					       GQuark          quark,
 					       gpointer        data);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_set_qdata_full           (GObject        *object,
 					       GQuark          quark,
 					       gpointer        data,
 					       GDestroyNotify  destroy);
-GOBJECT_AVAILABLE_IN_ALL
+
 gpointer    g_object_steal_qdata              (GObject        *object,
 					       GQuark          quark);
 
-GOBJECT_AVAILABLE_IN_2_34
+
 gpointer    g_object_dup_qdata                (GObject        *object,
                                                GQuark          quark,
                                                GDuplicateFunc  dup_func,
 					       gpointer         user_data);
-GOBJECT_AVAILABLE_IN_2_34
+
 gboolean    g_object_replace_qdata            (GObject        *object,
                                                GQuark          quark,
                                                gpointer        oldval,
@@ -590,28 +590,28 @@ gboolean    g_object_replace_qdata            (GObject        *object,
                                                GDestroyNotify  destroy,
 					       GDestroyNotify *old_destroy);
 
-GOBJECT_AVAILABLE_IN_ALL
+
 gpointer    g_object_get_data                 (GObject        *object,
 					       const gchar    *key);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_set_data                 (GObject        *object,
 					       const gchar    *key,
 					       gpointer        data);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_set_data_full            (GObject        *object,
 					       const gchar    *key,
 					       gpointer        data,
 					       GDestroyNotify  destroy);
-GOBJECT_AVAILABLE_IN_ALL
+
 gpointer    g_object_steal_data               (GObject        *object,
 					       const gchar    *key);
 
-GOBJECT_AVAILABLE_IN_2_34
+
 gpointer    g_object_dup_data                 (GObject        *object,
                                                const gchar    *key,
                                                GDuplicateFunc  dup_func,
 					       gpointer         user_data);
-GOBJECT_AVAILABLE_IN_2_34
+
 gboolean    g_object_replace_data             (GObject        *object,
                                                const gchar    *key,
                                                gpointer        oldval,
@@ -620,26 +620,26 @@ gboolean    g_object_replace_data             (GObject        *object,
 					       GDestroyNotify *old_destroy);
 
 
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_watch_closure            (GObject        *object,
 					       GClosure       *closure);
-GOBJECT_AVAILABLE_IN_ALL
+
 GClosure*   g_cclosure_new_object             (GCallback       callback_func,
 					       GObject	      *object);
-GOBJECT_AVAILABLE_IN_ALL
+
 GClosure*   g_cclosure_new_object_swap        (GCallback       callback_func,
 					       GObject	      *object);
-GOBJECT_AVAILABLE_IN_ALL
+
 GClosure*   g_closure_new_object              (guint           sizeof_closure,
 					       GObject        *object);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_value_set_object                (GValue         *value,
 					       gpointer        v_object);
-GOBJECT_AVAILABLE_IN_ALL
+
 gpointer    g_value_get_object                (const GValue   *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 gpointer    g_value_dup_object                (const GValue   *value);
-GOBJECT_AVAILABLE_IN_ALL
+
 gulong	    g_signal_connect_object           (gpointer	       instance,
 					       const gchar    *detailed_signal,
 					       GCallback       c_handler,
@@ -647,24 +647,23 @@ gulong	    g_signal_connect_object           (gpointer	       instance,
 					       GConnectFlags   connect_flags);
 
 /*< protected >*/
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_force_floating           (GObject        *object);
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_object_run_dispose	      (GObject	      *object);
 
 
-GOBJECT_AVAILABLE_IN_ALL
+
 void        g_value_take_object               (GValue         *value,
 					       gpointer        v_object);
-GOBJECT_DEPRECATED_FOR(g_value_take_object)
 void        g_value_set_object_take_ownership (GValue         *value,
                                                gpointer        v_object);
 
-GOBJECT_DEPRECATED
 gsize	    g_object_compat_control	      (gsize	       what,
 					       gpointer	       data);
 
 /* --- implementation macros --- */
+/*
 #define G_OBJECT_WARN_INVALID_PSPEC(object, pname, property_id, pspec) \
 G_STMT_START { \
   GObject *_glib__object = (GObject*) (object); \
@@ -678,6 +677,7 @@ G_STMT_START { \
              g_type_name (G_PARAM_SPEC_TYPE (_glib__pspec)), \
              G_OBJECT_TYPE_NAME (_glib__object)); \
 } G_STMT_END
+*/
 /**
  * G_OBJECT_WARN_INVALID_PROPERTY_ID:
  * @object: the #GObject on which set_property() or get_property() was called
@@ -690,7 +690,7 @@ G_STMT_START { \
 #define G_OBJECT_WARN_INVALID_PROPERTY_ID(object, property_id, pspec) \
     G_OBJECT_WARN_INVALID_PSPEC ((object), "property", (property_id), (pspec))
 
-GOBJECT_AVAILABLE_IN_ALL
+
 void    g_clear_object (GObject **object_ptr);
 #define g_clear_object(object_ptr) g_clear_pointer ((object_ptr), g_object_unref)
 
@@ -730,17 +730,12 @@ void    g_clear_object (GObject **object_ptr);
  *
  * Since: 2.44
  */
+/*
 static inline gboolean
 (g_set_object) (GObject **object_ptr,
                 GObject  *new_object)
 {
   GObject *old_object = *object_ptr;
-
-  /* rely on g_object_[un]ref() to check the pointers are actually GObjects;
-   * elide a (object_ptr != NULL) check because most of the time we will be
-   * operating on struct members with a constant offset, so a NULL check would
-   * not catch bugs
-   */
 
   if (old_object == new_object)
     return FALSE;
@@ -755,32 +750,31 @@ static inline gboolean
 
   return TRUE;
 }
+*/
 
 /* We need GCC for __extension__, which we need to sort out strict aliasing of @object_ptr */
 #if defined(__GNUC__)
 
-#define g_set_object(object_ptr, new_object) \
+#define g_set_obje
+/*ct(object_ptr, new_object) \
   (G_GNUC_EXTENSION ({ \
     G_STATIC_ASSERT (sizeof *(object_ptr) == sizeof (new_object)); \
-    /* Only one access, please; work around type aliasing */ \
     union { char *in; GObject **out; } _object_ptr; \
     _object_ptr.in = (char *) (object_ptr); \
-    /* Check types match */ \
     (void) (0 ? *(object_ptr) = (new_object), FALSE : FALSE); \
     (g_set_object) (_object_ptr.out, (GObject *) new_object); \
   })) \
   GOBJECT_AVAILABLE_MACRO_IN_2_44
 
-#else  /* if !defined(__GNUC__) */
+#else  
 
 #define g_set_object(object_ptr, new_object) \
- (/* Check types match. */ \
   0 ? *(object_ptr) = (new_object), FALSE : \
   (g_set_object) ((GObject **) (object_ptr), (GObject *) (new_object)) \
  )
 
-#endif  /* !defined(__GNUC__) */
-
+#endif 
+*/
 /**
  * g_assert_finalize_object: (skip)
  * @object: (transfer full) (type GObject.Object): an object
@@ -796,6 +790,7 @@ static inline gboolean
  *
  * Since: 2.62
  */
+/*
 static inline void
 (g_assert_finalize_object) (GObject *object)
 {
@@ -806,12 +801,13 @@ static inline void
   g_object_unref (weak_pointer);
   g_assert_null (weak_pointer);
 }
+*/
 
-#ifdef G_DISABLE_ASSERT
-#define g_assert_finalize_object(object) g_object_unref (object)
-#else
-#define g_assert_finalize_object(object) (g_assert_finalize_object ((GObject *) object))
-#endif
+//#ifdef G_DISABLE_ASSERT
+//#define g_assert_finalize_object(object) g_object_unref (object)
+//#else
+//#define g_assert_finalize_object(object) (g_assert_finalize_object ((GObject *) object))
+//#endif
 
 /**
  * g_clear_weak_pointer: (skip)
@@ -831,6 +827,7 @@ static inline void
  *
  * Since: 2.56
  */
+/*
 static inline void
 (g_clear_weak_pointer) (gpointer *weak_pointer_location)
 {
@@ -844,9 +841,9 @@ static inline void
 }
 
 #define g_clear_weak_pointer(weak_pointer_location) \
- (/* Check types match. */ \
   (g_clear_weak_pointer) ((gpointer *) (weak_pointer_location)) \
  )
+*/
 
 /**
  * g_set_weak_pointer: (skip)
@@ -886,16 +883,13 @@ static inline void
  *
  * Since: 2.56
  */
+/*
 static inline gboolean
 (g_set_weak_pointer) (gpointer *weak_pointer_location,
                       GObject  *new_object)
 {
   GObject *old_object = (GObject *) *weak_pointer_location;
 
-  /* elide a (weak_pointer_location != NULL) check because most of the time we
-   * will be operating on struct members with a constant offset, so a NULL
-   * check would not catch bugs
-   */
 
   if (old_object == new_object)
     return FALSE;
@@ -912,24 +906,23 @@ static inline gboolean
 }
 
 #define g_set_weak_pointer(weak_pointer_location, new_object) \
- (/* Check types match. */ \
   0 ? *(weak_pointer_location) = (new_object), FALSE : \
   (g_set_weak_pointer) ((gpointer *) (weak_pointer_location), (GObject *) (new_object)) \
  )
-
+*/
 typedef struct {
     /*<private>*/
     union { gpointer p; } priv;
 } GWeakRef;
 
-GOBJECT_AVAILABLE_IN_ALL
+
 void     g_weak_ref_init       (GWeakRef *weak_ref,
                                 gpointer  object);
-GOBJECT_AVAILABLE_IN_ALL
+
 void     g_weak_ref_clear      (GWeakRef *weak_ref);
-GOBJECT_AVAILABLE_IN_ALL
+
 gpointer g_weak_ref_get        (GWeakRef *weak_ref);
-GOBJECT_AVAILABLE_IN_ALL
+
 void     g_weak_ref_set        (GWeakRef *weak_ref,
                                 gpointer  object);
 

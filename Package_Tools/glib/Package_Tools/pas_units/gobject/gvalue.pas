@@ -28,6 +28,7 @@ uses
 //  end;
 //  PGValue = ^TGValue;
 
+type
   TGValueTransform = procedure(src_value: PGValue; dest_value: PGValue); cdecl;
 
 function g_value_init(Value: PGValue; g_type: TGType): PGValue; cdecl; external libglib2;
@@ -47,11 +48,11 @@ const
   G_VALUE_NOCOPY_CONTENTS = 1 shl 27;
   G_VALUE_INTERNED_STRING = 1 shl 28;
 
-function G_TYPE_IS_VALUE(_type: longint): longint;
-function G_IS_VALUE(Value: longint): longint;
-function G_VALUE_TYPE(Value: longint): longint;
-function G_VALUE_TYPE_NAME(Value: longint): longint;
-function G_VALUE_HOLDS(Value, _type: longint): longint;
+function G_TYPE_IS_VALUE(_type: TGType): Tgboolean;
+function G_IS_VALUE(Value: PGValue): Tgboolean;
+function G_VALUE_TYPE(Value: PGValue): TGType;
+function G_VALUE_TYPE_NAME(Value: PGValue): Pgchar;
+function G_VALUE_HOLDS(Value:PGValue; _type: TGType): Tgboolean;
 
 
 // === Konventiert am: 12-8-24 19:54:59 ===
@@ -60,29 +61,29 @@ function G_VALUE_HOLDS(Value, _type: longint): longint;
 implementation
 
 
-function G_TYPE_IS_VALUE(_type: longint): longint;
+function G_TYPE_IS_VALUE(_type: TGType): Tgboolean;
 begin
   G_TYPE_IS_VALUE := g_type_check_is_value_type(_type);
 end;
 
-function G_IS_VALUE(Value: longint): longint;
+function G_IS_VALUE(Value: PGValue): Tgboolean;
 begin
-  G_IS_VALUE := G_TYPE_CHECK_VALUE(Value);
+  G_IS_VALUE := g_type_check_value(Value);
 end;
 
-function G_VALUE_TYPE(Value: longint): longint;
+function G_VALUE_TYPE(Value: PGValue): TGType;
 begin
   G_VALUE_TYPE := (PGValue(Value))^.g_type;
 end;
 
-function G_VALUE_TYPE_NAME(Value: longint): longint;
+function G_VALUE_TYPE_NAME(Value: PGValue): Pgchar;
 begin
   G_VALUE_TYPE_NAME := g_type_name(G_VALUE_TYPE(Value));
 end;
 
-function G_VALUE_HOLDS(Value, _type: longint): longint;
+function G_VALUE_HOLDS(Value: PGValue; _type: TGType): Tgboolean;
 begin
-  G_VALUE_HOLDS := G_TYPE_CHECK_VALUE_TYPE(Value, _type);
+  G_VALUE_HOLDS := g_type_check_value_holds(Value, _type);
 end;
 
 
