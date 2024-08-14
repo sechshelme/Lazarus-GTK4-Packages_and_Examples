@@ -445,7 +445,6 @@ GType   g_rand_get_type (void) ;
 
 GType   g_strv_builder_get_type (void) ;
 
-GOBJECT_DEPRECATED_FOR('G_TYPE_VARIANT')
 GType   g_variant_get_gtype        (void) ;
 
 

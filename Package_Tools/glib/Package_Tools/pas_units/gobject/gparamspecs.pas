@@ -9,73 +9,73 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
-function G_TYPE_PARAM_CHAR: longint;
+function G_TYPE_PARAM_CHAR: Tgtype;
 function G_IS_PARAM_SPEC_CHAR(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_CHAR(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_UCHAR: longint;
+function G_TYPE_PARAM_UCHAR: Tgtype;
 function G_IS_PARAM_SPEC_UCHAR(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_UCHAR(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_BOOLEAN: longint;
+function G_TYPE_PARAM_BOOLEAN: Tgtype;
 function G_IS_PARAM_SPEC_BOOLEAN(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_BOOLEAN(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_INT: longint;
+function G_TYPE_PARAM_INT: Tgtype;
 function G_IS_PARAM_SPEC_INT(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_INT(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_UINT: longint;
+function G_TYPE_PARAM_UINT: Tgtype;
 function G_IS_PARAM_SPEC_UINT(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_UINT(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_LONG: longint;
+function G_TYPE_PARAM_LONG: Tgtype;
 function G_IS_PARAM_SPEC_LONG(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_LONG(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_ULONG: longint;
+function G_TYPE_PARAM_ULONG: Tgtype;
 function G_IS_PARAM_SPEC_ULONG(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_ULONG(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_INT64: longint;
+function G_TYPE_PARAM_INT64: Tgtype;
 function G_IS_PARAM_SPEC_INT64(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_INT64(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_UINT64: longint;
+function G_TYPE_PARAM_UINT64: Tgtype;
 function G_IS_PARAM_SPEC_UINT64(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_UINT64(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_UNICHAR: longint;
+function G_TYPE_PARAM_UNICHAR: Tgtype;
 function G_PARAM_SPEC_UNICHAR(pspec: Pointer): PGTypeInstance;
 function G_IS_PARAM_SPEC_UNICHAR(pspec: Pointer): Tgboolean;
-function G_TYPE_PARAM_ENUM: longint;
+function G_TYPE_PARAM_ENUM: Tgtype;
 function G_IS_PARAM_SPEC_ENUM(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_ENUM(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_FLAGS: longint;
+function G_TYPE_PARAM_FLAGS: Tgtype;
 function G_IS_PARAM_SPEC_FLAGS(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_FLAGS(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_FLOAT: longint;
+function G_TYPE_PARAM_FLOAT: Tgtype;
 function G_IS_PARAM_SPEC_FLOAT(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_FLOAT(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_DOUBLE: longint;
+function G_TYPE_PARAM_DOUBLE: Tgtype;
 function G_IS_PARAM_SPEC_DOUBLE(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_DOUBLE(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_STRING: longint;
+function G_TYPE_PARAM_STRING: Tgtype;
 function G_IS_PARAM_SPEC_STRING(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_STRING(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_PARAM: longint;
+function G_TYPE_PARAM_PARAM: Tgtype;
 function G_IS_PARAM_SPEC_PARAM(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_PARAM(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_BOXED: longint;
+function G_TYPE_PARAM_BOXED: Tgtype;
 function G_IS_PARAM_SPEC_BOXED(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_BOXED(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_POINTER: longint;
+function G_TYPE_PARAM_POINTER: Tgtype;
 function G_IS_PARAM_SPEC_POINTER(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_POINTER(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_VALUE_ARRAY: longint;
+function G_TYPE_PARAM_VALUE_ARRAY: Tgtype;
 function G_IS_PARAM_SPEC_VALUE_ARRAY(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_VALUE_ARRAY(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_OBJECT: longint;
+function G_TYPE_PARAM_OBJECT: Tgtype;
 function G_IS_PARAM_SPEC_OBJECT(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_OBJECT(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_OVERRIDE: longint;
+function G_TYPE_PARAM_OVERRIDE: Tgtype;
 function G_IS_PARAM_SPEC_OVERRIDE(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_OVERRIDE(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_GTYPE: longint;
+function G_TYPE_PARAM_GTYPE: Tgtype;
 function G_IS_PARAM_SPEC_GTYPE(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_GTYPE(pspec: Pointer): PGTypeInstance;
-function G_TYPE_PARAM_VARIANT: longint;
+function G_TYPE_PARAM_VARIANT: Tgtype;
 function G_IS_PARAM_SPEC_VARIANT(pspec: Pointer): Tgboolean;
 function G_PARAM_SPEC_VARIANT(pspec: Pointer): PGTypeInstance;
 
@@ -338,7 +338,7 @@ var
 implementation
 
 
-function G_TYPE_PARAM_CHAR: longint;
+function G_TYPE_PARAM_CHAR: Tgtype;
 begin
   G_TYPE_PARAM_CHAR := g_param_spec_types[0];
 end;
@@ -353,7 +353,7 @@ begin
   G_PARAM_SPEC_CHAR := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_CHAR);
 end;
 
-function G_TYPE_PARAM_UCHAR: longint;
+function G_TYPE_PARAM_UCHAR: Tgtype;
 begin
   G_TYPE_PARAM_UCHAR := g_param_spec_types[1];
 end;
@@ -368,7 +368,7 @@ begin
   G_PARAM_SPEC_UCHAR := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_UCHAR);
 end;
 
-function G_TYPE_PARAM_BOOLEAN: longint;
+function G_TYPE_PARAM_BOOLEAN: Tgtype;
 begin
   G_TYPE_PARAM_BOOLEAN := g_param_spec_types[2];
 end;
@@ -383,7 +383,7 @@ begin
   G_PARAM_SPEC_BOOLEAN := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_BOOLEAN);
 end;
 
-function G_TYPE_PARAM_INT: longint;
+function G_TYPE_PARAM_INT: Tgtype;
 begin
   G_TYPE_PARAM_INT := g_param_spec_types[3];
 end;
@@ -398,7 +398,7 @@ begin
   G_PARAM_SPEC_INT := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_INT);
 end;
 
-function G_TYPE_PARAM_UINT: longint;
+function G_TYPE_PARAM_UINT: Tgtype;
 begin
   G_TYPE_PARAM_UINT := g_param_spec_types[4];
 end;
@@ -413,7 +413,7 @@ begin
   G_PARAM_SPEC_UINT := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_UINT);
 end;
 
-function G_TYPE_PARAM_LONG: longint;
+function G_TYPE_PARAM_LONG: Tgtype;
 begin
   G_TYPE_PARAM_LONG := g_param_spec_types[5];
 end;
@@ -428,7 +428,7 @@ begin
   G_PARAM_SPEC_LONG := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_LONG);
 end;
 
-function G_TYPE_PARAM_ULONG: longint;
+function G_TYPE_PARAM_ULONG: Tgtype;
 begin
   G_TYPE_PARAM_ULONG := g_param_spec_types[6];
 end;
@@ -443,7 +443,7 @@ begin
   G_PARAM_SPEC_ULONG := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_ULONG);
 end;
 
-function G_TYPE_PARAM_INT64: longint;
+function G_TYPE_PARAM_INT64: Tgtype;
 begin
   G_TYPE_PARAM_INT64 := g_param_spec_types[7];
 end;
@@ -458,7 +458,7 @@ begin
   G_PARAM_SPEC_INT64 := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_INT64);
 end;
 
-function G_TYPE_PARAM_UINT64: longint;
+function G_TYPE_PARAM_UINT64: Tgtype;
 begin
   G_TYPE_PARAM_UINT64 := g_param_spec_types[8];
 end;
@@ -473,7 +473,7 @@ begin
   G_PARAM_SPEC_UINT64 := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_UINT64);
 end;
 
-function G_TYPE_PARAM_UNICHAR: longint;
+function G_TYPE_PARAM_UNICHAR: Tgtype;
 begin
   G_TYPE_PARAM_UNICHAR := g_param_spec_types[9];
 end;
@@ -488,7 +488,7 @@ begin
   G_IS_PARAM_SPEC_UNICHAR := G_TYPE_CHECK_INSTANCE_TYPE(pspec, G_TYPE_PARAM_UNICHAR);
 end;
 
-function G_TYPE_PARAM_ENUM: longint;
+function G_TYPE_PARAM_ENUM: Tgtype;
 begin
   G_TYPE_PARAM_ENUM := g_param_spec_types[10];
 end;
@@ -503,7 +503,7 @@ begin
   G_PARAM_SPEC_ENUM := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_ENUM);
 end;
 
-function G_TYPE_PARAM_FLAGS: longint;
+function G_TYPE_PARAM_FLAGS: Tgtype;
 begin
   G_TYPE_PARAM_FLAGS := g_param_spec_types[11];
 end;
@@ -518,7 +518,7 @@ begin
   G_PARAM_SPEC_FLAGS := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_FLAGS);
 end;
 
-function G_TYPE_PARAM_FLOAT: longint;
+function G_TYPE_PARAM_FLOAT: Tgtype;
 begin
   G_TYPE_PARAM_FLOAT := g_param_spec_types[12];
 end;
@@ -533,7 +533,7 @@ begin
   G_PARAM_SPEC_FLOAT := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_FLOAT);
 end;
 
-function G_TYPE_PARAM_DOUBLE: longint;
+function G_TYPE_PARAM_DOUBLE: Tgtype;
 begin
   G_TYPE_PARAM_DOUBLE := g_param_spec_types[13];
 end;
@@ -548,7 +548,7 @@ begin
   G_PARAM_SPEC_DOUBLE := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_DOUBLE);
 end;
 
-function G_TYPE_PARAM_STRING: longint;
+function G_TYPE_PARAM_STRING: Tgtype;
 begin
   G_TYPE_PARAM_STRING := g_param_spec_types[14];
 end;
@@ -563,7 +563,7 @@ begin
   G_PARAM_SPEC_STRING := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_STRING);
 end;
 
-function G_TYPE_PARAM_PARAM: longint;
+function G_TYPE_PARAM_PARAM: Tgtype;
 begin
   G_TYPE_PARAM_PARAM := g_param_spec_types[15];
 end;
@@ -578,7 +578,7 @@ begin
   G_PARAM_SPEC_PARAM := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_PARAM);
 end;
 
-function G_TYPE_PARAM_BOXED: longint;
+function G_TYPE_PARAM_BOXED: Tgtype;
 begin
   G_TYPE_PARAM_BOXED := g_param_spec_types[16];
 end;
@@ -593,7 +593,7 @@ begin
   G_PARAM_SPEC_BOXED := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_BOXED);
 end;
 
-function G_TYPE_PARAM_POINTER: longint;
+function G_TYPE_PARAM_POINTER: Tgtype;
 begin
   G_TYPE_PARAM_POINTER := g_param_spec_types[17];
 end;
@@ -608,7 +608,7 @@ begin
   G_PARAM_SPEC_POINTER := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_POINTER);
 end;
 
-function G_TYPE_PARAM_VALUE_ARRAY: longint;
+function G_TYPE_PARAM_VALUE_ARRAY: Tgtype;
 begin
   G_TYPE_PARAM_VALUE_ARRAY := g_param_spec_types[18];
 end;
@@ -623,7 +623,7 @@ begin
   G_PARAM_SPEC_VALUE_ARRAY := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_VALUE_ARRAY);
 end;
 
-function G_TYPE_PARAM_OBJECT: longint;
+function G_TYPE_PARAM_OBJECT: Tgtype;
 begin
   G_TYPE_PARAM_OBJECT := g_param_spec_types[19];
 end;
@@ -638,7 +638,7 @@ begin
   G_PARAM_SPEC_OBJECT := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_OBJECT);
 end;
 
-function G_TYPE_PARAM_OVERRIDE: longint;
+function G_TYPE_PARAM_OVERRIDE: Tgtype;
 begin
   G_TYPE_PARAM_OVERRIDE := g_param_spec_types[20];
 end;
@@ -653,7 +653,7 @@ begin
   G_PARAM_SPEC_OVERRIDE := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_OVERRIDE);
 end;
 
-function G_TYPE_PARAM_GTYPE: longint;
+function G_TYPE_PARAM_GTYPE: Tgtype;
 begin
   G_TYPE_PARAM_GTYPE := g_param_spec_types[21];
 end;
@@ -668,7 +668,7 @@ begin
   G_PARAM_SPEC_GTYPE := G_TYPE_CHECK_INSTANCE_CAST(pspec, G_TYPE_PARAM_GTYPE);
 end;
 
-function G_TYPE_PARAM_VARIANT: longint;
+function G_TYPE_PARAM_VARIANT: Tgtype;
 begin
   G_TYPE_PARAM_VARIANT := g_param_spec_types[22];
 end;

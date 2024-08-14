@@ -97,7 +97,7 @@ struct _GTypeModuleClass
  * 
  * Since: 2.14
  */
-#define G_DEFINE_DYNAMIC_TYPE(TN, t_n, T_P)          G_DEFINE_DYNAMIC_TYPE_EXTENDED (TN, t_n, T_P, 0, {})
+//#define G_DEFINE_DYNAMIC_TYPE(TN, t_n, T_P)          G_DEFINE_DYNAMIC_TYPE_EXTENDED (TN, t_n, T_P, 0, {})
 /**
  * G_DEFINE_DYNAMIC_TYPE_EXTENDED:
  * @TypeName: The name of the new type, in Camel case.
@@ -172,53 +172,6 @@ struct _GTypeModuleClass
  * 
  * Since: 2.14
  */
-#define G_DEFINE_DYNAMIC_TYPE_EXTENDED(TypeName, type_name, TYPE_PARENT, flags, CODE) \
-static void     type_name##_init              (TypeName        *self); \
-static void     type_name##_class_init        (TypeName##Class *klass); \
-static void     type_name##_class_finalize    (TypeName##Class *klass); \
-static gpointer type_name##_parent_class = NULL; \
-static GType    type_name##_type_id = 0; \
-static gint     TypeName##_private_offset; \
-\
-_G_DEFINE_TYPE_EXTENDED_CLASS_INIT(TypeName, type_name) \
-\
-G_GNUC_UNUSED \
-static inline gpointer \
-type_name##_get_instance_private (TypeName *self) \
-{ \
-  return (G_STRUCT_MEMBER_P (self, TypeName##_private_offset)); \
-} \
-\
-GType \
-type_name##_get_type (void) \
-{ \
-  return type_name##_type_id; \
-} \
-static void \
-type_name##_register_type (GTypeModule *type_module) \
-{ \
-  GType g_define_type_id G_GNUC_UNUSED; \
-  const GTypeInfo g_define_type_info = { \
-    sizeof (TypeName##Class), \
-    (GBaseInitFunc) NULL, \
-    (GBaseFinalizeFunc) NULL, \
-    (GClassInitFunc)(void (*)(void)) type_name##_class_intern_init, \
-    (GClassFinalizeFunc)(void (*)(void)) type_name##_class_finalize, \
-    NULL,   /* class_data */ \
-    sizeof (TypeName), \
-    0,      /* n_preallocs */ \
-    (GInstanceInitFunc)(void (*)(void)) type_name##_init, \
-    NULL    /* value_table */ \
-  }; \
-  type_name##_type_id = g_type_module_register_type (type_module, \
-						     TYPE_PARENT, \
-						     #TypeName, \
-						     &g_define_type_info, \
-						     (GTypeFlags) flags); \
-  g_define_type_id = type_name##_type_id; \
-  { CODE ; } \
-}
-
 /**
  * G_IMPLEMENT_INTERFACE_DYNAMIC:
  * @TYPE_IFACE: The #GType of the interface to add
@@ -235,12 +188,6 @@ type_name##_register_type (GTypeModule *type_module) \
  *
  * Since: 2.24
  */
-#define G_IMPLEMENT_INTERFACE_DYNAMIC(TYPE_IFACE, iface_init)       { \
-  const GInterfaceInfo g_implement_interface_info = { \
-    (GInterfaceInitFunc)(void (*)(void)) iface_init, NULL, NULL      \
-  }; \
-  g_type_module_add_interface (type_module, g_define_type_id, TYPE_IFACE, &g_implement_interface_info); \
-}
 
 /**
  * G_ADD_PRIVATE_DYNAMIC:
@@ -257,10 +204,6 @@ type_name##_register_type (GTypeModule *type_module) \
  *
  * Since: 2.38
  */
-#define G_ADD_PRIVATE_DYNAMIC(TypeName)         { \
-  TypeName##_private_offset = sizeof (TypeName##Private); \
-}
-
 
 GType    g_type_module_get_type       (void) ;
 

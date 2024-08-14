@@ -150,7 +150,7 @@
  *
  * Since: 2.66
  */
-#define G_VALUE_IS_INTERNED_STRING(value) (G_VALUE_HOLDS_STRING (value) && ((value)->data[1].v_uint & G_VALUE_INTERNED_STRING)) GOBJECT_AVAILABLE_MACRO_IN_2_66
+#define G_VALUE_IS_INTERNED_STRING(value) (G_VALUE_HOLDS_STRING (value) && ((value)->data[1].v_uint & G_VALUE_INTERNED_STRING)) 
 /**
  * G_VALUE_HOLDS_POINTER:
  * @value: a valid #GValue structure
@@ -190,10 +190,8 @@
 
 
 /* --- prototypes --- */
-GOBJECT_DEPRECATED_IN_2_32_FOR(g_value_set_schar)
 void                  g_value_set_char          (GValue       *value,
                                                  gchar         v_char);
-GOBJECT_DEPRECATED_IN_2_32_FOR(g_value_get_schar)
 gchar                 g_value_get_char          (const GValue *value);
 
 void		      g_value_set_schar		(GValue	      *value,
@@ -301,7 +299,6 @@ gchar*                g_strdup_value_contents   (const GValue *value);
 
 void g_value_take_string		        (GValue		   *value,
 						 gchar		   *v_string);
-GOBJECT_DEPRECATED_FOR(g_value_take_string)
 void g_value_set_string_take_ownership          (GValue            *value,
                                                  gchar             *v_string);
 

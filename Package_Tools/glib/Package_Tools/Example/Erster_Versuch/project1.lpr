@@ -92,13 +92,19 @@ uses
 
   gtype,                   // io.
   genums,                  // io.
-  gvalue,                  // io.
 
+  gvalue,                  // io.
+  gvaluetypes,             // io. -> gvalue
+
+  glib_types,              // io.
   gparam,                  // io.
   gparamspecs,             // io. -> gparam
   gclosure,                // io.
   gsignal,                 // io. -> gclosure
+  gmarshal,                // io. -> gclosure
   gobject,                 // io. -> gsignal, gclosure, gparam
+  gbinding,                // io. -> gobject, gclosure
+  gtypemodule,             // io. -> gobject
 
 
 
@@ -127,6 +133,7 @@ timer:=g_timer_new;
   g_timer_stop(timer);
 
 
+//  glib2.G_VALUE_IS_INTERNED_STRING;
 //glib2.G_OBJECT_WARN_INVALID_PROPERTY_ID;
 //glib2.private_g_type_check_class_is_a;
 // private_g_type_check_instance_cast

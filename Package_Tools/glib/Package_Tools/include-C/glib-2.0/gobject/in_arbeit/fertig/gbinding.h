@@ -103,11 +103,9 @@ GType                 g_binding_get_type            (void) ;
 
 
 GBindingFlags         g_binding_get_flags           (GBinding *binding);
-GOBJECT_DEPRECATED_IN_2_68_FOR(g_binding_dup_source)
 GObject *             g_binding_get_source          (GBinding *binding);
 
 GObject *             g_binding_dup_source          (GBinding *binding);
-GOBJECT_DEPRECATED_IN_2_68_FOR(g_binding_dup_target)
 GObject *             g_binding_get_target          (GBinding *binding);
 
 GObject *             g_binding_dup_target          (GBinding *binding);
