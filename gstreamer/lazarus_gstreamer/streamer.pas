@@ -75,21 +75,17 @@ begin
   CustomData^.state := new_state;
 end;
 
-constructor TStreamer.Create(const AsongPath: string);
-begin
-  pipeline.pipeline := nil;
-  fsongPath := AsongPath;
-  Start;
-end;
+// =========================
 
-procedure TStreamer.Start;
+constructor TStreamer.Create(const AsongPath: string);
 var
   mp: PGstElement;
   bus: PGstBus;
 begin
-  if pipeline.pipeline = nil then begin
-    //    pipeline := gst_parse_launch(PChar(fsongPath), nil);
+  pipeline.pipeline := nil;
+  fsongPath := AsongPath;
 
+  if pipeline.pipeline = nil then begin
     pipeline.pipeline := gst_pipeline_new('audio-player');
     TestIO(pipeline.pipeline, 'pipeline');
 
@@ -132,6 +128,11 @@ begin
   gst_bus_add_signal_watch(bus);
   g_signal_connect(G_OBJECT(bus), 'message::state-changed', TGCallback(@state_changed_cb), @customData);
   gst_object_unref(bus);
+end;
+
+procedure TStreamer.Start;
+begin
+  gst_element_set_state(pipeline.pipeline, GST_STATE_READY);
 end;
 
 procedure TStreamer.Play;

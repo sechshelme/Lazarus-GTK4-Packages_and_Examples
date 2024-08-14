@@ -216,8 +216,8 @@ begin
     Caption := 'volume';
     Parent := Self;
     OnChange := @VolumeChange;
-    Position := 1000;
     Max := 1000;
+    Position := 1000;
   end;
 
 end;

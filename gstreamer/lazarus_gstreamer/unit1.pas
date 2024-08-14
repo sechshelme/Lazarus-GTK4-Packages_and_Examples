@@ -42,7 +42,10 @@ begin
       Width := self.ClientWidth;
       Top := 100 * i;
       Anchors := [akLeft, akTop, akRight];
-      CreateSound('../test.mp3');
+    if i=4 then   CreateSound('/n4800/Multimedia/Music/Diverses/MP3 Diverse/DJ_Shaolin-Popcorn_(Hot_Butter_cover).mp3') else  CreateSound('../test.mp3');
+
+
+
     end;
   end;
   Timer1.Enabled := True;
