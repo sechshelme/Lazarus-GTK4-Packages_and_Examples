@@ -152,20 +152,17 @@ function g_signal_handlers_unblock_by_func(instance: Tgpointer; func, Data: Tgpo
 
 implementation
 
-function g_signal_connect(instance: Tgpointer; detailed_signal: Pgchar;
-  c_handler: TGCallback; Data: Tgpointer): Tgulong;
+function g_signal_connect(instance: Tgpointer; detailed_signal: Pgchar;    c_handler: TGCallback; Data: Tgpointer): Tgulong;
 begin
   g_signal_connect := g_signal_connect_data(instance, detailed_signal, c_handler, Data, nil, TGConnectFlags(0));
 end;
 
-function g_signal_connect_after(instance: Tgpointer; detailed_signal: Pgchar;
-  c_handler: TGCallback; Data: Tgpointer): Tgulong;
+function g_signal_connect_after(instance: Tgpointer; detailed_signal: Pgchar;  c_handler: TGCallback; Data: Tgpointer): Tgulong;
 begin
   g_signal_connect_after := g_signal_connect_data(instance, detailed_signal, c_handler, Data, nil, G_CONNECT_AFTER);
 end;
 
-function g_signal_connect_swapped(instance: Tgpointer; detailed_signal: Pgchar;
-  c_handler: TGCallback; Data: Tgpointer): Tguint;
+function g_signal_connect_swapped(instance: Tgpointer; detailed_signal: Pgchar;  c_handler: TGCallback; Data: Tgpointer): Tguint;
 begin
   g_signal_connect_swapped := g_signal_connect_data(instance, detailed_signal, c_handler, Data, nil, G_CONNECT_SWAPPED);
 end;
@@ -180,14 +177,12 @@ begin
   g_signal_handlers_disconnect_by_data := g_signal_handlers_disconnect_matched(instance, G_SIGNAL_MATCH_DATA, 0, 0, nil, nil, Data);
 end;
 
-function g_signal_handlers_block_by_func(instance: Tgpointer; func,
-  Data: Tgpointer): Tguint;
+function g_signal_handlers_block_by_func(instance: Tgpointer; func,   Data: Tgpointer): Tguint;
 begin
   g_signal_handlers_block_by_func := g_signal_handlers_block_matched(instance, TGSignalMatchType(G_SIGNAL_MATCH_FUNC or G_SIGNAL_MATCH_DATA), 0, 0, nil, func, Data);
 end;
 
-function g_signal_handlers_unblock_by_func(instance: Tgpointer; func,
-  Data: Tgpointer): Tguint;
+function g_signal_handlers_unblock_by_func(instance: Tgpointer; func,     Data: Tgpointer): Tguint;
 begin
   g_signal_handlers_unblock_by_func := g_signal_handlers_unblock_matched(instance, TGSignalMatchType(G_SIGNAL_MATCH_FUNC or G_SIGNAL_MATCH_DATA), 0, 0, nil, func, Data);
 end;

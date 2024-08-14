@@ -14,7 +14,6 @@ const
   cmPause = 1002;
   cmStop = 1003;
   cmSpring = 1004;
-  cmVolume = 1005;
 
 type
 
@@ -29,12 +28,15 @@ type
     procedure Timer;
     procedure printTime(time: integer);
   private
-    StartBtn, PlayBtn, PauseBtn, StopBtn, SpringBtn, VolumeBtn: TButton;
-    TrackBar: TTrackBar;
-    TimeLabel: TLabel;
+    StartBtn, PlayBtn, PauseBtn, StopBtn, SpringBtn: TButton;
+    MuteCheckBox:TCheckBox;
+    TrackBar, VolumeBar: TTrackBar;
+    DurLabel, PosLabel, StateLabel: TLabel;
     st: TStreamer;
     procedure BtnClick(Sender: TObject);
+    procedure MuteClick(Sender: TObject);
     procedure TrackBarChange(Sender: TObject);
+    procedure VolumeChange(Sender: TObject);
   end;
 
 implementation
@@ -75,11 +77,14 @@ begin
     end;
     cmSpring: begin
       st.spring(6000);
-      ;
     end;
-    cmVolume: begin
-      st.SetVolume(0.1);
-    end;
+  end;
+end;
+
+procedure TPlayerPanel.MuteClick(Sender: TObject);
+begin
+  if st <> nil then  begin
+    st.SetMute(MuteCheckBox.Checked);
   end;
 end;
 
@@ -87,6 +92,13 @@ procedure TPlayerPanel.TrackBarChange(Sender: TObject);
 begin
   st.spring(TrackBar.Position);
   WriteLn('change');
+end;
+
+procedure TPlayerPanel.VolumeChange(Sender: TObject);
+begin
+  if st <> nil then  begin
+    st.SetVolume(VolumeBar.Position / 1000);
+  end;
 end;
 
 
@@ -98,12 +110,37 @@ begin
   inherited  Create(TheOwner);
   Height := 100;
 
-  TimeLabel := TLabel.Create(Self);
-  with TimeLabel do begin
+  PosLabel := TLabel.Create(Self);
+  with PosLabel do begin
     Top := t;
-    Left := 320;
-    Caption := 'time';
+    Left := 370;
+    Caption := 'Postime';
     Parent := Self;
+  end;
+
+  DurLabel := TLabel.Create(Self);
+  with DurLabel do begin
+    Top := t;
+    Left := 470;
+    Caption := 'Durtime';
+    Parent := Self;
+  end;
+
+  StateLabel := TLabel.Create(Self);
+  with StateLabel do begin
+    Top := t + 25;
+    Left := 470;
+    Caption := 'State';
+    Parent := Self;
+  end;
+
+  MuteCheckBox := TCheckBox.Create(Self);
+  with MuteCheckBox do begin
+    Top := t+25;
+    Left := 370;
+    Caption := 'Mute';
+    Parent := Self;
+    OnChange:=@MuteClick;
   end;
 
   TrackBar := TTrackBar.Create(Self);
@@ -171,15 +208,16 @@ begin
     OnClick := @BtnClick;
   end;
 
-  VolumeBtn := TButton.Create(Self);
-  with VolumeBtn do begin
+  VolumeBar := TTrackBar.Create(Self);
+  with VolumeBar do begin
     Left := 5 * w + 5;
-    Width := w;
+    Width := w * 2;
     Top := t;
     Caption := 'volume';
     Parent := Self;
-    tag := cmVolume;
-    OnClick := @BtnClick;
+    OnChange := @VolumeChange;
+    Position := 1000;
+    Max := 1000;
   end;
 
 end;
@@ -192,7 +230,6 @@ end;
 
 procedure TPlayerPanel.CreateSound(const song: string);
 begin
-  //  st := TStreamer.Create('filesrc location=../test.mp3 !  mpegaudioparse ! mpg123audiodec ! audioconvert ! audioresample ! autoaudiosink ! volume volume=0.5');
   st := TStreamer.Create(song);
 end;
 
@@ -200,6 +237,7 @@ procedure TPlayerPanel.Timer;
 var
   oldChange: TNotifyEvent;
   p, d: integer;
+  s: string;
 begin
   oldChange := TrackBar.OnChange;
   TrackBar.OnChange := nil;
@@ -208,9 +246,10 @@ begin
   TrackBar.Max := d;
   TrackBar.Position := p;
   TrackBar.OnChange := oldChange;
-  WriteLn('dur: ', d, '   pos: ', p, '  state: ', st.getState);
-  TimeLabel.Caption := GstClockToStr(p);
-
+  PosLabel.Caption := GstClockToStr(p);
+  DurLabel.Caption := GstClockToStr(d);
+  WriteStr(s, st.getState);
+  StateLabel.Caption := s;
 end;
 
 procedure TPlayerPanel.printTime(time: integer);
