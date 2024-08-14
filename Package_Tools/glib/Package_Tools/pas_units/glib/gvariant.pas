@@ -179,14 +179,6 @@ const
 
 function g_variant_parser_get_error_quark: TGQuark; cdecl; external libglib2;
 function g_variant_parse_error_quark: TGQuark; cdecl; external libglib2;
-{#define G_VARIANT_BUILDER_INIT(variant_type)                                          \ }
-{                                                                                     \ }
-{                                                                                     \ }
-{                                                                                     \ }
-{        2942751021u /* == GVSB_MAGIC_PARTIAL, see gvariant.c */, variant_type,  0,  \ }
-{                                                                                     \ }
-{                                                                                     \ }
-{   }
 function g_variant_builder_new(_type: PGVariantType): PGVariantBuilder; cdecl; external libglib2;
 procedure g_variant_builder_unref(builder: PGVariantBuilder); cdecl; external libglib2;
 function g_variant_builder_ref(builder: PGVariantBuilder): PGVariantBuilder; cdecl; external libglib2;
@@ -215,9 +207,6 @@ function g_variant_parse_error_print_context(error: PGError; source_str: Pgchar)
 function g_variant_compare(one: Tgconstpointer; two: Tgconstpointer): Tgint; cdecl; external libglib2;
 
 type
-  {< private > }
-  PGVariantDict = ^TGVariantDict;
-
   TGVariantDict = record
     u: record
       case longint of
@@ -229,15 +218,7 @@ type
         1: (x: array[0..15] of Tguintptr);
       end;
   end;
-
-  {#define G_VARIANT_DICT_INIT(asv)                                             \ }
-  {                                                                            \ }
-  {                                                                            \ }
-  {                                                                            \ }
-  {        asv, 3488698669u /* == GVSD_MAGIC_PARTIAL, see gvariant.c */,  0,  \ }
-  {                                                                            \ }
-  {                                                                            \ }
-  {   }
+  PGVariantDict = ^TGVariantDict;
 
 function g_variant_dict_new(from_asv: PGVariant): PGVariantDict; cdecl; external libglib2;
 procedure g_variant_dict_init(dict: PGVariantDict; from_asv: PGVariant); cdecl; external libglib2;

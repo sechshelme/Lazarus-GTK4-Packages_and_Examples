@@ -250,6 +250,7 @@ begin
   DurLabel.Caption := GstClockToStr(d);
   WriteStr(s, st.getState);
   StateLabel.Caption := s;
+//  if p=d then st.Stop;
 end;
 
 procedure TPlayerPanel.printTime(time: integer);

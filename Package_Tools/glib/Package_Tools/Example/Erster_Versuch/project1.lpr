@@ -91,12 +91,15 @@ uses
   // --- gobject
 
   gtype,                   // io.
+  genums,                  // io.
   gvalue,                  // io.
 
-  gobject,                 // io.
   gparam,                  // io.
+  gparamspecs,             // io. -> gparam
   gclosure,                // io.
-  gsignal,                 // io. -gclosure
+  gsignal,                 // io. -> gclosure
+  gobject,                 // io. -> gsignal, gclosure, gparam
+
 
 
 

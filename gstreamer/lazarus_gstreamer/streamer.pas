@@ -65,7 +65,6 @@ begin
   end;
 end;
 
-
 procedure state_changed_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
 var
   CustomData: PCustomData absolute Data;
@@ -80,6 +79,7 @@ constructor TStreamer.Create(const AsongPath: string);
 begin
   pipeline.pipeline := nil;
   fsongPath := AsongPath;
+  Start;
 end;
 
 procedure TStreamer.Start;

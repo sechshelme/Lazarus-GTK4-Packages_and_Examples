@@ -22,36 +22,29 @@ Type
   PDWord    = ^DWord;
   PDouble   = ^Double;
 
+Type
+PGParamSpecChar  = ^GParamSpecChar;
+PGParamSpecUChar  = ^GParamSpecUChar;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
 
 
-{ was #define dname(params) para_def_expr }
-{ argument types are unknown }
+type
+  PGParamSpecChar = ^TGParamSpecChar;
+  TGParamSpecChar = record
+      {undefined structure}
+    end;
 
-function GPOINTER_TO_TYPE(p : longint) : TGType;
+  PGParamSpecUChar = ^TGParamSpecUChar;
+  TGParamSpecUChar = record
+      {undefined structure}
+    end;
 
-{ was #define dname(params) para_def_expr }
-{ argument types are unknown }
-function GTYPE_TO_POINTER(t : longint) : Tgpointer;
-
+(* error 
+typedef struct GParamSpecBoolean   ;
 
 implementation
-
-{ was #define dname(params) para_def_expr }
-{ argument types are unknown }
-function GPOINTER_TO_TYPE(p : longint) : TGType;
-begin
-  GPOINTER_TO_TYPE:=TGType(Tguintptr(p));
-end;
-
-{ was #define dname(params) para_def_expr }
-{ argument types are unknown }
-function GTYPE_TO_POINTER(t : longint) : Tgpointer;
-begin
-  GTYPE_TO_POINTER:=Tgpointer(Tguintptr(t));
-end;
 
 
 end.

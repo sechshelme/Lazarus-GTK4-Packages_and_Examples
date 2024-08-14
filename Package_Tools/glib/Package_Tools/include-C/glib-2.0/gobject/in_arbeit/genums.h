@@ -290,9 +290,9 @@ void	g_flags_complete_type_info (GType	       g_flags_type,
  *
  * Since: 2.74
  */
-#define G_DEFINE_ENUM_VALUE(EnumValue, EnumNick) \
-  { EnumValue, #EnumValue, EnumNick } \
-  GOBJECT_AVAILABLE_MACRO_IN_2_74
+////#define G_DEFINE_ENUM_VALUE(EnumValue, EnumNick) \
+//  { EnumValue, #EnumValue, EnumNick } \
+//  GOBJECT_AVAILABLE_MACRO_IN_2_74
 
 /**
  * G_DEFINE_ENUM_TYPE:
@@ -317,21 +317,7 @@ void	g_flags_complete_type_info (GType	       g_flags_type,
  *
  * Since: 2.74
  */
-#define G_DEFINE_ENUM_TYPE(TypeName, type_name, ...) \
-GType \
-type_name ## _get_type (void) { \
-  static _g_type_once_init_type g_define_type__static = 0; \
-  if (_g_type_once_init_enter (&g_define_type__static)) { \
-    static const GEnumValue enum_values[] = { \
-      __VA_ARGS__ , \
-      { 0, NULL, NULL }, \
-    }; \
-    GType g_define_type = g_enum_register_static (g_intern_static_string (#TypeName), enum_values); \
-    _g_type_once_init_leave (&g_define_type__static, g_define_type); \
-  } \
-  return g_define_type__static; \
-} \
-  GOBJECT_AVAILABLE_MACRO_IN_2_74
+
 
 /**
  * G_DEFINE_FLAGS_TYPE:
@@ -360,21 +346,6 @@ type_name ## _get_type (void) { \
  *
  * Since: 2.74
  */
-#define G_DEFINE_FLAGS_TYPE(TypeName, type_name, ...) \
-GType \
-type_name ## _get_type (void) { \
-  static _g_type_once_init_type g_define_type__static = 0; \
-  if (_g_type_once_init_enter (&g_define_type__static)) { \
-    static const GFlagsValue flags_values[] = { \
-      __VA_ARGS__ , \
-      { 0, NULL, NULL }, \
-    }; \
-    GType g_define_type = g_flags_register_static (g_intern_static_string (#TypeName), flags_values); \
-    _g_type_once_init_leave (&g_define_type__static, g_define_type); \
-  } \
-  return g_define_type__static; \
-} \
-  GOBJECT_AVAILABLE_MACRO_IN_2_74
 
 
 

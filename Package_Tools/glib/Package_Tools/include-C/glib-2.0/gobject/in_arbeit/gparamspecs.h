@@ -454,7 +454,7 @@
  *
  * Deprecated: 2.32: Use #GArray instead of #GValueArray
  */
-#define	G_TYPE_PARAM_VALUE_ARRAY	   (g_param_spec_types[18]) GOBJECT_DEPRECATED_MACRO_IN_2_32
+#define	G_TYPE_PARAM_VALUE_ARRAY	   (g_param_spec_types[18])
 /**
  * G_IS_PARAM_SPEC_VALUE_ARRAY:
  * @pspec: a valid #GParamSpec instance
@@ -465,7 +465,7 @@
  *
  * Deprecated: 2.32: Use #GArray instead of #GValueArray
  */
-#define G_IS_PARAM_SPEC_VALUE_ARRAY(pspec) (G_TYPE_CHECK_INSTANCE_TYPE ((pspec), G_TYPE_PARAM_VALUE_ARRAY)) GOBJECT_DEPRECATED_MACRO_IN_2_32
+#define G_IS_PARAM_SPEC_VALUE_ARRAY(pspec) (G_TYPE_CHECK_INSTANCE_TYPE ((pspec), G_TYPE_PARAM_VALUE_ARRAY)) 
 /**
  * G_PARAM_SPEC_VALUE_ARRAY:
  * @pspec: a valid #GParamSpec instance
@@ -474,7 +474,7 @@
  *
  * Deprecated: 2.32: Use #GArray instead of #GValueArray
  */
-#define G_PARAM_SPEC_VALUE_ARRAY(pspec)    (G_TYPE_CHECK_INSTANCE_CAST ((pspec), G_TYPE_PARAM_VALUE_ARRAY, GParamSpecValueArray)) GOBJECT_DEPRECATED_MACRO_IN_2_32
+#define G_PARAM_SPEC_VALUE_ARRAY(pspec)    (G_TYPE_CHECK_INSTANCE_CAST ((pspec), G_TYPE_PARAM_VALUE_ARRAY, GParamSpecValueArray))
 
 /**
  * G_TYPE_PARAM_OBJECT:
@@ -1144,7 +1144,7 @@ GParamSpec*	g_param_spec_variant	 (const gchar        *name,
 					  GVariant           *default_value,
 					  GParamFlags         flags);
 
-GOBJECT_VAR GType *g_param_spec_types;
+ GType *g_param_spec_types;
 
 
 
