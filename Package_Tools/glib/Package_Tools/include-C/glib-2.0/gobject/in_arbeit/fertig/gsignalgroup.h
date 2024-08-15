@@ -32,9 +32,9 @@
 
 
 
+#define G_TYPE_SIGNAL_GROUP    (g_signal_group_get_type())
 #define G_SIGNAL_GROUP(obj)    (G_TYPE_CHECK_INSTANCE_CAST ((obj), G_TYPE_SIGNAL_GROUP, GSignalGroup))
 #define G_IS_SIGNAL_GROUP(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), G_TYPE_SIGNAL_GROUP))
-#define G_TYPE_SIGNAL_GROUP    (g_signal_group_get_type())
 
 typedef struct _GSignalGroup GSignalGroup;
 

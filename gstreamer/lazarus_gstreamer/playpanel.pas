@@ -34,6 +34,7 @@ type
     DurLabel, PosLabel, StateLabel: TLabel;
     st: TStreamer;
     IsChange: boolean;
+    sinCounter: int64;
     procedure BtnClick(Sender: TObject);
     procedure MuteClick(Sender: TObject);
     procedure TrackBarChange(Sender: TObject);
@@ -230,8 +231,17 @@ var
   oldChange: TNotifyEvent;
   p, d: integer;
   s: string;
+  si: single;
 begin
-  st.SetVolume(VolumeBar.Position / 1000);
+    st.SetVolume(VolumeBar.Position / 1000);
+  //si := sin(sinCounter / 4) / 2 + 0.5;
+  //Inc(sinCounter);
+  //WriteLn(si: 4: 2);
+  //st.SetVolume(si);
+  //VolumeBar.Position := Trunc(si * 1000);
+
+
+
   if IsChange then  begin
     st.spring(TrackBar.Position);
     IsChange := False;

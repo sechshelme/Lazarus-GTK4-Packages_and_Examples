@@ -42,14 +42,16 @@ begin
       Width := self.ClientWidth;
       Top := 100 * i;
       Anchors := [akLeft, akTop, akRight];
-    if i=4 then   CreateSound('/n4800/Multimedia/Music/Diverses/MP3 Diverse/DJ_Shaolin-Popcorn_(Hot_Butter_cover).mp3') else  CreateSound('../test.mp3');
-
-
+      if i = 4 then  begin
+        CreateSound('/n4800/Multimedia/Music/Diverses/MP3 Diverse/DJ_Shaolin-Popcorn_(Hot_Butter_cover).mp3');
+      end else begin
+        CreateSound('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/test.mp3');
+      end;
 
     end;
   end;
   Timer1.Enabled := True;
-  Timer1.Interval:=100;
+  Timer1.Interval := 100;
   ClientWidth := 600;
   ClientHeight := Length(playpanel) * 100;
 end;

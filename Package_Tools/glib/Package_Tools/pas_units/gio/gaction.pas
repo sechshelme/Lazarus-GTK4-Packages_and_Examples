@@ -3,7 +3,7 @@ unit gaction;
 interface
 
 uses
-  common_GLIB, gtypes, gvariant, gvarianttype;
+  common_GLIB, gtypes, gvariant, gvarianttype, gerror, gtype;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

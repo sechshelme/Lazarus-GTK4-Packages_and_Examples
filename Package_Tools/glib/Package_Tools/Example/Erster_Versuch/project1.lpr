@@ -90,27 +90,31 @@ uses
 
   // --- gobject
 
+  gtypeplugin,             // io.
   gtype,                   // io.
   genums,                  // io.
-
   gvalue,                  // io.
   gvaluetypes,             // io. -> gvalue
-
+  gboxed,                  // io.
+  glib_enumtypes,          // io.
+  gvaluearray,             // io.
   glib_types,              // io.
   gparam,                  // io.
   gparamspecs,             // io. -> gparam
   gclosure,                // io.
+  gsourceclosure,          // io. -> gclosure
   gsignal,                 // io. -> gclosure
+  gsignalgroup,            // io. -> gclosure, gsignal
   gmarshal,                // io. -> gclosure
   gobject,                 // io. -> gsignal, gclosure, gparam
   gbinding,                // io. -> gobject, gclosure
+  gbindinggroup,           // io. -> gbinding, gclosure
   gtypemodule,             // io. -> gobject
 
 
+  // --- gio
 
-
-// --- gio
-//gaction.
+  gaction,                 // io.
 
   math;
 

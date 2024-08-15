@@ -83,7 +83,6 @@ void     g_value_set_static_boxed         (GValue        *value,
 
 void     g_value_take_boxed               (GValue        *value,
                                            gconstpointer  v_boxed);
-GOBJECT_DEPRECATED_FOR(g_value_take_boxed)
 void     g_value_set_boxed_take_ownership (GValue        *value,
                                            gconstpointer  v_boxed);
 
