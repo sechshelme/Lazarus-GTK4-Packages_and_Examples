@@ -29,14 +29,14 @@ type
     procedure printTime(time: integer);
   private
     StartBtn, PlayBtn, PauseBtn, StopBtn, SpringBtn: TButton;
-    MuteCheckBox:TCheckBox;
+    MuteCheckBox: TCheckBox;
     TrackBar, VolumeBar: TTrackBar;
     DurLabel, PosLabel, StateLabel: TLabel;
     st: TStreamer;
+    IsChange: boolean;
     procedure BtnClick(Sender: TObject);
     procedure MuteClick(Sender: TObject);
     procedure TrackBarChange(Sender: TObject);
-    procedure VolumeChange(Sender: TObject);
   end;
 
 implementation
@@ -90,17 +90,9 @@ end;
 
 procedure TPlayerPanel.TrackBarChange(Sender: TObject);
 begin
-  st.spring(TrackBar.Position);
-  WriteLn('change');
+  IsChange := True;
+  //  st.spring(TrackBar.Position);
 end;
-
-procedure TPlayerPanel.VolumeChange(Sender: TObject);
-begin
-  if st <> nil then  begin
-    st.SetVolume(VolumeBar.Position / 1000);
-  end;
-end;
-
 
 constructor TPlayerPanel.Create(TheOwner: TComponent);
 const
@@ -109,6 +101,7 @@ const
 begin
   inherited  Create(TheOwner);
   Height := 100;
+  IsChange := False;
 
   PosLabel := TLabel.Create(Self);
   with PosLabel do begin
@@ -132,15 +125,6 @@ begin
     Left := 470;
     Caption := 'State';
     Parent := Self;
-  end;
-
-  MuteCheckBox := TCheckBox.Create(Self);
-  with MuteCheckBox do begin
-    Top := t+25;
-    Left := 370;
-    Caption := 'Mute';
-    Parent := Self;
-    OnChange:=@MuteClick;
   end;
 
   TrackBar := TTrackBar.Create(Self);
@@ -215,9 +199,17 @@ begin
     Top := t;
     Caption := 'volume';
     Parent := Self;
-    OnChange := @VolumeChange;
     Max := 1000;
     Position := 1000;
+  end;
+
+  MuteCheckBox := TCheckBox.Create(Self);
+  with MuteCheckBox do begin
+    Top := t + 25;
+    Left := 370;
+    Caption := 'Mute';
+    Parent := Self;
+    OnChange := @MuteClick;
   end;
 
 end;
@@ -239,18 +231,24 @@ var
   p, d: integer;
   s: string;
 begin
-  oldChange := TrackBar.OnChange;
-  TrackBar.OnChange := nil;
-  p := st.GetPosition;
-  d := st.GetDuration;
-  TrackBar.Max := d;
-  TrackBar.Position := p;
-  TrackBar.OnChange := oldChange;
-  PosLabel.Caption := GstClockToStr(p);
-  DurLabel.Caption := GstClockToStr(d);
-  WriteStr(s, st.getState);
-  StateLabel.Caption := s;
-//  if p=d then st.Stop;
+  st.SetVolume(VolumeBar.Position / 1000);
+  if IsChange then  begin
+    st.spring(TrackBar.Position);
+    IsChange := False;
+  end else begin
+    oldChange := TrackBar.OnChange;
+    TrackBar.OnChange := nil;
+    p := st.GetPosition;
+    d := st.GetDuration;
+    TrackBar.Max := d;
+    TrackBar.Position := p;
+    TrackBar.OnChange := oldChange;
+    PosLabel.Caption := GstClockToStr(p);
+    DurLabel.Caption := GstClockToStr(d);
+    WriteStr(s, st.getState);
+    StateLabel.Caption := s;
+  end;
+  //  if p=d then st.Stop;
 end;
 
 procedure TPlayerPanel.printTime(time: integer);

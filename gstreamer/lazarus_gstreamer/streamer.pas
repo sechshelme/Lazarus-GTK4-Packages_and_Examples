@@ -8,13 +8,6 @@ uses
   Classes, SysUtils, glib2, gst;
 
 type
-  TCustomData = record
-    index: integer;
-    state: TGstState;
-    //    volume: PGstElement;
-  end;
-  PCustomData = ^TCustomData;
-
   TPipelineElement = record
     pipeline,
     filesrc,
@@ -24,12 +17,11 @@ type
     audioresample,
     volume,
     autoaudiosink: PGstElement;
+    state: TGstState;
   end;
+  PPipelineElement=^TPipelineElement;
 
 type
-
-  { TStreamer }
-
   TStreamer = class(TObject)
   public
     constructor Create(const AsongPath: string);
@@ -45,9 +37,8 @@ type
     procedure printInfo;
     function getState: string;
   private
-    customData: TCustomData;
     fsongPath: string;
-    pipeline: TPipelineElement;
+    pipelineElement: TPipelineElement;
   end;
 
 const
@@ -65,14 +56,25 @@ begin
   end;
 end;
 
+procedure test_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
+begin
+  WriteLn(GST_MESSAGE_TYPE(msg));
+end;
+
 procedure state_changed_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
 var
-  CustomData: PCustomData absolute Data;
+  pE: PPipelineElement absolute Data;
   old_state, new_state, pending_state: TGstState;
 begin
   gst_message_parse_state_changed(msg, @old_state, @new_state, @pending_state);
-  //  WriteLn('index: ', CustomData^.Index, '   state Changed; ',  new_state);
-  CustomData^.state := new_state;
+  pE^.state := new_state;
+end;
+
+procedure eos_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
+var
+  pE: PPipelineElement absolute Data;
+begin
+  gst_element_set_state(pE^.pipeline, GST_STATE_READY);
 end;
 
 // =========================
@@ -82,37 +84,37 @@ var
   mp: PGstElement;
   bus: PGstBus;
 begin
-  pipeline.pipeline := nil;
+  pipelineElement.pipeline := nil;
   fsongPath := AsongPath;
 
-  if pipeline.pipeline = nil then begin
-    pipeline.pipeline := gst_pipeline_new('audio-player');
-    TestIO(pipeline.pipeline, 'pipeline');
+  if pipelineElement.pipeline = nil then begin
+    pipelineElement.pipeline := gst_pipeline_new('audio-player');
+    TestIO(pipelineElement.pipeline, 'pipeline');
 
-    pipeline.filesrc := gst_element_factory_make('filesrc', 'filesrc');
-    TestIO(pipeline.filesrc, 'filesrc');
+    pipelineElement.filesrc := gst_element_factory_make('filesrc', 'filesrc');
+    TestIO(pipelineElement.filesrc, 'filesrc');
 
-    pipeline.mpegaudioparse := gst_element_factory_make('mpegaudioparse', 'mpegaudioparse');
-    TestIO(pipeline.mpegaudioparse, 'mpegaudioparse');
+    pipelineElement.mpegaudioparse := gst_element_factory_make('mpegaudioparse', 'mpegaudioparse');
+    TestIO(pipelineElement.mpegaudioparse, 'mpegaudioparse');
 
-    pipeline.mpg123audiodec := gst_element_factory_make('mpg123audiodec', 'mpg123audiodec');
-    TestIO(pipeline.mpg123audiodec, 'mpg123audiodec');
+    pipelineElement.mpg123audiodec := gst_element_factory_make('mpg123audiodec', 'mpg123audiodec');
+    TestIO(pipelineElement.mpg123audiodec, 'mpg123audiodec');
 
-    pipeline.audioconvert := gst_element_factory_make('audioconvert', 'audioconvert');
-    TestIO(pipeline.audioconvert, 'audioconvert');
+    pipelineElement.audioconvert := gst_element_factory_make('audioconvert', 'audioconvert');
+    TestIO(pipelineElement.audioconvert, 'audioconvert');
 
-    pipeline.audioresample := gst_element_factory_make('audioresample', 'audioresample');
-    TestIO(pipeline.audioresample, 'audioresample');
+    pipelineElement.audioresample := gst_element_factory_make('audioresample', 'audioresample');
+    TestIO(pipelineElement.audioresample, 'audioresample');
 
-    pipeline.volume := gst_element_factory_make('volume', 'volume');
-    TestIO(pipeline.volume, 'volume');
+    pipelineElement.volume := gst_element_factory_make('volume', 'volume');
+    TestIO(pipelineElement.volume, 'volume');
 
-    pipeline.autoaudiosink := gst_element_factory_make('autoaudiosink', 'autoaudiosink');
-    TestIO(pipeline.autoaudiosink, 'autoaudiosink');
+    pipelineElement.autoaudiosink := gst_element_factory_make('autoaudiosink', 'autoaudiosink');
+    TestIO(pipelineElement.autoaudiosink, 'autoaudiosink');
 
-    g_object_set(pipeline.filesrc, 'location', PChar(fsongPath), nil);
+    g_object_set(pipelineElement.filesrc, 'location', PChar(fsongPath), nil);
 
-    with pipeline do begin
+    with pipelineElement do begin
       gst_bin_add_many(GST_BIN(pipeline), filesrc, [mpegaudioparse, mpg123audiodec, audioconvert, audioresample, volume, autoaudiosink, nil]);
 
       WriteLn('filesrc        -> mpegaudioparse: ', gst_element_link(filesrc, mpegaudioparse));
@@ -123,44 +125,45 @@ begin
       WriteLn('volume         -> autoaudiosink : ', gst_element_link(volume, autoaudiosink));
     end;
   end;
-  customData.index := 1234;
-  bus := gst_element_get_bus(pipeline.pipeline);
+  bus := gst_element_get_bus(pipelineElement.pipeline);
   gst_bus_add_signal_watch(bus);
-  g_signal_connect(G_OBJECT(bus), 'message::state-changed', TGCallback(@state_changed_cb), @customData);
+  g_signal_connect(G_OBJECT(bus), 'message::state-changed', TGCallback(@state_changed_cb), @pipelineElement);
+  g_signal_connect(G_OBJECT(bus), 'message::eos', TGCallback(@eos_cb), @pipelineElement);
+  g_signal_connect(G_OBJECT(bus), 'message', TGCallback(@test_cb), @pipelineElement);
   gst_object_unref(bus);
 end;
 
 procedure TStreamer.Start;
 begin
-  gst_element_set_state(pipeline.pipeline, GST_STATE_READY);
+  gst_element_set_state(pipelineElement.pipeline, GST_STATE_READY);
 end;
 
 procedure TStreamer.Play;
 begin
-  gst_element_set_state(pipeline.pipeline, GST_STATE_PLAYING);
+  gst_element_set_state(pipelineElement.pipeline, GST_STATE_PLAYING);
 end;
 
 procedure TStreamer.Pause;
 begin
-  gst_element_set_state(pipeline.pipeline, GST_STATE_PAUSED);
+  gst_element_set_state(pipelineElement.pipeline, GST_STATE_PAUSED);
 end;
 
 procedure TStreamer.Stop;
 begin
-  gst_element_set_state(pipeline.pipeline, GST_STATE_READY);
+  gst_element_set_state(pipelineElement.pipeline, GST_STATE_READY);
 end;
 
 procedure TStreamer.spring(ms: integer);
 begin
-  //  gst_element_seek_simple(pipeline, GST_FORMAT_TIME, TGstSeekFlags(int64(GST_SEEK_FLAG_FLUSH) or int64(GST_SEEK_FLAG_KEY_UNIT)), ms * G_USEC_PER_SEC);
-  gst_element_seek_simple(pipeline.pipeline, GST_FORMAT_TIME, TGstSeekFlags(0), ms * G_USEC_PER_SEC);
+  //  gst_element_seek_simple(pipelineElement, GST_FORMAT_TIME, TGstSeekFlags(int64(GST_SEEK_FLAG_FLUSH) or int64(GST_SEEK_FLAG_KEY_UNIT)), ms * G_USEC_PER_SEC);
+  gst_element_seek_simple(pipelineElement.pipeline, GST_FORMAT_TIME, TGstSeekFlags(0), ms * G_USEC_PER_SEC);
 end;
 
 function TStreamer.GetPosition: integer;
 var
   current: Tgint64;
 begin
-  gst_element_query_position(pipeline.pipeline, GST_FORMAT_TIME, @current);
+  gst_element_query_position(pipelineElement.pipeline, GST_FORMAT_TIME, @current);
   Result := current div G_USEC_PER_SEC;
 end;
 
@@ -168,35 +171,33 @@ function TStreamer.GetDuration: integer;
 var
   current: Tgint64;
 begin
-  gst_element_query_duration(pipeline.pipeline, GST_FORMAT_TIME, @current);
+  gst_element_query_duration(pipelineElement.pipeline, GST_FORMAT_TIME, @current);
   Result := current div G_USEC_PER_SEC;
 end;
 
 procedure TStreamer.SetVolume(vol: gdouble);
 begin
-  g_object_set(pipeline.volume, 'volume', vol, nil);
-  //  g_object_set(customData.volume, 'mute', gTRUE, nil);
-  WriteLn('volume: ', vol: 4: 2);
+  g_object_set(pipelineElement.volume, 'volume', vol, nil);
 end;
 
 procedure TStreamer.SetMute(mute: Boolean);
 begin
-    g_object_set(pipeline.volume, 'mute', gboolean(mute), nil);
+    g_object_set(pipelineElement.volume, 'mute', gboolean(mute), nil);
 end;
 
 procedure TStreamer.printInfo;
 var
   n_audio, n_text: gint;
 begin
-  g_object_get(pipeline.pipeline, 'n-audio', @n_audio, nil);
+  g_object_get(pipelineElement.pipeline, 'n-audio', @n_audio, nil);
   WriteLn('n-audio: ', n_audio);
-  g_object_get(pipeline.pipeline, 'n-text', @n_text, nil);
+  g_object_get(pipelineElement.pipeline, 'n-text', @n_text, nil);
   WriteLn('n-text: ', n_text);
 end;
 
 function TStreamer.getState: string;
 begin
-  WriteStr(Result, customData.state);
+  WriteStr(Result, pipelineElement.state);
 end;
 
 begin

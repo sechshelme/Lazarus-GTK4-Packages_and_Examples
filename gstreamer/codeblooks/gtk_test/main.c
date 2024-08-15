@@ -20,6 +20,8 @@ tutorial_main (int argc, char *argv[])
       ("playbin uri=https://gstreamer.freedesktop.org/data/media/sintel_trailer-480p.webm",
       NULL);
 
+      gst_bin_get_by_interface(GST_BIN( pipeline), GST_TYPE_STREAM_VOLUME);
+
   /* Start playing */
   gst_element_set_state (pipeline, GST_STATE_PLAYING);
 

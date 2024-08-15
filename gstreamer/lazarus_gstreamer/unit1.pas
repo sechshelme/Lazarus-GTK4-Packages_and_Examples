@@ -49,6 +49,7 @@ begin
     end;
   end;
   Timer1.Enabled := True;
+  Timer1.Interval:=100;
   ClientWidth := 600;
   ClientHeight := Length(playpanel) * 100;
 end;
