@@ -44,22 +44,22 @@ type
     values: PGFlagsValue;
   end;
 
-function g_enum_get_value(enum_class: PGEnumClass; Value: Tgint): PGEnumValue; cdecl; external libglib2;
-function g_enum_get_value_by_name(enum_class: PGEnumClass; Name: Pgchar): PGEnumValue; cdecl; external libglib2;
-function g_enum_get_value_by_nick(enum_class: PGEnumClass; nick: Pgchar): PGEnumValue; cdecl; external libglib2;
-function g_flags_get_first_value(flags_class: PGFlagsClass; Value: Tguint): PGFlagsValue; cdecl; external libglib2;
-function g_flags_get_value_by_name(flags_class: PGFlagsClass; Name: Pgchar): PGFlagsValue; cdecl; external libglib2;
-function g_flags_get_value_by_nick(flags_class: PGFlagsClass; nick: Pgchar): PGFlagsValue; cdecl; external libglib2;
-function g_enum_to_string(g_enum_type: TGType; Value: Tgint): Pgchar; cdecl; external libglib2;
-function g_flags_to_string(flags_type: TGType; Value: Tguint): Pgchar; cdecl; external libglib2;
-procedure g_value_set_enum(Value: PGValue; v_enum: Tgint); cdecl; external libglib2;
-function g_value_get_enum(Value: PGValue): Tgint; cdecl; external libglib2;
-procedure g_value_set_flags(Value: PGValue; v_flags: Tguint); cdecl; external libglib2;
-function g_value_get_flags(Value: PGValue): Tguint; cdecl; external libglib2;
-function g_enum_register_static(Name: Pgchar; const_static_values: PGEnumValue): TGType; cdecl; external libglib2;
-function g_flags_register_static(Name: Pgchar; const_static_values: PGFlagsValue): TGType; cdecl; external libglib2;
-procedure g_enum_complete_type_info(g_enum_type: TGType; info: PGTypeInfo; const_values: PGEnumValue); cdecl; external libglib2;
-procedure g_flags_complete_type_info(g_flags_type: TGType; info: PGTypeInfo; const_values: PGFlagsValue); cdecl; external libglib2;
+function g_enum_get_value(enum_class: PGEnumClass; Value: Tgint): PGEnumValue; cdecl; external libgobject2_0;
+function g_enum_get_value_by_name(enum_class: PGEnumClass; Name: Pgchar): PGEnumValue; cdecl; external libgobject2_0;
+function g_enum_get_value_by_nick(enum_class: PGEnumClass; nick: Pgchar): PGEnumValue; cdecl; external libgobject2_0;
+function g_flags_get_first_value(flags_class: PGFlagsClass; Value: Tguint): PGFlagsValue; cdecl; external libgobject2_0;
+function g_flags_get_value_by_name(flags_class: PGFlagsClass; Name: Pgchar): PGFlagsValue; cdecl; external libgobject2_0;
+function g_flags_get_value_by_nick(flags_class: PGFlagsClass; nick: Pgchar): PGFlagsValue; cdecl; external libgobject2_0;
+function g_enum_to_string(g_enum_type: TGType; Value: Tgint): Pgchar; cdecl; external libgobject2_0;
+function g_flags_to_string(flags_type: TGType; Value: Tguint): Pgchar; cdecl; external libgobject2_0;
+procedure g_value_set_enum(Value: PGValue; v_enum: Tgint); cdecl; external libgobject2_0;
+function g_value_get_enum(Value: PGValue): Tgint; cdecl; external libgobject2_0;
+procedure g_value_set_flags(Value: PGValue; v_flags: Tguint); cdecl; external libgobject2_0;
+function g_value_get_flags(Value: PGValue): Tguint; cdecl; external libgobject2_0;
+function g_enum_register_static(Name: Pgchar; const_static_values: PGEnumValue): TGType; cdecl; external libgobject2_0;
+function g_flags_register_static(Name: Pgchar; const_static_values: PGFlagsValue): TGType; cdecl; external libgobject2_0;
+procedure g_enum_complete_type_info(g_enum_type: TGType; info: PGTypeInfo; const_values: PGEnumValue); cdecl; external libgobject2_0;
+procedure g_flags_complete_type_info(g_flags_type: TGType; info: PGTypeInfo; const_values: PGFlagsValue); cdecl; external libgobject2_0;
 
 // === Konventiert am: 14-8-24 17:17:26 ===
 

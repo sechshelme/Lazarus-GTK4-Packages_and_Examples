@@ -20,10 +20,10 @@ const
   G_SHELL_ERROR_EMPTY_STRING = 1;
   G_SHELL_ERROR_FAILED = 2;
 
-function g_shell_error_quark: TGQuark; cdecl; external libglib2;
-function g_shell_quote(unquoted_string: Pgchar): Pgchar; cdecl; external libglib2;
-function g_shell_unquote(quoted_string: Pgchar; error: PPGError): Pgchar; cdecl; external libglib2;
-function g_shell_parse_argv(command_line: Pgchar; argcp: Pgint; argvp: PPPgchar; error: PPGError): Tgboolean; cdecl; external libglib2;
+function g_shell_error_quark: TGQuark; cdecl; external libgobject2_0;
+function g_shell_quote(unquoted_string: Pgchar): Pgchar; cdecl; external libgobject2_0;
+function g_shell_unquote(quoted_string: Pgchar; error: PPGError): Pgchar; cdecl; external libgobject2_0;
+function g_shell_parse_argv(command_line: Pgchar; argcp: Pgint; argvp: PPPgchar; error: PPGError): Tgboolean; cdecl; external libgobject2_0;
 
 
 function G_SHELL_ERROR: TGQuark;

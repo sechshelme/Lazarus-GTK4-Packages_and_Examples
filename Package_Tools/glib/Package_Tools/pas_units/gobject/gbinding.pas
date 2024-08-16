@@ -26,21 +26,21 @@ const
   G_BINDING_SYNC_CREATE = 1 shl 1;
   G_BINDING_INVERT_BOOLEAN = 1 shl 2;
 
-function g_binding_flags_get_type: TGType; cdecl; external libglib2;
-function g_binding_get_type: TGType; cdecl; external libglib2;
-function g_binding_get_flags(binding: PGBinding): TGBindingFlags; cdecl; external libglib2;
-function g_binding_get_source(binding: PGBinding): PGObject; cdecl; external libglib2;
-function g_binding_dup_source(binding: PGBinding): PGObject; cdecl; external libglib2;
-function g_binding_get_target(binding: PGBinding): PGObject; cdecl; external libglib2;
-function g_binding_dup_target(binding: PGBinding): PGObject; cdecl; external libglib2;
-function g_binding_get_source_property(binding: PGBinding): Pgchar; cdecl; external libglib2;
-function g_binding_get_target_property(binding: PGBinding): Pgchar; cdecl; external libglib2;
-procedure g_binding_unbind(binding: PGBinding); cdecl; external libglib2;
-function g_object_bind_property(Source: Tgpointer; source_property: Pgchar; target: Tgpointer; target_property: Pgchar; flags: TGBindingFlags): PGBinding; cdecl; external libglib2;
+function g_binding_flags_get_type: TGType; cdecl; external libgobject2_0;
+function g_binding_get_type: TGType; cdecl; external libgobject2_0;
+function g_binding_get_flags(binding: PGBinding): TGBindingFlags; cdecl; external libgobject2_0;
+function g_binding_get_source(binding: PGBinding): PGObject; cdecl; external libgobject2_0;
+function g_binding_dup_source(binding: PGBinding): PGObject; cdecl; external libgobject2_0;
+function g_binding_get_target(binding: PGBinding): PGObject; cdecl; external libgobject2_0;
+function g_binding_dup_target(binding: PGBinding): PGObject; cdecl; external libgobject2_0;
+function g_binding_get_source_property(binding: PGBinding): Pgchar; cdecl; external libgobject2_0;
+function g_binding_get_target_property(binding: PGBinding): Pgchar; cdecl; external libgobject2_0;
+procedure g_binding_unbind(binding: PGBinding); cdecl; external libgobject2_0;
+function g_object_bind_property(Source: Tgpointer; source_property: Pgchar; target: Tgpointer; target_property: Pgchar; flags: TGBindingFlags): PGBinding; cdecl; external libgobject2_0;
 function g_object_bind_property_full(Source: Tgpointer; source_property: Pgchar; target: Tgpointer; target_property: Pgchar; flags: TGBindingFlags;
-  transform_to: TGBindingTransformFunc; transform_from: TGBindingTransformFunc; user_data: Tgpointer; notify: TGDestroyNotify): PGBinding; cdecl; external libglib2;
+  transform_to: TGBindingTransformFunc; transform_from: TGBindingTransformFunc; user_data: Tgpointer; notify: TGDestroyNotify): PGBinding; cdecl; external libgobject2_0;
 function g_object_bind_property_with_closures(Source: Tgpointer; source_property: Pgchar; target: Tgpointer; target_property: Pgchar; flags: TGBindingFlags;
-  transform_to: PGClosure; transform_from: PGClosure): PGBinding; cdecl; external libglib2;
+  transform_to: PGClosure; transform_from: PGClosure): PGBinding; cdecl; external libgobject2_0;
 
 function G_TYPE_BINDING_FLAGS: TGType;
 function G_TYPE_BINDING: TGType;

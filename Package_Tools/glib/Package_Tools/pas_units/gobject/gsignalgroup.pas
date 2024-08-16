@@ -14,19 +14,19 @@ type
   end;
   PGSignalGroup = ^TGSignalGroup;
 
-function g_signal_group_get_type: TGType; cdecl; external libglib2;
-function g_signal_group_new(target_type: TGType): PGSignalGroup; cdecl; external libglib2;
-procedure g_signal_group_set_target(self: PGSignalGroup; target: Tgpointer); cdecl; external libglib2;
-function g_signal_group_dup_target(self: PGSignalGroup): Tgpointer; cdecl; external libglib2;
-procedure g_signal_group_block(self: PGSignalGroup); cdecl; external libglib2;
-procedure g_signal_group_unblock(self: PGSignalGroup); cdecl; external libglib2;
-procedure g_signal_group_connect_closure(self: PGSignalGroup; detailed_signal: Pgchar; closure: PGClosure; after: Tgboolean); cdecl; external libglib2;
-procedure g_signal_group_connect_object(self: PGSignalGroup; detailed_signal: Pgchar; c_handler: TGCallback; obj: Tgpointer; flags: TGConnectFlags); cdecl; external libglib2;
+function g_signal_group_get_type: TGType; cdecl; external libgobject2_0;
+function g_signal_group_new(target_type: TGType): PGSignalGroup; cdecl; external libgobject2_0;
+procedure g_signal_group_set_target(self: PGSignalGroup; target: Tgpointer); cdecl; external libgobject2_0;
+function g_signal_group_dup_target(self: PGSignalGroup): Tgpointer; cdecl; external libgobject2_0;
+procedure g_signal_group_block(self: PGSignalGroup); cdecl; external libgobject2_0;
+procedure g_signal_group_unblock(self: PGSignalGroup); cdecl; external libgobject2_0;
+procedure g_signal_group_connect_closure(self: PGSignalGroup; detailed_signal: Pgchar; closure: PGClosure; after: Tgboolean); cdecl; external libgobject2_0;
+procedure g_signal_group_connect_object(self: PGSignalGroup; detailed_signal: Pgchar; c_handler: TGCallback; obj: Tgpointer; flags: TGConnectFlags); cdecl; external libgobject2_0;
 procedure g_signal_group_connect_data(self: PGSignalGroup; detailed_signal: Pgchar; c_handler: TGCallback; Data: Tgpointer; notify: TGClosureNotify;
-  flags: TGConnectFlags); cdecl; external libglib2;
-procedure g_signal_group_connect(self: PGSignalGroup; detailed_signal: Pgchar; c_handler: TGCallback; Data: Tgpointer); cdecl; external libglib2;
-procedure g_signal_group_connect_after(self: PGSignalGroup; detailed_signal: Pgchar; c_handler: TGCallback; Data: Tgpointer); cdecl; external libglib2;
-procedure g_signal_group_connect_swapped(self: PGSignalGroup; detailed_signal: Pgchar; c_handler: TGCallback; Data: Tgpointer); cdecl; external libglib2;
+  flags: TGConnectFlags); cdecl; external libgobject2_0;
+procedure g_signal_group_connect(self: PGSignalGroup; detailed_signal: Pgchar; c_handler: TGCallback; Data: Tgpointer); cdecl; external libgobject2_0;
+procedure g_signal_group_connect_after(self: PGSignalGroup; detailed_signal: Pgchar; c_handler: TGCallback; Data: Tgpointer); cdecl; external libgobject2_0;
+procedure g_signal_group_connect_swapped(self: PGSignalGroup; detailed_signal: Pgchar; c_handler: TGCallback; Data: Tgpointer); cdecl; external libgobject2_0;
 
 // === Konventiert am: 15-8-24 19:41:08 ===
 

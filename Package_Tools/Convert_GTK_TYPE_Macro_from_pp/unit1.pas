@@ -29,6 +29,8 @@ type
     Memo1: TMemo;
     RadioButton1: TRadioButton;
     RadioButton2: TRadioButton;
+    RadioButton3: TRadioButton;
+    RadioButton4: TRadioButton;
     RadioGroup1: TRadioGroup;
     procedure Button1Click(Sender: TObject);
     procedure ConvertClick(Sender: TObject);
@@ -93,7 +95,10 @@ begin
   RadioButton1Change(Sender); // Alle Checkboxen aus
 
   RadioButton1.Caption := 'libglib-2.0';
-  RadioButton2.Caption := 'libgtk-4';
+  RadioButton2.Caption := 'libgobject-2.0';
+  RadioButton3.Caption := 'libgio-2.0';
+  RadioButton4.Caption := 'libgtk-4';
+  RadioButton3.Checked:=True;
 
   CheckBox1.Caption := 'GTK_TYPE_WINDOW';
   CheckBox2.Caption := 'GTK_WINDOW(obj)';
@@ -168,10 +173,15 @@ begin
     sl.Text := StringReplace(sl.Text, 'external;', 'external libglib2;', [rfReplaceAll]);
     sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes;' + #10);
   end else if RadioButton2.Checked then begin
+    sl.Text := StringReplace(sl.Text, 'external;', 'external libgobject2_0;', [rfReplaceAll]);
+    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes;' + #10);
+  end else if RadioButton3.Checked then begin
+    sl.Text := StringReplace(sl.Text, 'external;', 'external libgio2;', [rfReplaceAll]);
+    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes;' + #10);
+  end else if RadioButton4.Checked then begin
     sl.Text := StringReplace(sl.Text, 'external;', 'external libgtk4;', [rfReplaceAll]);
     sl.Insert(4, 'uses' + #10 + '  glib2, common_GTK;' + #10);
   end;
-
 
   p := 0;
   repeat

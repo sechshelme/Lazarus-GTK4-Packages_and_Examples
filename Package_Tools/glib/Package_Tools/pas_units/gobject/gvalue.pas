@@ -31,18 +31,18 @@ uses
 type
   TGValueTransform = procedure(src_value: PGValue; dest_value: PGValue); cdecl;
 
-function g_value_init(Value: PGValue; g_type: TGType): PGValue; cdecl; external libglib2;
-procedure g_value_copy(src_value: PGValue; dest_value: PGValue); cdecl; external libglib2;
-function g_value_reset(Value: PGValue): PGValue; cdecl; external libglib2;
-procedure g_value_unset(Value: PGValue); cdecl; external libglib2;
-procedure g_value_set_instance(Value: PGValue; instance: Tgpointer); cdecl; external libglib2;
-procedure g_value_init_from_instance(Value: PGValue; instance: Tgpointer); cdecl; external libglib2;
-function g_value_fits_pointer(Value: PGValue): Tgboolean; cdecl; external libglib2;
-function g_value_peek_pointer(Value: PGValue): Tgpointer; cdecl; external libglib2;
-function g_value_type_compatible(src_type: TGType; dest_type: TGType): Tgboolean; cdecl; external libglib2;
-function g_value_type_transformable(src_type: TGType; dest_type: TGType): Tgboolean; cdecl; external libglib2;
-function g_value_transform(src_value: PGValue; dest_value: PGValue): Tgboolean; cdecl; external libglib2;
-procedure g_value_register_transform_func(src_type: TGType; dest_type: TGType; transform_func: TGValueTransform); cdecl; external libglib2;
+function g_value_init(Value: PGValue; g_type: TGType): PGValue; cdecl; external libgobject2_0;
+procedure g_value_copy(src_value: PGValue; dest_value: PGValue); cdecl; external libgobject2_0;
+function g_value_reset(Value: PGValue): PGValue; cdecl; external libgobject2_0;
+procedure g_value_unset(Value: PGValue); cdecl; external libgobject2_0;
+procedure g_value_set_instance(Value: PGValue; instance: Tgpointer); cdecl; external libgobject2_0;
+procedure g_value_init_from_instance(Value: PGValue; instance: Tgpointer); cdecl; external libgobject2_0;
+function g_value_fits_pointer(Value: PGValue): Tgboolean; cdecl; external libgobject2_0;
+function g_value_peek_pointer(Value: PGValue): Tgpointer; cdecl; external libgobject2_0;
+function g_value_type_compatible(src_type: TGType; dest_type: TGType): Tgboolean; cdecl; external libgobject2_0;
+function g_value_type_transformable(src_type: TGType; dest_type: TGType): Tgboolean; cdecl; external libgobject2_0;
+function g_value_transform(src_value: PGValue; dest_value: PGValue): Tgboolean; cdecl; external libgobject2_0;
+procedure g_value_register_transform_func(src_type: TGType; dest_type: TGType; transform_func: TGValueTransform); cdecl; external libgobject2_0;
 
 const
   G_VALUE_NOCOPY_CONTENTS = 1 shl 27;

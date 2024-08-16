@@ -21,7 +21,7 @@ type
 type
   TGPollFunc = function(ufds: PGPollFD; nfsd: Tguint; timeout_: Tgint): Tgint; cdecl;
 
-function g_poll(fds: PGPollFD; nfds: Tguint; timeout: Tgint): Tgint; cdecl; external libglib2;
+function g_poll(fds: PGPollFD; nfds: Tguint; timeout: Tgint): Tgint; cdecl; external libgobject2_0;
 
 // === Konventiert am: 7-8-24 17:17:52 ===
 

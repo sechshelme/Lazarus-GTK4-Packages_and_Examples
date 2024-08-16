@@ -14,18 +14,18 @@ type
   TGBoxedCopyFunc = function(boxed: Tgpointer): Tgpointer; cdecl;
   TGBoxedFreeFunc = procedure(boxed: Tgpointer); cdecl;
 
-function g_boxed_copy(boxed_type: TGType; src_boxed: Tgconstpointer): Tgpointer; cdecl; external libglib2;
-procedure g_boxed_free(boxed_type: TGType; boxed: Tgpointer); cdecl; external libglib2;
-procedure g_value_set_boxed(Value: PGValue; v_boxed: Tgconstpointer); cdecl; external libglib2;
-procedure g_value_set_static_boxed(Value: PGValue; v_boxed: Tgconstpointer); cdecl; external libglib2;
-procedure g_value_take_boxed(Value: PGValue; v_boxed: Tgconstpointer); cdecl; external libglib2;
-procedure g_value_set_boxed_take_ownership(Value: PGValue; v_boxed: Tgconstpointer); cdecl; external libglib2;
-function g_value_get_boxed(Value: PGValue): Tgpointer; cdecl; external libglib2;
-function g_value_dup_boxed(Value: PGValue): Tgpointer; cdecl; external libglib2;
-function g_boxed_type_register_static(Name: Pgchar; boxed_copy: TGBoxedCopyFunc; boxed_free: TGBoxedFreeFunc): TGType; cdecl; external libglib2;
+function g_boxed_copy(boxed_type: TGType; src_boxed: Tgconstpointer): Tgpointer; cdecl; external libgobject2_0;
+procedure g_boxed_free(boxed_type: TGType; boxed: Tgpointer); cdecl; external libgobject2_0;
+procedure g_value_set_boxed(Value: PGValue; v_boxed: Tgconstpointer); cdecl; external libgobject2_0;
+procedure g_value_set_static_boxed(Value: PGValue; v_boxed: Tgconstpointer); cdecl; external libgobject2_0;
+procedure g_value_take_boxed(Value: PGValue; v_boxed: Tgconstpointer); cdecl; external libgobject2_0;
+procedure g_value_set_boxed_take_ownership(Value: PGValue; v_boxed: Tgconstpointer); cdecl; external libgobject2_0;
+function g_value_get_boxed(Value: PGValue): Tgpointer; cdecl; external libgobject2_0;
+function g_value_dup_boxed(Value: PGValue): Tgpointer; cdecl; external libgobject2_0;
+function g_boxed_type_register_static(Name: Pgchar; boxed_copy: TGBoxedCopyFunc; boxed_free: TGBoxedFreeFunc): TGType; cdecl; external libgobject2_0;
 
-function g_closure_get_type: TGType; cdecl; external libglib2;
-function g_value_get_type: TGType; cdecl; external libglib2;
+function g_closure_get_type: TGType; cdecl; external libgobject2_0;
+function g_value_get_type: TGType; cdecl; external libgobject2_0;
 
 function G_TYPE_IS_BOXED(_type: TGType): Tgboolean;
 function G_VALUE_HOLDS_BOXED(Value: Pointer): Tgboolean;

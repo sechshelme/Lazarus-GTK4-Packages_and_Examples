@@ -90,8 +90,8 @@ uses
 
   // --- gobject
 
-  gtypeplugin,             // io.
   gtype,                   // io.
+  gtypeplugin,             // io.
   genums,                  // io.
   gvalue,                  // io.
   gvaluetypes,             // io. -> gvalue
@@ -114,9 +114,24 @@ uses
 
   // --- gio
 
-  gaction,                 // io.
+  giotypes,
+  gioenums,                // io.
 
-  math;
+  gaction,                 // io.
+  gactiongroup,            // io.
+  gcancellable,
+  ginetaddress,
+  ginetaddressmask,
+  gsocketaddress,
+  gsocketcontrolmessage,
+  gsocket,
+  gdbusobjectmanagerclient,
+  gdbusobjectproxy,
+  gdbusproxy,
+
+  // ----
+
+  Math;
 
 var
   timer: PGTimer;
@@ -128,8 +143,10 @@ begin
   WriteLn(g_ascii_isalnum('a'));
   WriteLn(g_ascii_isalnum(#10));
 
+  g_signal_connect(nil, nil, nil, nil);
 
-timer:=g_timer_new;
+
+  timer := g_timer_new;
   g_timer_start(timer);
   ReadLn;
 
@@ -137,19 +154,17 @@ timer:=g_timer_new;
   g_timer_stop(timer);
 
 
-//  glib2.G_VALUE_IS_INTERNED_STRING;
-//glib2.G_OBJECT_WARN_INVALID_PROPERTY_ID;
-//glib2.private_g_type_check_class_is_a;
-// private_g_type_check_instance_cast
+  //  glib2.G_VALUE_IS_INTERNED_STRING;
+  //glib2.G_OBJECT_WARN_INVALID_PROPERTY_ID;
+  //glib2.private_g_type_check_class_is_a;
+  // private_g_type_check_instance_cast
 
 
-time:= g_timer_elapsed(timer, @us);
+  time := g_timer_elapsed(timer, @us);
 
 
 
 
-  WriteLn(time:4:2, ' - ', us);
-
-
+  WriteLn(time: 4: 2, ' - ', us);
 
 end.

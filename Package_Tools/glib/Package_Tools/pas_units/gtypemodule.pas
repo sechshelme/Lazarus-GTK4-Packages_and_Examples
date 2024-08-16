@@ -30,14 +30,14 @@ type
   end;
   PGTypeModuleClass = ^TGTypeModuleClass;
 
-function g_type_module_get_type: TGType; cdecl; external libglib2;
-function g_type_module_use(module: PGTypeModule): Tgboolean; cdecl; external libglib2;
-procedure g_type_module_unuse(module: PGTypeModule); cdecl; external libglib2;
-procedure g_type_module_set_name(module: PGTypeModule; Name: Pgchar); cdecl; external libglib2;
-function g_type_module_register_type(module: PGTypeModule; parent_type: TGType; type_name: Pgchar; type_info: PGTypeInfo; flags: TGTypeFlags): TGType; cdecl; external libglib2;
-procedure g_type_module_add_interface(module: PGTypeModule; instance_type: TGType; interface_type: TGType; interface_info: PGInterfaceInfo); cdecl; external libglib2;
-function g_type_module_register_enum(module: PGTypeModule; Name: Pgchar; const_static_values: PGEnumValue): TGType; cdecl; external libglib2;
-function g_type_module_register_flags(module: PGTypeModule; Name: Pgchar; const_static_values: PGFlagsValue): TGType; cdecl; external libglib2;
+function g_type_module_get_type: TGType; cdecl; external libgobject2_0;
+function g_type_module_use(module: PGTypeModule): Tgboolean; cdecl; external libgobject2_0;
+procedure g_type_module_unuse(module: PGTypeModule); cdecl; external libgobject2_0;
+procedure g_type_module_set_name(module: PGTypeModule; Name: Pgchar); cdecl; external libgobject2_0;
+function g_type_module_register_type(module: PGTypeModule; parent_type: TGType; type_name: Pgchar; type_info: PGTypeInfo; flags: TGTypeFlags): TGType; cdecl; external libgobject2_0;
+procedure g_type_module_add_interface(module: PGTypeModule; instance_type: TGType; interface_type: TGType; interface_info: PGInterfaceInfo); cdecl; external libgobject2_0;
+function g_type_module_register_enum(module: PGTypeModule; Name: Pgchar; const_static_values: PGEnumValue): TGType; cdecl; external libgobject2_0;
+function g_type_module_register_flags(module: PGTypeModule; Name: Pgchar; const_static_values: PGFlagsValue): TGType; cdecl; external libgobject2_0;
 
 // === Konventiert am: 14-8-24 19:14:29 ===
 

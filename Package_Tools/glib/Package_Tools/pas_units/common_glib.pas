@@ -7,10 +7,10 @@ uses
 
 const
   {$IFDEF Linux}
-  libgtk4 = 'libgtk-4';
-  libgio2 = 'libgio-2.0';
   libglib2 = 'libglib-2.0';
   libgobject2_0 = 'libgobject-2.0';
+  libgio2 = 'libgio-2.0';
+  libgtk4 = 'libgtk-4';
   {$ENDIF}
 
   {$IFDEF Windows}
@@ -109,6 +109,15 @@ type
   Tstat = record  // /usr/include/x86_64-linux-gnu/bits/struct_stat.h
   end;
   PTstat = ^Tstat;
+
+const         // nur Linux    /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h
+  GLIB_SYSDEF_AF_UNIX = 1;
+  GLIB_SYSDEF_AF_INET = 2;
+  GLIB_SYSDEF_AF_INET6 = 10;
+
+  GLIB_SYSDEF_MSG_OOB = 1;
+  GLIB_SYSDEF_MSG_PEEK = 2;
+  GLIB_SYSDEF_MSG_DONTROUTE = 4;
 
 const
   __SIZEOF_PTHREAD_MUTEX_T = 40;

@@ -25,17 +25,17 @@ type
   end;
   PGChecksum = ^TGChecksum;
 
-function g_checksum_type_get_length(checksum_type: TGChecksumType): Tgssize; cdecl; external libglib2;
-function g_checksum_new(checksum_type: TGChecksumType): PGChecksum; cdecl; external libglib2;
-procedure g_checksum_reset(checksum: PGChecksum); cdecl; external libglib2;
-function g_checksum_copy(checksum: PGChecksum): PGChecksum; cdecl; external libglib2;
-procedure g_checksum_free(checksum: PGChecksum); cdecl; external libglib2;
-procedure g_checksum_update(checksum: PGChecksum; Data: Pguchar; length: Tgssize); cdecl; external libglib2;
-function g_checksum_get_string(checksum: PGChecksum): Pgchar; cdecl; external libglib2;
-procedure g_checksum_get_digest(checksum: PGChecksum; buffer: Pguint8; digest_len: Pgsize); cdecl; external libglib2;
-function g_compute_checksum_for_data(checksum_type: TGChecksumType; Data: Pguchar; length: Tgsize): Pgchar; cdecl; external libglib2;
-function g_compute_checksum_for_string(checksum_type: TGChecksumType; str: Pgchar; length: Tgssize): Pgchar; cdecl; external libglib2;
-function g_compute_checksum_for_bytes(checksum_type: TGChecksumType; Data: PGBytes): Pgchar; cdecl; external libglib2;
+function g_checksum_type_get_length(checksum_type: TGChecksumType): Tgssize; cdecl; external libgobject2_0;
+function g_checksum_new(checksum_type: TGChecksumType): PGChecksum; cdecl; external libgobject2_0;
+procedure g_checksum_reset(checksum: PGChecksum); cdecl; external libgobject2_0;
+function g_checksum_copy(checksum: PGChecksum): PGChecksum; cdecl; external libgobject2_0;
+procedure g_checksum_free(checksum: PGChecksum); cdecl; external libgobject2_0;
+procedure g_checksum_update(checksum: PGChecksum; Data: Pguchar; length: Tgssize); cdecl; external libgobject2_0;
+function g_checksum_get_string(checksum: PGChecksum): Pgchar; cdecl; external libgobject2_0;
+procedure g_checksum_get_digest(checksum: PGChecksum; buffer: Pguint8; digest_len: Pgsize); cdecl; external libgobject2_0;
+function g_compute_checksum_for_data(checksum_type: TGChecksumType; Data: Pguchar; length: Tgsize): Pgchar; cdecl; external libgobject2_0;
+function g_compute_checksum_for_string(checksum_type: TGChecksumType; str: Pgchar; length: Tgssize): Pgchar; cdecl; external libgobject2_0;
+function g_compute_checksum_for_bytes(checksum_type: TGChecksumType; Data: PGBytes): Pgchar; cdecl; external libgobject2_0;
 
 // === Konventiert am: 11-8-24 15:21:15 ===
 

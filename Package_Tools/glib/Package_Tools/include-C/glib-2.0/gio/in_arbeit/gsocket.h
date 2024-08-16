@@ -118,26 +118,26 @@ guint                  g_socket_get_timeout             (GSocket                
 void                   g_socket_set_timeout             (GSocket                 *socket,
 							 guint                    timeout);
 
-GIO_AVAILABLE_IN_2_32
+
 guint                  g_socket_get_ttl                 (GSocket                 *socket);
-GIO_AVAILABLE_IN_2_32
+
 void                   g_socket_set_ttl                 (GSocket                 *socket,
                                                          guint                    ttl);
 
-GIO_AVAILABLE_IN_2_32
+
 gboolean               g_socket_get_broadcast           (GSocket                 *socket);
-GIO_AVAILABLE_IN_2_32
+
 void                   g_socket_set_broadcast           (GSocket                 *socket,
                                                          gboolean		  broadcast);
 
-GIO_AVAILABLE_IN_2_32
+
 gboolean               g_socket_get_multicast_loopback  (GSocket                 *socket);
-GIO_AVAILABLE_IN_2_32
+
 void                   g_socket_set_multicast_loopback  (GSocket                 *socket,
                                                          gboolean		  loopback);
-GIO_AVAILABLE_IN_2_32
+
 guint                  g_socket_get_multicast_ttl       (GSocket                 *socket);
-GIO_AVAILABLE_IN_2_32
+
 void                   g_socket_set_multicast_ttl       (GSocket                 *socket,
                                                          guint                    ttl);
 
@@ -147,25 +147,25 @@ gboolean               g_socket_bind                    (GSocket                
 							 GSocketAddress          *address,
 							 gboolean                 allow_reuse,
 							 GError                 **error);
-GIO_AVAILABLE_IN_2_32
+
 gboolean               g_socket_join_multicast_group    (GSocket                 *socket,
                                                          GInetAddress            *group,
                                                          gboolean                 source_specific,
                                                          const gchar             *iface,
                                                          GError                 **error);
-GIO_AVAILABLE_IN_2_32
+
 gboolean               g_socket_leave_multicast_group   (GSocket                 *socket,
                                                          GInetAddress            *group,
                                                          gboolean                 source_specific,
                                                          const gchar             *iface,
                                                          GError                 **error);
-GIO_AVAILABLE_IN_2_56
+
 gboolean               g_socket_join_multicast_group_ssm    (GSocket                 *socket,
                                                              GInetAddress            *group,
                                                              GInetAddress            *source_specific,
                                                              const gchar             *iface,
                                                              GError                 **error);
-GIO_AVAILABLE_IN_2_56
+
 gboolean               g_socket_leave_multicast_group_ssm   (GSocket                 *socket,
                                                              GInetAddress            *group,
                                                              GInetAddress            *source_specific,
@@ -191,7 +191,7 @@ gboolean               g_socket_condition_wait          (GSocket                
 							 GIOCondition             condition,
 							 GCancellable            *cancellable,
 							 GError                 **error);
-GIO_AVAILABLE_IN_2_32
+
 gboolean               g_socket_condition_timed_wait    (GSocket                 *socket,
 							 GIOCondition             condition,
 							 gint64                   timeout_us,
@@ -210,7 +210,7 @@ gssize                 g_socket_receive                 (GSocket                
 							 gsize                    size,
 							 GCancellable            *cancellable,
 							 GError                 **error);
-GIO_AVAILABLE_IN_2_80
+
 GBytes *               g_socket_receive_bytes           (GSocket                 *socket,
                                                          gsize                    size,
                                                          gint64                   timeout_us,
@@ -223,7 +223,7 @@ gssize                 g_socket_receive_from            (GSocket                
 							 gsize                    size,
 							 GCancellable            *cancellable,
 							 GError                 **error);
-GIO_AVAILABLE_IN_2_80
+
 GBytes *               g_socket_receive_bytes_from      (GSocket                 *socket,
                                                          GSocketAddress         **address,
                                                          gsize                    size,
@@ -264,14 +264,12 @@ gssize                 g_socket_send_message            (GSocket                
 							 GCancellable            *cancellable,
 							 GError                 **error);
 
-GIO_AVAILABLE_IN_2_48
 gint                   g_socket_receive_messages        (GSocket                 *socket,
                                                          GInputMessage           *messages,
                                                          guint                    num_messages,
                                                          gint                     flags,
                                                          GCancellable            *cancellable,
                                                          GError                 **error);
-GIO_AVAILABLE_IN_2_44
 gint                   g_socket_send_messages           (GSocket                 *socket,
 							 GOutputMessage          *messages,
 							 guint                    num_messages,
@@ -313,7 +311,6 @@ gssize                 g_socket_send_with_blocking      (GSocket                
 							 gboolean                 blocking,
 							 GCancellable            *cancellable,
 							 GError                 **error);
-GIO_AVAILABLE_IN_2_60
 GPollableReturn        g_socket_send_message_with_timeout (GSocket                *socket,
 							   GSocketAddress         *address,
 							   const GOutputVector    *vectors,
@@ -325,13 +322,11 @@ GPollableReturn        g_socket_send_message_with_timeout (GSocket              
 							   gsize                  *bytes_written,
 							   GCancellable           *cancellable,
 							   GError                **error);
-GIO_AVAILABLE_IN_2_36
 gboolean               g_socket_get_option              (GSocket                 *socket,
 							 gint                     level,
 							 gint                     optname,
 							 gint                    *value,
 							 GError                 **error);
-GIO_AVAILABLE_IN_2_36
 gboolean               g_socket_set_option              (GSocket                 *socket,
 							 gint                     level,
 							 gint                     optname,

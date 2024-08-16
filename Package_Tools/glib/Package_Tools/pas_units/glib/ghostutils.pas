@@ -10,11 +10,11 @@ uses
   {$ENDIF}
 
 
-function g_hostname_is_non_ascii(hostname: Pgchar): Tgboolean; cdecl; external libglib2;
-function g_hostname_is_ascii_encoded(hostname: Pgchar): Tgboolean; cdecl; external libglib2;
-function g_hostname_is_ip_address(hostname: Pgchar): Tgboolean; cdecl; external libglib2;
-function g_hostname_to_ascii(hostname: Pgchar): Pgchar; cdecl; external libglib2;
-function g_hostname_to_unicode(hostname: Pgchar): Pgchar; cdecl; external libglib2;
+function g_hostname_is_non_ascii(hostname: Pgchar): Tgboolean; cdecl; external libgobject2_0;
+function g_hostname_is_ascii_encoded(hostname: Pgchar): Tgboolean; cdecl; external libgobject2_0;
+function g_hostname_is_ip_address(hostname: Pgchar): Tgboolean; cdecl; external libgobject2_0;
+function g_hostname_to_ascii(hostname: Pgchar): Pgchar; cdecl; external libgobject2_0;
+function g_hostname_to_unicode(hostname: Pgchar): Pgchar; cdecl; external libgobject2_0;
 
 // === Konventiert am: 11-8-24 19:40:19 ===
 

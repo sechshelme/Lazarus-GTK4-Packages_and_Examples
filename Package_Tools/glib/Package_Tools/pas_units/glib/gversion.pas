@@ -16,7 +16,7 @@ var
   glib_interface_age: Tguint; cvar;external libglib2;
   glib_binary_age: Tguint; cvar;external libglib2;
 
-function glib_check_version(required_major: Tguint; required_minor: Tguint; required_micro: Tguint): Pgchar; cdecl; external libglib2;
+function glib_check_version(required_major: Tguint; required_minor: Tguint; required_micro: Tguint): Pgchar; cdecl; external libgobject2_0;
 {
 #define GLIB_CHECK_VERSION(major,minor,micro)    \
     (GLIB_MAJOR_VERSION > (major) || \

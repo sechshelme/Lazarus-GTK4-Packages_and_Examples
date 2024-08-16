@@ -18,34 +18,34 @@ type
   PGData = ^TGData;
   PPGData = ^PGData;
 
-procedure g_datalist_init(datalist: PPGData); cdecl; external libglib2;
-procedure g_datalist_clear(datalist: PPGData); cdecl; external libglib2;
-function g_datalist_id_get_data(datalist: PPGData; key_id: TGQuark): Tgpointer; cdecl; external libglib2;
-procedure g_datalist_id_set_data_full(datalist: PPGData; key_id: TGQuark; Data: Tgpointer; destroy_func: TGDestroyNotify); cdecl; external libglib2;
-procedure g_datalist_id_remove_multiple(datalist: PPGData; keys: PGQuark; n_keys: Tgsize); cdecl; external libglib2;
+procedure g_datalist_init(datalist: PPGData); cdecl; external libgobject2_0;
+procedure g_datalist_clear(datalist: PPGData); cdecl; external libgobject2_0;
+function g_datalist_id_get_data(datalist: PPGData; key_id: TGQuark): Tgpointer; cdecl; external libgobject2_0;
+procedure g_datalist_id_set_data_full(datalist: PPGData; key_id: TGQuark; Data: Tgpointer; destroy_func: TGDestroyNotify); cdecl; external libgobject2_0;
+procedure g_datalist_id_remove_multiple(datalist: PPGData; keys: PGQuark; n_keys: Tgsize); cdecl; external libgobject2_0;
 
 type
   TGDuplicateFunc = function(Data: Tgpointer; user_data: Tgpointer): Tgpointer; cdecl;
 
-function g_datalist_id_dup_data(datalist: PPGData; key_id: TGQuark; dup_func: TGDuplicateFunc; user_data: Tgpointer): Tgpointer; cdecl; external libglib2;
+function g_datalist_id_dup_data(datalist: PPGData; key_id: TGQuark; dup_func: TGDuplicateFunc; user_data: Tgpointer): Tgpointer; cdecl; external libgobject2_0;
 function g_datalist_id_replace_data(datalist: PPGData; key_id: TGQuark; oldval: Tgpointer; newval: Tgpointer; Destroy: TGDestroyNotify;
-  old_destroy: PGDestroyNotify): Tgboolean; cdecl; external libglib2;
-function g_datalist_id_remove_no_notify(datalist: PPGData; key_id: TGQuark): Tgpointer; cdecl; external libglib2;
-procedure g_datalist_foreach(datalist: PPGData; func: TGDataForeachFunc; user_data: Tgpointer); cdecl; external libglib2;
+  old_destroy: PGDestroyNotify): Tgboolean; cdecl; external libgobject2_0;
+function g_datalist_id_remove_no_notify(datalist: PPGData; key_id: TGQuark): Tgpointer; cdecl; external libgobject2_0;
+procedure g_datalist_foreach(datalist: PPGData; func: TGDataForeachFunc; user_data: Tgpointer); cdecl; external libgobject2_0;
 
 const
   G_DATALIST_FLAGS_MASK = $3;
 
-procedure g_datalist_set_flags(datalist: PPGData; flags: Tguint); cdecl; external libglib2;
-procedure g_datalist_unset_flags(datalist: PPGData; flags: Tguint); cdecl; external libglib2;
-function g_datalist_get_flags(datalist: PPGData): Tguint; cdecl; external libglib2;
+procedure g_datalist_set_flags(datalist: PPGData; flags: Tguint); cdecl; external libgobject2_0;
+procedure g_datalist_unset_flags(datalist: PPGData; flags: Tguint); cdecl; external libgobject2_0;
+function g_datalist_get_flags(datalist: PPGData): Tguint; cdecl; external libgobject2_0;
 
-procedure g_dataset_destroy(dataset_location: Tgconstpointer); cdecl; external libglib2;
-function g_dataset_id_get_data(dataset_location: Tgconstpointer; key_id: TGQuark): Tgpointer; cdecl; external libglib2;
-function g_datalist_get_data(datalist: PPGData; key: Pgchar): Tgpointer; cdecl; external libglib2;
-procedure g_dataset_id_set_data_full(dataset_location: Tgconstpointer; key_id: TGQuark; Data: Tgpointer; destroy_func: TGDestroyNotify); cdecl; external libglib2;
-function g_dataset_id_remove_no_notify(dataset_location: Tgconstpointer; key_id: TGQuark): Tgpointer; cdecl; external libglib2;
-procedure g_dataset_foreach(dataset_location: Tgconstpointer; func: TGDataForeachFunc; user_data: Tgpointer); cdecl; external libglib2;
+procedure g_dataset_destroy(dataset_location: Tgconstpointer); cdecl; external libgobject2_0;
+function g_dataset_id_get_data(dataset_location: Tgconstpointer; key_id: TGQuark): Tgpointer; cdecl; external libgobject2_0;
+function g_datalist_get_data(datalist: PPGData; key: Pgchar): Tgpointer; cdecl; external libgobject2_0;
+procedure g_dataset_id_set_data_full(dataset_location: Tgconstpointer; key_id: TGQuark; Data: Tgpointer; destroy_func: TGDestroyNotify); cdecl; external libgobject2_0;
+function g_dataset_id_remove_no_notify(dataset_location: Tgconstpointer; key_id: TGQuark): Tgpointer; cdecl; external libgobject2_0;
+procedure g_dataset_foreach(dataset_location: Tgconstpointer; func: TGDataForeachFunc; user_data: Tgpointer); cdecl; external libgobject2_0;
 
 procedure g_datalist_id_set_data(datalist: PPGData; key_id: TGQuark; Data: Tgpointer);
 procedure g_datalist_id_remove_data(datalist: PPGData; key_id: TGQuark);

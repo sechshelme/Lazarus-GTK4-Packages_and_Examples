@@ -9,10 +9,10 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
-function g_unicode_type_get_type: TGType; cdecl; external libglib2;
-function g_unicode_break_type_get_type: TGType; cdecl; external libglib2;
-function g_unicode_script_get_type: TGType; cdecl; external libglib2;
-function g_normalize_mode_get_type: TGType; cdecl; external libglib2;
+function g_unicode_type_get_type: TGType; cdecl; external libgobject2_0;
+function g_unicode_break_type_get_type: TGType; cdecl; external libgobject2_0;
+function g_unicode_script_get_type: TGType; cdecl; external libgobject2_0;
+function g_normalize_mode_get_type: TGType; cdecl; external libgobject2_0;
 
 function G_TYPE_UNICODE_TYPE: TGType;
 function G_TYPE_UNICODE_BREAK_TYPE: TGType;

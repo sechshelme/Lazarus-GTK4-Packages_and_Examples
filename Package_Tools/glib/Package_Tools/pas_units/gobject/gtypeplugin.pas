@@ -28,11 +28,11 @@ type
     complete_interface_info: TGTypePluginCompleteInterfaceInfo;
   end;
 
-function g_type_plugin_get_type: TGType; cdecl; external libglib2;
-procedure g_type_plugin_use(plugin: PGTypePlugin); cdecl; external libglib2;
-procedure g_type_plugin_unuse(plugin: PGTypePlugin); cdecl; external libglib2;
-procedure g_type_plugin_complete_type_info(plugin: PGTypePlugin; g_type: TGType; info: PGTypeInfo; value_table: PGTypeValueTable); cdecl; external libglib2;
-procedure g_type_plugin_complete_interface_info(plugin: PGTypePlugin; instance_type: TGType; interface_type: TGType; info: PGInterfaceInfo); cdecl; external libglib2;
+function g_type_plugin_get_type: TGType; cdecl; external libgobject2_0;
+procedure g_type_plugin_use(plugin: PGTypePlugin); cdecl; external libgobject2_0;
+procedure g_type_plugin_unuse(plugin: PGTypePlugin); cdecl; external libgobject2_0;
+procedure g_type_plugin_complete_type_info(plugin: PGTypePlugin; g_type: TGType; info: PGTypeInfo; value_table: PGTypeValueTable); cdecl; external libgobject2_0;
+procedure g_type_plugin_complete_interface_info(plugin: PGTypePlugin; instance_type: TGType; interface_type: TGType; info: PGInterfaceInfo); cdecl; external libgobject2_0;
 
 // === Konventiert am: 15-8-24 19:41:21 ===
 

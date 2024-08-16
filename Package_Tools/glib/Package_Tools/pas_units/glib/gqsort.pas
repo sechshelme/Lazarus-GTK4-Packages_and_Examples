@@ -10,7 +10,7 @@ uses
   {$ENDIF}
 
 
-procedure g_qsort_with_data(pbase: Tgconstpointer; total_elems: Tgint; size: Tgsize; compare_func: TGCompareDataFunc; user_data: Tgpointer); cdecl; external libglib2;
+procedure g_qsort_with_data(pbase: Tgconstpointer; total_elems: Tgint; size: Tgsize; compare_func: TGCompareDataFunc; user_data: Tgpointer); cdecl; external libgobject2_0;
 
 // === Konventiert am: 11-8-24 19:32:59 ===
 
