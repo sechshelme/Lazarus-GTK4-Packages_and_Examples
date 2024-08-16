@@ -18,6 +18,7 @@ type
     volume,
     autoaudiosink: PGstElement;
     state: TGstState;
+    Duration: Tgint64;
   end;
   PPipelineElement=^TPipelineElement;
 
@@ -58,7 +59,15 @@ end;
 
 procedure test_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
 begin
-  WriteLn(GST_MESSAGE_TYPE(msg));
+//  WriteLn(GST_MESSAGE_TYPE(msg));
+end;
+
+procedure duration_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
+var
+  pE: PPipelineElement absolute Data;
+begin
+  gst_element_query_duration(pE^.pipeline, GST_FORMAT_TIME, @pE^.Duration);
+  WriteLn('duration');
 end;
 
 procedure state_changed_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
@@ -86,6 +95,7 @@ var
 begin
   pipelineElement.pipeline := nil;
   fsongPath := AsongPath;
+  pipelineElement.Duration:=-1;
 
   if pipelineElement.pipeline = nil then begin
     pipelineElement.pipeline := gst_pipeline_new('audio-player');
@@ -130,6 +140,7 @@ begin
   g_signal_connect(G_OBJECT(bus), 'message::state-changed', TGCallback(@state_changed_cb), @pipelineElement);
   g_signal_connect(G_OBJECT(bus), 'message::eos', TGCallback(@eos_cb), @pipelineElement);
   g_signal_connect(G_OBJECT(bus), 'message', TGCallback(@test_cb), @pipelineElement);
+  g_signal_connect(G_OBJECT(bus), 'message::duration-changed', TGCallback(@duration_cb), @pipelineElement);
   gst_object_unref(bus);
 end;
 
@@ -171,8 +182,9 @@ function TStreamer.GetDuration: integer;
 var
   current: Tgint64;
 begin
-  gst_element_query_duration(pipelineElement.pipeline, GST_FORMAT_TIME, @current);
-  Result := current div G_USEC_PER_SEC;
+//  gst_element_query_duration(pipelineElement.pipeline, GST_FORMAT_TIME, @current);
+//  Result := current div G_USEC_PER_SEC;
+  Result := pipelineElement.Duration div G_USEC_PER_SEC;
 end;
 
 procedure TStreamer.SetVolume(vol: gdouble);

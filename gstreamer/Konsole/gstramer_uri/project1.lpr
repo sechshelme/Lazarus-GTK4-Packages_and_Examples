@@ -12,7 +12,7 @@ uses
 const
   GST_CLOCK_TIME_NONE = TGstClockTime(-1);
 
-  function gst_stream_volume_get_type():GType;cdecl;external 'libgstreamer-1.0';
+  function gst_stream_volume_get_type():GType;cdecl;external 'gstaudio-1.0';
 
 
 
@@ -39,9 +39,9 @@ const
     end;
     //    g_object_set(filesrc, 'location', 'test.wav');
 
-    volume := gst_bin_get_by_name(GST_BIN(pipeline), 'volume0');
+  //  volume := gst_bin_get_by_name(GST_BIN(pipeline), 'volume0');
     //volume := gst_bin_get_by_interface(GST_BIN( pipeline), GST_TYPE_STREAM_VOLUME);
-//    volume := gst_bin_get_by_interface(GST_BIN( pipeline), gst_stream_volume_get_type());
+   volume := gst_bin_get_by_interface(GST_BIN( pipeline), gst_stream_volume_get_type());
     if volume = nil then begin
       WriteLn('volume error');
     end else begin
