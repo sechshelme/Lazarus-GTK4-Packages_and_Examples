@@ -3,19 +3,20 @@ unit giotypes;
 interface
 
 uses
-  common_GLIB, gtypes, gobject, gmain, gcancellable, gsocketcontrolmessage;
+  common_GLIB, gtypes, gtype, gobject, gmain, gcancellable, gsocketcontrolmessage;
 
-{$IFDEF FPC}
-{$PACKRECORDS C}
-{$ENDIF}
+  {$IFDEF FPC}
+  {$PACKRECORDS C}
+  {$ENDIF}
 
-// ==== Ausgelagertes
+  // ==== Ausgelagertes
 type
   TGSocketPrivate = record
   end;
 
   PGSocketPrivate = ^TGSocketPrivate;
-    TGSocket = record
+
+  TGSocket = record
     parent_instance: TGObject;
     priv: PGSocketPrivate;
   end;
@@ -27,72 +28,100 @@ type
   PGSocketAddress = ^TGSocketAddress;
   PPGSocketAddress = ^PGSocketAddress;
 
+  TGDBusConnection = record
+  end;
+  PGDBusConnection = ^TGDBusConnection;
+
+  TGDBusObjectManager = record
+  end;
+  PGDBusObjectManager = ^TGDBusObjectManager;
+
+  TGDBusObjectManagerClientPrivate = record
+  end;
+  PGDBusObjectManagerClientPrivate = ^TGDBusObjectManagerClientPrivate;
+
+  TGDBusObjectManagerClient = record
+    parent_instance: TGObject;
+    priv: PGDBusObjectManagerClientPrivate;
+  end;
+  PGDBusObjectManagerClient = ^TGDBusObjectManagerClient;
+
+  TGCredentials = record
+  end;
+  PGCredentials = ^TGCredentials;
+
+
+
   // =====
 
 
 type
-  TGDatagramBased=record
-    end;
-  PGDatagramBased=^TGDatagramBased;
+  TGDatagramBased = record
+  end;
+  PGDatagramBased = ^TGDatagramBased;
 
-  TGAsyncResult=record
-        end;
-  PGAsyncResult=^TGAsyncResult;
+  TGAsyncResult = record
+  end;
+  PGAsyncResult = ^TGAsyncResult;
 
-  TGIOSchedulerJob=record
-        end;
-  PGIOSchedulerJob=^TGIOSchedulerJob;
+  TGIOSchedulerJob = record
+  end;
+  PGIOSchedulerJob = ^TGIOSchedulerJob;
 
-  TGSimpleAsyncResult=record
-        end;
-  PGSimpleAsyncResult=^TGSimpleAsyncResult;
+  TGSimpleAsyncResult = record
+  end;
+  PGSimpleAsyncResult = ^TGSimpleAsyncResult;
 
-  TGAsyncReadyCallback = procedure (source_object:PGObject; res:PGAsyncResult; data:Tgpointer);cdecl;
-  TGFileProgressCallback = procedure (current_num_bytes:Tgoffset; total_num_bytes:Tgoffset; data:Tgpointer);cdecl;
-  TGFileReadMoreCallback = function (file_contents:Pchar; file_size:Tgoffset; callback_data:Tgpointer):Tgboolean;cdecl;
-  TGFileMeasureProgressCallback = procedure (reporting:Tgboolean; current_size:Tguint64; num_dirs:Tguint64; num_files:Tguint64; data:Tgpointer);cdecl;
-  TGIOSchedulerJobFunc = function (job:PGIOSchedulerJob; cancellable:PGCancellable; data:Tgpointer):Tgboolean;cdecl;
-  TGSimpleAsyncThreadFunc = procedure (res:PGSimpleAsyncResult; obj:PGObject; cancellable:PGCancellable);cdecl;
-  TGSocketSourceFunc = function (socket:PGSocket; condition:TGIOCondition; data:Tgpointer):Tgboolean;cdecl;
-  TGDatagramBasedSourceFunc = function (datagram_based:PGDatagramBased; condition:TGIOCondition; data:Tgpointer):Tgboolean;cdecl;
+  TGAsyncReadyCallback = procedure(source_object: PGObject; res: PGAsyncResult; Data: Tgpointer); cdecl;
+  TGFileProgressCallback = procedure(current_num_bytes: Tgoffset; total_num_bytes: Tgoffset; Data: Tgpointer); cdecl;
+  TGFileReadMoreCallback = function(file_contents: PChar; file_size: Tgoffset; callback_data: Tgpointer): Tgboolean; cdecl;
+  TGFileMeasureProgressCallback = procedure(reporting: Tgboolean; current_size: Tguint64; num_dirs: Tguint64; num_files: Tguint64; Data: Tgpointer); cdecl;
+  TGIOSchedulerJobFunc = function(job: PGIOSchedulerJob; cancellable: PGCancellable; Data: Tgpointer): Tgboolean; cdecl;
+  TGSimpleAsyncThreadFunc = procedure(res: PGSimpleAsyncResult; obj: PGObject; cancellable: PGCancellable); cdecl;
+  TGSocketSourceFunc = function(socket: PGSocket; condition: TGIOCondition; Data: Tgpointer): Tgboolean; cdecl;
+  TGDatagramBasedSourceFunc = function(datagram_based: PGDatagramBased; condition: TGIOCondition; Data: Tgpointer): Tgboolean; cdecl;
   PGInputVector = ^TGInputVector;
+
   TGInputVector = record
-      buffer : Tgpointer;
-      size : Tgsize;
-    end;
+    buffer: Tgpointer;
+    size: Tgsize;
+  end;
 
   PGInputMessage = ^TGInputMessage;
+
   TGInputMessage = record
-      address : ^PGSocketAddress;
-      vectors : PGInputVector;
-      num_vectors : Tguint;
-      bytes_received : Tgsize;
-      flags : Tgint;
-      control_messages : PPPGSocketControlMessage;
-      num_control_messages : Pguint;
-    end;
+    address: ^PGSocketAddress;
+    vectors: PGInputVector;
+    num_vectors: Tguint;
+    bytes_received: Tgsize;
+    flags: Tgint;
+    control_messages: PPPGSocketControlMessage;
+    num_control_messages: Pguint;
+  end;
   PGOutputVector = ^TGOutputVector;
+
   TGOutputVector = record
-      buffer : Tgconstpointer;
-      size : Tgsize;
-    end;
+    buffer: Tgconstpointer;
+    size: Tgsize;
+  end;
 
   PGOutputMessage = ^TGOutputMessage;
+
   TGOutputMessage = record
-      address : PGSocketAddress;
-      vectors : PGOutputVector;
-      num_vectors : Tguint;
-      bytes_sent : Tguint;
-      control_messages : ^PGSocketControlMessage;
-      num_control_messages : Tguint;
-    end;
+    address: PGSocketAddress;
+    vectors: PGOutputVector;
+    num_vectors: Tguint;
+    bytes_sent: Tguint;
+    control_messages: ^PGSocketControlMessage;
+    num_control_messages: Tguint;
+  end;
 
 
-  TGCancellableSourceFunc = function (cancellable:PGCancellable; data:Tgpointer):Tgboolean;cdecl;
-  TGPollableSourceFunc = function (pollable_stream:PGObject; data:Tgpointer):Tgboolean;cdecl;
-  TGDBusProxyTypeFunc = function (manager:PGDBusObjectManagerClient; object_path:Pgchar; interface_name:Pgchar; data:Tgpointer):TGType;cdecl;
+  TGCancellableSourceFunc = function(cancellable: PGCancellable; Data: Tgpointer): Tgboolean; cdecl;
+  TGPollableSourceFunc = function(pollable_stream: PGObject; Data: Tgpointer): Tgboolean; cdecl;
+  TGDBusProxyTypeFunc = function(manager: PGDBusObjectManagerClient; object_path: Pgchar; interface_name: Pgchar; Data: Tgpointer): TGType; cdecl;
 
-// === Konventiert am: 16-8-24 19:32:54 ===
+  // === Konventiert am: 16-8-24 19:32:54 ===
 
 
 implementation

@@ -128,6 +128,8 @@ uses
   gdbusobjectmanagerclient,
   gdbusobjectproxy,
   gdbusproxy,
+  gdbusintrospection,
+  gunixfdlist,
 
   // ----
 

@@ -1,2 +1,0 @@
-#define g_static_mutex_get_mutex g_static_mutex_get_mutex_impl 
-

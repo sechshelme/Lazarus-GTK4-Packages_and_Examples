@@ -3,7 +3,7 @@ unit gsocketaddress;
 interface
 
 uses
-  common_GLIB, gtypes, gobject, gtype, gerror, gioenums;
+  common_GLIB, gtypes, gobject, gtype, gerror, giotypes, gioenums;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

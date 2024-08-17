@@ -3,7 +3,7 @@ unit gobject;
 interface
 
 uses
-  common_GLIB, gtypes, gquark, gmessages, gdataset, gslist, gtype, gparam, gclosure, gsignal;
+  common_GLIB, gtypes, gquark, gdataset, gslist, gtype, gparam, gclosure, gsignal;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

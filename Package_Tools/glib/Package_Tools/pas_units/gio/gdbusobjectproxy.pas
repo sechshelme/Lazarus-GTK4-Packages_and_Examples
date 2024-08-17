@@ -3,17 +3,13 @@ unit gdbusobjectproxy;
 interface
 
 uses
-  common_GLIB, gtypes, gtype, gobject;
+  common_GLIB, gtypes, gtype, gobject, giotypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
 type
-  TGDBusConnection = record
-  end;
-  PGDBusConnection = ^TGDBusConnection;
-
   TGDBusObjectProxyPrivate = record
   end;
   PGDBusObjectProxyPrivate = ^tGDBusObjectProxyPrivate;

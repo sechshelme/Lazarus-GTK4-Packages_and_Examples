@@ -3,23 +3,28 @@ unit gdbusobjectmanagerclient;
 interface
 
 uses
-  common_GLIB, gtypes, gobject, gvariant, gdbusobjectproxy;
+  common_GLIB, gtypes, gobject, gerror, gtype, gvariant, giotypes, gioenums, gcancellable, gdbusobjectproxy, gdbusproxy;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
 type
-  TGDBusObjectManagerClientPrivate=record
-      end;
-  PGDBusObjectManagerClientPrivate=^TGDBusObjectManagerClientPrivate;
-
-  TGDBusObjectManagerClient = record
-    parent_instance: TGObject;
-    priv: PGDBusObjectManagerClientPrivate;
-  end;
-  PGDBusObjectManagerClient = ^TGDBusObjectManagerClient;
-
+  // ausgelagert
+  //TGDBusObjectManager = record
+  //end;
+  //PGDBusObjectManager = ^TGDBusObjectManager;
+ //
+  //TGDBusObjectManagerClientPrivate=record
+  //    end;
+  //PGDBusObjectManagerClientPrivate=^TGDBusObjectManagerClientPrivate;
+  //
+  //TGDBusObjectManagerClient = record
+  //  parent_instance: TGObject;
+  //  priv: PGDBusObjectManagerClientPrivate;
+  //end;
+  //PGDBusObjectManagerClient = ^TGDBusObjectManagerClient;
+  //
   TGDBusObjectManagerClientClass = record
     parent_class: TGObjectClass;
     interface_proxy_signal: procedure(manager: PGDBusObjectManagerClient; object_proxy: PGDBusObjectProxy; interface_proxy: PGDBusProxy; sender_name: Pgchar; signal_name: Pgchar;

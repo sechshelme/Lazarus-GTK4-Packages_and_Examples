@@ -3,7 +3,7 @@ unit gsocket;
 interface
 
 uses
-  common_GLIB, gtypes, gtype, gobject,garray, gerror, gioenums, gmain, giotypes, gcancellable, gsocketaddress, ginetaddressmask, ginetaddress;
+  common_GLIB, gtypes, gtype, gobject, garray, gerror, gioenums, gmain, giotypes, gcancellable, gsocketcontrolmessage, ginetaddress;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -11,9 +11,16 @@ uses
 
 
 type
+  // ausgelagert
   //TGSocketPrivate = record
   //end;
   //PGSocketPrivate = ^TGSocketPrivate;
+  //
+  //TGSocket = record
+  //  parent_instance: TGObject;
+  //  priv: PGSocketPrivate;
+  //end;
+  //PGSocket = ^TGSocket;
 
   TGSocketClass = record
     parent_class: TGObjectClass;
@@ -30,12 +37,6 @@ type
   end;
   PGSocketClass = ^TGSocketClass;
 
-  // ausgelagert
-  //TGSocket = record
-  //  parent_instance: TGObject;
-  //  priv: PGSocketPrivate;
-  //end;
-  //PGSocket = ^TGSocket;
 
 
 function g_socket_get_type: TGType; cdecl; external libgio2;
@@ -109,8 +110,6 @@ function g_socket_send_message_with_timeout(socket: PGSocket; address: PGSocketA
   error: PPGError): TGPollableReturn; cdecl; external libgio2;
 function g_socket_get_option(socket: PGSocket; level: Tgint; optname: Tgint; Value: Pgint; error: PPGError): Tgboolean; cdecl; external libgio2;
 function g_socket_set_option(socket: PGSocket; level: Tgint; optname: Tgint; Value: Tgint; error: PPGError): Tgboolean; cdecl; external libgio2;
-{$endif}
-{ __G_SOCKET_H__  }
 
 // === Konventiert am: 16-8-24 19:45:20 ===
 
