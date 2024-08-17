@@ -119,17 +119,17 @@ uses
 
   gaction,                 // io.
   gactiongroup,            // io.
-  gcancellable,
-  ginetaddress,
-  ginetaddressmask,
-  gsocketaddress,
-  gsocketcontrolmessage,
-  gsocket,
-  gdbusobjectmanagerclient,
-  gdbusobjectproxy,
-  gdbusproxy,
-  gdbusintrospection,
-  gunixfdlist,
+  gcancellable,            // io. -> gclosure
+  ginetaddress,            // io.
+  ginetaddressmask,        // io. -> ginetaddress
+  gsocket,                 // io. -> ginetaddress
+  gsocketaddress,          // io.
+  gsocketcontrolmessage,   // io.
+  gdbusobjectproxy,        // io.
+  gdbusintrospection,      // io.
+  gunixfdlist,             // io.
+  gdbusproxy,              // io. -> gdbusintrospection, gunixfdlist
+  gdbusobjectmanagerclient,// io. -> gdbusobjectproxy, gdbusproxy
 
   // ----
 

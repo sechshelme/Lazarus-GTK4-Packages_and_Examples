@@ -61,41 +61,41 @@ const
   G_FILE_SET_CONTENTS_DURABLE = 1 shl 1;
   G_FILE_SET_CONTENTS_ONLY_EXISTING = 1 shl 2;
 
-function g_file_error_quark: TGQuark; cdecl; external libgobject2_0;
-function g_file_error_from_errno(err_no: Tgint): TGFileError; cdecl; external libgobject2_0;
-function g_file_test(filename: Pgchar; test: TGFileTest): Tgboolean; cdecl; external libgobject2_0;
-function g_file_get_contents(filename: Pgchar; contents: PPgchar; length: Pgsize; error: PPGError): Tgboolean; cdecl; external libgobject2_0;
-function g_file_set_contents(filename: Pgchar; contents: Pgchar; length: Tgssize; error: PPGError): Tgboolean; cdecl; external libgobject2_0;
+function g_file_error_quark: TGQuark; cdecl; external libglib2;
+function g_file_error_from_errno(err_no: Tgint): TGFileError; cdecl; external libglib2;
+function g_file_test(filename: Pgchar; test: TGFileTest): Tgboolean; cdecl; external libglib2;
+function g_file_get_contents(filename: Pgchar; contents: PPgchar; length: Pgsize; error: PPGError): Tgboolean; cdecl; external libglib2;
+function g_file_set_contents(filename: Pgchar; contents: Pgchar; length: Tgssize; error: PPGError): Tgboolean; cdecl; external libglib2;
 function g_file_set_contents_full(filename: Pgchar; contents: Pgchar; length: Tgssize; flags: TGFileSetContentsFlags; mode: longint;
-  error: PPGError): Tgboolean; cdecl; external libgobject2_0;
-function g_file_read_link(filename: Pgchar; error: PPGError): Pgchar; cdecl; external libgobject2_0;
-function g_mkdtemp(tmpl: Pgchar): Pgchar; cdecl; external libgobject2_0;
-function g_mkdtemp_full(tmpl: Pgchar; mode: Tgint): Pgchar; cdecl; external libgobject2_0;
-function g_mkstemp(tmpl: Pgchar): Tgint; cdecl; external libgobject2_0;
-function g_mkstemp_full(tmpl: Pgchar; flags: Tgint; mode: Tgint): Tgint; cdecl; external libgobject2_0;
-function g_file_open_tmp(tmpl: Pgchar; name_used: PPgchar; error: PPGError): Tgint; cdecl; external libgobject2_0;
-function g_dir_make_tmp(tmpl: Pgchar; error: PPGError): Pgchar; cdecl; external libgobject2_0;
-function g_build_path(separator: Pgchar; first_element: Pgchar; args: array of const): Pgchar; cdecl; external libgobject2_0;
-function g_build_path(separator: Pgchar; first_element: Pgchar): Pgchar; cdecl; external libgobject2_0;
-function g_build_pathv(separator: Pgchar; args: PPgchar): Pgchar; cdecl; external libgobject2_0;
-function g_build_filename(first_element: Pgchar; args: array of const): Pgchar; cdecl; external libgobject2_0;
-function g_build_filename(first_element: Pgchar): Pgchar; cdecl; external libgobject2_0;
-function g_build_filenamev(args: PPgchar): Pgchar; cdecl; external libgobject2_0;
-function g_build_filename_valist(first_element: Pgchar; args: Pva_list): Pgchar; cdecl; external libgobject2_0;
-function g_mkdir_with_parents(pathname: Pgchar; mode: Tgint): Tgint; cdecl; external libgobject2_0;
+  error: PPGError): Tgboolean; cdecl; external libglib2;
+function g_file_read_link(filename: Pgchar; error: PPGError): Pgchar; cdecl; external libglib2;
+function g_mkdtemp(tmpl: Pgchar): Pgchar; cdecl; external libglib2;
+function g_mkdtemp_full(tmpl: Pgchar; mode: Tgint): Pgchar; cdecl; external libglib2;
+function g_mkstemp(tmpl: Pgchar): Tgint; cdecl; external libglib2;
+function g_mkstemp_full(tmpl: Pgchar; flags: Tgint; mode: Tgint): Tgint; cdecl; external libglib2;
+function g_file_open_tmp(tmpl: Pgchar; name_used: PPgchar; error: PPGError): Tgint; cdecl; external libglib2;
+function g_dir_make_tmp(tmpl: Pgchar; error: PPGError): Pgchar; cdecl; external libglib2;
+function g_build_path(separator: Pgchar; first_element: Pgchar; args: array of const): Pgchar; cdecl; external libglib2;
+function g_build_path(separator: Pgchar; first_element: Pgchar): Pgchar; cdecl; external libglib2;
+function g_build_pathv(separator: Pgchar; args: PPgchar): Pgchar; cdecl; external libglib2;
+function g_build_filename(first_element: Pgchar; args: array of const): Pgchar; cdecl; external libglib2;
+function g_build_filename(first_element: Pgchar): Pgchar; cdecl; external libglib2;
+function g_build_filenamev(args: PPgchar): Pgchar; cdecl; external libglib2;
+function g_build_filename_valist(first_element: Pgchar; args: Pva_list): Pgchar; cdecl; external libglib2;
+function g_mkdir_with_parents(pathname: Pgchar; mode: Tgint): Tgint; cdecl; external libglib2;
 
-function g_path_is_absolute(file_name: Pgchar): Tgboolean; cdecl; external libgobject2_0;
-function g_path_skip_root(file_name: Pgchar): Pgchar; cdecl; external libgobject2_0;
-function g_basename(file_name: Pgchar): Pgchar; cdecl; external libgobject2_0;
+function g_path_is_absolute(file_name: Pgchar): Tgboolean; cdecl; external libglib2;
+function g_path_skip_root(file_name: Pgchar): Pgchar; cdecl; external libglib2;
+function g_basename(file_name: Pgchar): Pgchar; cdecl; external libglib2;
 
 //const
 //g_dirname = g_path_get_dirname;
 
-function g_get_current_dir: Pgchar; cdecl; external libgobject2_0;
-function g_path_get_basename(file_name: Pgchar): Pgchar; cdecl; external libgobject2_0;
-function g_path_get_dirname(file_name: Pgchar): Pgchar; cdecl; external libgobject2_0;
+function g_get_current_dir: Pgchar; cdecl; external libglib2;
+function g_path_get_basename(file_name: Pgchar): Pgchar; cdecl; external libglib2;
+function g_path_get_dirname(file_name: Pgchar): Pgchar; cdecl; external libglib2;
 function g_dirname(file_name: Pgchar): Pgchar; cdecl; external libglib2 Name 'g_path_get_dirname';
-function g_canonicalize_filename(filename: Pgchar; relative_to: Pgchar): Pgchar; cdecl; external libgobject2_0;
+function g_canonicalize_filename(filename: Pgchar; relative_to: Pgchar): Pgchar; cdecl; external libglib2;
 
 function G_IS_DIR_SEPARATOR(c: Pgchar): Tgboolean;
 function G_FILE_ERROR: TGQuark;

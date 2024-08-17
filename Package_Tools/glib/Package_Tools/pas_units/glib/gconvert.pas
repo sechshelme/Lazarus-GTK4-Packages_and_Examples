@@ -23,31 +23,31 @@ const
   G_CONVERT_ERROR_NO_MEMORY = 6;
   G_CONVERT_ERROR_EMBEDDED_NUL = 7;
 
-function g_convert_error_quark: TGQuark; cdecl; external libgobject2_0;
+function g_convert_error_quark: TGQuark; cdecl; external libglib2;
 
 type
   PGIConv = ^TGIConv;
   TGIConv = PGIConv;
 
-function g_iconv_open(to_codeset: Pgchar; from_codeset: Pgchar): TGIConv; cdecl; external libgobject2_0;
-function g_iconv(converter: TGIConv; inbuf: PPgchar; inbytes_left: Pgsize; outbuf: PPgchar; outbytes_left: Pgsize): Tgsize; cdecl; external libgobject2_0;
-function g_iconv_close(converter: TGIConv): Tgint; cdecl; external libgobject2_0;
+function g_iconv_open(to_codeset: Pgchar; from_codeset: Pgchar): TGIConv; cdecl; external libglib2;
+function g_iconv(converter: TGIConv; inbuf: PPgchar; inbytes_left: Pgsize; outbuf: PPgchar; outbytes_left: Pgsize): Tgsize; cdecl; external libglib2;
+function g_iconv_close(converter: TGIConv): Tgint; cdecl; external libglib2;
 function g_convert(str: Pgchar; len: Tgssize; to_codeset: Pgchar; from_codeset: Pgchar; bytes_read: Pgsize;
-  bytes_written: Pgsize; error: PPGError): Pgchar; cdecl; external libgobject2_0;
+  bytes_written: Pgsize; error: PPGError): Pgchar; cdecl; external libglib2;
 function g_convert_with_iconv(str: Pgchar; len: Tgssize; converter: TGIConv; bytes_read: Pgsize; bytes_written: Pgsize;
-  error: PPGError): Pgchar; cdecl; external libgobject2_0;
+  error: PPGError): Pgchar; cdecl; external libglib2;
 function g_convert_with_fallback(str: Pgchar; len: Tgssize; to_codeset: Pgchar; from_codeset: Pgchar; fallback: Pgchar;
-  bytes_read: Pgsize; bytes_written: Pgsize; error: PPGError): Pgchar; cdecl; external libgobject2_0;
-function g_locale_to_utf8(opsysstring: Pgchar; len: Tgssize; bytes_read: Pgsize; bytes_written: Pgsize; error: PPGError): Pgchar; cdecl; external libgobject2_0;
-function g_locale_from_utf8(utf8string: Pgchar; len: Tgssize; bytes_read: Pgsize; bytes_written: Pgsize; error: PPGError): Pgchar; cdecl; external libgobject2_0;
-function g_filename_to_utf8(opsysstring: Pgchar; len: Tgssize; bytes_read: Pgsize; bytes_written: Pgsize; error: PPGError): Pgchar; cdecl; external libgobject2_0;
-function g_filename_from_utf8(utf8string: Pgchar; len: Tgssize; bytes_read: Pgsize; bytes_written: Pgsize; error: PPGError): Pgchar; cdecl; external libgobject2_0;
-function g_filename_from_uri(uri: Pgchar; hostname: PPgchar; error: PPGError): Pgchar; cdecl; external libgobject2_0;
-function g_filename_to_uri(filename: Pgchar; hostname: Pgchar; error: PPGError): Pgchar; cdecl; external libgobject2_0;
-function g_filename_display_name(filename: Pgchar): Pgchar; cdecl; external libgobject2_0;
-function g_get_filename_charsets(filename_charsets: PPPgchar): Tgboolean; cdecl; external libgobject2_0;
-function g_filename_display_basename(filename: Pgchar): Pgchar; cdecl; external libgobject2_0;
-function g_uri_list_extract_uris(uri_list: Pgchar): PPgchar; cdecl; external libgobject2_0;
+  bytes_read: Pgsize; bytes_written: Pgsize; error: PPGError): Pgchar; cdecl; external libglib2;
+function g_locale_to_utf8(opsysstring: Pgchar; len: Tgssize; bytes_read: Pgsize; bytes_written: Pgsize; error: PPGError): Pgchar; cdecl; external libglib2;
+function g_locale_from_utf8(utf8string: Pgchar; len: Tgssize; bytes_read: Pgsize; bytes_written: Pgsize; error: PPGError): Pgchar; cdecl; external libglib2;
+function g_filename_to_utf8(opsysstring: Pgchar; len: Tgssize; bytes_read: Pgsize; bytes_written: Pgsize; error: PPGError): Pgchar; cdecl; external libglib2;
+function g_filename_from_utf8(utf8string: Pgchar; len: Tgssize; bytes_read: Pgsize; bytes_written: Pgsize; error: PPGError): Pgchar; cdecl; external libglib2;
+function g_filename_from_uri(uri: Pgchar; hostname: PPgchar; error: PPGError): Pgchar; cdecl; external libglib2;
+function g_filename_to_uri(filename: Pgchar; hostname: Pgchar; error: PPGError): Pgchar; cdecl; external libglib2;
+function g_filename_display_name(filename: Pgchar): Pgchar; cdecl; external libglib2;
+function g_get_filename_charsets(filename_charsets: PPPgchar): Tgboolean; cdecl; external libglib2;
+function g_filename_display_basename(filename: Pgchar): Pgchar; cdecl; external libglib2;
+function g_uri_list_extract_uris(uri_list: Pgchar): PPgchar; cdecl; external libglib2;
 
 function G_CONVERT_ERROR: TGQuark;
 

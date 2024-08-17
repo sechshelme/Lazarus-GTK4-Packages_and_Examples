@@ -277,45 +277,45 @@ const
   G_UNICODE_SCRIPT_MATH = 162;
 
 
-function g_unicode_script_to_iso15924(script: TGUnicodeScript): Tguint32; cdecl; external libgobject2_0;
-function g_unicode_script_from_iso15924(iso15924: Tguint32): TGUnicodeScript; cdecl; external libgobject2_0;
-function g_unichar_isalnum(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_isalpha(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_iscntrl(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_isdigit(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_isgraph(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_islower(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_isprint(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_ispunct(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_isspace(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_isupper(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_isxdigit(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_istitle(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_isdefined(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_iswide(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_iswide_cjk(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_iszerowidth(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_ismark(c: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_toupper(c: Tgunichar): Tgunichar; cdecl; external libgobject2_0;
-function g_unichar_tolower(c: Tgunichar): Tgunichar; cdecl; external libgobject2_0;
-function g_unichar_totitle(c: Tgunichar): Tgunichar; cdecl; external libgobject2_0;
-function g_unichar_digit_value(c: Tgunichar): Tgint; cdecl; external libgobject2_0;
-function g_unichar_xdigit_value(c: Tgunichar): Tgint; cdecl; external libgobject2_0;
-function g_unichar_type(c: Tgunichar): TGUnicodeType; cdecl; external libgobject2_0;
-function g_unichar_break_type(c: Tgunichar): TGUnicodeBreakType; cdecl; external libgobject2_0;
-function g_unichar_combining_class(uc: Tgunichar): Tgint; cdecl; external libgobject2_0;
-function g_unichar_get_mirror_char(ch: Tgunichar; mirrored_ch: Pgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_get_script(ch: Tgunichar): TGUnicodeScript; cdecl; external libgobject2_0;
-function g_unichar_validate(ch: Tgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_compose(a: Tgunichar; b: Tgunichar; ch: Pgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_decompose(ch: Tgunichar; a: Pgunichar; b: Pgunichar): Tgboolean; cdecl; external libgobject2_0;
-function g_unichar_fully_decompose(ch: Tgunichar; compat: Tgboolean; Result: Pgunichar; result_len: Tgsize): Tgsize; cdecl; external libgobject2_0;
+function g_unicode_script_to_iso15924(script: TGUnicodeScript): Tguint32; cdecl; external libglib2;
+function g_unicode_script_from_iso15924(iso15924: Tguint32): TGUnicodeScript; cdecl; external libglib2;
+function g_unichar_isalnum(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_isalpha(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_iscntrl(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_isdigit(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_isgraph(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_islower(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_isprint(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_ispunct(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_isspace(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_isupper(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_isxdigit(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_istitle(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_isdefined(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_iswide(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_iswide_cjk(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_iszerowidth(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_ismark(c: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_toupper(c: Tgunichar): Tgunichar; cdecl; external libglib2;
+function g_unichar_tolower(c: Tgunichar): Tgunichar; cdecl; external libglib2;
+function g_unichar_totitle(c: Tgunichar): Tgunichar; cdecl; external libglib2;
+function g_unichar_digit_value(c: Tgunichar): Tgint; cdecl; external libglib2;
+function g_unichar_xdigit_value(c: Tgunichar): Tgint; cdecl; external libglib2;
+function g_unichar_type(c: Tgunichar): TGUnicodeType; cdecl; external libglib2;
+function g_unichar_break_type(c: Tgunichar): TGUnicodeBreakType; cdecl; external libglib2;
+function g_unichar_combining_class(uc: Tgunichar): Tgint; cdecl; external libglib2;
+function g_unichar_get_mirror_char(ch: Tgunichar; mirrored_ch: Pgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_get_script(ch: Tgunichar): TGUnicodeScript; cdecl; external libglib2;
+function g_unichar_validate(ch: Tgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_compose(a: Tgunichar; b: Tgunichar; ch: Pgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_decompose(ch: Tgunichar; a: Pgunichar; b: Pgunichar): Tgboolean; cdecl; external libglib2;
+function g_unichar_fully_decompose(ch: Tgunichar; compat: Tgboolean; Result: Pgunichar; result_len: Tgsize): Tgsize; cdecl; external libglib2;
 
 const
   G_UNICHAR_MAX_DECOMPOSITION_LENGTH = 18;
 
-procedure g_unicode_canonical_ordering(_string: Pgunichar; len: Tgsize); cdecl; external libgobject2_0;
-function g_unicode_canonical_decomposition(ch: Tgunichar; result_len: Pgsize): Pgunichar; cdecl; external libgobject2_0;
+procedure g_unicode_canonical_ordering(_string: Pgunichar; len: Tgsize); cdecl; external libglib2;
+function g_unicode_canonical_decomposition(ch: Tgunichar; result_len: Pgsize): Pgunichar; cdecl; external libglib2;
 
 var
   //  g_utf8_skip: Pgchar; cvar;public;
@@ -324,33 +324,33 @@ var
 
   {#define g_utf8_next_char(p) (char *)((p) + g_utf8_skip[*(const guchar *)(p)]) }
 
-function g_utf8_get_char(p: Pgchar): Tgunichar; cdecl; external libgobject2_0;
-function g_utf8_get_char_validated(p: Pgchar; max_len: Tgssize): Tgunichar; cdecl; external libgobject2_0;
-function g_utf8_offset_to_pointer(str: Pgchar; offset: Tglong): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_pointer_to_offset(str: Pgchar; pos: Pgchar): Tglong; cdecl; external libgobject2_0;
-function g_utf8_prev_char(p: Pgchar): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_find_next_char(p: Pgchar; _end: Pgchar): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_find_prev_char(str: Pgchar; p: Pgchar): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_strlen(p: Pgchar; max: Tgssize): Tglong; cdecl; external libgobject2_0;
-function g_utf8_substring(str: Pgchar; start_pos: Tglong; end_pos: Tglong): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_strncpy(dest: Pgchar; src: Pgchar; n: Tgsize): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_truncate_middle(_string: Pgchar; truncate_length: Tgsize): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_strchr(p: Pgchar; len: Tgssize; c: Tgunichar): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_strrchr(p: Pgchar; len: Tgssize; c: Tgunichar): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_strreverse(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_to_utf16(str: Pgchar; len: Tglong; items_read: Pglong; items_written: Pglong; error: PPGError): Pgunichar2; cdecl; external libgobject2_0;
-function g_utf8_to_ucs4(str: Pgchar; len: Tglong; items_read: Pglong; items_written: Pglong; error: PPGError): Pgunichar; cdecl; external libgobject2_0;
-function g_utf8_to_ucs4_fast(str: Pgchar; len: Tglong; items_written: Pglong): Pgunichar; cdecl; external libgobject2_0;
-function g_utf16_to_ucs4(str: Pgunichar2; len: Tglong; items_read: Pglong; items_written: Pglong; error: PPGError): Pgunichar; cdecl; external libgobject2_0;
-function g_utf16_to_utf8(str: Pgunichar2; len: Tglong; items_read: Pglong; items_written: Pglong; error: PPGError): Pgchar; cdecl; external libgobject2_0;
-function g_ucs4_to_utf16(str: Pgunichar; len: Tglong; items_read: Pglong; items_written: Pglong; error: PPGError): Pgunichar2; cdecl; external libgobject2_0;
-function g_ucs4_to_utf8(str: Pgunichar; len: Tglong; items_read: Pglong; items_written: Pglong; error: PPGError): Pgchar; cdecl; external libgobject2_0;
-function g_unichar_to_utf8(c: Tgunichar; outbuf: Pgchar): Tgint; cdecl; external libgobject2_0;
-function g_utf8_validate(str: Pgchar; max_len: Tgssize; _end: PPgchar): Tgboolean; cdecl; external libgobject2_0;
-function g_utf8_validate_len(str: Pgchar; max_len: Tgsize; _end: PPgchar): Tgboolean; cdecl; external libgobject2_0;
-function g_utf8_strup(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_strdown(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_casefold(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libgobject2_0;
+function g_utf8_get_char(p: Pgchar): Tgunichar; cdecl; external libglib2;
+function g_utf8_get_char_validated(p: Pgchar; max_len: Tgssize): Tgunichar; cdecl; external libglib2;
+function g_utf8_offset_to_pointer(str: Pgchar; offset: Tglong): Pgchar; cdecl; external libglib2;
+function g_utf8_pointer_to_offset(str: Pgchar; pos: Pgchar): Tglong; cdecl; external libglib2;
+function g_utf8_prev_char(p: Pgchar): Pgchar; cdecl; external libglib2;
+function g_utf8_find_next_char(p: Pgchar; _end: Pgchar): Pgchar; cdecl; external libglib2;
+function g_utf8_find_prev_char(str: Pgchar; p: Pgchar): Pgchar; cdecl; external libglib2;
+function g_utf8_strlen(p: Pgchar; max: Tgssize): Tglong; cdecl; external libglib2;
+function g_utf8_substring(str: Pgchar; start_pos: Tglong; end_pos: Tglong): Pgchar; cdecl; external libglib2;
+function g_utf8_strncpy(dest: Pgchar; src: Pgchar; n: Tgsize): Pgchar; cdecl; external libglib2;
+function g_utf8_truncate_middle(_string: Pgchar; truncate_length: Tgsize): Pgchar; cdecl; external libglib2;
+function g_utf8_strchr(p: Pgchar; len: Tgssize; c: Tgunichar): Pgchar; cdecl; external libglib2;
+function g_utf8_strrchr(p: Pgchar; len: Tgssize; c: Tgunichar): Pgchar; cdecl; external libglib2;
+function g_utf8_strreverse(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libglib2;
+function g_utf8_to_utf16(str: Pgchar; len: Tglong; items_read: Pglong; items_written: Pglong; error: PPGError): Pgunichar2; cdecl; external libglib2;
+function g_utf8_to_ucs4(str: Pgchar; len: Tglong; items_read: Pglong; items_written: Pglong; error: PPGError): Pgunichar; cdecl; external libglib2;
+function g_utf8_to_ucs4_fast(str: Pgchar; len: Tglong; items_written: Pglong): Pgunichar; cdecl; external libglib2;
+function g_utf16_to_ucs4(str: Pgunichar2; len: Tglong; items_read: Pglong; items_written: Pglong; error: PPGError): Pgunichar; cdecl; external libglib2;
+function g_utf16_to_utf8(str: Pgunichar2; len: Tglong; items_read: Pglong; items_written: Pglong; error: PPGError): Pgchar; cdecl; external libglib2;
+function g_ucs4_to_utf16(str: Pgunichar; len: Tglong; items_read: Pglong; items_written: Pglong; error: PPGError): Pgunichar2; cdecl; external libglib2;
+function g_ucs4_to_utf8(str: Pgunichar; len: Tglong; items_read: Pglong; items_written: Pglong; error: PPGError): Pgchar; cdecl; external libglib2;
+function g_unichar_to_utf8(c: Tgunichar; outbuf: Pgchar): Tgint; cdecl; external libglib2;
+function g_utf8_validate(str: Pgchar; max_len: Tgssize; _end: PPgchar): Tgboolean; cdecl; external libglib2;
+function g_utf8_validate_len(str: Pgchar; max_len: Tgsize; _end: PPgchar): Tgboolean; cdecl; external libglib2;
+function g_utf8_strup(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libglib2;
+function g_utf8_strdown(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libglib2;
+function g_utf8_casefold(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libglib2;
 
 type
   PGNormalizeMode = ^TGNormalizeMode;
@@ -366,11 +366,11 @@ const
   G_NORMALIZE_ALL_COMPOSE = (G_NORMALIZE_ALL) + 1;
   G_NORMALIZE_NFKC = G_NORMALIZE_ALL_COMPOSE;
 
-function g_utf8_normalize(str: Pgchar; len: Tgssize; mode: TGNormalizeMode): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_collate(str1: Pgchar; str2: Pgchar): Tgint; cdecl; external libgobject2_0;
-function g_utf8_collate_key(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_collate_key_for_filename(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libgobject2_0;
-function g_utf8_make_valid(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libgobject2_0;
+function g_utf8_normalize(str: Pgchar; len: Tgssize; mode: TGNormalizeMode): Pgchar; cdecl; external libglib2;
+function g_utf8_collate(str1: Pgchar; str2: Pgchar): Tgint; cdecl; external libglib2;
+function g_utf8_collate_key(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libglib2;
+function g_utf8_collate_key_for_filename(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libglib2;
+function g_utf8_make_valid(str: Pgchar; len: Tgssize): Pgchar; cdecl; external libglib2;
 
 // === Konventiert am: 6-8-24 17:03:20 ===
 

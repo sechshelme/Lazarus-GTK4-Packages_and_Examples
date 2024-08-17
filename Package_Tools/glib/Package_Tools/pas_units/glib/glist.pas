@@ -19,42 +19,42 @@ type
   end;
   PPGList = ^PGList;
 
-function g_list_alloc: PGList; cdecl; external libgobject2_0;
-procedure g_list_free(list: PGList); cdecl; external libgobject2_0;
-procedure g_list_free_1(list: PGList); cdecl; external libgobject2_0;
+function g_list_alloc: PGList; cdecl; external libglib2;
+procedure g_list_free(list: PGList); cdecl; external libglib2;
+procedure g_list_free_1(list: PGList); cdecl; external libglib2;
 //const
 //  g_list_free1 = g_list_free_1;  
 
-procedure g_list_free_full(list: PGList; free_func: TGDestroyNotify); cdecl; external libgobject2_0;
-function g_list_append(list: PGList; Data: Tgpointer): PGList; cdecl; external libgobject2_0;
-function g_list_prepend(list: PGList; Data: Tgpointer): PGList; cdecl; external libgobject2_0;
-function g_list_insert(list: PGList; Data: Tgpointer; position: Tgint): PGList; cdecl; external libgobject2_0;
-function g_list_insert_sorted(list: PGList; Data: Tgpointer; func: TGCompareFunc): PGList; cdecl; external libgobject2_0;
-function g_list_insert_sorted_with_data(list: PGList; Data: Tgpointer; func: TGCompareDataFunc; user_data: Tgpointer): PGList; cdecl; external libgobject2_0;
-function g_list_insert_before(list: PGList; sibling: PGList; Data: Tgpointer): PGList; cdecl; external libgobject2_0;
-function g_list_insert_before_link(list: PGList; sibling: PGList; link_: PGList): PGList; cdecl; external libgobject2_0;
-function g_list_concat(list1: PGList; list2: PGList): PGList; cdecl; external libgobject2_0;
-function g_list_remove(list: PGList; Data: Tgconstpointer): PGList; cdecl; external libgobject2_0;
-function g_list_remove_all(list: PGList; Data: Tgconstpointer): PGList; cdecl; external libgobject2_0;
-function g_list_remove_link(list: PGList; llink: PGList): PGList; cdecl; external libgobject2_0;
-function g_list_delete_link(list: PGList; link_: PGList): PGList; cdecl; external libgobject2_0;
-function g_list_reverse(list: PGList): PGList; cdecl; external libgobject2_0;
-function g_list_copy(list: PGList): PGList; cdecl; external libgobject2_0;
-function g_list_copy_deep(list: PGList; func: TGCopyFunc; user_data: Tgpointer): PGList; cdecl; external libgobject2_0;
-function g_list_nth(list: PGList; n: Tguint): PGList; cdecl; external libgobject2_0;
-function g_list_nth_prev(list: PGList; n: Tguint): PGList; cdecl; external libgobject2_0;
-function g_list_find(list: PGList; Data: Tgconstpointer): PGList; cdecl; external libgobject2_0;
-function g_list_find_custom(list: PGList; Data: Tgconstpointer; func: TGCompareFunc): PGList; cdecl; external libgobject2_0;
-function g_list_position(list: PGList; llink: PGList): Tgint; cdecl; external libgobject2_0;
-function g_list_index(list: PGList; Data: Tgconstpointer): Tgint; cdecl; external libgobject2_0;
-function g_list_last(list: PGList): PGList; cdecl; external libgobject2_0;
-function g_list_first(list: PGList): PGList; cdecl; external libgobject2_0;
-function g_list_length(list: PGList): Tguint; cdecl; external libgobject2_0;
-procedure g_list_foreach(list: PGList; func: TGFunc; user_data: Tgpointer); cdecl; external libgobject2_0;
-function g_list_sort(list: PGList; compare_func: TGCompareFunc): PGList; cdecl; external libgobject2_0;
-function g_list_sort_with_data(list: PGList; compare_func: TGCompareDataFunc; user_data: Tgpointer): PGList; cdecl; external libgobject2_0;
-function g_list_nth_data(list: PGList; n: Tguint): Tgpointer; cdecl; external libgobject2_0;
-procedure g_clear_list(list_ptr: PPGList; Destroy: TGDestroyNotify); cdecl; external libgobject2_0;
+procedure g_list_free_full(list: PGList; free_func: TGDestroyNotify); cdecl; external libglib2;
+function g_list_append(list: PGList; Data: Tgpointer): PGList; cdecl; external libglib2;
+function g_list_prepend(list: PGList; Data: Tgpointer): PGList; cdecl; external libglib2;
+function g_list_insert(list: PGList; Data: Tgpointer; position: Tgint): PGList; cdecl; external libglib2;
+function g_list_insert_sorted(list: PGList; Data: Tgpointer; func: TGCompareFunc): PGList; cdecl; external libglib2;
+function g_list_insert_sorted_with_data(list: PGList; Data: Tgpointer; func: TGCompareDataFunc; user_data: Tgpointer): PGList; cdecl; external libglib2;
+function g_list_insert_before(list: PGList; sibling: PGList; Data: Tgpointer): PGList; cdecl; external libglib2;
+function g_list_insert_before_link(list: PGList; sibling: PGList; link_: PGList): PGList; cdecl; external libglib2;
+function g_list_concat(list1: PGList; list2: PGList): PGList; cdecl; external libglib2;
+function g_list_remove(list: PGList; Data: Tgconstpointer): PGList; cdecl; external libglib2;
+function g_list_remove_all(list: PGList; Data: Tgconstpointer): PGList; cdecl; external libglib2;
+function g_list_remove_link(list: PGList; llink: PGList): PGList; cdecl; external libglib2;
+function g_list_delete_link(list: PGList; link_: PGList): PGList; cdecl; external libglib2;
+function g_list_reverse(list: PGList): PGList; cdecl; external libglib2;
+function g_list_copy(list: PGList): PGList; cdecl; external libglib2;
+function g_list_copy_deep(list: PGList; func: TGCopyFunc; user_data: Tgpointer): PGList; cdecl; external libglib2;
+function g_list_nth(list: PGList; n: Tguint): PGList; cdecl; external libglib2;
+function g_list_nth_prev(list: PGList; n: Tguint): PGList; cdecl; external libglib2;
+function g_list_find(list: PGList; Data: Tgconstpointer): PGList; cdecl; external libglib2;
+function g_list_find_custom(list: PGList; Data: Tgconstpointer; func: TGCompareFunc): PGList; cdecl; external libglib2;
+function g_list_position(list: PGList; llink: PGList): Tgint; cdecl; external libglib2;
+function g_list_index(list: PGList; Data: Tgconstpointer): Tgint; cdecl; external libglib2;
+function g_list_last(list: PGList): PGList; cdecl; external libglib2;
+function g_list_first(list: PGList): PGList; cdecl; external libglib2;
+function g_list_length(list: PGList): Tguint; cdecl; external libglib2;
+procedure g_list_foreach(list: PGList; func: TGFunc; user_data: Tgpointer); cdecl; external libglib2;
+function g_list_sort(list: PGList; compare_func: TGCompareFunc): PGList; cdecl; external libglib2;
+function g_list_sort_with_data(list: PGList; compare_func: TGCompareDataFunc; user_data: Tgpointer): PGList; cdecl; external libglib2;
+function g_list_nth_data(list: PGList; n: Tguint): Tgpointer; cdecl; external libglib2;
+procedure g_clear_list(list_ptr: PPGList; Destroy: TGDestroyNotify); cdecl; external libglib2;
 {
 #define  g_clear_list(list_ptr, destroy)       \
   G_STMT_START                                \

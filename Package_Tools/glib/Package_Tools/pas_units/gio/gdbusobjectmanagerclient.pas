@@ -3,7 +3,7 @@ unit gdbusobjectmanagerclient;
 interface
 
 uses
-  common_GLIB, gtypes, gobject, gerror, gtype, gvariant, giotypes, gioenums, gcancellable, gdbusobjectproxy, gdbusproxy;
+  common_GLIB, gtypes, gobject, gerror, gtype, gvariant, giotypes, gioenums, gdbusobjectproxy, gdbusproxy;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

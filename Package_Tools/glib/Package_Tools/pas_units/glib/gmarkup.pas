@@ -22,7 +22,7 @@ const
   G_MARKUP_ERROR_INVALID_CONTENT = 5;
   G_MARKUP_ERROR_MISSING_ATTRIBUTE = 6;
 
-function g_markup_error_quark: TGQuark; cdecl; external libgobject2_0;
+function g_markup_error_quark: TGQuark; cdecl; external libglib2;
 
 type
   PGMarkupParseFlags = ^TGMarkupParseFlags;
@@ -50,22 +50,22 @@ type
   end;
   PGMarkupParser = ^TGMarkupParser;
 
-function g_markup_parse_context_new(parser: PGMarkupParser; flags: TGMarkupParseFlags; user_data: Tgpointer; user_data_dnotify: TGDestroyNotify): PGMarkupParseContext; cdecl; external libgobject2_0;
-function g_markup_parse_context_ref(context: PGMarkupParseContext): PGMarkupParseContext; cdecl; external libgobject2_0;
-procedure g_markup_parse_context_unref(context: PGMarkupParseContext); cdecl; external libgobject2_0;
-procedure g_markup_parse_context_free(context: PGMarkupParseContext); cdecl; external libgobject2_0;
-function g_markup_parse_context_parse(context: PGMarkupParseContext; Text: Pgchar; text_len: Tgssize; error: PPGError): Tgboolean; cdecl; external libgobject2_0;
-procedure g_markup_parse_context_push(context: PGMarkupParseContext; parser: PGMarkupParser; user_data: Tgpointer); cdecl; external libgobject2_0;
-function g_markup_parse_context_pop(context: PGMarkupParseContext): Tgpointer; cdecl; external libgobject2_0;
-function g_markup_parse_context_end_parse(context: PGMarkupParseContext; error: PPGError): Tgboolean; cdecl; external libgobject2_0;
-function g_markup_parse_context_get_element(context: PGMarkupParseContext): Pgchar; cdecl; external libgobject2_0;
-function g_markup_parse_context_get_element_stack(context: PGMarkupParseContext): PGSList; cdecl; external libgobject2_0;
-procedure g_markup_parse_context_get_position(context: PGMarkupParseContext; line_number: Pgint; char_number: Pgint); cdecl; external libgobject2_0;
-function g_markup_parse_context_get_user_data(context: PGMarkupParseContext): Tgpointer; cdecl; external libgobject2_0;
-function g_markup_escape_text(Text: Pgchar; length: Tgssize): Pgchar; cdecl; external libgobject2_0;
-function g_markup_printf_escaped(format: PChar; args: array of const): Pgchar; cdecl; external libgobject2_0;
-function g_markup_printf_escaped(format: PChar): Pgchar; cdecl; external libgobject2_0;
-function g_markup_vprintf_escaped(format: PChar; args: Tva_list): Pgchar; cdecl; external libgobject2_0;
+function g_markup_parse_context_new(parser: PGMarkupParser; flags: TGMarkupParseFlags; user_data: Tgpointer; user_data_dnotify: TGDestroyNotify): PGMarkupParseContext; cdecl; external libglib2;
+function g_markup_parse_context_ref(context: PGMarkupParseContext): PGMarkupParseContext; cdecl; external libglib2;
+procedure g_markup_parse_context_unref(context: PGMarkupParseContext); cdecl; external libglib2;
+procedure g_markup_parse_context_free(context: PGMarkupParseContext); cdecl; external libglib2;
+function g_markup_parse_context_parse(context: PGMarkupParseContext; Text: Pgchar; text_len: Tgssize; error: PPGError): Tgboolean; cdecl; external libglib2;
+procedure g_markup_parse_context_push(context: PGMarkupParseContext; parser: PGMarkupParser; user_data: Tgpointer); cdecl; external libglib2;
+function g_markup_parse_context_pop(context: PGMarkupParseContext): Tgpointer; cdecl; external libglib2;
+function g_markup_parse_context_end_parse(context: PGMarkupParseContext; error: PPGError): Tgboolean; cdecl; external libglib2;
+function g_markup_parse_context_get_element(context: PGMarkupParseContext): Pgchar; cdecl; external libglib2;
+function g_markup_parse_context_get_element_stack(context: PGMarkupParseContext): PGSList; cdecl; external libglib2;
+procedure g_markup_parse_context_get_position(context: PGMarkupParseContext; line_number: Pgint; char_number: Pgint); cdecl; external libglib2;
+function g_markup_parse_context_get_user_data(context: PGMarkupParseContext): Tgpointer; cdecl; external libglib2;
+function g_markup_escape_text(Text: Pgchar; length: Tgssize): Pgchar; cdecl; external libglib2;
+function g_markup_printf_escaped(format: PChar; args: array of const): Pgchar; cdecl; external libglib2;
+function g_markup_printf_escaped(format: PChar): Pgchar; cdecl; external libglib2;
+function g_markup_vprintf_escaped(format: PChar; args: Tva_list): Pgchar; cdecl; external libglib2;
 
 type
   PGMarkupCollectType = ^TGMarkupCollectType;
@@ -80,9 +80,9 @@ const
   G_MARKUP_COLLECT_OPTIONAL = 1 shl 16;
 
 function g_markup_collect_attributes(element_name: Pgchar; attribute_names: PPgchar; attribute_values: PPgchar; error: PPGError; first_type: TGMarkupCollectType;
-  first_attr: Pgchar; args: array of const): Tgboolean; cdecl; external libgobject2_0;
+  first_attr: Pgchar; args: array of const): Tgboolean; cdecl; external libglib2;
 function g_markup_collect_attributes(element_name: Pgchar; attribute_names: PPgchar; attribute_values: PPgchar; error: PPGError; first_type: TGMarkupCollectType;
-  first_attr: Pgchar): Tgboolean; cdecl; external libgobject2_0;
+  first_attr: Pgchar): Tgboolean; cdecl; external libglib2;
 
 function G_MARKUP_ERROR: TGQuark;
 

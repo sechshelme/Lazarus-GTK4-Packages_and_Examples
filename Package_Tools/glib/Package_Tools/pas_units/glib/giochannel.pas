@@ -136,45 +136,45 @@ const
   bm_TGIOChannel_is_seekable = $20;
   bp_TGIOChannel_is_seekable = 5;
 
-procedure g_io_channel_init(channel: PGIOChannel); cdecl; external libgobject2_0;
-function g_io_channel_ref(channel: PGIOChannel): PGIOChannel; cdecl; external libgobject2_0;
-procedure g_io_channel_unref(channel: PGIOChannel); cdecl; external libgobject2_0;
-function g_io_channel_read(channel: PGIOChannel; buf: Pgchar; Count: Tgsize; bytes_read: Pgsize): TGIOError; cdecl; external libgobject2_0;
-function g_io_channel_write(channel: PGIOChannel; buf: Pgchar; Count: Tgsize; bytes_written: Pgsize): TGIOError; cdecl; external libgobject2_0;
-function g_io_channel_seek(channel: PGIOChannel; offset: Tgint64; _type: TGSeekType): TGIOError; cdecl; external libgobject2_0;
-procedure g_io_channel_close(channel: PGIOChannel); cdecl; external libgobject2_0;
-function g_io_channel_shutdown(channel: PGIOChannel; flush: Tgboolean; err: PPGError): TGIOStatus; cdecl; external libgobject2_0;
+procedure g_io_channel_init(channel: PGIOChannel); cdecl; external libglib2;
+function g_io_channel_ref(channel: PGIOChannel): PGIOChannel; cdecl; external libglib2;
+procedure g_io_channel_unref(channel: PGIOChannel); cdecl; external libglib2;
+function g_io_channel_read(channel: PGIOChannel; buf: Pgchar; Count: Tgsize; bytes_read: Pgsize): TGIOError; cdecl; external libglib2;
+function g_io_channel_write(channel: PGIOChannel; buf: Pgchar; Count: Tgsize; bytes_written: Pgsize): TGIOError; cdecl; external libglib2;
+function g_io_channel_seek(channel: PGIOChannel; offset: Tgint64; _type: TGSeekType): TGIOError; cdecl; external libglib2;
+procedure g_io_channel_close(channel: PGIOChannel); cdecl; external libglib2;
+function g_io_channel_shutdown(channel: PGIOChannel; flush: Tgboolean; err: PPGError): TGIOStatus; cdecl; external libglib2;
 function g_io_add_watch_full(channel: PGIOChannel; priority: Tgint; condition: TGIOCondition; func: TGIOFunc; user_data: Tgpointer;
-  notify: TGDestroyNotify): Tguint; cdecl; external libgobject2_0;
-function g_io_create_watch(channel: PGIOChannel; condition: TGIOCondition): PGSource; cdecl; external libgobject2_0;
-function g_io_add_watch(channel: PGIOChannel; condition: TGIOCondition; func: TGIOFunc; user_data: Tgpointer): Tguint; cdecl; external libgobject2_0;
-procedure g_io_channel_set_buffer_size(channel: PGIOChannel; size: Tgsize); cdecl; external libgobject2_0;
-function g_io_channel_get_buffer_size(channel: PGIOChannel): Tgsize; cdecl; external libgobject2_0;
-function g_io_channel_get_buffer_condition(channel: PGIOChannel): TGIOCondition; cdecl; external libgobject2_0;
-function g_io_channel_set_flags(channel: PGIOChannel; flags: TGIOFlags; error: PPGError): TGIOStatus; cdecl; external libgobject2_0;
-function g_io_channel_get_flags(channel: PGIOChannel): TGIOFlags; cdecl; external libgobject2_0;
-procedure g_io_channel_set_line_term(channel: PGIOChannel; line_term: Pgchar; length: Tgint); cdecl; external libgobject2_0;
-function g_io_channel_get_line_term(channel: PGIOChannel; length: Pgint): Pgchar; cdecl; external libgobject2_0;
-procedure g_io_channel_set_buffered(channel: PGIOChannel; buffered: Tgboolean); cdecl; external libgobject2_0;
-function g_io_channel_get_buffered(channel: PGIOChannel): Tgboolean; cdecl; external libgobject2_0;
-function g_io_channel_set_encoding(channel: PGIOChannel; encoding: Pgchar; error: PPGError): TGIOStatus; cdecl; external libgobject2_0;
-function g_io_channel_get_encoding(channel: PGIOChannel): Pgchar; cdecl; external libgobject2_0;
-procedure g_io_channel_set_close_on_unref(channel: PGIOChannel; do_close: Tgboolean); cdecl; external libgobject2_0;
-function g_io_channel_get_close_on_unref(channel: PGIOChannel): Tgboolean; cdecl; external libgobject2_0;
-function g_io_channel_flush(channel: PGIOChannel; error: PPGError): TGIOStatus; cdecl; external libgobject2_0;
-function g_io_channel_read_line(channel: PGIOChannel; str_return: PPgchar; length: Pgsize; terminator_pos: Pgsize; error: PPGError): TGIOStatus; cdecl; external libgobject2_0;
-function g_io_channel_read_line_string(channel: PGIOChannel; buffer: PGString; terminator_pos: Pgsize; error: PPGError): TGIOStatus; cdecl; external libgobject2_0;
-function g_io_channel_read_to_end(channel: PGIOChannel; str_return: PPgchar; length: Pgsize; error: PPGError): TGIOStatus; cdecl; external libgobject2_0;
-function g_io_channel_read_chars(channel: PGIOChannel; buf: Pgchar; Count: Tgsize; bytes_read: Pgsize; error: PPGError): TGIOStatus; cdecl; external libgobject2_0;
-function g_io_channel_read_unichar(channel: PGIOChannel; thechar: Pgunichar; error: PPGError): TGIOStatus; cdecl; external libgobject2_0;
-function g_io_channel_write_chars(channel: PGIOChannel; buf: Pgchar; Count: Tgssize; bytes_written: Pgsize; error: PPGError): TGIOStatus; cdecl; external libgobject2_0;
-function g_io_channel_write_unichar(channel: PGIOChannel; thechar: Tgunichar; error: PPGError): TGIOStatus; cdecl; external libgobject2_0;
-function g_io_channel_seek_position(channel: PGIOChannel; offset: Tgint64; _type: TGSeekType; error: PPGError): TGIOStatus; cdecl; external libgobject2_0;
-function g_io_channel_new_file(filename: Pgchar; mode: Pgchar; error: PPGError): PGIOChannel; cdecl; external libgobject2_0;
-function g_io_channel_error_quark: TGQuark; cdecl; external libgobject2_0;
-function g_io_channel_error_from_errno(en: Tgint): TGIOChannelError; cdecl; external libgobject2_0;
-function g_io_channel_unix_new(fd: longint): PGIOChannel; cdecl; external libgobject2_0;
-function g_io_channel_unix_get_fd(channel: PGIOChannel): Tgint; cdecl; external libgobject2_0;
+  notify: TGDestroyNotify): Tguint; cdecl; external libglib2;
+function g_io_create_watch(channel: PGIOChannel; condition: TGIOCondition): PGSource; cdecl; external libglib2;
+function g_io_add_watch(channel: PGIOChannel; condition: TGIOCondition; func: TGIOFunc; user_data: Tgpointer): Tguint; cdecl; external libglib2;
+procedure g_io_channel_set_buffer_size(channel: PGIOChannel; size: Tgsize); cdecl; external libglib2;
+function g_io_channel_get_buffer_size(channel: PGIOChannel): Tgsize; cdecl; external libglib2;
+function g_io_channel_get_buffer_condition(channel: PGIOChannel): TGIOCondition; cdecl; external libglib2;
+function g_io_channel_set_flags(channel: PGIOChannel; flags: TGIOFlags; error: PPGError): TGIOStatus; cdecl; external libglib2;
+function g_io_channel_get_flags(channel: PGIOChannel): TGIOFlags; cdecl; external libglib2;
+procedure g_io_channel_set_line_term(channel: PGIOChannel; line_term: Pgchar; length: Tgint); cdecl; external libglib2;
+function g_io_channel_get_line_term(channel: PGIOChannel; length: Pgint): Pgchar; cdecl; external libglib2;
+procedure g_io_channel_set_buffered(channel: PGIOChannel; buffered: Tgboolean); cdecl; external libglib2;
+function g_io_channel_get_buffered(channel: PGIOChannel): Tgboolean; cdecl; external libglib2;
+function g_io_channel_set_encoding(channel: PGIOChannel; encoding: Pgchar; error: PPGError): TGIOStatus; cdecl; external libglib2;
+function g_io_channel_get_encoding(channel: PGIOChannel): Pgchar; cdecl; external libglib2;
+procedure g_io_channel_set_close_on_unref(channel: PGIOChannel; do_close: Tgboolean); cdecl; external libglib2;
+function g_io_channel_get_close_on_unref(channel: PGIOChannel): Tgboolean; cdecl; external libglib2;
+function g_io_channel_flush(channel: PGIOChannel; error: PPGError): TGIOStatus; cdecl; external libglib2;
+function g_io_channel_read_line(channel: PGIOChannel; str_return: PPgchar; length: Pgsize; terminator_pos: Pgsize; error: PPGError): TGIOStatus; cdecl; external libglib2;
+function g_io_channel_read_line_string(channel: PGIOChannel; buffer: PGString; terminator_pos: Pgsize; error: PPGError): TGIOStatus; cdecl; external libglib2;
+function g_io_channel_read_to_end(channel: PGIOChannel; str_return: PPgchar; length: Pgsize; error: PPGError): TGIOStatus; cdecl; external libglib2;
+function g_io_channel_read_chars(channel: PGIOChannel; buf: Pgchar; Count: Tgsize; bytes_read: Pgsize; error: PPGError): TGIOStatus; cdecl; external libglib2;
+function g_io_channel_read_unichar(channel: PGIOChannel; thechar: Pgunichar; error: PPGError): TGIOStatus; cdecl; external libglib2;
+function g_io_channel_write_chars(channel: PGIOChannel; buf: Pgchar; Count: Tgssize; bytes_written: Pgsize; error: PPGError): TGIOStatus; cdecl; external libglib2;
+function g_io_channel_write_unichar(channel: PGIOChannel; thechar: Tgunichar; error: PPGError): TGIOStatus; cdecl; external libglib2;
+function g_io_channel_seek_position(channel: PGIOChannel; offset: Tgint64; _type: TGSeekType; error: PPGError): TGIOStatus; cdecl; external libglib2;
+function g_io_channel_new_file(filename: Pgchar; mode: Pgchar; error: PPGError): PGIOChannel; cdecl; external libglib2;
+function g_io_channel_error_quark: TGQuark; cdecl; external libglib2;
+function g_io_channel_error_from_errno(en: Tgint): TGIOChannelError; cdecl; external libglib2;
+function g_io_channel_unix_new(fd: longint): PGIOChannel; cdecl; external libglib2;
+function g_io_channel_unix_get_fd(channel: PGIOChannel): Tgint; cdecl; external libglib2;
 
 var
   g_io_watch_funcs: TGSourceFuncs; cvar;external libglib2;
@@ -182,14 +182,14 @@ var
 const
   G_WIN32_MSG_HANDLE = 19981206;
 
-procedure g_io_channel_win32_make_pollfd(channel: PGIOChannel; condition: TGIOCondition; fd: PGPollFD); cdecl; external libgobject2_0;
-function g_io_channel_win32_poll(fds: PGPollFD; n_fds: Tgint; timeout_: Tgint): Tgint; cdecl; external libgobject2_0;
+procedure g_io_channel_win32_make_pollfd(channel: PGIOChannel; condition: TGIOCondition; fd: PGPollFD); cdecl; external libglib2;
+function g_io_channel_win32_poll(fds: PGPollFD; n_fds: Tgint; timeout_: Tgint): Tgint; cdecl; external libglib2;
 
-function g_io_channel_win32_new_messages(hwnd: Tgsize): PGIOChannel; cdecl; external libgobject2_0;
-function g_io_channel_win32_new_fd(fd: Tgint): PGIOChannel; cdecl; external libgobject2_0;
-function g_io_channel_win32_get_fd(channel: PGIOChannel): Tgint; cdecl; external libgobject2_0;
-function g_io_channel_win32_new_socket(socket: Tgint): PGIOChannel; cdecl; external libgobject2_0;
-procedure g_io_channel_win32_set_debug(channel: PGIOChannel; flag: Tgboolean); cdecl; external libgobject2_0;
+function g_io_channel_win32_new_messages(hwnd: Tgsize): PGIOChannel; cdecl; external libglib2;
+function g_io_channel_win32_new_fd(fd: Tgint): PGIOChannel; cdecl; external libglib2;
+function g_io_channel_win32_get_fd(channel: PGIOChannel): Tgint; cdecl; external libglib2;
+function g_io_channel_win32_new_socket(socket: Tgint): PGIOChannel; cdecl; external libglib2;
+procedure g_io_channel_win32_set_debug(channel: PGIOChannel; flag: Tgboolean); cdecl; external libglib2;
 {$endif}
 
 function G_IO_CHANNEL_ERROR: TGQuark;

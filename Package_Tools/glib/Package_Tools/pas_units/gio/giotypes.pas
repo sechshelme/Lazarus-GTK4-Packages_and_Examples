@@ -3,7 +3,7 @@ unit giotypes;
 interface
 
 uses
-  common_GLIB, gtypes, gtype, gobject, gmain, gcancellable, gsocketcontrolmessage;
+  common_GLIB, gtypes, gtype, gobject, gmain;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -50,7 +50,27 @@ type
   end;
   PGCredentials = ^TGCredentials;
 
+  TGCancellablePrivate = record
+  end;
+  PGCancellablePrivate = ^TGCancellablePrivate;
 
+  TGCancellable = record
+    parent_instance: TGObject;
+    priv: PGCancellablePrivate;
+  end;
+  PGCancellable = ^TGCancellable;
+
+  TGSocketControlMessagePrivate = record
+  end;
+  PGSocketControlMessagePrivate = ^TGSocketControlMessagePrivate;
+
+  TGSocketControlMessage = record
+    parent_instance: TGObject;
+    priv: PGSocketControlMessagePrivate;
+  end;
+  PGSocketControlMessage = ^TGSocketControlMessage;
+  PPGSocketControlMessage = ^PGSocketControlMessage;
+  PPPGSocketControlMessage = ^PPGSocketControlMessage;
 
   // =====
 

@@ -3,7 +3,8 @@ unit ginetaddressmask;
 interface
 
 uses
-  common_GLIB, gtypes, gtype, gobject,gerror, gioenums,  ginetaddress;
+  common_GLIB, gtypes, gtype, gobject, gerror, gioenums, ginetaddress;
+
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

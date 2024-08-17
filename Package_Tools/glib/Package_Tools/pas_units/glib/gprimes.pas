@@ -9,7 +9,7 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
-function g_spaced_primes_closest(num: Tguint): Tguint; cdecl; external libgobject2_0;
+function g_spaced_primes_closest(num: Tguint): Tguint; cdecl; external libglib2;
 
 // === Konventiert am: 11-8-24 19:32:56 ===
 

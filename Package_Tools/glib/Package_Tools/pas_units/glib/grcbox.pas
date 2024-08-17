@@ -9,20 +9,20 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
-function g_rc_box_alloc(block_size: Tgsize): Tgpointer; cdecl; external libgobject2_0;
-function g_rc_box_alloc0(block_size: Tgsize): Tgpointer; cdecl; external libgobject2_0;
-function g_rc_box_dup(block_size: Tgsize; mem_block: Tgconstpointer): Tgpointer; cdecl; external libgobject2_0;
-function g_rc_box_acquire(mem_block: Tgpointer): Tgpointer; cdecl; external libgobject2_0;
-procedure g_rc_box_release(mem_block: Tgpointer); cdecl; external libgobject2_0;
-procedure g_rc_box_release_full(mem_block: Tgpointer; clear_func: TGDestroyNotify); cdecl; external libgobject2_0;
-function g_rc_box_get_size(mem_block: Tgpointer): Tgsize; cdecl; external libgobject2_0;
-function g_atomic_rc_box_alloc(block_size: Tgsize): Tgpointer; cdecl; external libgobject2_0;
-function g_atomic_rc_box_alloc0(block_size: Tgsize): Tgpointer; cdecl; external libgobject2_0;
-function g_atomic_rc_box_dup(block_size: Tgsize; mem_block: Tgconstpointer): Tgpointer; cdecl; external libgobject2_0;
-function g_atomic_rc_box_acquire(mem_block: Tgpointer): Tgpointer; cdecl; external libgobject2_0;
-procedure g_atomic_rc_box_release(mem_block: Tgpointer); cdecl; external libgobject2_0;
-procedure g_atomic_rc_box_release_full(mem_block: Tgpointer; clear_func: TGDestroyNotify); cdecl; external libgobject2_0;
-function g_atomic_rc_box_get_size(mem_block: Tgpointer): Tgsize; cdecl; external libgobject2_0;
+function g_rc_box_alloc(block_size: Tgsize): Tgpointer; cdecl; external libglib2;
+function g_rc_box_alloc0(block_size: Tgsize): Tgpointer; cdecl; external libglib2;
+function g_rc_box_dup(block_size: Tgsize; mem_block: Tgconstpointer): Tgpointer; cdecl; external libglib2;
+function g_rc_box_acquire(mem_block: Tgpointer): Tgpointer; cdecl; external libglib2;
+procedure g_rc_box_release(mem_block: Tgpointer); cdecl; external libglib2;
+procedure g_rc_box_release_full(mem_block: Tgpointer; clear_func: TGDestroyNotify); cdecl; external libglib2;
+function g_rc_box_get_size(mem_block: Tgpointer): Tgsize; cdecl; external libglib2;
+function g_atomic_rc_box_alloc(block_size: Tgsize): Tgpointer; cdecl; external libglib2;
+function g_atomic_rc_box_alloc0(block_size: Tgsize): Tgpointer; cdecl; external libglib2;
+function g_atomic_rc_box_dup(block_size: Tgsize; mem_block: Tgconstpointer): Tgpointer; cdecl; external libglib2;
+function g_atomic_rc_box_acquire(mem_block: Tgpointer): Tgpointer; cdecl; external libglib2;
+procedure g_atomic_rc_box_release(mem_block: Tgpointer); cdecl; external libglib2;
+procedure g_atomic_rc_box_release_full(mem_block: Tgpointer; clear_func: TGDestroyNotify); cdecl; external libglib2;
+function g_atomic_rc_box_get_size(mem_block: Tgpointer): Tgsize; cdecl; external libglib2;
 
 //function g_rc_box_new(_type : longint) : Ptype;
 //function g_rc_box_new0(_type : longint) : Ptype;

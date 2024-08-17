@@ -3,24 +3,25 @@ unit gsocketcontrolmessage;
 interface
 
 uses
-  common_GLIB, gtypes, gtype, gobject;
+  common_GLIB, gtypes, gtype, gobject, giotypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
 type
-  TGSocketControlMessagePrivate=record
-      end;
-  PGSocketControlMessagePrivate=^TGSocketControlMessagePrivate;
-
-  TGSocketControlMessage = record
-    parent_instance: TGObject;
-    priv: PGSocketControlMessagePrivate;
-  end;
-  PGSocketControlMessage = ^TGSocketControlMessage;
-  PPGSocketControlMessage = ^PGSocketControlMessage;
-  PPPGSocketControlMessage = ^PPGSocketControlMessage;
+  // Ausgelagert
+  //TGSocketControlMessagePrivate = record
+  //end;
+  //PGSocketControlMessagePrivate = ^TGSocketControlMessagePrivate;
+  //
+  //TGSocketControlMessage = record
+  //  parent_instance: TGObject;
+  //  priv: PGSocketControlMessagePrivate;
+  //end;
+  //PGSocketControlMessage = ^TGSocketControlMessage;
+  //PPGSocketControlMessage = ^PGSocketControlMessage;
+  //PPPGSocketControlMessage = ^PPGSocketControlMessage;
 
   TGSocketControlMessageClass = record
     parent_class: TGObjectClass;

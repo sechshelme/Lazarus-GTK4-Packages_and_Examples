@@ -10,16 +10,16 @@ uses
   {$ENDIF}
 
 
-function g_get_user_name: Pgchar; cdecl; external libgobject2_0;
-function g_get_real_name: Pgchar; cdecl; external libgobject2_0;
-function g_get_home_dir: Pgchar; cdecl; external libgobject2_0;
-function g_get_tmp_dir: Pgchar; cdecl; external libgobject2_0;
-function g_get_host_name: Pgchar; cdecl; external libgobject2_0;
-function g_get_prgname: Pgchar; cdecl; external libgobject2_0;
-procedure g_set_prgname(prgname: Pgchar); cdecl; external libgobject2_0;
-function g_get_application_name: Pgchar; cdecl; external libgobject2_0;
-procedure g_set_application_name(application_name: Pgchar); cdecl; external libgobject2_0;
-function g_get_os_info(key_name: Pgchar): Pgchar; cdecl; external libgobject2_0;
+function g_get_user_name: Pgchar; cdecl; external libglib2;
+function g_get_real_name: Pgchar; cdecl; external libglib2;
+function g_get_home_dir: Pgchar; cdecl; external libglib2;
+function g_get_tmp_dir: Pgchar; cdecl; external libglib2;
+function g_get_host_name: Pgchar; cdecl; external libglib2;
+function g_get_prgname: Pgchar; cdecl; external libglib2;
+procedure g_set_prgname(prgname: Pgchar); cdecl; external libglib2;
+function g_get_application_name: Pgchar; cdecl; external libglib2;
+procedure g_set_application_name(application_name: Pgchar); cdecl; external libglib2;
+function g_get_os_info(key_name: Pgchar): Pgchar; cdecl; external libglib2;
 
 const
   G_OS_INFO_KEY_NAME = 'NAME';
@@ -34,14 +34,14 @@ const
   G_OS_INFO_KEY_BUG_REPORT_URL = 'BUG_REPORT_URL';
   G_OS_INFO_KEY_PRIVACY_POLICY_URL = 'PRIVACY_POLICY_URL';
 
-procedure g_reload_user_special_dirs_cache; cdecl; external libgobject2_0;
-function g_get_user_data_dir: Pgchar; cdecl; external libgobject2_0;
-function g_get_user_config_dir: Pgchar; cdecl; external libgobject2_0;
-function g_get_user_cache_dir: Pgchar; cdecl; external libgobject2_0;
-function g_get_user_state_dir: Pgchar; cdecl; external libgobject2_0;
-function g_get_system_data_dirs: PPgchar; cdecl; external libgobject2_0;
-function g_get_system_config_dirs: PPgchar; cdecl; external libgobject2_0;
-function g_get_user_runtime_dir: Pgchar; cdecl; external libgobject2_0;
+procedure g_reload_user_special_dirs_cache; cdecl; external libglib2;
+function g_get_user_data_dir: Pgchar; cdecl; external libglib2;
+function g_get_user_config_dir: Pgchar; cdecl; external libglib2;
+function g_get_user_cache_dir: Pgchar; cdecl; external libglib2;
+function g_get_user_state_dir: Pgchar; cdecl; external libglib2;
+function g_get_system_data_dirs: PPgchar; cdecl; external libglib2;
+function g_get_system_config_dirs: PPgchar; cdecl; external libglib2;
+function g_get_user_runtime_dir: Pgchar; cdecl; external libglib2;
 
 type
   PGUserDirectory = ^TGUserDirectory;
@@ -58,7 +58,7 @@ const
   G_USER_DIRECTORY_VIDEOS = 7;
   G_USER_N_DIRECTORIES = 8;
 
-function g_get_user_special_dir(directory: TGUserDirectory): Pgchar; cdecl; external libgobject2_0;
+function g_get_user_special_dir(directory: TGUserDirectory): Pgchar; cdecl; external libglib2;
 
 type
   TGDebugKey = record
@@ -67,11 +67,11 @@ type
   end;
   PGDebugKey = ^TGDebugKey;
 
-function g_parse_debug_string(_string: Pgchar; keys: PGDebugKey; nkeys: Tguint): Tguint; cdecl; external libgobject2_0;
-function g_snprintf(_string: Pgchar; n: Tgulong; format: Pgchar; args: array of const): Tgint; cdecl; external libgobject2_0;
-function g_snprintf(_string: Pgchar; n: Tgulong; format: Pgchar): Tgint; cdecl; external libgobject2_0;
-function g_vsnprintf(_string: Pgchar; n: Tgulong; format: Pgchar; args: Tva_list): Tgint; cdecl; external libgobject2_0;
-procedure g_nullify_pointer(nullify_location: Pgpointer); cdecl; external libgobject2_0;
+function g_parse_debug_string(_string: Pgchar; keys: PGDebugKey; nkeys: Tguint): Tguint; cdecl; external libglib2;
+function g_snprintf(_string: Pgchar; n: Tgulong; format: Pgchar; args: array of const): Tgint; cdecl; external libglib2;
+function g_snprintf(_string: Pgchar; n: Tgulong; format: Pgchar): Tgint; cdecl; external libglib2;
+function g_vsnprintf(_string: Pgchar; n: Tgulong; format: Pgchar; args: Tva_list): Tgint; cdecl; external libglib2;
+procedure g_nullify_pointer(nullify_location: Pgpointer); cdecl; external libglib2;
 
 type
   PGFormatSizeFlags = ^TGFormatSizeFlags;
@@ -88,16 +88,16 @@ const
 type
   TGVoidFunc = procedure(); cdecl;
 
-function g_format_size_full(size: Tguint64; flags: TGFormatSizeFlags): Pgchar; cdecl; external libgobject2_0;
-function g_format_size(size: Tguint64): Pgchar; cdecl; external libgobject2_0;
-function g_format_size_for_display(size: Tgoffset): Pgchar; cdecl; external libgobject2_0;
-procedure g_atexit(func: TGVoidFunc); cdecl; external libgobject2_0;
-function g_find_program_in_path(program_: Pgchar): Pgchar; cdecl; external libgobject2_0;
-function g_bit_nth_lsf(mask: Tgulong; nth_bit: Tgint): Tgint; cdecl; external libgobject2_0;
-function g_bit_nth_msf(mask: Tgulong; nth_bit: Tgint): Tgint; cdecl; external libgobject2_0;
-function g_bit_storage(number: Tgulong): Tguint; cdecl; external libgobject2_0;
+function g_format_size_full(size: Tguint64; flags: TGFormatSizeFlags): Pgchar; cdecl; external libglib2;
+function g_format_size(size: Tguint64): Pgchar; cdecl; external libglib2;
+function g_format_size_for_display(size: Tgoffset): Pgchar; cdecl; external libglib2;
+procedure g_atexit(func: TGVoidFunc); cdecl; external libglib2;
+function g_find_program_in_path(program_: Pgchar): Pgchar; cdecl; external libglib2;
+function g_bit_nth_lsf(mask: Tgulong; nth_bit: Tgint): Tgint; cdecl; external libglib2;
+function g_bit_nth_msf(mask: Tgulong; nth_bit: Tgint): Tgint; cdecl; external libglib2;
+function g_bit_storage(number: Tgulong): Tguint; cdecl; external libglib2;
 
-procedure g_abort; cdecl; external libgobject2_0;
+procedure g_abort; cdecl; external libglib2;
 
 // === Konventiert am: 8-8-24 19:19:09 ===
 

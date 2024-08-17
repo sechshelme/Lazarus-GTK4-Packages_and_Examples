@@ -61,11 +61,11 @@ var
   g_thread_use_default_impl: Tgboolean; cvar;public;
   g_thread_gettime: function: Tguint64; cvar;public;
 
-function g_thread_create(func: TGThreadFunc; Data: Tgpointer; joinable: Tgboolean; error: PPGError): PGThread; cdecl; external libgobject2_0;
+function g_thread_create(func: TGThreadFunc; Data: Tgpointer; joinable: Tgboolean; error: PPGError): PGThread; cdecl; external libglib2;
 function g_thread_create_full(func: TGThreadFunc; Data: Tgpointer; stack_size: Tgulong; joinable: Tgboolean; bound: Tgboolean;
-  priority: TGThreadPriority; error: PPGError): PGThread; cdecl; external libgobject2_0;
-procedure g_thread_set_priority(thread: PGThread; priority: TGThreadPriority); cdecl; external libgobject2_0;
-procedure g_thread_foreach(thread_func: TGFunc; user_data: Tgpointer); cdecl; external libgobject2_0;
+  priority: TGThreadPriority; error: PPGError): PGThread; cdecl; external libglib2;
+procedure g_thread_set_priority(thread: PGThread; priority: TGThreadPriority); cdecl; external libglib2;
+procedure g_thread_foreach(thread_func: TGFunc; user_data: Tgpointer); cdecl; external libglib2;
 
 type
   PGStaticMutex = ^TGStaticMutex;
@@ -75,9 +75,9 @@ type
     unused: Tpthread_mutex_t;
   end;
 
-procedure g_static_mutex_init(mutex: PGStaticMutex); cdecl; external libgobject2_0;
-procedure g_static_mutex_free(mutex: PGStaticMutex); cdecl; external libgobject2_0;
-function g_static_mutex_get_mutex_impl(mutex: PGStaticMutex): PGMutex; cdecl; external libgobject2_0;
+procedure g_static_mutex_init(mutex: PGStaticMutex); cdecl; external libglib2;
+procedure g_static_mutex_free(mutex: PGStaticMutex); cdecl; external libglib2;
+function g_static_mutex_get_mutex_impl(mutex: PGStaticMutex): PGMutex; cdecl; external libglib2;
 
 type
   PGStaticRecMutex = ^TGStaticRecMutex;
@@ -93,13 +93,13 @@ type
       end;
   end;
 
-procedure g_static_rec_mutex_init(mutex: PGStaticRecMutex); cdecl; external libgobject2_0;
-procedure g_static_rec_mutex_lock(mutex: PGStaticRecMutex); cdecl; external libgobject2_0;
-function g_static_rec_mutex_trylock(mutex: PGStaticRecMutex): Tgboolean; cdecl; external libgobject2_0;
-procedure g_static_rec_mutex_unlock(mutex: PGStaticRecMutex); cdecl; external libgobject2_0;
-procedure g_static_rec_mutex_lock_full(mutex: PGStaticRecMutex; depth: Tguint); cdecl; external libgobject2_0;
-function g_static_rec_mutex_unlock_full(mutex: PGStaticRecMutex): Tguint; cdecl; external libgobject2_0;
-procedure g_static_rec_mutex_free(mutex: PGStaticRecMutex); cdecl; external libgobject2_0;
+procedure g_static_rec_mutex_init(mutex: PGStaticRecMutex); cdecl; external libglib2;
+procedure g_static_rec_mutex_lock(mutex: PGStaticRecMutex); cdecl; external libglib2;
+function g_static_rec_mutex_trylock(mutex: PGStaticRecMutex): Tgboolean; cdecl; external libglib2;
+procedure g_static_rec_mutex_unlock(mutex: PGStaticRecMutex); cdecl; external libglib2;
+procedure g_static_rec_mutex_lock_full(mutex: PGStaticRecMutex; depth: Tguint); cdecl; external libglib2;
+function g_static_rec_mutex_unlock_full(mutex: PGStaticRecMutex): Tguint; cdecl; external libglib2;
+procedure g_static_rec_mutex_free(mutex: PGStaticRecMutex); cdecl; external libglib2;
 
 type
   PGStaticRWLock = ^TGStaticRWLock;
@@ -114,15 +114,15 @@ type
     want_to_write: Tguint;
   end;
 
-procedure g_static_rw_lock_init(lock: PGStaticRWLock); cdecl; external libgobject2_0;
-procedure g_static_rw_lock_reader_lock(lock: PGStaticRWLock); cdecl; external libgobject2_0;
-function g_static_rw_lock_reader_trylock(lock: PGStaticRWLock): Tgboolean; cdecl; external libgobject2_0;
-procedure g_static_rw_lock_reader_unlock(lock: PGStaticRWLock); cdecl; external libgobject2_0;
-procedure g_static_rw_lock_writer_lock(lock: PGStaticRWLock); cdecl; external libgobject2_0;
-function g_static_rw_lock_writer_trylock(lock: PGStaticRWLock): Tgboolean; cdecl; external libgobject2_0;
-procedure g_static_rw_lock_writer_unlock(lock: PGStaticRWLock); cdecl; external libgobject2_0;
-procedure g_static_rw_lock_free(lock: PGStaticRWLock); cdecl; external libgobject2_0;
-function g_private_new(notify: TGDestroyNotify): PGPrivate; cdecl; external libgobject2_0;
+procedure g_static_rw_lock_init(lock: PGStaticRWLock); cdecl; external libglib2;
+procedure g_static_rw_lock_reader_lock(lock: PGStaticRWLock); cdecl; external libglib2;
+function g_static_rw_lock_reader_trylock(lock: PGStaticRWLock): Tgboolean; cdecl; external libglib2;
+procedure g_static_rw_lock_reader_unlock(lock: PGStaticRWLock); cdecl; external libglib2;
+procedure g_static_rw_lock_writer_lock(lock: PGStaticRWLock); cdecl; external libglib2;
+function g_static_rw_lock_writer_trylock(lock: PGStaticRWLock): Tgboolean; cdecl; external libglib2;
+procedure g_static_rw_lock_writer_unlock(lock: PGStaticRWLock); cdecl; external libglib2;
+procedure g_static_rw_lock_free(lock: PGStaticRWLock); cdecl; external libglib2;
+function g_private_new(notify: TGDestroyNotify): PGPrivate; cdecl; external libglib2;
 
 type
   PGStaticPrivate = ^TGStaticPrivate;
@@ -131,23 +131,23 @@ type
     index: Tguint;
   end;
 
-procedure g_static_private_init(private_key: PGStaticPrivate); cdecl; external libgobject2_0;
-function g_static_private_get(private_key: PGStaticPrivate): Tgpointer; cdecl; external libgobject2_0;
-procedure g_static_private_set(private_key: PGStaticPrivate; Data: Tgpointer; notify: TGDestroyNotify); cdecl; external libgobject2_0;
-procedure g_static_private_free(private_key: PGStaticPrivate); cdecl; external libgobject2_0;
-function g_once_init_enter_impl(location: Pgsize): Tgboolean; cdecl; external libgobject2_0;
-procedure g_thread_init(vtable: Tgpointer); cdecl; external libgobject2_0;
-procedure g_thread_init_with_errorcheck_mutexes(vtable: Tgpointer); cdecl; external libgobject2_0;
-function g_thread_get_initialized: Tgboolean; cdecl; external libgobject2_0;
+procedure g_static_private_init(private_key: PGStaticPrivate); cdecl; external libglib2;
+function g_static_private_get(private_key: PGStaticPrivate): Tgpointer; cdecl; external libglib2;
+procedure g_static_private_set(private_key: PGStaticPrivate; Data: Tgpointer; notify: TGDestroyNotify); cdecl; external libglib2;
+procedure g_static_private_free(private_key: PGStaticPrivate); cdecl; external libglib2;
+function g_once_init_enter_impl(location: Pgsize): Tgboolean; cdecl; external libglib2;
+procedure g_thread_init(vtable: Tgpointer); cdecl; external libglib2;
+procedure g_thread_init_with_errorcheck_mutexes(vtable: Tgpointer); cdecl; external libglib2;
+function g_thread_get_initialized: Tgboolean; cdecl; external libglib2;
 
 var
   g_threads_got_initialized: Tgboolean; cvar;public;
 
-function g_mutex_new: PGMutex; cdecl; external libgobject2_0;
-procedure g_mutex_free(mutex: PGMutex); cdecl; external libgobject2_0;
-function g_cond_new: PGCond; cdecl; external libgobject2_0;
-procedure g_cond_free(cond: PGCond); cdecl; external libgobject2_0;
-function g_cond_timed_wait(cond: PGCond; mutex: PGMutex; abs_time: PGTimeVal): Tgboolean; cdecl; external libgobject2_0;
+function g_mutex_new: PGMutex; cdecl; external libglib2;
+procedure g_mutex_free(mutex: PGMutex); cdecl; external libglib2;
+function g_cond_new: PGCond; cdecl; external libglib2;
+procedure g_cond_free(cond: PGCond); cdecl; external libglib2;
+function g_cond_timed_wait(cond: PGCond; mutex: PGMutex; abs_time: PGTimeVal): Tgboolean; cdecl; external libglib2;
 
 procedure g_static_mutex_lock(mutex: PGStaticMutex);
 function g_static_mutex_trylock(mutex: PGStaticMutex): Tgboolean;

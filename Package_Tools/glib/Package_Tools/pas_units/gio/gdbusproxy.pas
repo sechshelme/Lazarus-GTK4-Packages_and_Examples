@@ -3,7 +3,7 @@ unit gdbusproxy;
 interface
 
 uses
-  common_GLIB, gtypes, gtype, gobject, gvariant, gerror, giotypes, gioenums, gcancellable, gdbusintrospection, gunixfdlist;
+  common_GLIB, gtypes, gtype, gobject, gvariant, gerror, giotypes, gioenums, gdbusintrospection, gunixfdlist;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

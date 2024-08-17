@@ -9,12 +9,12 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
-function g_ref_string_new(str: PChar): PChar; cdecl; external libgobject2_0;
-function g_ref_string_new_len(str: PChar; len: Tgssize): PChar; cdecl; external libgobject2_0;
-function g_ref_string_new_intern(str: PChar): PChar; cdecl; external libgobject2_0;
-function g_ref_string_acquire(str: PChar): PChar; cdecl; external libgobject2_0;
-procedure g_ref_string_release(str: PChar); cdecl; external libgobject2_0;
-function g_ref_string_length(str: PChar): Tgsize; cdecl; external libgobject2_0;
+function g_ref_string_new(str: PChar): PChar; cdecl; external libglib2;
+function g_ref_string_new_len(str: PChar; len: Tgssize): PChar; cdecl; external libglib2;
+function g_ref_string_new_intern(str: PChar): PChar; cdecl; external libglib2;
+function g_ref_string_acquire(str: PChar): PChar; cdecl; external libglib2;
+procedure g_ref_string_release(str: PChar); cdecl; external libglib2;
+function g_ref_string_length(str: PChar): Tgsize; cdecl; external libglib2;
 
 type
   PGRefString = ^TGRefString;
