@@ -132,11 +132,9 @@ void       g_file_enumerator_set_pending       (GFileEnumerator      *enumerator
 						gboolean              pending);
 
 GFile *    g_file_enumerator_get_container     (GFileEnumerator *enumerator);
-GIO_AVAILABLE_IN_2_36
 GFile *    g_file_enumerator_get_child         (GFileEnumerator *enumerator,
                                                 GFileInfo       *info);
 
-GIO_AVAILABLE_IN_2_44
 gboolean   g_file_enumerator_iterate           (GFileEnumerator  *direnum,
                                                 GFileInfo       **out_info,
                                                 GFile           **out_child,

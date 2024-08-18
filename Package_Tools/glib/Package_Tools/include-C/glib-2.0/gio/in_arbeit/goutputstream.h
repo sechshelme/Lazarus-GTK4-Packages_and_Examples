@@ -158,14 +158,14 @@ gboolean g_output_stream_write_all     (GOutputStream             *stream,
 					GCancellable              *cancellable,
 					GError                   **error);
 
-GIO_AVAILABLE_IN_2_60
+
 gboolean g_output_stream_writev        (GOutputStream             *stream,
 					const GOutputVector       *vectors,
 					gsize                      n_vectors,
 					gsize                     *bytes_written,
 					GCancellable              *cancellable,
 					GError                   **error);
-GIO_AVAILABLE_IN_2_60
+
 gboolean g_output_stream_writev_all    (GOutputStream             *stream,
 					GOutputVector             *vectors,
 					gsize                      n_vectors,
@@ -173,21 +173,21 @@ gboolean g_output_stream_writev_all    (GOutputStream             *stream,
 					GCancellable              *cancellable,
 					GError                   **error);
 
-GIO_AVAILABLE_IN_2_40
+
 gboolean g_output_stream_printf        (GOutputStream             *stream,
                                         gsize                     *bytes_written,
                                         GCancellable              *cancellable,
                                         GError                   **error,
                                         const gchar               *format,
-                                        ...) G_GNUC_PRINTF (5, 6);
-GIO_AVAILABLE_IN_2_40
+                                        ...);
+
 gboolean g_output_stream_vprintf       (GOutputStream             *stream,
                                         gsize                     *bytes_written,
                                         GCancellable              *cancellable,
                                         GError                   **error,
                                         const gchar               *format,
-                                        va_list                    args) G_GNUC_PRINTF (5, 0);
-GIO_AVAILABLE_IN_2_34
+                                        va_list                    args);
+
 gssize   g_output_stream_write_bytes   (GOutputStream             *stream,
 					GBytes                    *bytes,
 					GCancellable              *cancellable,
@@ -219,7 +219,6 @@ gssize   g_output_stream_write_finish  (GOutputStream             *stream,
 					GAsyncResult              *result,
 					GError                   **error);
 
-GIO_AVAILABLE_IN_2_44
 void     g_output_stream_write_all_async (GOutputStream           *stream,
                                           const void              *buffer,
                                           gsize                    count,
@@ -228,13 +227,12 @@ void     g_output_stream_write_all_async (GOutputStream           *stream,
                                           GAsyncReadyCallback      callback,
                                           gpointer                 user_data);
 
-GIO_AVAILABLE_IN_2_44
 gboolean g_output_stream_write_all_finish (GOutputStream          *stream,
                                            GAsyncResult           *result,
                                            gsize                  *bytes_written,
                                            GError                **error);
 
-GIO_AVAILABLE_IN_2_60
+
 void     g_output_stream_writev_async  (GOutputStream             *stream,
 					const GOutputVector       *vectors,
 					gsize                      n_vectors,
@@ -242,13 +240,13 @@ void     g_output_stream_writev_async  (GOutputStream             *stream,
 					GCancellable              *cancellable,
 					GAsyncReadyCallback        callback,
 					gpointer                   user_data);
-GIO_AVAILABLE_IN_2_60
+
 gboolean g_output_stream_writev_finish (GOutputStream             *stream,
 					GAsyncResult              *result,
 					gsize                     *bytes_written,
 					GError                   **error);
 
-GIO_AVAILABLE_IN_2_60
+
 void     g_output_stream_writev_all_async (GOutputStream           *stream,
                                            GOutputVector           *vectors,
                                            gsize                    n_vectors,
@@ -257,20 +255,20 @@ void     g_output_stream_writev_all_async (GOutputStream           *stream,
                                            GAsyncReadyCallback      callback,
                                            gpointer                 user_data);
 
-GIO_AVAILABLE_IN_2_60
+
 gboolean g_output_stream_writev_all_finish (GOutputStream          *stream,
                                             GAsyncResult           *result,
                                             gsize                  *bytes_written,
                                             GError                **error);
 
-GIO_AVAILABLE_IN_2_34
+
 void     g_output_stream_write_bytes_async  (GOutputStream             *stream,
 					     GBytes                    *bytes,
 					     int                        io_priority,
 					     GCancellable              *cancellable,
 					     GAsyncReadyCallback        callback,
 					     gpointer                   user_data);
-GIO_AVAILABLE_IN_2_34
+
 gssize   g_output_stream_write_bytes_finish (GOutputStream             *stream,
 					     GAsyncResult              *result,
 					     GError                   **error);

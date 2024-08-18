@@ -131,6 +131,19 @@ uses
   gdbusproxy,              // io. -> gdbusintrospection, gunixfdlist
   gdbusobjectmanagerclient,// io. -> gdbusobjectproxy, gdbusproxy
 
+  gfileenumerator,         // io.
+  gfileattribute,          // io.
+  gmountoperation,         // io.
+  gfilemonitor,            // io.
+  ginputstream,            // io.
+  goutputstream,           // io. -> ginputstream
+  gfileinputstream,        // io. -> ginputstream
+  gfilterinputstream,      // io. -> ginputstream
+  giostream,               // io. -> ginputstream, goutputstream
+  gfileiostream,           // io. -> giostream
+  gfileoutputstream,       // io. -> goutputstream
+  gfile,                   // io. -> gfileenumerator, gfileattribute, gfileinputstream, gfileoutputstream, gfilemonitor, gmountoperation, gfileiostream
+
   // ----
 
   Math;
@@ -145,7 +158,7 @@ begin
   WriteLn(g_ascii_isalnum('a'));
   WriteLn(g_ascii_isalnum(#10));
 
-  g_signal_connect(nil, nil, nil, nil);
+//  g_signal_connect(nil, nil, nil, nil);
 
 
   timer := g_timer_new;
@@ -154,12 +167,6 @@ begin
 
 
   g_timer_stop(timer);
-
-
-  //  glib2.G_VALUE_IS_INTERNED_STRING;
-  //glib2.G_OBJECT_WARN_INVALID_PROPERTY_ID;
-  //glib2.private_g_type_check_class_is_a;
-  // private_g_type_check_instance_cast
 
 
   time := g_timer_elapsed(timer, @us);

@@ -152,19 +152,19 @@ void          g_mount_operation_set_choice        (GMountOperation *op,
 
 void          g_mount_operation_reply             (GMountOperation *op,
 						   GMountOperationResult result);
-GIO_AVAILABLE_IN_2_58
+
 gboolean      g_mount_operation_get_is_tcrypt_hidden_volume (GMountOperation *op);
-GIO_AVAILABLE_IN_2_58
+
 void          g_mount_operation_set_is_tcrypt_hidden_volume (GMountOperation *op,
                                                              gboolean hidden_volume);
-GIO_AVAILABLE_IN_2_58
+
 gboolean      g_mount_operation_get_is_tcrypt_system_volume (GMountOperation *op);
-GIO_AVAILABLE_IN_2_58
+
 void          g_mount_operation_set_is_tcrypt_system_volume (GMountOperation *op,
                                                              gboolean system_volume);
-GIO_AVAILABLE_IN_2_58
+
 guint  g_mount_operation_get_pim           (GMountOperation *op);
-GIO_AVAILABLE_IN_2_58
+
 void          g_mount_operation_set_pim           (GMountOperation *op,
                                                    guint pim);
 

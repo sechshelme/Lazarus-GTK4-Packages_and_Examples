@@ -609,38 +609,34 @@ GFile *                 g_file_new_for_path               (const char           
 GFile *                 g_file_new_for_uri                (const char                 *uri);
 
 GFile *                 g_file_new_for_commandline_arg    (const char                 *arg);
-GIO_AVAILABLE_IN_2_36
 GFile *                 g_file_new_for_commandline_arg_and_cwd (const gchar           *arg,
                                                                 const gchar           *cwd);
-GIO_AVAILABLE_IN_2_32
 GFile *                 g_file_new_tmp                    (const char                 *tmpl,
                                                            GFileIOStream             **iostream,
                                                            GError                    **error);
-GIO_AVAILABLE_IN_2_74
 void                    g_file_new_tmp_async              (const char                 *tmpl,
                                                            int                         io_priority,
                                                            GCancellable               *cancellable,
                                                            GAsyncReadyCallback         callback,
                                                            gpointer                    user_data);
-GIO_AVAILABLE_IN_2_74
+
 GFile *                 g_file_new_tmp_finish             (GAsyncResult               *result,
                                                            GFileIOStream             **iostream,
                                                            GError                    **error);
-GIO_AVAILABLE_IN_2_74
+
 void                    g_file_new_tmp_dir_async          (const char                 *tmpl,
                                                            int                         io_priority,
                                                            GCancellable               *cancellable,
                                                            GAsyncReadyCallback         callback,
                                                            gpointer                    user_data);
-GIO_AVAILABLE_IN_2_74
+
 GFile *                 g_file_new_tmp_dir_finish         (GAsyncResult               *result,
                                                            GError                    **error);
 
 GFile *                 g_file_parse_name                 (const char                 *parse_name);
-GIO_AVAILABLE_IN_2_56
+
 GFile *                 g_file_new_build_filename         (const gchar                *first_element,
                                                            ...) ;
-GIO_AVAILABLE_IN_2_78
 GFile *                 g_file_new_build_filenamev        (const gchar                * const *args);
 
 GFile *                 g_file_dup                        (GFile                      *file);
@@ -653,7 +649,7 @@ gboolean                g_file_equal                      (GFile                
 char *                  g_file_get_basename               (GFile                      *file);
 
 char *                  g_file_get_path                   (GFile                      *file);
-GIO_AVAILABLE_IN_2_56
+
 const char *            g_file_peek_path                  (GFile                      *file);
 
 char *                  g_file_get_uri                    (GFile                      *file);
@@ -897,14 +893,14 @@ gboolean                g_file_delete                     (GFile                
 							   GCancellable               *cancellable,
 							   GError                    **error);
 
-GIO_AVAILABLE_IN_2_34
+
 void                    g_file_delete_async               (GFile                      *file,
 							   int                         io_priority,
 							   GCancellable               *cancellable,
 							   GAsyncReadyCallback         callback,
 							   gpointer                    user_data);
 
-GIO_AVAILABLE_IN_2_34
+
 gboolean                g_file_delete_finish              (GFile                      *file,
 							   GAsyncResult               *result,
 							   GError                    **error);
@@ -956,7 +952,7 @@ gboolean                g_file_move                       (GFile                
 							   GFileProgressCallback       progress_callback,
 							   gpointer                    progress_callback_data,
 							   GError                    **error);
-GIO_AVAILABLE_IN_2_72
+
 void                    g_file_move_async                 (GFile                      *source,
 							                                             GFile                      *destination,
 							                                             GFileCopyFlags              flags,
@@ -966,7 +962,7 @@ void                    g_file_move_async                 (GFile                
 							                                             gpointer                    progress_callback_data,
 							                                             GAsyncReadyCallback         callback,
 							                                             gpointer                    user_data);
-GIO_AVAILABLE_IN_2_72
+
 gboolean                g_file_move_finish                (GFile                      *file,
 							                                             GAsyncResult               *result,
 							                                             GError                    **error);
@@ -994,14 +990,14 @@ gboolean                g_file_make_symbolic_link         (GFile                
 							   const char                 *symlink_value,
 							   GCancellable               *cancellable,
 							   GError                    **error);
-GIO_AVAILABLE_IN_2_74
+
 void                    g_file_make_symbolic_link_async   (GFile                      *file,
                                                            const char                 *symlink_value,
                                                            int                         io_priority,
                                                            GCancellable               *cancellable,
                                                            GAsyncReadyCallback         callback,
                                                            gpointer                    user_data);
-GIO_AVAILABLE_IN_2_74
+
 gboolean                g_file_make_symbolic_link_finish  (GFile                      *file,
                                                            GAsyncResult               *result,
                                                            GError                    **error);
@@ -1104,14 +1100,12 @@ void                    g_file_mount_mountable            (GFile                
 GFile *                 g_file_mount_mountable_finish     (GFile                      *file,
 							   GAsyncResult               *result,
 							   GError                    **error);
-GIO_DEPRECATED_FOR(g_file_unmount_mountable_with_operation)
 void                    g_file_unmount_mountable          (GFile                      *file,
                                                            GMountUnmountFlags          flags,
                                                            GCancellable               *cancellable,
                                                            GAsyncReadyCallback         callback,
                                                            gpointer                    user_data);
 
-GIO_DEPRECATED_FOR(g_file_unmount_mountable_with_operation_finish)
 gboolean                g_file_unmount_mountable_finish   (GFile                      *file,
                                                            GAsyncResult               *result,
                                                            GError                    **error);
@@ -1126,14 +1120,12 @@ void                    g_file_unmount_mountable_with_operation (GFile          
 gboolean                g_file_unmount_mountable_with_operation_finish (GFile         *file,
 							   GAsyncResult               *result,
 							   GError                    **error);
-GIO_DEPRECATED_FOR(g_file_eject_mountable_with_operation)
 void                    g_file_eject_mountable            (GFile                      *file,
                                                            GMountUnmountFlags          flags,
                                                            GCancellable               *cancellable,
                                                            GAsyncReadyCallback         callback,
                                                            gpointer                    user_data);
 
-GIO_DEPRECATED_FOR(g_file_eject_mountable_with_operation_finish)
 gboolean                g_file_eject_mountable_finish     (GFile                      *file,
                                                            GAsyncResult               *result,
                                                            GError                    **error);
@@ -1149,7 +1141,6 @@ gboolean                g_file_eject_mountable_with_operation_finish (GFile     
 							   GAsyncResult               *result,
 							   GError                    **error);
 
-GIO_AVAILABLE_IN_2_68
 char *			g_file_build_attribute_list_for_copy (GFile                   *file,
 							   GFileCopyFlags              flags,
 							   GCancellable               *cancellable,
@@ -1247,13 +1238,11 @@ gboolean                g_file_poll_mountable_finish      (GFile                
 GAppInfo *g_file_query_default_handler       (GFile                  *file,
 					      GCancellable           *cancellable,
 					      GError                **error);
-GIO_AVAILABLE_IN_2_60
 void      g_file_query_default_handler_async (GFile                  *file,
                                               int                     io_priority,
                                               GCancellable           *cancellable,
                                               GAsyncReadyCallback     callback,
                                               gpointer                user_data);
-GIO_AVAILABLE_IN_2_60
 GAppInfo *g_file_query_default_handler_finish (GFile                 *file,
                                                GAsyncResult          *result,
                                                GError               **error);
@@ -1310,7 +1299,6 @@ void     g_file_replace_contents_async       (GFile                  *file,
 					      GCancellable           *cancellable,
 					      GAsyncReadyCallback     callback,
 					      gpointer                user_data);
-GIO_AVAILABLE_IN_2_40
 void     g_file_replace_contents_bytes_async (GFile                  *file,
 					      GBytes                 *contents,
 					      const char             *etag,
@@ -1328,17 +1316,17 @@ gboolean g_file_replace_contents_finish      (GFile                  *file,
 
 gboolean g_file_supports_thread_contexts     (GFile                  *file);
 
-GIO_AVAILABLE_IN_2_56
+
 GBytes  *g_file_load_bytes                   (GFile                  *file,
                                               GCancellable           *cancellable,
                                               gchar                 **etag_out,
                                               GError                **error);
-GIO_AVAILABLE_IN_2_56
+
 void     g_file_load_bytes_async             (GFile                  *file,
                                               GCancellable           *cancellable,
                                               GAsyncReadyCallback     callback,
                                               gpointer                user_data);
-GIO_AVAILABLE_IN_2_56
+
 GBytes  *g_file_load_bytes_finish            (GFile                  *file,
                                               GAsyncResult           *result,
                                               gchar                 **etag_out,

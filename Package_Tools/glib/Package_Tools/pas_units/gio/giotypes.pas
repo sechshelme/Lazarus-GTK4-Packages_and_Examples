@@ -72,6 +72,24 @@ type
   PPGSocketControlMessage = ^PGSocketControlMessage;
   PPPGSocketControlMessage = ^PPGSocketControlMessage;
 
+  TGFileInfo=record
+      end;
+  PGFileInfo=^TGFileInfo;
+  PPGFileInfo=^PGFileInfo;
+
+  TGFile=record
+  end;
+  PGFile=^TGFile;
+  PPGFile=^PGFile;
+
+  TGMount=record
+      end;
+  PGMount=^TGMount;
+
+  TGAppInfo=record
+      end;
+  PGAppInfo=^TGAppInfo;
+
   // =====
 
 
