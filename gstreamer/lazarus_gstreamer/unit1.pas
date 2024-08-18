@@ -47,7 +47,6 @@ begin
       end else begin
         CreateSound('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/test.mp3');
       end;
-
     end;
   end;
   Timer1.Enabled := True;

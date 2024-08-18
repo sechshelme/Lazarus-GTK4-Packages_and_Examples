@@ -9,7 +9,6 @@ uses
   ComCtrls, gst, Streamer;
 
 const
-  cmStart = 1000;
   cmPlay = 1001;
   cmPause = 1002;
   cmStop = 1003;
@@ -28,7 +27,7 @@ type
     procedure Timer;
     procedure printTime(time: integer);
   private
-    StartBtn, PlayBtn, PauseBtn, StopBtn, SpringBtn: TButton;
+    PlayBtn, PauseBtn, StopBtn, SpringBtn: TButton;
     MuteCheckBox: TCheckBox;
     TrackBar, VolumeBar: TTrackBar;
     DurLabel, PosLabel, StateLabel: TLabel;
@@ -63,10 +62,6 @@ end;
 procedure TPlayerPanel.BtnClick(Sender: TObject);
 begin
   case TButton(Sender).Tag of
-    cmStart: begin
-      st.Start;
-      TrackBar.Position := 0;
-    end;
     cmPlay: begin
       st.Play;
     end;
@@ -136,17 +131,6 @@ begin
     Anchors := [akLeft, akTop, akRight];
     OnChange := @TrackBarChange;
     Parent := Self;
-  end;
-
-  StartBtn := TButton.Create(Self);
-  with StartBtn do begin
-    Left := 0 * w + 5;
-    Width := w;
-    Top := t;
-    Caption := 'start';
-    Parent := Self;
-    tag := cmStart;
-    OnClick := @BtnClick;
   end;
 
   PlayBtn := TButton.Create(Self);
