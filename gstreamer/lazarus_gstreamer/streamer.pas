@@ -93,9 +93,26 @@ var
   len: SizeInt;
   i: integer;
   pc: PChar;
+  pipelines: array of PChar;
 const
   mp3Pipeline: array of PChar = ('filesrc', 'mpegaudioparse', 'mpg123audiodec', 'audioconvert', 'audioresample', 'volume', 'autoaudiosink');
+  flacPipeline: array of PChar = ('filesrc', 'flacparse', 'flacdec', 'audioconvert', 'audioresample', 'volume', 'autoaudiosink');
 begin
+
+  WriteLn('path: ', ExtractFileExt(AsongPath));
+  WriteLn('path: ', AsongPath);
+  case ExtractFileExt(AsongPath) of
+    '.flac': begin
+      pipelines := flacPipeline;
+    end;
+    '.mp3': begin
+      pipelines := mp3Pipeline;
+    end;
+    else begin
+      Exit;
+    end;
+  end;
+
   pipelineElement.pipeline := nil;
   fsongPath := AsongPath;
   pipelineElement.Duration := -1;
@@ -103,10 +120,10 @@ begin
   pipelineElement.pipeline := gst_pipeline_new('pipeline');
   TestIO(pipelineElement.pipeline, 'pipeline');
 
-  len := Length(mp3Pipeline);
+  len := Length(pipelines);
   SetLength(pipelineElement.Elements, len);
   for i := 0 to len - 1 do begin
-    pc := mp3Pipeline[i];
+    pc := pipelines[i];
     pipelineElement.Elements[i] := gst_element_factory_make(pc, pc);
     TestIO(pipelineElement.Elements[i], pc);
     gst_bin_add(GST_BIN(pipelineElement.pipeline), pipelineElement.Elements[i]);
@@ -114,7 +131,7 @@ begin
   pipelineElement.volume := pipelineElement.Elements[len - 2];
 
   for i := 0 to len - 1 - 1 do begin
-    WriteLn('link: ', mp3Pipeline[i]: 16, ' -> ', mp3Pipeline[i + 1]: 16, '  ', gst_element_link(pipelineElement.Elements[i], pipelineElement.Elements[i + 1]));
+    WriteLn('link: ', pipelines[i]: 16, ' -> ', pipelines[i + 1]: 16, '  ', gst_element_link(pipelineElement.Elements[i], pipelineElement.Elements[i + 1]));
   end;
   g_object_set(pipelineElement.Elements[0], 'location', PChar(fsongPath), nil);
 

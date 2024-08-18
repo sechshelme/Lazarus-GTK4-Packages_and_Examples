@@ -45,7 +45,6 @@
 GQuark       g_io_error_quark      (void);
 
 GIOErrorEnum g_io_error_from_errno (gint err_no);
-GIO_AVAILABLE_IN_2_74
 GIOErrorEnum g_io_error_from_file_error (GFileError file_error);
 
 #ifdef G_OS_WIN32

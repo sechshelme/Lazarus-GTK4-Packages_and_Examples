@@ -130,7 +130,13 @@ uses
   gunixfdlist,             // io.
   gdbusproxy,              // io. -> gdbusintrospection, gunixfdlist
   gdbusobjectmanagerclient,// io. -> gdbusobjectproxy, gdbusproxy
+  gioerror,                // io.
+  gbytesicon,              // io.
+  gappinfo,                // io.
+  gsettingsschema,         // io.
+  gsettings,               // io. gsettingsschema, gaction
 
+  gfileinfo,               // io.
   gfileenumerator,         // io.
   gfileattribute,          // io.
   gmountoperation,         // io.
@@ -143,6 +149,13 @@ uses
   gfileiostream,           // io. -> giostream
   gfileoutputstream,       // io. -> goutputstream
   gfile,                   // io. -> gfileenumerator, gfileattribute, gfileinputstream, gfileoutputstream, gfilemonitor, gmountoperation, gfileiostream
+  gdbusconnection,         // io. -> giostream, gunixfdlist, gdbusintrospection
+  gtlscertificate,         // io.
+  gtlsdatabase,            // io. -> gtlscertificate
+  gtlsconnection,          // io. -> gtlscertificate
+  gtlspassword,            // io.
+  gtlsinteraction,         // io. -> gtlsconnection, gtlspassword
+
 
   // ----
 

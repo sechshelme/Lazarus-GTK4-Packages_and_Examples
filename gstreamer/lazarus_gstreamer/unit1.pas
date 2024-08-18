@@ -44,6 +44,8 @@ begin
       Anchors := [akLeft, akTop, akRight];
       if i = 4 then  begin
         CreateSound('/n4800/Multimedia/Music/Diverses/MP3 Diverse/DJ_Shaolin-Popcorn_(Hot_Butter_cover).mp3');
+      end else if i = 3 then  begin
+        CreateSound('/n4800/Multimedia/Music/Disco/Boney M/1981 - Boonoonoonoos/01 - Boonoonoonoos.flac');
       end else begin
         CreateSound('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/test.mp3');
       end;

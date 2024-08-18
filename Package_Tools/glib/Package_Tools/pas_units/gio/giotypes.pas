@@ -90,6 +90,59 @@ type
       end;
   PGAppInfo=^TGAppInfo;
 
+  TGIcon=record
+      end;
+  PGIcon=^TGIcon;
+
+  TGFileAttributeMatcher=record
+      end;
+  PGFileAttributeMatcher=^TGFileAttributeMatcher;
+
+  TGDBusAuthObserver=record
+      end;
+  PGDBusAuthObserver=^TGDBusAuthObserver;
+
+  TGDBusMessage=record
+      end;
+  PGDBusMessage=^TGDBusMessage;
+
+  TGDBusMethodInvocation=record
+      end;
+  PGDBusMethodInvocation=^TGDBusMethodInvocation;
+
+  TGBytesIcon=record
+      end;
+  PGBytesIcon=^TGBytesIcon;
+
+  TGSettingsBackend=record
+      end;
+  PGSettingsBackend=^TGSettingsBackend;
+
+  TGSocketConnectable=record
+      end;
+  PGSocketConnectable=^TGSocketConnectable;
+
+  TGTlsDatabasePrivate=record
+        end;
+  PGTlsDatabasePrivate=^TGTlsDatabasePrivate;
+
+  PGTlsDatabase = ^TGTlsDatabase;
+  TGTlsDatabase = record
+      parent_instance : TGObject;
+      priv : PGTlsDatabasePrivate;
+    end;
+
+  TGTlsInteractionPrivate = record
+  end;
+  PGTlsInteractionPrivate = ^TGTlsInteractionPrivate;
+
+  TGTlsInteraction = record
+    parent_instance: TGObject;
+    priv: PGTlsInteractionPrivate;
+  end;
+  PGTlsInteraction = ^TGTlsInteraction;
+
+
   // =====
 
 

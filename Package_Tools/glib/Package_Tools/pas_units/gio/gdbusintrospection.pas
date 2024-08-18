@@ -63,6 +63,7 @@ type
     annotations: ^PGDBusAnnotationInfo;
   end;
   PGDBusInterfaceInfo = ^TGDBusInterfaceInfo;
+  PPGDBusInterfaceInfo = ^PGDBusInterfaceInfo;
 
   TGDBusNodeInfo = record
     ref_count: Tgint;

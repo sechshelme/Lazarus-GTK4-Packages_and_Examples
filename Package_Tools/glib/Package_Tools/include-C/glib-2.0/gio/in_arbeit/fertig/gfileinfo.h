@@ -1355,7 +1355,7 @@ GObject *          g_file_info_get_attribute_object      (GFileInfo  *info,
 
 char **            g_file_info_get_attribute_stringv     (GFileInfo  *info,
 							  const char *attribute);
-GIO_AVAILABLE_IN_2_78
+
 const char *       g_file_info_get_attribute_file_path   (GFileInfo  *info,
 							  const char *attribute);
 
@@ -1400,7 +1400,7 @@ void               g_file_info_set_attribute_object      (GFileInfo  *info,
 void               g_file_info_set_attribute_stringv     (GFileInfo  *info,
 							  const char *attribute,
 							  char      **attr_value);
-GIO_AVAILABLE_IN_2_78
+
 void               g_file_info_set_attribute_file_path   (GFileInfo  *info,
 							  const char *attribute,
 							  const char *attr_value);
@@ -1409,7 +1409,7 @@ void               g_file_info_set_attribute_file_path   (GFileInfo  *info,
 void               g_file_info_clear_status              (GFileInfo  *info);
 
 /* Helper getters: */
-GIO_AVAILABLE_IN_2_36
+
 GDateTime *       g_file_info_get_deletion_date      (GFileInfo         *info);
 
 GFileType         g_file_info_get_file_type          (GFileInfo         *info);
@@ -1434,15 +1434,14 @@ const char *      g_file_info_get_content_type       (GFileInfo         *info);
 
 goffset           g_file_info_get_size               (GFileInfo         *info);
 
-GIO_DEPRECATED_IN_2_62_FOR(g_file_info_get_modification_date_time)
 void              g_file_info_get_modification_time  (GFileInfo         *info,
                                                       GTimeVal          *result);
 
-GIO_AVAILABLE_IN_2_62
+
 GDateTime *       g_file_info_get_modification_date_time (GFileInfo     *info);
-GIO_AVAILABLE_IN_2_70
+
 GDateTime *       g_file_info_get_access_date_time (GFileInfo     *info);
-GIO_AVAILABLE_IN_2_70
+
 GDateTime *       g_file_info_get_creation_date_time (GFileInfo     *info);
 
 const char *      g_file_info_get_symlink_target     (GFileInfo         *info);
@@ -1489,17 +1488,16 @@ void              g_file_info_set_content_type       (GFileInfo         *info,
 void              g_file_info_set_size               (GFileInfo         *info,
 						      goffset            size);
 
-GIO_DEPRECATED_IN_2_62_FOR(g_file_info_set_modification_date_time)
 void              g_file_info_set_modification_time  (GFileInfo         *info,
                                                       GTimeVal          *mtime);
 
-GIO_AVAILABLE_IN_2_62
+
 void              g_file_info_set_modification_date_time (GFileInfo     *info,
                                                           GDateTime     *mtime);
-GIO_AVAILABLE_IN_2_70
+
 void              g_file_info_set_access_date_time (GFileInfo *info,
                                                     GDateTime *atime);
-GIO_AVAILABLE_IN_2_70
+
 void              g_file_info_set_creation_date_time (GFileInfo *info,
                                                       GDateTime *creation_time);
 
@@ -1533,7 +1531,6 @@ gboolean               g_file_attribute_matcher_enumerate_namespace (GFileAttrib
 								     const char            *ns);
 
 const char *           g_file_attribute_matcher_enumerate_next (GFileAttributeMatcher *matcher);
-GIO_AVAILABLE_IN_2_32
 char *                 g_file_attribute_matcher_to_string      (GFileAttributeMatcher *matcher);
 
 

@@ -99,10 +99,8 @@ struct _GTlsConnectionClass
 
 GType                 g_tls_connection_get_type                    (void) ;
 
-GIO_DEPRECATED
 void                  g_tls_connection_set_use_system_certdb       (GTlsConnection       *conn,
                                                                     gboolean              use_system_certdb);
-GIO_DEPRECATED
 gboolean              g_tls_connection_get_use_system_certdb       (GTlsConnection       *conn);
 
 
@@ -135,22 +133,19 @@ void                  g_tls_connection_set_require_close_notify    (GTlsConnecti
 gboolean              g_tls_connection_get_require_close_notify    (GTlsConnection       *conn);
 
 
-GIO_DEPRECATED_IN_2_60
+
 void                  g_tls_connection_set_rehandshake_mode        (GTlsConnection       *conn,
 								    GTlsRehandshakeMode   mode);
-GIO_DEPRECATED_IN_2_60
+
 GTlsRehandshakeMode   g_tls_connection_get_rehandshake_mode        (GTlsConnection       *conn);
 
 
-GIO_AVAILABLE_IN_2_60
 void                  g_tls_connection_set_advertised_protocols    (GTlsConnection       *conn,
                                                                     const gchar * const  *protocols);
 
-GIO_AVAILABLE_IN_2_60
 const gchar *         g_tls_connection_get_negotiated_protocol     (GTlsConnection       *conn);
 
 
-GIO_AVAILABLE_IN_2_66
 gboolean              g_tls_connection_get_channel_binding_data    (GTlsConnection          *conn,
                                                                     GTlsChannelBindingType   type,
                                                                     GByteArray              *data,
@@ -173,10 +168,8 @@ gboolean              g_tls_connection_handshake_finish            (GTlsConnecti
 								    GAsyncResult         *result,
 								    GError              **error);
 
-GIO_AVAILABLE_IN_2_70
 GTlsProtocolVersion   g_tls_connection_get_protocol_version        (GTlsConnection       *conn);
 
-GIO_AVAILABLE_IN_2_70
 gchar *               g_tls_connection_get_ciphersuite_name        (GTlsConnection       *conn);
 
 /**
@@ -200,7 +193,6 @@ GQuark g_tls_error_quark (void);
  * Since: 2.66
  */
 #define G_TLS_CHANNEL_BINDING_ERROR (g_tls_channel_binding_error_quark ())
-GIO_AVAILABLE_IN_2_66
 GQuark g_tls_channel_binding_error_quark (void);
 
 /*< protected >*/

@@ -118,21 +118,17 @@ GTlsInteractionResult  g_tls_interaction_ask_password_finish (GTlsInteraction   
                                                               GAsyncResult       *result,
                                                               GError            **error);
 
-GIO_AVAILABLE_IN_2_40
 GTlsInteractionResult  g_tls_interaction_invoke_request_certificate (GTlsInteraction              *interaction,
                                                                      GTlsConnection               *connection,
                                                                      GTlsCertificateRequestFlags   flags,
                                                                      GCancellable                 *cancellable,
                                                                      GError                      **error);
 
-GIO_AVAILABLE_IN_2_40
 GTlsInteractionResult  g_tls_interaction_request_certificate        (GTlsInteraction              *interaction,
                                                                      GTlsConnection               *connection,
                                                                      GTlsCertificateRequestFlags   flags,
                                                                      GCancellable                 *cancellable,
                                                                      GError                      **error);
-
-GIO_AVAILABLE_IN_2_40
 void                   g_tls_interaction_request_certificate_async  (GTlsInteraction              *interaction,
                                                                      GTlsConnection               *connection,
                                                                      GTlsCertificateRequestFlags   flags,
@@ -140,7 +136,6 @@ void                   g_tls_interaction_request_certificate_async  (GTlsInterac
                                                                      GAsyncReadyCallback           callback,
                                                                      gpointer                      user_data);
 
-GIO_AVAILABLE_IN_2_40
 GTlsInteractionResult  g_tls_interaction_request_certificate_finish (GTlsInteraction              *interaction,
                                                                      GAsyncResult                 *result,
                                                                      GError                      **error);

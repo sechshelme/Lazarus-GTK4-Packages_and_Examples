@@ -179,14 +179,14 @@ gboolean    g_app_info_launch_uris                  (GAppInfo             *appin
                                                      GList                *uris,
                                                      GAppLaunchContext    *context,
                                                      GError              **error);
-GIO_AVAILABLE_IN_2_60
+
 void        g_app_info_launch_uris_async            (GAppInfo             *appinfo,
                                                      GList                *uris,
                                                      GAppLaunchContext    *context,
                                                      GCancellable         *cancellable,
                                                      GAsyncReadyCallback   callback,
                                                      gpointer              user_data);
-GIO_AVAILABLE_IN_2_60
+
 gboolean    g_app_info_launch_uris_finish           (GAppInfo             *appinfo,
                                                      GAsyncResult         *result,
                                                      GError              **error);
@@ -212,7 +212,7 @@ gboolean    g_app_info_can_remove_supports_type     (GAppInfo             *appin
 gboolean    g_app_info_remove_supports_type         (GAppInfo             *appinfo,
                                                      const char           *content_type,
                                                      GError              **error);
-GIO_AVAILABLE_IN_2_34
+
 const char **g_app_info_get_supported_types         (GAppInfo             *appinfo);
 
 
@@ -239,24 +239,24 @@ void      g_app_info_reset_type_associations     (const char  *content_type);
 
 GAppInfo *g_app_info_get_default_for_type        (const char  *content_type,
                                                   gboolean     must_support_uris);
-GIO_AVAILABLE_IN_2_74
+
 void      g_app_info_get_default_for_type_async  (const char          *content_type,
                                                   gboolean             must_support_uris,
                                                   GCancellable        *cancellable,
                                                   GAsyncReadyCallback  callback,
                                                   gpointer             user_data);
-GIO_AVAILABLE_IN_2_74
+
 GAppInfo *g_app_info_get_default_for_type_finish (GAsyncResult         *result,
                                                   GError              **error);
 
 GAppInfo *g_app_info_get_default_for_uri_scheme  (const char  *uri_scheme);
 
-GIO_AVAILABLE_IN_2_74
+
 void      g_app_info_get_default_for_uri_scheme_async (const char          *uri_scheme,
                                                        GCancellable        *cancellable,
                                                        GAsyncReadyCallback  callback,
                                                        gpointer             user_data);
-GIO_AVAILABLE_IN_2_74
+
 GAppInfo *g_app_info_get_default_for_uri_scheme_finish (GAsyncResult         *result,
                                                         GError              **error);
 
@@ -265,13 +265,13 @@ gboolean  g_app_info_launch_default_for_uri      (const char              *uri,
                                                   GAppLaunchContext       *context,
                                                   GError                 **error);
 
-GIO_AVAILABLE_IN_2_50
+
 void      g_app_info_launch_default_for_uri_async  (const char           *uri,
                                                     GAppLaunchContext    *context,
                                                     GCancellable         *cancellable,
                                                     GAsyncReadyCallback   callback,
                                                     gpointer              user_data);
-GIO_AVAILABLE_IN_2_50
+
 gboolean  g_app_info_launch_default_for_uri_finish (GAsyncResult         *result,
                                                     GError              **error);
 
@@ -321,14 +321,11 @@ GType              g_app_launch_context_get_type              (void) ;
 
 GAppLaunchContext *g_app_launch_context_new                   (void);
 
-GIO_AVAILABLE_IN_2_32
 void               g_app_launch_context_setenv                (GAppLaunchContext *context,
                                                                const char        *variable,
                                                                const char        *value);
-GIO_AVAILABLE_IN_2_32
 void               g_app_launch_context_unsetenv              (GAppLaunchContext *context,
                                                                const char        *variable);
-GIO_AVAILABLE_IN_2_32
 char **            g_app_launch_context_get_environment       (GAppLaunchContext *context);
 
 
@@ -351,10 +348,8 @@ void               g_app_launch_context_launch_failed         (GAppLaunchContext
 
 typedef struct _GAppInfoMonitor                             GAppInfoMonitor;
 
-GIO_AVAILABLE_IN_2_40
 GType                   g_app_info_monitor_get_type                     (void);
 
-GIO_AVAILABLE_IN_2_40
 GAppInfoMonitor *       g_app_info_monitor_get                          (void);
 
 

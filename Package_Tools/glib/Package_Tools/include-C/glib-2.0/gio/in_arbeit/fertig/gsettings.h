@@ -72,9 +72,7 @@ struct _GSettings
 
 GType                   g_settings_get_type                             (void);
 
-GIO_DEPRECATED_IN_2_40_FOR(g_settings_schema_source_list_schemas)
 const gchar * const *   g_settings_list_schemas                         (void);
-GIO_DEPRECATED_IN_2_40_FOR(g_settings_schema_source_list_schemas)
 const gchar * const *   g_settings_list_relocatable_schemas             (void);
 
 GSettings *             g_settings_new                                  (const gchar        *schema_id);
@@ -88,18 +86,15 @@ GSettings *             g_settings_new_with_backend                     (const g
 GSettings *             g_settings_new_with_backend_and_path            (const gchar        *schema_id,
                                                                          GSettingsBackend   *backend,
                                                                          const gchar        *path);
-GIO_AVAILABLE_IN_2_32
+
 GSettings *             g_settings_new_full                             (GSettingsSchema    *schema,
                                                                          GSettingsBackend   *backend,
                                                                          const gchar        *path);
 
 gchar **                g_settings_list_children                        (GSettings          *settings);
-GIO_DEPRECATED_IN_2_46_FOR(g_settings_schema_list_keys)
 gchar **                g_settings_list_keys                            (GSettings          *settings);
-GIO_DEPRECATED_IN_2_40_FOR(g_settings_schema_key_get_range)
 GVariant *              g_settings_get_range                            (GSettings          *settings,
                                                                          const gchar        *key);
-GIO_DEPRECATED_IN_2_40_FOR(g_settings_schema_key_range_check)
 gboolean                g_settings_range_check                          (GSettings          *settings,
                                                                          const gchar        *key,
                                                                          GVariant           *value);
@@ -112,10 +107,10 @@ gboolean                g_settings_set_value                            (GSettin
 GVariant *              g_settings_get_value                            (GSettings          *settings,
                                                                          const gchar        *key);
 
-GIO_AVAILABLE_IN_2_40
+
 GVariant *              g_settings_get_user_value                       (GSettings          *settings,
                                                                          const gchar        *key);
-GIO_AVAILABLE_IN_2_40
+
 GVariant *              g_settings_get_default_value                    (GSettings          *settings,
                                                                          const gchar        *key);
 
@@ -140,24 +135,24 @@ gint                    g_settings_get_int                              (GSettin
 gboolean                g_settings_set_int                              (GSettings          *settings,
                                                                          const gchar        *key,
                                                                          gint                value);
-GIO_AVAILABLE_IN_2_50
+
 gint64                  g_settings_get_int64                            (GSettings          *settings,
                                                                          const gchar        *key);
-GIO_AVAILABLE_IN_2_50
+
 gboolean                g_settings_set_int64                            (GSettings          *settings,
                                                                          const gchar        *key,
                                                                          gint64              value);
-GIO_AVAILABLE_IN_2_32
+
 guint                   g_settings_get_uint                             (GSettings          *settings,
                                                                          const gchar        *key);
-GIO_AVAILABLE_IN_2_32
+
 gboolean                g_settings_set_uint                             (GSettings          *settings,
                                                                          const gchar        *key,
                                                                          guint               value);
-GIO_AVAILABLE_IN_2_50
+
 guint64                 g_settings_get_uint64                           (GSettings          *settings,
                                                                          const gchar        *key);
-GIO_AVAILABLE_IN_2_50
+
 gboolean                g_settings_set_uint64                           (GSettings          *settings,
                                                                          const gchar        *key,
                                                                          guint64             value);
@@ -332,7 +327,7 @@ void                    g_settings_bind_writable                        (GSettin
 void                    g_settings_unbind                               (gpointer                 object,
                                                                          const gchar             *property);
 
-GIO_AVAILABLE_IN_2_32
+
 GAction *               g_settings_create_action                        (GSettings               *settings,
                                                                          const gchar             *key);
 

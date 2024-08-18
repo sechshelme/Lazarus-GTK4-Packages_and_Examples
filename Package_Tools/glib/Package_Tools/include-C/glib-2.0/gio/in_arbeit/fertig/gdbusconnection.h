@@ -106,7 +106,6 @@ const gchar     *g_dbus_connection_get_unique_name            (GDBusConnection  
 
 GCredentials    *g_dbus_connection_get_peer_credentials       (GDBusConnection    *connection);
 
-GIO_AVAILABLE_IN_2_34
 guint32          g_dbus_connection_get_last_serial            (GDBusConnection    *connection);
 
 
@@ -116,7 +115,6 @@ void             g_dbus_connection_set_exit_on_close          (GDBusConnection  
                                                                gboolean            exit_on_close);
 
 GDBusCapabilityFlags  g_dbus_connection_get_capabilities      (GDBusConnection    *connection);
-GIO_AVAILABLE_IN_2_60
 GDBusConnectionFlags  g_dbus_connection_get_flags             (GDBusConnection    *connection);
 
 /* ---------------------------------------------------------------------------------------------------- */
@@ -157,14 +155,14 @@ gboolean         g_dbus_connection_flush_sync                     (GDBusConnecti
 gboolean         g_dbus_connection_send_message                   (GDBusConnection     *connection,
                                                                    GDBusMessage        *message,
                                                                    GDBusSendMessageFlags flags,
-                                                                   volatile guint32    *out_serial,
+                                                                    guint32    *out_serial,
                                                                    GError             **error);
 
 void             g_dbus_connection_send_message_with_reply        (GDBusConnection     *connection,
                                                                    GDBusMessage        *message,
                                                                    GDBusSendMessageFlags flags,
                                                                    gint                 timeout_msec,
-                                                                   volatile guint32    *out_serial,
+                                                                    guint32    *out_serial,
                                                                    GCancellable        *cancellable,
                                                                    GAsyncReadyCallback  callback,
                                                                    gpointer             user_data);
@@ -177,7 +175,7 @@ GDBusMessage    *g_dbus_connection_send_message_with_reply_sync   (GDBusConnecti
                                                                    GDBusMessage        *message,
                                                                    GDBusSendMessageFlags flags,
                                                                    gint                 timeout_msec,
-                                                                   volatile guint32    *out_serial,
+                                                                    guint32    *out_serial,
                                                                    GCancellable        *cancellable,
                                                                    GError             **error);
 
@@ -410,7 +408,6 @@ guint            g_dbus_connection_register_object            (GDBusConnection  
                                                                gpointer                    user_data,
                                                                GDestroyNotify              user_data_free_func,
                                                                GError                    **error);
-GIO_AVAILABLE_IN_2_46
 guint            g_dbus_connection_register_object_with_closures (GDBusConnection         *connection,
                                                                   const gchar             *object_path,
                                                                   GDBusInterfaceInfo      *interface_info,
