@@ -79,10 +79,8 @@ GType                   g_application_command_line_get_type             (void) ;
 gchar **                g_application_command_line_get_arguments        (GApplicationCommandLine   *cmdline,
                                                                          int                       *argc);
 
-GIO_AVAILABLE_IN_2_40
 GVariantDict *          g_application_command_line_get_options_dict     (GApplicationCommandLine   *cmdline);
 
-GIO_AVAILABLE_IN_2_36
 GInputStream *          g_application_command_line_get_stdin            (GApplicationCommandLine   *cmdline);
 
 
@@ -98,21 +96,19 @@ const gchar *           g_application_command_line_get_cwd              (GApplic
 
 gboolean                g_application_command_line_get_is_remote        (GApplicationCommandLine   *cmdline);
 
-GIO_AVAILABLE_IN_2_80
 void                    g_application_command_line_print_literal        (GApplicationCommandLine   *cmdline,
                                                                          const gchar               *message);
-GIO_AVAILABLE_IN_2_80
 void                    g_application_command_line_printerr_literal     (GApplicationCommandLine   *cmdline,
                                                                          const gchar               *message);
 
 
 void                    g_application_command_line_print                (GApplicationCommandLine   *cmdline,
                                                                          const gchar               *format,
-                                                                         ...) G_GNUC_PRINTF(2, 3);
+                                                                         ...) ;
 
 void                    g_application_command_line_printerr             (GApplicationCommandLine   *cmdline,
                                                                          const gchar               *format,
-                                                                         ...) G_GNUC_PRINTF(2, 3);
+                                                                         ...);
 
 
 int                     g_application_command_line_get_exit_status      (GApplicationCommandLine   *cmdline);
@@ -123,11 +119,9 @@ void                    g_application_command_line_set_exit_status      (GApplic
 
 GVariant *              g_application_command_line_get_platform_data    (GApplicationCommandLine   *cmdline);
 
-GIO_AVAILABLE_IN_2_36
 GFile *                 g_application_command_line_create_file_for_arg  (GApplicationCommandLine   *cmdline,
                                                                          const gchar               *arg);
 
-GIO_AVAILABLE_IN_2_80
 void                    g_application_command_line_done                 (GApplicationCommandLine   *cmdline);
 
 

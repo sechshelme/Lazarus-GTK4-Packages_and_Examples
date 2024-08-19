@@ -139,15 +139,11 @@ const gchar *           g_application_get_application_id                (GApplic
 void                    g_application_set_application_id                (GApplication             *application,
                                                                          const gchar              *application_id);
 
-GIO_AVAILABLE_IN_2_80
 const gchar *           g_application_get_version                       (GApplication             *application);
-GIO_AVAILABLE_IN_2_80
 void                    g_application_set_version                       (GApplication             *application,
                                                                          const gchar              *version);
 
-GIO_AVAILABLE_IN_2_34
 GDBusConnection *       g_application_get_dbus_connection               (GApplication             *application);
-GIO_AVAILABLE_IN_2_34
 const gchar *           g_application_get_dbus_object_path              (GApplication             *application);
 
 
@@ -162,21 +158,16 @@ GApplicationFlags       g_application_get_flags                         (GApplic
 void                    g_application_set_flags                         (GApplication             *application,
                                                                          GApplicationFlags         flags);
 
-GIO_AVAILABLE_IN_2_42
 const gchar *           g_application_get_resource_base_path            (GApplication             *application);
-GIO_AVAILABLE_IN_2_42
 void                    g_application_set_resource_base_path            (GApplication             *application,
                                                                          const gchar              *resource_path);
 
-GIO_DEPRECATED
 void                    g_application_set_action_group                  (GApplication             *application,
                                                                          GActionGroup             *action_group);
 
-GIO_AVAILABLE_IN_2_40
 void                    g_application_add_main_option_entries           (GApplication             *application,
                                                                          const GOptionEntry       *entries);
 
-GIO_AVAILABLE_IN_2_42
 void                    g_application_add_main_option                   (GApplication             *application,
                                                                          const char               *long_name,
                                                                          char                      short_name,
@@ -184,16 +175,15 @@ void                    g_application_add_main_option                   (GApplic
                                                                          GOptionArg                arg,
                                                                          const char               *description,
                                                                          const char               *arg_description);
-GIO_AVAILABLE_IN_2_40
 void                    g_application_add_option_group                  (GApplication             *application,
                                                                          GOptionGroup             *group);
-GIO_AVAILABLE_IN_2_56
+
 void                    g_application_set_option_context_parameter_string (GApplication             *application,
                                                                            const gchar              *parameter_string);
-GIO_AVAILABLE_IN_2_56
+
 void                    g_application_set_option_context_summary        (GApplication             *application,
                                                                          const gchar              *summary);
-GIO_AVAILABLE_IN_2_56
+
 void                    g_application_set_option_context_description    (GApplication             *application,
                                                                          const gchar              *description);
 
@@ -225,35 +215,35 @@ int                     g_application_run                               (GApplic
                                                                          int                       argc,
                                                                          char                    **argv);
 
-GIO_AVAILABLE_IN_2_32
+
 void                    g_application_quit                              (GApplication             *application);
 
-GIO_AVAILABLE_IN_2_32
+
 GApplication *          g_application_get_default                       (void);
-GIO_AVAILABLE_IN_2_32
+
 void                    g_application_set_default                       (GApplication             *application);
 
 
 void                    g_application_mark_busy                         (GApplication             *application);
 
 void                    g_application_unmark_busy                       (GApplication             *application);
-GIO_AVAILABLE_IN_2_44
+
 gboolean                g_application_get_is_busy                       (GApplication             *application);
 
-GIO_AVAILABLE_IN_2_40
+
 void                    g_application_send_notification                 (GApplication             *application,
                                                                          const gchar              *id,
                                                                          GNotification            *notification);
-GIO_AVAILABLE_IN_2_40
+
 void                    g_application_withdraw_notification             (GApplication             *application,
                                                                          const gchar              *id);
 
-GIO_AVAILABLE_IN_2_44
+
 void                    g_application_bind_busy_property                (GApplication             *application,
                                                                          gpointer                  object,
                                                                          const gchar              *property);
 
-GIO_AVAILABLE_IN_2_44
+
 void                    g_application_unbind_busy_property              (GApplication             *application,
                                                                          gpointer                  object,
                                                                          const gchar              *property);

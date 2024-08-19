@@ -123,6 +123,7 @@ uses
   ginetaddress,            // io.
   ginetaddressmask,        // io. -> ginetaddress
   gsocket,                 // io. -> ginetaddress
+  gresolver,               // io. -> ginetaddress
   gsocketaddress,          // io.
   gsocketcontrolmessage,   // io.
   gdbusobjectproxy,        // io.
@@ -140,12 +141,16 @@ uses
   gfileenumerator,         // io.
   gfileattribute,          // io.
   gmountoperation,         // io.
+  gvolume,                 // io. -> gmountoperation
+  gmount,                  // io. -> gvolume, gmountoperation
   gfilemonitor,            // io.
   ginputstream,            // io.
   goutputstream,           // io. -> ginputstream
   gfileinputstream,        // io. -> ginputstream
   gfilterinputstream,      // io. -> ginputstream
   giostream,               // io. -> ginputstream, goutputstream
+  gapplicationcommandline, // io. -> ginputstream
+  gapplication,            // io. -> gapplicationcommandline
   gfileiostream,           // io. -> giostream
   gfileoutputstream,       // io. -> goutputstream
   gfile,                   // io. -> gfileenumerator, gfileattribute, gfileinputstream, gfileoutputstream, gfilemonitor, gmountoperation, gfileiostream
@@ -155,6 +160,7 @@ uses
   gtlsconnection,          // io. -> gtlscertificate
   gtlspassword,            // io.
   gtlsinteraction,         // io. -> gtlsconnection, gtlspassword
+  gmenumodel,              // io.
 
 
   // ----

@@ -187,26 +187,21 @@ gboolean    g_mount_can_unmount               (GMount              *mount);
 
 gboolean    g_mount_can_eject                 (GMount              *mount);
 
-GIO_DEPRECATED_FOR(g_mount_unmount_with_operation)
 void        g_mount_unmount                   (GMount              *mount,
                                                GMountUnmountFlags   flags,
                                                GCancellable        *cancellable,
                                                GAsyncReadyCallback  callback,
                                                gpointer             user_data);
 
-GIO_DEPRECATED_FOR(g_mount_unmount_with_operation_finish)
 gboolean    g_mount_unmount_finish            (GMount              *mount,
                                                GAsyncResult        *result,
                                                GError             **error);
-
-GIO_DEPRECATED_FOR(g_mount_eject_with_operation)
 void        g_mount_eject                     (GMount              *mount,
                                                GMountUnmountFlags   flags,
                                                GCancellable        *cancellable,
                                                GAsyncReadyCallback  callback,
                                                gpointer             user_data);
 
-GIO_DEPRECATED_FOR(g_mount_eject_with_operation_finish)
 gboolean    g_mount_eject_finish              (GMount              *mount,
                                                GAsyncResult        *result,
                                                GError             **error);

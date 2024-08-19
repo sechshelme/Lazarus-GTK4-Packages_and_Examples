@@ -142,6 +142,17 @@ type
   end;
   PGTlsInteraction = ^TGTlsInteraction;
 
+  TGDrive=record
+      end;
+  PGDrive=^TGDrive;
+
+  TGActionGroup=record
+      end;
+  PGActionGroup=^tGActionGroup;
+
+  TGNotification=record
+      end;
+  PGNotification=^TGNotification;
 
   // =====
 

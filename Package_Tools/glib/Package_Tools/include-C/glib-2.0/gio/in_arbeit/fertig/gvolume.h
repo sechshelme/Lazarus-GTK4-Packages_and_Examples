@@ -39,7 +39,7 @@
  *
  * Deprecated: 2.58: Do not use, HAL is deprecated.
  */
-#define G_VOLUME_IDENTIFIER_KIND_HAL_UDI "hal-udi" GIO_DEPRECATED_MACRO_IN_2_58
+#define G_VOLUME_IDENTIFIER_KIND_HAL_UDI "hal-udi" 
 
 /**
  * G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE:
@@ -215,14 +215,12 @@ void     g_volume_mount                 (GVolume              *volume,
 gboolean g_volume_mount_finish          (GVolume              *volume,
 					 GAsyncResult         *result,
 					 GError              **error);
-GIO_DEPRECATED_FOR(g_volume_eject_with_operation)
 void     g_volume_eject                 (GVolume              *volume,
                                          GMountUnmountFlags    flags,
                                          GCancellable         *cancellable,
                                          GAsyncReadyCallback   callback,
                                          gpointer              user_data);
 
-GIO_DEPRECATED_FOR(g_volume_eject_with_operation_finish)
 gboolean g_volume_eject_finish          (GVolume              *volume,
                                          GAsyncResult         *result,
                                          GError              **error);
@@ -247,7 +245,6 @@ gboolean    g_volume_eject_with_operation_finish (GVolume          *volume,
                                                GAsyncResult        *result,
                                                GError             **error);
 
-GIO_AVAILABLE_IN_2_32
 const gchar *g_volume_get_sort_key            (GVolume              *volume);
 
 

@@ -13,6 +13,7 @@ type
   TGHashTable = record
   end;
   PGHashTable = ^TGHashTable;
+  PPGHashTable = ^PGHashTable;
 
   TGHRFunc = function(key: Tgpointer; Value: Tgpointer; user_data: Tgpointer): Tgboolean; cdecl;
 

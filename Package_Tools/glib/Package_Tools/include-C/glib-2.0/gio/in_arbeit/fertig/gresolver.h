@@ -204,18 +204,18 @@ void       g_resolver_lookup_by_name_async             (GResolver               
 GList     *g_resolver_lookup_by_name_finish            (GResolver                 *resolver,
                                                         GAsyncResult              *result,
                                                         GError                   **error);
-GIO_AVAILABLE_IN_2_60
+
 void       g_resolver_lookup_by_name_with_flags_async  (GResolver                 *resolver,
                                                         const gchar               *hostname,
                                                         GResolverNameLookupFlags   flags,
                                                         GCancellable              *cancellable,
                                                         GAsyncReadyCallback        callback,
                                                         gpointer                   user_data);
-GIO_AVAILABLE_IN_2_60
+
 GList     *g_resolver_lookup_by_name_with_flags_finish (GResolver                 *resolver,
                                                         GAsyncResult              *result,
                                                         GError                   **error);
-GIO_AVAILABLE_IN_2_60
+
 GList     *g_resolver_lookup_by_name_with_flags        (GResolver                 *resolver,
                                                         const gchar               *hostname,
                                                         GResolverNameLookupFlags   flags,
@@ -257,29 +257,29 @@ void       g_resolver_lookup_service_async             (GResolver               
 GList     *g_resolver_lookup_service_finish            (GResolver                 *resolver,
                                                         GAsyncResult              *result,
                                                         GError                   **error);
-GIO_AVAILABLE_IN_2_34
+
 GList     *g_resolver_lookup_records                   (GResolver                 *resolver,
                                                         const gchar               *rrname,
                                                         GResolverRecordType        record_type,
                                                         GCancellable              *cancellable,
                                                         GError                   **error);
-GIO_AVAILABLE_IN_2_34
+
 void       g_resolver_lookup_records_async             (GResolver                 *resolver,
                                                         const gchar               *rrname,
                                                         GResolverRecordType        record_type,
                                                         GCancellable              *cancellable,
                                                         GAsyncReadyCallback        callback,
                                                         gpointer                   user_data);
-GIO_AVAILABLE_IN_2_34
+
 GList     *g_resolver_lookup_records_finish            (GResolver                 *resolver,
                                                         GAsyncResult              *result,
                                                         GError                   **error);
 
 void       g_resolver_free_targets                     (GList                     *targets);
 
-GIO_AVAILABLE_IN_2_78
+
 unsigned   g_resolver_get_timeout                      (GResolver                 *resolver);
-GIO_AVAILABLE_IN_2_78
+
 void       g_resolver_set_timeout                      (GResolver                 *resolver,
                                                         unsigned                   timeout_ms);
 

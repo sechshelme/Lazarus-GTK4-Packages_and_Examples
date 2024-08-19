@@ -27,6 +27,19 @@
 #include <gio/giotypes.h>
 
 
+#define G_TYPE_MENU_MODEL                                   (g_menu_model_get_type ())
+#define G_MENU_MODEL(inst)                                  (G_TYPE_CHECK_INSTANCE_CAST ((inst),                     \
+                                                             G_TYPE_MENU_MODEL, GMenuModel))
+#define G_MENU_MODEL_CLASS(class)                           (G_TYPE_CHECK_CLASS_CAST ((class),                       \
+                                                             G_TYPE_MENU_MODEL, GMenuModelClass))
+#define G_IS_MENU_MODEL(inst)                               (G_TYPE_CHECK_INSTANCE_TYPE ((inst),                     \
+                                                             G_TYPE_MENU_MODEL))
+#define G_IS_MENU_MODEL_CLASS(class)                        (G_TYPE_CHECK_CLASS_TYPE ((class),                       \
+                                                             G_TYPE_MENU_MODEL))
+#define G_MENU_MODEL_GET_CLASS(inst)                        (G_TYPE_INSTANCE_GET_CLASS ((inst),                      \
+                                                             G_TYPE_MENU_MODEL, GMenuModelClass))
+
+
 
 /**
  * G_MENU_ATTRIBUTE_ACTION:
@@ -112,18 +125,6 @@
  **/
 #define G_MENU_LINK_SECTION "section"
 
-#define G_TYPE_MENU_MODEL                                   (g_menu_model_get_type ())
-#define G_MENU_MODEL(inst)                                  (G_TYPE_CHECK_INSTANCE_CAST ((inst),                     \
-                                                             G_TYPE_MENU_MODEL, GMenuModel))
-#define G_MENU_MODEL_CLASS(class)                           (G_TYPE_CHECK_CLASS_CAST ((class),                       \
-                                                             G_TYPE_MENU_MODEL, GMenuModelClass))
-#define G_IS_MENU_MODEL(inst)                               (G_TYPE_CHECK_INSTANCE_TYPE ((inst),                     \
-                                                             G_TYPE_MENU_MODEL))
-#define G_IS_MENU_MODEL_CLASS(class)                        (G_TYPE_CHECK_CLASS_TYPE ((class),                       \
-                                                             G_TYPE_MENU_MODEL))
-#define G_MENU_MODEL_GET_CLASS(inst)                        (G_TYPE_INSTANCE_GET_CLASS ((inst),                      \
-                                                             G_TYPE_MENU_MODEL, GMenuModelClass))
-
 typedef struct _GMenuModelPrivate                           GMenuModelPrivate;
 typedef struct _GMenuModelClass                             GMenuModelClass;
 
@@ -182,54 +183,43 @@ struct _GMenuModelClass
                                                              const gchar         *link);
 };
 
-GIO_AVAILABLE_IN_2_32
+
 GType                   g_menu_model_get_type                           (void) ;
 
-GIO_AVAILABLE_IN_2_32
+
 gboolean                g_menu_model_is_mutable                         (GMenuModel         *model);
-GIO_AVAILABLE_IN_2_32
+
 gint                    g_menu_model_get_n_items                        (GMenuModel         *model);
 
-GIO_AVAILABLE_IN_2_32
+
 GMenuAttributeIter *    g_menu_model_iterate_item_attributes            (GMenuModel         *model,
                                                                          gint                item_index);
-GIO_AVAILABLE_IN_2_32
+
 GVariant *              g_menu_model_get_item_attribute_value           (GMenuModel         *model,
                                                                          gint                item_index,
                                                                          const gchar        *attribute,
                                                                          const GVariantType *expected_type);
-GIO_AVAILABLE_IN_2_32
+
 gboolean                g_menu_model_get_item_attribute                 (GMenuModel         *model,
                                                                          gint                item_index,
                                                                          const gchar        *attribute,
                                                                          const gchar        *format_string,
                                                                          ...);
-GIO_AVAILABLE_IN_2_32
+
 GMenuLinkIter *         g_menu_model_iterate_item_links                 (GMenuModel         *model,
                                                                          gint                item_index);
-GIO_AVAILABLE_IN_2_32
+
 GMenuModel *            g_menu_model_get_item_link                      (GMenuModel         *model,
                                                                          gint                item_index,
                                                                          const gchar        *link);
 
-GIO_AVAILABLE_IN_2_32
+
 void                    g_menu_model_items_changed                      (GMenuModel         *model,
                                                                          gint                position,
                                                                          gint                removed,
                                                                          gint                added);
 
 
-#define G_TYPE_MENU_ATTRIBUTE_ITER                          (g_menu_attribute_iter_get_type ())
-#define G_MENU_ATTRIBUTE_ITER(inst)                         (G_TYPE_CHECK_INSTANCE_CAST ((inst),                     \
-                                                             G_TYPE_MENU_ATTRIBUTE_ITER, GMenuAttributeIter))
-#define G_MENU_ATTRIBUTE_ITER_CLASS(class)                  (G_TYPE_CHECK_CLASS_CAST ((class),                       \
-                                                             G_TYPE_MENU_ATTRIBUTE_ITER, GMenuAttributeIterClass))
-#define G_IS_MENU_ATTRIBUTE_ITER(inst)                      (G_TYPE_CHECK_INSTANCE_TYPE ((inst),                     \
-                                                             G_TYPE_MENU_ATTRIBUTE_ITER))
-#define G_IS_MENU_ATTRIBUTE_ITER_CLASS(class)               (G_TYPE_CHECK_CLASS_TYPE ((class),                       \
-                                                             G_TYPE_MENU_ATTRIBUTE_ITER))
-#define G_MENU_ATTRIBUTE_ITER_GET_CLASS(inst)               (G_TYPE_INSTANCE_GET_CLASS ((inst),                      \
-                                                             G_TYPE_MENU_ATTRIBUTE_ITER, GMenuAttributeIterClass))
 
 struct _GMenuAttributeIter
 {
@@ -246,32 +236,21 @@ struct _GMenuAttributeIterClass
                              GVariant           **value);
 };
 
-GIO_AVAILABLE_IN_2_32
+
 GType                   g_menu_attribute_iter_get_type                  (void) ;
 
-GIO_AVAILABLE_IN_2_32
+
 gboolean                g_menu_attribute_iter_get_next                  (GMenuAttributeIter  *iter,
                                                                          const gchar        **out_name,
                                                                          GVariant           **value);
-GIO_AVAILABLE_IN_2_32
+
 gboolean                g_menu_attribute_iter_next                      (GMenuAttributeIter  *iter);
-GIO_AVAILABLE_IN_2_32
+
 const gchar *           g_menu_attribute_iter_get_name                  (GMenuAttributeIter  *iter);
-GIO_AVAILABLE_IN_2_32
+
 GVariant *              g_menu_attribute_iter_get_value                 (GMenuAttributeIter  *iter);
 
 
-#define G_TYPE_MENU_LINK_ITER                               (g_menu_link_iter_get_type ())
-#define G_MENU_LINK_ITER(inst)                              (G_TYPE_CHECK_INSTANCE_CAST ((inst),                     \
-                                                             G_TYPE_MENU_LINK_ITER, GMenuLinkIter))
-#define G_MENU_LINK_ITER_CLASS(class)                       (G_TYPE_CHECK_CLASS_CAST ((class),                       \
-                                                             G_TYPE_MENU_LINK_ITER, GMenuLinkIterClass))
-#define G_IS_MENU_LINK_ITER(inst)                           (G_TYPE_CHECK_INSTANCE_TYPE ((inst),                     \
-                                                             G_TYPE_MENU_LINK_ITER))
-#define G_IS_MENU_LINK_ITER_CLASS(class)                    (G_TYPE_CHECK_CLASS_TYPE ((class),                       \
-                                                             G_TYPE_MENU_LINK_ITER))
-#define G_MENU_LINK_ITER_GET_CLASS(inst)                    (G_TYPE_INSTANCE_GET_CLASS ((inst),                      \
-                                                             G_TYPE_MENU_LINK_ITER, GMenuLinkIterClass))
 
 struct _GMenuLinkIter
 {
@@ -288,18 +267,18 @@ struct _GMenuLinkIterClass
                              GMenuModel    **value);
 };
 
-GIO_AVAILABLE_IN_2_32
+
 GType                   g_menu_link_iter_get_type                       (void) ;
 
-GIO_AVAILABLE_IN_2_32
+
 gboolean                g_menu_link_iter_get_next                       (GMenuLinkIter  *iter,
                                                                          const gchar   **out_link,
                                                                          GMenuModel    **value);
-GIO_AVAILABLE_IN_2_32
+
 gboolean                g_menu_link_iter_next                           (GMenuLinkIter  *iter);
-GIO_AVAILABLE_IN_2_32
+
 const gchar *           g_menu_link_iter_get_name                       (GMenuLinkIter  *iter);
-GIO_AVAILABLE_IN_2_32
+
 GMenuModel *            g_menu_link_iter_get_value                      (GMenuLinkIter  *iter);
 
 
