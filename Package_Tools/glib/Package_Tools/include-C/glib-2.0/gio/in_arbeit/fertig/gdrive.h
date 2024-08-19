@@ -183,7 +183,6 @@ GIcon *  g_drive_get_symbolic_icon        (GDrive               *drive);
 gboolean g_drive_has_volumes              (GDrive               *drive);
 
 GList *  g_drive_get_volumes              (GDrive               *drive);
-GIO_AVAILABLE_IN_2_50
 gboolean g_drive_is_removable             (GDrive               *drive);
 
 gboolean g_drive_is_media_removable       (GDrive               *drive);
@@ -195,14 +194,12 @@ gboolean g_drive_is_media_check_automatic (GDrive               *drive);
 gboolean g_drive_can_poll_for_media       (GDrive               *drive);
 
 gboolean g_drive_can_eject                (GDrive               *drive);
-GIO_DEPRECATED_FOR(g_drive_eject_with_operation)
 void     g_drive_eject                    (GDrive               *drive,
                                            GMountUnmountFlags    flags,
                                            GCancellable         *cancellable,
                                            GAsyncReadyCallback   callback,
                                            gpointer              user_data);
 
-GIO_DEPRECATED_FOR(g_drive_eject_with_operation_finish)
 gboolean g_drive_eject_finish             (GDrive               *drive,
                                            GAsyncResult         *result,
                                            GError              **error);
@@ -266,7 +263,6 @@ gboolean    g_drive_eject_with_operation_finish (GDrive            *drive,
                                                GAsyncResult        *result,
                                                GError             **error);
 
-GIO_AVAILABLE_IN_2_32
 const gchar *g_drive_get_sort_key         (GDrive               *drive);
 
 

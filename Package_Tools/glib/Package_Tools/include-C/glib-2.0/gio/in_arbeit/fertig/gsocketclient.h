@@ -112,14 +112,10 @@ gboolean                g_socket_client_get_tls                         (GSocket
 
 void                    g_socket_client_set_tls                         (GSocketClient        *client,
 									 gboolean              tls);
-GIO_DEPRECATED_IN_2_72
 GTlsCertificateFlags    g_socket_client_get_tls_validation_flags        (GSocketClient        *client);
-GIO_DEPRECATED_IN_2_72
 void                    g_socket_client_set_tls_validation_flags        (GSocketClient        *client,
 									 GTlsCertificateFlags  flags);
-GIO_AVAILABLE_IN_2_36
 GProxyResolver         *g_socket_client_get_proxy_resolver              (GSocketClient        *client);
-GIO_AVAILABLE_IN_2_36
 void                    g_socket_client_set_proxy_resolver              (GSocketClient        *client,
                                                                          GProxyResolver       *proxy_resolver);
 
@@ -140,7 +136,6 @@ GSocketConnection *     g_socket_client_connect_to_service              (GSocket
 									 const gchar          *service,
                                                                          GCancellable         *cancellable,
                                                                          GError              **error);
-GIO_AVAILABLE_IN_2_26
 GSocketConnection *     g_socket_client_connect_to_uri                  (GSocketClient        *client,
 									 const gchar          *uri,
 									 guint16               default_port,

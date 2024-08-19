@@ -73,20 +73,16 @@ struct _GSocketConnection
 
 GType              g_socket_connection_get_type                  (void) ;
 
-GIO_AVAILABLE_IN_2_32
 gboolean           g_socket_connection_is_connected              (GSocketConnection  *connection);
-GIO_AVAILABLE_IN_2_32
 gboolean           g_socket_connection_connect                   (GSocketConnection  *connection,
 								  GSocketAddress     *address,
 								  GCancellable       *cancellable,
 								  GError            **error);
-GIO_AVAILABLE_IN_2_32
 void               g_socket_connection_connect_async             (GSocketConnection  *connection,
 								  GSocketAddress     *address,
 								  GCancellable       *cancellable,
 								  GAsyncReadyCallback callback,
 								  gpointer            user_data);
-GIO_AVAILABLE_IN_2_32
 gboolean           g_socket_connection_connect_finish            (GSocketConnection  *connection,
 								  GAsyncResult       *result,
 								  GError            **error);

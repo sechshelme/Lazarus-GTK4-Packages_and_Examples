@@ -38,22 +38,22 @@
 
 typedef struct _GTaskClass   GTaskClass;
 
-GIO_AVAILABLE_IN_2_36
+
 GType         g_task_get_type              (void) ;
 
-GIO_AVAILABLE_IN_2_36
+
 GTask        *g_task_new                   (gpointer             source_object,
                                             GCancellable        *cancellable,
                                             GAsyncReadyCallback  callback,
                                             gpointer             callback_data);
 
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_report_error          (gpointer             source_object,
                                             GAsyncReadyCallback  callback,
                                             gpointer             callback_data,
                                             gpointer             source_tag,
                                             GError              *error);
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_report_new_error      (gpointer             source_object,
                                             GAsyncReadyCallback  callback,
                                             gpointer             callback_data,
@@ -61,68 +61,44 @@ void          g_task_report_new_error      (gpointer             source_object,
                                             GQuark               domain,
                                             gint                 code,
                                             const char          *format,
-                                            ...) G_GNUC_PRINTF(7, 8);
+                                            ...) ;
 
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_set_task_data         (GTask               *task,
                                             gpointer             task_data,
                                             GDestroyNotify       task_data_destroy);
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_set_priority          (GTask               *task,
                                             gint                 priority);
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_set_check_cancellable (GTask               *task,
                                             gboolean             check_cancellable);
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_set_source_tag        (GTask               *task,
                                             gpointer             source_tag);
-GIO_AVAILABLE_IN_2_60
 void          g_task_set_name              (GTask               *task,
                                             const gchar         *name);
-GIO_AVAILABLE_IN_2_76
 void          g_task_set_static_name       (GTask               *task,
                                             const gchar         *name);
 
-/* Macro wrapper to set the task name when setting the source tag. */
-#if GLIB_VERSION_MIN_REQUIRED >= GLIB_VERSION_2_76
-#define g_task_set_source_tag(task, tag) G_STMT_START { \
-  GTask *_task = (task); \
-  (g_task_set_source_tag) (_task, tag); \
-  if (g_task_get_name (_task) == NULL) \
-    g_task_set_static_name (_task, G_STRINGIFY (tag)); \
-} G_STMT_END
-#endif
 
-#if GLIB_VERSION_MIN_REQUIRED >= GLIB_VERSION_2_76
-#if defined (__GNUC__) && (__GNUC__ >= 2)
-#define g_task_set_name(task, name) G_STMT_START { \
-  GTask *_task = (task); \
-  if (__builtin_constant_p (name)) \
-    g_task_set_static_name (_task, name); \
-  else \
-    g_task_set_name (_task, name); \
-} G_STMT_END
-#endif
-#endif
 
-GIO_AVAILABLE_IN_2_36
 gpointer      g_task_get_source_object     (GTask               *task);
-GIO_AVAILABLE_IN_2_36
+
 gpointer      g_task_get_task_data         (GTask               *task);
-GIO_AVAILABLE_IN_2_36
+
 gint          g_task_get_priority          (GTask               *task);
-GIO_AVAILABLE_IN_2_36
+
 GMainContext *g_task_get_context           (GTask               *task);
-GIO_AVAILABLE_IN_2_36
+
 GCancellable *g_task_get_cancellable       (GTask               *task);
-GIO_AVAILABLE_IN_2_36
+
 gboolean      g_task_get_check_cancellable (GTask               *task);
-GIO_AVAILABLE_IN_2_36
+
 gpointer      g_task_get_source_tag        (GTask               *task);
-GIO_AVAILABLE_IN_2_60
 const gchar  *g_task_get_name              (GTask               *task);
 
-GIO_AVAILABLE_IN_2_36
+
 gboolean      g_task_is_valid              (gpointer             result,
                                             gpointer             source_object);
 
@@ -131,79 +107,74 @@ typedef void (*GTaskThreadFunc)           (GTask           *task,
                                            gpointer         source_object,
                                            gpointer         task_data,
                                            GCancellable    *cancellable);
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_run_in_thread        (GTask           *task,
                                            GTaskThreadFunc  task_func);
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_run_in_thread_sync   (GTask           *task,
                                            GTaskThreadFunc  task_func);
-GIO_AVAILABLE_IN_2_36
+
 gboolean      g_task_set_return_on_cancel (GTask           *task,
                                            gboolean         return_on_cancel);
-GIO_AVAILABLE_IN_2_36
+
 gboolean      g_task_get_return_on_cancel (GTask           *task);
 
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_attach_source        (GTask           *task,
                                            GSource         *source,
                                            GSourceFunc      callback);
 
 
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_return_pointer            (GTask           *task,
                                                 gpointer         result,
                                                 GDestroyNotify   result_destroy);
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_return_boolean            (GTask           *task,
                                                 gboolean         result);
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_return_int                (GTask           *task,
                                                 gssize           result);
 
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_return_error              (GTask           *task,
                                                 GError          *error);
-GIO_AVAILABLE_IN_2_80
 void          g_task_return_prefixed_error     (GTask           *task,
                                                 GError          *error,
                                                 const char      *format,
-                                                ...) G_GNUC_PRINTF (3, 4);
+                                                ...) ;
 
-GIO_AVAILABLE_IN_2_36
+
 void          g_task_return_new_error          (GTask           *task,
                                                 GQuark           domain,
                                                 gint             code,
                                                 const char      *format,
-                                                ...) G_GNUC_PRINTF (4, 5);
+                                                ...) ;
 
-GIO_AVAILABLE_IN_2_80
 void          g_task_return_new_error_literal  (GTask           *task,
                                                 GQuark           domain,
                                                 gint             code,
                                                 const char      *message);
-GIO_AVAILABLE_IN_2_64
 void          g_task_return_value              (GTask           *task,
                                                 GValue          *result);
 
-GIO_AVAILABLE_IN_2_36
+
 gboolean      g_task_return_error_if_cancelled (GTask           *task);
 
-GIO_AVAILABLE_IN_2_36
+
 gpointer      g_task_propagate_pointer         (GTask           *task,
                                                 GError         **error);
-GIO_AVAILABLE_IN_2_36
+
 gboolean      g_task_propagate_boolean         (GTask           *task,
                                                 GError         **error);
-GIO_AVAILABLE_IN_2_36
+
 gssize        g_task_propagate_int             (GTask           *task,
                                                 GError         **error);
-GIO_AVAILABLE_IN_2_64
 gboolean      g_task_propagate_value           (GTask           *task,
                                                 GValue          *value,
                                                 GError         **error);
-GIO_AVAILABLE_IN_2_36
+
 gboolean      g_task_had_error                 (GTask           *task);
-GIO_AVAILABLE_IN_2_44
 gboolean      g_task_get_completed             (GTask           *task);
 
 /*< private >*/

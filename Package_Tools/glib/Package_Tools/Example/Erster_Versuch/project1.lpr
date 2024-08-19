@@ -116,6 +116,7 @@ uses
 
   giotypes,
   gioenums,                // io.
+  gioenumtypes,            // io.
 
   gaction,                 // io.
   gactiongroup,            // io.
@@ -129,26 +130,34 @@ uses
   gdbusobjectproxy,        // io.
   gdbusintrospection,      // io.
   gunixfdlist,             // io.
+  gdbusmessage,            // io. -> gunixfdlist
   gdbusproxy,              // io. -> gdbusintrospection, gunixfdlist
   gdbusobjectmanagerclient,// io. -> gdbusobjectproxy, gdbusproxy
   gioerror,                // io.
   gbytesicon,              // io.
   gappinfo,                // io.
   gsettingsschema,         // io.
-  gsettings,               // io. gsettingsschema, gaction
-
+  gsettings,               // io. -> gsettingsschema, gaction
+  gtask,                   // io.
   gfileinfo,               // io.
   gfileenumerator,         // io.
   gfileattribute,          // io.
   gmountoperation,         // io.
+  gdrive,                  // io. -> gmountoperation
   gvolume,                 // io. -> gmountoperation
   gmount,                  // io. -> gvolume, gmountoperation
   gfilemonitor,            // io.
   ginputstream,            // io.
   goutputstream,           // io. -> ginputstream
+  gfilteroutputstream,     // io. -> goutputstream
   gfileinputstream,        // io. -> ginputstream
   gfilterinputstream,      // io. -> ginputstream
   giostream,               // io. -> ginputstream, goutputstream
+  gbufferedinputstream,    // io. -> gfilterinputstream, ginputstream
+  gbufferedoutputstream,   // io. -> gfilteroutputstream, goutputstream
+  gdatainputstream,        // io. -> gbufferedinputstream, ginputstream
+  gsocketconnection,       // io. -> giostream
+  gsocketclient,           // io. -> giostream, gsocketconnection
   gapplicationcommandline, // io. -> ginputstream
   gapplication,            // io. -> gapplicationcommandline
   gfileiostream,           // io. -> giostream
@@ -158,9 +167,12 @@ uses
   gtlscertificate,         // io.
   gtlsdatabase,            // io. -> gtlscertificate
   gtlsconnection,          // io. -> gtlscertificate
+  gdtlsconnection,         // io. -> gtlscertificate
   gtlspassword,            // io.
   gtlsinteraction,         // io. -> gtlsconnection, gtlspassword
   gmenumodel,              // io.
+
+
 
 
   // ----

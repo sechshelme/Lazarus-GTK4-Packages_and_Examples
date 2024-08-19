@@ -54,7 +54,7 @@ GDBusMessage             *g_dbus_message_new_method_reply   (GDBusMessage       
 GDBusMessage             *g_dbus_message_new_method_error   (GDBusMessage             *method_call_message,
                                                              const gchar              *error_name,
                                                              const gchar              *error_message_format,
-                                                             ...) G_GNUC_PRINTF(3, 4);
+                                                             ...) ;
 
 GDBusMessage             *g_dbus_message_new_method_error_valist (GDBusMessage             *method_call_message,
                                                                   const gchar              *error_name,
@@ -176,7 +176,6 @@ void                      g_dbus_message_set_num_unix_fds   (GDBusMessage       
 
 
 const gchar              *g_dbus_message_get_arg0           (GDBusMessage             *message);
-GIO_AVAILABLE_IN_2_80
 const gchar              *g_dbus_message_get_arg0_path      (GDBusMessage             *message);
 
 

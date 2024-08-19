@@ -154,6 +154,10 @@ type
       end;
   PGNotification=^TGNotification;
 
+  TGProxyResolver=record
+      end;
+  PGProxyResolver=^TGProxyResolver;
+
   // =====
 
 
