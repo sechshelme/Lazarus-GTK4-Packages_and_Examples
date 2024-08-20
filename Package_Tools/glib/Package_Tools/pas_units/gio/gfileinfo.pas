@@ -9,11 +9,6 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
-type
-  TGFileInfo = record
-  end;
-  PGFileInfo = ^TGFileInfo;
-
 const
   G_FILE_ATTRIBUTE_STANDARD_TYPE = 'standard::type';
   G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN = 'standard::is-hidden';

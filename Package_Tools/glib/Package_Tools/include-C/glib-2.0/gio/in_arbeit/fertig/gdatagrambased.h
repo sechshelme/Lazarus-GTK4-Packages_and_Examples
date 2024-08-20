@@ -93,11 +93,11 @@ struct _GDatagramBasedInterface
                                          GError              **error);
 };
 
-GIO_AVAILABLE_IN_2_48
+
 GType
 g_datagram_based_get_type             (void);
 
-GIO_AVAILABLE_IN_2_48
+
 gint
 g_datagram_based_receive_messages     (GDatagramBased       *datagram_based,
                                        GInputMessage        *messages,
@@ -107,7 +107,7 @@ g_datagram_based_receive_messages     (GDatagramBased       *datagram_based,
                                        GCancellable         *cancellable,
                                        GError              **error);
 
-GIO_AVAILABLE_IN_2_48
+
 gint
 g_datagram_based_send_messages        (GDatagramBased       *datagram_based,
                                        GOutputMessage       *messages,
@@ -117,16 +117,16 @@ g_datagram_based_send_messages        (GDatagramBased       *datagram_based,
                                        GCancellable         *cancellable,
                                        GError              **error);
 
-GIO_AVAILABLE_IN_2_48
+
 GSource *
 g_datagram_based_create_source        (GDatagramBased       *datagram_based,
                                        GIOCondition          condition,
                                        GCancellable         *cancellable);
-GIO_AVAILABLE_IN_2_48
+
 GIOCondition
 g_datagram_based_condition_check      (GDatagramBased       *datagram_based,
                                        GIOCondition          condition);
-GIO_AVAILABLE_IN_2_48
+
 gboolean
 g_datagram_based_condition_wait       (GDatagramBased       *datagram_based,
                                        GIOCondition          condition,

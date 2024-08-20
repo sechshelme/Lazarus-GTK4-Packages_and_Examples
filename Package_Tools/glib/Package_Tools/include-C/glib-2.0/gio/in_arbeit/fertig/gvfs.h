@@ -34,9 +34,9 @@
 #define G_TYPE_VFS         (g_vfs_get_type ())
 #define G_VFS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), G_TYPE_VFS, GVfs))
 #define G_VFS_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), G_TYPE_VFS, GVfsClass))
-#define G_VFS_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), G_TYPE_VFS, GVfsClass))
 #define G_IS_VFS(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), G_TYPE_VFS))
 #define G_IS_VFS_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), G_TYPE_VFS))
+#define G_VFS_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), G_TYPE_VFS, GVfsClass))
 
 /**
  * GVfsFileLookupFunc:
@@ -146,7 +146,6 @@ GVfs *                g_vfs_get_default               (void);
 
 GVfs *                g_vfs_get_local                 (void);
 
-GIO_AVAILABLE_IN_2_50
 gboolean              g_vfs_register_uri_scheme       (GVfs               *vfs,
                                                        const char         *scheme,
                                                        GVfsFileLookupFunc  uri_func,
@@ -155,7 +154,6 @@ gboolean              g_vfs_register_uri_scheme       (GVfs               *vfs,
                                                        GVfsFileLookupFunc  parse_name_func,
                                                        gpointer            parse_name_data,
                                                        GDestroyNotify      parse_name_destroy);
-GIO_AVAILABLE_IN_2_50
 gboolean              g_vfs_unregister_uri_scheme     (GVfs               *vfs,
                                                        const char         *scheme);
 

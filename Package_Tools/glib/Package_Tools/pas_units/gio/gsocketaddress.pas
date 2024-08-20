@@ -10,13 +10,6 @@ uses
   {$ENDIF}
 
 type
-  // Ausgelagert
-  //TGSocketAddress = record
-  //  parent_instance: TGObject;
-  //end;
-  //PGSocketAddress = ^TGSocketAddress;
-  //PPGSocketAddress = ^PGSocketAddress;
-
   TGSocketAddressClass = record
     parent_class: TGObjectClass;
     get_family: function(address: PGSocketAddress): TGSocketFamily; cdecl;

@@ -3,7 +3,7 @@ unit gsettings;
 interface
 
 uses
-  common_GLIB, gtypes, gtype, gquark, gvariant, gvarianttype, giotypes, gobject, gioenums, gsettingsschema, gaction;
+  common_GLIB, gtypes, gtype, gquark, gvariant, gvarianttype, giotypes, gobject, gioenums, gsettingsschema, gaction, gsettingsbackend;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

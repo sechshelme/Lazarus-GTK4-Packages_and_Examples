@@ -69,10 +69,8 @@ gpointer g_async_result_get_user_data     (GAsyncResult *res);
 
 GObject *g_async_result_get_source_object (GAsyncResult *res);
 
-GIO_AVAILABLE_IN_2_34
 gboolean g_async_result_legacy_propagate_error (GAsyncResult  *res,
 						GError       **error);
-GIO_AVAILABLE_IN_2_34
 gboolean g_async_result_is_tagged              (GAsyncResult  *res,
 						gpointer       source_tag);
 

@@ -14,6 +14,7 @@ type
   end;
   PGVariant = ^TGVariant;
   PPGVariant = ^PGVariant;
+  PPPGVariant = ^PPGVariant;
 
   PGVariantClass = ^TGVariantClass;
   TGVariantClass = longint;

@@ -53,7 +53,7 @@
  *
  * Since: 2.68
  */
-#define G_DBUS_METHOD_INVOCATION_HANDLED TRUE GIO_AVAILABLE_MACRO_IN_2_68
+#define G_DBUS_METHOD_INVOCATION_HANDLED TRUE 
 
 /**
  * G_DBUS_METHOD_INVOCATION_UNHANDLED:
@@ -68,7 +68,7 @@
  *
  * Since: 2.68
  */
-#define G_DBUS_METHOD_INVOCATION_UNHANDLED FALSE GIO_AVAILABLE_MACRO_IN_2_68
+#define G_DBUS_METHOD_INVOCATION_UNHANDLED FALSE 
 
 
 GType                  g_dbus_method_invocation_get_type             (void) ;
@@ -107,14 +107,14 @@ void                   g_dbus_method_invocation_return_error         (GDBusMetho
                                                                       GQuark                 domain,
                                                                       gint                   code,
                                                                       const gchar           *format,
-                                                                      ...) G_GNUC_PRINTF(4, 5);
+                                                                      ...);
 
 void                   g_dbus_method_invocation_return_error_valist  (GDBusMethodInvocation *invocation,
                                                                       GQuark                 domain,
                                                                       gint                   code,
                                                                       const gchar           *format,
                                                                       va_list                var_args)
-                                                                      G_GNUC_PRINTF(4, 0);
+                                                                      ;
 
 void                   g_dbus_method_invocation_return_error_literal (GDBusMethodInvocation *invocation,
                                                                       GQuark                 domain,

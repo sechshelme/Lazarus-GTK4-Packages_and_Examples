@@ -10,17 +10,6 @@ uses
   {$ENDIF}
 
 type
-  // Ausgelagert
-  //TGCancellablePrivate = record
-  //end;
-  //PGCancellablePrivate = ^TGCancellablePrivate;
-  //
-  //TGCancellable = record
-  //  parent_instance: TGObject;
-  //  priv: PGCancellablePrivate;
-  //end;
-  //PGCancellable = ^TGCancellable;
-
   TGCancellableClass = record
     parent_class: TGObjectClass;
     cancelled: procedure(cancellable: PGCancellable); cdecl;

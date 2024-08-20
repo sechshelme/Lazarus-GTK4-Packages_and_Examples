@@ -10,17 +10,6 @@ uses
   {$ENDIF}
 
 type
-  // Ausgelagert
-  //TGTlsInteractionPrivate = record
-  //end;
-  //PGTlsInteractionPrivate = ^TGTlsInteractionPrivate;
-  //
-  //TGTlsInteraction = record
-  //  parent_instance: TGObject;
-  //  priv: PGTlsInteractionPrivate;
-  //end;
-  //PGTlsInteraction = ^TGTlsInteraction;
-
   TGTlsInteractionClass = record
     parent_class: TGObjectClass;
     ask_password: function(interaction: PGTlsInteraction; password: PGTlsPassword; cancellable: PGCancellable; error: PPGError): TGTlsInteractionResult; cdecl;

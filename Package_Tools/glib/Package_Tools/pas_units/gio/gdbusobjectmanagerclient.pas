@@ -10,21 +10,6 @@ uses
   {$ENDIF}
 
 type
-  // ausgelagert
-  //TGDBusObjectManager = record
-  //end;
-  //PGDBusObjectManager = ^TGDBusObjectManager;
- //
-  //TGDBusObjectManagerClientPrivate=record
-  //    end;
-  //PGDBusObjectManagerClientPrivate=^TGDBusObjectManagerClientPrivate;
-  //
-  //TGDBusObjectManagerClient = record
-  //  parent_instance: TGObject;
-  //  priv: PGDBusObjectManagerClientPrivate;
-  //end;
-  //PGDBusObjectManagerClient = ^TGDBusObjectManagerClient;
-  //
   TGDBusObjectManagerClientClass = record
     parent_class: TGObjectClass;
     interface_proxy_signal: procedure(manager: PGDBusObjectManagerClient; object_proxy: PGDBusObjectProxy; interface_proxy: PGDBusProxy; sender_name: Pgchar; signal_name: Pgchar;

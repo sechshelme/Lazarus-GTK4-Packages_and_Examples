@@ -72,65 +72,61 @@ type
   PPGSocketControlMessage = ^PGSocketControlMessage;
   PPPGSocketControlMessage = ^PPGSocketControlMessage;
 
-  TGFileInfo=record
-      end;
-  PGFileInfo=^TGFileInfo;
-  PPGFileInfo=^PGFileInfo;
-
-  TGFile=record
+  TGFileInfo = record
   end;
-  PGFile=^TGFile;
-  PPGFile=^PGFile;
+  PGFileInfo = ^TGFileInfo;
+  PPGFileInfo = ^PGFileInfo;
 
-  TGMount=record
-      end;
-  PGMount=^TGMount;
+  TGFile = record
+  end;
+  PGFile = ^TGFile;
+  PPGFile = ^PGFile;
 
-  TGAppInfo=record
-      end;
-  PGAppInfo=^TGAppInfo;
+  TGMount = record
+  end;
+  PGMount = ^TGMount;
 
-  TGIcon=record
-      end;
-  PGIcon=^TGIcon;
+  TGAppInfo = record
+  end;
+  PGAppInfo = ^TGAppInfo;
 
-  TGFileAttributeMatcher=record
-      end;
-  PGFileAttributeMatcher=^TGFileAttributeMatcher;
+  TGIcon = record
+  end;
+  PGIcon = ^TGIcon;
 
-  TGDBusAuthObserver=record
-      end;
-  PGDBusAuthObserver=^TGDBusAuthObserver;
+  TGFileAttributeMatcher = record
+  end;
+  PGFileAttributeMatcher = ^TGFileAttributeMatcher;
 
-  TGDBusMessage=record
-      end;
-  PGDBusMessage=^TGDBusMessage;
+  TGDBusAuthObserver = record
+  end;
+  PGDBusAuthObserver = ^TGDBusAuthObserver;
 
-  TGDBusMethodInvocation=record
-      end;
-  PGDBusMethodInvocation=^TGDBusMethodInvocation;
+  TGDBusMessage = record
+  end;
+  PGDBusMessage = ^TGDBusMessage;
 
-  TGBytesIcon=record
-      end;
-  PGBytesIcon=^TGBytesIcon;
+  TGDBusMethodInvocation = record
+  end;
+  PGDBusMethodInvocation = ^TGDBusMethodInvocation;
 
-  TGSettingsBackend=record
-      end;
-  PGSettingsBackend=^TGSettingsBackend;
+  TGBytesIcon = record
+  end;
+  PGBytesIcon = ^TGBytesIcon;
 
-  TGSocketConnectable=record
-      end;
-  PGSocketConnectable=^TGSocketConnectable;
+  TGSocketConnectable = record
+  end;
+  PGSocketConnectable = ^TGSocketConnectable;
 
-  TGTlsDatabasePrivate=record
-        end;
-  PGTlsDatabasePrivate=^TGTlsDatabasePrivate;
+  TGTlsDatabasePrivate = record
+  end;
+  PGTlsDatabasePrivate = ^TGTlsDatabasePrivate;
 
-  PGTlsDatabase = ^TGTlsDatabase;
   TGTlsDatabase = record
-      parent_instance : TGObject;
-      priv : PGTlsDatabasePrivate;
-    end;
+    parent_instance: TGObject;
+    priv: PGTlsDatabasePrivate;
+  end;
+  PGTlsDatabase = ^TGTlsDatabase;
 
   TGTlsInteractionPrivate = record
   end;
@@ -142,21 +138,29 @@ type
   end;
   PGTlsInteraction = ^TGTlsInteraction;
 
-  TGDrive=record
-      end;
-  PGDrive=^TGDrive;
+  TGDrive = record
+  end;
+  PGDrive = ^TGDrive;
 
-  TGActionGroup=record
-      end;
-  PGActionGroup=^tGActionGroup;
+  TGNotification = record
+  end;
+  PGNotification = ^TGNotification;
 
-  TGNotification=record
-      end;
-  PGNotification=^TGNotification;
+  TGProxyResolver = record
+  end;
+  PGProxyResolver = ^TGProxyResolver;
 
-  TGProxyResolver=record
-      end;
-  PGProxyResolver=^TGProxyResolver;
+  TGIOExtensionPoint = record
+  end;
+  PGIOExtensionPoint = ^TGIOExtensionPoint;
+
+  TGIOExtension = record
+  end;
+  PGIOExtension = ^TGIOExtension;
+
+  TGSimpleAction = record
+  end;
+  PGSimpleAction = ^TGSimpleAction;
 
   // =====
 

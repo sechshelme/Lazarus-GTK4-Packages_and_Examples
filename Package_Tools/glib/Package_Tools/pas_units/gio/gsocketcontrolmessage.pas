@@ -10,19 +10,6 @@ uses
   {$ENDIF}
 
 type
-  // Ausgelagert
-  //TGSocketControlMessagePrivate = record
-  //end;
-  //PGSocketControlMessagePrivate = ^TGSocketControlMessagePrivate;
-  //
-  //TGSocketControlMessage = record
-  //  parent_instance: TGObject;
-  //  priv: PGSocketControlMessagePrivate;
-  //end;
-  //PGSocketControlMessage = ^TGSocketControlMessage;
-  //PPGSocketControlMessage = ^PGSocketControlMessage;
-  //PPPGSocketControlMessage = ^PPGSocketControlMessage;
-
   TGSocketControlMessageClass = record
     parent_class: TGObjectClass;
     get_size: function(message: PGSocketControlMessage): Tgsize; cdecl;

@@ -122,7 +122,6 @@ GTypeClass*        g_io_extension_ref_class                   (GIOExtension     
  * statically. The old symbol names continue to be supported, but cannot be used
  * for static builds.
  **/
-G_MODULE_EXPORT
 void   g_io_module_load   (GIOModule *module);
 
 /**
@@ -142,7 +141,6 @@ void   g_io_module_load   (GIOModule *module);
  * statically. The old symbol names continue to be supported, but cannot be used
  * for static builds.
  **/
-G_MODULE_EXPORT
 void   g_io_module_unload (GIOModule *module);
 
 /**
@@ -186,7 +184,6 @@ void   g_io_module_unload (GIOModule *module);
  *
  * Since: 2.24
  **/
-G_MODULE_EXPORT
 char **g_io_module_query (void);
 
 

@@ -93,7 +93,6 @@ void     g_async_initable_new_async        (GType                 object_type,
 
 
 
-GIO_DEPRECATED_IN_2_54_FOR(g_object_new_with_properties and g_async_initable_init_async)
 void     g_async_initable_newv_async       (GType                 object_type,
 					    guint                 n_parameters,
 					    GParameter           *parameters,

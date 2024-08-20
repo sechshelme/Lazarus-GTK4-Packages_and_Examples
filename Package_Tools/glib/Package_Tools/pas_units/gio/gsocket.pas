@@ -11,17 +11,6 @@ uses
 
 
 type
-  // ausgelagert
-  //TGSocketPrivate = record
-  //end;
-  //PGSocketPrivate = ^TGSocketPrivate;
-  //
-  //TGSocket = record
-  //  parent_instance: TGObject;
-  //  priv: PGSocketPrivate;
-  //end;
-  //PGSocket = ^TGSocket;
-
   TGSocketClass = record
     parent_class: TGObjectClass;
     _g_reserved1: procedure; cdecl;

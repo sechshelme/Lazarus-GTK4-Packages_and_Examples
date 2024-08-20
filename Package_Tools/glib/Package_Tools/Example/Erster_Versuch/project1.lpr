@@ -119,7 +119,15 @@ uses
   gioenumtypes,            // io.
 
   gaction,                 // io.
+  gactionmap,              // io. -> gaction
+  giomodule,               // io.
+  gsimpleasyncresult,      // io.
   gactiongroup,            // io.
+  gactiongroupexporter,    // io. -> gactiongroup
+  gvolumemonitor,          // io.
+  gdatagrambased,          // io.
+  gasyncinitable,          // io.
+  gasyncresult,            // io.
   gcancellable,            // io. -> gclosure
   ginetaddress,            // io.
   ginetaddressmask,        // io. -> ginetaddress
@@ -133,15 +141,19 @@ uses
   gdbusmessage,            // io. -> gunixfdlist
   gdbusproxy,              // io. -> gdbusintrospection, gunixfdlist
   gdbusobjectmanagerclient,// io. -> gdbusobjectproxy, gdbusproxy
+  gdbusmethodinvocation,   // io. -> gunixfdlist, gdbusintrospection
   gioerror,                // io.
   gbytesicon,              // io.
   gappinfo,                // io.
   gsettingsschema,         // io.
-  gsettings,               // io. -> gsettingsschema, gaction
+  gpermission,             // io.
+  gsettingsbackend,        // io. -> gpermission
+  gsettings,               // io. -> gsettingsschema, gaction, gsettingsbackend
   gtask,                   // io.
   gfileinfo,               // io.
   gfileenumerator,         // io.
   gfileattribute,          // io.
+  gvfs,                    // io. -> gfileattribute
   gmountoperation,         // io.
   gdrive,                  // io. -> gmountoperation
   gvolume,                 // io. -> gmountoperation
@@ -150,6 +162,7 @@ uses
   ginputstream,            // io.
   goutputstream,           // io. -> ginputstream
   gsubprocess,             // io. -> goutputstream, ginputstream
+  gsubprocesslauncher,     // io. -> gsubprocess
   gfilteroutputstream,     // io. -> goutputstream
   gfileinputstream,        // io. -> ginputstream
   gfilterinputstream,      // io. -> ginputstream
@@ -158,9 +171,11 @@ uses
   gbufferedoutputstream,   // io. -> gfilteroutputstream, goutputstream
   gdatainputstream,        // io. -> gbufferedinputstream, ginputstream
   gsocketconnection,       // io. -> giostream
+  gunixconnection,         // io. -> gsocketconnection
+  gsocketlistener,         // io. -> gsocketconnection
   gsocketclient,           // io. -> giostream, gsocketconnection
   gapplicationcommandline, // io. -> ginputstream
-  gapplication,            // io. -> gapplicationcommandline
+  gapplication,            // io. -> gapplicationcommandline, gactiongroup
   gfileiostream,           // io. -> giostream
   gfileoutputstream,       // io. -> goutputstream
   gfile,                   // io. -> gfileenumerator, gfileattribute, gfileinputstream, gfileoutputstream, gfilemonitor, gmountoperation, gfileiostream
@@ -173,6 +188,8 @@ uses
   gtlsinteraction,         // io. -> gtlsconnection, gtlspassword
   gmenumodel,              // io.
   gmenu,                   // io. -> gmenumodel
+
+
 
 
 

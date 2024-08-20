@@ -14,17 +14,6 @@ const
   G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT = '1.3.6.1.5.5.7.3.2';
 
 type
-  // Ausgelagert
-  //TGTlsDatabasePrivate=record
-  //      end;
-  //PGTlsDatabasePrivate=^TGTlsDatabasePrivate;
-  //
-  //PGTlsDatabase = ^TGTlsDatabase;
-  //TGTlsDatabase = record
-  //    parent_instance : TGObject;
-  //    priv : PGTlsDatabasePrivate;
-  //  end;
-
   PGTlsDatabaseClass = ^TGTlsDatabaseClass;
 
   TGTlsDatabaseClass = record
