@@ -75,7 +75,6 @@ begin
     WriteLn(ct: 4, ' stat:', stat, '  duration: ', pE^.Duration);
     Inc(ct);
   until stat or (ct > 100);
-  gst_bin_add();
 end;
 
 procedure state_changed_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
