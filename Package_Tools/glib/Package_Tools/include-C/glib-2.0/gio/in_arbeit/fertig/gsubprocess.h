@@ -35,129 +35,129 @@
 #define G_SUBPROCESS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), G_TYPE_SUBPROCESS, GSubprocess))
 #define G_IS_SUBPROCESS(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), G_TYPE_SUBPROCESS))
 
-GIO_AVAILABLE_IN_2_40
+
 GType            g_subprocess_get_type                  (void) ;
 
 /**** Core API ****/
 
-GIO_AVAILABLE_IN_2_40
+
 GSubprocess *    g_subprocess_new                       (GSubprocessFlags        flags,
                                                          GError                **error,
                                                          const gchar            *argv0,
                                                          ...) ;
-GIO_AVAILABLE_IN_2_40
+
 GSubprocess *    g_subprocess_newv                      (const gchar * const  *argv,
                                                          GSubprocessFlags      flags,
                                                          GError              **error);
 
-GIO_AVAILABLE_IN_2_40
+
 GOutputStream *  g_subprocess_get_stdin_pipe            (GSubprocess          *subprocess);
 
-GIO_AVAILABLE_IN_2_40
+
 GInputStream *   g_subprocess_get_stdout_pipe           (GSubprocess          *subprocess);
 
-GIO_AVAILABLE_IN_2_40
+
 GInputStream *   g_subprocess_get_stderr_pipe           (GSubprocess          *subprocess);
 
-GIO_AVAILABLE_IN_2_40
+
 const gchar *    g_subprocess_get_identifier            (GSubprocess          *subprocess);
 
 #ifdef G_OS_UNIX
-GIO_AVAILABLE_IN_2_40
+
 void             g_subprocess_send_signal               (GSubprocess          *subprocess,
                                                          gint                  signal_num);
 #endif
 
-GIO_AVAILABLE_IN_2_40
+
 void             g_subprocess_force_exit                (GSubprocess          *subprocess);
 
-GIO_AVAILABLE_IN_2_40
+
 gboolean         g_subprocess_wait                      (GSubprocess          *subprocess,
                                                          GCancellable         *cancellable,
                                                          GError              **error);
 
-GIO_AVAILABLE_IN_2_40
+
 void             g_subprocess_wait_async                (GSubprocess          *subprocess,
                                                          GCancellable         *cancellable,
                                                          GAsyncReadyCallback   callback,
                                                          gpointer              user_data);
 
-GIO_AVAILABLE_IN_2_40
+
 gboolean         g_subprocess_wait_finish               (GSubprocess          *subprocess,
                                                          GAsyncResult         *result,
                                                          GError              **error);
 
-GIO_AVAILABLE_IN_2_40
+
 gboolean         g_subprocess_wait_check                (GSubprocess          *subprocess,
                                                          GCancellable         *cancellable,
                                                          GError              **error);
 
-GIO_AVAILABLE_IN_2_40
+
 void             g_subprocess_wait_check_async          (GSubprocess          *subprocess,
                                                          GCancellable         *cancellable,
                                                          GAsyncReadyCallback   callback,
                                                          gpointer              user_data);
 
-GIO_AVAILABLE_IN_2_40
+
 gboolean         g_subprocess_wait_check_finish         (GSubprocess          *subprocess,
                                                          GAsyncResult         *result,
                                                          GError              **error);
 
 
-GIO_AVAILABLE_IN_2_40
+
 gint             g_subprocess_get_status                (GSubprocess          *subprocess);
 
-GIO_AVAILABLE_IN_2_40
+
 gboolean         g_subprocess_get_successful            (GSubprocess          *subprocess);
 
-GIO_AVAILABLE_IN_2_40
+
 gboolean         g_subprocess_get_if_exited             (GSubprocess          *subprocess);
 
-GIO_AVAILABLE_IN_2_40
+
 gint             g_subprocess_get_exit_status           (GSubprocess          *subprocess);
 
-GIO_AVAILABLE_IN_2_40
+
 gboolean         g_subprocess_get_if_signaled           (GSubprocess          *subprocess);
 
-GIO_AVAILABLE_IN_2_40
+
 gint             g_subprocess_get_term_sig              (GSubprocess          *subprocess);
 
-GIO_AVAILABLE_IN_2_40
+
 gboolean         g_subprocess_communicate               (GSubprocess          *subprocess,
                                                          GBytes               *stdin_buf,
                                                          GCancellable         *cancellable,
                                                          GBytes              **stdout_buf,
                                                          GBytes              **stderr_buf,
                                                          GError              **error);
-GIO_AVAILABLE_IN_2_40
+
 void            g_subprocess_communicate_async          (GSubprocess          *subprocess,
                                                          GBytes               *stdin_buf,
                                                          GCancellable         *cancellable,
                                                          GAsyncReadyCallback   callback,
                                                          gpointer              user_data);
 
-GIO_AVAILABLE_IN_2_40
+
 gboolean        g_subprocess_communicate_finish         (GSubprocess          *subprocess,
                                                          GAsyncResult         *result,
                                                          GBytes              **stdout_buf,
                                                          GBytes              **stderr_buf,
                                                          GError              **error);
 
-GIO_AVAILABLE_IN_2_40
+
 gboolean         g_subprocess_communicate_utf8          (GSubprocess          *subprocess,
                                                          const char           *stdin_buf,
                                                          GCancellable         *cancellable,
                                                          char                **stdout_buf,
                                                          char                **stderr_buf,
                                                          GError              **error);
-GIO_AVAILABLE_IN_2_40
+
 void            g_subprocess_communicate_utf8_async     (GSubprocess          *subprocess,
                                                          const char           *stdin_buf,
                                                          GCancellable         *cancellable,
                                                          GAsyncReadyCallback   callback,
                                                          gpointer              user_data);
 
-GIO_AVAILABLE_IN_2_40
+
 gboolean        g_subprocess_communicate_utf8_finish    (GSubprocess          *subprocess,
                                                          GAsyncResult         *result,
                                                          char                **stdout_buf,

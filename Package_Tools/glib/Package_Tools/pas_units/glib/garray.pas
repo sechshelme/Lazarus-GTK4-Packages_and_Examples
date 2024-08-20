@@ -13,6 +13,7 @@ type
   TGBytes = record
   end;
   PGBytes = ^TGBytes;
+  PPGBytes = ^PGBytes;
 
   TGArray = record
     Data: Pgchar;

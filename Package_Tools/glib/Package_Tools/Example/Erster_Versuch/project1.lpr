@@ -149,6 +149,7 @@ uses
   gfilemonitor,            // io.
   ginputstream,            // io.
   goutputstream,           // io. -> ginputstream
+  gsubprocess,             // io. -> goutputstream, ginputstream
   gfilteroutputstream,     // io. -> goutputstream
   gfileinputstream,        // io. -> ginputstream
   gfilterinputstream,      // io. -> ginputstream
@@ -171,6 +172,7 @@ uses
   gtlspassword,            // io.
   gtlsinteraction,         // io. -> gtlsconnection, gtlspassword
   gmenumodel,              // io.
+  gmenu,                   // io. -> gmenumodel
 
 
 

@@ -11,7 +11,6 @@ type
   TPipelineElement = record
     pipeline,
     volume: PGstElement;
-    Elements: array of PGstElement;
     state: TGstState;
     Duration: Tgint64;
   end;
@@ -40,6 +39,9 @@ type
 const
   G_USEC_PER_SEC = 1000000;
 
+function gst_stream_volume_get_type(): GType; cdecl; external 'gstaudio-1.0';
+
+
 implementation
 
 procedure TestIO(element: Pointer; const s: string);
@@ -64,9 +66,16 @@ end;
 procedure duration_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
 var
   pE: PPipelineElement absolute Data;
+  stat: TGboolean;
+  ct: integer = 0;
 begin
-  gst_element_query_duration(pE^.pipeline, GST_FORMAT_TIME, @pE^.Duration);
-  WriteLn('duration');
+  repeat
+    sleep(1);
+    stat := gst_element_query_duration(pE^.pipeline, GST_FORMAT_TIME, @pE^.Duration);
+    WriteLn(ct: 4, ' stat:', stat, '  duration: ', pE^.Duration);
+    Inc(ct);
+  until stat or (ct > 100);
+  gst_bin_add();
 end;
 
 procedure state_changed_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
@@ -93,47 +102,14 @@ var
   len: SizeInt;
   i: integer;
   pc: PChar;
-  pipelines: array of PChar;
-const
-  mp3Pipeline: array of PChar = ('filesrc', 'mpegaudioparse', 'mpg123audiodec', 'audioconvert', 'audioresample', 'volume', 'autoaudiosink');
-  flacPipeline: array of PChar = ('filesrc', 'flacparse', 'flacdec', 'audioconvert', 'audioresample', 'volume', 'autoaudiosink');
+
 begin
-
-  WriteLn('path: ', ExtractFileExt(AsongPath));
-  WriteLn('path: ', AsongPath);
-  case ExtractFileExt(AsongPath) of
-    '.flac': begin
-      pipelines := flacPipeline;
-    end;
-    '.mp3': begin
-      pipelines := mp3Pipeline;
-    end;
-    else begin
-      Exit;
-    end;
-  end;
-
   pipelineElement.pipeline := nil;
   fsongPath := AsongPath;
   pipelineElement.Duration := -1;
 
-  pipelineElement.pipeline := gst_pipeline_new('pipeline');
-  TestIO(pipelineElement.pipeline, 'pipeline');
-
-  len := Length(pipelines);
-  SetLength(pipelineElement.Elements, len);
-  for i := 0 to len - 1 do begin
-    pc := pipelines[i];
-    pipelineElement.Elements[i] := gst_element_factory_make(pc, pc);
-    TestIO(pipelineElement.Elements[i], pc);
-    gst_bin_add(GST_BIN(pipelineElement.pipeline), pipelineElement.Elements[i]);
-  end;
-  pipelineElement.volume := pipelineElement.Elements[len - 2];
-
-  for i := 0 to len - 1 - 1 do begin
-    WriteLn('link: ', pipelines[i]: 16, ' -> ', pipelines[i + 1]: 16, '  ', gst_element_link(pipelineElement.Elements[i], pipelineElement.Elements[i + 1]));
-  end;
-  g_object_set(pipelineElement.Elements[0], 'location', PChar(fsongPath), nil);
+  pipelineElement.pipeline := gst_parse_launch(PChar('filesrc location="' + fsongPath + '" ! decodebin ! audioconvert ! volume ! autoaudiosink'), nil);
+  pipelineElement.volume := gst_bin_get_by_interface(GST_BIN(pipelineElement.pipeline), gst_stream_volume_get_type());
 
   bus := gst_element_get_bus(pipelineElement.pipeline);
   gst_bus_add_signal_watch(bus);
