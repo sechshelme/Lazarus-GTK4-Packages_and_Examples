@@ -21,8 +21,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="146"/>
+        <TopLine Value="263"/>
         <CursorPos X="129" Y="177"/>
         <UsageCount Value="29"/>
         <Loaded Value="True"/>
@@ -32,8 +31,9 @@
         <Filename Value="g_declare_tools.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="G_DECLARE_Tools"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="112"/>
+        <TopLine Value="33"/>
         <CursorPos X="116" Y="33"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>

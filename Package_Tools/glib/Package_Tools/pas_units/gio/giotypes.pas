@@ -142,10 +142,6 @@ type
   end;
   PGDrive = ^TGDrive;
 
-  TGNotification = record
-  end;
-  PGNotification = ^TGNotification;
-
   TGProxyResolver = record
   end;
   PGProxyResolver = ^TGProxyResolver;
@@ -161,6 +157,14 @@ type
   TGSimpleAction = record
   end;
   PGSimpleAction = ^TGSimpleAction;
+
+  TGDBusObject=record
+      end;
+  PGDBusObject=^TGDBusObject;
+
+  TGDBusInterface=record
+      end;
+  PGDBusInterface=^TGDBusInterface;
 
   // =====
 

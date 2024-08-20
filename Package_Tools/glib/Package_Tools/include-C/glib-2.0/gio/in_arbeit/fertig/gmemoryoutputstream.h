@@ -85,7 +85,6 @@ GOutputStream *g_memory_output_stream_new           (gpointer             data,
                                                      gsize                size,
                                                      GReallocFunc         realloc_function,
                                                      GDestroyNotify       destroy_function);
-GIO_AVAILABLE_IN_2_36
 GOutputStream *g_memory_output_stream_new_resizable (void);
 
 gpointer       g_memory_output_stream_get_data      (GMemoryOutputStream *ostream);
@@ -96,7 +95,6 @@ gsize          g_memory_output_stream_get_data_size (GMemoryOutputStream *ostrea
 
 gpointer       g_memory_output_stream_steal_data    (GMemoryOutputStream *ostream);
 
-GIO_AVAILABLE_IN_2_34
 GBytes *       g_memory_output_stream_steal_as_bytes (GMemoryOutputStream *ostream);
 
 

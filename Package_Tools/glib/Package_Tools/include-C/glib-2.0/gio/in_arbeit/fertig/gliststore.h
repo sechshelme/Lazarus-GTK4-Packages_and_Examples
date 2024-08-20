@@ -34,58 +34,54 @@
 
 
 #define G_TYPE_LIST_STORE (g_list_store_get_type ())
-GIO_AVAILABLE_IN_2_44
-G_DECLARE_FINAL_TYPE(GListStore, g_list_store, G, LIST_STORE, GObject)
 
-GIO_AVAILABLE_IN_2_44
+//G_DECLARE_FINAL_TYPE (GListStore, g_list_store, G, LIST_STORE, GObject)
+
+
 GListStore *            g_list_store_new                                (GType       item_type);
 
-GIO_AVAILABLE_IN_2_44
+
 void                    g_list_store_insert                             (GListStore *store,
                                                                          guint       position,
                                                                          gpointer    item);
 
-GIO_AVAILABLE_IN_2_44
+
 guint                   g_list_store_insert_sorted                      (GListStore       *store,
                                                                          gpointer          item,
                                                                          GCompareDataFunc  compare_func,
                                                                          gpointer          user_data);
 
-GIO_AVAILABLE_IN_2_46
 void                   g_list_store_sort                                (GListStore       *store,
                                                                          GCompareDataFunc  compare_func,
                                                                          gpointer          user_data);
 
-GIO_AVAILABLE_IN_2_44
+
 void                    g_list_store_append                             (GListStore *store,
                                                                          gpointer    item);
 
-GIO_AVAILABLE_IN_2_44
+
 void                    g_list_store_remove                             (GListStore *store,
                                                                          guint       position);
 
-GIO_AVAILABLE_IN_2_44
+
 void                    g_list_store_remove_all                         (GListStore *store);
 
-GIO_AVAILABLE_IN_2_44
+
 void                    g_list_store_splice                             (GListStore *store,
                                                                          guint       position,
                                                                          guint       n_removals,
                                                                          gpointer   *additions,
                                                                          guint       n_additions);
 
-GIO_AVAILABLE_IN_2_64
 gboolean                g_list_store_find                               (GListStore *store,
                                                                          gpointer    item,
                                                                          guint      *position);
 
-GIO_AVAILABLE_IN_2_64
 gboolean                g_list_store_find_with_equal_func               (GListStore *store,
                                                                          gpointer    item,
                                                                          GEqualFunc  equal_func,
                                                                          guint      *position);
 
-GIO_AVAILABLE_IN_2_74
 gboolean                g_list_store_find_with_equal_func_full          (GListStore     *store,
                                                                          gpointer        item,
                                                                          GEqualFuncFull  equal_func,

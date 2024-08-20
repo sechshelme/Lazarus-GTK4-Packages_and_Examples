@@ -87,13 +87,12 @@ GTlsBackend *  g_tls_backend_get_default                (void);
 
 
 GTlsDatabase * g_tls_backend_get_default_database       (GTlsBackend *backend);
-GIO_AVAILABLE_IN_2_60
 void           g_tls_backend_set_default_database       (GTlsBackend  *backend,
                                                          GTlsDatabase *database);
 
 
 gboolean       g_tls_backend_supports_tls               (GTlsBackend *backend);
-GIO_AVAILABLE_IN_2_48
+
 gboolean       g_tls_backend_supports_dtls              (GTlsBackend *backend);
 
 
@@ -105,9 +104,9 @@ GType          g_tls_backend_get_server_connection_type (GTlsBackend *backend);
 
 GType          g_tls_backend_get_file_database_type     (GTlsBackend *backend);
 
-GIO_AVAILABLE_IN_2_48
+
 GType          g_tls_backend_get_dtls_client_connection_type (GTlsBackend *backend);
-GIO_AVAILABLE_IN_2_48
+
 GType          g_tls_backend_get_dtls_server_connection_type (GTlsBackend *backend);
 
 

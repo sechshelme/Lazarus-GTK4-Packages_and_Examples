@@ -3,7 +3,7 @@ unit gapplication;
 interface
 
 uses
-  common_GLIB, gtypes, gvariant, gerror, goption, gtype, giotypes, gobject, gioenums, gapplicationcommandline, gactiongroup;
+  common_GLIB, gtypes, gvariant, gerror, goption, gtype, giotypes, gobject, gioenums, gapplicationcommandline, gactiongroup, gnotification;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

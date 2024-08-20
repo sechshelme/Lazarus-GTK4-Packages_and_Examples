@@ -37,7 +37,6 @@ gboolean g_content_type_equals            (const gchar  *type1,
 
 gboolean g_content_type_is_a              (const gchar  *type,
                                            const gchar  *supertype);
-GIO_AVAILABLE_IN_2_52
 gboolean g_content_type_is_mime_type      (const gchar *type,
                                            const gchar *mime_type);
 
@@ -48,9 +47,7 @@ gchar *  g_content_type_get_description   (const gchar  *type);
 gchar *  g_content_type_get_mime_type     (const gchar  *type);
 
 GIcon *  g_content_type_get_icon          (const gchar  *type);
-GIO_AVAILABLE_IN_2_34
 GIcon *  g_content_type_get_symbolic_icon (const gchar  *type);
-GIO_AVAILABLE_IN_2_34
 gchar *  g_content_type_get_generic_icon_name (const gchar  *type);
 
 
@@ -73,9 +70,7 @@ GList *  g_content_types_get_registered   (void);
 
 /*< private >*/
 #ifndef __GTK_DOC_IGNORE__
-GIO_AVAILABLE_IN_2_60
 const gchar * const *g_content_type_get_mime_dirs (void);
-GIO_AVAILABLE_IN_2_60
 void                 g_content_type_set_mime_dirs (const gchar * const *dirs);
 #endif /* __GTK_DOC_IGNORE__ */
 

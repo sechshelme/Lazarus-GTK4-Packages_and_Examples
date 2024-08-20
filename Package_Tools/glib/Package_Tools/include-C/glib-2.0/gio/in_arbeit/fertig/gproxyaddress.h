@@ -69,7 +69,6 @@ GSocketAddress *g_proxy_address_new         (GInetAddress *inetaddr,
 
 
 const gchar    *g_proxy_address_get_protocol                (GProxyAddress *proxy);
-GIO_AVAILABLE_IN_2_34
 const gchar    *g_proxy_address_get_destination_protocol    (GProxyAddress *proxy);
 
 const gchar    *g_proxy_address_get_destination_hostname    (GProxyAddress *proxy);
@@ -80,7 +79,6 @@ const gchar    *g_proxy_address_get_username                (GProxyAddress *prox
 
 const gchar    *g_proxy_address_get_password                (GProxyAddress *proxy);
 
-GIO_AVAILABLE_IN_2_34
 const gchar    *g_proxy_address_get_uri                     (GProxyAddress *proxy);
 
 

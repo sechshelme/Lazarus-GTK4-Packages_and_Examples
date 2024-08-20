@@ -30,9 +30,9 @@
 #define G_TYPE_DBUS_INTERFACE_SKELETON         (g_dbus_interface_skeleton_get_type ())
 #define G_DBUS_INTERFACE_SKELETON(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), G_TYPE_DBUS_INTERFACE_SKELETON, GDBusInterfaceSkeleton))
 #define G_DBUS_INTERFACE_SKELETON_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), G_TYPE_DBUS_INTERFACE_SKELETON, GDBusInterfaceSkeletonClass))
-#define G_DBUS_INTERFACE_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), G_TYPE_DBUS_INTERFACE_SKELETON, GDBusInterfaceSkeletonClass))
 #define G_IS_DBUS_INTERFACE_SKELETON(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), G_TYPE_DBUS_INTERFACE_SKELETON))
 #define G_IS_DBUS_INTERFACE_SKELETON_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), G_TYPE_DBUS_INTERFACE_SKELETON))
+#define G_DBUS_INTERFACE_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), G_TYPE_DBUS_INTERFACE_SKELETON, GDBusInterfaceSkeletonClass))
 
 typedef struct _GDBusInterfaceSkeletonClass   GDBusInterfaceSkeletonClass;
 typedef struct _GDBusInterfaceSkeletonPrivate GDBusInterfaceSkeletonPrivate;

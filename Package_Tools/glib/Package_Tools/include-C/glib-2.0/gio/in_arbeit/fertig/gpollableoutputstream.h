@@ -106,7 +106,6 @@ gssize   g_pollable_output_stream_write_nonblocking (GPollableOutputStream  *str
 						     GCancellable           *cancellable,
 						     GError                **error);
 
-GIO_AVAILABLE_IN_2_60
 GPollableReturn g_pollable_output_stream_writev_nonblocking (GPollableOutputStream  *stream,
 							     const GOutputVector    *vectors,
 							     gsize                   n_vectors,

@@ -83,7 +83,7 @@ gboolean g_dbus_error_unregister_error      (GQuark                 error_domain
                                              const gchar           *dbus_error_name);
 
 void     g_dbus_error_register_error_domain (const gchar           *error_domain_quark_name,
-                                             volatile gsize        *quark_volatile,
+                                              gsize        *quark_volatile,
                                              const GDBusErrorEntry *entries,
                                              guint                  num_entries);
 
@@ -96,13 +96,13 @@ void     g_dbus_error_set_dbus_error        (GError         **error,
                                              const gchar     *dbus_error_name,
                                              const gchar     *dbus_error_message,
                                              const gchar     *format,
-                                             ...) G_GNUC_PRINTF(4, 5);
+                                             ...) ;
 
 void     g_dbus_error_set_dbus_error_valist (GError         **error,
                                              const gchar     *dbus_error_name,
                                              const gchar     *dbus_error_message,
                                              const gchar     *format,
-                                             va_list          var_args) G_GNUC_PRINTF(4, 0);
+                                             va_list          var_args);
 
 gchar   *g_dbus_error_encode_gerror         (const GError    *error);
 

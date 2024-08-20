@@ -30,9 +30,9 @@
 #define G_TYPE_DBUS_OBJECT_SKELETON         (g_dbus_object_skeleton_get_type ())
 #define G_DBUS_OBJECT_SKELETON(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), G_TYPE_DBUS_OBJECT_SKELETON, GDBusObjectSkeleton))
 #define G_DBUS_OBJECT_SKELETON_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), G_TYPE_DBUS_OBJECT_SKELETON, GDBusObjectSkeletonClass))
-#define G_DBUS_OBJECT_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), G_TYPE_DBUS_OBJECT_SKELETON, GDBusObjectSkeletonClass))
 #define G_IS_DBUS_OBJECT_SKELETON(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), G_TYPE_DBUS_OBJECT_SKELETON))
 #define G_IS_DBUS_OBJECT_SKELETON_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), G_TYPE_DBUS_OBJECT_SKELETON))
+#define G_DBUS_OBJECT_SKELETON_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), G_TYPE_DBUS_OBJECT_SKELETON, GDBusObjectSkeletonClass))
 
 typedef struct _GDBusObjectSkeletonClass   GDBusObjectSkeletonClass;
 typedef struct _GDBusObjectSkeletonPrivate GDBusObjectSkeletonPrivate;

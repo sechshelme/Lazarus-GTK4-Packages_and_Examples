@@ -120,19 +120,27 @@ uses
 
   gaction,                 // io.
   gactionmap,              // io. -> gaction
+  gsimpleactiongroup,      // io. -> gaction, gactionmap
   giomodule,               // io.
   gsimpleasyncresult,      // io.
   gactiongroup,            // io.
   gactiongroupexporter,    // io. -> gactiongroup
+  gicon,                   // io.
+  gcharsetconverter,       // io.
+  gcontenttype,            // io.
+  gdbuserror,              // io.
+  gdbusobjectmanager,      // io.
+  gnetworkmonitor,         // io.
+  gtlsbackend,             // io.
+  gdbusnamewatching,       // io.
+  gpollableoutputstream,   // io.
   gvolumemonitor,          // io.
+  gdbusnameowning,         // io.
+  gliststore,              // io.
   gdatagrambased,          // io.
   gasyncinitable,          // io.
   gasyncresult,            // io.
   gcancellable,            // io. -> gclosure
-  ginetaddress,            // io.
-  ginetaddressmask,        // io. -> ginetaddress
-  gsocket,                 // io. -> ginetaddress
-  gresolver,               // io. -> ginetaddress
   gsocketaddress,          // io.
   gsocketcontrolmessage,   // io.
   gdbusobjectproxy,        // io.
@@ -143,6 +151,8 @@ uses
   gdbusobjectmanagerclient,// io. -> gdbusobjectproxy, gdbusproxy
   gdbusmethodinvocation,   // io. -> gunixfdlist, gdbusintrospection
   gioerror,                // io.
+  gremoteactiongroup,      // io.
+  gsocketaddressenumerator,// io.
   gbytesicon,              // io.
   gappinfo,                // io.
   gsettingsschema,         // io.
@@ -160,10 +170,13 @@ uses
   gmount,                  // io. -> gvolume, gmountoperation
   gfilemonitor,            // io.
   ginputstream,            // io.
+  gresource,               // io. -> ginputstream
   goutputstream,           // io. -> ginputstream
+  gmemoryoutputstream,     // io. -> goutputstream
   gsubprocess,             // io. -> goutputstream, ginputstream
   gsubprocesslauncher,     // io. -> gsubprocess
   gfilteroutputstream,     // io. -> goutputstream
+  gdataoutputstream,       // io. -> gfilteroutputstream, goutputstream
   gfileinputstream,        // io. -> ginputstream
   gfilterinputstream,      // io. -> ginputstream
   giostream,               // io. -> ginputstream, goutputstream
@@ -175,11 +188,27 @@ uses
   gsocketlistener,         // io. -> gsocketconnection
   gsocketclient,           // io. -> giostream, gsocketconnection
   gapplicationcommandline, // io. -> ginputstream
-  gapplication,            // io. -> gapplicationcommandline, gactiongroup
+  gsocketservice,          // io. -> gsocketlistener, gsocketconnection
+  gthreadedsocketservice,  // io. -> gsocketservice, gsocketconnection
+  gconverter,              // io.
+  gconverteroutputstream,  // io. -> gfilteroutputstream, goutputstream, gconverter
+  gconverterinputstream,   // io. -> gfilterinputstream, ginputstream
+  ginetaddress,            // io.
+  ginetaddressmask,        // io. -> ginetaddress
+  gsocket,                 // io. -> ginetaddress
+  gresolver,               // io. -> ginetaddress
+  ginetsocketaddress,      // io. -> ginetaddress
+  gproxyaddress,           // io. -> ginetsocketaddress, ginetaddress
+  gproxy,                  // io. -> giostream, gproxyaddress
+  gnotification,           // io.
+  gapplication,            // io. -> gapplicationcommandline, gactiongroup, gnotification
   gfileiostream,           // io. -> giostream
   gfileoutputstream,       // io. -> goutputstream
   gfile,                   // io. -> gfileenumerator, gfileattribute, gfileinputstream, gfileoutputstream, gfilemonitor, gmountoperation, gfileiostream
   gdbusconnection,         // io. -> giostream, gunixfdlist, gdbusintrospection
+  gdbusinterfaceskeleton,  // io. -> gdbusintrospection, gdbusconnection
+  gdbusobjectskeleton,     // io. -> gdbusinterfaceskeleton
+  gdbusobjectmanagerserver,// io. -> gdbusconnection, gdbusobjectskeleton
   gtlscertificate,         // io.
   gtlsdatabase,            // io. -> gtlscertificate
   gtlsconnection,          // io. -> gtlscertificate
@@ -188,6 +217,7 @@ uses
   gtlsinteraction,         // io. -> gtlsconnection, gtlspassword
   gmenumodel,              // io.
   gmenu,                   // io. -> gmenumodel
+
 
 
 
@@ -208,7 +238,7 @@ begin
   WriteLn(g_ascii_isalnum('a'));
   WriteLn(g_ascii_isalnum(#10));
 
-//  g_signal_connect(nil, nil, nil, nil);
+  //  g_signal_connect(nil, nil, nil, nil);
 
 
   timer := g_timer_new;
