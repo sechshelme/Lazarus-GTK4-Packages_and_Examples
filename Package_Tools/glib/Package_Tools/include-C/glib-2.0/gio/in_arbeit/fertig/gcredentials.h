@@ -40,9 +40,9 @@
 #define G_TYPE_CREDENTIALS         (g_credentials_get_type ())
 #define G_CREDENTIALS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), G_TYPE_CREDENTIALS, GCredentials))
 #define G_CREDENTIALS_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), G_TYPE_CREDENTIALS, GCredentialsClass))
-#define G_CREDENTIALS_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), G_TYPE_CREDENTIALS, GCredentialsClass))
 #define G_IS_CREDENTIALS(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), G_TYPE_CREDENTIALS))
 #define G_IS_CREDENTIALS_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), G_TYPE_CREDENTIALS))
+#define G_CREDENTIALS_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), G_TYPE_CREDENTIALS, GCredentialsClass))
 
 typedef struct _GCredentialsClass   GCredentialsClass;
 
@@ -70,7 +70,6 @@ gboolean         g_credentials_is_same_user       (GCredentials    *credentials,
                                                    GError         **error);
 
 #ifdef G_OS_UNIX
-GIO_AVAILABLE_IN_2_36
 pid_t            g_credentials_get_unix_pid       (GCredentials    *credentials,
                                                    GError         **error);
 

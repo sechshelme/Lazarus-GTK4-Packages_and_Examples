@@ -59,7 +59,6 @@ GType           g_unix_socket_address_get_type    (void) ;
 
 
 GSocketAddress *g_unix_socket_address_new             (const gchar        *path);
-GIO_DEPRECATED_FOR(g_unix_socket_address_new_with_type)
 GSocketAddress *g_unix_socket_address_new_abstract    (const gchar        *path,
                                                        gint                path_len);
 
@@ -72,7 +71,6 @@ const char *    g_unix_socket_address_get_path        (GUnixSocketAddress *addre
 gsize           g_unix_socket_address_get_path_len    (GUnixSocketAddress *address);
 
 GUnixSocketAddressType g_unix_socket_address_get_address_type (GUnixSocketAddress *address);
-GIO_DEPRECATED
 gboolean        g_unix_socket_address_get_is_abstract (GUnixSocketAddress *address);
 
 

@@ -107,7 +107,7 @@ begin
   fsongPath := AsongPath;
   pipelineElement.Duration := -1;
 
-  pipelineElement.pipeline := gst_parse_launch(PChar('filesrc location="' + fsongPath + '" ! decodebin ! audioconvert ! volume ! autoaudiosink'), nil);
+  pipelineElement.pipeline := gst_parse_launch(PChar('filesrc location="' + fsongPath + '" ! decodebin ! audioconvert ! audioresample ! volume ! autoaudiosink'), nil);
   pipelineElement.volume := gst_bin_get_by_interface(GST_BIN(pipelineElement.pipeline), gst_stream_volume_get_type());
 
   bus := gst_element_get_bus(pipelineElement.pipeline);

@@ -67,7 +67,6 @@ GDBusObject          *g_dbus_interface_get_object       (GDBusInterface      *in
 
 void                  g_dbus_interface_set_object       (GDBusInterface      *interface_,
                                                          GDBusObject         *object);
-GIO_AVAILABLE_IN_2_32
 GDBusObject          *g_dbus_interface_dup_object       (GDBusInterface      *interface_);
 
 

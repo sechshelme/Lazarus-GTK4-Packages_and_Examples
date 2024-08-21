@@ -177,7 +177,7 @@ begin
     sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes;' + #10);
   end else if RadioButton3.Checked then begin
     sl.Text := StringReplace(sl.Text, 'external;', 'external libgio2;', [rfReplaceAll]);
-    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes, gtype, giotypes, gobject, gioenums;' + #10);
+    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes, gerror, gtype, giotypes, gobject, gioenums;' + #10);
   end else if RadioButton4.Checked then begin
     sl.Text := StringReplace(sl.Text, 'external;', 'external libgtk4;', [rfReplaceAll]);
     sl.Insert(4, 'uses' + #10 + '  glib2, common_GTK;' + #10);

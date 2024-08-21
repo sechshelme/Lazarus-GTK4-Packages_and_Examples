@@ -119,6 +119,11 @@ const         // nur Linux    /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibcon
   GLIB_SYSDEF_MSG_PEEK = 2;
   GLIB_SYSDEF_MSG_DONTROUTE = 4;
 
+
+  type
+    Tpid_t=cint;    // /usr/include/x86_64-linux-gnu/bits/types.h
+    Tuid_t=cuint;
+
 const
   __SIZEOF_PTHREAD_MUTEX_T = 40;
 

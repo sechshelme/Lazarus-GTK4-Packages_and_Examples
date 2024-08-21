@@ -130,7 +130,14 @@ uses
   gcontenttype,            // io.
   gdbuserror,              // io.
   gdbusobjectmanager,      // io.
+  gcredentials,            // io.
+  gproxyresolver,          // io.
+  gdtlsclientconnection,   // io.
+  gseekable,               // io.
+  gunixsocketaddress,      // io.
   gnetworkmonitor,         // io.
+  gpollableinputstream,    // io.
+  gsimpleproxyresolver,    // io.
   gtlsbackend,             // io.
   gdbusnamewatching,       // io.
   gpollableoutputstream,   // io.
@@ -145,6 +152,7 @@ uses
   gsocketcontrolmessage,   // io.
   gdbusobjectproxy,        // io.
   gdbusintrospection,      // io.
+  gdbusinterface,          // io. -> gdbusintrospection
   gunixfdlist,             // io.
   gdbusmessage,            // io. -> gunixfdlist
   gdbusproxy,              // io. -> gdbusintrospection, gunixfdlist
@@ -170,12 +178,14 @@ uses
   gmount,                  // io. -> gvolume, gmountoperation
   gfilemonitor,            // io.
   ginputstream,            // io.
+  gloadableicon,           // io. -> ginputstream
+  gmemoryinputstream,      // io. -> ginputstream
   gresource,               // io. -> ginputstream
   goutputstream,           // io. -> ginputstream
+  gfilteroutputstream,     // io. -> goutputstream
   gmemoryoutputstream,     // io. -> goutputstream
   gsubprocess,             // io. -> goutputstream, ginputstream
   gsubprocesslauncher,     // io. -> gsubprocess
-  gfilteroutputstream,     // io. -> goutputstream
   gdataoutputstream,       // io. -> gfilteroutputstream, goutputstream
   gfileinputstream,        // io. -> ginputstream
   gfilterinputstream,      // io. -> ginputstream
@@ -186,6 +196,7 @@ uses
   gsocketconnection,       // io. -> giostream
   gunixconnection,         // io. -> gsocketconnection
   gsocketlistener,         // io. -> gsocketconnection
+  gtlsclientconnection,    // io. -> giostream
   gsocketclient,           // io. -> giostream, gsocketconnection
   gapplicationcommandline, // io. -> ginputstream
   gsocketservice,          // io. -> gsocketlistener, gsocketconnection
@@ -193,6 +204,8 @@ uses
   gconverter,              // io.
   gconverteroutputstream,  // io. -> gfilteroutputstream, goutputstream, gconverter
   gconverterinputstream,   // io. -> gfilterinputstream, ginputstream
+  gtcpconnection,          // io. -> giostream, gsocketconnection
+  gtcpwrapperconnection,   // io. -> gtcpconnection, gsocketconnection
   ginetaddress,            // io.
   ginetaddressmask,        // io. -> ginetaddress
   gsocket,                 // io. -> ginetaddress
@@ -217,6 +230,8 @@ uses
   gtlsinteraction,         // io. -> gtlsconnection, gtlspassword
   gmenumodel,              // io.
   gmenu,                   // io. -> gmenumodel
+
+
 
 
 
