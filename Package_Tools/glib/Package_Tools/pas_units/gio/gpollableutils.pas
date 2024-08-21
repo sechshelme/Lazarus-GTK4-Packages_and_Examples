@@ -1,0 +1,28 @@
+unit gpollableutils;
+
+interface
+
+uses
+  common_GLIB, gtypes, gerror, gmain, gtype, giotypes, gobject, gioenums, ginputstream, goutputstream;
+
+  {$IFDEF FPC}
+  {$PACKRECORDS C}
+  {$ENDIF}
+
+function g_pollable_source_new(pollable_stream: PGObject): PGSource; cdecl; external libgio2;
+function g_pollable_source_new_full(pollable_stream: Tgpointer; child_source: PGSource; cancellable: PGCancellable): PGSource; cdecl; external libgio2;
+function g_pollable_stream_read(stream: PGInputStream; buffer: pointer; Count: Tgsize; blocking: Tgboolean; cancellable: PGCancellable;
+  error: PPGError): Tgssize; cdecl; external libgio2;
+function g_pollable_stream_write(stream: PGOutputStream; buffer: pointer; Count: Tgsize; blocking: Tgboolean; cancellable: PGCancellable;
+  error: PPGError): Tgssize; cdecl; external libgio2;
+function g_pollable_stream_write_all(stream: PGOutputStream; buffer: pointer; Count: Tgsize; blocking: Tgboolean; bytes_written: Pgsize;
+  cancellable: PGCancellable; error: PPGError): Tgboolean; cdecl; external libgio2;
+
+// === Konventiert am: 21-8-24 16:11:40 ===
+
+
+implementation
+
+
+
+end.

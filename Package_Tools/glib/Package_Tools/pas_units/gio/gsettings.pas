@@ -14,14 +14,11 @@ type
   end;
   PGSettingsPrivate = ^TGSettingsPrivate;
 
-  PGSettings = ^TGSettings;
-
   TGSettings = record
     parent_instance: TGObject;
     priv: PGSettingsPrivate;
   end;
-
-  PGSettingsClass = ^TGSettingsClass;
+  PGSettings = ^TGSettings;
 
   TGSettingsClass = record
     parent_class: TGObjectClass;
@@ -31,7 +28,7 @@ type
     change_event: function(settings: PGSettings; keys: PGQuark; n_keys: Tgint): Tgboolean; cdecl;
     padding: array[0..19] of Tgpointer;
   end;
-
+  PGSettingsClass = ^TGSettingsClass;
 
 function g_settings_get_type: TGType; cdecl; external libgio2;
 function g_settings_list_schemas: PPgchar; cdecl; external libgio2;

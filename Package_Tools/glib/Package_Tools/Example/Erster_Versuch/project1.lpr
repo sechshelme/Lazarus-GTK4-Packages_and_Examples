@@ -130,18 +130,45 @@ uses
   gcontenttype,            // io.
   gdbuserror,              // io.
   gdbusobjectmanager,      // io.
+  gdbusmenumodel,          // io.
   gcredentials,            // io.
+  gdbusobject,             // io.
+  gfilenamecompleter,      // io.
+  gmemorymonitor,          // io.
+  gdbusutils,              // io.
+  gfileicon,               // io.
+  gsrvtarget,              // io.
+  gtlsfiledatabase,        // io.
+  gdbusactiongroup,        // io.
+  ginitable,               // io.
+  gnetworkaddress,         // io.
+  gsimpleaction,           // io.
   gproxyresolver,          // io.
   gdtlsclientconnection,   // io.
+  gemblem,                 // io.
+  gemblemedicon,           // io. -> gemblem
+  glistmodel,              // io.
+  gnetworkservice,         // io.
   gseekable,               // io.
   gunixsocketaddress,      // io.
   gnetworkmonitor,         // io.
+  gzlibdecompressor,       // io.
+  gzlibcompressor,         // io.
   gpollableinputstream,    // io.
+  gthemedicon,             // io.
+  gdebugcontroller,        // io.
+  gdtlsserverconnection,   // io.
+  gdebugcontrollerdbus,    // io.
+  gioscheduler,            // io.
+  gpropertyaction,         // io.
+  gpowerprofilemonitor,    // io.
+  gtestdbus,               // io.
   gsimpleproxyresolver,    // io.
   gtlsbackend,             // io.
   gdbusnamewatching,       // io.
   gpollableoutputstream,   // io.
   gvolumemonitor,          // io.
+  gnativevolumemonitor,    // io. -> gvolumemonitor
   gdbusnameowning,         // io.
   gliststore,              // io.
   gdatagrambased,          // io.
@@ -149,7 +176,9 @@ uses
   gasyncresult,            // io.
   gcancellable,            // io. -> gclosure
   gsocketaddress,          // io.
+  gnativesocketaddress,    // io. -> gsocketaddress
   gsocketcontrolmessage,   // io.
+  gunixcredentialsmessage, // io. -> gsocketcontrolmessage
   gdbusobjectproxy,        // io.
   gdbusintrospection,      // io.
   gdbusinterface,          // io. -> gdbusintrospection
@@ -161,11 +190,14 @@ uses
   gioerror,                // io.
   gremoteactiongroup,      // io.
   gsocketaddressenumerator,// io.
+  gsocketconnectable,      // io. -> gsocketaddressenumerator
+  gproxyaddressenumerator, // io. -> gsocketaddressenumerator
   gbytesicon,              // io.
   gappinfo,                // io.
   gsettingsschema,         // io.
   gpermission,             // io.
   gsettingsbackend,        // io. -> gpermission
+  gsimplepermission,       // io. -> gpermission
   gsettings,               // io. -> gsettingsschema, gaction, gsettingsbackend
   gtask,                   // io.
   gfileinfo,               // io.
@@ -206,6 +238,7 @@ uses
   gconverterinputstream,   // io. -> gfilterinputstream, ginputstream
   gtcpconnection,          // io. -> giostream, gsocketconnection
   gtcpwrapperconnection,   // io. -> gtcpconnection, gsocketconnection
+  gsimpleiostream,         // io. -> ginputstream, goutputstream, giostream
   ginetaddress,            // io.
   ginetaddressmask,        // io. -> ginetaddress
   gsocket,                 // io. -> ginetaddress
@@ -214,8 +247,11 @@ uses
   gproxyaddress,           // io. -> ginetsocketaddress, ginetaddress
   gproxy,                  // io. -> giostream, gproxyaddress
   gnotification,           // io.
+  gpollableutils,          // io. -> ginputstream, goutputstream
   gapplication,            // io. -> gapplicationcommandline, gactiongroup, gnotification
   gfileiostream,           // io. -> giostream
+  gdbusauthobserver,       // io. -> giostream
+  gdbusaddress,            // io. -> giostream
   gfileoutputstream,       // io. -> goutputstream
   gfile,                   // io. -> gfileenumerator, gfileattribute, gfileinputstream, gfileoutputstream, gfilemonitor, gmountoperation, gfileiostream
   gdbusconnection,         // io. -> giostream, gunixfdlist, gdbusintrospection
@@ -226,10 +262,19 @@ uses
   gtlsdatabase,            // io. -> gtlscertificate
   gtlsconnection,          // io. -> gtlscertificate
   gdtlsconnection,         // io. -> gtlscertificate
+  gdbusserver,             // io. -> gtlscertificate
+  gtlsserverconnection,    // io. -> giostream, gtlscertificate
   gtlspassword,            // io.
   gtlsinteraction,         // io. -> gtlsconnection, gtlspassword
   gmenumodel,              // io.
   gmenu,                   // io. -> gmenumodel
+  gmenuexporter,           // io. -> gmenumodel
+
+
+
+
+
+
 
 
 
