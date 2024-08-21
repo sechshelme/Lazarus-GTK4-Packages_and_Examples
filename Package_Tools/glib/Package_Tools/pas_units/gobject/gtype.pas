@@ -37,11 +37,6 @@ type
 
   // ==========
 
-type
-  TGTypePlugin = record
-  end;
-  PGTypePlugin = ^TGTypePlugin;
-
 const
   G_TYPE_FUNDAMENTAL_SHIFT = 2;
   G_TYPE_FUNDAMENTAL_MAX = 255 shl G_TYPE_FUNDAMENTAL_SHIFT;
@@ -53,6 +48,9 @@ const
   G_TYPE_RESERVED_USER_FIRST = 49;
 
 type
+  TGTypePlugin = record
+  end;
+  PGTypePlugin = ^TGTypePlugin;
 
   TGTypeCValue = record
   end;
@@ -307,11 +305,11 @@ function G_TYPE_CHECK_VALUE_TYPE(Value: pointer; g_type: TGType): Tgboolean;
 function G_TYPE_FROM_INSTANCE(instance: Tgpointer): TGType;
 function G_TYPE_FROM_CLASS(g_class: Tgpointer): TGType;
 function G_TYPE_FROM_INTERFACE(g_iface: Pointer): TGType;
-function G_TYPE_INSTANCE_GET_PRIVATE(instance, g_type, c_type: longint): Tgpointer;
-function G_TYPE_CLASS_GET_PRIVATE(klass, g_type, c_type: longint): Tgpointer;
+function G_TYPE_INSTANCE_GET_PRIVATE(instance, g_type, c_type: TGType): Tgpointer;
+function G_TYPE_CLASS_GET_PRIVATE(klass, g_type, c_type: TGType): Tgpointer;
 
-function GPOINTER_TO_TYPE(p : Tgpointer) : TGType;
-function GTYPE_TO_POINTER(t : TGType) : Tgpointer;
+function GPOINTER_TO_TYPE(p: Tgpointer): TGType;
+function GTYPE_TO_POINTER(t: TGType): Tgpointer;
 
 implementation
 
@@ -523,13 +521,13 @@ begin
   G_TYPE_CHECK_INSTANCE_FUNDAMENTAL_TYPE := g_type_check_instance_is_fundamentally_a(instance, g_type);
 end;
 
-function G_TYPE_INSTANCE_GET_PRIVATE(instance, g_type, c_type: longint): Tgpointer;
+function G_TYPE_INSTANCE_GET_PRIVATE(instance, g_type, c_type: TGType): Tgpointer;
 begin
   G_TYPE_INSTANCE_GET_PRIVATE := g_type_instance_get_private(PGTypeInstance(instance), g_type);
 end;
 
 
-function G_TYPE_CLASS_GET_PRIVATE(klass, g_type, c_type: longint): Tgpointer;
+function G_TYPE_CLASS_GET_PRIVATE(klass, g_type, c_type: TGType): Tgpointer;
 begin
   G_TYPE_CLASS_GET_PRIVATE := g_type_class_get_private(PGTypeClass(klass), g_type);
 end;
@@ -607,12 +605,12 @@ end;
 
 function GPOINTER_TO_TYPE(p: Tgpointer): TGType;
 begin
-  GPOINTER_TO_TYPE:=TGType(Tguintptr(p));
+  GPOINTER_TO_TYPE := TGType(Tguintptr(p));
 end;
 
 function GTYPE_TO_POINTER(t: TGType): Tgpointer;
 begin
-  GTYPE_TO_POINTER:=Tgpointer(Tguintptr(t));
+  GTYPE_TO_POINTER := Tgpointer(Tguintptr(t));
 end;
 
 

@@ -1,0 +1,926 @@
+/////////////////////////////////////////////////////////////
+//                                                         //
+//   WARNUNG, dies Datei wird automatisch durch            //
+//   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
+//   Erzeugt am: 21-08-2024   19:51                        //
+//                                                         //
+/////////////////////////////////////////////////////////////
+
+{$IFDEF read_interface}
+
+type
+  PGAppInfoCreateFlags = ^TGAppInfoCreateFlags;
+  TGAppInfoCreateFlags = longint;
+
+const
+  G_APP_INFO_CREATE_NONE = 0;
+  G_APP_INFO_CREATE_NEEDS_TERMINAL = 1 shl 0;
+  G_APP_INFO_CREATE_SUPPORTS_URIS = 1 shl 1;
+  G_APP_INFO_CREATE_SUPPORTS_STARTUP_NOTIFICATION = 1 shl 2;
+
+type
+  PGConverterFlags = ^TGConverterFlags;
+  TGConverterFlags = longint;
+
+const
+  G_CONVERTER_NO_FLAGS = 0;
+  G_CONVERTER_INPUT_AT_END = 1 shl 0;
+  G_CONVERTER_FLUSH = 1 shl 1;
+
+type
+  PGConverterResult = ^TGConverterResult;
+  TGConverterResult = longint;
+
+const
+  G_CONVERTER_ERROR = 0;
+  G_CONVERTER_CONVERTED = 1;
+  G_CONVERTER_FINISHED = 2;
+  G_CONVERTER_FLUSHED = 3;
+
+type
+  PGDataStreamByteOrder = ^TGDataStreamByteOrder;
+  TGDataStreamByteOrder = longint;
+
+const
+  G_DATA_STREAM_BYTE_ORDER_BIG_ENDIAN = 0;
+  G_DATA_STREAM_BYTE_ORDER_LITTLE_ENDIAN = 1;
+  G_DATA_STREAM_BYTE_ORDER_HOST_ENDIAN = 2;
+
+type
+  PGDataStreamNewlineType = ^TGDataStreamNewlineType;
+  TGDataStreamNewlineType = longint;
+
+const
+  G_DATA_STREAM_NEWLINE_TYPE_LF = 0;
+  G_DATA_STREAM_NEWLINE_TYPE_CR = 1;
+  G_DATA_STREAM_NEWLINE_TYPE_CR_LF = 2;
+  G_DATA_STREAM_NEWLINE_TYPE_ANY = 3;
+
+type
+  PGFileAttributeType = ^TGFileAttributeType;
+  TGFileAttributeType = longint;
+
+const
+  G_FILE_ATTRIBUTE_TYPE_INVALID = 0;
+  G_FILE_ATTRIBUTE_TYPE_STRING = 1;
+  G_FILE_ATTRIBUTE_TYPE_BYTE_STRING = 2;
+  G_FILE_ATTRIBUTE_TYPE_BOOLEAN = 3;
+  G_FILE_ATTRIBUTE_TYPE_UINT32 = 4;
+  G_FILE_ATTRIBUTE_TYPE_INT32 = 5;
+  G_FILE_ATTRIBUTE_TYPE_UINT64 = 6;
+  G_FILE_ATTRIBUTE_TYPE_INT64 = 7;
+  G_FILE_ATTRIBUTE_TYPE_OBJECT = 8;
+  G_FILE_ATTRIBUTE_TYPE_STRINGV = 9;
+
+type
+  PGFileAttributeInfoFlags = ^TGFileAttributeInfoFlags;
+  TGFileAttributeInfoFlags = longint;
+
+const
+  G_FILE_ATTRIBUTE_INFO_NONE = 0;
+  G_FILE_ATTRIBUTE_INFO_COPY_WITH_FILE = 1 shl 0;
+  G_FILE_ATTRIBUTE_INFO_COPY_WHEN_MOVED = 1 shl 1;
+
+type
+  PGFileAttributeStatus = ^TGFileAttributeStatus;
+  TGFileAttributeStatus = longint;
+
+const
+  G_FILE_ATTRIBUTE_STATUS_UNSET = 0;
+  G_FILE_ATTRIBUTE_STATUS_SET = 1;
+  G_FILE_ATTRIBUTE_STATUS_ERROR_SETTING = 2;
+
+type
+  PGFileQueryInfoFlags = ^TGFileQueryInfoFlags;
+  TGFileQueryInfoFlags = longint;
+
+const
+  G_FILE_QUERY_INFO_NONE = 0;
+  G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS = 1 shl 0;
+
+type
+  PGFileCreateFlags = ^TGFileCreateFlags;
+  TGFileCreateFlags = longint;
+
+const
+  G_FILE_CREATE_NONE = 0;
+  G_FILE_CREATE_PRIVATE = 1 shl 0;
+  G_FILE_CREATE_REPLACE_DESTINATION = 1 shl 1;
+
+type
+  PGFileMeasureFlags = ^TGFileMeasureFlags;
+  TGFileMeasureFlags = longint;
+
+const
+  G_FILE_MEASURE_NONE = 0;
+  G_FILE_MEASURE_REPORT_ANY_ERROR = 1 shl 1;
+  G_FILE_MEASURE_APPARENT_SIZE = 1 shl 2;
+  G_FILE_MEASURE_NO_XDEV = 1 shl 3;
+
+type
+  PGMountMountFlags = ^TGMountMountFlags;
+  TGMountMountFlags = longint;
+
+const
+  G_MOUNT_MOUNT_NONE = 0;
+
+type
+  PGMountUnmountFlags = ^TGMountUnmountFlags;
+  TGMountUnmountFlags = longint;
+
+const
+  G_MOUNT_UNMOUNT_NONE = 0;
+  G_MOUNT_UNMOUNT_FORCE = 1 shl 0;
+
+type
+  PGDriveStartFlags = ^TGDriveStartFlags;
+  TGDriveStartFlags = longint;
+
+const
+  G_DRIVE_START_NONE = 0;
+
+type
+  PGDriveStartStopType = ^TGDriveStartStopType;
+  TGDriveStartStopType = longint;
+
+const
+  G_DRIVE_START_STOP_TYPE_UNKNOWN = 0;
+  G_DRIVE_START_STOP_TYPE_SHUTDOWN = 1;
+  G_DRIVE_START_STOP_TYPE_NETWORK = 2;
+  G_DRIVE_START_STOP_TYPE_MULTIDISK = 3;
+  G_DRIVE_START_STOP_TYPE_PASSWORD = 4;
+
+type
+  PGFileCopyFlags = ^TGFileCopyFlags;
+  TGFileCopyFlags = longint;
+
+const
+  G_FILE_COPY_NONE = 0;
+  G_FILE_COPY_OVERWRITE = 1 shl 0;
+  G_FILE_COPY_BACKUP = 1 shl 1;
+  G_FILE_COPY_NOFOLLOW_SYMLINKS = 1 shl 2;
+  G_FILE_COPY_ALL_METADATA = 1 shl 3;
+  G_FILE_COPY_NO_FALLBACK_FOR_MOVE = 1 shl 4;
+  G_FILE_COPY_TARGET_DEFAULT_PERMS = 1 shl 5;
+  G_FILE_COPY_TARGET_DEFAULT_MODIFIED_TIME = 1 shl 6;
+
+type
+  PGFileMonitorFlags = ^TGFileMonitorFlags;
+  TGFileMonitorFlags = longint;
+
+const
+  G_FILE_MONITOR_NONE = 0;
+  G_FILE_MONITOR_WATCH_MOUNTS = 1 shl 0;
+  G_FILE_MONITOR_SEND_MOVED = 1 shl 1;
+  G_FILE_MONITOR_WATCH_HARD_LINKS = 1 shl 2;
+  G_FILE_MONITOR_WATCH_MOVES = 1 shl 3;
+
+type
+  PGFileType = ^TGFileType;
+  TGFileType = longint;
+
+const
+  G_FILE_TYPE_UNKNOWN = 0;
+  G_FILE_TYPE_REGULAR = 1;
+  G_FILE_TYPE_DIRECTORY = 2;
+  G_FILE_TYPE_SYMBOLIC_LINK = 3;
+  G_FILE_TYPE_SPECIAL = 4;
+  G_FILE_TYPE_SHORTCUT = 5;
+  G_FILE_TYPE_MOUNTABLE = 6;
+
+type
+  PGFilesystemPreviewType = ^TGFilesystemPreviewType;
+  TGFilesystemPreviewType = longint;
+
+const
+  G_FILESYSTEM_PREVIEW_TYPE_IF_ALWAYS = 0;
+  G_FILESYSTEM_PREVIEW_TYPE_IF_LOCAL = 1;
+  G_FILESYSTEM_PREVIEW_TYPE_NEVER = 2;
+
+type
+  PGFileMonitorEvent = ^TGFileMonitorEvent;
+  TGFileMonitorEvent = longint;
+
+const
+  G_FILE_MONITOR_EVENT_CHANGED = 0;
+  G_FILE_MONITOR_EVENT_CHANGES_DONE_HINT = 1;
+  G_FILE_MONITOR_EVENT_DELETED = 2;
+  G_FILE_MONITOR_EVENT_CREATED = 3;
+  G_FILE_MONITOR_EVENT_ATTRIBUTE_CHANGED = 4;
+  G_FILE_MONITOR_EVENT_PRE_UNMOUNT = 5;
+  G_FILE_MONITOR_EVENT_UNMOUNTED = 6;
+  G_FILE_MONITOR_EVENT_MOVED = 7;
+  G_FILE_MONITOR_EVENT_RENAMED = 8;
+  G_FILE_MONITOR_EVENT_MOVED_IN = 9;
+  G_FILE_MONITOR_EVENT_MOVED_OUT = 10;
+
+type
+  PGIOErrorEnum = ^TGIOErrorEnum;
+  TGIOErrorEnum = longint;
+
+const
+  G_IO_ERROR_FAILED = 0;
+  G_IO_ERROR_NOT_FOUND = 1;
+  G_IO_ERROR_EXISTS = 2;
+  G_IO_ERROR_IS_DIRECTORY = 3;
+  G_IO_ERROR_NOT_DIRECTORY = 4;
+  G_IO_ERROR_NOT_EMPTY = 5;
+  G_IO_ERROR_NOT_REGULAR_FILE = 6;
+  G_IO_ERROR_NOT_SYMBOLIC_LINK = 7;
+  G_IO_ERROR_NOT_MOUNTABLE_FILE = 8;
+  G_IO_ERROR_FILENAME_TOO_LONG = 9;
+  G_IO_ERROR_INVALID_FILENAME = 10;
+  G_IO_ERROR_TOO_MANY_LINKS = 11;
+  G_IO_ERROR_NO_SPACE = 12;
+  G_IO_ERROR_INVALID_ARGUMENT = 13;
+  G_IO_ERROR_PERMISSION_DENIED = 14;
+  G_IO_ERROR_NOT_SUPPORTED = 15;
+  G_IO_ERROR_NOT_MOUNTED = 16;
+  G_IO_ERROR_ALREADY_MOUNTED = 17;
+  G_IO_ERROR_CLOSED = 18;
+  G_IO_ERROR_CANCELLED = 19;
+  G_IO_ERROR_PENDING = 20;
+  G_IO_ERROR_READ_ONLY = 21;
+  G_IO_ERROR_CANT_CREATE_BACKUP = 22;
+  G_IO_ERROR_WRONG_ETAG = 23;
+  G_IO_ERROR_TIMED_OUT = 24;
+  G_IO_ERROR_WOULD_RECURSE = 25;
+  G_IO_ERROR_BUSY = 26;
+  G_IO_ERROR_WOULD_BLOCK = 27;
+  G_IO_ERROR_HOST_NOT_FOUND = 28;
+  G_IO_ERROR_WOULD_MERGE = 29;
+  G_IO_ERROR_FAILED_HANDLED = 30;
+  G_IO_ERROR_TOO_MANY_OPEN_FILES = 31;
+  G_IO_ERROR_NOT_INITIALIZED = 32;
+  G_IO_ERROR_ADDRESS_IN_USE = 33;
+  G_IO_ERROR_PARTIAL_INPUT = 34;
+  G_IO_ERROR_INVALID_DATA = 35;
+  G_IO_ERROR_DBUS_ERROR = 36;
+  G_IO_ERROR_HOST_UNREACHABLE = 37;
+  G_IO_ERROR_NETWORK_UNREACHABLE = 38;
+  G_IO_ERROR_CONNECTION_REFUSED = 39;
+  G_IO_ERROR_PROXY_FAILED = 40;
+  G_IO_ERROR_PROXY_AUTH_FAILED = 41;
+  G_IO_ERROR_PROXY_NEED_AUTH = 42;
+  G_IO_ERROR_PROXY_NOT_ALLOWED = 43;
+  G_IO_ERROR_BROKEN_PIPE = 44;
+  G_IO_ERROR_CONNECTION_CLOSED = G_IO_ERROR_BROKEN_PIPE;
+  G_IO_ERROR_NOT_CONNECTED = (G_IO_ERROR_BROKEN_PIPE) + 1;
+  G_IO_ERROR_MESSAGE_TOO_LARGE = (G_IO_ERROR_BROKEN_PIPE) + 2;
+  G_IO_ERROR_NO_SUCH_DEVICE = (G_IO_ERROR_BROKEN_PIPE) + 3;
+  G_IO_ERROR_DESTINATION_UNSET = (G_IO_ERROR_BROKEN_PIPE) + 4;
+
+type
+  PGAskPasswordFlags = ^TGAskPasswordFlags;
+  TGAskPasswordFlags = longint;
+
+const
+  G_ASK_PASSWORD_NEED_PASSWORD = 1 shl 0;
+  G_ASK_PASSWORD_NEED_USERNAME = 1 shl 1;
+  G_ASK_PASSWORD_NEED_DOMAIN = 1 shl 2;
+  G_ASK_PASSWORD_SAVING_SUPPORTED = 1 shl 3;
+  G_ASK_PASSWORD_ANONYMOUS_SUPPORTED = 1 shl 4;
+  G_ASK_PASSWORD_TCRYPT = 1 shl 5;
+
+type
+  PGPasswordSave = ^TGPasswordSave;
+  TGPasswordSave = longint;
+
+const
+  G_PASSWORD_SAVE_NEVER = 0;
+  G_PASSWORD_SAVE_FOR_SESSION = 1;
+  G_PASSWORD_SAVE_PERMANENTLY = 2;
+
+type
+  PGMountOperationResult = ^TGMountOperationResult;
+  TGMountOperationResult = longint;
+
+const
+  G_MOUNT_OPERATION_HANDLED = 0;
+  G_MOUNT_OPERATION_ABORTED = 1;
+  G_MOUNT_OPERATION_UNHANDLED = 2;
+
+type
+  PGOutputStreamSpliceFlags = ^TGOutputStreamSpliceFlags;
+  TGOutputStreamSpliceFlags = longint;
+
+const
+  G_OUTPUT_STREAM_SPLICE_NONE = 0;
+  G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE = 1 shl 0;
+  G_OUTPUT_STREAM_SPLICE_CLOSE_TARGET = 1 shl 1;
+
+type
+  PGIOStreamSpliceFlags = ^TGIOStreamSpliceFlags;
+  TGIOStreamSpliceFlags = longint;
+
+const
+  G_IO_STREAM_SPLICE_NONE = 0;
+  G_IO_STREAM_SPLICE_CLOSE_STREAM1 = 1 shl 0;
+  G_IO_STREAM_SPLICE_CLOSE_STREAM2 = 1 shl 1;
+  G_IO_STREAM_SPLICE_WAIT_FOR_BOTH = 1 shl 2;
+
+type
+  PGEmblemOrigin = ^TGEmblemOrigin;
+  TGEmblemOrigin = longint;
+
+const
+  G_EMBLEM_ORIGIN_UNKNOWN = 0;
+  G_EMBLEM_ORIGIN_DEVICE = 1;
+  G_EMBLEM_ORIGIN_LIVEMETADATA = 2;
+  G_EMBLEM_ORIGIN_TAG = 3;
+
+type
+  PGResolverError = ^TGResolverError;
+  TGResolverError = longint;
+
+const
+  G_RESOLVER_ERROR_NOT_FOUND = 0;
+  G_RESOLVER_ERROR_TEMPORARY_FAILURE = 1;
+  G_RESOLVER_ERROR_INTERNAL = 2;
+
+type
+  PGResolverRecordType = ^TGResolverRecordType;
+  TGResolverRecordType = longint;
+
+const
+  G_RESOLVER_RECORD_SRV = 1;
+  G_RESOLVER_RECORD_MX = 2;
+  G_RESOLVER_RECORD_TXT = 3;
+  G_RESOLVER_RECORD_SOA = 4;
+  G_RESOLVER_RECORD_NS = 5;
+
+type
+  PGResourceError = ^TGResourceError;
+  TGResourceError = longint;
+
+const
+  G_RESOURCE_ERROR_NOT_FOUND = 0;
+  G_RESOURCE_ERROR_INTERNAL = 1;
+
+type
+  PGResourceFlags = ^TGResourceFlags;
+  TGResourceFlags = longint;
+
+const
+  G_RESOURCE_FLAGS_NONE = 0;
+  G_RESOURCE_FLAGS_COMPRESSED = 1 shl 0;
+
+type
+  PGResourceLookupFlags = ^TGResourceLookupFlags;
+  TGResourceLookupFlags = longint;
+
+const
+  G_RESOURCE_LOOKUP_FLAGS_NONE = 0;
+
+type
+  PGSocketFamily = ^TGSocketFamily;
+  TGSocketFamily = longint;
+
+const
+  G_SOCKET_FAMILY_INVALID = 0;
+  G_SOCKET_FAMILY_UNIX = GLIB_SYSDEF_AF_UNIX;
+  G_SOCKET_FAMILY_IPV4 = GLIB_SYSDEF_AF_INET;
+  G_SOCKET_FAMILY_IPV6 = GLIB_SYSDEF_AF_INET6;
+
+type
+  PGSocketType = ^TGSocketType;
+  TGSocketType = longint;
+
+const
+  G_SOCKET_TYPE_INVALID = 0;
+  G_SOCKET_TYPE_STREAM = 1;
+  G_SOCKET_TYPE_DATAGRAM = 2;
+  G_SOCKET_TYPE_SEQPACKET = 3;
+
+type
+  PGSocketMsgFlags = ^TGSocketMsgFlags;
+  TGSocketMsgFlags = longint;
+
+const
+  G_SOCKET_MSG_NONE = 0;
+  G_SOCKET_MSG_OOB = GLIB_SYSDEF_MSG_OOB;
+  G_SOCKET_MSG_PEEK = GLIB_SYSDEF_MSG_PEEK;
+  G_SOCKET_MSG_DONTROUTE = GLIB_SYSDEF_MSG_DONTROUTE;
+
+type
+  PGSocketProtocol = ^TGSocketProtocol;
+  TGSocketProtocol = longint;
+
+const
+  G_SOCKET_PROTOCOL_UNKNOWN = -(1);
+  G_SOCKET_PROTOCOL_DEFAULT = 0;
+  G_SOCKET_PROTOCOL_TCP = 6;
+  G_SOCKET_PROTOCOL_UDP = 17;
+  G_SOCKET_PROTOCOL_SCTP = 132;
+
+type
+  PGZlibCompressorFormat = ^TGZlibCompressorFormat;
+  TGZlibCompressorFormat = longint;
+
+const
+  G_ZLIB_COMPRESSOR_FORMAT_ZLIB = 0;
+  G_ZLIB_COMPRESSOR_FORMAT_GZIP = 1;
+  G_ZLIB_COMPRESSOR_FORMAT_RAW = 2;
+
+type
+  PGUnixSocketAddressType = ^TGUnixSocketAddressType;
+  TGUnixSocketAddressType = longint;
+
+const
+  G_UNIX_SOCKET_ADDRESS_INVALID = 0;
+  G_UNIX_SOCKET_ADDRESS_ANONYMOUS = 1;
+  G_UNIX_SOCKET_ADDRESS_PATH = 2;
+  G_UNIX_SOCKET_ADDRESS_ABSTRACT = 3;
+  G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED = 4;
+
+type
+  PGBusType = ^TGBusType;
+  TGBusType = longint;
+
+const
+  G_BUS_TYPE_STARTER = -(1);
+  G_BUS_TYPE_NONE = 0;
+  G_BUS_TYPE_SYSTEM = 1;
+  G_BUS_TYPE_SESSION = 2;
+
+type
+  PGBusNameOwnerFlags = ^TGBusNameOwnerFlags;
+  TGBusNameOwnerFlags = longint;
+
+const
+  G_BUS_NAME_OWNER_FLAGS_NONE = 0;
+  G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT = 1 shl 0;
+  G_BUS_NAME_OWNER_FLAGS_REPLACE = 1 shl 1;
+  G_BUS_NAME_OWNER_FLAGS_DO_NOT_QUEUE = 1 shl 2;
+
+type
+  PGBusNameWatcherFlags = ^TGBusNameWatcherFlags;
+  TGBusNameWatcherFlags = longint;
+
+const
+  G_BUS_NAME_WATCHER_FLAGS_NONE = 0;
+  G_BUS_NAME_WATCHER_FLAGS_AUTO_START = 1 shl 0;
+
+type
+  PGDBusProxyFlags = ^TGDBusProxyFlags;
+  TGDBusProxyFlags = longint;
+
+const
+  G_DBUS_PROXY_FLAGS_NONE = 0;
+  G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES = 1 shl 0;
+  G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS = 1 shl 1;
+  G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START = 1 shl 2;
+  G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES = 1 shl 3;
+  G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION = 1 shl 4;
+  G_DBUS_PROXY_FLAGS_NO_MATCH_RULE = 1 shl 5;
+
+type
+  PGDBusError = ^TGDBusError;
+  TGDBusError = longint;
+
+const
+  G_DBUS_ERROR_FAILED = 0;
+  G_DBUS_ERROR_NO_MEMORY = 1;
+  G_DBUS_ERROR_SERVICE_UNKNOWN = 2;
+  G_DBUS_ERROR_NAME_HAS_NO_OWNER = 3;
+  G_DBUS_ERROR_NO_REPLY = 4;
+  G_DBUS_ERROR_IO_ERROR = 5;
+  G_DBUS_ERROR_BAD_ADDRESS = 6;
+  G_DBUS_ERROR_NOT_SUPPORTED = 7;
+  G_DBUS_ERROR_LIMITS_EXCEEDED = 8;
+  G_DBUS_ERROR_ACCESS_DENIED = 9;
+  G_DBUS_ERROR_AUTH_FAILED = 10;
+  G_DBUS_ERROR_NO_SERVER = 11;
+  G_DBUS_ERROR_TIMEOUT = 12;
+  G_DBUS_ERROR_NO_NETWORK = 13;
+  G_DBUS_ERROR_ADDRESS_IN_USE = 14;
+  G_DBUS_ERROR_DISCONNECTED = 15;
+  G_DBUS_ERROR_INVALID_ARGS = 16;
+  G_DBUS_ERROR_FILE_NOT_FOUND = 17;
+  G_DBUS_ERROR_FILE_EXISTS = 18;
+  G_DBUS_ERROR_UNKNOWN_METHOD = 19;
+  G_DBUS_ERROR_TIMED_OUT = 20;
+  G_DBUS_ERROR_MATCH_RULE_NOT_FOUND = 21;
+  G_DBUS_ERROR_MATCH_RULE_INVALID = 22;
+  G_DBUS_ERROR_SPAWN_EXEC_FAILED = 23;
+  G_DBUS_ERROR_SPAWN_FORK_FAILED = 24;
+  G_DBUS_ERROR_SPAWN_CHILD_EXITED = 25;
+  G_DBUS_ERROR_SPAWN_CHILD_SIGNALED = 26;
+  G_DBUS_ERROR_SPAWN_FAILED = 27;
+  G_DBUS_ERROR_SPAWN_SETUP_FAILED = 28;
+  G_DBUS_ERROR_SPAWN_CONFIG_INVALID = 29;
+  G_DBUS_ERROR_SPAWN_SERVICE_INVALID = 30;
+  G_DBUS_ERROR_SPAWN_SERVICE_NOT_FOUND = 31;
+  G_DBUS_ERROR_SPAWN_PERMISSIONS_INVALID = 32;
+  G_DBUS_ERROR_SPAWN_FILE_INVALID = 33;
+  G_DBUS_ERROR_SPAWN_NO_MEMORY = 34;
+  G_DBUS_ERROR_UNIX_PROCESS_ID_UNKNOWN = 35;
+  G_DBUS_ERROR_INVALID_SIGNATURE = 36;
+  G_DBUS_ERROR_INVALID_FILE_CONTENT = 37;
+  G_DBUS_ERROR_SELINUX_SECURITY_CONTEXT_UNKNOWN = 38;
+  G_DBUS_ERROR_ADT_AUDIT_DATA_UNKNOWN = 39;
+  G_DBUS_ERROR_OBJECT_PATH_IN_USE = 40;
+  G_DBUS_ERROR_UNKNOWN_OBJECT = 41;
+  G_DBUS_ERROR_UNKNOWN_INTERFACE = 42;
+  G_DBUS_ERROR_UNKNOWN_PROPERTY = 43;
+  G_DBUS_ERROR_PROPERTY_READ_ONLY = 44;
+
+type
+  PGDBusConnectionFlags = ^TGDBusConnectionFlags;
+  TGDBusConnectionFlags = longint;
+
+const
+  G_DBUS_CONNECTION_FLAGS_NONE = 0;
+  G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_CLIENT = 1 shl 0;
+  G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_SERVER = 1 shl 1;
+  G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS = 1 shl 2;
+  G_DBUS_CONNECTION_FLAGS_MESSAGE_BUS_CONNECTION = 1 shl 3;
+  G_DBUS_CONNECTION_FLAGS_DELAY_MESSAGE_PROCESSING = 1 shl 4;
+  G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER = 1 shl 5;
+  G_DBUS_CONNECTION_FLAGS_CROSS_NAMESPACE = 1 shl 6;
+
+type
+  PGDBusCapabilityFlags = ^TGDBusCapabilityFlags;
+  TGDBusCapabilityFlags = longint;
+
+const
+  G_DBUS_CAPABILITY_FLAGS_NONE = 0;
+  G_DBUS_CAPABILITY_FLAGS_UNIX_FD_PASSING = 1 shl 0;
+
+type
+  PGDBusCallFlags = ^TGDBusCallFlags;
+  TGDBusCallFlags = longint;
+
+const
+  G_DBUS_CALL_FLAGS_NONE = 0;
+  G_DBUS_CALL_FLAGS_NO_AUTO_START = 1 shl 0;
+  G_DBUS_CALL_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION = 1 shl 1;
+
+type
+  PGDBusMessageType = ^TGDBusMessageType;
+  TGDBusMessageType = longint;
+
+const
+  G_DBUS_MESSAGE_TYPE_INVALID = 0;
+  G_DBUS_MESSAGE_TYPE_METHOD_CALL = 1;
+  G_DBUS_MESSAGE_TYPE_METHOD_RETURN = 2;
+  G_DBUS_MESSAGE_TYPE_ERROR = 3;
+  G_DBUS_MESSAGE_TYPE_SIGNAL = 4;
+
+type
+  PGDBusMessageFlags = ^TGDBusMessageFlags;
+  TGDBusMessageFlags = longint;
+
+const
+  G_DBUS_MESSAGE_FLAGS_NONE = 0;
+  G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED = 1 shl 0;
+  G_DBUS_MESSAGE_FLAGS_NO_AUTO_START = 1 shl 1;
+  G_DBUS_MESSAGE_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION = 1 shl 2;
+
+type
+  PGDBusMessageHeaderField = ^TGDBusMessageHeaderField;
+  TGDBusMessageHeaderField = longint;
+
+const
+  G_DBUS_MESSAGE_HEADER_FIELD_INVALID = 0;
+  G_DBUS_MESSAGE_HEADER_FIELD_PATH = 1;
+  G_DBUS_MESSAGE_HEADER_FIELD_INTERFACE = 2;
+  G_DBUS_MESSAGE_HEADER_FIELD_MEMBER = 3;
+  G_DBUS_MESSAGE_HEADER_FIELD_ERROR_NAME = 4;
+  G_DBUS_MESSAGE_HEADER_FIELD_REPLY_SERIAL = 5;
+  G_DBUS_MESSAGE_HEADER_FIELD_DESTINATION = 6;
+  G_DBUS_MESSAGE_HEADER_FIELD_SENDER = 7;
+  G_DBUS_MESSAGE_HEADER_FIELD_SIGNATURE = 8;
+  G_DBUS_MESSAGE_HEADER_FIELD_NUM_UNIX_FDS = 9;
+
+type
+  PGDBusPropertyInfoFlags = ^TGDBusPropertyInfoFlags;
+  TGDBusPropertyInfoFlags = longint;
+
+const
+  G_DBUS_PROPERTY_INFO_FLAGS_NONE = 0;
+  G_DBUS_PROPERTY_INFO_FLAGS_READABLE = 1 shl 0;
+  G_DBUS_PROPERTY_INFO_FLAGS_WRITABLE = 1 shl 1;
+
+type
+  PGDBusSubtreeFlags = ^TGDBusSubtreeFlags;
+  TGDBusSubtreeFlags = longint;
+
+const
+  G_DBUS_SUBTREE_FLAGS_NONE = 0;
+  G_DBUS_SUBTREE_FLAGS_DISPATCH_TO_UNENUMERATED_NODES = 1 shl 0;
+
+type
+  PGDBusServerFlags = ^TGDBusServerFlags;
+  TGDBusServerFlags = longint;
+
+const
+  G_DBUS_SERVER_FLAGS_NONE = 0;
+  G_DBUS_SERVER_FLAGS_RUN_IN_THREAD = 1 shl 0;
+  G_DBUS_SERVER_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS = 1 shl 1;
+  G_DBUS_SERVER_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER = 1 shl 2;
+
+type
+  PGDBusSignalFlags = ^TGDBusSignalFlags;
+  TGDBusSignalFlags = longint;
+
+const
+  G_DBUS_SIGNAL_FLAGS_NONE = 0;
+  G_DBUS_SIGNAL_FLAGS_NO_MATCH_RULE = 1 shl 0;
+  G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_NAMESPACE = 1 shl 1;
+  G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_PATH = 1 shl 2;
+
+type
+  PGDBusSendMessageFlags = ^TGDBusSendMessageFlags;
+  TGDBusSendMessageFlags = longint;
+
+const
+  G_DBUS_SEND_MESSAGE_FLAGS_NONE = 0;
+  G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL = 1 shl 0;
+
+type
+  PGCredentialsType = ^TGCredentialsType;
+  TGCredentialsType = longint;
+
+const
+  G_CREDENTIALS_TYPE_INVALID = 0;
+  G_CREDENTIALS_TYPE_LINUX_UCRED = 1;
+  G_CREDENTIALS_TYPE_FREEBSD_CMSGCRED = 2;
+  G_CREDENTIALS_TYPE_OPENBSD_SOCKPEERCRED = 3;
+  G_CREDENTIALS_TYPE_SOLARIS_UCRED = 4;
+  G_CREDENTIALS_TYPE_NETBSD_UNPCBID = 5;
+  G_CREDENTIALS_TYPE_APPLE_XUCRED = 6;
+  G_CREDENTIALS_TYPE_WIN32_PID = 7;
+
+type
+  PGDBusMessageByteOrder = ^TGDBusMessageByteOrder;
+  TGDBusMessageByteOrder = longint;
+
+const
+  G_DBUS_MESSAGE_BYTE_ORDER_BIG_ENDIAN = 'B';
+  G_DBUS_MESSAGE_BYTE_ORDER_LITTLE_ENDIAN = 'l';
+
+type
+  PGApplicationFlags = ^TGApplicationFlags;
+  TGApplicationFlags = longint;
+
+const
+  G_APPLICATION_FLAGS_NONE = 0;
+  G_APPLICATION_DEFAULT_FLAGS = 0;
+  G_APPLICATION_IS_SERVICE = 1 shl 0;
+  G_APPLICATION_IS_LAUNCHER = 1 shl 1;
+  G_APPLICATION_HANDLES_OPEN = 1 shl 2;
+  G_APPLICATION_HANDLES_COMMAND_LINE = 1 shl 3;
+  G_APPLICATION_SEND_ENVIRONMENT = 1 shl 4;
+  G_APPLICATION_NON_UNIQUE = 1 shl 5;
+  G_APPLICATION_CAN_OVERRIDE_APP_ID = 1 shl 6;
+  G_APPLICATION_ALLOW_REPLACEMENT = 1 shl 7;
+  G_APPLICATION_REPLACE = 1 shl 8;
+
+type
+  PGTlsError = ^TGTlsError;
+  TGTlsError = longint;
+
+const
+  G_TLS_ERROR_UNAVAILABLE = 0;
+  G_TLS_ERROR_MISC = 1;
+  G_TLS_ERROR_BAD_CERTIFICATE = 2;
+  G_TLS_ERROR_NOT_TLS = 3;
+  G_TLS_ERROR_HANDSHAKE = 4;
+  G_TLS_ERROR_CERTIFICATE_REQUIRED = 5;
+  G_TLS_ERROR_EOF = 6;
+  G_TLS_ERROR_INAPPROPRIATE_FALLBACK = 7;
+  G_TLS_ERROR_BAD_CERTIFICATE_PASSWORD = 8;
+
+type
+  PGTlsCertificateFlags = ^TGTlsCertificateFlags;
+  TGTlsCertificateFlags = longint;
+
+const
+  G_TLS_CERTIFICATE_NO_FLAGS = 0;
+  G_TLS_CERTIFICATE_UNKNOWN_CA = 1 shl 0;
+  G_TLS_CERTIFICATE_BAD_IDENTITY = 1 shl 1;
+  G_TLS_CERTIFICATE_NOT_ACTIVATED = 1 shl 2;
+  G_TLS_CERTIFICATE_EXPIRED = 1 shl 3;
+  G_TLS_CERTIFICATE_REVOKED = 1 shl 4;
+  G_TLS_CERTIFICATE_INSECURE = 1 shl 5;
+  G_TLS_CERTIFICATE_GENERIC_ERROR = 1 shl 6;
+  G_TLS_CERTIFICATE_VALIDATE_ALL = $007f;
+
+type
+  PGTlsAuthenticationMode = ^TGTlsAuthenticationMode;
+  TGTlsAuthenticationMode = longint;
+
+const
+  G_TLS_AUTHENTICATION_NONE = 0;
+  G_TLS_AUTHENTICATION_REQUESTED = 1;
+  G_TLS_AUTHENTICATION_REQUIRED = 2;
+
+type
+  PGTlsChannelBindingType = ^TGTlsChannelBindingType;
+  TGTlsChannelBindingType = longint;
+
+const
+  G_TLS_CHANNEL_BINDING_TLS_UNIQUE = 0;
+  G_TLS_CHANNEL_BINDING_TLS_SERVER_END_POINT = 1;
+  G_TLS_CHANNEL_BINDING_TLS_EXPORTER = 2;
+
+type
+  PGTlsChannelBindingError = ^TGTlsChannelBindingError;
+  TGTlsChannelBindingError = longint;
+
+const
+  G_TLS_CHANNEL_BINDING_ERROR_NOT_IMPLEMENTED = 0;
+  G_TLS_CHANNEL_BINDING_ERROR_INVALID_STATE = 1;
+  G_TLS_CHANNEL_BINDING_ERROR_NOT_AVAILABLE = 2;
+  G_TLS_CHANNEL_BINDING_ERROR_NOT_SUPPORTED = 3;
+  G_TLS_CHANNEL_BINDING_ERROR_GENERAL_ERROR = 4;
+
+type
+  PGTlsRehandshakeMode = ^TGTlsRehandshakeMode;
+  TGTlsRehandshakeMode = longint;
+
+const
+  G_TLS_REHANDSHAKE_NEVER = 0;
+  G_TLS_REHANDSHAKE_SAFELY = 1;
+  G_TLS_REHANDSHAKE_UNSAFELY = 2;
+
+type
+  PGTlsPasswordFlags = ^TGTlsPasswordFlags;
+  TGTlsPasswordFlags = longint;
+
+const
+  G_TLS_PASSWORD_NONE = 0;
+  G_TLS_PASSWORD_RETRY = 1 shl 1;
+  G_TLS_PASSWORD_MANY_TRIES = 1 shl 2;
+  G_TLS_PASSWORD_FINAL_TRY = 1 shl 3;
+  G_TLS_PASSWORD_PKCS11_USER = 1 shl 4;
+  G_TLS_PASSWORD_PKCS11_SECURITY_OFFICER = 1 shl 5;
+  G_TLS_PASSWORD_PKCS11_CONTEXT_SPECIFIC = 1 shl 6;
+
+type
+  PGTlsInteractionResult = ^TGTlsInteractionResult;
+  TGTlsInteractionResult = longint;
+
+const
+  G_TLS_INTERACTION_UNHANDLED = 0;
+  G_TLS_INTERACTION_HANDLED = 1;
+  G_TLS_INTERACTION_FAILED = 2;
+
+type
+  PGDBusInterfaceSkeletonFlags = ^TGDBusInterfaceSkeletonFlags;
+  TGDBusInterfaceSkeletonFlags = longint;
+
+const
+  G_DBUS_INTERFACE_SKELETON_FLAGS_NONE = 0;
+  G_DBUS_INTERFACE_SKELETON_FLAGS_HANDLE_METHOD_INVOCATIONS_IN_THREAD = 1 shl 0;
+
+type
+  PGDBusObjectManagerClientFlags = ^TGDBusObjectManagerClientFlags;
+  TGDBusObjectManagerClientFlags = longint;
+
+const
+  G_DBUS_OBJECT_MANAGER_CLIENT_FLAGS_NONE = 0;
+  G_DBUS_OBJECT_MANAGER_CLIENT_FLAGS_DO_NOT_AUTO_START = 1 shl 0;
+
+type
+  PGTlsDatabaseVerifyFlags = ^TGTlsDatabaseVerifyFlags;
+  TGTlsDatabaseVerifyFlags = longint;
+
+const
+  G_TLS_DATABASE_VERIFY_NONE = 0;
+
+type
+  PGTlsDatabaseLookupFlags = ^TGTlsDatabaseLookupFlags;
+  TGTlsDatabaseLookupFlags = longint;
+
+const
+  G_TLS_DATABASE_LOOKUP_NONE = 0;
+  G_TLS_DATABASE_LOOKUP_KEYPAIR = 1;
+
+type
+  PGTlsCertificateRequestFlags = ^TGTlsCertificateRequestFlags;
+  TGTlsCertificateRequestFlags = longint;
+
+const
+  G_TLS_CERTIFICATE_REQUEST_NONE = 0;
+
+type
+  PGTlsProtocolVersion = ^TGTlsProtocolVersion;
+  TGTlsProtocolVersion = longint;
+
+const
+  G_TLS_PROTOCOL_VERSION_UNKNOWN = 0;
+  G_TLS_PROTOCOL_VERSION_SSL_3_0 = 1;
+  G_TLS_PROTOCOL_VERSION_TLS_1_0 = 2;
+  G_TLS_PROTOCOL_VERSION_TLS_1_1 = 3;
+  G_TLS_PROTOCOL_VERSION_TLS_1_2 = 4;
+  G_TLS_PROTOCOL_VERSION_TLS_1_3 = 5;
+  G_TLS_PROTOCOL_VERSION_DTLS_1_0 = 201;
+  G_TLS_PROTOCOL_VERSION_DTLS_1_2 = 202;
+
+type
+  PGIOModuleScopeFlags = ^TGIOModuleScopeFlags;
+  TGIOModuleScopeFlags = longint;
+
+const
+  G_IO_MODULE_SCOPE_NONE = 0;
+  G_IO_MODULE_SCOPE_BLOCK_DUPLICATES = 1;
+
+type
+  PGSocketClientEvent = ^TGSocketClientEvent;
+  TGSocketClientEvent = longint;
+
+const
+  G_SOCKET_CLIENT_RESOLVING = 0;
+  G_SOCKET_CLIENT_RESOLVED = 1;
+  G_SOCKET_CLIENT_CONNECTING = 2;
+  G_SOCKET_CLIENT_CONNECTED = 3;
+  G_SOCKET_CLIENT_PROXY_NEGOTIATING = 4;
+  G_SOCKET_CLIENT_PROXY_NEGOTIATED = 5;
+  G_SOCKET_CLIENT_TLS_HANDSHAKING = 6;
+  G_SOCKET_CLIENT_TLS_HANDSHAKED = 7;
+  G_SOCKET_CLIENT_COMPLETE = 8;
+
+type
+  PGSocketListenerEvent = ^TGSocketListenerEvent;
+  TGSocketListenerEvent = longint;
+
+const
+  G_SOCKET_LISTENER_BINDING = 0;
+  G_SOCKET_LISTENER_BOUND = 1;
+  G_SOCKET_LISTENER_LISTENING = 2;
+  G_SOCKET_LISTENER_LISTENED = 3;
+
+type
+  PGTestDBusFlags = ^TGTestDBusFlags;
+  TGTestDBusFlags = longint;
+
+const
+  G_TEST_DBUS_NONE = 0;
+
+type
+  PGSubprocessFlags = ^TGSubprocessFlags;
+  TGSubprocessFlags = longint;
+
+const
+  G_SUBPROCESS_FLAGS_NONE = 0;
+  G_SUBPROCESS_FLAGS_STDIN_PIPE = 1 shl 0;
+  G_SUBPROCESS_FLAGS_STDIN_INHERIT = 1 shl 1;
+  G_SUBPROCESS_FLAGS_STDOUT_PIPE = 1 shl 2;
+  G_SUBPROCESS_FLAGS_STDOUT_SILENCE = 1 shl 3;
+  G_SUBPROCESS_FLAGS_STDERR_PIPE = 1 shl 4;
+  G_SUBPROCESS_FLAGS_STDERR_SILENCE = 1 shl 5;
+  G_SUBPROCESS_FLAGS_STDERR_MERGE = 1 shl 6;
+  G_SUBPROCESS_FLAGS_INHERIT_FDS = 1 shl 7;
+  G_SUBPROCESS_FLAGS_SEARCH_PATH_FROM_ENVP = 1 shl 8;
+
+type
+  PGNotificationPriority = ^TGNotificationPriority;
+  TGNotificationPriority = longint;
+
+const
+  G_NOTIFICATION_PRIORITY_NORMAL = 0;
+  G_NOTIFICATION_PRIORITY_LOW = 1;
+  G_NOTIFICATION_PRIORITY_HIGH = 2;
+  G_NOTIFICATION_PRIORITY_URGENT = 3;
+
+type
+  PGNetworkConnectivity = ^TGNetworkConnectivity;
+  TGNetworkConnectivity = longint;
+
+const
+  G_NETWORK_CONNECTIVITY_LOCAL = 1;
+  G_NETWORK_CONNECTIVITY_LIMITED = 2;
+  G_NETWORK_CONNECTIVITY_PORTAL = 3;
+  G_NETWORK_CONNECTIVITY_FULL = 4;
+
+type
+  PGPollableReturn = ^TGPollableReturn;
+  TGPollableReturn = longint;
+
+const
+  G_POLLABLE_RETURN_FAILED = 0;
+  G_POLLABLE_RETURN_OK = 1;
+  G_POLLABLE_RETURN_WOULD_BLOCK = -(G_IO_ERROR_WOULD_BLOCK);
+
+type
+  PGMemoryMonitorWarningLevel = ^TGMemoryMonitorWarningLevel;
+  TGMemoryMonitorWarningLevel = longint;
+
+const
+  G_MEMORY_MONITOR_WARNING_LEVEL_LOW = 50;
+  G_MEMORY_MONITOR_WARNING_LEVEL_MEDIUM = 100;
+  G_MEMORY_MONITOR_WARNING_LEVEL_CRITICAL = 255;
+
+  // === Konventiert am: 16-8-24 19:19:43 ===
+
+
+{$ENDIF read_interface}
+
+
+{$IFDEF read_implementation}
+
+
+
+{$ENDIF read_implementation}

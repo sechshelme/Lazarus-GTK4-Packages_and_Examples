@@ -10,17 +10,14 @@ uses
 {$ENDIF}
 
 type
-  PGDateTime = ^TGDateTime;
-  TGDateTime = Tgint32;
+  PGTime = ^TGTime;
+  TGTime = Tgint32;
 
   PGDateYear = ^TGDateYear;
   TGDateYear = Tguint16;
 
   PGDateDay = ^TGDateDay;
   TGDateDay = Tguint8;
-
-  {  typedef gint32 GTime (GDateTime); }
-TGTime = function(dt: TGDateTime): Tgint32;
 
   PGDateDMY = ^TGDateDMY;
   TGDateDMY =  Longint;

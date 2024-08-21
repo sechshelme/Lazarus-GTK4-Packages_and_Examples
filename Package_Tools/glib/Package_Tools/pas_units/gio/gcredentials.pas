@@ -11,10 +11,6 @@ uses
 
 
 type
-  TGCredentials = record
-  end;
-  PGCredentials = ^TGCredentials;
-
   TGCredentialsClass = record
   end;
   PGCredentialsClass = ^TGCredentialsClass;

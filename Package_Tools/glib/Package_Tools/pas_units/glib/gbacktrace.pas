@@ -17,15 +17,5 @@ procedure g_on_error_stack_trace(prg_name: Pgchar); cdecl; external libglib2;
 
 implementation
 
-const
-  SIGTRAP = 5;
-
-function raise_(__sig: longint): longint; cdecl; external libglib2 Name 'raise';
-
-function G_BREAKPOINT: longint;
-begin
-//  Result := raise_(SIGTRAP);
-end;
-
 
 end.

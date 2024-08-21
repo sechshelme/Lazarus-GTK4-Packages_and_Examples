@@ -5,6 +5,10 @@ interface
 uses
   ctypes;
 
+{$IFDEF FPC}
+{$PACKRECORDS C}
+{$ENDIF}
+
 const
   {$IFDEF Linux}
   libglib2 = 'libglib-2.0';
@@ -40,9 +44,9 @@ type
   // ====
 
 const
-  GLIB_MAJOR_VERSION = 2;
-  GLIB_MINOR_VERSION = 80;
-  GLIB_MICRO_VERSION = 0;
+//  GLIB_MAJOR_VERSION = 2;
+//  GLIB_MINOR_VERSION = 80;
+//  GLIB_MICRO_VERSION = 0;
 
 
   {$IFDEF Linux}

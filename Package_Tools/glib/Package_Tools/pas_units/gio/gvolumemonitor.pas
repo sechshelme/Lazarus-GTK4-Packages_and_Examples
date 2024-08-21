@@ -3,7 +3,7 @@ unit gvolumemonitor;
 interface
 
 uses
-  common_GLIB, gtypes, glist, gtype, giotypes, gobject, gioenums;
+  common_GLIB, gtypes, glist, gtype, giotypes, gobject, gioenums, gvolume;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -14,10 +14,6 @@ const
   G_VOLUME_MONITOR_EXTENSION_POINT_NAME = 'gio-volume-monitor';
 
 type
-  TGVolume = record
-  end;
-  PGVolume = ^TGVolume;
-
   TGVolumeMonitor = record
     parent_instance: TGObject;
     priv: Tgpointer;

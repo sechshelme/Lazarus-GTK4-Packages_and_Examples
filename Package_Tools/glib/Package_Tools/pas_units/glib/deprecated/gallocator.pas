@@ -47,7 +47,6 @@ procedure g_node_pop_allocator; cdecl; external libglib2;
 
 function g_chunk_new(_type, chunk: Pointer): Pointer;
 function g_chunk_new0(_type, chunk: Pointer): Pointer;
-procedure g_chunk_free(mem_chunk: PGMemChunk; mem: Tgpointer);
 function g_mem_chunk_create(_type, x, y: Pointer): PGMemChunk;
 
 
@@ -65,11 +64,6 @@ end;
 function g_chunk_new0(_type, chunk: Pointer): Pointer;
 begin
   g_chunk_new0:=g_mem_chunk_alloc0(chunk);
-end;
-
-procedure g_chunk_free(mem_chunk: PGMemChunk; mem: Tgpointer);
-begin
-  g_mem_chunk_free(mem_chunk, mem);
 end;
 
 function g_mem_chunk_create(_type, x, y: Pointer): PGMemChunk;

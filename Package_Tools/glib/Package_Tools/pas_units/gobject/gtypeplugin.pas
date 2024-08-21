@@ -10,10 +10,6 @@ uses
   {$ENDIF}
 
 type
-  TGTypePlugin = record
-  end;
-  PGTypePlugin = ^TGTypePlugin;
-
   TGTypePluginUse = procedure(plugin: PGTypePlugin); cdecl;
   TGTypePluginUnuse = procedure(plugin: PGTypePlugin); cdecl;
   TGTypePluginCompleteTypeInfo = procedure(plugin: PGTypePlugin; g_type: TGType; info: PGTypeInfo; value_table: PGTypeValueTable); cdecl;

@@ -5,6 +5,10 @@ interface
 uses
   common_GLIB, gtypes, gstrfuncs;
 
+{$IFDEF FPC}
+{$PACKRECORDS C}
+{$ENDIF}
+
 type
   TGStrvBuilder = record
   end;

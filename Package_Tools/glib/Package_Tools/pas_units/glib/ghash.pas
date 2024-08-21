@@ -78,7 +78,6 @@ function g_direct_equal(v1: Tgconstpointer; v2: Tgconstpointer): Tgboolean; cdec
 
 function g_hash_table_freeze(hash_table: TGHashTable): pointer;
 function g_hash_table_thaw(hash_table: TGHashTable): pointer;
-function g_str_equal(v1, v2: longint): Tgboolean;
 
 // === Konventiert am: 8-8-24 17:05:56 ===
 
@@ -93,11 +92,6 @@ end;
 function g_hash_table_thaw(hash_table: TGHashTable): pointer;
 begin
   g_hash_table_thaw := pointer(0);
-end;
-
-function g_str_equal(v1, v2: longint): Tgboolean;
-begin
-  g_str_equal := strcomp(PChar(v1), PChar(v2)) = 0;
 end;
 
 

@@ -3,15 +3,11 @@ unit glib_types;
 interface
 
 uses
-  common_GLIB, gtypes;
+  common_GLIB, gtypes, TGType;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
-
-type
-  PGType = ^TGType;
-  TGType = Tgsize;
 
 function g_date_get_type: TGType; cdecl; external libgobject2_0;
 function g_strv_get_type: TGType; cdecl; external libgobject2_0;

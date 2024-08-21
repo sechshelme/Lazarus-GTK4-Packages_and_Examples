@@ -3,7 +3,7 @@ unit gutils;
 interface
 
 uses
-  common_GLIB, gtypes;
+  common_GLIB, gversion, gtypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -101,15 +101,7 @@ procedure g_abort; cdecl; external libglib2;
 
 // === Konventiert am: 8-8-24 19:19:09 ===
 
-function GLIB_CHECK_VERSION (major, minor, micro: Tguint):boolean;
-
 implementation
 
-function GLIB_CHECK_VERSION(major, minor, micro: Tguint): boolean;
-  begin
-    GLIB_CHECK_VERSION := ( (GLIB_MAJOR_VERSION > major) or
-            ((GLIB_MAJOR_VERSION = major) and (GLIB_MINOR_VERSION > minor)) or
-            ((GLIB_MAJOR_VERSION = major) and (GLIB_MINOR_VERSION = minor) and (GLIB_MICRO_VERSION >= micro)));
-  end;
 
 end.

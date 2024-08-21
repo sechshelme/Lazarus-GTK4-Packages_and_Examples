@@ -3,7 +3,7 @@ unit gunixsocketaddress;
 interface
 
 uses
-  common_GLIB, gtypes, gerror, gtype, giotypes, gobject, gioenums;
+  common_GLIB, gtypes, gerror, gtype, giotypes, gobject, gioenums, gsocketaddress;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -13,10 +13,6 @@ type
   TGUnixSocketAddressPrivate = record
   end;
   PGUnixSocketAddressPrivate = ^TGUnixSocketAddressPrivate;
-
-  TGSocketAddressClass = record
-  end;
-  PGSocketAddressClass = ^TGSocketAddressClass;
 
   TGUnixSocketAddress = record
     parent_instance: TGSocketAddress;

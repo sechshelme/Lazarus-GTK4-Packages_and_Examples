@@ -57,9 +57,9 @@ type
   end;
 
 var
-  g_thread_functions_for_glib_use: TGThreadFunctions; cvar;public;
-  g_thread_use_default_impl: Tgboolean; cvar;public;
-  g_thread_gettime: function: Tguint64; cvar;public;
+  g_thread_functions_for_glib_use: TGThreadFunctions; cvar; external libglib2;
+  g_thread_use_default_impl: Tgboolean; cvar; external libglib2;
+  g_thread_gettime: function: Tguint64; cvar; external libglib2;
 
 function g_thread_create(func: TGThreadFunc; Data: Tgpointer; joinable: Tgboolean; error: PPGError): PGThread; cdecl; external libglib2;
 function g_thread_create_full(func: TGThreadFunc; Data: Tgpointer; stack_size: Tgulong; joinable: Tgboolean; bound: Tgboolean;
@@ -68,20 +68,17 @@ procedure g_thread_set_priority(thread: PGThread; priority: TGThreadPriority); c
 procedure g_thread_foreach(thread_func: TGFunc; user_data: Tgpointer); cdecl; external libglib2;
 
 type
-  PGStaticMutex = ^TGStaticMutex;
-
   TGStaticMutex = record
     mutex: PGMutex;
     unused: Tpthread_mutex_t;
   end;
+  PGStaticMutex = ^TGStaticMutex;
 
 procedure g_static_mutex_init(mutex: PGStaticMutex); cdecl; external libglib2;
 procedure g_static_mutex_free(mutex: PGStaticMutex); cdecl; external libglib2;
 function g_static_mutex_get_mutex_impl(mutex: PGStaticMutex): PGMutex; cdecl; external libglib2;
 
 type
-  PGStaticRecMutex = ^TGStaticRecMutex;
-
   TGStaticRecMutex = record
     mutex: TGStaticMutex;
     depth: Tguint;
@@ -92,6 +89,7 @@ type
         2: (dummy: Tgdouble);
       end;
   end;
+  PGStaticRecMutex = ^TGStaticRecMutex;
 
 procedure g_static_rec_mutex_init(mutex: PGStaticRecMutex); cdecl; external libglib2;
 procedure g_static_rec_mutex_lock(mutex: PGStaticRecMutex); cdecl; external libglib2;
@@ -102,8 +100,6 @@ function g_static_rec_mutex_unlock_full(mutex: PGStaticRecMutex): Tguint; cdecl;
 procedure g_static_rec_mutex_free(mutex: PGStaticRecMutex); cdecl; external libglib2;
 
 type
-  PGStaticRWLock = ^TGStaticRWLock;
-
   TGStaticRWLock = record
     mutex: TGStaticMutex;
     read_cond: PGCond;
@@ -113,6 +109,7 @@ type
     want_to_read: Tguint;
     want_to_write: Tguint;
   end;
+  PGStaticRWLock = ^TGStaticRWLock;
 
 procedure g_static_rw_lock_init(lock: PGStaticRWLock); cdecl; external libglib2;
 procedure g_static_rw_lock_reader_lock(lock: PGStaticRWLock); cdecl; external libglib2;
@@ -141,7 +138,7 @@ procedure g_thread_init_with_errorcheck_mutexes(vtable: Tgpointer); cdecl; exter
 function g_thread_get_initialized: Tgboolean; cdecl; external libglib2;
 
 var
-  g_threads_got_initialized: Tgboolean; cvar;public;
+  g_threads_got_initialized: Tgboolean; cvar; external libglib2;
 
 function g_mutex_new: PGMutex; cdecl; external libglib2;
 procedure g_mutex_free(mutex: PGMutex); cdecl; external libglib2;

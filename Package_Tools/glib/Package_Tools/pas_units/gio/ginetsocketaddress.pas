@@ -3,7 +3,7 @@ unit ginetsocketaddress;
 interface
 
 uses
-  common_GLIB, gtypes, gtype, giotypes, gobject, gioenums, ginetaddress;
+  common_GLIB, gtypes, gtype, giotypes, gobject, gioenums, ginetaddress, gsocketaddress;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -13,10 +13,6 @@ type
   TGInetSocketAddressPrivate = record
   end;
   PGInetSocketAddressPrivate = ^TGInetSocketAddressPrivate;
-
-  TGSocketAddressClass = record
-  end;
-  PGSocketAddressClass = ^TGSocketAddressClass;
 
   TGInetSocketAddress = record
     parent_instance: TGSocketAddress;
