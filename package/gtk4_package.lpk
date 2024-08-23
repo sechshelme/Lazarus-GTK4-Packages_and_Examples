@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <Name Value="GTK4_package"/>
+    <Type Value="RunAndDesignTime"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <SearchPaths>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Files>
+      <Item>
+        <Filename Value="gdk4.pas"/>
+        <UnitName Value="GDK4"/>
+      </Item>
+      <Item>
+        <Filename Value="gdk4_broadway.pas"/>
+        <UnitName Value="GDK4_broadway"/>
+      </Item>
+      <Item>
+        <Filename Value="gsk4.pas"/>
+        <UnitName Value="GSK4"/>
+      </Item>
+      <Item>
+        <Filename Value="gsk4_broadway.pas"/>
+        <UnitName Value="GSK4_broadway"/>
+      </Item>
+      <Item>
+        <Filename Value="gtk4.pas"/>
+        <UnitName Value="GTK4"/>
+      </Item>
+      <Item>
+        <Filename Value="gtk4_unix_print.pas"/>
+        <UnitName Value="GTK4_unix_print"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="GLIB280_package"/>
+      </Item>
+      <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>
