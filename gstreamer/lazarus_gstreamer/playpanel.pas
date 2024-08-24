@@ -30,6 +30,7 @@ type
     PlayBtn, PauseBtn, StopBtn, SpringBtn: TButton;
     MuteCheckBox: TCheckBox;
     TrackBar, VolumeBar: TTrackBar;
+    EqualizerBar: array[0..2] of TTrackBar;
     DurLabel, PosLabel, StateLabel: TLabel;
     st: TStreamer;
     IsChange: boolean;
@@ -37,6 +38,7 @@ type
     procedure BtnClick(Sender: TObject);
     procedure MuteClick(Sender: TObject);
     procedure TrackBarChange(Sender: TObject);
+    function CreateTrackBar(Aleft: integer): TTrackBar;
   end;
 
 implementation
@@ -90,10 +92,30 @@ begin
   //  st.spring(TrackBar.Position);
 end;
 
+function TPlayerPanel.CreateTrackBar(Aleft: integer): TTrackBar;
+begin
+  Result := TTrackBar.Create(Self);
+  with Result do begin
+    Orientation := trVertical;
+    ScalePos := trRight;
+    Reversed := True;
+    Left := Aleft;
+    Width := 50;
+    Height := 40;
+    Top := 50;
+    Caption := 'volume';
+    Parent := Self;
+    Max := 10;
+    Position := 10;
+  end;
+end;
+
 constructor TPlayerPanel.Create(TheOwner: TComponent);
 const
   w = 50;
   t = 50;
+var
+  i: integer;
 begin
   inherited  Create(TheOwner);
   Height := 100;
@@ -177,15 +199,13 @@ begin
     OnClick := @BtnClick;
   end;
 
-  VolumeBar := TTrackBar.Create(Self);
-  with VolumeBar do begin
-    Left := 5 * w + 5;
-    Width := w * 2;
-    Top := t;
-    Caption := 'volume';
-    Parent := Self;
-    Max := 1000;
-    Position := 1000;
+  VolumeBar := CreateTrackBar(5 * w + 5);
+
+  for i := 0 to Length(EqualizerBar) - 1 do begin
+    EqualizerBar[i] := CreateTrackBar(5 * w + i * 15 + 20);
+    EqualizerBar[i].Max:=12;
+    EqualizerBar[i].Min:=-24;
+    EqualizerBar[i].Position:=-0;
   end;
 
   MuteCheckBox := TCheckBox.Create(Self);
@@ -217,7 +237,12 @@ var
   s: string;
   si: single;
 begin
-    st.SetVolume(VolumeBar.Position / 1000);
+  st.SetVolume(VolumeBar.Position / 10);
+
+  st.SetEqualizer0(EqualizerBar[0].Position);
+  st.SetEqualizer1(EqualizerBar[1].Position);
+  st.SetEqualizer2(EqualizerBar[2].Position);
+
   //si := sin(sinCounter / 4) / 2 + 0.5;
   //Inc(sinCounter);
   //WriteLn(si: 4: 2);

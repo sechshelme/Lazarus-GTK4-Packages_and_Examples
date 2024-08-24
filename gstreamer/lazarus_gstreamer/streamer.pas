@@ -18,6 +18,9 @@ type
   PPipelineElement = ^TPipelineElement;
 
 type
+
+  { TStreamer }
+
   TStreamer = class(TObject)
   public
     constructor Create(const AsongPath: string);
@@ -29,6 +32,9 @@ type
     function GetPosition: integer;
     function GetDuration: integer;
     procedure SetVolume(vol: gdouble);
+    procedure SetEqualizer0(vol: gdouble);
+    procedure SetEqualizer1(vol: gdouble);
+    procedure SetEqualizer2(vol: gdouble);
     procedure SetMute(mute: boolean);
     procedure printInfo;
     function getState: string;
@@ -40,9 +46,7 @@ type
 const
   G_USEC_PER_SEC = 1000000;
 
-  function gst_stream_volume_get_type(): GType; cdecl; external 'gstaudio-1.0';
-//  function gst_iir_equalizer_3bands_get_type(): GType; cdecl; external 'gstaudio-1.0';
-
+function gst_stream_volume_get_type(): GType; cdecl; external 'gstaudio-1.0';
 
 implementation
 
@@ -100,18 +104,22 @@ end;
 constructor TStreamer.Create(const AsongPath: string);
 var
   bus: PGstBus;
-  len: SizeInt;
-  i: integer;
-  pc: PChar;
-
 begin
   pipelineElement.pipeline := nil;
   fsongPath := AsongPath;
   pipelineElement.Duration := -1;
 
-  pipelineElement.pipeline := gst_parse_launch(PChar('filesrc location="' + fsongPath + '" ! decodebin ! audioconvert ! audioresample ! equalizer-3bands ! volume ! autoaudiosink'), nil);
-  pipelineElement.volume := gst_bin_get_by_interface(GST_BIN(pipelineElement.pipeline), gst_stream_volume_get_type());
-//  pipelineElement.equalizer := gst_bin_get_by_interface(GST_BIN(pipelineElement.pipeline), gst_iir_equalizer_3bands_get_type());
+  pipelineElement.pipeline := gst_parse_launch(PChar('filesrc location="' + fsongPath + '" ! decodebin ! audioconvert ! audioresample ! equalizer-3bands name=equ ! volume name=vol ! autoaudiosink'), nil);
+
+  pipelineElement.volume := gst_bin_get_by_name(GST_BIN(pipelineElement.pipeline), 'vol');
+  if pipelineElement.volume = nil then begin
+    WriteLn('Volume Error');
+  end;
+  //  pipelineElement.volume := gst_bin_get_by_interface(GST_BIN(pipelineElement.pipeline), gst_stream_volume_get_type());
+  pipelineElement.equalizer := gst_bin_get_by_name(GST_BIN(pipelineElement.pipeline), 'equ');
+  if pipelineElement.equalizer = nil then begin
+    WriteLn('Equalizer Error');
+  end;
 
   bus := gst_element_get_bus(pipelineElement.pipeline);
   gst_bus_add_signal_watch(bus);
@@ -123,8 +131,6 @@ begin
 end;
 
 destructor TStreamer.Destroy;
-var
-  i: integer;
 begin
   gst_object_unref(pipelineElement.pipeline);
   inherited Destroy;
@@ -169,6 +175,21 @@ end;
 procedure TStreamer.SetVolume(vol: gdouble);
 begin
   g_object_set(pipelineElement.volume, 'volume', vol, nil);
+end;
+
+procedure TStreamer.SetEqualizer0(vol: gdouble);
+begin
+  g_object_set(pipelineElement.equalizer, 'band0', vol, nil);
+end;
+
+procedure TStreamer.SetEqualizer1(vol: gdouble);
+begin
+  g_object_set(pipelineElement.equalizer, 'band1', vol, nil);
+end;
+
+procedure TStreamer.SetEqualizer2(vol: gdouble);
+begin
+  g_object_set(pipelineElement.equalizer, 'band2', vol, nil);
 end;
 
 procedure TStreamer.SetMute(mute: boolean);
