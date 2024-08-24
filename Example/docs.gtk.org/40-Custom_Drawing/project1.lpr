@@ -9,7 +9,7 @@ uses
   GDK4,
   GTK4;
 
-//  https://docs.gtk.org/gtk4/getting_started.html#drawing-in-response-to-input
+  //  https://docs.gtk.org/gtk4/getting_started.html#drawing-in-response-to-input
 
 var
   surface: Pcairo_surface_t = nil;
@@ -53,20 +53,44 @@ var
     cairo_paint(cr);
   end;
 
-procedure draw_brush(widget:PGtkWidget;x,y:Double);
-var
-  cr: Pcairo_t;
-begin
-  cr:=cairo_create(surface);
+  procedure draw_brush(widget: PGtkWidget; x, y: double);
+  var
+    cr: Pcairo_t;
+  begin
+    cr := cairo_create(surface);
 
-  cairo_rectangle(cr,x-3,x-3,6,6);
-  cairo_fill(cr);
+    cairo_rectangle(cr, x - 3, y - 3, 6, 6);
+    cairo_fill(cr);
 
-  cairo_destroy(cr);
+    cairo_destroy(cr);
 
-  gtk_widget_queue_draw(widget);
+    gtk_widget_queue_draw(widget);
   end;
-var startx, starty:Double;
+
+var
+  startx, starty: double;
+
+  procedure drag_begin(gesture: PGtkGestureDrag; x, y: double; area: PGtkWidget);
+  begin
+    startx := x;
+    starty := y;
+  end;
+
+  procedure drag_update(gesture: PGtkGestureDrag; x, y: double; area: PGtkWidget);
+  begin
+    draw_brush(area, startx + x, starty + y);
+  end;
+
+  procedure drag_end(gesture: PGtkGestureDrag; x, y: double; area: PGtkWidget);
+  begin
+    draw_brush(area, startx + x, starty + y);
+  end;
+
+  procedure pressed(gesture: PGtkGestureDrag; n_press: cint; x, y: double; area: PGtkWidget);
+  begin
+    clear_surface;
+    gtk_widget_queue_draw(area);
+  end;
 
   procedure activate(app: PGtkApplication; user_data: Tgpointer); cdecl;
   var
@@ -90,18 +114,18 @@ var startx, starty:Double;
 
     g_signal_connect_after(drawing_area, 'resize', G_CALLBACK(@resize_cb), nil);
 
-    drag:=gtk_gesture_drag_new;
-    gtk_gesture_single_set_button(GTK_GESTURE_SINGLE(drag),GDK_BUTTON_PRIMARY);
-    gtk_widget_add_controller(drawing_area,GTK_EVENT_CONTROLLER(drag));
-    g_signal_connect(drag,'drag-begin', G_CALLBACK(@drag_begin), drawing_area);
-    g_signal_connect(drag,'drag-update', G_CALLBACK(@drag_update), drawing_area);
-    g_signal_connect(drag,'drag-end', G_CALLBACK(@drag_end), drawing_area);
+    drag := gtk_gesture_drag_new;
+    gtk_gesture_single_set_button(GTK_GESTURE_SINGLE(drag), GDK_BUTTON_PRIMARY);
+    gtk_widget_add_controller(drawing_area, GTK_EVENT_CONTROLLER(drag));
+    g_signal_connect(drag, 'drag-begin', G_CALLBACK(@drag_begin), drawing_area);
+    g_signal_connect(drag, 'drag-update', G_CALLBACK(@drag_update), drawing_area);
+    g_signal_connect(drag, 'drag-end', G_CALLBACK(@drag_end), drawing_area);
 
-    press:=gtk_gesture_click_new;
-    gtk_gesture_single_set_button(GTK_GESTURE_SINGLE(press),GDK_BUTTON_SECONDARY);
-    gtk_widget_add_controller(drawing_area,GTK_EVENT_CONTROLLER(press));
+    press := gtk_gesture_click_new;
+    gtk_gesture_single_set_button(GTK_GESTURE_SINGLE(press), GDK_BUTTON_SECONDARY);
+    gtk_widget_add_controller(drawing_area, GTK_EVENT_CONTROLLER(press));
 
-    g_signal_connect(drag,'pressed', G_CALLBACK(@drag_end), drawing_area);
+    g_signal_connect(press, 'pressed', G_CALLBACK(@pressed), drawing_area);
 
     gtk_window_present(GTK_WINDOW(window));
   end;
