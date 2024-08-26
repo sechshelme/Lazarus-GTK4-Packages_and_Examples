@@ -8,48 +8,49 @@ uses
   GTK4;
 
   procedure print_hello(widget: PGtkWidget; Data: Tgpointer);
-  const
-    counter: cint = 0;
+  var
+    lab: PChar;
   begin
-    g_print('Hello World'#10);
+    g_object_get( widget, 'label', @lab, nil);
 
-    Inc(counter);
-    gtk_button_set_label(GTK_BUTTON(widget), PChar('Ich wurde ' + IntToStr(counter) + ' gelickt'));
+//    lab := gtk_button_get_label(GTK_BUTTON(widget));
+    g_print('Es wurde geklickt: %s'#10, lab);
+    g_free(lab);
   end;
-
-  // https://gist.github.com/Miqueas/c52a7f6684036030572a66d1f58ba574
 
 
   procedure activate(app: PGtkApplication; user_data: Tgpointer);
   var
-    window, box, button: PGtkWidget;
-    tt: Tgpointer;
+    window, button, grid: PGtkWidget;
+    label1: Tgpointer;
   begin
-    //    window := gtk_application_window_new(app);
     window := g_object_new(GTK_TYPE_APPLICATION_WINDOW,
       'application', app,
       'height-request', 300,
       'width-request', 300,
       'title', 'Hello GTK',
       nil);
-    //    gtk_window_set_title(GTK_WINDOW(window), 'Window');
-    //    gtk_window_set_default_size(GTK_WINDOW(window), 200, 200);
-    g_object_set(window, 'title', 'neuer Titel', nil);
 
-    box := gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
-    gtk_widget_set_halign(box, GTK_ALIGN_CENTER);
-    gtk_widget_set_valign(box, GTK_ALIGN_CENTER);
+//        grid := gtk_grid_new;
+        grid:=g_object_new(GTK_TYPE_GRID, nil);
 
-    gtk_window_set_child(GTK_WINDOW(window), box);
+    gtk_window_set_child(GTK_WINDOW(window), grid);
 
-    //    button := gtk_button_new_with_label('Hello World');
+    button := g_object_new(GTK_TYPE_BUTTON, 'label', 'Button 1', nil);
+    g_signal_connect(button, 'clicked', G_CALLBACK(@print_hello), nil);
+    gtk_grid_attach(GTK_GRID(grid), button, 0, 0, 1, 1);
 
-    button := g_object_new(GTK_TYPE_BUTTON, 'label', 'Hallo', 'tooltip-text', 'Ich bin ein Button mit'#10'Tool-Tip', nil);
+    button := g_object_new(GTK_TYPE_BUTTON, 'label', 'Button 2', nil);
+    g_signal_connect(button, 'clicked', G_CALLBACK(@print_hello), nil);
+    gtk_grid_attach(GTK_GRID(grid), button, 1, 0, 1, 1);
+
+    button := g_object_new(GTK_TYPE_BUTTON, 'label', 'Button 3', nil);
 
     g_signal_connect(button, 'clicked', G_CALLBACK(@print_hello), nil);
-    //    g_signal_connect_swapped(button, 'clicked', G_CALLBACK(@gtk_window_destroy), window);
+    gtk_grid_attach(GTK_GRID(grid), button, 0, 1, 2, 1);
 
-    gtk_box_append(GTK_BOX(box), button);
+    label1:=g_object_new(GTK_TYPE_LABEL,'label', 'Hello <b>World</b>!', 'use-markup', 1, nil);
+    gtk_grid_attach(GTK_GRID(grid), label1, 0, 2, 1, 1);
 
     gtk_window_present(GTK_WINDOW(window));
   end;
@@ -60,7 +61,9 @@ uses
     app: PGtkApplication;
     status: longint;
   begin
-    app := gtk_application_new('org.gtk.example', G_APPLICATION_DEFAULT_FLAGS);
+//    app := gtk_application_new('org.gtk.example', G_APPLICATION_DEFAULT_FLAGS);
+    app:=g_object_new(GTK_TYPE_APPLICATION, nil);
+
     g_signal_connect(app, 'activate', G_CALLBACK(@activate), nil);
     status := g_application_run(G_APPLICATION(app), argc, argv);
     g_object_unref(app);
