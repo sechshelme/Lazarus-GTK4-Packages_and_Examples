@@ -17,24 +17,26 @@ uses
 
   procedure tutorial_main(argc: cint; argv: PPChar);
   var
-    Source, parser, converter, sink, pipeline, volume: PGstElement;
+    filesrc, waveparse, audoconvert, sink, pipeline, volume: PGstElement;
     quit: boolean = False;
     ch: ansichar;
     vol: single = 1.0;
   begin
     gst_init(@argc, @argv);
 
-    pipeline := gst_pipeline_new('audio-player');
+//    pipeline := gst_pipeline_new('audio-player');
+    pipeline:= g_object_new(GST_TYPE_BIN, 'name', 'audio-player', nil);
+
     TestIO(pipeline, 'pipeline');
 
-    Source := gst_element_factory_make('filesrc', 'source');
-    TestIO(Source, 'source');
+    filesrc := gst_element_factory_make('filesrc', 'source');
+    TestIO(filesrc, 'source');
 
-    parser := gst_element_factory_make('wavparse', 'parser');
-    TestIO(parser, 'parser');
+    waveparse := gst_element_factory_make('wavparse', 'parser');
+    TestIO(waveparse, 'parser');
 
-    converter := gst_element_factory_make('audioconvert', 'converter');
-    TestIO(converter, 'converter');
+    audoconvert := gst_element_factory_make('audioconvert', 'converter');
+    TestIO(audoconvert, 'converter');
 
     volume := gst_element_factory_make('volume', 'volume');
     TestIO(volume, 'volume');
@@ -42,14 +44,14 @@ uses
     sink := gst_element_factory_make('autoaudiosink', 'sink');
     TestIO(sink, 'sink');
 
-    g_object_set(Source, 'location', 'test.wav', nil);
+    g_object_set(filesrc, 'location', '/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/test.wav', nil);
 
-    gst_bin_add_many(GST_BIN(pipeline), Source, [parser, converter, volume, sink, nil]);
+    gst_bin_add_many(GST_BIN(pipeline), filesrc, [waveparse, audoconvert, volume, sink, nil]);
 
     WriteLn(#10);
-    WriteLn('Source    -> parser   : ', gst_element_link(Source, parser));
-    WriteLn('parser    -> converter: ', gst_element_link(parser, converter));
-    WriteLn('converter -> volume   : ', gst_element_link(converter, volume));
+    WriteLn('Source    -> parser   : ', gst_element_link(filesrc, waveparse));
+    WriteLn('parser    -> converter: ', gst_element_link(waveparse, audoconvert));
+    WriteLn('converter -> volume   : ', gst_element_link(audoconvert, volume));
     WriteLn('volume    -> sink     : ', gst_element_link(volume, sink));
 
     gst_element_set_state(pipeline, GST_STATE_PLAYING);
@@ -86,9 +88,9 @@ uses
       end;
     until quit;
 
-    gst_object_unref(Source);
-    gst_object_unref(parser);
-    gst_object_unref(converter);
+    gst_object_unref(filesrc);
+    gst_object_unref(waveparse);
+    gst_object_unref(audoconvert);
     gst_object_unref(volume);
     gst_object_unref(sink);
     gst_object_unref(pipeline);
