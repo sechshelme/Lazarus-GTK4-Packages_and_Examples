@@ -91,11 +91,12 @@ begin
           LoadNewMusic(s, TrackBar1.Position);
         end;
       end else begin
-        if music.Pause then begin
-          music.Play;
-        end else begin
-          music.Pause := True;
-        end;
+        music.Play;
+        //if music.Pause then begin
+        //  music.Play;
+        //end else begin
+        //  music.Pause := True;
+        //end;
       end;
     end;
     cmStop: begin
@@ -107,11 +108,11 @@ begin
     end;
     cmNext: begin
       if (music <> nil) and (music.Duration > 0) then begin
-        if music.Pause then begin
+        if not music.isPlayed then begin
           FreeAndNil(music);
         end;
         if ListBoxSongs.Next then  begin
-          if (music <> nil) and (not music.Pause) then begin
+          if (music <> nil) and (music.isPlayed) then begin
             LoadNewMusic(ListBoxSongs.GetTitle, 0);
           end;
         end;
@@ -119,7 +120,7 @@ begin
     end;
     cmPrev: begin
       if music <> nil then begin
-        if music.Pause then begin
+        if not music.isPlayed then begin
           FreeAndNil(music);
         end;
         if ListBoxSongs.Prev(music) then begin
