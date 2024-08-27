@@ -18,19 +18,20 @@ type
   PPipelineElement = ^TPipelineElement;
 
 type
-
-  { TStreamer }
-
   TStreamer = class(TObject)
+  private
+    fsongPath: string;
+    pipelineElement: TPipelineElement;
+    FPosition: integer;
+    function GetDuration: integer;
+    procedure SetPosition(AValue: integer);
+    function GetPosition: integer;
   public
     constructor Create(const AsongPath: string);
     destructor Destroy; override;
     procedure Play;
     procedure Pause;
     procedure Stop;
-    procedure spring(ms: integer);
-    function GetPosition: integer;
-    function GetDuration: integer;
     procedure SetVolume(vol: gdouble);
     procedure SetEqualizer0(vol: gdouble);
     procedure SetEqualizer1(vol: gdouble);
@@ -38,9 +39,9 @@ type
     procedure SetMute(mute: boolean);
     procedure printInfo;
     function getState: string;
-  private
-    fsongPath: string;
-    pipelineElement: TPipelineElement;
+    property Position: integer read GetPosition write SetPosition;
+    property Duration: integer read GetDuration;
+    function isPlayed:Boolean;
   end;
 
 const
@@ -78,7 +79,7 @@ begin
   repeat
     sleep(1);
     stat := gst_element_query_duration(pE^.pipeline, GST_FORMAT_TIME, @pE^.Duration);
-    WriteLn(ct: 4, ' stat:', stat, '  duration: ', pE^.Duration);
+//    WriteLn(ct: 4, ' stat:', stat, '  duration: ', pE^.Duration / G_USEC_PER_SEC / 1000: 4: 2);
     Inc(ct);
   until stat or (ct > 100);
 end;
@@ -115,7 +116,7 @@ begin
   if pipelineElement.volume = nil then begin
     WriteLn('Volume Error');
   end;
-  //  pipelineElement.volume := gst_bin_get_by_interface(GST_BIN(pipelineElement.pipeline), gst_stream_volume_get_type());
+
   pipelineElement.equalizer := gst_bin_get_by_name(GST_BIN(pipelineElement.pipeline), 'equ');
   if pipelineElement.equalizer = nil then begin
     WriteLn('Equalizer Error');
@@ -151,10 +152,10 @@ begin
   gst_element_set_state(pipelineElement.pipeline, GST_STATE_READY);
 end;
 
-procedure TStreamer.spring(ms: integer);
+procedure TStreamer.SetPosition(AValue: integer);
 begin
   //  gst_element_seek_simple(pipelineElement, GST_FORMAT_TIME, TGstSeekFlags(int64(GST_SEEK_FLAG_FLUSH) or int64(GST_SEEK_FLAG_KEY_UNIT)), ms * G_USEC_PER_SEC);
-  gst_element_seek_simple(pipelineElement.pipeline, GST_FORMAT_TIME, TGstSeekFlags(0), ms * G_USEC_PER_SEC);
+  gst_element_seek_simple(pipelineElement.pipeline, GST_FORMAT_TIME, TGstSeekFlags(0), AValue * G_USEC_PER_SEC);
 end;
 
 function TStreamer.GetPosition: integer;
@@ -166,10 +167,12 @@ begin
 end;
 
 function TStreamer.GetDuration: integer;
-var
-  current: Tgint64;
 begin
-  Result := pipelineElement.Duration div G_USEC_PER_SEC;
+  if pipelineElement.Duration < 0 then begin
+    Result := -1;
+  end else begin
+    Result := pipelineElement.Duration div G_USEC_PER_SEC;
+  end;
 end;
 
 procedure TStreamer.SetVolume(vol: gdouble);
@@ -210,6 +213,11 @@ end;
 function TStreamer.getState: string;
 begin
   WriteStr(Result, pipelineElement.state);
+end;
+
+function TStreamer.isPlayed: Boolean;
+begin
+  Result := pipelineElement.state = GST_STATE_PLAYING;
 end;
 
 begin

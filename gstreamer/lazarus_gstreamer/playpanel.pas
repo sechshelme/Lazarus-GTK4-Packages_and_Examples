@@ -74,7 +74,7 @@ begin
       st.Stop;
     end;
     cmSpring: begin
-      st.spring(6000);
+      st.Position:=6000;
     end;
   end;
 end;
@@ -252,13 +252,13 @@ begin
 
 
   if IsChange then  begin
-    st.spring(TrackBar.Position);
+    st.Position:=TrackBar.Position;
     IsChange := False;
   end else begin
     oldChange := TrackBar.OnChange;
     TrackBar.OnChange := nil;
-    p := st.GetPosition;
-    d := st.GetDuration;
+    p := st.Position;
+    d := st.Duration;
     TrackBar.Max := d;
     TrackBar.Position := p;
     TrackBar.OnChange := oldChange;

@@ -7,12 +7,10 @@ uses
   ctypes,
   gst;
 
-  // https://forums.developer.nvidia.com/t/pipeline-ends-after-4-seconds-with-gst-message-eos/253486
-
 const
   GST_CLOCK_TIME_NONE = TGstClockTime(-1);
 
-  function gst_stream_volume_get_type():GType;cdecl;external 'gstaudio-1.0';
+  function gst_stream_volume_get_type(): GType; cdecl; external 'gstaudio-1.0';
 
 
   procedure tutorial_main(argc: cint; argv: PPChar);
@@ -23,44 +21,30 @@ const
     vol: single = 1.0;
   begin
     gst_init(@argc, @argv);
+    ClrScr;
 
- //  pipeline := gst_parse_launch('playbin uri=file:/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/test.wav ! volume', nil);
+//    pipeline := gst_parse_launch('filesrc location="/n4800/Multimedia/Music/Disco/Boney M/1981 - Boonoonoonoos/01 - Boonoonoonoos.flac" ! decodebin3 ! audioconvert ! volume ! autoaudiosink', nil);
 
- // /n4800/Multimedia/Music/Disco/Boney M/1981 - Boonoonoonoos/01 - Boonoonoonoos.flac
+//    pipeline := gst_parse_launch('filesrc location=/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/test.wav ! wavparse ! audioconvert ! volume ! autoaudiosink', nil);
+      pipeline := gst_parse_launch('filesrc location=/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/test.wav ! decodebin ! audioconvert ! volume ! autoaudiosink', nil);
 
-// pipeline := gst_parse_launch('filesrc location="test.flac" ! decodebin2 ! audioconvert ! volume ! autoaudiosink', nil);
- pipeline := gst_parse_launch('filesrc location="/n4800/Multimedia/Music/Disco/Boney M/1981 - Boonoonoonoos/01 - Boonoonoonoos.flac" ! decodebin3 ! audioconvert ! volume ! autoaudiosink', nil);
     if pipeline = nil then begin
       WriteLn('pipeline error');
     end else begin
       WriteLn('pipeline io.');
     end;
 
-    //filesrc := gst_bin_get_by_name(GST_BIN(pipeline), 'filesrc0');
-    //if filesrc = nil then begin
-    //  WriteLn('filesrc error');
-    //end else begin
-    //  WriteLn('filesrc io.');
-    //end;
-
-//    filesrc := gst_bin_get_by_name(GST_BIN(pipeline), 'location');
-    //filesrc := gst_bin_get_by_interface(GST_BIN( pipeline),  gst_filesrc_get_type());
-    // if filesrc = nil then begin
-    //   WriteLn('filesource error');
-    // end else begin
-    //   WriteLn('filesource io.');
-    // end;
-    //    g_object_set(filesrc, 'location', 'test.wav');
-
-   volume := gst_bin_get_by_interface(GST_BIN( pipeline), gst_stream_volume_get_type());
+    volume := gst_bin_get_by_interface(GST_BIN(pipeline), gst_stream_volume_get_type());
     if volume = nil then begin
       WriteLn('volume error');
     end else begin
       WriteLn('volume io.');
     end;
 
-    gst_element_set_state(pipeline, GST_STATE_PLAYING);
+//    gst_element_set_state(pipeline, GST_STATE_PLAYING);
 
+    GotoXY(1,1);
+    WriteLn('<1> = stop;  <2> = play;  <3> = pause');
 
     repeat
       g_object_set(volume, 'volume', vol, nil);
@@ -70,6 +54,15 @@ const
           #27: begin
             quit := True;
           end;
+          '1':begin
+            gst_element_set_state(pipeline, GST_STATE_READY);
+            end;
+          '2':begin
+            gst_element_set_state(pipeline, GST_STATE_PLAYING);
+            end;
+          '3':begin
+            gst_element_set_state(pipeline, GST_STATE_PAUSED);
+            end;
           '+': begin
             vol += 0.1;
             if vol >= 1.0 then begin
@@ -84,10 +77,10 @@ const
             end;
             WriteLn('volume: ', vol: 4: 2);
           end;
-          'm':begin
+          'm': begin
             g_object_set(volume, 'mute', gTRUE, nil);
           end;
-          'M':begin
+          'M': begin
             g_object_set(volume, 'mute', gFALSE, nil);
           end;
         end;
@@ -95,7 +88,6 @@ const
     until quit;
 
     gst_object_unref(pipeline);
-    gst_object_unref(filesrc);
   end;
 
 begin
