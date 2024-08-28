@@ -18,6 +18,9 @@ type
   PPipelineElement = ^TPipelineElement;
 
 type
+
+  { TStreamer }
+
   TStreamer = class(TObject)
   private
     fsongPath: string;
@@ -149,7 +152,7 @@ end;
 
 procedure TStreamer.Stop;
 begin
-  gst_element_set_state(pipelineElement.pipeline, GST_STATE_READY);
+  gst_element_set_state(pipelineElement.pipeline, GST_STATE_NULL);
 end;
 
 procedure TStreamer.SetPosition(AValue: integer);

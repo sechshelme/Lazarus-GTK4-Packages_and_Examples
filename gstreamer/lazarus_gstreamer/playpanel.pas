@@ -27,6 +27,7 @@ type
     procedure Timer;
     procedure printTime(time: integer);
   private
+    fsong: string;
     PlayBtn, PauseBtn, StopBtn, SpringBtn: TButton;
     MuteCheckBox: TCheckBox;
     TrackBar, VolumeBar: TTrackBar;
@@ -65,16 +66,26 @@ procedure TPlayerPanel.BtnClick(Sender: TObject);
 begin
   case TButton(Sender).Tag of
     cmPlay: begin
+      if st = nil then begin
+        st := TStreamer.Create(fsong);
+      end;
       st.Play;
     end;
     cmPause: begin
-      st.Pause;
+      if st <> nil then  begin
+        st.Pause;
+      end;
     end;
     cmStop: begin
-      st.Stop;
+      if st <> nil then begin
+        st.Stop;
+        FreeAndNil(st);
+      end;
     end;
     cmSpring: begin
-      st.Position:=6000;
+      if st <> nil then  begin
+        st.Position := 6000;
+      end;
     end;
   end;
 end;
@@ -89,7 +100,6 @@ end;
 procedure TPlayerPanel.TrackBarChange(Sender: TObject);
 begin
   IsChange := True;
-  //  st.spring(TrackBar.Position);
 end;
 
 function TPlayerPanel.CreateTrackBar(Aleft: integer): TTrackBar;
@@ -203,9 +213,9 @@ begin
 
   for i := 0 to Length(EqualizerBar) - 1 do begin
     EqualizerBar[i] := CreateTrackBar(5 * w + i * 15 + 20);
-    EqualizerBar[i].Max:=12;
-    EqualizerBar[i].Min:=-24;
-    EqualizerBar[i].Position:=-0;
+    EqualizerBar[i].Max := 12;
+    EqualizerBar[i].Min := -24;
+    EqualizerBar[i].Position := -0;
   end;
 
   MuteCheckBox := TCheckBox.Create(Self);
@@ -216,18 +226,20 @@ begin
     Parent := Self;
     OnChange := @MuteClick;
   end;
-
 end;
 
 destructor TPlayerPanel.Destroy;
 begin
-  st.Free;
+  if st <> nil then begin
+    st.Stop;
+    st.Free;
+  end;
   inherited Destroy;
 end;
 
 procedure TPlayerPanel.CreateSound(const song: string);
 begin
-  st := TStreamer.Create(song);
+  fsong := song;
 end;
 
 procedure TPlayerPanel.Timer;
@@ -237,37 +249,39 @@ var
   s: string;
   si: single;
 begin
-  st.SetVolume(VolumeBar.Position / 10);
+  if st <> nil then begin
+    st.SetVolume(VolumeBar.Position / 10);
 
-  st.SetEqualizer0(EqualizerBar[0].Position);
-  st.SetEqualizer1(EqualizerBar[1].Position);
-  st.SetEqualizer2(EqualizerBar[2].Position);
+    st.SetEqualizer0(EqualizerBar[0].Position);
+    st.SetEqualizer1(EqualizerBar[1].Position);
+    st.SetEqualizer2(EqualizerBar[2].Position);
 
-  //si := sin(sinCounter / 4) / 2 + 0.5;
-  //Inc(sinCounter);
-  //WriteLn(si: 4: 2);
-  //st.SetVolume(si);
-  //VolumeBar.Position := Trunc(si * 1000);
+    //si := sin(sinCounter / 4) / 2 + 0.5;
+    //Inc(sinCounter);
+    //WriteLn(si: 4: 2);
+    //st.SetVolume(si);
+    //VolumeBar.Position := Trunc(si * 1000);
 
 
 
-  if IsChange then  begin
-    st.Position:=TrackBar.Position;
-    IsChange := False;
-  end else begin
-    oldChange := TrackBar.OnChange;
-    TrackBar.OnChange := nil;
-    p := st.Position;
-    d := st.Duration;
-    TrackBar.Max := d;
-    TrackBar.Position := p;
-    TrackBar.OnChange := oldChange;
-    PosLabel.Caption := GstClockToStr(p);
-    DurLabel.Caption := GstClockToStr(d);
-    WriteStr(s, st.getState);
-    StateLabel.Caption := s;
+    if IsChange then  begin
+      st.Position := TrackBar.Position;
+      IsChange := False;
+    end else begin
+      oldChange := TrackBar.OnChange;
+      TrackBar.OnChange := nil;
+      p := st.Position;
+      d := st.Duration;
+      TrackBar.Max := d;
+      TrackBar.Position := p;
+      TrackBar.OnChange := oldChange;
+      PosLabel.Caption := GstClockToStr(p);
+      DurLabel.Caption := GstClockToStr(d);
+      WriteStr(s, st.getState);
+      StateLabel.Caption := s;
+    end;
+    //  if p=d then st.Stop;
   end;
-  //  if p=d then st.Stop;
 end;
 
 procedure TPlayerPanel.printTime(time: integer);

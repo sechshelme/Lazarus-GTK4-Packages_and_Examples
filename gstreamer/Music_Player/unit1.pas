@@ -92,15 +92,11 @@ begin
         end;
       end else begin
         music.Play;
-        //if music.Pause then begin
-        //  music.Play;
-        //end else begin
-        //  music.Pause := True;
-        //end;
       end;
     end;
     cmStop: begin
       if music <> nil then begin
+        music.Stop;
         FreeAndNil(music);
         TrackBar1.Position := 0;
         TrackBar1.Max := 1000;
