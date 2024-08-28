@@ -1,6 +1,3 @@
-  //{%MainUnit sdl3.pas}
-
-    {$include common_gtk.inc}
 
 
 {$include GDK/gdkenums.inc}                   // io.

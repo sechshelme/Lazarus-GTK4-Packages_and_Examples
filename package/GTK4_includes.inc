@@ -1,5 +1,4 @@
-  //{%MainUnit sdl3.pas}
-      {$include common_gtk.inc}
+
 
 {$include GTK/gtkenums.inc }                   // io.
 {$include GTK/gtktypes.inc }                   // io.

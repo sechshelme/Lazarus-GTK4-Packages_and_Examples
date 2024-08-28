@@ -9,26 +9,89 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
-  // ====  _ Typen
+const
+  {$IFDEF Linux}
+  libgtk4 = 'libgtk-4';
+  libgio2 = 'libgio-2.0';
+  libgobject2_0 = 'libgobject-2.0';
+  {$ENDIF}
+
+  {$IFDEF Windows}
+  libgtk4 = 'libgtk-4.dll';
+  libgio2 = 'libgio-2.0.dll';
+  glibgobject2_0 = 'libgobject-2.0.dll';
+  {$ENDIF}
+
+
+  // ==== Fremdes 
+
 type
-  //TGdkDmabufFormats = record
-  //end;
-  //PGdkDmabufFormats = ^TGdkDmabufFormats;
+  // === Exotisches
+  Tsize_t = SizeUInt;
 
-  //TGdkCairoContext = record
-  //end;
-  //PGdkCairoContext = ^TGdkCairoContext;
+  Tva_list = Pointer; //  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
 
-  //TGdkAppLaunchContext = record
-  //end;
-  //PGdkAppLaunchContext = ^TGdkAppLaunchContext;
+  Tgraphene_matrix_t = Pointer; //    /usr/include/graphene-1.0/graphene-matrix.h
+  Pgraphene_matrix_t = ^Tgraphene_matrix_t;
+  Tgraphene_rect_t = Pointer;
+  Pgraphene_rect_t = ^Tgraphene_rect_t;
+  Tgraphene_point_t = Pointer;
+  Pgraphene_point_t = ^Tgraphene_point_t;
+  Tgraphene_vec2_t = Pointer;        // /usr/include/graphene-1.0/graphene-vec3.h
+  Pgraphene_vec2_t = ^Tgraphene_vec2_t;
+  Tgraphene_vec3_t = Pointer;        // /usr/include/graphene-1.0/graphene-vec3.h
+  Pgraphene_vec3_t = ^Tgraphene_vec3_t;
+  Tgraphene_vec4_t = Pointer;        // /usr/include/graphene-1.0/graphene-vec4.h
+  Pgraphene_vec4_t = ^Tgraphene_vec4_t;
 
-  //TGdkVulkanContext = record
-  //end;
-  //PGdkVulkanContext = ^TGdkVulkanContext;
+  Tgraphene_size_t = record
+    Width, Height: cfloat;
+  end;
+  Pgraphene_size_t = ^Tgraphene_size_t;  // /usr/include/graphene-1.0/graphene-size.h
+
+  Tgraphene_point3d_t = record
+    x, y, z: cfloat;
+  end;
+  Pgraphene_point3d_t = ^Tgraphene_point3d_t;
+
+  Tcairo_content_t = cairo_content_t;
+
+  // ==== Pango
+
+  PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung
+  PPPangoLanguage = ^PPangoLanguage;
+
+  PPPangoAttrList = ^PPangoAttrList;
+
+  // Wayland;
+
+  Twl_surface = Pointer;
+  Pwl_surface = ^Twl_surface;
+
+  Twl_seat = Pointer;
+  Pwl_seat = ^Twl_seat;
+
+  Twl_output = Pointer;
+  Pwl_output = ^Twl_output;
+
+  Twl_display = Pointer;
+  Pwl_display = ^Twl_display;
+
+  Twl_compositor = Pointer;
+  Pwl_compositor = ^Twl_compositor;
+
+  Twl_pointer = Pointer;
+  Pwl_pointer = ^Twl_pointer;
+
+  Twl_keyboard = Pointer;
+  Pwl_keyboard = ^Twl_keyboard;
+
+  Txkb_keymap = Pointer;
+  Pxkb_keymap = ^Txkb_keymap;
 
 
   // ==== ausgelagertes
+
   TGdkDevice = record
   end;
   PGdkDevice = ^TGdkDevice;
@@ -56,39 +119,7 @@ type
 const
   GDK_CURRENT_TIME = 0;
 
-//type
-//  TGdkRectangle = cairo_rectangle_int_t;
-//
-//  //TGdkRectangle = record
-//  //  x: cint;
-//  //  y: cint;
-//  //  Width: cint;
-//  //  Height: cint;
-//  //end;
-//  PGdkRectangle = ^TGdkRectangle;
 
-{
-#define GDK_DECLARE_INTERNAL_TYPE(ModuleObjName, module_obj_name, MODULE, OBJ_NAME, ParentName) \
-  GType module_obj_name##_get_type (void);                                                               \
-  G_GNUC_BEGIN_IGNORE_DEPRECATIONS                                                                       \
-  typedef struct _##ModuleObjName ModuleObjName;                                                         \
-  typedef struct _##ModuleObjName##Class ModuleObjName##Class;                                           \
-                                                                                                         \
-  _GLIB_DEFINE_AUTOPTR_CHAINUP (ModuleObjName, ParentName)                                               \
-  G_DEFINE_AUTOPTR_CLEANUP_FUNC (ModuleObjName##Class, g_type_class_unref)                               \
-                                                                                                         \
-  G_GNUC_UNUSED static inline ModuleObjName * MODULE##_##OBJ_NAME (gpointer ptr)                        \
-    return G_TYPE_CHECK_INSTANCE_CAST (ptr, module_obj_name##_get_type (), ModuleObjName);              \
-  G_GNUC_UNUSED static inline ModuleObjName##Class * MODULE##_##OBJ_NAME##_CLASS (gpointer ptr)         \
-    return G_TYPE_CHECK_CLASS_CAST (ptr, module_obj_name##_get_type (), ModuleObjName##Class);          \
-  G_GNUC_UNUSED static inline gboolean MODULE##_IS_##OBJ_NAME (gpointer ptr)                            \
-    return G_TYPE_CHECK_INSTANCE_TYPE (ptr, module_obj_name##_get_type ());                             \
-  G_GNUC_UNUSED static inline gboolean MODULE##_IS_##OBJ_NAME##_CLASS (gpointer ptr)                    \
-    return G_TYPE_CHECK_CLASS_TYPE (ptr, module_obj_name##_get_type ());                                \
-  G_GNUC_UNUSED static inline ModuleObjName##Class * MODULE##_##OBJ_NAME##_GET_CLASS (gpointer ptr)     \
-    return G_TYPE_INSTANCE_GET_CLASS (ptr, module_obj_name##_get_type (), ModuleObjName##Class);        \
-  G_GNUC_END_IGNORE_DEPRECATIONS
- }
 type
   TGdkKeymapKey = record
     keycode: Tguint;

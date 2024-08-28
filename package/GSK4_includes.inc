@@ -1,5 +1,4 @@
-  //{%MainUnit sdl3.pas}
-      {$include common_gtk.inc}
+
 
 {$include GSK/gsktypes.inc }                   // io.
 {$include GSK/gskenums.inc }                   // io.
@@ -19,14 +18,14 @@
 
 {$IFDEF Linux}
 
-//// ==== GSK broadway
-{$include GSK/broadway/gskbroadwayrenderer.inc }        // io.
-//
-//// ==== GSK gl
+// ==== GSK broadway
+{$include GSK/broadway/gskbroadwayrenderer.inc }   // io.
+
+// ==== GSK gl
 {$include GSK/gl/gskglrenderer.inc }              // io.
-//
-//// ==== GSK gpu
-{$include GSK/gpu/gskvulkanrenderer.inc }          // io.
+
+// ==== GSK gpu
+{$include GSK/gpu/gskvulkanrenderer.inc }         // io.
 
 {$ENDIF}
 
