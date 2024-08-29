@@ -113,7 +113,7 @@ begin
   fsongPath := AsongPath;
   pipelineElement.Duration := -1;
 
-  pipelineElement.pipeline := gst_parse_launch(PChar('filesrc location="' + fsongPath + '" ! decodebin ! audioconvert ! audioresample ! equalizer-3bands name=equ ! volume name=vol ! autoaudiosink'), nil);
+  pipelineElement.pipeline := gst_parse_launch(PChar('filesrc location="' + fsongPath + '" ! queue ! decodebin ! audioconvert ! audioresample ! equalizer-3bands name=equ ! volume name=vol ! autoaudiosink'), nil);
 
   pipelineElement.volume := gst_bin_get_by_name(GST_BIN(pipelineElement.pipeline), 'vol');
   if pipelineElement.volume = nil then begin

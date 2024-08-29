@@ -41,11 +41,6 @@
         <UnitName Value="Unit1"/>
       </Unit>
       <Unit>
-        <Filename Value="streamer.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="Streamer"/>
-      </Unit>
-      <Unit>
         <Filename Value="playpanel.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="PlayPanel"/>

@@ -33,8 +33,16 @@ implementation
 procedure TForm1.FormCreate(Sender: TObject);
 var
   i: integer;
+const
+  song: array of PChar =
+    (('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/test.wav'),
+    ('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/test.flac'),
+    ('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/test.mp3'),
+    ('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/test.ogg'),
+    ('/n4800/Multimedia/Music/Disco/Boney M/1981 - Boonoonoonoos/01 - Boonoonoonoos.flac'),
+    ('/n4800/Multimedia/Music/Diverses/MP3 Diverse/DJ_Shaolin-Popcorn_(Hot_Butter_cover).mp3'));
 begin
-  SetLength(playpanel, 5);
+  SetLength(playpanel, Length(song));
   for i := 0 to Length(playpanel) - 1 do begin
     playpanel[i] := TPlayerPanel.Create(self);
     with playpanel[i] do begin
@@ -42,14 +50,7 @@ begin
       Width := self.ClientWidth;
       Top := 100 * i;
       Anchors := [akLeft, akTop, akRight];
-      if i = 4 then  begin
-        CreateSound('/n4800/Multimedia/Music/Diverses/MP3 Diverse/DJ_Shaolin-Popcorn_(Hot_Butter_cover).mp3');
-      end else if i = 3 then  begin
-        CreateSound('/n4800/Multimedia/Music/Disco/Boney M/1981 - Boonoonoonoos/01 - Boonoonoonoos.flac');
-//        CreateSound('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/test.wav');
-      end else begin
-        CreateSound('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/test.mp3');
-      end;
+      CreateSound(song[i]);
     end;
   end;
   Timer1.Enabled := True;
