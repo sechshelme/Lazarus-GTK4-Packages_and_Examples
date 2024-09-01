@@ -14,6 +14,7 @@ type
     volume: PGstElement;
     state: TGstState;
     Duration: Tgint64;
+    FIsEnd: boolean;
   end;
   PPipelineElement = ^TPipelineElement;
 
@@ -44,15 +45,36 @@ type
     function getState: string;
     property Position: integer read GetPosition write SetPosition;
     property Duration: integer read GetDuration;
-    function isPlayed:Boolean;
+    function isPlayed: boolean;
+    function isEnd: boolean;
   end;
 
 const
   G_USEC_PER_SEC = 1000000;
 
-function gst_stream_volume_get_type(): GType; cdecl; external 'gstaudio-1.0';
+function GstClockToStr(t: TGstClockTime): string;
 
 implementation
+
+function gst_stream_volume_get_type(): GType; cdecl; external 'gstaudio-1.0';
+
+function GstClockToStr(t: TGstClockTime): string;
+var
+  ms, s, min: TGstClockTime;
+  i: integer;
+begin
+  min := t div 60000;
+  s := (t mod 60000) div 1000;
+  ms := t mod 1000;
+  WriteStr(Result, min: 3, ':', s: 2, ':', ms: 3);
+  for i := 1 to Length(Result) do begin
+    if Result[i] = ' ' then begin
+      Result[i] := '0';
+    end;
+  end;
+end;
+
+// ====
 
 procedure TestIO(element: Pointer; const s: string);
 begin
@@ -73,19 +95,19 @@ begin
   //  WriteLn(GST_MESSAGE_TYPE(msg));
 end;
 
-procedure duration_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
-var
-  pE: PPipelineElement absolute Data;
-  stat: TGboolean;
-  ct: integer = 0;
-begin
-  repeat
-    sleep(1);
-    stat := gst_element_query_duration(pE^.pipeline, GST_FORMAT_TIME, @pE^.Duration);
-//    WriteLn(ct: 4, ' stat:', stat, '  duration: ', pE^.Duration / G_USEC_PER_SEC / 1000: 4: 2);
-    Inc(ct);
-  until stat or (ct > 100);
-end;
+//procedure duration_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
+//var
+//  pE: PPipelineElement absolute Data;
+//  stat: TGboolean;
+//  ct: integer = 0;
+//begin
+//  repeat
+//    sleep(1);
+//    stat := gst_element_query_duration(pE^.pipeline, GST_FORMAT_TIME, @pE^.Duration);
+//    //    WriteLn(ct: 4, ' stat:', stat, '  duration: ', pE^.Duration / G_USEC_PER_SEC / 1000: 4: 2);
+//    Inc(ct);
+//  until stat or (ct > 100);
+//end;
 
 procedure state_changed_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
 var
@@ -100,7 +122,8 @@ procedure eos_cb(bus: PGstBus; msg: PGstMessage; Data: Pointer);
 var
   pE: PPipelineElement absolute Data;
 begin
-  gst_element_set_state(pE^.pipeline, GST_STATE_READY);
+  //  gst_element_set_state(pE^.pipeline, GST_STATE_READY);
+  pe^.FIsEnd := True;
 end;
 
 // =========================
@@ -109,10 +132,9 @@ constructor TStreamer.Create(const AsongPath: string);
 var
   bus: PGstBus;
 begin
-  pipelineElement.pipeline := nil;
   fsongPath := AsongPath;
-  pipelineElement.Duration := -1;
-
+  pipelineElement.FisEnd := False;
+  pipelineElement.Duration := 0;
   pipelineElement.pipeline := gst_parse_launch(PChar('filesrc location="' + fsongPath + '" ! decodebin3 ! audioconvert ! audioresample ! equalizer-3bands name=equ ! volume name=vol ! autoaudiosink'), nil);
 
   pipelineElement.volume := gst_bin_get_by_name(GST_BIN(pipelineElement.pipeline), 'vol');
@@ -130,12 +152,13 @@ begin
   g_signal_connect(G_OBJECT(bus), 'message::state-changed', TGCallback(@state_changed_cb), @pipelineElement);
   g_signal_connect(G_OBJECT(bus), 'message::eos', TGCallback(@eos_cb), @pipelineElement);
   g_signal_connect(G_OBJECT(bus), 'message', TGCallback(@test_cb), @pipelineElement);
-  g_signal_connect(G_OBJECT(bus), 'message::duration-changed', TGCallback(@duration_cb), @pipelineElement);
+  //  g_signal_connect(G_OBJECT(bus), 'message::duration-changed', TGCallback(@duration_cb), @pipelineElement);
   gst_object_unref(bus);
 end;
 
 destructor TStreamer.Destroy;
 begin
+  Stop;
   gst_object_unref(pipelineElement.pipeline);
   inherited Destroy;
 end;
@@ -170,12 +193,17 @@ begin
 end;
 
 function TStreamer.GetDuration: integer;
+var
+  current: Tgint64 = 0;
 begin
-  if pipelineElement.Duration < 0 then begin
-    Result := -1;
-  end else begin
-    Result := pipelineElement.Duration div G_USEC_PER_SEC;
+  if pipelineElement.Duration = 0 then begin
+    gst_element_query_duration(pipelineElement.pipeline, GST_FORMAT_TIME, @current);
+    if current > 0 then  begin
+      pipelineElement.Duration := current;
+    end;
+    WriteLn(current);
   end;
+  Result := pipelineElement.Duration div G_USEC_PER_SEC;
 end;
 
 procedure TStreamer.SetVolume(vol: gdouble);
@@ -218,9 +246,14 @@ begin
   WriteStr(Result, pipelineElement.state);
 end;
 
-function TStreamer.isPlayed: Boolean;
+function TStreamer.isPlayed: boolean;
 begin
   Result := pipelineElement.state = GST_STATE_PLAYING;
+end;
+
+function TStreamer.isEnd: boolean;
+begin
+  Result := pipelineElement.FIsEnd;
 end;
 
 begin

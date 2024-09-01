@@ -39,28 +39,10 @@ type
     procedure BtnClick(Sender: TObject);
     procedure MuteClick(Sender: TObject);
     procedure TrackBarChange(Sender: TObject);
-    function CreateTrackBar(Aleft: integer): TTrackBar;
+    function CreateLevelTrackBar(Aleft: integer): TTrackBar;
   end;
 
 implementation
-
-
-function GstClockToStr(t: TGstClockTime): string;
-var
-  ms, s, min: TGstClockTime;
-  i: integer;
-begin
-  min := t div 60000;
-  s := (t mod 60000) div 1000;
-  ms := t mod 1000;
-  WriteStr(Result, min: 3, ':', s: 2, ':', ms: 3);
-  for i := 1 to Length(Result) do begin
-    if Result[i] = ' ' then begin
-      Result[i] := '0';
-    end;
-  end;
-end;
-
 
 procedure TPlayerPanel.BtnClick(Sender: TObject);
 begin
@@ -102,7 +84,7 @@ begin
   IsChange := True;
 end;
 
-function TPlayerPanel.CreateTrackBar(Aleft: integer): TTrackBar;
+function TPlayerPanel.CreateLevelTrackBar(Aleft: integer): TTrackBar;
 begin
   Result := TTrackBar.Create(Self);
   with Result do begin
@@ -163,6 +145,8 @@ begin
     Anchors := [akLeft, akTop, akRight];
     OnChange := @TrackBarChange;
     Parent := Self;
+    max:=0;
+    Position:=0;
   end;
 
   PlayBtn := TButton.Create(Self);
@@ -209,10 +193,10 @@ begin
     OnClick := @BtnClick;
   end;
 
-  VolumeBar := CreateTrackBar(5 * w + 5);
+  VolumeBar := CreateLevelTrackBar(5 * w + 5);
 
   for i := 0 to Length(EqualizerBar) - 1 do begin
-    EqualizerBar[i] := CreateTrackBar(5 * w + i * 15 + 20);
+    EqualizerBar[i] := CreateLevelTrackBar(5 * w + i * 15 + 20);
     EqualizerBar[i].Max := 12;
     EqualizerBar[i].Min := -24;
     EqualizerBar[i].Position := -0;

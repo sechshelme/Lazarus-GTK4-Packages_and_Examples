@@ -201,26 +201,31 @@ end;
 
 procedure TForm1.Timer1Timer(Sender: TObject);
 var
-  t_length, t_pos: double;
+  SDur, SPos: Integer;
   s: string;
   ChangeProc: TNotifyEvent;
 begin
   if ListBoxSongs.Count > 0 then begin
     if music <> nil then begin
-      t_length := music.Duration;
-      WriteStr(s, t_length: 6: 1);
-      Label1.Caption := s;
-      t_pos := music.Position;
-      WriteStr(s, t_pos: 6: 1);
-      Label3.Caption := s;
+      SDur := music.Duration;
+//      WriteStr(s, SDur: 6: 1);
+      Label1.Caption:=GstClockToStr(SDur);
+//      Label1.Caption := s;
+      SPos := music.Position;
+//      WriteStr(s, SPos: 6: 1);
+      Label3.Caption:=GstClockToStr(SPos);
+//      Label3.Caption := s;
       ChangeProc := TrackBar1.OnChange;
       TrackBar1.OnChange := nil;
       TrackBar1.Max := music.Duration;
       TrackBar1.Position := music.Position;
       TrackBar1.OnChange := ChangeProc;
 
-      if t_pos >= t_length then begin
+      WriteLn('Pos: ', GstClockToStr( SPos),' Pos: ', GstClockToStr( SDur));
+      if music.isEnd then begin
+//      if (SDur>0)and( SPos >= SDur) then begin
         if ListBoxSongs.Next then  begin
+          WriteLn('load');
           LoadNewMusic(ListBoxSongs.GetTitle, 0);
         end;
       end;
