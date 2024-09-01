@@ -112,11 +112,12 @@ begin
   end else begin
     Result := True;
   end;
-  musicPos := music.Position;
-  if musicPos > 1000 then begin
-    music.Position:=100;
-    Result := False;
-  end else begin
+  //musicPos := music.Position;
+  //if musicPos > 1000 then begin
+  //  music.Position:=100;
+  //  Result := False;
+  //end else
+  begin
     if ItemIndex = 0 then begin
       ItemIndex := Count - 1;
     end else begin

@@ -6,7 +6,7 @@ const
   MusicDir:String = '/n4800/Multimedia/Music/Disco/Boney M';
 
 type
-  Tcommand = (cmNone, cmNew, cmSave, cmOpen, cmClose, cmAdd, cmRemove,cmRemoveAll, cmUp, cmDown, cmPlay, cmStop, cmNext, cmPrev);
+  Tcommand = (cmNone, cmNew, cmSave, cmOpen, cmClose, cmAdd, cmRemove,cmRemoveAll, cmUp, cmDown, cmPlay,cmPause, cmStop, cmNext, cmPrev);
 
   TcmdProp = record
     cmd: Tcommand;
@@ -29,9 +29,11 @@ const
     (cmd: cmRemoveAll; Caption: 'Remove All'),
     (cmd: cmUp; Caption: 'Up'),
     (cmd: cmDown; Caption: 'Down'));
+  //▶️⏸⏯⏹⏺⏭⏮⏩⏪
 
   PlayCmdProp: TcmdProps = (
-    (cmd: cmPlay; Caption: '▶️'),
+  (cmd: cmPlay; Caption: '▶️'),
+  (cmd: cmPause; Caption: '⏸️'),
     (cmd: cmStop; Caption: '⏹️'),
     (cmd: cmNext; Caption: '⏭️'),
     (cmd: cmPrev; Caption: '⏮'));

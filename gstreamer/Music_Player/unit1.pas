@@ -94,6 +94,9 @@ begin
         music.Play;
       end;
     end;
+    cmPause:      begin
+          if music<>nil then music.Pause;
+      end;
     cmStop: begin
       if music <> nil then begin
         music.Stop;
@@ -104,9 +107,9 @@ begin
     end;
     cmNext: begin
       if (music <> nil) and (music.Duration > 0) then begin
-        if not music.isPlayed then begin
-          FreeAndNil(music);
-        end;
+//        if not music.isPlayed then begin
+//          FreeAndNil(music);
+//        end;
         if ListBoxSongs.Next then  begin
           if (music <> nil) and (music.isPlayed) then begin
             LoadNewMusic(ListBoxSongs.GetTitle, 0);
@@ -116,11 +119,14 @@ begin
     end;
     cmPrev: begin
       if music <> nil then begin
-        if not music.isPlayed then begin
-          FreeAndNil(music);
-        end;
-        if ListBoxSongs.Prev(music) then begin
-          LoadNewMusic(ListBoxSongs.GetTitle, 0);
+        if music.Position > 5000 then begin
+          music.Position:=0;
+        end else
+        if  music.isPlayed then begin
+          if ListBoxSongs.Prev(music) then begin
+            LoadNewMusic(ListBoxSongs.GetTitle, 0);
+          end;
+//          FreeAndNil(music);
         end;
       end;
     end;
@@ -182,14 +188,14 @@ begin
   music := TStreamer.Create(titel);
 
 //  TrackBar1.Max := music.Duration;
-  TrackBar1.Max := 1000;
-  TrackBar1.Position := TrackPos;
+//TrackBar1.Max := 1000;
+//TrackBar1.Position := TrackPos;
+TrackBar1.Max := 0;
+TrackBar1.Position := 0;
 
   //  Mix_PlayMusic(music, 1);
   //  Mix_FadeInMusic(music, 1, 3000);
   music.Play;
-
-  //  Mix_SetMusicPosition(Mix_MusicDuration(music) / TrackBarDivider * TrackPos);
 end;
 
 procedure TForm1.TrackBar1Change(Sender: TObject);
@@ -202,19 +208,14 @@ end;
 procedure TForm1.Timer1Timer(Sender: TObject);
 var
   SDur, SPos: Integer;
-  s: string;
   ChangeProc: TNotifyEvent;
 begin
   if ListBoxSongs.Count > 0 then begin
     if music <> nil then begin
       SDur := music.Duration;
-//      WriteStr(s, SDur: 6: 1);
       Label1.Caption:=GstClockToStr(SDur);
-//      Label1.Caption := s;
       SPos := music.Position;
-//      WriteStr(s, SPos: 6: 1);
       Label3.Caption:=GstClockToStr(SPos);
-//      Label3.Caption := s;
       ChangeProc := TrackBar1.OnChange;
       TrackBar1.OnChange := nil;
       TrackBar1.Max := music.Duration;
