@@ -135,5 +135,7 @@ int main (int argc, char **argv)
   g_object_unref (app);
 
   return status;
+
+  g_param_spec_double(0,0,0,0,0,0,0);
 }
 
