@@ -25,13 +25,10 @@ type
     CheckGroup1: TCheckGroup;
     Edit1: TEdit;
     GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
     Label1: TLabel;
+    ListBox1: TListBox;
     Memo1: TMemo;
-    RadioButton1: TRadioButton;
-    RadioButton2: TRadioButton;
-    RadioButton3: TRadioButton;
-    RadioButton4: TRadioButton;
-    RadioGroup1: TRadioGroup;
     procedure Button1Click(Sender: TObject);
     procedure ConvertClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -51,6 +48,59 @@ var
 implementation
 
 {$R *.lfm}
+
+type
+  TSource = record
+    libs,
+    units: string;
+  end;
+  TSources = array of TSource;
+
+const
+  Sources: TSources = (
+    (libs: 'libglib2'; units: 'common_GLIB, gtypes'),
+    (libs: 'libgobject2_0'; units: 'common_GLIB, gtypes'),
+    (libs: 'libgio2'; units: 'common_GLIB, gtypes, gerror, gtype, giotypes, gobject, gioenums'),
+    (libs: 'libgtk4'; units: 'glib2, common_GTK'),
+    (libs: 'libgstreamer'; units: 'glib280, common_GST, gstobject'),
+    (libs: 'libgstpbutils'; units: 'glib280, gst124'),
+    (libs: 'libgstbase'; units: 'glib280, gst124'),
+    (libs: 'libgstaudio'; units: 'glib280, gst124'),
+    (libs: 'libgstvideo'; units: 'glib280, gst124'),
+    (libs: 'libgstallocators'; units: 'glib280, gst124'),
+    (libs: 'libgstanalytics'; units: 'glib280, gst124'),
+    (libs: 'libgstcheck'; units: 'glib280, gst124'),
+    (libs: 'libgstphotography'; units: 'glib280, gst124'),
+    (libs: 'libgstmse'; units: 'glib280, gst124'),
+    (libs: 'libgstinsertbin'; units: 'glib280, gst124'),
+    (libs: 'libgstwebrtc'; units: 'glib280, gst124'),
+    (libs: 'libgstwebrtcnice'; units: 'glib280, gst124'),
+    (libs: 'libgstsdp'; units: 'glib280, gst124'),
+    (libs: 'libgstmpegts'; units: 'glib280, gst124'),
+    (libs: 'libgsttag'; units: 'glib280, gst124'),
+    (libs: 'libgstfft'; units: 'glib280, gst124'),
+    (libs: 'libgstcodecparsers'; units: 'glib280, gst124'),
+    (libs: 'libgstcontroller'; units: 'glib280, gst124'),
+    (libs: 'libgstrtp'; units: 'glib280, gst124'),
+    (libs: 'libgstrtsp'; units: 'glib280, gst124'),
+    (libs: 'libgstwayland'; units: 'glib280, gst124'),
+    (libs: 'libgstva'; units: 'glib280, gst124'),
+    (libs: 'libgstplayer'; units: 'glib280, gst124'),
+    (libs: 'libgstgl'; units: 'glib280, gst124'),
+    (libs: 'libgstvulkan'; units: 'glib280, gst124'),
+    (libs: 'libgstnet'; units: 'glib280, gst124'),
+    (libs: 'libgstcuda'; units: 'glib280, gst124'),
+    (libs: 'libgstplay'; units: 'glib280, gst124'),
+    (libs: 'libgstapp'; units: 'glib280, gst124'),
+    (libs: 'libgstriff'; units: 'glib280, gst124'),
+    (libs: 'libgsttranscoder'; units: 'glib280, gst124'),
+    (libs: 'libgsturidownloader'; units: 'glib280, gst124'),
+    (libs: 'libgstsctp'; units: 'glib280, gst124'),
+    (libs: 'libgstopencv'; units: 'glib280, gst124'),
+    (libs: 'libgstisoff'; units: 'glib280, gst124'),
+
+    (libs: ''; units: ''));
+
 
 procedure TForm1.Form1DropFiles(Sender: TObject; const FileNames: array of string);
 begin
@@ -84,6 +134,8 @@ begin
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
+var
+  i: integer;
 begin
   top := 10;
   Left := 10;
@@ -94,11 +146,26 @@ begin
 
   RadioButton1Change(Sender); // Alle Checkboxen aus
 
-  RadioButton1.Caption := 'libglib-2.0';
-  RadioButton2.Caption := 'libgobject-2.0';
-  RadioButton3.Caption := 'libgio-2.0';
-  RadioButton4.Caption := 'libgtk-4';
-  RadioButton3.Checked:=True;
+  for i := 0 to Length(Sources) - 1 do begin
+    ListBox1.Items.Add(Sources[i].libs);
+  end;
+
+  //ListBox1.Items.Add('libglib-2.0');
+  //ListBox1.Items.Add('libgobject-2.0');
+  //ListBox1.Items.Add('libgio-2.0');
+  //ListBox1.Items.Add('libgtk-4');
+  //ListBox1.Items.Add('libgstreamer-1.0');
+  //ListBox1.Items.Add('libgstpbutils-1.0');
+  //ListBox1.Items.Add('libgstbase-1.0');
+  //ListBox1.Items.Add('libgstaudio-1.0');
+  //ListBox1.Items.Add('libgstvideo-1.0');
+  //ListBox1.Items.Add('libgstallocators-1.0');
+  //ListBox1.Items.Add('libgstanalytics-1.0');
+  //ListBox1.Items.Add('libgstcheck-1.0');
+  //ListBox1.Items.Add('libgstphotography-1.0');
+  //ListBox1.Items.Add('libgstmse-1.0');
+
+  ListBox1.ItemIndex := ListBox1.Count - 2;
 
   CheckBox1.Caption := 'GTK_TYPE_WINDOW';
   CheckBox2.Caption := 'GTK_WINDOW(obj)';
@@ -135,6 +202,7 @@ procedure TForm1.ConvertClick(Sender: TObject);
 var
   sl, slMacro: TStringList;
   p, i, j, macCount: integer;
+  libs, units: string;
 
   procedure DeleteLines(p, Count: integer);
   var
@@ -162,6 +230,19 @@ begin
   sl.Text := StringReplace(sl.Text, '(inst : longint)', '(obj : longint)', [rfReplaceAll]);
   sl.Text := StringReplace(sl.Text, '(module : longint)', '(obj : longint)', [rfReplaceAll]);
 
+  sl.Text := StringReplace(sl.Text, '(clock : longint)', '(obj : longint)', [rfReplaceAll]);
+  sl.Text := StringReplace(sl.Text, '(cclass : longint)', '(klass : longint)', [rfReplaceAll]);
+
+  sl.Text := StringReplace(sl.Text, '(bus : longint)', '(obj : longint)', [rfReplaceAll]);
+  sl.Text := StringReplace(sl.Text, '(bclass : longint)', '(klass : longint)', [rfReplaceAll]);
+
+  sl.Text := StringReplace(sl.Text, '(pool : longint)', '(obj : longint)', [rfReplaceAll]);
+  sl.Text := StringReplace(sl.Text, '(pclass : longint)', '(klass : longint)', [rfReplaceAll]);
+
+  sl.Text := StringReplace(sl.Text, '(task : longint)', '(obj : longint)', [rfReplaceAll]);
+  sl.Text := StringReplace(sl.Text, '(tclass : longint)', '(klass : longint)', [rfReplaceAll]);
+
+
   sl.Delete(0);
   sl.Insert(1, '');
 
@@ -169,19 +250,74 @@ begin
     sl.Delete(4);
   until sl[4] = '{$IFDEF FPC}';
 
-  if RadioButton1.Checked then begin
-    sl.Text := StringReplace(sl.Text, 'external;', 'external libglib2;', [rfReplaceAll]);
-    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes;' + #10);
-  end else if RadioButton2.Checked then begin
-    sl.Text := StringReplace(sl.Text, 'external;', 'external libgobject2_0;', [rfReplaceAll]);
-    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes;' + #10);
-  end else if RadioButton3.Checked then begin
-    sl.Text := StringReplace(sl.Text, 'external;', 'external libgio2;', [rfReplaceAll]);
-    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes, gerror, gtype, giotypes, gobject, gioenums;' + #10);
-  end else if RadioButton4.Checked then begin
-    sl.Text := StringReplace(sl.Text, 'external;', 'external libgtk4;', [rfReplaceAll]);
-    sl.Insert(4, 'uses' + #10 + '  glib2, common_GTK;' + #10);
-  end;
+  libs := Sources[ListBox1.ItemIndex].libs;
+  units := Sources[ListBox1.ItemIndex].units;
+
+  sl.Text := StringReplace(sl.Text, 'external;', 'external ' + libs + ';', [rfReplaceAll]);
+  sl.Insert(4, 'uses' + #10 + '  ' + units + ';' + #10);
+
+
+  //case ListBox1.ItemIndex of
+  //  0: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libglib2;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes;' + #10);
+  //  end;
+  //  1: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgobject2_0;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes;' + #10);
+  //  end;
+  //  2: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgio2;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes, gerror, gtype, giotypes, gobject, gioenums;' + #10);
+  //  end;
+  //  3: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgtk4;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  glib2, common_GTK;' + #10);
+  //  end;
+  //  4: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstreamer;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  glib280, common_GST, gstobject;' + #10);
+  //  end;
+  //  5: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstpbutils;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
+  //  end;
+  //  6: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstbase;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
+  //  end;
+  //  7: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstaudio;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
+  //  end;
+  //  8: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstvideo;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
+  //  end;
+  //  9: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstallocators;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
+  //  end;
+  //  10: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstanalytics;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
+  //  end;
+  //  11: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstcheck;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
+  //  end;
+  //  12: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstphotography;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
+  //  end;
+  //  13: begin
+  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstmse;', [rfReplaceAll]);
+  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
+  //  end;
+  //  else begin
+  //    ShowMessage('vergessen !');
+  //  end;
+  //end;
 
   p := 0;
   repeat

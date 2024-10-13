@@ -9,11 +9,6 @@
 {$IFDEF read_interface}
 
 type
-  // ausgelagert
-  //TGdkSurface = record
-  //end;
-  //PGdkSurface = ^TGdkSurface;
-
   TGdkSurfaceClass = record
   end;
   PGdkSurfaceClass = ^TGdkSurfaceClass;

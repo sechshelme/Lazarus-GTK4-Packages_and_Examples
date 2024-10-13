@@ -106,12 +106,6 @@ begin
 
     Result.Add('  Result := g_type_interface_peek(obj, ' + sa[7] + '_TYPE_' + sa[9] + ');');
 
-    //    Result.Add('  Result := P' + sa[3] + 'Interface(PGTypeInstance(obj)^.g_class);'); // alt falsch
-    //    Result := g_type_interface_peek(obj, GTK_TYPE_BUILDABLE);
-
-
-//    Result := g_type_interface_peek(obj, GTK_TYPE_BUILDABLE);
-
     Result.Add('end;');
     Result.Add('');
   end;
@@ -164,7 +158,7 @@ begin
     Result.Add('');
   end;
 
-  Result.Add('function ' + sa[5] + '_get_type: TGType; cdecl; external libgtk4;');
+  Result.Add('function ' + sa[5] + '_get_type: TGType; cdecl; external libgxxxxxxx;');
   Result.Add('');
 end;
 
