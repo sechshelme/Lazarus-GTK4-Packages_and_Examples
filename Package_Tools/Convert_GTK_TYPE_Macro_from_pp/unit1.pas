@@ -150,21 +150,6 @@ begin
     ListBox1.Items.Add(Sources[i].libs);
   end;
 
-  //ListBox1.Items.Add('libglib-2.0');
-  //ListBox1.Items.Add('libgobject-2.0');
-  //ListBox1.Items.Add('libgio-2.0');
-  //ListBox1.Items.Add('libgtk-4');
-  //ListBox1.Items.Add('libgstreamer-1.0');
-  //ListBox1.Items.Add('libgstpbutils-1.0');
-  //ListBox1.Items.Add('libgstbase-1.0');
-  //ListBox1.Items.Add('libgstaudio-1.0');
-  //ListBox1.Items.Add('libgstvideo-1.0');
-  //ListBox1.Items.Add('libgstallocators-1.0');
-  //ListBox1.Items.Add('libgstanalytics-1.0');
-  //ListBox1.Items.Add('libgstcheck-1.0');
-  //ListBox1.Items.Add('libgstphotography-1.0');
-  //ListBox1.Items.Add('libgstmse-1.0');
-
   ListBox1.ItemIndex := ListBox1.Count - 2;
 
   CheckBox1.Caption := 'GTK_TYPE_WINDOW';
@@ -255,69 +240,6 @@ begin
 
   sl.Text := StringReplace(sl.Text, 'external;', 'external ' + libs + ';', [rfReplaceAll]);
   sl.Insert(4, 'uses' + #10 + '  ' + units + ';' + #10);
-
-
-  //case ListBox1.ItemIndex of
-  //  0: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libglib2;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes;' + #10);
-  //  end;
-  //  1: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgobject2_0;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes;' + #10);
-  //  end;
-  //  2: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgio2;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  common_GLIB, gtypes, gerror, gtype, giotypes, gobject, gioenums;' + #10);
-  //  end;
-  //  3: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgtk4;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  glib2, common_GTK;' + #10);
-  //  end;
-  //  4: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstreamer;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  glib280, common_GST, gstobject;' + #10);
-  //  end;
-  //  5: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstpbutils;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
-  //  end;
-  //  6: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstbase;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
-  //  end;
-  //  7: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstaudio;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
-  //  end;
-  //  8: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstvideo;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
-  //  end;
-  //  9: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstallocators;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
-  //  end;
-  //  10: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstanalytics;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
-  //  end;
-  //  11: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstcheck;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
-  //  end;
-  //  12: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstphotography;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
-  //  end;
-  //  13: begin
-  //    sl.Text := StringReplace(sl.Text, 'external;', 'external libgstmse;', [rfReplaceAll]);
-  //    sl.Insert(4, 'uses' + #10 + '  glib280, gst124;' + #10);
-  //  end;
-  //  else begin
-  //    ShowMessage('vergessen !');
-  //  end;
-  //end;
 
   p := 0;
   repeat
